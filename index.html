@@ -399,6 +399,8 @@ color:#ffae00
 .faq-answer{font-size:16px;padding:0 16px}
 .faq-item.active .faq-answer{padding:4px 16px 18px}
 }
+
+.site-footer{background:#0f0f0f;color:#fff;padding:26px 18px;margin-top:40px}.site-footer-wrap{max-width:1180px;margin:auto;display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap}.site-footer .legal{display:flex;gap:14px;flex-wrap:wrap;align-items:center}.site-footer a{color:#ffd27a;text-decoration:none;font-weight:700}.site-footer a:hover{color:#fff}.socials{display:flex;gap:10px}.social-btn{display:inline-flex;align-items:center;justify-content:center;padding:9px 12px;border-radius:8px;background:#1b1b1b;border:1px solid #2a2a2a;transition:transform .2s ease,background .2s ease}.social-btn:hover{transform:translateY(-2px);background:#ffae00;color:#111}.copy{font-size:14px;color:#e8e8e8}@media(max-width:760px){.site-footer-wrap{flex-direction:column;align-items:flex-start}}
 </style>
 </head>
 
@@ -512,5 +514,27 @@ if(!isActive){item.classList.add("active")}
 })
 </script>
 
+
+<footer class="site-footer">
+  <div class="site-footer-wrap">
+    <div class="copy">© <span class="js-year"></span> Allo Nuisible Express - Tous droits réservés.</div>
+    <div class="legal">
+      <a href="mentions-legales.html">Mentions légales</a>
+      <a href="politique-confidentialite.html">Politique de confidentialité</a>
+      <a href="devis.html">Demandes de devis</a>
+    </div>
+    <div class="socials">
+      <a class="social-btn" href="https://x.com/Allonuisibleexpress" target="_blank" rel="noopener noreferrer">Twitter</a>
+      <a class="social-btn" href="https://www.youtube.com/@Allonuisibleexpress" target="_blank" rel="noopener noreferrer">YouTube</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var y=new Date().getFullYear();
+  document.querySelectorAll(".js-year").forEach(function(el){el.textContent=y;});
+})();
+</script>
 </body>
 </html>
