@@ -1,22 +1,58 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Dératisation à Thiais 24/7 – Allo Nuisible Express</title>
 
 <style>
+
 body{
 margin:0;
 font-family:Arial;
 background:#f4f4f4;
 }
 
-header{
+nav{
 background:#111;
 color:white;
+display:flex;
+justify-content:space-between;
+align-items:center;
 padding:15px;
-text-align:center;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+margin:0 10px;
+font-weight:bold;
+}
+
+.hero{
+height:60vh;
+background:url('https://raw.githubusercontent.com/Allonuisibleexpress/allo-nuisible-express/main/istockphoto-1707033668-612x612.jpg') center/cover;
+display:flex;
+align-items:center;
+justify-content:center;
+position:relative;
+}
+
+.hero::after{
+content:"";
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.35);
+}
+
+.hero h1{
+position:relative;
+color:white;
+font-size:40px;
 }
 
 section{
@@ -24,11 +60,7 @@ padding:40px;
 max-width:1000px;
 margin:auto;
 background:white;
-margin-top:40px;
-}
-
-h1{
-color:#ff9800;
+margin-top:30px;
 }
 
 .floating{
@@ -56,29 +88,38 @@ background:#ff9800;
 .devis{
 background:#111;
 }
-</style>
 
+</style>
 </head>
 
 <body>
 
-<header>
-<h2>Dératisation à Thiais</h2>
-</header>
+<nav>
+<div>Allo Nuisible Express</div>
+
+<div>
+<a href="index.html">Accueil</a>
+<a href="deratisation.html">Dératisation</a>
+</div>
+
+</nav>
+
+<div class="hero">
+<h1>Dératisation à Thiais</h1>
+</div>
 
 <section>
-<h1>Intervention rapide contre les rats et souris</h1>
+
+<h2>Intervention rapide contre les rats et souris</h2>
 
 <p>
-Allo Nuisible Express intervient 24h/24 et 7j/7 pour tout problème de rats ou souris à Thiais et alentours.
-Nos techniciens certifiés utilisent des méthodes professionnelles pour éliminer durablement les nuisibles.
+Allo Nuisible Express intervient 24h/24 et 7j/7 pour éliminer les rats et souris à Thiais.
+Nos techniciens utilisent des traitements professionnels pour un résultat durable.
 </p>
 
-<h2>Pourquoi nous choisir ?</h2>
-
 <ul>
-<li>Intervention rapide</li>
 <li>Diagnostic gratuit</li>
+<li>Intervention rapide</li>
 <li>Traitement professionnel</li>
 <li>Suivi après intervention</li>
 </ul>
