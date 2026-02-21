@@ -97,6 +97,25 @@ body{padding-bottom:86px}
   .site-footer-bottom{font-size:13px;padding:10px 8px}
 }
 
+
+/* pro-motion-reveal */
+.hero{overflow:hidden}
+.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(115deg,rgba(255,255,255,.12),transparent 35%,transparent 65%,rgba(255,174,0,.12));opacity:0;transition:opacity 1s ease}
+body.motion-ready .hero:after{opacity:1}
+[data-reveal]{opacity:0;transform:translateY(26px) scale(.985);filter:blur(8px);transition:opacity .9s cubic-bezier(.22,.61,.36,1),transform .9s cubic-bezier(.22,.61,.36,1),filter .9s cubic-bezier(.22,.61,.36,1);transition-delay:var(--d,0ms);will-change:transform,opacity,filter}
+[data-reveal="left"]{transform:translateX(-34px) scale(.985);}
+[data-reveal="right"]{transform:translateX(34px) scale(.985);}
+[data-reveal="zoom"]{transform:scale(.94);}
+[data-reveal].in-view{opacity:1;transform:none;filter:none}
+.hero-wrap > *{opacity:0;transform:translateY(20px);filter:blur(6px);transition:opacity .8s cubic-bezier(.22,.61,.36,1),transform .8s cubic-bezier(.22,.61,.36,1),filter .8s cubic-bezier(.22,.61,.36,1)}
+body.motion-ready .hero-wrap > *{opacity:1;transform:none;filter:none}
+body.motion-ready .hero-wrap > *:nth-child(1){transition-delay:90ms}
+body.motion-ready .hero-wrap > *:nth-child(2){transition-delay:180ms}
+body.motion-ready .hero-wrap > *:nth-child(3){transition-delay:270ms}
+body.motion-ready .hero-wrap > *:nth-child(4){transition-delay:360ms}
+.card{transition:transform .35s cubic-bezier(.22,.61,.36,1),box-shadow .35s cubic-bezier(.22,.61,.36,1)}
+.card:hover{transform:translateY(-4px);box-shadow:0 14px 28px rgba(0,0,0,.14)}
+ (prefers-reduced-motion: reduce){[data-reveal],.hero-wrap > *{transition:none !important;opacity:1 !important;transform:none !important;filter:none !important}}
 </style>
 </head>
 <body>
@@ -172,5 +191,51 @@ body{padding-bottom:86px}
     <span>07 44 29 68 97</span>
   </a>
 </div>
+
+<script>
+(function initProMotion(){
+  var root=document.documentElement;
+  var targets=[];
+  var map=[
+    [".hero-wrap", "children"],
+    ["main .card", "up"],
+    ["main > div > .card", "left"],
+    ["aside .card", "right"],
+    [".kpi", "zoom"],
+    [".service-links a", "left"]
+  ];
+  map.forEach(function(rule){
+    var nodes=document.querySelectorAll(rule[0]);
+    nodes.forEach(function(node){
+      if(rule[1]==="children"){
+        node.querySelectorAll(":scope > *").forEach(function(child){targets.push({el:child,type:"up"});});
+      }else{
+        targets.push({el:node,type:rule[1]});
+      }
+    });
+  });
+  var seen=new Set();
+  var ordered=[];
+  targets.forEach(function(t){ if(!seen.has(t.el)){ seen.add(t.el); ordered.push(t);} });
+  ordered.forEach(function(t,i){
+    t.el.setAttribute("data-reveal", t.type==="up"?"":t.type);
+    t.el.style.setProperty("--d", (Math.min(i,12)*70)+"ms");
+  });
+  requestAnimationFrame(function(){document.body.classList.add("motion-ready");});
+  if(!("IntersectionObserver" in window)){
+    ordered.forEach(function(t){t.el.classList.add("in-view");});
+    return;
+  }
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(entry.isIntersecting){
+        entry.target.classList.add("in-view");
+        io.unobserve(entry.target);
+      }
+    });
+  },{threshold:0.16,rootMargin:"0px 0px -8% 0px"});
+  ordered.forEach(function(t){io.observe(t.el);});
+})();
+</script>
 </body>
 </html>
