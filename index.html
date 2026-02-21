@@ -33,22 +33,25 @@
 
 <style>
 body{margin:0;font-family:Arial}
+*{box-sizing:border-box}
 header{
 position:fixed;
 top:0;
-width:100%;
+left:0;
+right:0;
 background:white;
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:10px 40px;
+padding:10px 24px;
 z-index:999;
 box-shadow:0 0 10px rgba(0,0,0,0.2)
 }
 .logo{height:60px}
+nav{display:flex;align-items:center;gap:10px;flex-wrap:wrap;justify-content:flex-end}
 nav a{
 position:relative;
-margin:0 15px;
+margin:0 8px;
 text-decoration:none;
 color:black;
 font-weight:bold;
@@ -69,6 +72,11 @@ color:#ffae00;
 transform:translateY(-2px)
 }
 nav a:hover:after{width:100%}
+@media(max-width:980px){
+header{padding:10px 16px}
+.logo{height:52px}
+nav a{margin:0 6px;font-size:14px}
+}
 
 .hero{
 height:100vh;
