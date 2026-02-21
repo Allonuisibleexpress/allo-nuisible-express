@@ -4,22 +4,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Allo Nuisible Express – Dératisation 24/7 à Thiais</title>
+
+<title>Allo Nuisible Express | Dératisation 24/7 Île-de-France</title>
+
+<meta name="description" content="Allo Nuisible Express intervient 24h/24 et 7j/7 contre rats, cafards, punaises de lit, frelons, pigeons et autres nuisibles en Île-de-France.">
 
 <script type="application/ld+json">
 {
-"@context":"https://schema.org",
-"@type":"ProfessionalService",
-"name":"Allo Nuisible Express",
-"telephone":"07 44 29 68 97",
-"email":"Allonuisibleexpress@gmail.com",
-"address":{
-"@type":"PostalAddress",
-"streetAddress":"3 Rue de la résistance",
-"postalCode":"94320",
-"addressLocality":"Thiais",
-"addressCountry":"FR"
-}
+"@context": "https://schema.org",
+"@type": "ProfessionalService",
+"name": "Allo Nuisible Express",
+"telephone": "0744296897",
+"areaServed": "Île-de-France"
 }
 </script>
 
@@ -27,144 +23,128 @@
 
 body{margin:0;font-family:Arial;background:#f5f5f5}
 
-nav{
-position:sticky;
+/* HEADER */
+
+header{
+position:fixed;
 top:0;
-background:#111;
-padding:15px;
+width:100%;
+background:white;
+z-index:999;
 display:flex;
 align-items:center;
 justify-content:space-between;
-z-index:1000
+padding:15px 40px;
+box-shadow:0 2px 10px rgba(0,0,0,0.1)
 }
 
-nav img{height:55px}
+header img{height:60px}
+
+nav a{
+margin:0 15px;
+text-decoration:none;
+color:#000;
+font-weight:bold
+}
+
+/* HERO */
 
 .hero{
-height:85vh;
-background:url('https://images.unsplash.com/photo-1581578731548-c64695cc6952?q=80&w=1974') center/cover;
+height:100vh;
+background:url('https://images.unsplash.com/photo-1621905251918-48416bd8575a') center/cover;
 display:flex;
 align-items:center;
-justify-content:center;
-position:relative
+padding:0 80px;
+color:white
 }
 
-.hero::after{
-content:"";
-position:absolute;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:rgba(0,0,0,0.45)
-}
-
-.hero-content{
-position:relative;
-color:white;
-text-align:center;
-}
-
-.hero-content h1{
+.hero h1{
 font-size:60px;
-font-weight:bold;
+max-width:700px
 }
 
-.hero-content span{
-background:#ff9800;
-padding:5px 15px;
+.hero span{
+background:#f6a000;
+padding:5px 15px
+}
+
+/* CARTES */
+
+.services{
+padding:80px;
+text-align:center
 }
 
 .cards{
 display:grid;
 grid-template-columns:repeat(4,1fr);
-gap:20px;
-padding:40px
+gap:20px
 }
 
 .card{
-height:260px;
+height:300px;
 background-size:cover;
-background-position:center;
 position:relative;
-display:flex;
-align-items:flex-end;
-justify-content:center;
-color:#fff;
-text-decoration:none;
 overflow:hidden;
-transition:0.4s;
+cursor:pointer;
 }
 
-.card::after{
+.card::before{
 content:"";
 position:absolute;
 width:100%;
 height:100%;
-background:rgba(0,0,0,0.35);
-transition:0.4s;
-}
-
-.card span{
-position:relative;
-font-size:22px;
-font-weight:bold;
-margin-bottom:20px;
-z-index:2;
+background:rgba(0,0,0,0.5);
 transition:0.3s;
 }
 
-.card:hover{
-transform:scale(1.07);
-filter:brightness(1.2);
+.card:hover::before{
+background:rgba(0,0,0,0.2);
 }
 
-.card:hover::after{
-background:rgba(0,0,0,0.1);
-}
-
-.card:hover span{
-transform:translateY(-10px);
-}
-
-.floating{
-position:fixed;
-bottom:0;
-width:100%;
-display:flex;
-z-index:9999;
-}
-
-.floating a{
-flex:1;
-text-align:center;
-padding:18px;
+.card h3{
+position:absolute;
+bottom:20px;
+left:20px;
 color:white;
-font-weight:bold;
-text-decoration:none;
-cursor:pointer;
+z-index:2
 }
 
-.tel{background:#ff9800}
-.devis{background:#111}
+/* PROCESS */
 
-#formulaire{
-display:none;
-position:fixed;
-top:0;
-left:0;
+.process{
+padding:80px;
+text-align:center
+}
+
+/* FAQ */
+
+.accordion{
 width:100%;
-height:100%;
-background:rgba(0,0,0,0.8);
-z-index:99999;
-justify-content:center;
-align-items:center;
+padding:15px;
+border:none;
+text-align:left;
+background:#eee;
+margin-top:5px;
+cursor:pointer
 }
 
-#formulaire form{
-background:white;
-padding:30px;
-width:300px;
+.panel{
+display:none;
+padding:10px;
+background:white
+}
+
+/* FLOAT BTN */
+
+.call-btn{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#f6a000;
+padding:15px 25px;
+color:white;
+z-index:999
 }
 
 </style>
@@ -172,50 +152,85 @@ width:300px;
 
 <body>
 
-<nav>
+<header>
 <img src="https://raw.githubusercontent.com/Allonuisibleexpress/allo-nuisible-express/main/0540980C-2821-48B5-9BD5-342D99DAFF1F.png">
+<nav>
+<a href="#">Accueil</a>
+<a href="#">Nos services</a>
+<a href="#">Contact</a>
 </nav>
+</header>
 
-<div class="hero">
-<div class="hero-content">
-<h1>Allo <span>Nuisible</span> Express<br>Zéro nuisible, Zéro stress</h1>
-</div>
-</div>
+<section class="hero">
+<h1>Allo Nuisible Express<br><span>Zéro nuisible, Zéro stress</span></h1>
+</section>
 
+<section class="services">
+<h2>NOS DIFFÉRENTS SERVICES</h2>
 <div class="cards">
 
-<a href="deratisation.html" class="card" style="background-image:url('https://raw.githubusercontent.com/Allonuisibleexpress/allo-nuisible-express/main/istockphoto-1707033668-612x612.jpg')"><span>Dératisation</span></a>
-
-<a href="punaises.html" class="card" style="background-image:url('https://raw.githubusercontent.com/Allonuisibleexpress/allo-nuisible-express/main/istockphoto-1212373742-612x612.jpg')"><span>Punaises de lit</span></a>
-
-<a href="cafards.html" class="card" style="background-image:url('https://raw.githubusercontent.com/Allonuisibleexpress/allo-nuisible-express/main/erik_karits-german-cockroach-6982350_1920.jpg')"><span>Cafards</span></a>
-
-<a href="frelons.html" class="card" style="background-image:url('https://raw.githubusercontent.com/Allonuisibleexpress/allo-nuisible-express/main/derweg-asian-giant-hornet-8335577_1920.jpg')"><span>Frelons</span></a>
-
-<a href="guepes.html" class="card" style="background-image:url('https://raw.githubusercontent.com/Allonuisibleexpress/allo-nuisible-express/main/ralphs_fotos-hornet-3336385_1920.jpg')"><span>Guêpes</span></a>
-
-<a href="depigeonnage.html" class="card" style="background-image:url('https://raw.githubusercontent.com/Allonuisibleexpress/allo-nuisible-express/main/balouriarajesh-birds-7921816_1920.jpg')"><span>Dépigeonnage</span></a>
-
-<a href="chenilles.html" class="card" style="background-image:url('https://raw.githubusercontent.com/Allonuisibleexpress/allo-nuisible-express/main/422737-caterpillars-436267_1920.jpg')"><span>Chenilles</span></a>
-
-<a href="diogene.html" class="card" style="background-image:url('https://raw.githubusercontent.com/Allonuisibleexpress/allo-nuisible-express/main/652234-lost-places-4165688_1920.jpg')"><span>Diogène</span></a>
-
+<div class="card" style="background-image:url('https://raw.githubusercontent.com/Allonuisibleexpress/allo-nuisible-express/main/istockphoto-1707033668-612x612.jpg')">
+<h3>Dératisation</h3>
 </div>
 
-<div class="floating">
-<a class="devis" onclick="document.getElementById('formulaire').style.display='flex'">Demande de devis</a>
-<a class="tel" href="tel:0744296897">07 44 29 68 97</a>
+<div class="card" style="background-image:url('https://raw.githubusercontent.com/Allonuisibleexpress/allo-nuisible-express/main/erik_karits-german-cockroach-6982350_1920.jpg')">
+<h3>Cafards</h3>
 </div>
 
-<div id="formulaire">
-<form>
-<h3>Demande de devis</h3>
-<input type="text" placeholder="Nom" required><br><br>
-<input type="tel" placeholder="Téléphone" required><br><br>
-<textarea placeholder="Votre demande"></textarea><br><br>
-<button>Envoyer</button>
-</form>
+<div class="card" style="background-image:url('https://raw.githubusercontent.com/Allonuisibleexpress/allo-nuisible-express/main/istockphoto-1212373742-612x612.jpg')">
+<h3>Punaises</h3>
 </div>
+
+<div class="card" style="background-image:url('https://raw.githubusercontent.com/Allonuisibleexpress/allo-nuisible-express/main/derweg-asian-giant-hornet-8335577_1920.jpg')">
+<h3>Frelons</h3>
+</div>
+
+<div class="card" style="background-image:url('https://raw.githubusercontent.com/Allonuisibleexpress/allo-nuisible-express/main/ralphs_fotos-hornet-3336385_1920.jpg')">
+<h3>Guêpes</h3>
+</div>
+
+<div class="card" style="background-image:url('https://raw.githubusercontent.com/Allonuisibleexpress/allo-nuisible-express/main/balouriarajesh-birds-7921816_1920.jpg')">
+<h3>Dépigeonnage</h3>
+</div>
+
+<div class="card" style="background-image:url('https://raw.githubusercontent.com/Allonuisibleexpress/allo-nuisible-express/main/422737-caterpillars-436267_1920.jpg')">
+<h3>Chenilles</h3>
+</div>
+
+<div class="card" style="background-image:url('https://raw.githubusercontent.com/Allonuisibleexpress/allo-nuisible-express/main/652234-lost-places-4165688_1920.jpg')">
+<h3>Syndrome Diogène</h3>
+</div>
+
+</div>
+</section>
+
+<section class="process">
+<h2>Découvrez notre processus</h2>
+<p>Contact - Inspection - Traitement - Suivi</p>
+</section>
+
+<section>
+<h2>Questions fréquentes</h2>
+
+<button class="accordion">En combien de temps pouvez-vous intervenir ?</button>
+<div class="panel"><p>Intervention 24h/24 et 7j/7. De 20 minutes à plusieurs heures selon le nuisible.</p></div>
+
+<button class="accordion">Quel est le tarif ?</button>
+<div class="panel"><p>Guêpes et frelons à partir de 120€. Le reste sur devis gratuit.</p></div>
+
+</section>
+
+<a href="tel:0744296897" class="call-btn">Appeler</a>
+
+<script>
+var acc=document.getElementsByClassName("accordion");
+for(i=0;i<acc.length;i++){
+acc[i].onclick=function(){
+this.nextElementSibling.style.display=
+this.nextElementSibling.style.display=="block"?"none":"block";
+}
+}
+</script>
 
 </body>
 </html>
