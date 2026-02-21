@@ -1,203 +1,255 @@
-<!-- IDENTIQUE À TA BASE VALIDÉE + MODIFS DEMANDÉES UNIQUEMENT -->
 <!DOCTYPE html>
 <html lang="fr">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Allo Nuisible Express – Dératisation 24/7 à Thiais</title>
 
-<meta name="description" content="Allo Nuisible Express intervient 24h/24 et 7j/7 contre rats, cafards, punaises de lit, frelons, pigeons et autres nuisibles en Île-de-France.">
+<title>Allo Nuisible Express - Zéro nuisible, Zéro stress</title>
 
+<!-- ===================== BALISAGE SEO COMPLET ===================== -->
 <script type="application/ld+json">
 {
-"@context": "https://schema.org",
-"@type": "ProfessionalService",
-"name": "Allo Nuisible Express",
-"telephone": "07 44 29 68 97",
-"email": "Allonuisibleexpress@gmail.com",
-"address": {
-"@type": "PostalAddress",
-"streetAddress": "3 Rue de la résistance",
-"postalCode": "94320",
-"addressLocality": "Thiais",
-"addressCountry": "FR"
-},
-"openingHoursSpecification": [{
-"@type": "OpeningHoursSpecification",
-"dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
-"opens": "00:00",
-"closes": "23:59"
-}]
+ "@context": "https://schema.org",
+ "@type": "LocalBusiness",
+ "name": "Allo Nuisible Express",
+ "telephone": "+33744296897",
+ "email": "Allonuisibleexpress@gmail.com",
+ "address": {
+   "@type": "PostalAddress",
+   "streetAddress": "3 Rue de la résistance",
+   "addressLocality": "Thiais",
+   "postalCode": "94320",
+   "addressCountry": "FR"
+ },
+ "areaServed": [
+   "Paris",
+   "Île-de-France",
+   "Choisy-le-Roi",
+   "Ivry-sur-Seine",
+   "Vitry-sur-Seine",
+   "Rungis",
+   "L'Haÿ-les-Roses",
+   "Vincennes",
+   "Châtenay-Malabry",
+   "Rouen",
+   "Nantes",
+   "Angers",
+   "Lille"
+ ],
+ "openingHoursSpecification": {
+   "@type": "OpeningHoursSpecification",
+   "dayOfWeek": [
+     "Monday","Tuesday","Wednesday","Thursday",
+     "Friday","Saturday","Sunday"
+   ],
+   "opens": "00:00",
+   "closes": "23:59"
+ },
+ "makesOffer": [
+   { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Dératisation" }},
+   { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Punaises de lit" }},
+   { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Cafards" }},
+   { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Guêpes et Frelons" }},
+   { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Chenilles processionnaires" }},
+   { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Dépigeonnage" }},
+   { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Syndrome de Diogène" }}
+ ]
 }
 </script>
+<!-- =============================================================== -->
 
 <style>
-body{margin:0;font-family:Arial;background:#f5f5f5}
 
-/* HEADER */
+body{margin:0;font-family:Arial;background:#fff}
+
 header{
 position:fixed;
-top:0;
 width:100%;
+top:0;
+left:0;
 background:#fff;
 display:flex;
 align-items:center;
 justify-content:space-between;
-padding:10px 40px;
+padding:15px 40px;
 z-index:999;
-box-shadow:0 2px 8px rgba(0,0,0,0.1)
+box-shadow:0 2px 6px rgba(0,0,0,.1)
 }
-header img{height:60px}
+
 nav a{
-margin:0 10px;
+margin:0 15px;
 text-decoration:none;
 color:#000;
-font-weight:bold;
+font-weight:bold
 }
 
-/* HERO */
 .hero{
-height:90vh;
-background:url('https://images.unsplash.com/photo-1581578731548-c64695cc6952?q=80&w=1974') center/cover;
+height:100vh;
+background:url("technicien.jpg") center/cover no-repeat;
 display:flex;
 align-items:center;
-justify-content:center;
-color:white;
-text-align:center;
-padding-top:80px;
+padding-left:80px;
+color:#fff
 }
-.hero h1{font-size:55px;}
-.hero span{background:#f6a000;padding:5px 15px;}
 
-/* SERVICES */
-.services{padding:60px;text-align:center;margin-top:40px;}
+.hero h1{
+font-size:60px;
+max-width:700px
+}
+
 .cards{
 display:grid;
 grid-template-columns:repeat(4,1fr);
 gap:20px;
+padding:60px;
+margin-top:100px;
 }
+
 .card{
-height:260px;
-background-size:cover;
-background-position:center;
 position:relative;
-display:flex;
-align-items:flex-end;
-justify-content:center;
-color:white;
-text-decoration:none;
-transition:0.4s;
+height:250px;
+overflow:hidden;
+}
 
-/* 🔻 NOUVEAU : -35% LUMINOSITÉ AU REPOS */
-filter:brightness(0.65);
+.card img{
+width:100%;
+height:100%;
+object-fit:cover;
+filter:brightness(.65);
+transition:.4s;
 }
-.card span{
-background:rgba(0,0,0,0.3);
-padding:8px 15px;
-margin-bottom:15px;
-font-weight:bold;
-}
-.card:hover{
+
+.card:hover img{
+filter:brightness(1.1);
 transform:scale(1.05);
-
-/* 🔻 AU SURVOL : LUMINEUX */
-filter:brightness(1.15);
 }
 
-/* PROCESS */
-.process{padding:60px;text-align:center;background:#fff;}
-
-/* FAQ */
-.faq-section{width:80%;margin:80px auto;}
-.accordion{
-width:100%;
-padding:15px;
-border:none;
-text-align:left;
-background:#eee;
-margin-top:5px;
-cursor:pointer;
-}
-.panel{
-display:none;
-padding:10px;
-background:white;
-}
-
-/* FLOAT BTN */
-.floating{
-position:fixed;
-bottom:0;
-width:100%;
-display:flex;
-z-index:999;
-}
-.floating a{
-flex:1;
-text-align:center;
-padding:15px;
-color:white;
-text-decoration:none;
+.card span{
+position:absolute;
+bottom:20px;
+left:20px;
+color:#fff;
+font-size:20px;
 font-weight:bold;
 }
-.tel{background:#f6a000}
-.devis{background:#000}
+
+.faq{
+max-width:900px;
+margin:auto;
+padding:60px 20px
+}
+
+.faq-item{
+border-bottom:1px solid #ddd
+}
+
+.faq-question{
+padding:20px;
+cursor:pointer;
+font-weight:bold;
+display:flex;
+justify-content:space-between
+}
+
+.faq-answer{
+max-height:0;
+overflow:hidden;
+transition:.4s ease;
+padding:0 20px
+}
+
+.faq-item.active .faq-answer{
+max-height:500px;
+padding:15px 20px
+}
+
 </style>
 </head>
 
 <body>
 
 <header>
-<img src="https://raw.githubusercontent.com/Allonuisibleexpress/allo-nuisible-express/main/0540980C-2821-48B5-9BD5-342D99DAFF1F.png">
+<img src="0540980C-2821-48B5-9BD5-342D99DAFF1F.png" height="50">
 <nav>
-<a href="#">Accueil</a>
-<a href="#">Nos services</a>
-<a href="#">Location pro</a>
-<a href="#">Blog</a>
-<a href="#">Contactez-nous</a>
-<a href="#">Tarifs</a>
-<a href="tel:0744296897">Appelez-nous</a>
-<a onclick="document.getElementById('formulaire').style.display='flex'">Demande de devis</a>
+<a href="index.html">Accueil</a>
+<a href="deratisation.html">Dératisation</a>
+<a href="depigeonnage.html">Dépigeonnage</a>
+<a href="punaises.html">Punaises</a>
+<a href="cafards.html">Cafards</a>
+<a href="frelons.html">Frelons</a>
+<a href="chenilles.html">Chenilles</a>
+<a href="diogene.html">Syndrome de Diogène</a>
 </nav>
 </header>
 
 <section class="hero">
-<h1>Allo Nuisible Express<br><span>Zéro nuisible, Zéro stress</span></h1>
+<h1>Allo Nuisible Express<br>Zéro nuisible, Zéro stress</h1>
 </section>
 
-<section class="services">
-<h2>NOS DIFFÉRENTS SERVICES</h2>
-<div class="cards">
-<a href="deratisation.html" class="card" style="background-image:url('https://raw.githubusercontent.com/Allonuisibleexpress/allo-nuisible-express/main/istockphoto-1707033668-612x612.jpg')"><span>Dératisation</span></a>
-<a href="punaises.html" class="card" style="background-image:url('https://raw.githubusercontent.com/Allonuisibleexpress/allo-nuisible-express/main/istockphoto-1212373742-612x612.jpg')"><span>Punaises de lit</span></a>
-<a href="cafards.html" class="card" style="background-image:url('https://raw.githubusercontent.com/Allonuisibleexpress/allo-nuisible-express/main/erik_karits-german-cockroach-6982350_1920.jpg')"><span>Cafards</span></a>
-<a href="frelons.html" class="card" style="background-image:url('https://raw.githubusercontent.com/Allonuisibleexpress/allo-nuisible-express/main/derweg-asian-giant-hornet-8335577_1920.jpg')"><span>Frelons</span></a>
-<a href="guepes.html" class="card" style="background-image:url('https://raw.githubusercontent.com/Allonuisibleexpress/allo-nuisible-express/main/ralphs_fotos-hornet-3336385_1920.jpg')"><span>Guêpes</span></a>
-<a href="depigeonnage.html" class="card" style="background-image:url('https://raw.githubusercontent.com/Allonuisibleexpress/allo-nuisible-express/main/balouriarajesh-birds-7921816_1920.jpg')"><span>Dépigeonnage</span></a>
-<a href="chenilles.html" class="card" style="background-image:url('https://raw.githubusercontent.com/Allonuisibleexpress/allo-nuisible-express/main/422737-caterpillars-436267_1920.jpg')"><span>Chenilles</span></a>
-<a href="diogene.html" class="card" style="background-image:url('https://raw.githubusercontent.com/Allonuisibleexpress/allo-nuisible-express/main/652234-lost-places-4165688_1920.jpg')"><span>Syndrome de Diogène</span></a>
+<section class="cards">
+
+<div class="card">
+<img src="istockphoto-1707033668-612x612.jpg">
+<span>Dératisation</span>
 </div>
+
+<div class="card">
+<img src="balouriarajesh-birds-7921816_1920.jpg">
+<span>Dépigeonnage</span>
+</div>
+
+<div class="card">
+<img src="istockphoto-1212373742-612x612.jpg">
+<span>Punaises de lit</span>
+</div>
+
+<div class="card">
+<img src="erik_karits-german-cockroach-6982350_1920.jpg">
+<span>Cafards</span>
+</div>
+
+<div class="card">
+<img src="derweg-asian-giant-hornet-8335577_1920.jpg">
+<span>Frelons</span>
+</div>
+
+<div class="card">
+<img src="422737-caterpillars-436267_1920.jpg">
+<span>Chenilles processionnaires</span>
+</div>
+
+<div class="card">
+<img src="652234-lost-places-4165688_1920.jpg">
+<span>Syndrome de Diogène</span>
+</div>
+
 </section>
 
-<section class="faq-section">
-<h2>Questions Fréquentes</h2>
+<section class="faq">
 
-<button class="accordion">En combien de temps pouvez-vous intervenir après ma demande ?</button>
-<div class="panel"><p>Nous intervenons 24h/24 et 7j/7, y compris la nuit, les week-ends et les jours fériés. Le délai d’intervention dépend du type de nuisible...</p></div>
+<div class="faq-item">
+<div class="faq-question">En combien de temps pouvez-vous intervenir ?</div>
+<div class="faq-answer">
+Nous intervenons 24h/24 et 7j/7. Une intervention peut être réalisée en seulement 20 minutes pour des guêpes ou prendre plusieurs heures pour des punaises de lit selon le niveau d’infestation.
+</div>
+</div>
 
-<button class="accordion">Quel est le tarif pour une dératisation ou désinsectisation ?</button>
-<div class="panel"><p>Le tarif pour une intervention concernant un nid de guêpes ou de frelons débute à partir de 120€...</p></div>
+<div class="faq-item">
+<div class="faq-question">Quel est le tarif ?</div>
+<div class="faq-answer">
+Les interventions pour guêpes et frelons débutent à partir de 120€. Les autres traitements sont réalisés sur devis gratuit selon l’importance de l’infestation.
+</div>
+</div>
 
 </section>
 
 <script>
-var acc=document.getElementsByClassName("accordion");
-for(i=0;i<acc.length;i++){
-acc[i].onclick=function(){
-this.nextElementSibling.style.display=
-this.nextElementSibling.style.display=="block"?"none":"block";
-}
-}
+document.querySelectorAll(".faq-item").forEach(item=>{
+item.addEventListener("click",()=>{
+item.classList.toggle("active");
+});
+});
 </script>
 
 </body>
