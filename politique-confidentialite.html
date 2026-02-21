@@ -110,74 +110,252 @@ body{padding-bottom:86px}
 
 /* unified top navigation */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap');
-.site-top-header{position:fixed;top:0;left:0;right:0;z-index:1500;background:#fff;border-bottom:1px solid #ececec;box-shadow:0 1px 8px rgba(0,0,0,.09);overflow:visible}
-.site-top-wrap{width:100%;max-width:none;height:96px;padding:0 22px;display:flex;align-items:center;justify-content:space-between;gap:22px;min-width:0;position:relative}
-.site-top-logo{display:inline-flex;align-items:center;position:absolute;left:22px;top:50%;transform:translateY(-50%);z-index:2;height:96px;overflow:hidden;text-decoration:none;transition:none !important;filter:none !important;box-shadow:none !important}
-.site-top-logo,.site-top-logo:hover,.site-top-logo:focus,.site-top-logo:active{transition:none !important;filter:none !important;box-shadow:none !important}
-.site-top-logo:hover,.site-top-logo:focus,.site-top-logo:active{transform:translateY(-50%) !important}
-.site-top-logo img{height:230px;width:auto;display:block;object-fit:contain;object-position:center center;transition:none !important;transform:none !important;filter:none !important;box-shadow:none !important}
-.site-top-logo img:hover{transform:none !important;filter:none !important;box-shadow:none !important}
-.site-top-nav{display:flex;align-items:center;gap:14px;flex:1;justify-content:flex-end;min-width:0;margin-left:300px}
-.site-top-nav-link{position:relative;text-decoration:none;color:#111;font-weight:800;font-size:13px;letter-spacing:.02em;padding:6px 5px;white-space:nowrap;transition:color .25s ease;font-family:'Montserrat',Arial,sans-serif}
-.site-top-nav-link:after{content:"";position:absolute;left:8px;right:8px;bottom:4px;height:2px;background:#ffae00;transform:scaleX(0);transform-origin:center;transition:transform .25s ease}
-.site-top-nav-link:hover{color:#d38f00}
-.site-top-nav-link:hover:after{transform:scaleX(1)}
-.site-top-dropdown{position:relative}
-.site-top-dropdown-toggle{display:flex;align-items:center;gap:8px}
-.site-top-dropdown-toggle span{font-size:12px;transition:transform .25s ease}
-.site-top-dropdown:hover .site-top-dropdown-toggle span{transform:rotate(180deg)}
-.site-top-dropdown-menu{position:absolute;top:100%;left:0;min-width:290px;background:#fff;border:1px solid #ececec;border-radius:10px;box-shadow:0 12px 26px rgba(0,0,0,.14);padding:8px 0;opacity:0;visibility:hidden;transform:translateY(10px);transition:opacity .2s ease,transform .2s ease,visibility .2s ease;z-index:1700}
-.site-top-dropdown:hover .site-top-dropdown-menu{opacity:1;visibility:visible;transform:translateY(0)}
-.site-top-dropdown-menu a{display:block;padding:14px 18px;text-decoration:none;color:#101010;font-weight:800;border-bottom:1px solid #f1f1f1;font-family:'Montserrat',Arial,sans-serif}
-.site-top-dropdown-menu a:last-child{border-bottom:none}
-.site-top-dropdown-menu a:hover{background:#fff7e6;color:#d38f00}
-.site-top-btn{display:inline-flex;align-items:center;justify-content:center;padding:8px 12px;border-radius:8px;text-decoration:none;font-weight:900;font-size:12px;letter-spacing:.03em;white-space:nowrap;font-family:'Montserrat',Arial,sans-serif;transition:box-shadow .25s ease,filter .25s ease}
-.site-top-btn:hover{transform:none;box-shadow:0 8px 18px rgba(0,0,0,.18)}
-.site-top-btn-call{background:#ffae00;color:#111;border:1px solid #ffae00;min-width:146px;text-align:center}
-.site-top-btn-quote{background:#0f0f0f;color:#fff;border:1px solid #0f0f0f}
-body{padding-top:96px}
+html,body{
+margin:0;
+padding:0;
+max-width:100%;
+overflow-x:hidden
+}
+body{font-family:'Montserrat',Arial,sans-serif}
+*{box-sizing:border-box}
+header{
+position:fixed;
+top:0;
+left:0;
+right:0;
+background:#fff;
+display:flex;
+justify-content:flex-start;
+height:96px;
+padding:0 22px;
+z-index:999;
+box-shadow:0 1px 8px rgba(0,0,0,.09);
+overflow:visible
+}
+.header-wrap{
+width:100%;
+max-width:none;
+height:100%;
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:22px;
+min-width:0
+}
+.logo-link{
+display:inline-flex;
+align-items:center;
+position:absolute;
+left:22px;
+top:50%;
+transform:translateY(-50%);
+z-index:2;
+height:96px;
+overflow:hidden
+}
+.logo{
+height:230px;
+width:auto;
+display:block;
+object-fit:contain;
+object-position:center center;
+flex-shrink:0;
+transition:none !important;
+transform:none !important;
+filter:none !important;
+box-shadow:none !important
+}
+.logo-link,.logo-link:hover,.logo-link:focus,.logo-link:active{
+transition:none !important;
+filter:none !important;
+box-shadow:none !important
+}
+.logo-link:hover,.logo-link:focus,.logo-link:active{
+transform:translateY(-50%) !important
+}
+.logo:hover{
+transition:none !important;
+transform:none !important;
+filter:none !important;
+box-shadow:none !important
+}
+.main-nav{
+display:flex;
+align-items:center;
+gap:14px;
+flex:1;
+justify-content:flex-end;
+min-width:0;
+margin-left:300px
+}
+.nav-link{
+position:relative;
+text-decoration:none;
+color:#111;
+font-weight:800;
+letter-spacing:0.02em;
+font-size:13px;
+padding:6px 5px;
+white-space:nowrap;
+transition:color .25s ease
+}
+.nav-link:after{
+content:"";
+position:absolute;
+left:8px;
+right:8px;
+bottom:4px;
+height:2px;
+background:#ffae00;
+transform:scaleX(0);
+transform-origin:center;
+transition:transform .25s ease
+}
+.nav-link:hover{color:#d38f00}
+.nav-link:hover:after{transform:scaleX(1)}
+.dropdown{position:relative}
+.dropdown-toggle{
+display:flex;
+align-items:center;
+gap:8px
+}
+.chevron{
+font-size:12px;
+transition:transform .25s ease
+}
+.dropdown:hover .chevron{transform:rotate(180deg)}
+.dropdown-menu{
+position:absolute;
+top:100%;
+left:0;
+min-width:290px;
+background:#fff;
+border:1px solid #ececec;
+box-shadow:0 12px 26px rgba(0,0,0,.14);
+border-radius:10px;
+padding:8px 0;
+opacity:0;
+visibility:hidden;
+transform:translateY(10px);
+transition:opacity .2s ease,transform .2s ease,visibility .2s ease;
+z-index:1001
+}
+.dropdown:hover .dropdown-menu{
+opacity:1;
+visibility:visible;
+transform:translateY(0)
+}
+.dropdown-item{
+display:block;
+padding:14px 18px;
+color:#101010;
+font-weight:800;
+text-decoration:none;
+border-bottom:1px solid #f1f1f1
+}
+.dropdown-item:last-child{border-bottom:none}
+.dropdown-item:hover{background:#fff7e6;color:#d38f00}
+.cta-btn{
+text-decoration:none;
+font-weight:900;
+font-size:12px;
+padding:8px 12px;
+border-radius:8px;
+white-space:nowrap;
+position:relative;
+overflow:hidden;
+transition:transform .25s ease,box-shadow .25s ease
+}
+.cta-btn:hover{
+transform:translateY(-2px);
+box-shadow:0 8px 18px rgba(0,0,0,.18)
+}
+.call-btn{
+background:#ffae00;
+color:#111;
+min-width:146px;
+text-align:center
+}
+.call-btn .default-text,.call-btn .hover-text{
+display:block;
+transition:transform .25s ease,opacity .25s ease
+}
+.call-btn .hover-text{
+position:absolute;
+left:0;right:0;top:50%;
+transform:translateY(140%);
+opacity:0
+}
+.call-btn:hover .default-text{
+transform:translateY(-140%);
+opacity:0
+}
+.call-btn:hover .hover-text{
+transform:translateY(-50%);
+opacity:1
+}
+.quote-btn{
+background:#0f0f0f;
+color:#fff;
+border:1px solid #0f0f0f
+}
+.quote-btn:before{
+content:"";
+position:absolute;
+top:0;
+left:-130%;
+width:120%;
+height:100%;
+background:linear-gradient(120deg,transparent,rgba(255,255,255,.25),transparent);
+transition:left .5s ease
+}
+.quote-btn:hover:before{left:120%}
 @media(max-width:1180px){
-  .site-top-logo img{height:195px}
-  .site-top-nav-link{font-size:14px}
-  .site-top-btn{padding:10px 14px}
+.logo{height:195px}
+.nav-link{font-size:14px}
+.cta-btn{padding:10px 14px}
 }
 @media(max-width:980px){
-  .site-top-wrap{padding:0 12px}
-  .site-top-logo img{height:170px}
-  .site-top-nav{gap:8px;overflow-x:auto;padding-bottom:4px;margin-left:210px}
-  .site-top-nav-link{font-size:12px}
-  .site-top-btn{font-size:11px;padding:8px 10px}
+.main-nav{
+overflow-x:hidden;
+justify-content:flex-start;
+padding-bottom:6px;
+flex-wrap:wrap
+}
+.main-nav::-webkit-scrollbar{height:5px}
+.main-nav::-webkit-scrollbar-thumb{background:#ddd;border-radius:20px}
+.logo{height:170px}
 }
 
 </style>
 </head>
 <body>
-<header class="site-top-header">
-  <div class="site-top-wrap">
-    <a class="site-top-logo" href="index.html" aria-label="Retour accueil">
-      <img src="logo.png" alt="Allo Nuisible Express">
-    </a>
-    <nav class="site-top-nav" aria-label="Navigation principale">
-      <a class="site-top-nav-link" href="index.html">ACCUEIL</a>
-      <div class="site-top-dropdown">
-        <a class="site-top-nav-link site-top-dropdown-toggle" href="index.html#services">NOS SERVICES <span>▼</span></a>
-        <div class="site-top-dropdown-menu">
-          <a href="deratisation.html">Rats / Souris</a>
-          <a href="frelons.html">Frelons</a>
-          <a href="guepes.html">Guêpes</a>
-          <a href="punaises.html">Punaises de lit</a>
-          <a href="cafards.html">Cafards</a>
-          <a href="depigeonnage.html">Dépigeonnage</a>
-          <a href="chenilles.html">Chenilles processionnaires</a>
-          <a href="diogene.html">Syndrome de Diogène</a>
-        </div>
-      </div>
-      <a class="site-top-nav-link" href="contact.html">CONTACTEZ-NOUS</a>
-      <a class="site-top-nav-link" href="tarifs.html">TARIFS</a>
-      <a class="site-top-btn site-top-btn-call" href="tel:0744296897">APPELEZ-NOUS</a>
-      <a class="site-top-btn site-top-btn-quote" href="devis.html">DEMANDES DE DEVIS</a>
-    </nav>
-  </div>
+<header>
+<div class="header-wrap">
+<a class="logo-link" href="index.html" aria-label="Retour à l'accueil">
+<img src="logo.png" class="logo" alt="Allo Nuisible Express">
+</a>
+<nav class="main-nav">
+<a class="nav-link" href="index.html">ACCUEIL</a>
+<div class="dropdown">
+<a class="nav-link dropdown-toggle" href="#services">NOS SERVICES <span class="chevron">▼</span></a>
+<div class="dropdown-menu">
+<a class="dropdown-item" href="deratisation.html">Rats / Souris</a>
+<a class="dropdown-item" href="frelons.html">Frelons</a>
+<a class="dropdown-item" href="guepes.html">Guêpes</a>
+<a class="dropdown-item" href="punaises.html">Punaises de lit</a>
+<a class="dropdown-item" href="cafards.html">Cafards</a>
+<a class="dropdown-item" href="depigeonnage.html">Dépigeonnage</a>
+<a class="dropdown-item" href="chenilles.html">Chenilles processionnaires</a>
+<a class="dropdown-item" href="diogene.html">Syndrome de Diogène</a>
+</div>
+</div>
+<a class="nav-link" href="contact.html">CONTACTEZ-NOUS</a>
+<a class="nav-link" href="tarifs.html">TARIFS</a>
+<a class="cta-btn call-btn" href="tel:0744296897"><span class="default-text">APPELEZ-NOUS</span><span class="hover-text">07 44 29 68 97</span></a>
+<a class="cta-btn quote-btn" href="devis.html">DEMANDES DE DEVIS</a>
+</nav>
+</div>
 </header>
 
 <main>
