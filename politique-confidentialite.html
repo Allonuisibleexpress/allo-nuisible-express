@@ -39,6 +39,41 @@ body{padding-bottom:86px}
 @media(max-width:860px){body{padding-bottom:96px}.site-sticky-cta{width:calc(100% - 10px);bottom:7px;gap:6px}.site-sticky-cta .sticky-link{padding:10px 9px;font-size:12px;min-height:42px}}
 @media(max-width:560px){body{padding-bottom:108px}.site-sticky-cta .sticky-link{font-size:11px;letter-spacing:.01em}}
 
+
+/* footer redesign */
+.site-footer{background:#070707;color:#fff;padding:64px 24px 0;margin-top:48px}
+.site-footer-main{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1.35fr 1fr 1fr 1fr;gap:34px;align-items:flex-start}
+.site-footer h3{margin:0 0 18px;font-size:34px;line-height:1.08;letter-spacing:.02em;color:#fff}
+.footer-logo{display:inline-flex;align-items:center;gap:12px;text-decoration:none;color:#fff;margin-bottom:14px}
+.footer-logo img{height:64px;width:auto;display:block}
+.footer-brand{font-size:28px;font-weight:900;letter-spacing:.03em}
+.footer-brand strong{color:#ffae00}
+.footer-text{font-size:16px;line-height:1.65;color:#d4d4d4;max-width:460px}
+.footer-list,.footer-services{list-style:none;padding:0;margin:0;display:grid;gap:10px}
+.footer-list a,.footer-services a{color:#fff;text-decoration:none;font-weight:700;font-size:18px;letter-spacing:.01em;opacity:.92;transition:opacity .2s ease,color .2s ease}
+.footer-list a:hover,.footer-services a:hover{opacity:1;color:#ffbe40}
+.footer-contact p{margin:0 0 14px;color:#d8d8d8;font-size:18px;line-height:1.5}
+.footer-cta{display:flex;flex-direction:column;gap:12px;max-width:320px}
+.footer-btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:14px 18px;border-radius:8px;font-size:22px;font-weight:900;text-decoration:none;letter-spacing:.02em;transition:transform .2s ease,box-shadow .2s ease,filter .2s ease}
+.footer-btn:hover{transform:translateY(-2px);box-shadow:0 10px 22px rgba(0,0,0,.32);filter:saturate(1.06)}
+.footer-btn-devis{background:#fff;color:#c48600;border:1px solid #e7e7e7}
+.footer-btn-call{background:#ffae00;color:#fff;border:1px solid #ffae00;text-shadow:0 1px 0 rgba(0,0,0,.2)}
+.site-footer-bottom{margin-top:54px;background:#ffae00;color:#fff;padding:14px 18px;text-align:center;font-size:30px;font-weight:700;letter-spacing:.01em}
+.site-footer-bottom b{font-weight:900}
+@media(max-width:1200px){
+  .site-footer-main{grid-template-columns:1fr 1fr;gap:28px}
+  .site-footer h3{font-size:30px}
+  .footer-btn{font-size:20px}
+  .site-footer-bottom{font-size:24px}
+}
+@media(max-width:760px){
+  .site-footer{padding:40px 16px 0}
+  .site-footer-main{grid-template-columns:1fr;gap:22px}
+  .footer-brand{font-size:24px}
+  .footer-btn{font-size:18px;padding:12px 14px}
+  .site-footer-bottom{font-size:18px;padding:12px 10px}
+}
+
 </style>
 </head>
 <body>
@@ -79,29 +114,50 @@ body{padding-bottom:86px}
 </main>
 
 <footer class="site-footer">
-  <div class="site-footer-wrap">
-    <div class="copy">© <span class="js-year"></span> Allo Nuisible Express - Tous droits réservés.</div>
-    <div class="legal">
-      <a href="mentions-legales.html">Mentions légales</a>
-      <a href="politique-confidentialite.html">Politique de confidentialité</a>
-      <a href="devis.html">Demandes de devis</a>
-    </div>
-    <div class="socials">
-      <a class="social-btn social-x" href="https://x.com/FranceNuisible" target="_blank" rel="noopener noreferrer" aria-label="X">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M18.244 2h3.308l-7.227 8.26L23 22h-6.728l-5.271-6.89L4.972 22H1.66l7.73-8.835L1 2h6.9l4.765 6.231z"/></svg>
-        <span>X</span>
+  <div class="site-footer-main">
+    <section>
+      <a class="footer-logo" href="index.html" aria-label="Retour à l'accueil">
+        <img src="0540980C-2821-48B5-9BD5-342D99DAFF1F.png" alt="Allo Nuisible Express">
+        <span class="footer-brand">ALLO <strong>NUISIBLE EXPRESS</strong></span>
       </a>
-      <a class="social-btn social-yt" href="https://www.youtube.com/@AlloNuisibleExpress" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.6 3.6 12 3.6 12 3.6s-7.6 0-9.4.5A3 3 0 0 0 .5 6.2 31.7 31.7 0 0 0 0 12a31.7 31.7 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.8.5 9.4.5 9.4.5s7.6 0 9.4-.5a3 3 0 0 0 2.1-2.1A31.7 31.7 0 0 0 24 12a31.7 31.7 0 0 0-.5-5.8ZM9.6 15.9V8.1l6.8 3.9-6.8 3.9Z"/></svg>
-        <span>YouTube</span>
-      </a>
-      <a class="social-btn social-map" href="https://maps.app.goo.gl/EWnwrfLmvWMRjEds6" target="_blank" rel="noopener noreferrer" aria-label="Google Maps">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a7 7 0 0 0-7 7c0 5.1 7 13 7 13s7-7.9 7-13a7 7 0 0 0-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5Z"/></svg>
-        <span>Maps</span>
-      </a>
-    </div>
+      <p class="footer-text">Bienvenue chez Allo Nuisible Express. Nous intervenons rapidement pour la dératisation, la désinsectisation, la désinfection, le dépigeonnage et les nettoyages spécialisés, avec des solutions adaptées à chaque situation.</p>
+    </section>
+
+    <section>
+      <h3>INFORMATIONS UTILES</h3>
+      <ul class="footer-list">
+        <li><a href="devis.html#contact-form">CONTACT</a></li>
+        <li><a href="mentions-legales.html">MENTIONS LÉGALES</a></li>
+        <li><a href="politique-confidentialite.html">CONFIDENTIALITÉ</a></li>
+        <li><a href="cgv-cgu.html">CGV / CGU</a></li>
+      </ul>
+    </section>
+
+    <section>
+      <h3>NOS SERVICES</h3>
+      <ul class="footer-services">
+        <li><a href="deratisation.html">DÉRATISATION</a></li>
+        <li><a href="punaises.html">PUNAISES DE LIT</a></li>
+        <li><a href="cafards.html">DÉSINSECTISATION</a></li>
+        <li><a href="devis.html">DÉSINFECTION</a></li>
+        <li><a href="depigeonnage.html">DÉPIGEONNAGE</a></li>
+        <li><a href="frelons.html">FRELONS / GUÊPES</a></li>
+        <li><a href="diogene.html">SYNDROME DE DIOGÈNE</a></li>
+      </ul>
+    </section>
+
+    <section class="footer-contact">
+      <h3>CONTACTEZ-NOUS</h3>
+      <p>4 Rue de la Couture du Moulin, 94320 Thiais</p>
+      <div class="footer-cta">
+        <a class="footer-btn footer-btn-devis" href="devis.html">✉ DEMANDE DE DEVIS</a>
+        <a class="footer-btn footer-btn-call" href="tel:0744296897">📞 07 44 29 68 97</a>
+      </div>
+    </section>
   </div>
+  <div class="site-footer-bottom">Tous droits réservés <b>ALLO NUISIBLE EXPRESS</b> — <span class="js-year"></span></div>
 </footer>
+
 
 <script>
 (function(){
