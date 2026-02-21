@@ -26,22 +26,63 @@ textarea{border:2px solid #ddd;border-radius:8px;padding:12px;min-height:140px;r
 input:focus,select:focus,textarea:focus{border-color:var(--brand)}
 .submit{background:var(--brand);color:#111;border:none;border-radius:8px;font-size:18px;font-weight:900;padding:13px 14px;cursor:pointer}
 @media(max-width:980px){.main{grid-template-columns:1fr}.hero h1{font-size:40px}.logo{height:76px}}
+
+/* unified top navigation */
+.site-top-header{position:sticky;top:0;z-index:1500;background:#fff;border-bottom:1px solid #ececec;box-shadow:0 1px 6px rgba(0,0,0,.06)}
+.site-top-wrap{max-width:1240px;margin:0 auto;padding:10px 18px;display:flex;align-items:center;justify-content:space-between;gap:14px}
+.site-top-logo{display:inline-flex;align-items:center;text-decoration:none}
+.site-top-logo img{height:74px;width:auto;display:block}
+.site-top-nav{display:flex;align-items:center;gap:14px;flex:1;justify-content:flex-end;min-width:0}
+.site-top-nav-link{position:relative;text-decoration:none;color:#111;font-weight:800;font-size:13px;letter-spacing:.02em;padding:8px 6px;white-space:nowrap}
+.site-top-dropdown{position:relative}
+.site-top-dropdown-toggle{display:flex;align-items:center;gap:6px}
+.site-top-dropdown-menu{position:absolute;top:100%;left:0;min-width:260px;background:#fff;border:1px solid #ececec;border-radius:10px;box-shadow:0 10px 24px rgba(0,0,0,.14);padding:8px 0;opacity:0;visibility:hidden;transform:translateY(8px);transition:opacity .2s ease,transform .2s ease,visibility .2s ease;z-index:1700}
+.site-top-dropdown:hover .site-top-dropdown-menu{opacity:1;visibility:visible;transform:translateY(0)}
+.site-top-dropdown-menu a{display:block;padding:12px 16px;text-decoration:none;color:#121212;font-weight:700;border-bottom:1px solid #f1f1f1}
+.site-top-dropdown-menu a:last-child{border-bottom:none}
+.site-top-dropdown-menu a:hover{background:#fff7e6;color:#c88600}
+.site-top-btn{display:inline-flex;align-items:center;justify-content:center;padding:10px 14px;border-radius:9px;text-decoration:none;font-weight:900;font-size:12px;letter-spacing:.03em;white-space:nowrap}
+.site-top-btn-call{background:#ffae00;color:#111;border:1px solid #ffae00}
+.site-top-btn-quote{background:#111;color:#fff;border:1px solid #111}
+@media(max-width:980px){
+  .site-top-wrap{padding:8px 12px}
+  .site-top-logo img{height:60px}
+  .site-top-nav{gap:8px;overflow-x:auto;padding-bottom:4px}
+  .site-top-nav-link{font-size:12px}
+  .site-top-btn{font-size:11px;padding:8px 10px}
+}
+
 </style>
 </head>
 <body>
-<header>
-  <div class="wrap">
-    <a href="index.html" aria-label="Retour accueil"><img src="logo.png" class="logo" alt="Allo Nuisible Express"></a>
-    <nav>
-      <a href="index.html">ACCUEIL</a>
-      <a href="index.html#services">NOS SERVICES</a>
-      <a href="contact.html">CONTACTEZ-NOUS</a>
-      <a href="tarifs.html">TARIFS</a>
-      <a class="btn btn-call" href="tel:0744296897">APPELEZ-NOUS</a>
-      <a class="btn btn-quote" href="devis.html">DEMANDES DE DEVIS</a>
+<header class="site-top-header">
+  <div class="site-top-wrap">
+    <a class="site-top-logo" href="index.html" aria-label="Retour accueil">
+      <img src="logo.png" alt="Allo Nuisible Express">
+    </a>
+    <nav class="site-top-nav" aria-label="Navigation principale">
+      <a class="site-top-nav-link" href="index.html">ACCUEIL</a>
+      <div class="site-top-dropdown">
+        <a class="site-top-nav-link site-top-dropdown-toggle" href="index.html#services">NOS SERVICES <span>▼</span></a>
+        <div class="site-top-dropdown-menu">
+          <a href="deratisation.html">Rats / Souris</a>
+          <a href="frelons.html">Frelons</a>
+          <a href="guepes.html">Guêpes</a>
+          <a href="punaises.html">Punaises de lit</a>
+          <a href="cafards.html">Cafards</a>
+          <a href="depigeonnage.html">Dépigeonnage</a>
+          <a href="chenilles.html">Chenilles processionnaires</a>
+          <a href="diogene.html">Syndrome de Diogène</a>
+        </div>
+      </div>
+      <a class="site-top-nav-link" href="contact.html">CONTACTEZ-NOUS</a>
+      <a class="site-top-nav-link" href="tarifs.html">TARIFS</a>
+      <a class="site-top-btn site-top-btn-call" href="tel:0744296897">APPELEZ-NOUS</a>
+      <a class="site-top-btn site-top-btn-quote" href="devis.html">DEMANDES DE DEVIS</a>
     </nav>
   </div>
 </header>
+
 <section class="hero"><h1>CONTACT</h1></section>
 <main class="main">
   <section class="card">

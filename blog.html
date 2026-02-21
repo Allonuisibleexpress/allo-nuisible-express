@@ -1,8 +1,61 @@
 <!DOCTYPE html>
 <html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Blog | Allo Nuisible Express</title><meta name="description" content="Conseils prévention nuisibles et hygiène."><style>
-:root{--brand:#ffae00;--bg:#f6f7f9}*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;background:var(--bg);color:#1b1c1f}header{position:sticky;top:0;background:#fff;border-bottom:1px solid #ececec;z-index:1000}.wrap{max-width:1240px;margin:auto;padding:10px 18px;display:flex;justify-content:space-between;align-items:center}.logo{height:92px}.nav{display:flex;gap:12px;align-items:center;flex-wrap:wrap}.nav a{text-decoration:none;color:#111;font-weight:800;font-size:14px;padding:8px 6px}.hero{min-height:34vh;background:linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)),url('dimitrisvetsikas1969-covid-19-5010565_1920.jpg') center/cover;display:flex;align-items:center;justify-content:center;color:#fff;text-align:center}.hero h1{font-size:52px;margin:0;text-transform:uppercase}.main{max-width:1240px;margin:36px auto 80px;padding:0 18px}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.post{background:#fff;border:1px solid #e8e8e8;border-radius:12px;padding:20px;box-shadow:0 8px 20px rgba(0,0,0,.05)}.post h2{margin:0 0 10px;font-size:22px}.post p{margin:0;color:#2d333b;line-height:1.7}.post a{display:inline-block;margin-top:12px;color:#9b6900;text-decoration:none;font-weight:800}@media(max-width:980px){.grid{grid-template-columns:1fr}.hero h1{font-size:36px}.logo{height:76px}}</style></head>
+:root{--brand:#ffae00;--bg:#f6f7f9}*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;background:var(--bg);color:#1b1c1f}header{position:sticky;top:0;background:#fff;border-bottom:1px solid #ececec;z-index:1000}.wrap{max-width:1240px;margin:auto;padding:10px 18px;display:flex;justify-content:space-between;align-items:center}.logo{height:92px}.nav{display:flex;gap:12px;align-items:center;flex-wrap:wrap}.nav a{text-decoration:none;color:#111;font-weight:800;font-size:14px;padding:8px 6px}.hero{min-height:34vh;background:linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)),url('dimitrisvetsikas1969-covid-19-5010565_1920.jpg') center/cover;display:flex;align-items:center;justify-content:center;color:#fff;text-align:center}.hero h1{font-size:52px;margin:0;text-transform:uppercase}.main{max-width:1240px;margin:36px auto 80px;padding:0 18px}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.post{background:#fff;border:1px solid #e8e8e8;border-radius:12px;padding:20px;box-shadow:0 8px 20px rgba(0,0,0,.05)}.post h2{margin:0 0 10px;font-size:22px}.post p{margin:0;color:#2d333b;line-height:1.7}.post a{display:inline-block;margin-top:12px;color:#9b6900;text-decoration:none;font-weight:800}@media(max-width:980px){.grid{grid-template-columns:1fr}.hero h1{font-size:36px}.logo{height:76px}}
+/* unified top navigation */
+.site-top-header{position:sticky;top:0;z-index:1500;background:#fff;border-bottom:1px solid #ececec;box-shadow:0 1px 6px rgba(0,0,0,.06)}
+.site-top-wrap{max-width:1240px;margin:0 auto;padding:10px 18px;display:flex;align-items:center;justify-content:space-between;gap:14px}
+.site-top-logo{display:inline-flex;align-items:center;text-decoration:none}
+.site-top-logo img{height:74px;width:auto;display:block}
+.site-top-nav{display:flex;align-items:center;gap:14px;flex:1;justify-content:flex-end;min-width:0}
+.site-top-nav-link{position:relative;text-decoration:none;color:#111;font-weight:800;font-size:13px;letter-spacing:.02em;padding:8px 6px;white-space:nowrap}
+.site-top-dropdown{position:relative}
+.site-top-dropdown-toggle{display:flex;align-items:center;gap:6px}
+.site-top-dropdown-menu{position:absolute;top:100%;left:0;min-width:260px;background:#fff;border:1px solid #ececec;border-radius:10px;box-shadow:0 10px 24px rgba(0,0,0,.14);padding:8px 0;opacity:0;visibility:hidden;transform:translateY(8px);transition:opacity .2s ease,transform .2s ease,visibility .2s ease;z-index:1700}
+.site-top-dropdown:hover .site-top-dropdown-menu{opacity:1;visibility:visible;transform:translateY(0)}
+.site-top-dropdown-menu a{display:block;padding:12px 16px;text-decoration:none;color:#121212;font-weight:700;border-bottom:1px solid #f1f1f1}
+.site-top-dropdown-menu a:last-child{border-bottom:none}
+.site-top-dropdown-menu a:hover{background:#fff7e6;color:#c88600}
+.site-top-btn{display:inline-flex;align-items:center;justify-content:center;padding:10px 14px;border-radius:9px;text-decoration:none;font-weight:900;font-size:12px;letter-spacing:.03em;white-space:nowrap}
+.site-top-btn-call{background:#ffae00;color:#111;border:1px solid #ffae00}
+.site-top-btn-quote{background:#111;color:#fff;border:1px solid #111}
+@media(max-width:980px){
+  .site-top-wrap{padding:8px 12px}
+  .site-top-logo img{height:60px}
+  .site-top-nav{gap:8px;overflow-x:auto;padding-bottom:4px}
+  .site-top-nav-link{font-size:12px}
+  .site-top-btn{font-size:11px;padding:8px 10px}
+}
+
+</style></head>
 <body>
-<header><div class="wrap"><a href="index.html"><img src="logo.png" class="logo" alt="Allo Nuisible Express"></a><nav class="nav"><a href="index.html">ACCUEIL</a><a href="index.html#services">NOS SERVICES</a><a href="contact.html">CONTACTEZ-NOUS</a><a href="tarifs.html">TARIFS</a></nav></div></header>
+<header class="site-top-header">
+  <div class="site-top-wrap">
+    <a class="site-top-logo" href="index.html" aria-label="Retour accueil">
+      <img src="logo.png" alt="Allo Nuisible Express">
+    </a>
+    <nav class="site-top-nav" aria-label="Navigation principale">
+      <a class="site-top-nav-link" href="index.html">ACCUEIL</a>
+      <div class="site-top-dropdown">
+        <a class="site-top-nav-link site-top-dropdown-toggle" href="index.html#services">NOS SERVICES <span>▼</span></a>
+        <div class="site-top-dropdown-menu">
+          <a href="deratisation.html">Rats / Souris</a>
+          <a href="frelons.html">Frelons</a>
+          <a href="guepes.html">Guêpes</a>
+          <a href="punaises.html">Punaises de lit</a>
+          <a href="cafards.html">Cafards</a>
+          <a href="depigeonnage.html">Dépigeonnage</a>
+          <a href="chenilles.html">Chenilles processionnaires</a>
+          <a href="diogene.html">Syndrome de Diogène</a>
+        </div>
+      </div>
+      <a class="site-top-nav-link" href="contact.html">CONTACTEZ-NOUS</a>
+      <a class="site-top-nav-link" href="tarifs.html">TARIFS</a>
+      <a class="site-top-btn site-top-btn-call" href="tel:0744296897">APPELEZ-NOUS</a>
+      <a class="site-top-btn site-top-btn-quote" href="devis.html">DEMANDES DE DEVIS</a>
+    </nav>
+  </div>
+</header>
+
 <section class="hero"><h1>Blog</h1></section>
 <main class="main"><div class="grid"><article class="post"><h2>Prévenir les infestations de rats</h2><p>Les bons gestes à appliquer dans les caves, cours et locaux techniques pour limiter les accès.</p><a href="deratisation.html">Lire</a></article><article class="post"><h2>Reconnaître une infestation de punaises</h2><p>Signes visuels, piqûres et comportements à adopter avant une intervention professionnelle.</p><a href="punaises.html">Lire</a></article><article class="post"><h2>Guêpes et frelons: agir vite</h2><p>Pourquoi ne pas tenter une destruction seul et comment sécuriser la zone en attendant le passage.</p><a href="frelons.html">Lire</a></article></div></main>
 </body></html>
