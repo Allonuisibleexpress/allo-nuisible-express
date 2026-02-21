@@ -120,18 +120,92 @@ font-size:20px;
 font-weight:bold
 }
 
-.faq{padding:60px}
-.faq-item{border-bottom:1px solid #ccc}
-.faq-question{cursor:pointer;padding:15px;font-weight:bold}
+.faq{
+padding:60px;
+max-width:1100px;
+margin:0 auto 40px;
+}
+.faq h2{
+font-size:36px;
+margin:0 0 10px;
+}
+.faq-intro{
+color:#444;
+font-size:18px;
+line-height:1.6;
+margin:0 0 30px;
+}
+.faq-item{
+border:1px solid #e5e5e5;
+border-radius:14px;
+margin-bottom:14px;
+background:#fff;
+box-shadow:0 4px 14px rgba(0,0,0,0.05);
+overflow:hidden;
+transition:transform 0.25s ease,box-shadow 0.25s ease,border-color 0.25s ease
+}
+.faq-item:hover{
+transform:translateY(-2px);
+box-shadow:0 8px 24px rgba(0,0,0,0.08);
+border-color:#ffcf67
+}
+.faq-question{
+cursor:pointer;
+padding:18px 24px;
+font-weight:700;
+font-size:22px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:16px;
+background:#fff
+}
+.faq-icon{
+width:32px;
+height:32px;
+border-radius:50%;
+background:#ffae00;
+display:flex;
+align-items:center;
+justify-content:center;
+color:#111;
+font-size:24px;
+font-weight:700;
+line-height:1;
+transition:transform 0.35s ease,background 0.35s ease,color 0.35s ease;
+flex-shrink:0
+}
 .faq-answer{
 max-height:0;
 overflow:hidden;
-transition:0.6s;
-padding:0 15px
+opacity:0;
+transition:max-height 0.65s ease,opacity 0.45s ease,padding 0.65s ease;
+padding:0 24px;
+font-size:17px;
+line-height:1.85;
+color:#2f2f2f;
+background:linear-gradient(180deg,#fff 0%,#fffdf7 100%)
+}
+.faq-item.active{
+border-color:#ffae00
 }
 .faq-item.active .faq-answer{
-max-height:600px;
-padding:15px
+max-height:900px;
+opacity:1;
+padding:6px 24px 24px
+}
+.faq-item.active .faq-icon{
+transform:rotate(45deg);
+background:#111;
+color:#ffae00
+}
+@media(max-width:760px){
+.faq{padding:42px 20px}
+.faq h2{font-size:30px}
+.faq-intro{font-size:16px}
+.faq-question{font-size:18px;padding:16px}
+.faq-answer{font-size:16px;padding:0 16px}
+.faq-item.active .faq-answer{padding:4px 16px 18px}
 }
 </style>
 </head>
@@ -163,10 +237,47 @@ padding:15px
 </section>
 
 <section class="faq" id="contact">
+<h2>Questions Fréquentes</h2>
+<p class="faq-intro">Retrouvez ici les réponses aux questions les plus posées sur nos prestations. Cliquez sur une question pour afficher le détail.</p>
 
 <div class="faq-item">
-<div class="faq-question">Intervenez-vous en urgence 24h/24 ?</div>
-<div class="faq-answer">Nous intervenons 24h/24 et 7j/7 dans les départements 94, 93, 92, 91, 75, 77, 78 et 95 avec déplacement et devis gratuits.</div>
+<div class="faq-question">Quels services proposez-vous exactement ? <span class="faq-icon">+</span></div>
+<div class="faq-answer">(FAQ) Nous proposons une prise en charge complète de la lutte anti-nuisibles pour les particuliers comme pour les professionnels. Nos prestations couvrent la dératisation (rats, souris), la désinsectisation (cafards, punaises de lit, guêpes, frelons, chenilles processionnaires), le dépigeonnage, la désinfection ainsi que les interventions liées au syndrome de Diogène. L'objectif est de fournir une solution durable, adaptée au niveau d'infestation et au type de lieu, avec une approche sérieuse et sécurisée.</div>
+</div>
+
+<div class="faq-item">
+<div class="faq-question">Quels sont vos prix de départ ? <span class="faq-icon">+</span></div>
+<div class="faq-answer">(FAQ) Le tarif de départ est de 120 EUR pour les interventions guêpes et frelons. Pour les autres nuisibles, un devis personnalisé est établi, car le coût dépend de plusieurs éléments: nature de l'infestation, surface à traiter, niveau d'urgence, accessibilité du site et protocole nécessaire. Nous privilégions une estimation transparente afin que vous sachiez précisément ce qui est inclus avant toute intervention.</div>
+</div>
+
+<div class="faq-item">
+<div class="faq-question">Dans quelles zones intervenez-vous ? <span class="faq-icon">+</span></div>
+<div class="faq-answer">(FAQ) Nous intervenons dans toute l'Ile-de-France et couvrons régulièrement les départements 75, 77, 78, 91, 92, 94 et 95. Selon la situation, nous pouvons organiser une intervention rapide dans les communes voisines. Notre priorité est de garantir un délai court, une présence fiable sur le terrain et un accompagnement clair, quel que soit votre secteur en région parisienne.</div>
+</div>
+
+<div class="faq-item">
+<div class="faq-question">En combien de temps pouvez-vous intervenir ? <span class="faq-icon">+</span></div>
+<div class="faq-answer">(FAQ) Nous pouvons intervenir très rapidement, y compris en urgence de nuit, le week-end, les jours fériés et pendant les périodes de fêtes. Chaque demande est traitée en priorité selon le niveau de risque (santé, sécurité, nuisance immédiate). Dès votre prise de contact, nous évaluons la situation et vous proposons le créneau le plus rapide possible pour limiter l'aggravation de l'infestation.</div>
+</div>
+
+<div class="faq-item">
+<div class="faq-question">Quels nuisibles traitez-vous ? <span class="faq-icon">+</span></div>
+<div class="faq-answer">(FAQ) Nous traitons les principaux nuisibles rencontrés en habitation, commerce, restaurant, entrepôt ou copropriété: rats, souris, cafards, punaises de lit, guêpes, frelons, pigeons et chenilles processionnaires. Nous intervenons également pour des problématiques d'hygiène et de remise en état, notamment en cas de syndrome de Diogène. Chaque protocole est adapté à l'espèce ciblée et au contexte de votre local.</div>
+</div>
+
+<div class="faq-item">
+<div class="faq-question">Comment se déroule une intervention ? <span class="faq-icon">+</span></div>
+<div class="faq-answer">(FAQ) Une intervention se déroule en quatre étapes: diagnostic, expertise, traitement et suivi. Nous commençons par identifier les foyers d'infestation, les points d'entrée et les facteurs favorisants. Ensuite, nous appliquons un traitement ciblé avec des méthodes professionnelles conformes aux exigences d'hygiène et de sécurité. Enfin, nous vous donnons des recommandations concrètes de prévention et assurons un suivi pour stabiliser durablement la situation.</div>
+</div>
+
+<div class="faq-item">
+<div class="faq-question">Proposez-vous une garantie après traitement ? <span class="faq-icon">+</span></div>
+<div class="faq-answer">(FAQ) Oui. Nous proposons une garantie d'un mois sur nos prestations, avec des interventions de contrôle comprises sur la période prévue. Dans votre cas, le principe est clair: l'intervention de suivi est incluse, et seuls les frais de déplacement de 50 EUR restent à votre charge si un nouveau passage est nécessaire. Cette organisation vous assure un cadre transparent et un service vraiment suivi, pas une intervention ponctuelle sans accompagnement.</div>
+</div>
+
+<div class="faq-item">
+<div class="faq-question">Comment vous contacter pour un devis ? <span class="faq-icon">+</span></div>
+<div class="faq-answer">(FAQ) Vous pouvez nous contacter facilement via le formulaire du site, par téléphone au 07 44 29 68 97, sur WhatsApp, par e-mail ou via nos réseaux sociaux. Pour obtenir un devis précis, indiquez le type de nuisible, la ville, le niveau d'urgence et, si possible, quelques photos de la situation. Nous revenons vers vous rapidement avec une proposition claire et adaptée.</div>
 </div>
 
 </section>
@@ -174,7 +285,10 @@ padding:15px
 <script>
 document.querySelectorAll(".faq-question").forEach(q=>{
 q.addEventListener("click",()=>{
-q.parentElement.classList.toggle("active")
+const item=q.parentElement
+const isActive=item.classList.contains("active")
+document.querySelectorAll(".faq-item").forEach(i=>i.classList.remove("active"))
+if(!isActive){item.classList.add("active")}
 })
 })
 </script>
