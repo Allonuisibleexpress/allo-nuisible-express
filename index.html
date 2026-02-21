@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Dératisation Thiais 24/7 | Allo Nuisible Express</title>
-<meta name="description" content="Dératisation à Thiais 24h/24 et 7j/7. Intervention rapide contre rats, souris et cafards à Thiais et alentours.">
+<meta name="description" content="Dératisation à Thiais 24h/24 et 7j/7. Intervention rapide contre rats, souris, cafards et nuisibles à Thiais et alentours.">
 <link rel="canonical" href="https://allonuisibleexpress.github.io/">
 
 <script type="application/ld+json">
@@ -22,12 +22,18 @@
 "postalCode":"94320",
 "addressLocality":"Thiais",
 "addressCountry":"FR"
-}
+},
+"openingHoursSpecification":[{
+"@type":"OpeningHoursSpecification",
+"dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+"opens":"00:00",
+"closes":"23:59"
+}]
 }
 </script>
 
 <style>
-body{margin:0;font-family:Arial;background:#f4f4f4}
+body{margin:0;font-family:Arial;background:#f4f4f4;scroll-behavior:smooth}
 .topbar{background:#c40000;color:white;padding:8px;text-align:center;font-size:14px}
 nav{display:flex;justify-content:space-between;align-items:center;padding:15px 40px;background:white;position:sticky;top:0;z-index:999;box-shadow:0 2px 6px rgba(0,0,0,0.1)}
 .logo{font-size:22px;font-weight:bold}
@@ -35,8 +41,8 @@ nav{display:flex;justify-content:space-between;align-items:center;padding:15px 4
 nav a{text-decoration:none;color:#333;margin:0 10px;font-weight:bold}
 .cta-btn{background:#f39c12;color:white;padding:10px 20px;border-radius:5px}
 .cta-dark{background:#111;color:white;padding:10px 20px;border-radius:5px}
-.hero{height:85vh;background:url('https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1600&q=60') center/cover no-repeat;position:relative;display:flex;align-items:center;padding-left:60px}
-.hero::before{content:"";position:absolute;width:100%;height:100%;background:linear-gradient(90deg,rgba(0,0,0,0.8),transparent)}
+.hero{height:85vh;background:url('https://raw.githubusercontent.com/Allonuisibleexpress/allo-nuisible-express/main/istockphoto-1707033668-612x612.jpg') center/cover no-repeat;position:relative;display:flex;align-items:center;padding-left:60px}
+.hero::before{content:"";position:absolute;width:100%;height:100%;background:rgba(0,0,0,0.5)}
 .hero-content{position:relative;color:white;max-width:600px}
 .hero h1{font-size:50px;margin:0}
 .highlight{background:#f39c12;padding:5px 10px}
@@ -44,27 +50,20 @@ nav a{text-decoration:none;color:#333;margin:0 10px;font-weight:bold}
 .buttons a{margin-right:15px;text-decoration:none}
 section{padding:60px 40px;max-width:1200px;margin:auto}
 
-/* Services Tiles */
 .service-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
 .tile{position:relative;height:260px;border-radius:10px;overflow:hidden;box-shadow:0 0 12px rgba(0,0,0,0.15)}
-.tile img{width:100%;height:100%;object-fit:cover;transform:scale(1);transition:0.4s}
-.tile:hover img{transform:scale(1.08)}
-.overlay{position:absolute;inset:0;background:linear-gradient(to top, rgba(0,0,0,0.7), rgba(0,0,0,0.2));display:flex;align-items:flex-end;justify-content:center;padding:20px}
-.label{color:white;font-size:20px;font-weight:bold;letter-spacing:1px}
+.tile::before{content:"";position:absolute;inset:0;background:rgba(0,0,0,0.35);z-index:1}
+.tile span{position:absolute;bottom:20px;left:20px;color:white;font-size:20px;font-weight:bold;z-index:2}
+.tile:hover{transform:scale(1.03);transition:0.4s}
 
-/* Process */
 .process{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
 .step{background:white;padding:25px;border-radius:8px;box-shadow:0 0 10px rgba(0,0,0,0.1);position:relative}
 .step .num{position:absolute;top:-10px;left:-10px;background:#f39c12;color:white;padding:10px 14px;font-weight:bold;border-radius:4px}
 
-/* Sticky Bottom */
 .sticky-bar{position:fixed;bottom:0;width:100%;display:flex;z-index:9999}
 .sticky-bar a{flex:1;text-align:center;padding:18px;text-decoration:none;font-weight:bold}
 .call{background:#f39c12;color:white}
 .quote{background:#111;color:white}
-
-.reveal{opacity:0;transform:translateY(40px);transition:all 0.8s ease}
-.reveal.active{opacity:1;transform:translateY(0)}
 footer{background:#111;color:white;text-align:center;padding:20px;margin-bottom:70px}
 </style>
 </head>
@@ -75,7 +74,6 @@ footer{background:#111;color:white;text-align:center;padding:20px;margin-bottom:
 <nav>
 <div class="logo">ALLO <span>NUISIBLE</span> EXPRESS</div>
 <div>
-<a href="#">Accueil</a>
 <a href="#services">Nos Services</a>
 <a href="#contact">Contact</a>
 <a href="tel:0744296897" class="cta-btn">Appelez-nous</a>
@@ -94,22 +92,22 @@ footer{background:#111;color:white;text-align:center;padding:20px;margin-bottom:
 </div>
 </div>
 
-<section id="services" class="reveal">
+<section id="services">
 <h2>Nos Services</h2>
 <div class="service-grid">
-<div class="tile"><img src="https://images.unsplash.com/photo-1583337130417-3346a1a6b5b6?auto=format&fit=crop&w=800&q=60" alt="Punaises"><div class="overlay"><div class="label">PUNAISES DE LIT</div></div></div>
-<div class="tile"><img src="https://images.unsplash.com/photo-1517423440428-a5a00ad493e8?auto=format&fit=crop&w=800&q=60" alt="Rats"><div class="overlay"><div class="label">DÉRATISATION</div></div></div>
-<div class="tile"><img src="https://images.unsplash.com/photo-1581091870627-3d2b5b68b7c0?auto=format&fit=crop&w=800&q=60" alt="Désinfection"><div class="overlay"><div class="label">DÉSINFECTION</div></div></div>
-<div class="tile"><img src="https://images.unsplash.com/photo-1603575448878-868a20723f5d?auto=format&fit=crop&w=800&q=60" alt="Insectes"><div class="overlay"><div class="label">DÉSINSECTISATION</div></div></div>
-<div class="tile"><img src="https://images.unsplash.com/photo-1556750732-3e8b63b1b6b2?auto=format&fit=crop&w=800&q=60" alt="Frelons"><div class="overlay"><div class="label">FRELONS</div></div></div>
-<div class="tile"><img src="https://images.unsplash.com/photo-1529933034721-3d70d6df6c1b?auto=format&fit=crop&w=800&q=60" alt="Pigeons"><div class="overlay"><div class="label">DÉPIGEONNAGE</div></div></div>
-<div class="tile"><img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=800&q=60" alt="Mérule"><div class="overlay"><div class="label">MÉRULE</div></div></div>
-<div class="tile"><img src="https://images.unsplash.com/photo-1556911220-bff31c812dba?auto=format&fit=crop&w=800&q=60" alt="Diogène"><div class="overlay"><div class="label">SYNDROME DIOGÈNE</div></div></div>
+<div class="tile" style="background:url('https://raw.githubusercontent.com/Allonuisibleexpress/allo-nuisible-express/main/istockphoto-1707033668-612x612.jpg') center/cover;"><span>RATS / SOURIS</span></div>
+<div class="tile" style="background:url('https://raw.githubusercontent.com/Allonuisibleexpress/allo-nuisible-express/main/erik_karits-german-cockroach-6982350_1920.jpg') center/cover;"><span>CAFARDS</span></div>
+<div class="tile" style="background:url('https://raw.githubusercontent.com/Allonuisibleexpress/allo-nuisible-express/main/istockphoto-1212373742-612x612.jpg') center/cover;"><span>PUNAISES DE LIT</span></div>
+<div class="tile" style="background:url('https://raw.githubusercontent.com/Allonuisibleexpress/allo-nuisible-express/main/ralphs_fotos-hornet-3336385_1920.jpg') center/cover;"><span>GUÊPES</span></div>
+<div class="tile" style="background:url('https://raw.githubusercontent.com/Allonuisibleexpress/allo-nuisible-express/main/derweg-asian-giant-hornet-8335577_1920.jpg') center/cover;"><span>FRELONS</span></div>
+<div class="tile" style="background:url('https://raw.githubusercontent.com/Allonuisibleexpress/allo-nuisible-express/main/balouriarajesh-birds-7921816_1920.jpg') center/cover;"><span>DÉPIGEONNAGE</span></div>
+<div class="tile" style="background:url('https://raw.githubusercontent.com/Allonuisibleexpress/allo-nuisible-express/main/422737-caterpillars-436267_1920.jpg') center/cover;"><span>CHENILLES</span></div>
+<div class="tile" style="background:url('https://raw.githubusercontent.com/Allonuisibleexpress/allo-nuisible-express/main/652234-lost-places-4165688_1920.jpg') center/cover;"><span>SYNDROME DIOGÈNE</span></div>
 </div>
 </section>
 
-<section class="reveal">
-<h2>Découvrez notre processus</h2>
+<section>
+<h2>Notre méthode</h2>
 <div class="process">
 <div class="step"><div class="num">1</div><h3>Contact</h3><p>Appelez-nous pour un premier diagnostic rapide.</p></div>
 <div class="step"><div class="num">2</div><h3>Inspection</h3><p>Analyse complète de votre logement.</p></div>
@@ -118,7 +116,7 @@ footer{background:#111;color:white;text-align:center;padding:20px;margin-bottom:
 </div>
 </section>
 
-<section id="contact" class="reveal">
+<section id="contact">
 <h2>Contact</h2>
 <p>📍 3 Rue de la résistance, 94320 Thiais</p>
 <p>📞 07 44 29 68 97</p>
@@ -131,16 +129,6 @@ footer{background:#111;color:white;text-align:center;padding:20px;margin-bottom:
 <a href="#contact" class="quote">DEMANDE DE DEVIS</a>
 <a href="tel:0744296897" class="call">07 44 29 68 97</a>
 </div>
-
-<script>
-const reveals=document.querySelectorAll('.reveal');
-window.addEventListener('scroll',()=>{
-reveals.forEach(el=>{
-const top=el.getBoundingClientRect().top;
-if(top<window.innerHeight-100){el.classList.add('active');}
-});
-});
-</script>
 
 </body>
 </html>
