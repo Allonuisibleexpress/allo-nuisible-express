@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Demande de Devis | Allo Nuisible Express</title>
+<meta name="description" content="Demande de devis pour dératisation, désinsectisation et traitement des nuisibles en Île-de-France.">
+<style>
+:root{--brand:#ffae00;--dark:#101010;--bg:#f4f5f7;--muted:#5b616b}
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,sans-serif;background:var(--bg);color:#141414}
+header{position:fixed;top:0;left:0;right:0;background:#fff;border-bottom:1px solid #ececec;z-index:1000}
+.wrap{max-width:1240px;margin:auto;padding:12px 18px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.logo{height:54px}
+nav{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+nav a{text-decoration:none;color:#111;font-weight:800;font-size:14px;padding:8px 6px}
+.btn{padding:11px 16px;border-radius:9px;text-decoration:none;font-weight:900;font-size:13px;letter-spacing:.03em}
+.btn-call{background:#ffae00;color:#111}
+.btn-quote{background:#0f0f0f;color:#fff}
+.hero{margin-top:82px;min-height:38vh;background:linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),url('dimitrisvetsikas1969-covid-19-5010565_1920.jpg') center/cover;display:flex;align-items:center;justify-content:center;text-align:center;color:#fff}
+.hero h1{margin:0;font-size:64px;letter-spacing:.03em;text-transform:uppercase;text-shadow:0 5px 20px rgba(0,0,0,.6)}
+.main{max-width:1240px;margin:42px auto;padding:0 18px 80px;display:grid;grid-template-columns:1.05fr .95fr;gap:36px}
+.content h2{font-size:54px;margin:0 0 8px}
+.content .intro{font-size:22px;font-weight:800;line-height:1.45;margin:0 0 26px}
+.content p{font-size:22px;line-height:1.75;color:#2a2f37;margin:0 0 22px}
+.card{background:#fff;border:1px solid #e9e9e9;border-radius:14px;box-shadow:0 10px 28px rgba(0,0,0,.07);padding:26px}
+form{display:grid;gap:14px}
+label{font-weight:700;color:#222;font-size:14px}
+input,select,textarea{width:100%;border:none;border-bottom:2px solid #d8d8d8;padding:10px 2px;font-size:16px;outline:none;background:transparent;transition:border-color .2s ease}
+textarea{border:2px solid #d8d8d8;border-radius:8px;padding:12px;min-height:140px;resize:vertical}
+input:focus,select:focus,textarea:focus{border-color:var(--brand)}
+.submit{background:var(--brand);color:#111;border:none;border-radius:10px;font-weight:900;font-size:20px;padding:14px 16px;cursor:pointer;transition:transform .2s ease,box-shadow .2s ease}
+.submit:hover{transform:translateY(-1px);box-shadow:0 10px 18px rgba(255,174,0,.35)}
+.meta{margin-top:14px;font-size:13px;color:var(--muted)}
+@media(max-width:980px){.hero h1{font-size:44px}.main{grid-template-columns:1fr}.content h2{font-size:40px}.content p{font-size:18px}}
+</style>
+</head>
+<body>
+<header>
+<div class="wrap">
+<img src="0540980C-2821-48B5-9BD5-342D99DAFF1F.png" class="logo" alt="Allo Nuisible Express">
+<nav>
+<a href="index.html">ACCUEIL</a>
+<a href="index.html#services">NOS SERVICES</a>
+<a href="index.html#contact">CONTACTEZ-NOUS</a>
+<a href="index.html#tarifs">TARIFS</a>
+<a class="btn btn-call" href="tel:0744296897">APPELEZ-NOUS</a>
+<a class="btn btn-quote" href="devis.html">DEMANDES DE DEVIS</a>
+</nav>
+</div>
+</header>
+
+<section class="hero">
+<h1>Contact</h1>
+</section>
+
+<main class="main" id="contact-form">
+<section class="content">
+<h2>DEMANDE DE DEVIS</h2>
+<p class="intro">Contactez Allo Nuisible pour vos besoins en dératisation et désinsectisation en Île-de-France.</p>
+<p>Allo Nuisible accompagne les particuliers, commerces et professionnels avec une approche rigoureuse pour traiter durablement les infestations. Notre équipe intervient avec des protocoles adaptés à chaque situation, qu'il s'agisse de rats, souris, punaises de lit, cafards, guêpes, frelons, pigeons ou chenilles processionnaires. Chaque intervention est préparée de manière méthodique afin de sécuriser les lieux et d'obtenir un résultat fiable.</p>
+<p>Nous privilégions la clarté et l'efficacité: diagnostic précis, plan d'action personnalisé, délais d'intervention rapides et recommandations concrètes pour éviter les récidives. Pour recevoir votre estimation, remplissez simplement le formulaire ci-contre. Le devis est gratuit, le déplacement est gratuit, et nous vous répondons rapidement avec une proposition professionnelle adaptée à votre besoin réel.</p>
+</section>
+
+<section class="card">
+<form>
+<div>
+<label for="objet">Objet</label>
+<select id="objet" name="objet">
+<option>Dératisation</option>
+<option>Désinsectisation</option>
+<option>Punaises de lit</option>
+<option>Guêpes / Frelons</option>
+<option>Dépigeonnage</option>
+<option>Syndrome de Diogène</option>
+<option>Autre demande</option>
+</select>
+</div>
+<div>
+<label for="nom">Nom</label>
+<input id="nom" name="nom" type="text" placeholder="Votre nom" required>
+</div>
+<div>
+<label for="prenom">Prénom</label>
+<input id="prenom" name="prenom" type="text" placeholder="Votre prénom" required>
+</div>
+<div>
+<label for="telephone">Téléphone</label>
+<input id="telephone" name="telephone" type="tel" placeholder="07 00 00 00 00" required>
+</div>
+<div>
+<label for="email">E-mail</label>
+<input id="email" name="email" type="email" placeholder="votre@email.com" required>
+</div>
+<div>
+<label for="message">Message</label>
+<textarea id="message" name="message" placeholder="Décrivez votre besoin (type de nuisible, ville, urgence, surface, etc.)" required></textarea>
+</div>
+<button class="submit" type="submit">Demander un devis</button>
+<div class="meta">En envoyant ce formulaire, vous acceptez d'être recontacté rapidement par notre équipe.</div>
+</form>
+</section>
+</main>
+</body>
+</html>

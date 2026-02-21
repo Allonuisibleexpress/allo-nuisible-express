@@ -41,41 +41,163 @@ left:0;
 right:0;
 background:white;
 display:flex;
-justify-content:space-between;
-align-items:center;
-padding:10px 24px;
+justify-content:center;
+padding:10px 18px;
 z-index:999;
 box-shadow:0 0 10px rgba(0,0,0,0.2)
 }
-.logo{height:60px}
-nav{display:flex;align-items:center;gap:10px;flex-wrap:wrap;justify-content:flex-end}
-nav a{
-position:relative;
-margin:0 8px;
-text-decoration:none;
-color:black;
-font-weight:bold;
-transition:0.3s
+.header-wrap{
+width:min(1280px,100%);
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:16px
 }
-nav a:after{
+.logo{height:56px;flex-shrink:0}
+.main-nav{
+display:flex;
+align-items:center;
+gap:10px;
+flex:1;
+justify-content:flex-end;
+min-width:0
+}
+.nav-link{
+position:relative;
+text-decoration:none;
+color:#111;
+font-weight:800;
+letter-spacing:0.02em;
+font-size:15px;
+padding:10px 8px;
+white-space:nowrap;
+transition:color .25s ease
+}
+.nav-link:after{
 content:"";
 position:absolute;
-left:0;
-bottom:-5px;
-width:0%;
-height:3px;
+left:8px;
+right:8px;
+bottom:4px;
+height:2px;
 background:#ffae00;
-transition:0.4s
+transform:scaleX(0);
+transform-origin:center;
+transition:transform .25s ease
 }
-nav a:hover{
-color:#ffae00;
-transform:translateY(-2px)
+.nav-link:hover{color:#d38f00}
+.nav-link:hover:after{transform:scaleX(1)}
+.dropdown{position:relative}
+.dropdown-toggle{
+display:flex;
+align-items:center;
+gap:8px
 }
-nav a:hover:after{width:100%}
-@media(max-width:980px){
-header{padding:10px 16px}
+.chevron{
+font-size:12px;
+transition:transform .25s ease
+}
+.dropdown:hover .chevron{transform:rotate(180deg)}
+.dropdown-menu{
+position:absolute;
+top:100%;
+left:0;
+min-width:290px;
+background:#fff;
+border:1px solid #ececec;
+box-shadow:0 12px 26px rgba(0,0,0,.14);
+border-radius:10px;
+padding:8px 0;
+opacity:0;
+visibility:hidden;
+transform:translateY(10px);
+transition:opacity .2s ease,transform .2s ease,visibility .2s ease;
+z-index:1001
+}
+.dropdown:hover .dropdown-menu{
+opacity:1;
+visibility:visible;
+transform:translateY(0)
+}
+.dropdown-item{
+display:block;
+padding:14px 18px;
+color:#101010;
+font-weight:800;
+text-decoration:none;
+border-bottom:1px solid #f1f1f1
+}
+.dropdown-item:last-child{border-bottom:none}
+.dropdown-item:hover{background:#fff7e6;color:#d38f00}
+.cta-btn{
+text-decoration:none;
+font-weight:900;
+font-size:14px;
+padding:12px 18px;
+border-radius:9px;
+white-space:nowrap;
+position:relative;
+overflow:hidden;
+transition:transform .25s ease,box-shadow .25s ease
+}
+.cta-btn:hover{
+transform:translateY(-2px);
+box-shadow:0 8px 18px rgba(0,0,0,.18)
+}
+.call-btn{
+background:#ffae00;
+color:#111;
+min-width:170px;
+text-align:center
+}
+.call-btn .default-text,.call-btn .hover-text{
+display:block;
+transition:transform .25s ease,opacity .25s ease
+}
+.call-btn .hover-text{
+position:absolute;
+left:0;right:0;top:50%;
+transform:translateY(140%);
+opacity:0
+}
+.call-btn:hover .default-text{
+transform:translateY(-140%);
+opacity:0
+}
+.call-btn:hover .hover-text{
+transform:translateY(-50%);
+opacity:1
+}
+.quote-btn{
+background:#0f0f0f;
+color:#fff;
+border:1px solid #0f0f0f
+}
+.quote-btn:before{
+content:"";
+position:absolute;
+top:0;
+left:-130%;
+width:120%;
+height:100%;
+background:linear-gradient(120deg,transparent,rgba(255,255,255,.25),transparent);
+transition:left .5s ease
+}
+.quote-btn:hover:before{left:120%}
+@media(max-width:1180px){
 .logo{height:52px}
-nav a{margin:0 6px;font-size:14px}
+.nav-link{font-size:14px}
+.cta-btn{padding:10px 14px}
+}
+@media(max-width:980px){
+.main-nav{
+overflow-x:auto;
+justify-content:flex-start;
+padding-bottom:6px
+}
+.main-nav::-webkit-scrollbar{height:5px}
+.main-nav::-webkit-scrollbar-thumb{background:#ddd;border-radius:20px}
+.logo{height:48px}
 }
 
 .hero{
@@ -85,7 +207,7 @@ display:flex;
 align-items:center;
 padding-left:80px;
 color:white;
-margin-top:80px;
+margin-top:82px;
 position:relative
 }
 .hero:before{
@@ -173,6 +295,22 @@ color:white;
 font-size:20px;
 font-weight:bold
 }
+.tarifs{
+max-width:1100px;
+margin:0 auto;
+padding:0 20px 8px
+}
+.tarif-box{
+background:linear-gradient(135deg,#0f0f0f,#2b2b2b);
+color:#fff;
+border-radius:14px;
+padding:22px;
+display:flex;
+justify-content:space-between;
+gap:20px;
+align-items:center
+}
+.tarif-box b{color:#ffca66}
 
 .faq{
 padding:60px;
@@ -267,18 +405,35 @@ color:#ffae00
 <body>
 
 <header>
-<img src="0540980C-2821-48B5-9BD5-342D99DAFF1F.png" class="logo">
-<nav>
-<a href="index.html">ACCUEIL</a>
-<a href="#services">NOS SERVICES</a>
-<a href="#contact">CONTACTEZ-NOUS</a>
+<div class="header-wrap">
+<img src="0540980C-2821-48B5-9BD5-342D99DAFF1F.png" class="logo" alt="Allo Nuisible Express">
+<nav class="main-nav">
+<a class="nav-link" href="index.html">ACCUEIL</a>
+<div class="dropdown">
+<a class="nav-link dropdown-toggle" href="#services">NOS SERVICES <span class="chevron">▼</span></a>
+<div class="dropdown-menu">
+<a class="dropdown-item" href="deratisation.html">Rats / Souris</a>
+<a class="dropdown-item" href="frelons.html">Frelons</a>
+<a class="dropdown-item" href="guepes.html">Guêpes</a>
+<a class="dropdown-item" href="punaises.html">Punaises de lit</a>
+<a class="dropdown-item" href="cafards.html">Cafards</a>
+<a class="dropdown-item" href="depigeonnage.html">Dépigeonnage</a>
+<a class="dropdown-item" href="chenilles.html">Chenilles processionnaires</a>
+<a class="dropdown-item" href="diogene.html">Syndrome de Diogène</a>
+</div>
+</div>
+<a class="nav-link" href="#contact">CONTACTEZ-NOUS</a>
+<a class="nav-link" href="#tarifs">TARIFS</a>
+<a class="cta-btn call-btn" href="tel:0744296897"><span class="default-text">APPELEZ-NOUS</span><span class="hover-text">07 44 29 68 97</span></a>
+<a class="cta-btn quote-btn" href="devis.html">DEMANDES DE DEVIS</a>
 </nav>
+</div>
 </header>
 
 <section class="hero">
 <div>
 <h1>DÉBARRASSEZ-VOUS DES <span class="highlight">NUISIBLES</span><br>DÈS MAINTENANT</h1>
-<p class="hero-subtitle">Allo Nuisible vous accompagne avec une expertise professionnelle en dératisation et en désinsectisation sur l'ensemble de l'Île-de-France (75, 95, 94, 93, 92, 91, 78, 77),</p>
+<p class="hero-subtitle">Allo Nuisible vous accompagne avec une expertise professionnelle en dératisation et en désinsectisation sur l'ensemble de l'Île-de-France (75, 95, 94, 93, 92, 91, 78, 77).</p>
 </div>
 </section>
 
@@ -291,6 +446,13 @@ color:#ffae00
 <a href="depigeonnage.html" class="card"><img src="balouriarajesh-birds-7921816_1920.jpg"><span>Dépigeonnage (Pigeons)</span></a>
 <a href="chenilles.html" class="card"><img src="422737-caterpillars-436267_1920.jpg"><span>Chenilles processionnaires</span></a>
 <a href="diogene.html" class="card"><img src="652234-lost-places-4165688_1920.jpg"><span>Diogène</span></a>
+</section>
+
+<section class="tarifs" id="tarifs">
+<div class="tarif-box">
+<div><strong>Tarifs</strong><br>Guêpes / frelons à partir de <b>120 EUR</b>. Autres interventions sur devis.</div>
+<div>Devis gratuit • Déplacement gratuit</div>
+</div>
 </section>
 
 <section class="faq" id="contact">
