@@ -398,6 +398,127 @@ font-weight:bold;
 text-align:center;
 width:calc(100% - 24px)
 }
+
+.process-top{
+background:#efefef;
+padding:30px 18px 26px
+}
+.process-top-grid{
+max-width:1240px;
+margin:0 auto;
+display:grid;
+grid-template-columns:repeat(4,minmax(0,1fr));
+gap:20px
+}
+.process-mini{
+text-align:center
+}
+.process-mini-icon{
+width:40px;
+height:40px;
+margin:0 auto 10px;
+color:#111
+}
+.process-mini h3{
+margin:0 0 8px;
+font-size:34px;
+font-weight:800;
+letter-spacing:.01em;
+text-transform:uppercase
+}
+.process-mini p{
+margin:0;
+font-size:26px;
+line-height:1.35;
+color:#5f5f5f
+}
+
+.process-section{
+background:#f6f6f6;
+padding:92px 18px 86px
+}
+.process-wrap{
+max-width:1240px;
+margin:0 auto
+}
+.process-head{
+text-align:center;
+max-width:980px;
+margin:0 auto 56px
+}
+.process-head h2{
+margin:0 0 14px;
+font-size:56px;
+line-height:1.1;
+text-transform:uppercase;
+font-weight:900
+}
+.process-head p{
+margin:0;
+font-size:26px;
+line-height:1.45;
+color:#666
+}
+.process-steps{
+display:grid;
+grid-template-columns:repeat(4,minmax(0,1fr));
+gap:22px
+}
+.step-card{
+position:relative;
+background:#fff;
+border:1px solid #e2e2e2;
+padding:26px 24px 28px;
+min-height:390px
+}
+.step-badge{
+position:absolute;
+top:0;
+left:0;
+background:#ffae00;
+color:#fff;
+font-size:30px;
+font-weight:900;
+line-height:1;
+padding:12px 20px 10px
+}
+.step-card h3{
+margin:64px 0 16px;
+font-size:32px;
+font-weight:900;
+text-transform:uppercase;
+text-align:center
+}
+.step-card p{
+margin:0 0 16px;
+font-size:24px;
+line-height:1.45;
+text-align:center;
+color:#5f5f5f
+}
+.step-list{
+list-style:none;
+margin:0;
+padding:0;
+display:grid;
+gap:8px
+}
+.step-list li{
+position:relative;
+padding-left:26px;
+font-size:23px;
+line-height:1.4;
+font-weight:600;
+color:#3a3a3a
+}
+.step-list li:before{
+content:"\2713";
+position:absolute;
+left:0;
+top:0;
+color:#ffae00;
+font-weight:900
+}
 .tarifs{
 max-width:1100px;
 margin:0 auto;
@@ -608,6 +729,21 @@ body{padding-bottom:86px}
   .card{height:240px}
   .tarif-box{flex-direction:column;text-align:center}
 }
+@media(max-width:1200px){
+  .process-top-grid,.process-steps{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:760px){
+  .process-top,.process-section{padding-left:14px;padding-right:14px}
+  .process-top-grid,.process-steps{grid-template-columns:1fr}
+  .process-mini h3{font-size:24px}
+  .process-mini p{font-size:18px}
+  .process-head h2{font-size:34px}
+  .process-head p{font-size:18px}
+  .step-badge{font-size:30px;padding:10px 14px}
+  .step-card h3{font-size:30px;margin-top:52px}
+  .step-card p{font-size:20px}
+  .step-list li{font-size:18px}
+}
 
 </style>
 </head>
@@ -677,6 +813,82 @@ body{padding-bottom:86px}
 <a href="depigeonnage.html" class="card"><img src="balouriarajesh-birds-7921816_1920.jpg"><span>Dépigeonnage (Pigeons)</span></a>
 <a href="chenilles.html" class="card"><img src="422737-caterpillars-436267_1920.jpg"><span>Chenilles processionnaires</span></a>
 <a href="diogene.html" class="card"><img src="652234-lost-places-4165688_1920.jpg"><span>Diogène</span></a>
+</section>
+
+<section class="process-top">
+  <div class="process-top-grid">
+    <article class="process-mini">
+      <svg class="process-mini-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M3 7h13v10H3zM16 9h3l2 2v4h-5zM7 18a2 2 0 1 0 0 4 2 2 0 0 0 0-4m11 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4"/></svg>
+      <h3>Intervention 7/7</h3>
+      <p>Techniciens disponibles 7j/7, de 7h00 à 00h00.</p>
+    </article>
+    <article class="process-mini">
+      <svg class="process-mini-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M11 2h2v5h-2zM4.93 4.93l1.41-1.41 3.54 3.54-1.41 1.41zM2 11h5v2H2zm15 0h5v2h-5zM6.34 20.48l-1.41-1.41 3.54-3.54 1.41 1.41zM12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10"/></svg>
+      <h3>Diagnostic gratuit</h3>
+      <p>Déplacement et pré-diagnostic offerts.</p>
+    </article>
+    <article class="process-mini">
+      <svg class="process-mini-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2l8 4v6c0 5.25-3.4 9.74-8 11-4.6-1.26-8-5.75-8-11V6z"/></svg>
+      <h3>Garantie</h3>
+      <p>Nos protocoles incluent un suivi garanti.</p>
+    </article>
+    <article class="process-mini">
+      <svg class="process-mini-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2c3.3 0 6 2.7 6 6 0 4.4-6 12-6 12S6 12.4 6 8c0-3.3 2.7-6 6-6m0 3a3 3 0 1 0 0 6 3 3 0 0 0 0-6"/></svg>
+      <h3>Certification État</h3>
+      <p>Techniciens qualifiés selon les normes en vigueur.</p>
+    </article>
+  </div>
+</section>
+
+<section class="process-section">
+  <div class="process-wrap">
+    <header class="process-head">
+      <h2>Découvrez notre méthode d’intervention</h2>
+      <p>Allo Nuisible Express met en place un parcours clair, rapide et rigoureux pour traiter durablement rats, souris, cafards, punaises et autres nuisibles.</p>
+    </header>
+    <div class="process-steps">
+      <article class="step-card">
+        <span class="step-badge">1</span>
+        <h3>Contact</h3>
+        <p>Dès votre demande, nous réalisons une première évaluation de la situation.</p>
+        <ul class="step-list">
+          <li>Disponibilité 7j/7 de 7h00 à 00h00</li>
+          <li>Prise de rendez-vous rapide</li>
+          <li>Tarification transparente</li>
+        </ul>
+      </article>
+      <article class="step-card">
+        <span class="step-badge">2</span>
+        <h3>Inspection</h3>
+        <p>Un technicien effectue un état des lieux complet pour définir la meilleure stratégie.</p>
+        <ul class="step-list">
+          <li>Déplacement et diagnostic gratuits</li>
+          <li>Remise d’un devis clair</li>
+          <li>Plan d’action personnalisé</li>
+        </ul>
+      </article>
+      <article class="step-card">
+        <span class="step-badge">3</span>
+        <h3>Traitement</h3>
+        <p>Nous appliquons le protocole adapté selon le nuisible et la configuration du site.</p>
+        <ul class="step-list">
+          <li>Intervention rapide 7j/7</li>
+          <li>Techniciens qualifiés et agréés</li>
+          <li>Méthode précise et sécurisée</li>
+        </ul>
+      </article>
+      <article class="step-card">
+        <span class="step-badge">4</span>
+        <h3>Suivi</h3>
+        <p>Nous restons disponibles après passage pour consolider le résultat dans la durée.</p>
+        <ul class="step-list">
+          <li>Recommandations de prévention</li>
+          <li>Suivi téléphonique</li>
+          <li>Traitements garantis</li>
+        </ul>
+      </article>
+    </div>
+  </div>
 </section>
 
 <section class="tarifs" id="tarifs">
