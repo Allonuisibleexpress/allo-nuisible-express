@@ -43,6 +43,7 @@ li{margin-bottom:8px}
 @media(max-width:680px){nav{display:none}.hero{min-height:54vh}h1{font-size:30px}.hero p{font-size:16px}.btn{width:100%;text-align:center}}
 
 .site-footer{background:#0f0f0f;color:#fff;padding:26px 18px;margin-top:40px}.site-footer-wrap{max-width:1180px;margin:auto;display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap}.site-footer .legal{display:flex;gap:14px;flex-wrap:wrap;align-items:center}.site-footer a{color:#ffd27a;text-decoration:none;font-weight:700}.site-footer a:hover{color:#fff}.socials{display:flex;gap:10px}.social-btn{display:inline-flex;align-items:center;justify-content:center;padding:9px 12px;border-radius:8px;background:#1b1b1b;border:1px solid #2a2a2a;transition:transform .2s ease,background .2s ease}.social-btn:hover{transform:translateY(-2px);background:#ffae00;color:#111}.copy{font-size:14px;color:#e8e8e8}@media(max-width:760px){.site-footer-wrap{flex-direction:column;align-items:flex-start}}
+body{padding-bottom:104px}.site-sticky-cta{position:fixed;left:50%;bottom:14px;transform:translateX(-50%);z-index:4000;display:flex;gap:12px;align-items:center;justify-content:center;width:min(980px,calc(100% - 20px));pointer-events:none}.site-sticky-cta .sticky-link{pointer-events:auto;position:relative;display:inline-flex;align-items:center;justify-content:center;gap:10px;text-decoration:none;font-weight:900;letter-spacing:.04em;border-radius:10px;padding:16px 20px;box-shadow:0 10px 28px rgba(0,0,0,.24);overflow:hidden;backdrop-filter:blur(2px);transition:transform .25s ease,box-shadow .25s ease,filter .25s ease}.site-sticky-cta .sticky-link svg{width:18px;height:18px;transition:transform .25s ease}.site-sticky-cta .sticky-link:before{content:"";position:absolute;top:0;left:-130%;width:120%;height:100%;background:linear-gradient(120deg,transparent,rgba(255,255,255,.28),transparent);transition:left .55s ease}.site-sticky-cta .sticky-link:hover:before{left:130%}.site-sticky-cta .sticky-link:hover{transform:translateY(-3px) scale(1.01)}.site-sticky-cta .sticky-link:hover svg{transform:scale(1.14)}.sticky-quote{flex:1;min-height:56px;background:#fff;color:#d69000;border:1px solid #e7e7e7}.sticky-quote:hover{box-shadow:0 16px 34px rgba(0,0,0,.22);filter:saturate(1.1)}.sticky-call{flex:1;min-height:56px;background:#ffae00;color:#fff;border:1px solid #ffae00;text-shadow:0 1px 0 rgba(0,0,0,.2)}.sticky-call:hover{box-shadow:0 16px 34px rgba(255,174,0,.42);filter:saturate(1.05)}@media(max-width:860px){body{padding-bottom:126px}.site-sticky-cta{width:calc(100% - 12px);gap:8px;bottom:8px}.site-sticky-cta .sticky-link{padding:14px 10px;font-size:13px}}@media(max-width:620px){.site-sticky-cta{flex-direction:column;align-items:stretch}.site-sticky-cta .sticky-link{width:100%}}@media(prefers-reduced-motion:reduce){.site-sticky-cta .sticky-link,.site-sticky-cta .sticky-link svg,.site-sticky-cta .sticky-link:before{transition:none}}
 </style>
 </head>
 <body>
@@ -123,14 +124,7 @@ li{margin-bottom:8px}
 <a href="diogene.html">Syndrome de Diogène</a>
 </div>
 </aside>
-</main>
-
-<div class="floating">
-<a class="whatsapp" href="https://wa.me/33744296897">WhatsApp</a>
-<a class="phone" href="tel:0744296897">Appel immédiat</a>
-</div>
-
-<footer class="site-footer">
+</main><footer class="site-footer">
   <div class="site-footer-wrap">
     <div class="copy">© <span class="js-year"></span> Allo Nuisible Express - Tous droits réservés.</div>
     <div class="legal">
@@ -161,5 +155,16 @@ li{margin-bottom:8px}
   document.querySelectorAll(".js-year").forEach(function(el){el.textContent=y;});
 })();
 </script>
+
+<div class="site-sticky-cta" role="complementary" aria-label="Actions rapides">
+  <a class="sticky-link sticky-quote" href="devis.html" aria-label="Demande de devis">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20 4H4a2 2 0 0 0-2 2v12l4-3h14a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Z"/></svg>
+    <span>DEMANDE DE DEVIS</span>
+  </a>
+  <a class="sticky-link sticky-call" href="tel:0744296897" aria-label="Appeler le 07 44 29 68 97">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.6 15.6 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.24 11.3 11.3 0 0 0 3.56.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.3 21 3 13.7 3 4a1 1 0 0 1 1-1h3.7a1 1 0 0 1 1 1 11.3 11.3 0 0 0 .57 3.56 1 1 0 0 1-.24 1l-2.4 2.24Z"/></svg>
+    <span>07 44 29 68 97</span>
+  </a>
+</div>
 </body>
 </html>
