@@ -3,51 +3,30 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Allo Nuisible Express – Dératisation 24/7 à Thiais</title>
-<meta name="description" content="Allo Nuisible Express intervient 24h/24 et 7j/7 pour l’élimination des nuisibles : rats, punaises de lit, cafards, guêpes, frelons et pigeons en Île-de-France.">
+<title>Allo Nuisible Express</title>
 
-<!-- ===== BALISAGE SEO COMPLET ===== -->
 <script type="application/ld+json">
 {
-"@context": "https://schema.org",
-"@type": "ProfessionalService",
-"name": "Allo Nuisible Express",
-"telephone": "0744296897",
-"email": "allonuisibleexpress@gmail.com",
-"address": {
-"@type": "PostalAddress",
-"streetAddress": "3 Rue de la résistance",
-"postalCode": "94320",
-"addressLocality": "Thiais",
-"addressCountry": "FR"
+"@context":"https://schema.org",
+"@type":"ProfessionalService",
+"name":"Allo Nuisible Express",
+"telephone":"0744296897",
+"email":"allonuisibleexpress@gmail.com",
+"address":{
+"@type":"PostalAddress",
+"streetAddress":"3 Rue de la résistance",
+"postalCode":"94320",
+"addressLocality":"Thiais",
+"addressCountry":"FR"
 },
-"openingHoursSpecification": {
-"@type": "OpeningHoursSpecification",
-"dayOfWeek": [
-"Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"
-],
-"opens": "00:00",
-"closes": "23:59"
+"openingHoursSpecification":{
+"@type":"OpeningHoursSpecification",
+"dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+"opens":"00:00",
+"closes":"23:59"
 },
 "areaServed":[
-"Paris (75)",
-"Seine-Saint-Denis (93)",
-"Hauts-de-Seine (92)",
-"Val-de-Marne (94)",
-"Essonne (91)",
-"Seine-et-Marne (77)",
-"Yvelines (78)",
-"Val-d’Oise (95)"
-],
-"serviceType":[
-"Dératisation",
-"Désinsectisation",
-"Dépigeonnage",
-"Traitement punaises de lit",
-"Traitement cafards",
-"Destruction nids de guêpes",
-"Destruction nids de frelons",
-"Syndrome de Diogène"
+"94","93","92","91","75","77","78","95"
 ]
 }
 </script>
@@ -67,39 +46,58 @@ z-index:999;
 box-shadow:0 0 10px rgba(0,0,0,0.2)
 }
 .logo{height:60px}
-nav a{margin:0 15px;text-decoration:none;color:black;font-weight:bold}
+nav a{
+position:relative;
+margin:0 15px;
+text-decoration:none;
+color:black;
+font-weight:bold;
+transition:0.3s
+}
+nav a:after{
+content:"";
+position:absolute;
+left:0;
+bottom:-5px;
+width:0%;
+height:3px;
+background:#ffae00;
+transition:0.4s
+}
+nav a:hover{
+color:#ffae00;
+transform:translateY(-2px)
+}
+nav a:hover:after{width:100%}
 
 .hero{
-background:url("https://images.unsplash.com/photo-1581578731548-c64695cc6952?q=80&w=2070") center/cover;
 height:100vh;
+background:url("https://images.unsplash.com/photo-1581578731548-c64695cc6952?q=80&w=2070")center/cover;
 display:flex;
 align-items:center;
 padding-left:80px;
 color:white;
+margin-top:80px;
 position:relative
 }
 .hero:before{
 content:"";
 position:absolute;
-top:0;
-left:0;
 width:100%;
 height:100%;
 background:rgba(0,0,0,0.5)
 }
-.hero-content{position:relative;z-index:1}
-h1{font-size:60px}
+.hero h1{position:relative;font-size:60px}
 
 .cards{
 display:grid;
 grid-template-columns:repeat(4,1fr);
 gap:20px;
-padding:80px;
+padding:60px
 }
 .card{
 position:relative;
 height:220px;
-overflow:hidden;
 cursor:pointer
 }
 .card img{
@@ -111,7 +109,7 @@ transition:0.4s
 }
 .card:hover img{
 filter:brightness(100%);
-transform:scale(1.1)
+transform:scale(1.05)
 }
 .card span{
 position:absolute;
@@ -122,21 +120,17 @@ font-size:20px;
 font-weight:bold
 }
 
-.faq{padding:80px}
+.faq{padding:60px}
 .faq-item{border-bottom:1px solid #ccc}
-.faq-question{
-cursor:pointer;
-padding:15px;
-font-weight:bold
-}
+.faq-question{cursor:pointer;padding:15px;font-weight:bold}
 .faq-answer{
 max-height:0;
 overflow:hidden;
-transition:0.5s;
+transition:0.6s;
 padding:0 15px
 }
 .faq-item.active .faq-answer{
-max-height:500px;
+max-height:600px;
 padding:15px
 }
 </style>
@@ -147,74 +141,32 @@ padding:15px
 <header>
 <img src="0540980C-2821-48B5-9BD5-342D99DAFF1F.png" class="logo">
 <nav>
-<a href="#">ACCUEIL</a>
-<a href="#">NOS SERVICES</a>
-<a href="#">LOCATION PRO</a>
-<a href="#">BLOG</a>
-<a href="#">CONTACTEZ-NOUS</a>
-<a href="#">TARIFS</a>
+<a href="index.html">ACCUEIL</a>
+<a href="#services">NOS SERVICES</a>
+<a href="#contact">CONTACTEZ-NOUS</a>
 </nav>
 </header>
 
 <section class="hero">
-<div class="hero-content">
 <h1>Allo Nuisible Express<br>Zéro nuisible, Zéro stress</h1>
-</div>
 </section>
 
-<section class="cards">
+<section class="cards" id="services">
 <a href="guepes.html" class="card"><img src="ralphs_fotos-hornet-3336385_1920.jpg"><span>Guêpes</span></a>
 <a href="frelons.html" class="card"><img src="derweg-asian-giant-hornet-8335577_1920.jpg"><span>Frelons</span></a>
 <a href="rats.html" class="card"><img src="istockphoto-1707033668-612x612.jpg"><span>Rats / Souris</span></a>
-<a href="punaises.html" class="card"><img src="istockphoto-1212373742-612x612.jpg"><span>Punaises de lit</span></a>
+<a href="punaises.html" class="card"><img src="istockphoto-1212373742-612x612.jpg"><span>Punaises</span></a>
 <a href="cafards.html" class="card"><img src="erik_karits-german-cockroach-6982350_1920.jpg"><span>Cafards</span></a>
 <a href="pigeon.html" class="card"><img src="balouriarajesh-birds-7921816_1920.jpg"><span>Dépigeonnage</span></a>
-<a href="chenille.html" class="card"><img src="422737-caterpillars-436267_1920.jpg"><span>Chenille processionnaire</span></a>
-<a href="diogene.html" class="card"><img src="652234-lost-places-4165688_1920.jpg"><span>Syndrome de Diogène</span></a>
+<a href="chenille.html" class="card"><img src="422737-caterpillars-436267_1920.jpg"><span>Chenille</span></a>
+<a href="diogene.html" class="card"><img src="652234-lost-places-4165688_1920.jpg"><span>Diogène</span></a>
 </section>
 
-<section class="faq">
+<section class="faq" id="contact">
 
 <div class="faq-item">
-<div class="faq-question">En combien de temps pouvez-vous intervenir ?</div>
-<div class="faq-answer">
-Nous intervenons 24h/24 et 7j/7, y compris les week-ends et jours fériés. Selon la nature de l’urgence, une intervention peut être réalisée en seulement 20 à 30 minutes pour certains nuisibles comme les guêpes ou frelons. Pour des infestations plus importantes comme les punaises de lit ou les cafards, le traitement peut durer plusieurs heures. Le devis ainsi que le déplacement sont entièrement gratuits afin de permettre une prise en charge rapide et sans engagement.
-</div>
-</div>
-
-<div class="faq-item">
-<div class="faq-question">Quel est le tarif pour une dératisation ou désinsectisation ?</div>
-<div class="faq-answer">
-Le tarif dépend principalement du type de nuisible et de l’ampleur de l’infestation constatée sur place. Les interventions pour les guêpes ou frelons débutent à partir de 120€. Pour les autres nuisibles comme les rats, cafards ou punaises de lit, un diagnostic est nécessaire afin d’établir un devis précis et adapté. Tous nos devis sont gratuits et sans engagement afin de garantir une transparence totale.
-</div>
-</div>
-
-<div class="faq-item">
-<div class="faq-question">Quels nuisibles traitez-vous ?</div>
-<div class="faq-answer">
-Nous intervenons pour tous types de nuisibles tels que les rats, souris, cafards, punaises de lit, guêpes, frelons, chenilles processionnaires, pigeons ainsi que pour des situations spécifiques comme le syndrome de Diogène. Nous traitons également les infestations liées aux capricornes ou termites pouvant endommager les structures de votre logement ou bâtiment professionnel.
-</div>
-</div>
-
-<div class="faq-item">
-<div class="faq-question">Vos traitements sont-ils dangereux pour les enfants ou animaux ?</div>
-<div class="faq-answer">
-Nous utilisons exclusivement des produits certifiés respectant les normes en vigueur. Deux types de traitements peuvent être appliqués : chimique ou par cryogénie (froid extrême). Dans le cas d’un traitement chimique contre les cafards ou punaises de lit, un délai de sécurité de 3h30 à 4h est recommandé avant de réintégrer le logement, accompagné d’une aération de 20 minutes.
-</div>
-</div>
-
-<div class="faq-item">
-<div class="faq-question">Proposez-vous une garantie ?</div>
-<div class="faq-answer">
-Oui, nous proposons une garantie de 1 mois après intervention. En cas de retour des nuisibles durant cette période, une nouvelle intervention pourra être réalisée pour un tarif forfaitaire de 50€ maximum.
-</div>
-</div>
-
-<div class="faq-item">
-<div class="faq-question">Intervenez-vous en urgence en Île-de-France ?</div>
-<div class="faq-answer">
-Nous intervenons en urgence sur toute l’Île-de-France notamment dans les départements 94, 93, 92, 91, 75, 77, 78 et 95 ainsi que dans les villes comme Thiais, Choisy-le-Roi, Vincennes, Ivry-sur-Seine ou encore Rungis. Des interventions peuvent également être réalisées en dehors de l’Île-de-France sur demande.
-</div>
+<div class="faq-question">Intervenez-vous en urgence 24h/24 ?</div>
+<div class="faq-answer">Nous intervenons 24h/24 et 7j/7 dans les départements 94, 93, 92, 91, 75, 77, 78 et 95 avec déplacement et devis gratuits.</div>
 </div>
 
 </section>
