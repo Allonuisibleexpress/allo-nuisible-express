@@ -617,5 +617,56 @@ body{padding-top:96px !important}
   ordered.forEach(function(t){io.observe(t.el);});
 })();
 </script>
+
+<script>
+(function(){
+  function lockHeader(){
+    const header=document.querySelector('header');
+    const wrap=document.querySelector('.header-wrap');
+    const logoLink=document.querySelector('.logo-link');
+    const logo=document.querySelector('.logo');
+    const nav=document.querySelector('.main-nav');
+    if(!header||!wrap||!logoLink||!logo||!nav) return;
+
+    const set=(el,prop,val)=>el.style.setProperty(prop,val,'important');
+
+    set(header,'position','fixed'); set(header,'top','0'); set(header,'left','0'); set(header,'right','0');
+    set(header,'height','96px'); set(header,'padding','0 22px'); set(header,'z-index','9999');
+    set(header,'display','flex'); set(header,'justify-content','flex-start'); set(header,'background','#fff');
+    set(header,'box-shadow','0 1px 8px rgba(0,0,0,.09)'); set(header,'overflow','visible');
+
+    set(wrap,'width','100%'); set(wrap,'max-width','none'); set(wrap,'height','100%');
+    set(wrap,'display','flex'); set(wrap,'align-items','center'); set(wrap,'justify-content','space-between');
+    set(wrap,'gap','22px'); set(wrap,'min-width','0');
+
+    set(logoLink,'display','inline-flex'); set(logoLink,'align-items','center'); set(logoLink,'position','absolute');
+    set(logoLink,'left','22px'); set(logoLink,'top','50%'); set(logoLink,'transform','translateY(-50%)');
+    set(logoLink,'height','96px'); set(logoLink,'overflow','hidden'); set(logoLink,'transition','none');
+    set(logoLink,'filter','none'); set(logoLink,'box-shadow','none');
+
+    set(logo,'height','230px'); set(logo,'width','auto'); set(logo,'object-fit','contain');
+    set(logo,'object-position','center center'); set(logo,'transform','none'); set(logo,'transition','none');
+    set(logo,'filter','none'); set(logo,'box-shadow','none');
+
+    set(nav,'display','flex'); set(nav,'align-items','center'); set(nav,'gap','14px'); set(nav,'flex','1');
+    set(nav,'justify-content','flex-end'); set(nav,'min-width','0'); set(nav,'margin-left','300px');
+
+    document.body.style.setProperty('padding-top','96px','important');
+
+    const links=document.querySelectorAll('.main-nav .nav-link, .main-nav .dropdown-item, .main-nav .cta-btn, .main-nav .call-btn .default-text, .main-nav .call-btn .hover-text');
+    links.forEach(el=>{
+      set(el,'font-family',"'Montserrat', Arial, sans-serif");
+      set(el,'font-weight','900');
+      set(el,'letter-spacing','.02em');
+      if(el.classList.contains('nav-link')){ set(el,'font-size','13px'); set(el,'line-height','1.2'); set(el,'padding','6px 5px'); }
+      if(el.classList.contains('dropdown-item')){ set(el,'font-size','13px'); set(el,'line-height','1.2'); }
+      if(el.classList.contains('cta-btn')){ set(el,'font-size','12px'); set(el,'line-height','1.2'); set(el,'padding','8px 12px'); }
+    });
+  }
+  window.addEventListener('load', lockHeader);
+  window.addEventListener('resize', lockHeader);
+})();
+</script>
+
 </body>
 </html>
