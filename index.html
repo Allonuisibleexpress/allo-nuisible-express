@@ -6,6 +6,33 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Allo Nuisible Express – Dératisation 24/7 à Thiais</title>
 
+<script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "ProfessionalService",
+"name": "Allo Nuisible Express",
+"url": "https://maps.app.goo.gl/2nxnqjZ5P93o2k2DA",
+"telephone": "07 44 29 68 97",
+"email": "Allonuisibleexpress@gmail.com",
+"description": "Dératisation",
+"address": {
+"@type": "PostalAddress",
+"streetAddress": "3 Rue de la résistance",
+"postalCode": "94320",
+"addressLocality": "Thiais",
+"addressCountry": "FR"
+},
+"openingHoursSpecification": [{
+"@type": "OpeningHoursSpecification",
+"dayOfWeek": [
+"Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"
+],
+"opens": "00:00",
+"closes": "23:59"
+}]
+}
+</script>
+
 <style>
 
 body{
@@ -24,6 +51,10 @@ padding:15px;
 position:sticky;
 top:0;
 z-index:1000;
+}
+
+nav img{
+height:50px;
 }
 
 nav a{
@@ -61,7 +92,7 @@ text-align:center;
 
 .cards{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+grid-template-columns:repeat(4,1fr);
 gap:20px;
 padding:40px;
 }
@@ -77,6 +108,7 @@ color:white;
 font-size:20px;
 font-weight:bold;
 position:relative;
+text-decoration:none;
 }
 
 .card::after{
@@ -92,6 +124,11 @@ background:rgba(0,0,0,0.35);
 .card span{
 position:relative;
 margin-bottom:15px;
+}
+
+.card:hover{
+transform:scale(1.05);
+transition:0.3s;
 }
 
 .floating{
@@ -126,15 +163,21 @@ background:#111;
 <body>
 
 <nav>
-<div>Allo Nuisible Express</div>
+<a href="index.html">
+<img src="https://raw.githubusercontent.com/Allonuisibleexpress/allo-nuisible-express/main/0540980C-2821-48B5-9BD5-342D99DAFF1F.png">
+</a>
 
 <div>
 <a href="index.html">Accueil</a>
 <a href="deratisation.html">Dératisation</a>
 <a href="punaises.html">Punaises</a>
 <a href="cafards.html">Cafards</a>
+<a href="frelons.html">Frelons</a>
+<a href="guepes.html">Guêpes</a>
+<a href="depigeonnage.html">Pigeons</a>
+<a href="chenilles.html">Chenilles</a>
+<a href="diogene.html">Diogène</a>
 </div>
-
 </nav>
 
 <div class="hero">
@@ -153,6 +196,26 @@ background:#111;
 
 <a href="cafards.html" class="card" style="background-image:url('https://raw.githubusercontent.com/Allonuisibleexpress/allo-nuisible-express/main/erik_karits-german-cockroach-6982350_1920.jpg')">
 <span>Cafards</span>
+</a>
+
+<a href="frelons.html" class="card" style="background-image:url('https://raw.githubusercontent.com/Allonuisibleexpress/allo-nuisible-express/main/derweg-asian-giant-hornet-8335577_1920.jpg')">
+<span>Frelons</span>
+</a>
+
+<a href="guepes.html" class="card" style="background-image:url('https://raw.githubusercontent.com/Allonuisibleexpress/allo-nuisible-express/main/ralphs_fotos-hornet-3336385_1920.jpg')">
+<span>Guêpes</span>
+</a>
+
+<a href="depigeonnage.html" class="card" style="background-image:url('https://raw.githubusercontent.com/Allonuisibleexpress/allo-nuisible-express/main/balouriarajesh-birds-7921816_1920.jpg')">
+<span>Dépigeonnage</span>
+</a>
+
+<a href="chenilles.html" class="card" style="background-image:url('https://raw.githubusercontent.com/Allonuisibleexpress/allo-nuisible-express/main/422737-caterpillars-436267_1920.jpg')">
+<span>Chenilles</span>
+</a>
+
+<a href="diogene.html" class="card" style="background-image:url('https://raw.githubusercontent.com/Allonuisibleexpress/allo-nuisible-express/main/652234-lost-places-4165688_1920.jpg')">
+<span>Diogène</span>
 </a>
 
 </div>
