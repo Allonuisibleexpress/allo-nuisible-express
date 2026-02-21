@@ -11,7 +11,15 @@
 body{margin:0;font-family:Arial,sans-serif;background:var(--bg);color:#141414}
 header{position:fixed;top:0;left:0;right:0;background:#fff;border-bottom:1px solid #ececec;z-index:1000}
 .wrap{max-width:1240px;margin:auto;padding:12px 18px;display:flex;align-items:center;justify-content:space-between;gap:16px}
-.logo{height:54px}
+.logo-link{display:inline-flex;align-items:center}
+.logo{
+height:64px;
+transition:transform .25s ease,filter .25s ease
+}
+.logo-link:hover .logo{
+transform:translateY(-2px) scale(1.04);
+filter:drop-shadow(0 6px 12px rgba(0,0,0,.2))
+}
 nav{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
 nav a{text-decoration:none;color:#111;font-weight:800;font-size:14px;padding:8px 6px}
 .btn{padding:11px 16px;border-radius:9px;text-decoration:none;font-weight:900;font-size:13px;letter-spacing:.03em}
@@ -40,7 +48,9 @@ input:focus,select:focus,textarea:focus{border-color:var(--brand)}
 <body>
 <header>
 <div class="wrap">
+<a class="logo-link" href="index.html" aria-label="Retour à l'accueil">
 <img src="0540980C-2821-48B5-9BD5-342D99DAFF1F.png" class="logo" alt="Allo Nuisible Express">
+</a>
 <nav>
 <a href="index.html">ACCUEIL</a>
 <a href="index.html#services">NOS SERVICES</a>

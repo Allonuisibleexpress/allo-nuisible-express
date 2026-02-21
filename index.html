@@ -53,7 +53,16 @@ align-items:center;
 justify-content:space-between;
 gap:16px
 }
-.logo{height:56px;flex-shrink:0}
+.logo-link{display:inline-flex;align-items:center}
+.logo{
+height:66px;
+flex-shrink:0;
+transition:transform .25s ease,filter .25s ease,drop-shadow .25s ease
+}
+.logo-link:hover .logo{
+transform:translateY(-2px) scale(1.04);
+filter:drop-shadow(0 6px 12px rgba(0,0,0,.2))
+}
 .main-nav{
 display:flex;
 align-items:center;
@@ -185,7 +194,7 @@ transition:left .5s ease
 }
 .quote-btn:hover:before{left:120%}
 @media(max-width:1180px){
-.logo{height:52px}
+.logo{height:60px}
 .nav-link{font-size:14px}
 .cta-btn{padding:10px 14px}
 }
@@ -197,7 +206,7 @@ padding-bottom:6px
 }
 .main-nav::-webkit-scrollbar{height:5px}
 .main-nav::-webkit-scrollbar-thumb{background:#ddd;border-radius:20px}
-.logo{height:48px}
+.logo{height:54px}
 }
 
 .hero{
@@ -408,7 +417,9 @@ color:#ffae00
 
 <header>
 <div class="header-wrap">
+<a class="logo-link" href="index.html" aria-label="Retour à l'accueil">
 <img src="0540980C-2821-48B5-9BD5-342D99DAFF1F.png" class="logo" alt="Allo Nuisible Express">
+</a>
 <nav class="main-nav">
 <a class="nav-link" href="index.html">ACCUEIL</a>
 <div class="dropdown">
