@@ -76,17 +76,23 @@ z-index:2
 }
 .logo{
 height:230px;
+width:auto;
+display:block;
+object-fit:contain;
+object-position:center center;
 flex-shrink:0;
 transition:none !important;
 transform:none !important;
 filter:none !important;
 box-shadow:none !important
 }
-.logo-link:hover,.logo-link:focus,.logo-link:active{
+.logo-link,.logo-link:hover,.logo-link:focus,.logo-link:active{
 transition:none !important;
-transform:none !important;
 filter:none !important;
 box-shadow:none !important
+}
+.logo-link:hover,.logo-link:focus,.logo-link:active{
+transform:translateY(-50%) !important
 }
 .logo:hover{
 transition:none !important;
