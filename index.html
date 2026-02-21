@@ -32,37 +32,38 @@
 </script>
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap');
 html,body{
 margin:0;
 padding:0;
 max-width:100%;
 overflow-x:hidden
 }
-body{font-family:Arial}
+body{font-family:'Montserrat',Arial,sans-serif}
 *{box-sizing:border-box}
 header{
 position:fixed;
 top:0;
 left:0;
 right:0;
-background:white;
+background:#fff;
 display:flex;
 justify-content:center;
-padding:10px 18px;
+padding:6px 22px;
 z-index:999;
-box-shadow:0 0 10px rgba(0,0,0,0.2)
+box-shadow:0 1px 8px rgba(0,0,0,.09)
 }
 .header-wrap{
-width:min(1280px,100%);
+width:min(1380px,100%);
 display:flex;
 align-items:center;
 justify-content:space-between;
-gap:16px;
+gap:22px;
 min-width:0
 }
 .logo-link{display:inline-flex;align-items:center}
 .logo{
-height:208px;
+height:92px;
 flex-shrink:0;
 transition:none !important;
 transform:none !important;
@@ -84,7 +85,7 @@ box-shadow:none !important
 .main-nav{
 display:flex;
 align-items:center;
-gap:10px;
+gap:14px;
 flex:1;
 justify-content:flex-end;
 min-width:0
@@ -95,8 +96,8 @@ text-decoration:none;
 color:#111;
 font-weight:800;
 letter-spacing:0.02em;
-font-size:15px;
-padding:10px 8px;
+font-size:13px;
+padding:8px 6px;
 white-space:nowrap;
 transition:color .25s ease
 }
@@ -159,9 +160,9 @@ border-bottom:1px solid #f1f1f1
 .cta-btn{
 text-decoration:none;
 font-weight:900;
-font-size:14px;
-padding:12px 18px;
-border-radius:9px;
+font-size:12px;
+padding:10px 14px;
+border-radius:8px;
 white-space:nowrap;
 position:relative;
 overflow:hidden;
@@ -174,7 +175,7 @@ box-shadow:0 8px 18px rgba(0,0,0,.18)
 .call-btn{
 background:#ffae00;
 color:#111;
-min-width:170px;
+min-width:146px;
 text-align:center
 }
 .call-btn .default-text,.call-btn .hover-text{
@@ -212,7 +213,7 @@ transition:left .5s ease
 }
 .quote-btn:hover:before{left:120%}
 @media(max-width:1180px){
-.logo{height:176px}
+.logo{height:78px}
 .nav-link{font-size:14px}
 .cta-btn{padding:10px 14px}
 }
@@ -225,7 +226,7 @@ flex-wrap:wrap
 }
 .main-nav::-webkit-scrollbar{height:5px}
 .main-nav::-webkit-scrollbar-thumb{background:#ddd;border-radius:20px}
-.logo{height:152px}
+.logo{height:68px}
 }
 
 .hero{
@@ -236,7 +237,7 @@ align-items:center;
 justify-content:center;
 padding:0 24px;
 color:white;
-margin-top:82px;
+margin-top:104px;
 position:relative
 }
 .hero:before{
@@ -544,15 +545,13 @@ body{padding-bottom:86px}
 
 /* footer minimalist override */
 .site-footer{background:#070707;color:#fff;padding:52px 20px 0;margin-top:42px}
-.site-footer-main{max-width:1240px;margin:0 auto;display:grid;grid-template-columns:1.2fr .85fr .95fr .9fr;gap:28px;align-items:start}
-.site-footer h3{margin:0 0 14px;font-size:17px;line-height:1.2;letter-spacing:.03em;font-weight:800;color:#fff;text-transform:uppercase}
-.footer-logo{display:inline-flex;align-items:center;gap:10px;text-decoration:none;color:#fff;margin-bottom:10px}
+.site-footer-main{max-width:1240px;margin:0 auto;display:grid;grid-template-columns:1.2fr .9fr .9fr .9fr;gap:26px;align-items:start}
+.site-footer h3{margin:0 0 14px;font-size:17px;line-height:1.2;text-transform:uppercase;letter-spacing:.03em;font-weight:800}
+.footer-logo{display:inline-flex;align-items:center;text-decoration:none;color:#fff;margin-bottom:16px}
 .footer-logo img{height:72px;width:auto;display:block}
-.footer-brand{font-size:19px;font-weight:900;letter-spacing:.02em;color:#fff}
-.footer-brand strong{color:#ffae00}
-.footer-text{margin:0;max-width:420px;font-size:15px;line-height:1.55;color:#d0d0d0}
-.footer-list,.footer-services{list-style:none;padding:0;margin:0;display:grid;gap:8px}
-.footer-list a,.footer-services a{color:#f3f3f3;text-decoration:none;font-size:16px;font-weight:600;opacity:.92;transition:opacity .18s ease,color .18s ease}
+.footer-text{margin:0;max-width:430px;font-size:15px;line-height:1.55;color:#d0d0d0}
+.footer-list,.footer-services{list-style:none;padding:0;margin:0;display:grid;gap:12px}
+.footer-list a,.footer-services a{color:#f3f3f3;text-decoration:none;font-size:15px;font-weight:600;opacity:.92;transition:opacity .18s ease,color .18s ease}
 .footer-list a:hover,.footer-services a:hover{opacity:1;color:#ffb534}
 .footer-contact p{margin:0 0 12px;color:#d6d6d6;font-size:15px;line-height:1.5}
 .footer-cta{display:flex;flex-direction:column;gap:10px;max-width:290px}
@@ -569,14 +568,15 @@ body{padding-bottom:86px}
 @media(max-width:760px){
   .site-footer{padding:36px 14px 0}
   .site-footer-main{grid-template-columns:1fr;gap:20px}
-  .footer-brand{font-size:18px}
   .footer-btn{font-size:15px}
+  .footer-list a,.footer-services a,.footer-contact p{font-size:14px}
   .site-footer-bottom{font-size:13px;padding:10px 8px}
 }
 
 /* alignement texte global sections */
-.services-head,.tarifs,.faq,.site-footer{text-align:center}
-.site-footer-main section{display:flex;flex-direction:column;align-items:center}
+.services-head,.tarifs,.faq{text-align:center}
+.site-footer{text-align:left}
+.site-footer-main section{display:flex;flex-direction:column;align-items:flex-start}
 
 /* responsive anti debordement */
 @media(max-width:1100px){
@@ -728,7 +728,6 @@ if(!isActive){item.classList.add("active")}
     <section>
       <a class="footer-logo" href="index.html" aria-label="Retour à l'accueil">
         <img src="logo.png" alt="Allo Nuisible Express">
-        <span class="footer-brand">ALLO <strong>NUISIBLE EXPRESS</strong></span>
       </a>
       <p class="footer-text">Allo Nuisible Express intervient rapidement en Île-de-France pour la dératisation, la désinsectisation, la désinfection et le dépigeonnage.</p>
     </section>
