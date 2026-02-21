@@ -52,7 +52,8 @@ justify-content:center;
 height:96px;
 padding:0 22px;
 z-index:999;
-box-shadow:0 1px 8px rgba(0,0,0,.09)
+box-shadow:0 1px 8px rgba(0,0,0,.09);
+overflow:hidden
 }
 .header-wrap{
 width:min(1380px,100%);
@@ -66,10 +67,10 @@ min-width:0
 .logo-link{
 display:inline-flex;
 align-items:center;
-position:absolute;
-left:22px;
-top:50%;
-transform:translateY(-50%);
+position:relative;
+left:auto;
+top:auto;
+transform:none;
 z-index:2
 }
 .logo{
@@ -99,7 +100,7 @@ gap:14px;
 flex:1;
 justify-content:flex-end;
 min-width:0;
-margin-left:260px
+margin-left:18px
 }
 .nav-link{
 position:relative;
