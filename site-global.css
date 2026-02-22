@@ -1053,6 +1053,32 @@ body.mobile-nav-open .site-sticky-cta{
   .cards#services .card::after{content:"Voir" !important;letter-spacing:.02em !important}
 }
 
+/* Mobile fix: keep "Voir" compact and prevent full-card overlay behavior */
+@media(max-width:768px){
+  .cards#services .card::after{
+    left:50% !important;
+    right:auto !important;
+    width:auto !important;
+    min-width:116px !important;
+    max-width:calc(100% - 24px) !important;
+    padding:6px 12px !important;
+    border-radius:999px !important;
+    opacity:0 !important;
+    transform:translate(-50%,8px) !important;
+  }
+  .cards#services .card:hover::after{
+    opacity:0 !important;
+    transform:translate(-50%,8px) !important;
+  }
+  .cards#services .card:active::after{
+    opacity:1 !important;
+    transform:translate(-50%,0) !important;
+  }
+  .cards#services .card:hover span{
+    bottom:12px !important;
+  }
+}
+
 /* Service detail pages (rat/guepe/frelon/etc.) */
 main > div > .card,
 main > section.card,
