@@ -1,5 +1,17 @@
 === NOUVELLE PAGE ===
-FICHIER: deratisation-thiais.html
+URL :
+/deratisation-thiais
+
+META TITLE :
+Dératisation Thiais (94320) | Urgence 7j/7 - ALLO NUISIBLE EXPRESS
+
+META DESCRIPTION :
+Dératisation à Thiais: intervention rapide en moins de 24h, devis gratuit, méthodes professionnelles à domicile et en entreprise dans le Val-de-Marne.
+
+H1 :
+Dératisation à Thiais : intervention urgente 7j/7
+
+CONTENU :
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -129,7 +141,19 @@ main{max-width:1180px;margin:0 auto;padding:38px 20px 28px;display:grid;grid-tem
 </html>
 
 === NOUVELLE PAGE ===
-FICHIER: punaises-lit-thiais.html
+URL :
+/punaises-lit-thiais
+
+META TITLE :
+Punaises de lit Thiais | Intervention rapide 7j/7 - ALLO NUISIBLE EXPRESS
+
+META DESCRIPTION :
+Traitement punaises de lit à Thiais: intervention urgente, devis gratuit, protocole professionnel en moins de 24h dans le Val-de-Marne.
+
+H1 :
+Punaises de lit à Thiais : traitement ciblé et suivi
+
+CONTENU :
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -259,7 +283,19 @@ main{max-width:1180px;margin:0 auto;padding:38px 20px 28px;display:grid;grid-tem
 </html>
 
 === NOUVELLE PAGE ===
-FICHIER: cafards-thiais.html
+URL :
+/cafards-thiais
+
+META TITLE :
+Cafards Thiais | Désinsectisation urgente 7j/7
+
+META DESCRIPTION :
+Traitement cafards à Thiais: intervention rapide en moins de 24h, devis gratuit, méthodes professionnelles pour particuliers et entreprises.
+
+H1 :
+Traitement des cafards à Thiais : solution professionnelle
+
+CONTENU :
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -389,7 +425,19 @@ main{max-width:1180px;margin:0 auto;padding:38px 20px 28px;display:grid;grid-tem
 </html>
 
 === NOUVELLE PAGE ===
-FICHIER: rats-thiais.html
+URL :
+/rats-thiais
+
+META TITLE :
+Rats Thiais (94320) | Intervention urgente dératisation
+
+META DESCRIPTION :
+Rats à Thiais: intervention locale rapide, devis gratuit, traitement professionnel en moins de 24h pour domicile et entreprise.
+
+H1 :
+Rats à Thiais : intervention locale en urgence
+
+CONTENU :
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -519,7 +567,19 @@ main{max-width:1180px;margin:0 auto;padding:38px 20px 28px;display:grid;grid-tem
 </html>
 
 === NOUVELLE PAGE ===
-FICHIER: souris-thiais.html
+URL :
+/souris-thiais
+
+META TITLE :
+Souris Thiais | Dératisation rapide 7j/7
+
+META DESCRIPTION :
+Souris à Thiais: diagnostic local, intervention en moins de 24h, devis gratuit et méthodes professionnelles pour logement et entreprise.
+
+H1 :
+Souris à Thiais : diagnostic précis et action rapide
+
+CONTENU :
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -649,7 +709,19 @@ main{max-width:1180px;margin:0 auto;padding:38px 20px 28px;display:grid;grid-tem
 </html>
 
 === NOUVELLE PAGE ===
-FICHIER: guepes-thiais.html
+URL :
+/guepes-thiais
+
+META TITLE :
+Guêpes Thiais | Destruction de nid urgente 7j/7
+
+META DESCRIPTION :
+Guêpes à Thiais: destruction de nids, intervention rapide en moins de 24h, devis gratuit dans tout le Val-de-Marne.
+
+H1 :
+Destruction de nids de guêpes à Thiais
+
+CONTENU :
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -779,7 +851,19 @@ main{max-width:1180px;margin:0 auto;padding:38px 20px 28px;display:grid;grid-tem
 </html>
 
 === NOUVELLE PAGE ===
-FICHIER: frelons-thiais.html
+URL :
+/frelons-thiais
+
+META TITLE :
+Frelons Thiais | Intervention nid frelon asiatique 7j/7
+
+META DESCRIPTION :
+Frelons à Thiais: intervention urgente sur nids, devis gratuit, méthodes professionnelles en moins de 24h.
+
+H1 :
+Intervention frelons à Thiais : sécurité et rapidité
+
+CONTENU :
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -909,7 +993,19 @@ main{max-width:1180px;margin:0 auto;padding:38px 20px 28px;display:grid;grid-tem
 </html>
 
 === NOUVELLE PAGE ===
-FICHIER: syndrome-diogene-thiais.html
+URL :
+/syndrome-diogene-thiais
+
+META TITLE :
+Syndrome de Diogène Thiais | Intervention nettoyage urgent
+
+META DESCRIPTION :
+Intervention syndrome de Diogène à Thiais: remise en état, désinfection, devis gratuit, équipe locale 7j/7.
+
+H1 :
+Syndrome de Diogène à Thiais : intervention encadrée
+
+CONTENU :
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -1039,7 +1135,19 @@ main{max-width:1180px;margin:0 auto;padding:38px 20px 28px;display:grid;grid-tem
 </html>
 
 === NOUVELLE PAGE ===
-FICHIER: depigeonnage-thiais.html
+URL :
+/depigeonnage-thiais
+
+META TITLE :
+Dépigeonnage Thiais | Intervention rapide 7j/7
+
+META DESCRIPTION :
+Dépigeonnage à Thiais: intervention locale, dispositifs professionnels, devis gratuit et action rapide en moins de 24h.
+
+H1 :
+Dépigeonnage à Thiais : protection durable des bâtiments
+
+CONTENU :
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -1169,7 +1277,19 @@ main{max-width:1180px;margin:0 auto;padding:38px 20px 28px;display:grid;grid-tem
 </html>
 
 === NOUVELLE PAGE ===
-FICHIER: nuisibles-rungis.html
+URL :
+/nuisibles-rungis
+
+META TITLE :
+Nuisibles Rungis | Intervention urgente 7j/7 - ALLO NUISIBLE EXPRESS
+
+META DESCRIPTION :
+Nuisibles à Rungis: dératisation, désinsectisation, guêpes/frelons, devis gratuit et intervention rapide en moins de 24h.
+
+H1 :
+Nuisibles à Rungis : intervention locale urgente 7j/7
+
+CONTENU :
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -1299,7 +1419,19 @@ main{max-width:1180px;margin:0 auto;padding:38px 20px 28px;display:grid;grid-tem
 </html>
 
 === NOUVELLE PAGE ===
-FICHIER: deratisation-rungis.html
+URL :
+/deratisation-rungis
+
+META TITLE :
+Dératisation Rungis | Urgence 7j/7 - ALLO NUISIBLE EXPRESS
+
+META DESCRIPTION :
+Dératisation à Rungis: intervention rapide en moins de 24h, devis gratuit, méthodes professionnelles à domicile et en entreprise.
+
+H1 :
+Dératisation à Rungis : intervention urgente 7j/7
+
+CONTENU :
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -1429,7 +1561,19 @@ main{max-width:1180px;margin:0 auto;padding:38px 20px 28px;display:grid;grid-tem
 </html>
 
 === NOUVELLE PAGE ===
-FICHIER: punaises-lit-rungis.html
+URL :
+/punaises-lit-rungis
+
+META TITLE :
+Punaises de lit Rungis | Intervention 7j/7
+
+META DESCRIPTION :
+Traitement punaises de lit à Rungis: intervention urgente, devis gratuit, protocole professionnel en moins de 24h.
+
+H1 :
+Punaises de lit à Rungis : traitement rapide et structuré
+
+CONTENU :
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -1559,7 +1703,19 @@ main{max-width:1180px;margin:0 auto;padding:38px 20px 28px;display:grid;grid-tem
 </html>
 
 === NOUVELLE PAGE ===
-FICHIER: cafards-rungis.html
+URL :
+/cafards-rungis
+
+META TITLE :
+Cafards Rungis | Désinsectisation urgente 7j/7
+
+META DESCRIPTION :
+Traitement cafards à Rungis: intervention rapide, devis gratuit, solutions professionnelles en moins de 24h.
+
+H1 :
+Traitement cafards à Rungis : urgence et efficacité
+
+CONTENU :
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -1689,7 +1845,19 @@ main{max-width:1180px;margin:0 auto;padding:38px 20px 28px;display:grid;grid-tem
 </html>
 
 === NOUVELLE PAGE ===
-FICHIER: rats-rungis.html
+URL :
+/rats-rungis
+
+META TITLE :
+Rats Rungis | Dératisation urgente
+
+META DESCRIPTION :
+Intervention rats à Rungis: entreprise locale, urgence 7j/7, devis gratuit et passage rapide en moins de 24h.
+
+H1 :
+Rats à Rungis : traitement professionnel en urgence
+
+CONTENU :
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -1819,7 +1987,19 @@ main{max-width:1180px;margin:0 auto;padding:38px 20px 28px;display:grid;grid-tem
 </html>
 
 === NOUVELLE PAGE ===
-FICHIER: souris-rungis.html
+URL :
+/souris-rungis
+
+META TITLE :
+Souris Rungis | Intervention rapide 7j/7
+
+META DESCRIPTION :
+Souris à Rungis: diagnostic local, devis gratuit, intervention en moins de 24h pour particuliers et professionnels.
+
+H1 :
+Souris à Rungis : intervention locale et suivi
+
+CONTENU :
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -1949,7 +2129,19 @@ main{max-width:1180px;margin:0 auto;padding:38px 20px 28px;display:grid;grid-tem
 </html>
 
 === NOUVELLE PAGE ===
-FICHIER: guepes-rungis.html
+URL :
+/guepes-rungis
+
+META TITLE :
+Guêpes Rungis | Destruction nid en urgence
+
+META DESCRIPTION :
+Guêpes à Rungis: intervention rapide 7j/7, devis gratuit, destruction de nid sécurisée en moins de 24h.
+
+H1 :
+Destruction de nid de guêpes à Rungis
+
+CONTENU :
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -2079,7 +2271,19 @@ main{max-width:1180px;margin:0 auto;padding:38px 20px 28px;display:grid;grid-tem
 </html>
 
 === NOUVELLE PAGE ===
-FICHIER: frelons-rungis.html
+URL :
+/frelons-rungis
+
+META TITLE :
+Frelons Rungis | Intervention nid frelon asiatique
+
+META DESCRIPTION :
+Frelons à Rungis: intervention urgente, devis gratuit, traitement professionnel en moins de 24h.
+
+H1 :
+Frelons à Rungis : intervention technique et sécurisée
+
+CONTENU :
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -2209,7 +2413,19 @@ main{max-width:1180px;margin:0 auto;padding:38px 20px 28px;display:grid;grid-tem
 </html>
 
 === NOUVELLE PAGE ===
-FICHIER: syndrome-diogene-rungis.html
+URL :
+/syndrome-diogene-rungis
+
+META TITLE :
+Syndrome de Diogène Rungis | Nettoyage urgent
+
+META DESCRIPTION :
+Intervention syndrome de Diogène à Rungis: tri, évacuation, désinfection, devis gratuit et équipe locale 7j/7.
+
+H1 :
+Syndrome de Diogène à Rungis : prise en charge complète
+
+CONTENU :
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -2339,7 +2555,19 @@ main{max-width:1180px;margin:0 auto;padding:38px 20px 28px;display:grid;grid-tem
 </html>
 
 === NOUVELLE PAGE ===
-FICHIER: depigeonnage-rungis.html
+URL :
+/depigeonnage-rungis
+
+META TITLE :
+Dépigeonnage Rungis | Intervention rapide 7j/7
+
+META DESCRIPTION :
+Dépigeonnage à Rungis: protection durable des bâtiments, devis gratuit, intervention en moins de 24h.
+
+H1 :
+Dépigeonnage à Rungis : protection technique durable
+
+CONTENU :
 <!DOCTYPE html>
 <html lang="fr">
 <head>
