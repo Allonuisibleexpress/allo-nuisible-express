@@ -958,7 +958,11 @@ body.mobile-nav-open .site-sticky-cta{
 .cards#services .card span{
   position:absolute !important;
   left:14px !important;
+  right:14px !important;
   bottom:14px !important;
+  width:auto !important;
+  transform:none !important;
+  text-align:left !important;
   color:#fff !important;
   font-size:44px !important;
   font-weight:900 !important;
@@ -1037,6 +1041,7 @@ body.mobile-nav-open .site-sticky-cta{
     left:12px !important;
     right:12px !important;
     bottom:12px !important;
+    transform:none !important;
   }
   .cards#services .card::after{font-size:10px !important;left:10px !important;right:10px !important;bottom:10px !important;padding:6px 9px !important}
 }
