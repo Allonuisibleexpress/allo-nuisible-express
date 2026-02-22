@@ -825,7 +825,9 @@ z-index:5
 }
 @media(max-width:760px){
   .process-top,.process-section{padding-left:14px;padding-right:14px}
-  .process-top-grid,.process-steps{grid-template-columns:1fr}
+  .process-top-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .process-steps{grid-template-columns:1fr}
+  .process-mini{min-height:150px;padding:10px 8px}
   .process-mini h3{font-size:14px}
   .process-mini p{font-size:12px}
   .process-head h2{font-size:28px}
