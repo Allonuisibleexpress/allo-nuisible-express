@@ -101,7 +101,9 @@ margin:22px auto 10px;
 padding:0 24px;
 display:grid;
 grid-template-columns:2fr 1fr 1fr;
-gap:12px
+gap:12px;
+position:relative;
+z-index:6
 }
 .trust-badge{
 background:#fff;
@@ -189,14 +191,15 @@ padding:60px
 }
 .services-head{
 background:#fff;
-padding:0 20px 12px;
+padding:14px 20px 12px;
 text-align:center;
-position:relative
+position:relative;
+z-index:1
 }
 .hero-emblem{
 width:118px;
 height:118px;
-margin:-72px auto 10px;
+margin:0 auto 10px;
 border-radius:50%;
 background:#fff;
 box-shadow:none;
@@ -230,7 +233,7 @@ color:#666
 .services-head p{font-size:15px}
 }
 @media(max-width:680px){
-.hero-emblem{width:96px;height:96px;margin:-62px auto 10px}
+.hero-emblem{width:96px;height:96px;margin:0 auto 10px}
 .hero-emblem svg{width:76px;height:76px}
 .services-head h2{font-size:24px}
 .services-head p{font-size:14px}
