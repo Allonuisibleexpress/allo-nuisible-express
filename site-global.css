@@ -490,6 +490,9 @@ main .card li{
 
   /* Keep short/high-impact elements centered */
   .hero h1,
+  .hero .badge,
+  .hero .hero-wrap,
+  .hero .hero-wrap p,
   .hero-local h1,
   .hero .hero-subtitle,
   .global-process .process-head h2,
@@ -840,6 +843,16 @@ body.mobile-nav-open .site-sticky-cta{
     text-align: left !important;
     line-height: 1.6 !important;
     font-size: 16px !important;
+  }
+
+  /* Keep service hero text centered on mobile */
+  .hero .hero-wrap,
+  .hero .hero-wrap p,
+  .hero .badge {
+    text-align: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    align-items: center !important;
   }
 
   .container,
