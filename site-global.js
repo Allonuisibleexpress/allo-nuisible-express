@@ -1,4 +1,19 @@
 (function(){
+  function currentPage(){
+    var p=(window.location.pathname||'').split('/').pop();
+    return p||'index.html';
+  }
+
+  function noExtraBlocksHere(){
+    var blocked={
+      'blog.html':true,
+      'tarifs.html':true,
+      'devis.html':true,
+      'contact.html':true
+    };
+    return !!blocked[currentPage()];
+  }
+
   function processHTML(){
     return ''+
     '<section class="process-top global-process">'+
@@ -68,41 +83,15 @@
     '</div>';
   }
 
-  function reviewsHTML(){
-    return ''+
-    '<section class="reviews global-reviews" id="avis-google" data-global-reviews>'+ 
-    '<h2>Ils nous font confiance</h2>'+ 
-    '<p class="reviews-intro">Retrouvez des retours clients publiés sur Google. Affichage filtré sur des avis 5 étoiles.</p>'+ 
-    '<div class="reviews-top">'+ 
-    '  <span>Note Google : <strong data-google-note>...</strong> <span data-google-stars>★★★★★</span></span>'+ 
-    '  <a href="https://maps.app.goo.gl/EWnwrfLmvWMRjEds6" target="_blank" rel="noopener noreferrer">Voir tous les avis Google</a>'+ 
-    '</div>'+ 
-    '<div class="reviews-slider" data-reviews-slider>'+ 
-    '  <button class="reviews-nav prev" type="button" aria-label="Avis précédents" data-reviews-prev>‹</button>'+ 
-    '  <div class="reviews-viewport"><div class="reviews-track" data-reviews-track><div class="review-empty">Chargement des avis Google…</div></div></div>'+ 
-    '  <button class="reviews-nav next" type="button" aria-label="Avis suivants" data-reviews-next>›</button>'+ 
-    '  <div class="reviews-dots" data-reviews-dots></div>'+ 
-    '</div>'+ 
-    '</section>';
-  }
-
-  function faqHTML(){
-    return ''+
-    '<section class="faq global-faq" id="contact" data-global-faq>'+ 
-    '<h2>Questions Fréquentes</h2>'+ 
-    '<p class="faq-intro">Retrouvez ici les réponses aux questions les plus posées sur nos prestations. Cliquez sur une question pour afficher le détail.</p>'+ 
-    '<div class="faq-item"><div class="faq-question">Quels services proposez-vous exactement ? <span class="faq-icon">+</span></div><div class="faq-answer">(FAQ) Nous proposons une prise en charge complète de la lutte anti-nuisibles pour les particuliers comme pour les professionnels : dératisation, désinsectisation, désinfection, dépigeonnage, traitement des punaises, cafards, frelons, guêpes, chenilles processionnaires et interventions Diogène.</div></div>'+ 
-    '<div class="faq-item"><div class="faq-question">Quels sont vos prix de départ ? <span class="faq-icon">+</span></div><div class="faq-answer">(FAQ) Nos prix de départ sont les suivants : guêpes/frelons 120 EUR, dératisation 200 EUR, dépigeonnage 150 EUR, punaises de lit 200 EUR, cafards 200 EUR, chenilles 120 EUR, syndrome de Diogène 500 EUR. Vous bénéficiez d\\'une garantie de 1 mois avec suivi.</div></div>'+ 
-    '<div class="faq-item"><div class="faq-question">Dans quelles zones intervenez-vous ? <span class="faq-icon">+</span></div><div class="faq-answer">(FAQ) Nous intervenons dans toute l\\'Île-de-France : 75, 77, 78, 91, 92, 93, 94 et 95, avec des créneaux rapides pour les particuliers et professionnels.</div></div>'+ 
-    '<div class="faq-item"><div class="faq-question">En combien de temps pouvez-vous intervenir ? <span class="faq-icon">+</span></div><div class="faq-answer">(FAQ) Nous intervenons en urgence 24h/24 et 7j/7, y compris la nuit, les week-ends et les jours fériés.</div></div>'+ 
-    '<div class="faq-item"><div class="faq-question">Quels nuisibles traitez-vous ? <span class="faq-icon">+</span></div><div class="faq-answer">(FAQ) Nous traitons rats, souris, cafards, punaises de lit, guêpes, frelons, pigeons, chenilles processionnaires et autres nuisibles selon la situation terrain.</div></div>'+ 
-    '<div class="faq-item"><div class="faq-question">Comment se déroule une intervention ? <span class="faq-icon">+</span></div><div class="faq-answer">(FAQ) L\\'intervention suit un parcours clair : diagnostic, inspection, traitement ciblé, puis suivi avec recommandations de prévention.</div></div>'+ 
-    '<div class="faq-item"><div class="faq-question">Y a-t-il une garantie après traitement ? <span class="faq-icon">+</span></div><div class="faq-answer">(FAQ) Oui, vous bénéficiez d\\'une garantie de 1 mois avec suivi sur nos protocoles d\\'intervention.</div></div>'+ 
-    '<div class="faq-item"><div class="faq-question">Comment vous contacter pour un devis ? <span class="faq-icon">+</span></div><div class="faq-answer">(FAQ) Par formulaire en ligne, téléphone au 07 44 29 68 97, WhatsApp, e-mail et réseaux sociaux.</div></div>'+ 
-    '</section>';
+  function ensureFooter(){
+    if(document.querySelector('footer.site-footer')){return;}
+    var holder=document.createElement('div');
+    holder.innerHTML=footerHTML();
+    document.body.appendChild(holder.firstElementChild);
   }
 
   function ensureProcess(){
+    if(noExtraBlocksHere()){return;}
     if(document.querySelector('.process-section')){return;}
     var holder=document.createElement('div');
     holder.innerHTML=processHTML();
@@ -114,202 +103,11 @@
     }
   }
 
-  function ensureFooter(){
-    if(document.querySelector('footer.site-footer')){return;}
-    var holder=document.createElement('div');
-    holder.innerHTML=footerHTML();
-    document.body.appendChild(holder.firstElementChild);
-  }
-
   function ensureSticky(){
     if(document.querySelector('.site-sticky-cta')){return;}
     var holder=document.createElement('div');
     holder.innerHTML=ctaHTML();
     document.body.appendChild(holder.firstElementChild);
-  }
-
-  function insertBeforeFooter(html){
-    var holder=document.createElement('div');
-    holder.innerHTML=html;
-    var footer=document.querySelector('footer.site-footer');
-    if(footer){
-      while(holder.firstElementChild){
-        footer.parentNode.insertBefore(holder.firstElementChild, footer);
-      }
-    }else{
-      while(holder.firstElementChild){
-        document.body.appendChild(holder.firstElementChild);
-      }
-    }
-  }
-
-  function ensureReviewsFaq(){
-    var needReviews=!document.querySelector('.reviews');
-    var needFaq=!document.querySelector('.faq');
-    if(!needReviews && !needFaq){return;}
-    var html='';
-    if(needReviews){html += reviewsHTML();}
-    if(needFaq){html += faqHTML();}
-    insertBeforeFooter(html);
-  }
-
-  function initFaq(){
-    var faqs=[].slice.call(document.querySelectorAll('.global-faq[data-global-faq]'));
-    faqs.forEach(function(faq){
-      faq.querySelectorAll('.faq-question').forEach(function(q){
-        q.addEventListener('click',function(){
-          var item=q.parentElement;
-          var isActive=item.classList.contains('active');
-          faq.querySelectorAll('.faq-item').forEach(function(i){i.classList.remove('active');});
-          if(!isActive){item.classList.add('active');}
-        });
-      });
-    });
-  }
-
-  var mapsPromise=null;
-  function loadMapsApi(apiKey){
-    if(window.google&&window.google.maps&&window.google.maps.places){return Promise.resolve();}
-    if(mapsPromise){return mapsPromise;}
-    mapsPromise=new Promise(function(resolve,reject){
-      var s=document.createElement('script');
-      s.src='https://maps.googleapis.com/maps/api/js?key='+encodeURIComponent(apiKey)+'&libraries=places&v=weekly';
-      s.async=true;
-      s.defer=true;
-      s.onload=function(){resolve();};
-      s.onerror=function(){reject(new Error('maps-js-load-failed'));};
-      document.head.appendChild(s);
-    });
-    return mapsPromise;
-  }
-
-  function initReviews(){
-    var sections=[].slice.call(document.querySelectorAll('.global-reviews[data-global-reviews]'));
-    if(!sections.length){return;}
-    var API_KEY='AIzaSyAclF0AYVUmXZ2qmcj-MsZ4S9OwQU1_60A';
-    var PLACE_QUERY='Allo Nuisible Express, 3 Rue de la Résistance, 94320 Thiais';
-    var PLACE_ID='ChIJ3XNhAtsa0ikRZy7dsWlpaow';
-    var MAX_REVIEWS=6;
-    var cityWords=['paris','thiais','creteil','vitry','choisy','ivry','villejuif','ile-de-france','idf','94','75','92','93','91','77','78','95'];
-    var pestWords=['rat','souris','cafard','blatte','punaise','frelon','guepe','guêpe','pigeon','chenille','nuisible','deratisation','dératisation','desinsectisation','désinsectisation','depigeonnage','dépigeonnage'];
-
-    function esc(str){
-      return String(str||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/\"/g,'&quot;').replace(/'/g,'&#39;');
-    }
-    function hasWord(text, words){return words.some(function(w){return text.indexOf(w)!==-1;});}
-    function pickReviews(reviews){
-      var five=reviews.filter(function(r){return Number(r.rating)===5;});
-      var strong=five.filter(function(r){
-        var t=String(r.text||'').toLowerCase();
-        return hasWord(t,cityWords)&&hasWord(t,pestWords);
-      });
-      var rest=five.filter(function(r){return strong.indexOf(r)===-1;});
-      return strong.concat(rest).slice(0,MAX_REVIEWS);
-    }
-
-    function initSection(section, place){
-      var slider=section.querySelector('[data-reviews-slider]');
-      var track=section.querySelector('[data-reviews-track]');
-      var prev=section.querySelector('[data-reviews-prev]');
-      var next=section.querySelector('[data-reviews-next]');
-      var dotsWrap=section.querySelector('[data-reviews-dots]');
-      var noteNode=section.querySelector('[data-google-note]');
-      var starsNode=section.querySelector('[data-google-stars]');
-      var cards=[];
-      var page=0;
-      var pages=1;
-      var perView=3;
-      function perViewNow(){if(window.innerWidth<=760){return 1;}if(window.innerWidth<=1180){return 2;}return 3;}
-      function renderDots(){
-        dotsWrap.innerHTML='';
-        for(var i=0;i<pages;i++){
-          var b=document.createElement('button');
-          b.type='button';
-          b.className='reviews-dot'+(i===page?' active':'');
-          b.setAttribute('aria-label','Aller à la page '+(i+1));
-          (function(index){b.addEventListener('click',function(){page=index;update();});})(i);
-          dotsWrap.appendChild(b);
-        }
-      }
-      function update(){
-        cards=[].slice.call(track.querySelectorAll('.review-card'));
-        if(!cards.length){prev.disabled=true;next.disabled=true;dotsWrap.innerHTML='';return;}
-        perView=perViewNow();
-        slider.style.setProperty('--per-view',String(perView));
-        pages=Math.max(1,Math.ceil(cards.length/perView));
-        if(page>pages-1){page=pages-1;}
-        var viewport=slider.clientWidth-88;
-        if(window.innerWidth<=760){viewport=slider.clientWidth-64;}
-        if(viewport<0){viewport=slider.clientWidth;}
-        track.style.transform='translateX(-'+(page*viewport)+'px)';
-        prev.disabled=page===0;
-        next.disabled=page===pages-1;
-        renderDots();
-      }
-      function bindReadMore(){
-        cards.forEach(function(card){
-          var text=card.querySelector('.review-text');
-          var btn=card.querySelector('.review-toggle');
-          if(!text||!btn){return;}
-          if(text.textContent.trim().length<120){btn.style.display='none';return;}
-          btn.addEventListener('click',function(){
-            card.classList.toggle('expanded');
-            btn.textContent=card.classList.contains('expanded')?'Réduire':'Lire la suite';
-          });
-        });
-      }
-
-      prev.addEventListener('click',function(){if(page>0){page--;update();}});
-      next.addEventListener('click',function(){if(page<pages-1){page++;update();}});
-      window.addEventListener('resize',update);
-      if(noteNode&&typeof place.rating==='number'){noteNode.textContent=place.rating.toFixed(1);}
-      if(starsNode&&typeof place.rating==='number'){starsNode.textContent=place.rating>=4.8?'★★★★★':'★★★★☆';}
-
-      var reviews=pickReviews(place.reviews||[]);
-      if(!reviews.length){
-        track.innerHTML='<div class="review-empty">Aucun avis 5 étoiles trouvé pour le moment.</div>';
-        update();
-        return;
-      }
-      track.innerHTML=reviews.map(function(r){
-        var avatar=r.profile_photo_url
-          ? '<span class="review-avatar"><img src="'+esc(r.profile_photo_url)+'" alt="'+esc(r.author_name)+'"></span>'
-          : '<span class="review-avatar">'+esc((r.author_name||'A').charAt(0).toUpperCase())+'</span>';
-        return ''+
-        '<article class="review-card">'+
-          '<div class="review-head"><div class="review-person">'+avatar+'<div><div class="review-name">'+esc(r.author_name||'Client Google')+'</div><div class="review-date">'+esc(r.relative_time_description||'')+'</div></div></div><span class="google-mark" aria-hidden="true">G</span></div>'+
-          '<div class="review-stars" aria-label="'+(r.rating||5)+' étoiles">★★★★★</div>'+
-          '<p class="review-text">'+esc(r.text||'')+'</p>'+
-          '<button class="review-toggle" type="button">Lire la suite</button>'+
-        '</article>';
-      }).join('');
-      page=0;
-      update();
-      bindReadMore();
-    }
-
-    loadMapsApi(API_KEY).then(function(){
-      var service=new google.maps.places.PlacesService(document.createElement('div'));
-      service.findPlaceFromQuery({query:PLACE_QUERY,fields:['place_id']},function(results,status){
-        var placeId=(status===google.maps.places.PlacesServiceStatus.OK&&results&&results[0]&&results[0].place_id)?results[0].place_id:PLACE_ID;
-        service.getDetails({placeId:placeId,fields:['name','rating','user_ratings_total','reviews']},function(place,status2){
-          if(status2!==google.maps.places.PlacesServiceStatus.OK||!place){
-            sections.forEach(function(section){
-              var track=section.querySelector('[data-reviews-track]');
-              if(track){track.innerHTML='<div class="review-empty">Impossible de charger automatiquement les avis Google pour le moment.</div>';}
-            });
-            return;
-          }
-          sections.forEach(function(section){initSection(section,place);});
-          if(window.__alloScrollRevealRefresh){window.__alloScrollRevealRefresh(document);}
-        });
-      });
-    }).catch(function(){
-      sections.forEach(function(section){
-        var track=section.querySelector('[data-reviews-track]');
-        if(track){track.innerHTML='<div class="review-empty">Impossible de charger automatiquement les avis Google pour le moment.</div>';}
-      });
-    });
   }
 
   function setYear(){
@@ -320,10 +118,7 @@
   function boot(){
     ensureFooter();
     ensureProcess();
-    ensureReviewsFaq();
     ensureSticky();
-    initFaq();
-    initReviews();
     setYear();
     if(window.__alloScrollRevealRefresh){window.__alloScrollRevealRefresh(document);} 
   }
