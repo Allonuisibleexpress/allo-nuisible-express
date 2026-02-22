@@ -370,22 +370,5 @@ text-rendering:geometricPrecision;
   </div>
   <div class="note"><b>Informations tarifaires:</b> guêpes/frelons à partir de 120 EUR, syndrome de Diogène à partir de 400 EUR. Tous les autres nuisibles sont traités sur devis. Disponibilité 24h/24 et 7j/7, devis gratuit, déplacement gratuit, intervention rapide en Île-de-France.</div>
 </main>
-<script>
-document.addEventListener('DOMContentLoaded', function(){
-  var desktopHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
-  if(!desktopHover){ return; }
-  document.querySelectorAll('.card-link').forEach(function(card){
-    var timer = null;
-    card.addEventListener('mouseenter', function(){
-      timer = window.setTimeout(function(){
-        window.location.href = card.href;
-      }, 240);
-    });
-    card.addEventListener('mouseleave', function(){
-      if(timer){ window.clearTimeout(timer); timer = null; }
-    });
-  });
-});
-</script>
 </body>
 </html>
