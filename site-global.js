@@ -90,7 +90,7 @@
     '      </div>'+ 
     '    </section>'+ 
     '    <section><h3>Informations utiles</h3><ul class="footer-list"><li><a href="contact.html">Contact</a></li><li><a href="mentions-legales.html">Mentions légales</a></li><li><a href="politique-confidentialite.html">Confidentialité</a></li><li><a href="cgv-cgu.html">CGV / CGU</a></li><li><a href="blog.html">Blog</a></li></ul></section>'+ 
-    '    <section><h3>Nos services</h3><ul class="footer-services"><li><a href="deratisation.html">Dératisation</a></li><li><a href="punaises.html">Punaises de lit</a></li><li><a href="desinsectisation.html">Désinsectisation</a></li><li><a href="desinfection.html">Désinfection</a></li><li><a href="cafards.html">Cafards</a></li><li><a href="depigeonnage.html">Dépigeonnage</a></li><li><a href="frelons.html">Frelons / Guêpes</a></li><li><a href="desinsectisation.html">Acariens</a></li><li><a href="desinsectisation.html">Xylophages</a></li><li><a href="desinsectisation.html">Araignées</a></li><li><a href="desinsectisation.html">Fourmis</a></li><li><a href="diogene.html">Syndrome de Diogène</a></li></ul></section>'+ 
+    '    <section><h3>Nos services</h3><ul class="footer-services"><li><a href="deratisation.html">Dératisation</a></li><li><a href="punaises.html">Punaises de lit</a></li><li><a href="desinsectisation.html">Désinsectisation</a></li><li><a href="desinfection.html">Désinfection</a></li><li><a href="cafards.html">Cafards</a></li><li><a href="acariens.html">Acariens</a></li><li><a href="xylophage.html">Xylophages</a></li><li><a href="araignees.html">Araignées</a></li><li><a href="fourmis.html">Fourmis</a></li><li><a href="depigeonnage.html">Dépigeonnage</a></li><li><a href="frelons.html">Frelons / Guêpes</a></li><li><a href="diogene.html">Syndrome de Diogène</a></li></ul></section>'+ 
     '    <section class="footer-contact"><h3>Contactez-nous</h3><p>4 Rue de la Couture du Moulin, 94320 Thiais</p><div class="footer-cta"><a class="footer-btn footer-btn-devis" href="devis.html">✉ Demande de devis</a><a class="footer-btn footer-btn-call" href="tel:0744296897">📞 07 44 29 68 97</a></div></section>'+ 
     '  </div>'+ 
     '  <div class="site-footer-bottom">Tous droits réservés <b>ALLO NUISIBLE EXPRESS</b> — <span class="js-year"></span></div>'+ 
@@ -621,6 +621,10 @@
         '<li><a href=\"index.html\">ACCUEIL</a></li>',
         '<li><a href=\"punaises.html\">PUNAISE DE LIT</a></li>',
         '<li><a href=\"cafards.html\">CAFARDS</a></li>',
+        '<li><a href=\"acariens.html\">ACARIENS</a></li>',
+        '<li><a href=\"xylophage.html\">XYLOPHAGE (INSECTES DU BOIS)</a></li>',
+        '<li><a href=\"araignees.html\">ARAIGNÉES</a></li>',
+        '<li><a href=\"fourmis.html\">FOURMIS</a></li>',
         '<li><a href=\"deratisation.html\">DÉRATISATION (RATS / SOURIS)</a></li>',
         '<li><a href=\"depigeonnage.html\">DÉPIGEONNAGE</a></li>',
         '<li><a href=\"frelons.html\">FRELON</a></li>',
