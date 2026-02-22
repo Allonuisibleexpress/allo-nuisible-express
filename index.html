@@ -460,7 +460,11 @@ position:relative;
 --per-view:3;
 --gap:18px;
 padding:0 44px;
-overflow:hidden
+overflow:visible
+}
+.reviews-viewport{
+overflow:hidden;
+width:100%
 }
 .reviews-track{
 display:flex;
@@ -627,6 +631,8 @@ width:100%
 .reviews-slider{padding:0 32px}
 .review-name{font-size:18px}
 .review-text{font-size:15px}
+.reviews-nav.prev{left:-2px}
+.reviews-nav.next{right:-2px}
 }
 
 .site-footer{background:#0f0f0f;color:#fff;padding:26px 18px;margin-top:40px}.site-footer-wrap{max-width:1180px;margin:auto;display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap}.site-footer .legal{display:flex;gap:14px;flex-wrap:wrap;align-items:center}.site-footer a{color:#ffd27a;text-decoration:none;font-weight:700}.site-footer a:hover{color:#fff}.socials{display:flex;gap:10px}.social-btn{display:inline-flex;align-items:center;justify-content:center;padding:9px 12px;border-radius:8px;background:#1b1b1b;border:1px solid #2a2a2a;transition:transform .2s ease,background .2s ease}.social-btn:hover{transform:translateY(-2px);background:#ffae00;color:#111}.copy{font-size:14px;color:#e8e8e8}@media(max-width:760px){.site-footer-wrap{flex-direction:column;align-items:flex-start}}
@@ -925,8 +931,10 @@ z-index:5
 </div>
 <div class="reviews-slider" data-reviews-slider>
   <button class="reviews-nav prev" type="button" aria-label="Avis précédents" data-reviews-prev>‹</button>
-  <div class="reviews-track" data-reviews-track>
-    <div class="review-empty">Chargement des avis Google…</div>
+  <div class="reviews-viewport">
+    <div class="reviews-track" data-reviews-track>
+      <div class="review-empty">Chargement des avis Google…</div>
+    </div>
   </div>
   <button class="reviews-nav next" type="button" aria-label="Avis suivants" data-reviews-next>›</button>
   <div class="reviews-dots" data-reviews-dots></div>
@@ -993,6 +1001,7 @@ if(!isActive){item.classList.add("active")}
   var GOOGLE_MAPS_API_KEY="AIzaSyAclF0AYVUmXZ2qmcj-MsZ4S9OwQU1_60A";
   var GOOGLE_PLACE_QUERY="Allo Nuisible Express, 3 Rue de la Résistance, 94320 Thiais";
   var GOOGLE_PLACE_ID_FALLBACK="ChIJ3XNhAtsa0ikRZy7dsWlpaow";
+  var MAX_REVIEWS=6;
 
   var slider=document.querySelector("[data-reviews-slider]");
   if(!slider){return;}
@@ -1082,7 +1091,7 @@ if(!isActive){item.classList.add("active")}
       update();
       return;
     }
-    track.innerHTML=reviews.map(function(r){
+    track.innerHTML=reviews.slice(0,MAX_REVIEWS).map(function(r){
       var stars="★★★★★";
       var avatar = r.profile_photo_url
         ? '<span class="review-avatar"><img src="'+esc(r.profile_photo_url)+'" alt="'+esc(r.author_name)+'"></span>'
@@ -1104,6 +1113,21 @@ if(!isActive){item.classList.add("active")}
     page=0;
     update();
     bindReadMore();
+  }
+
+  function pickCityPestReviews(reviews){
+    var cityWords=["paris","thiais","creteil","vitry","choisy","ivry","villejuif","ile-de-france","idf","94","75","92","93","91","77","78","95"];
+    var pestWords=["rat","souris","cafard","blatte","punaise","frelon","guepe","guêpe","pigeon","chenille","nuisible","deratisation","dératisation","desinsectisation","désinsectisation","depigeonnage","dépigeonnage"];
+    function hasWord(text, words){
+      return words.some(function(w){ return text.indexOf(w)!==-1; });
+    }
+    var fiveStars=reviews.filter(function(r){ return Number(r.rating)===5; });
+    var strong=fiveStars.filter(function(r){
+      var t=String(r.text||"").toLowerCase();
+      return hasWord(t,cityWords) && hasWord(t,pestWords);
+    });
+    var rest=fiveStars.filter(function(r){ return strong.indexOf(r)===-1; });
+    return strong.concat(rest).slice(0,MAX_REVIEWS);
   }
 
   function loadMapsApi(){
@@ -1155,7 +1179,7 @@ if(!isActive){item.classList.add("active")}
       var service = new google.maps.places.PlacesService(document.createElement("div"));
       var placeId = await getPlaceId(service);
       var place = await getPlaceDetails(service,placeId);
-      var reviews = (place.reviews||[]).filter(function(r){return Number(r.rating)===5;});
+      var reviews = pickCityPestReviews(place.reviews||[]);
       if(noteNode && typeof place.rating==="number"){noteNode.textContent=place.rating.toFixed(1);}
       if(starsNode && typeof place.rating==="number"){
         starsNode.textContent = place.rating>=4.8 ? "★★★★★" : "★★★★☆";
