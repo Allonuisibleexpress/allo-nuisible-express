@@ -104,6 +104,17 @@
 }
 
 /* service hero CTA dynamic buttons */
+.hero{
+  position:relative;
+}
+.hero:after{
+  pointer-events:none !important;
+  z-index:0 !important;
+}
+.hero-wrap{
+  position:relative;
+  z-index:2;
+}
 .cta-row .btn{
   position:relative;
   overflow:hidden;
