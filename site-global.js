@@ -120,14 +120,14 @@
     '<section class="faq global-faq" id="contact" data-global-faq>'+ 
     '<h2>Questions Fréquentes</h2>'+ 
     '<p class="faq-intro">Retrouvez ici les réponses aux questions les plus posées sur nos prestations. Cliquez sur une question pour afficher le détail.</p>'+ 
-    '<div class="faq-item"><div class="faq-question">Quels services proposez-vous exactement ? <span class="faq-icon">+</span></div><div class="faq-answer">(FAQ) Nous proposons une prise en charge complète de la lutte anti-nuisibles pour les particuliers comme pour les professionnels : dératisation, désinsectisation, désinfection, dépigeonnage, traitement des punaises, cafards, frelons, guêpes, chenilles processionnaires et interventions Diogène.</div></div>'+ 
-    '<div class="faq-item"><div class="faq-question">Quels sont vos prix de départ ? <span class="faq-icon">+</span></div><div class="faq-answer">(FAQ) Nos prix de départ sont les suivants : guêpes/frelons 120 EUR, dératisation 200 EUR, dépigeonnage 150 EUR, punaises de lit 200 EUR, cafards 200 EUR, chenilles 120 EUR, syndrome de Diogène 500 EUR. Vous bénéficiez d\'une garantie de 1 mois avec suivi.</div></div>'+ 
-    '<div class="faq-item"><div class="faq-question">Dans quelles zones intervenez-vous ? <span class="faq-icon">+</span></div><div class="faq-answer">(FAQ) Nous intervenons dans toute l\'Île-de-France : 75, 77, 78, 91, 92, 93, 94 et 95, avec des créneaux rapides pour les particuliers et professionnels.</div></div>'+ 
-    '<div class="faq-item"><div class="faq-question">En combien de temps pouvez-vous intervenir ? <span class="faq-icon">+</span></div><div class="faq-answer">(FAQ) Nous intervenons en urgence 24h/24 et 7j/7, y compris la nuit, les week-ends et les jours fériés.</div></div>'+ 
-    '<div class="faq-item"><div class="faq-question">Quels nuisibles traitez-vous ? <span class="faq-icon">+</span></div><div class="faq-answer">(FAQ) Nous traitons rats, souris, cafards, punaises de lit, guêpes, frelons, pigeons, chenilles processionnaires et autres nuisibles selon la situation terrain.</div></div>'+ 
-    '<div class="faq-item"><div class="faq-question">Comment se déroule une intervention ? <span class="faq-icon">+</span></div><div class="faq-answer">(FAQ) L\'intervention suit un parcours clair : diagnostic, inspection, traitement ciblé, puis suivi avec recommandations de prévention.</div></div>'+ 
-    '<div class="faq-item"><div class="faq-question">Y a-t-il une garantie après traitement ? <span class="faq-icon">+</span></div><div class="faq-answer">(FAQ) Oui, vous bénéficiez d\'une garantie de 1 mois avec suivi sur nos protocoles d\'intervention.</div></div>'+ 
-    '<div class="faq-item"><div class="faq-question">Comment vous contacter pour un devis ? <span class="faq-icon">+</span></div><div class="faq-answer">(FAQ) Par formulaire en ligne, téléphone au 07 44 29 68 97, WhatsApp, e-mail et réseaux sociaux.</div></div>'+ 
+    '<details class="faq-item"><summary class="faq-question">Quels services proposez-vous exactement ? <span class="faq-icon">+</span></summary><div class="faq-answer">(FAQ) Nous proposons une prise en charge complète de la lutte anti-nuisibles pour les particuliers comme pour les professionnels : dératisation, désinsectisation, désinfection, dépigeonnage, traitement des punaises, cafards, frelons, guêpes, chenilles processionnaires et interventions Diogène.</div></details>'+ 
+    '<details class="faq-item"><summary class="faq-question">Quels sont vos prix de départ ? <span class="faq-icon">+</span></summary><div class="faq-answer">(FAQ) Nos prix de départ sont les suivants : guêpes/frelons 120 EUR, dératisation 200 EUR, dépigeonnage 150 EUR, punaises de lit 200 EUR, cafards 200 EUR, chenilles 120 EUR, syndrome de Diogène 500 EUR. Vous bénéficiez d\'une garantie de 1 mois avec suivi.</div></details>'+ 
+    '<details class="faq-item"><summary class="faq-question">Dans quelles zones intervenez-vous ? <span class="faq-icon">+</span></summary><div class="faq-answer">(FAQ) Nous intervenons dans toute l\'Île-de-France : 75, 77, 78, 91, 92, 93, 94 et 95, avec des créneaux rapides pour les particuliers et professionnels.</div></details>'+ 
+    '<details class="faq-item"><summary class="faq-question">En combien de temps pouvez-vous intervenir ? <span class="faq-icon">+</span></summary><div class="faq-answer">(FAQ) Nous intervenons en urgence 24h/24 et 7j/7, y compris la nuit, les week-ends et les jours fériés.</div></details>'+ 
+    '<details class="faq-item"><summary class="faq-question">Quels nuisibles traitez-vous ? <span class="faq-icon">+</span></summary><div class="faq-answer">(FAQ) Nous traitons rats, souris, cafards, punaises de lit, guêpes, frelons, pigeons, chenilles processionnaires et autres nuisibles selon la situation terrain.</div></details>'+ 
+    '<details class="faq-item"><summary class="faq-question">Comment se déroule une intervention ? <span class="faq-icon">+</span></summary><div class="faq-answer">(FAQ) L\'intervention suit un parcours clair : diagnostic, inspection, traitement ciblé, puis suivi avec recommandations de prévention.</div></details>'+ 
+    '<details class="faq-item"><summary class="faq-question">Y a-t-il une garantie après traitement ? <span class="faq-icon">+</span></summary><div class="faq-answer">(FAQ) Oui, vous bénéficiez d\'une garantie de 1 mois avec suivi sur nos protocoles d\'intervention.</div></details>'+ 
+    '<details class="faq-item"><summary class="faq-question">Comment vous contacter pour un devis ? <span class="faq-icon">+</span></summary><div class="faq-answer">(FAQ) Par formulaire en ligne, téléphone au 07 44 29 68 97, WhatsApp, e-mail et réseaux sociaux.</div></details>'+ 
     '</section>';
   }
 
@@ -185,7 +185,16 @@
   function initFaq(){
     var faqs=[].slice.call(document.querySelectorAll('.global-faq[data-global-faq]'));
     faqs.forEach(function(faq){
+      faq.querySelectorAll('details.faq-item').forEach(function(item){
+        item.addEventListener('toggle',function(){
+          if(!item.open){return;}
+          faq.querySelectorAll('details.faq-item').forEach(function(other){
+            if(other!==item){other.open=false;}
+          });
+        });
+      });
       faq.querySelectorAll('.faq-question').forEach(function(q){
+        if(q.tagName==='SUMMARY'){return;}
         q.addEventListener('click',function(){
           var item=q.parentElement;
           var isActive=item.classList.contains('active');
@@ -352,6 +361,15 @@
       if(!img.getAttribute('decoding')){img.setAttribute('decoding','async');}
       if(!img.hasAttribute('loading')&&index>1){img.setAttribute('loading','lazy');}
       if(!img.getAttribute('referrerpolicy')){img.setAttribute('referrerpolicy','no-referrer-when-downgrade');}
+      if(!img.getAttribute('width') && img.naturalWidth){img.setAttribute('width',String(img.naturalWidth));}
+      if(!img.getAttribute('height') && img.naturalHeight){img.setAttribute('height',String(img.naturalHeight));}
+      if((!img.getAttribute('width') || !img.getAttribute('height')) && !img.__alloSized){
+        img.__alloSized=true;
+        img.addEventListener('load',function(){
+          if(!img.getAttribute('width') && img.naturalWidth){img.setAttribute('width',String(img.naturalWidth));}
+          if(!img.getAttribute('height') && img.naturalHeight){img.setAttribute('height',String(img.naturalHeight));}
+        },{once:true});
+      }
     });
     var heroImage=document.querySelector('.hero img, .hero-local img');
     if(heroImage){
@@ -402,6 +420,38 @@
     });
   }
 
+  function localSeoHTML(city){
+    return ''+
+    '<section class="local-seo-block" data-local-seo>'+
+    '<article>'+
+    '<h2>Intervention urgente à '+city+'</h2>'+
+    '<p>En cas d’infestation de rats ou de cafards, notre équipe assure une intervention rapide à '+city+' pour sécuriser domicile et locaux professionnels.</p>'+
+    '<h2>Entreprise de dératisation à '+city+'</h2>'+
+    '<p>Allo Nuisible Express réalise un traitement anti nuisibles avec extermination professionnelle, diagnostic précis et plan d’action durable.</p>'+
+    '<h2>Exterminateur nuisibles Val-de-Marne</h2>'+
+    '<p>Nous intervenons aussi autour de '+city+' : Orly, Choisy-le-Roi, Vitry-sur-Seine, Rungis et Chevilly-Larue, avec prise en charge urgence nuisibles domicile.</p>'+
+    '<p class="nearby">Quartiers et secteurs couverts selon la demande locale, habitat collectif, pavillons, commerces et bureaux.</p>'+
+    '</article>'+
+    '</section>'+
+    '<section class="local-seo-links" data-local-seo-links>'+
+    '<h3>Voir aussi :</h3>'+
+    '<ul>'+
+    '<li><a href="punaises-lit-'+city.toLowerCase()+'.html">Punaises de lit à '+city+'</a></li>'+
+    '<li><a href="cafards-'+city.toLowerCase()+'.html">Cafards à '+city+'</a></li>'+
+    '<li><a href="deratisation-thiais.html">Dératisation à Thiais</a></li>'+
+    '</ul>'+
+    '</section>';
+  }
+
+  function ensureLocalSeoSections(){
+    var page=currentPage();
+    var isLocalPage=/-thiais\.html$/.test(page)||/-rungis\.html$/.test(page)||page==='nuisibles-rungis.html';
+    if(!isLocalPage){return;}
+    if(document.querySelector('[data-local-seo]')){return;}
+    var city=detectCity();
+    insertBeforeFooter(localSeoHTML(city));
+  }
+
   function ensureSeoTags(){
     var head=document.head;
     if(!head){return;}
@@ -438,33 +488,22 @@
       var serviceTitle=h1Node?h1Node.textContent.trim():'Dératisation et désinsectisation';
       var localBusiness={
         '@context':'https://schema.org',
-        '@type':['LocalBusiness','ProfessionalService'],
+        '@type':'PestControlService',
         name:'Allo Nuisible Express',
         url:(window.location.origin||'https://allonuisibleexpress.github.io')+window.location.pathname,
         telephone:'+33744296897',
         email:'allonuisibleexpress@gmail.com',
-        areaServed:[
-          'Val-de-Marne',
-          'Thiais',
-          'Rungis',
-          'Île-de-France',
-          'Paris'
-        ],
+        priceRange:'€€',
+        areaServed:[detectCity()],
         address:{
           '@type':'PostalAddress',
           streetAddress:'4 Rue de la Couture du Moulin',
           postalCode:'94320',
           addressLocality:'Thiais',
+          addressRegion:'Île-de-France',
           addressCountry:'FR'
         },
-        openingHoursSpecification:[{
-          '@type':'OpeningHoursSpecification',
-          dayOfWeek:[
-            'Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'
-          ],
-          opens:'00:00',
-          closes:'23:59'
-        }],
+        openingHours:'Mo-Su 00:00-23:59',
         sameAs:[
           'https://x.com/FranceNuisible',
           'https://www.youtube.com/@AlloNuisibleExpress',
@@ -541,6 +580,7 @@
     ensureFooter();
     ensureProcess();
     ensureReviewsFaq();
+    ensureLocalSeoSections();
     ensureSticky();
     optimizeForCalls();
     initFaq();
