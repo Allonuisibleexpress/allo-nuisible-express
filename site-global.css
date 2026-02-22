@@ -154,8 +154,9 @@ section[id]{
   text-align:center;
 }
 .timed-call-logo{
-  height:44px;
-  width:auto;
+  width:min(360px,92%);
+  max-width:100%;
+  height:auto;
   display:block;
 }
 .timed-call-modal h3{
