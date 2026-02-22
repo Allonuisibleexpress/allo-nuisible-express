@@ -87,16 +87,6 @@
     return 'Île-de-France';
   }
 
-  function topCallHTML(city){
-    return ''+
-    '<div class="global-top-call" role="complementary" aria-label="Urgence appel immédiat">'+
-    '  <a href="tel:0744296897" aria-label="Urgence - Appeler maintenant">'+
-    '    <span class="top-call-default">URGENCE · Intervention 7j/7 à '+city+' · Appeler maintenant</span>'+
-    '    <span class="top-call-hover">07 44 29 68 97</span>'+
-    '  </a>'+
-    '</div>';
-  }
-
   function reviewsHTML(){
     return ''+
     '<section class="reviews global-reviews" id="avis-google" data-global-reviews>'+ 
@@ -380,37 +370,9 @@
   }
 
   function optimizeForCalls(){
-    var city=detectCity();
-    document.body.classList.add('has-top-call');
-
-    if(!document.querySelector('.global-top-call')){
-      var wrap=document.createElement('div');
-      wrap.innerHTML=topCallHTML(city);
-      var header=document.querySelector('header');
-      if(header && header.parentNode){
-        if(header.nextSibling){
-          header.parentNode.insertBefore(wrap.firstElementChild, header.nextSibling);
-        }else{
-          header.parentNode.appendChild(wrap.firstElementChild);
-        }
-      }else{
-        document.body.insertBefore(wrap.firstElementChild, document.body.firstChild);
-      }
-    }
-
-    var firstBadge=document.querySelector('.hero .badge, .hero-local .badge, .hero-wrap .badge');
-    if(firstBadge){
-      firstBadge.innerHTML='Intervention 7j/7 à <b>'+city+'</b> · <b>Urgence</b>';
-      firstBadge.classList.add('mobile-urgent-badge');
-    }else{
-      var heroWrap=document.querySelector('.hero-wrap');
-      if(heroWrap){
-        var b=document.createElement('span');
-        b.className='badge mobile-urgent-badge';
-        b.innerHTML='Intervention 7j/7 à <b>'+city+'</b> · <b>Urgence</b>';
-        heroWrap.insertBefore(b, heroWrap.firstChild);
-      }
-    }
+    var top=document.querySelector('.global-top-call');
+    if(top){top.remove();}
+    document.body.classList.remove('has-top-call');
 
     document.querySelectorAll('a[href^="tel:"]').forEach(function(a){
       if(!a.getAttribute('aria-label')){
