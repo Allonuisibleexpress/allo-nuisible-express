@@ -575,6 +575,26 @@
       if(document.body.classList.contains('mobile-nav-open')){closeMenu();}else{openMenu();}
     }
 
+    var mobileList=nav.querySelector('.mobile-nav-list');
+    if(!mobileList){
+      mobileList=document.createElement('ul');
+      mobileList.className='mobile-nav-list';
+      mobileList.innerHTML=[
+        '<li><a href=\"index.html\">ACCUEIL</a></li>',
+        '<li><a href=\"punaises.html\">PUNAISE DE LIT</a></li>',
+        '<li><a href=\"deratisation.html\">DÉRATISATION</a></li>',
+        '<li><a href=\"desinfection.html\">DÉSINFECTION</a></li>',
+        '<li><a href=\"desinsectisation.html\">DÉSINSECTISATION</a></li>',
+        '<li><a href=\"depigeonnage.html\">DÉPIGEONNAGE</a></li>',
+        '<li><a href=\"frelons.html\">FRELON</a></li>',
+        '<li><a href=\"diogene.html\">SYNDROME DIOGÈNE</a></li>',
+        '<li><a href=\"contact.html\">CONTACTEZ-NOUS</a></li>',
+        '<li><a href=\"tarifs.html\">TARIFS</a></li>',
+        '<li><a href=\"blog.html\">BLOG</a></li>'
+      ].join('');
+      nav.appendChild(mobileList);
+    }
+
     btn.addEventListener('click',function(ev){
       if(window.innerWidth>980){return;}
       ev.preventDefault();
@@ -587,28 +607,9 @@
       link.addEventListener('click',function(){
         if(window.innerWidth>980){return;}
         if(link.classList.contains('dropdown-toggle')){return;}
-        var href=(link.getAttribute('href')||'').trim();
-        if(href==='#' || href==='#services'){return;}
         closeMenu();
       });
     });
-
-    var dropdown=document.querySelector('header .main-nav .dropdown');
-    var dropdownToggle=dropdown?dropdown.querySelector('.dropdown-toggle'):null;
-    if(dropdown && dropdownToggle){
-      dropdownToggle.setAttribute('role','button');
-      dropdownToggle.setAttribute('aria-expanded','false');
-      var toggleDropdown=function(ev){
-        if(window.innerWidth>980){return;}
-        ev.preventDefault();
-        ev.stopPropagation();
-        var open=!dropdown.classList.contains('open');
-        dropdown.classList.toggle('open',open);
-        dropdownToggle.setAttribute('aria-expanded',open?'true':'false');
-      };
-      dropdownToggle.addEventListener('click',toggleDropdown);
-      dropdownToggle.addEventListener('touchstart',toggleDropdown,{passive:false});
-    }
 
     document.addEventListener('keydown',function(ev){
       if(ev.key==='Escape'){closeMenu();}
@@ -617,10 +618,6 @@
     window.addEventListener('resize',function(){
       if(window.innerWidth>980){
         closeMenu();
-        if(dropdown && dropdownToggle){
-          dropdown.classList.remove('open');
-          dropdownToggle.setAttribute('aria-expanded','false');
-        }
       }
     });
   }
