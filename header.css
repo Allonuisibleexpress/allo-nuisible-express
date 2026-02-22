@@ -46,7 +46,7 @@ header .logo-link:hover,header .logo-link:focus,header .logo-link:active{
   box-shadow:none !important;
 }
 header .logo{
-  height:360px !important;
+  height:240px !important;
   width:auto !important;
   display:block !important;
   object-fit:contain !important;
@@ -65,7 +65,7 @@ header .main-nav{
   flex:1 !important;
   justify-content:flex-end !important;
   min-width:0 !important;
-  margin-left:470px !important;
+  margin-left:340px !important;
 }
 header .main-nav a{margin-left:0 !important;text-decoration:none !important}
 header .main-nav .nav-link{
@@ -193,8 +193,8 @@ header .main-nav .quote-btn:hover .hover-text{
 }
 
 @media(max-width:1180px){
-  header .logo{height:300px !important}
-  header .main-nav{gap:10px !important;margin-left:390px !important}
+  header .logo{height:220px !important}
+  header .main-nav{gap:10px !important;margin-left:300px !important}
   header .main-nav .nav-link{font-size:12px !important}
   header .main-nav .cta-btn{padding:8px 10px !important}
 }
