@@ -103,25 +103,6 @@ display:grid;
 grid-template-columns:2fr 1fr 1fr;
 gap:12px
 }
-.trust-badges-head{
-grid-column:1/-1;
-text-align:center;
-margin-bottom:4px
-}
-.trust-badges-head h2{
-margin:0;
-font-size:44px;
-line-height:1.06;
-font-weight:900;
-text-transform:uppercase
-}
-.trust-badges-head p{
-margin:10px auto 0;
-max-width:760px;
-font-size:17px;
-line-height:1.5;
-color:#656d78
-}
 .trust-badge{
 background:#fff;
 border:1px solid #ececec;
@@ -184,15 +165,12 @@ to{opacity:1;transform:translateY(0)}
 .hero h1{font-size:44px;line-height:1.02}
 .hero-subtitle{font-size:18px;margin-top:64px;line-height:1.42}
 .trust-badges{grid-template-columns:1fr;padding:0 20px;margin:16px auto 8px}
-.trust-badges-head h2{font-size:34px}
-.trust-badges-head p{font-size:15px}
 .trust-badge{min-height:64px}
 }
 @media(max-width:680px){
 .hero h1{font-size:34px;line-height:1.02}
 .hero-subtitle{font-size:16px;margin-top:58px;line-height:1.4}
 .trust-badges{padding:0 14px}
-.trust-badges-head h2{font-size:30px}
 .trust-badge-value{font-size:16px}
 .trust-badge-stars{font-size:16px}
 }
@@ -1095,29 +1073,6 @@ z-index:5
 <p>Allo Nuisible Express intervient rapidement en Île-de-France pour traiter rats, souris, cafards, punaises de lit, guêpes, frelons, pigeons et chenilles processionnaires.</p>
 </section>
 
-<section class="trust-badges" aria-label="Avis clients Google">
-  <div class="trust-badges-head">
-    <h2>Ils nous font confiance</h2>
-    <p>Avis Google 5 étoiles affichés en direct, avec navigation horizontale et lecture détaillée.</p>
-  </div>
-  <article class="trust-badge">
-    <div>
-      <div class="trust-badge-label">Avis Google vérifiés</div>
-      <div class="trust-badge-value">Note <strong data-google-note>...</strong> <span class="trust-badge-stars" data-google-stars>★★★★★</span></div>
-      <small>Des retours clients visibles immédiatement</small>
-    </div>
-  </article>
-  <article class="trust-badge">
-    <div>
-      <div class="trust-badge-label">Satisfaction client</div>
-      <div class="trust-badge-value">Interventions rapides et professionnelles</div>
-    </div>
-  </article>
-  <article class="trust-badge">
-    <a class="trust-badge-link" href="https://maps.app.goo.gl/EWnwrfLmvWMRjEds6" target="_blank" rel="noopener noreferrer">Voir tous les avis Google</a>
-  </article>
-</section>
-
 <section class="reviews" id="avis-google">
 <div class="reviews-shell">
 <h2>Ils nous font confiance</h2>
@@ -1137,6 +1092,25 @@ z-index:5
   <div class="reviews-dots" data-reviews-dots></div>
 </div>
 </div>
+</section>
+
+<section class="trust-badges" aria-label="Avis clients Google">
+  <article class="trust-badge">
+    <div>
+      <div class="trust-badge-label">Avis Google vérifiés</div>
+      <div class="trust-badge-value">Note <strong data-google-note>...</strong> <span class="trust-badge-stars" data-google-stars>★★★★★</span></div>
+      <small>Des retours clients visibles immédiatement</small>
+    </div>
+  </article>
+  <article class="trust-badge">
+    <div>
+      <div class="trust-badge-label">Satisfaction client</div>
+      <div class="trust-badge-value">Interventions rapides et professionnelles</div>
+    </div>
+  </article>
+  <article class="trust-badge">
+    <a class="trust-badge-link" href="https://maps.app.goo.gl/EWnwrfLmvWMRjEds6" target="_blank" rel="noopener noreferrer">Voir tous les avis Google</a>
+  </article>
 </section>
 
 <section class="cards" id="services">
