@@ -20,29 +20,40 @@ display:block;
 text-decoration:none;
 color:inherit;
 cursor:pointer;
+position:relative;
+padding-bottom:56px;
 transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease,background-color .22s ease;
 }
 .card-link:hover{
-transform:translateY(-4px);
-box-shadow:0 14px 28px rgba(0,0,0,.10);
-border-color:#ffd47a;
+transform:translateY(-6px) scale(1.01);
+box-shadow:0 18px 34px rgba(0,0,0,.14);
+border-color:#ffc85a;
 background:#fffdf7;
 }
 .card-link .card-cta{
 display:inline-flex;
 align-items:center;
 gap:6px;
-margin-top:12px;
+position:absolute;
+left:22px;
+right:22px;
+bottom:16px;
+justify-content:center;
+margin-top:0;
 font-size:13px;
 font-weight:800;
-color:#8a5d00;
-opacity:.88;
-transition:transform .2s ease,color .2s ease,opacity .2s ease;
+color:#111;
+background:#ffae00;
+border:1px solid #ffae00;
+border-radius:10px;
+padding:9px 12px;
+opacity:1;
+transition:transform .2s ease,color .2s ease,opacity .2s ease,filter .2s ease,box-shadow .2s ease;
 }
 .card-link:hover .card-cta{
-transform:translateX(4px);
-color:#d18b00;
-opacity:1;
+transform:translateY(-1px);
+filter:brightness(1.04);
+box-shadow:0 10px 18px rgba(255,174,0,.42);
 }
 .card-link:focus-visible{
 outline:3px solid rgba(255,174,0,.45);
@@ -59,7 +70,8 @@ outline-offset:2px;
   .price{font-size:24px;margin:6px 0}
   .card p{margin:0;font-size:15px;line-height:1.5}
   .tag{font-size:11px;padding:4px 8px}
-  .card-link .card-cta{font-size:12px;margin-top:10px}
+  .card-link{padding-bottom:52px}
+  .card-link .card-cta{left:16px;right:16px;bottom:12px;font-size:12px;padding:8px 10px}
   .card-link:hover{transform:none;box-shadow:0 4px 12px rgba(0,0,0,.04)}
 }
 @media(max-width:480px){
@@ -67,6 +79,8 @@ outline-offset:2px;
   .card{padding:14px}
   .card h2{font-size:18px}
   .price{font-size:22px}
+  .card-link{padding-bottom:50px}
+  .card-link .card-cta{left:14px;right:14px}
 }
 
 /* unified top navigation */
@@ -347,14 +361,14 @@ text-rendering:geometricPrecision;
 <main class="main">
   <div class="grid">
     <a class="card card-link" href="guepes.html" aria-label="Voir le service guêpes"><span class="tag">Prix de départ</span><h2>Guêpes / Frelons</h2><p class="price">120 EUR</p><p>Traitement ciblé avec sécurisation de la zone et conseils de prévention.</p><span class="card-cta">Voir le service →</span></a>
-    <a class="card card-link" href="deratisation.html" aria-label="Voir le service dératisation"><span class="tag">Prix de départ</span><h2>Dératisation</h2><p class="price">200 EUR</p><p>Tarif de base pour rats et souris, ajusté selon la surface et l'accès.</p><span class="card-cta">Voir le service →</span></a>
-    <a class="card card-link" href="depigeonnage.html" aria-label="Voir le service dépigeonnage"><span class="tag">Prix de départ</span><h2>Dépigeonnage</h2><p class="price">150 EUR</p><p>Protection anti-pigeons adaptée à la configuration du bâtiment.</p><span class="card-cta">Voir le service →</span></a>
-    <a class="card card-link" href="punaises.html" aria-label="Voir le service punaises de lit"><span class="tag">Prix de départ</span><h2>Punaises de lit</h2><p class="price">200 EUR</p><p>Traitement ciblé selon le niveau d'infestation et le nombre de pièces.</p><span class="card-cta">Voir le service →</span></a>
-    <a class="card card-link" href="cafards.html" aria-label="Voir le service cafards"><span class="tag">Prix de départ</span><h2>Cafards</h2><p class="price">200 EUR</p><p>Désinsectisation professionnelle avec protocole adapté au site.</p><span class="card-cta">Voir le service →</span></a>
-    <a class="card card-link" href="chenilles.html" aria-label="Voir le service chenilles processionnaires"><span class="tag">Prix de départ</span><h2>Chenilles processionnaires</h2><p class="price">120 EUR</p><p>Intervention de neutralisation des nids selon hauteur et accessibilité.</p><span class="card-cta">Voir le service →</span></a>
-    <a class="card card-link" href="diogene.html" aria-label="Voir le service syndrome de Diogène"><span class="tag">Prix de départ</span><h2>Syndrome de Diogène</h2><p class="price">500 EUR</p><p>Nettoyage, désinfection et remise en état selon volume à traiter.</p><span class="card-cta">Voir le service →</span></a>
+    <a class="card card-link" href="deratisation.html" aria-label="Voir le service dératisation"><span class="tag">Prix de départ</span><h2>Dératisation</h2><p class="price">Sur devis</p><p>Tarification personnalisée selon la surface, l'accès et le niveau d'infestation.</p><span class="card-cta">Voir le service →</span></a>
+    <a class="card card-link" href="depigeonnage.html" aria-label="Voir le service dépigeonnage"><span class="tag">Prix de départ</span><h2>Dépigeonnage</h2><p class="price">Sur devis</p><p>Tarification personnalisée selon la configuration du bâtiment.</p><span class="card-cta">Voir le service →</span></a>
+    <a class="card card-link" href="punaises.html" aria-label="Voir le service punaises de lit"><span class="tag">Prix de départ</span><h2>Punaises de lit</h2><p class="price">Sur devis</p><p>Tarification personnalisée selon le niveau d'infestation et le nombre de pièces.</p><span class="card-cta">Voir le service →</span></a>
+    <a class="card card-link" href="cafards.html" aria-label="Voir le service cafards"><span class="tag">Prix de départ</span><h2>Cafards</h2><p class="price">Sur devis</p><p>Tarification personnalisée selon le protocole adapté au site.</p><span class="card-cta">Voir le service →</span></a>
+    <a class="card card-link" href="chenilles.html" aria-label="Voir le service chenilles processionnaires"><span class="tag">Prix de départ</span><h2>Chenilles processionnaires</h2><p class="price">Sur devis</p><p>Tarification personnalisée selon la hauteur et l'accessibilité des nids.</p><span class="card-cta">Voir le service →</span></a>
+    <a class="card card-link" href="diogene.html" aria-label="Voir le service syndrome de Diogène"><span class="tag">Prix de départ</span><h2>Syndrome de Diogène</h2><p class="price">400 EUR</p><p>Nettoyage, désinfection et remise en état selon volume à traiter.</p><span class="card-cta">Voir le service →</span></a>
   </div>
-  <div class="note"><b>Informations tarifaires:</b> disponibilité 24h/24 et 7j/7, devis gratuit, déplacement gratuit, intervention rapide en Île-de-France. Les prix affichés sont des montants de départ et peuvent être ajustés selon la configuration réelle du site.</div>
+  <div class="note"><b>Informations tarifaires:</b> guêpes/frelons à partir de 120 EUR, syndrome de Diogène à partir de 400 EUR. Tous les autres nuisibles sont traités sur devis. Disponibilité 24h/24 et 7j/7, devis gratuit, déplacement gratuit, intervention rapide en Île-de-France.</div>
 </main>
 <script>
 document.addEventListener('DOMContentLoaded', function(){
@@ -365,7 +379,7 @@ document.addEventListener('DOMContentLoaded', function(){
     card.addEventListener('mouseenter', function(){
       timer = window.setTimeout(function(){
         window.location.href = card.href;
-      }, 650);
+      }, 240);
     });
     card.addEventListener('mouseleave', function(){
       if(timer){ window.clearTimeout(timer); timer = null; }
