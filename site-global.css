@@ -224,6 +224,31 @@ main .card li{
   width:100%;
 }
 
+/* Final footer consistency lock across all pages */
+.site-footer .footer-logo img,
+.global-footer .footer-logo img{
+  height:72px !important;
+  width:auto !important;
+}
+.site-footer .site-footer-main>section:first-child .footer-text,
+.global-footer .site-footer-main>section:first-child .footer-text{
+  text-align:left !important;
+  max-width:430px !important;
+}
+.site-footer .site-footer-main>section:first-child .footer-socials,
+.global-footer .site-footer-main>section:first-child .footer-socials{
+  max-width:430px !important;
+  justify-content:center !important;
+  align-self:flex-start !important;
+}
+
+@media (max-width: 760px){
+  .site-footer .footer-logo img,
+  .global-footer .footer-logo img{
+    height:72px !important;
+  }
+}
+
 @media (min-width: 981px){
   p,
   .card p,
