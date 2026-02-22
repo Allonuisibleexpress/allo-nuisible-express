@@ -28,6 +28,22 @@ box-shadow:0 14px 28px rgba(0,0,0,.10);
 border-color:#ffd47a;
 background:#fffdf7;
 }
+.card-link .card-cta{
+display:inline-flex;
+align-items:center;
+gap:6px;
+margin-top:12px;
+font-size:13px;
+font-weight:800;
+color:#8a5d00;
+opacity:.88;
+transition:transform .2s ease,color .2s ease,opacity .2s ease;
+}
+.card-link:hover .card-cta{
+transform:translateX(4px);
+color:#d18b00;
+opacity:1;
+}
 .card-link:focus-visible{
 outline:3px solid rgba(255,174,0,.45);
 outline-offset:2px;
@@ -43,6 +59,7 @@ outline-offset:2px;
   .price{font-size:24px;margin:6px 0}
   .card p{margin:0;font-size:15px;line-height:1.5}
   .tag{font-size:11px;padding:4px 8px}
+  .card-link .card-cta{font-size:12px;margin-top:10px}
   .card-link:hover{transform:none;box-shadow:0 4px 12px rgba(0,0,0,.04)}
 }
 @media(max-width:480px){
@@ -329,15 +346,32 @@ text-rendering:geometricPrecision;
 <section class="hero"><h1>Tarifs</h1></section>
 <main class="main">
   <div class="grid">
-    <a class="card card-link" href="guepes.html" aria-label="Voir le service guêpes"><span class="tag">Prix de départ</span><h2>Guêpes / Frelons</h2><p class="price">120 EUR</p><p>Traitement ciblé avec sécurisation de la zone et conseils de prévention.</p></a>
-    <a class="card card-link" href="deratisation.html" aria-label="Voir le service dératisation"><span class="tag">Prix de départ</span><h2>Dératisation</h2><p class="price">200 EUR</p><p>Tarif de base pour rats et souris, ajusté selon la surface et l'accès.</p></a>
-    <a class="card card-link" href="depigeonnage.html" aria-label="Voir le service dépigeonnage"><span class="tag">Prix de départ</span><h2>Dépigeonnage</h2><p class="price">150 EUR</p><p>Protection anti-pigeons adaptée à la configuration du bâtiment.</p></a>
-    <a class="card card-link" href="punaises.html" aria-label="Voir le service punaises de lit"><span class="tag">Prix de départ</span><h2>Punaises de lit</h2><p class="price">200 EUR</p><p>Traitement ciblé selon le niveau d'infestation et le nombre de pièces.</p></a>
-    <a class="card card-link" href="cafards.html" aria-label="Voir le service cafards"><span class="tag">Prix de départ</span><h2>Cafards</h2><p class="price">200 EUR</p><p>Désinsectisation professionnelle avec protocole adapté au site.</p></a>
-    <a class="card card-link" href="chenilles.html" aria-label="Voir le service chenilles processionnaires"><span class="tag">Prix de départ</span><h2>Chenilles processionnaires</h2><p class="price">120 EUR</p><p>Intervention de neutralisation des nids selon hauteur et accessibilité.</p></a>
-    <a class="card card-link" href="diogene.html" aria-label="Voir le service syndrome de Diogène"><span class="tag">Prix de départ</span><h2>Syndrome de Diogène</h2><p class="price">500 EUR</p><p>Nettoyage, désinfection et remise en état selon volume à traiter.</p></a>
+    <a class="card card-link" href="guepes.html" aria-label="Voir le service guêpes"><span class="tag">Prix de départ</span><h2>Guêpes / Frelons</h2><p class="price">120 EUR</p><p>Traitement ciblé avec sécurisation de la zone et conseils de prévention.</p><span class="card-cta">Voir le service →</span></a>
+    <a class="card card-link" href="deratisation.html" aria-label="Voir le service dératisation"><span class="tag">Prix de départ</span><h2>Dératisation</h2><p class="price">200 EUR</p><p>Tarif de base pour rats et souris, ajusté selon la surface et l'accès.</p><span class="card-cta">Voir le service →</span></a>
+    <a class="card card-link" href="depigeonnage.html" aria-label="Voir le service dépigeonnage"><span class="tag">Prix de départ</span><h2>Dépigeonnage</h2><p class="price">150 EUR</p><p>Protection anti-pigeons adaptée à la configuration du bâtiment.</p><span class="card-cta">Voir le service →</span></a>
+    <a class="card card-link" href="punaises.html" aria-label="Voir le service punaises de lit"><span class="tag">Prix de départ</span><h2>Punaises de lit</h2><p class="price">200 EUR</p><p>Traitement ciblé selon le niveau d'infestation et le nombre de pièces.</p><span class="card-cta">Voir le service →</span></a>
+    <a class="card card-link" href="cafards.html" aria-label="Voir le service cafards"><span class="tag">Prix de départ</span><h2>Cafards</h2><p class="price">200 EUR</p><p>Désinsectisation professionnelle avec protocole adapté au site.</p><span class="card-cta">Voir le service →</span></a>
+    <a class="card card-link" href="chenilles.html" aria-label="Voir le service chenilles processionnaires"><span class="tag">Prix de départ</span><h2>Chenilles processionnaires</h2><p class="price">120 EUR</p><p>Intervention de neutralisation des nids selon hauteur et accessibilité.</p><span class="card-cta">Voir le service →</span></a>
+    <a class="card card-link" href="diogene.html" aria-label="Voir le service syndrome de Diogène"><span class="tag">Prix de départ</span><h2>Syndrome de Diogène</h2><p class="price">500 EUR</p><p>Nettoyage, désinfection et remise en état selon volume à traiter.</p><span class="card-cta">Voir le service →</span></a>
   </div>
   <div class="note"><b>Informations tarifaires:</b> disponibilité 24h/24 et 7j/7, devis gratuit, déplacement gratuit, intervention rapide en Île-de-France. Les prix affichés sont des montants de départ et peuvent être ajustés selon la configuration réelle du site.</div>
 </main>
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+  var desktopHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+  if(!desktopHover){ return; }
+  document.querySelectorAll('.card-link').forEach(function(card){
+    var timer = null;
+    card.addEventListener('mouseenter', function(){
+      timer = window.setTimeout(function(){
+        window.location.href = card.href;
+      }, 650);
+    });
+    card.addEventListener('mouseleave', function(){
+      if(timer){ window.clearTimeout(timer); timer = null; }
+    });
+  });
+});
+</script>
 </body>
 </html>
