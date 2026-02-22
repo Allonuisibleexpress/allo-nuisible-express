@@ -2,10 +2,10 @@
 .site-sticky-cta{
   position:fixed !important;
   left:50% !important;
-  bottom:14px !important;
+  bottom:16px !important;
   transform:translateX(-50%) !important;
   z-index:5000 !important;
-  width:min(560px,calc(100% - 24px)) !important;
+  width:min(520px,calc(100% - 24px)) !important;
   display:flex !important;
   justify-content:center !important;
   pointer-events:none !important;
@@ -19,15 +19,15 @@
   justify-content:center !important;
   gap:10px !important;
   width:100% !important;
-  min-height:66px !important;
-  padding:16px 22px !important;
-  border-radius:14px !important;
+  min-height:60px !important;
+  padding:14px 20px !important;
+  border-radius:12px !important;
   text-decoration:none !important;
   font-weight:900 !important;
   letter-spacing:.02em !important;
-  font-size:20px !important;
+  font-size:18px !important;
   overflow:hidden !important;
-  box-shadow:0 14px 30px rgba(255,174,0,.34) !important;
+  box-shadow:0 10px 22px rgba(255,174,0,.30) !important;
   transition:box-shadow .25s ease !important;
 }
 .site-sticky-cta .sticky-link:before,
@@ -98,10 +98,18 @@
   50%{letter-spacing:.03em;opacity:.96}
 }
 @media(max-width:860px){
-  body{padding-bottom:104px !important}
+  body{padding-bottom:138px !important}
   .site-sticky-cta{width:calc(100% - 16px) !important;bottom:8px !important}
-  .site-sticky-cta .sticky-link{min-height:58px !important;font-size:17px !important;padding:13px 14px !important}
+  .site-sticky-cta .sticky-link{min-height:56px !important;font-size:16px !important;padding:12px 14px !important}
 }
+
+/* leave enough scroll space so sticky CTA never hides legal footer line */
+body{padding-bottom:156px !important}
+
+/* footer on service/legal pages: logo only (no text) with same scale as homepage footer */
+.site-footer .footer-brand{display:none !important}
+.site-footer .footer-logo{gap:0 !important}
+.site-footer .footer-logo img{height:220px !important;width:auto !important}
 
 /* service hero CTA dynamic buttons */
 .hero{
