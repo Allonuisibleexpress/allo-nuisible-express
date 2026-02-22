@@ -147,15 +147,16 @@ section[id]{
   display:inline-flex;
   align-items:center;
   justify-content:center;
-  padding:6px 10px;
+  padding:4px 8px;
   border-radius:999px;
-  background:#111;
-  color:#ffae00;
-  font-size:11px;
-  font-weight:900;
-  letter-spacing:.06em;
+  background:transparent;
   margin-bottom:12px;
   text-align:center;
+}
+.timed-call-logo{
+  height:44px;
+  width:auto;
+  display:block;
 }
 .timed-call-modal h3{
   margin:0 0 10px;

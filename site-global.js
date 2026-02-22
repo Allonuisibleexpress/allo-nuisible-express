@@ -670,7 +670,7 @@
     '<div class="timed-call-overlay" data-timed-call-overlay aria-hidden="true">'+
     '  <div class="timed-call-modal" role="dialog" aria-modal="true" aria-labelledby="timed-call-title">'+
     '    <button class="timed-call-close" type="button" aria-label="Fermer">×</button>'+
-    '    <div class="timed-call-badge">ALLO NUISIBLE EXPRESS</div>'+
+    '    <div class="timed-call-badge"><img class="timed-call-logo" src="logo.png" alt="Allo Nuisible Express"></div>'+
     '    <h3 id="timed-call-title">Besoin d\'une intervention rapide ?</h3>'+
     '    <p>Un expert anti-nuisibles peut vous répondre immédiatement et planifier une intervention en urgence 24h/24 et 7j/7.</p>'+
     '    <a class="timed-call-action" href="tel:0744296897" aria-label="Appeler le 07 44 29 68 97">📞 07 44 29 68 97</a>'+
