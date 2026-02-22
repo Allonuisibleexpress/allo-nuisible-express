@@ -87,6 +87,28 @@
     return 'Île-de-France';
   }
 
+  function ensureHomeUrgencyStrip(){
+    if(currentPage()!=='index.html'){return;}
+    if(document.querySelector('.home-urgent-strip')){return;}
+    var header=document.querySelector('header');
+    var strip=document.createElement('a');
+    strip.className='home-urgent-strip';
+    strip.href='tel:0744296897';
+    strip.setAttribute('aria-label','Urgence 24h/24 - Appeler le 07 44 29 68 97');
+    strip.innerHTML='<span class="urgent-default">URGENCE 24H/24 · 7J/7</span><span class="urgent-hover">07 44 29 68 97</span>';
+    if(header && header.parentNode){
+      if(header.nextSibling){
+        header.parentNode.insertBefore(strip, header.nextSibling);
+      }else{
+        header.parentNode.appendChild(strip);
+      }
+      document.body.classList.add('has-home-urgent-strip');
+    }else{
+      document.body.insertBefore(strip, document.body.firstChild);
+      document.body.classList.add('has-home-urgent-strip');
+    }
+  }
+
   function reviewsHTML(){
     return ''+
     '<section class="reviews global-reviews" id="avis-google" data-global-reviews>'+ 
@@ -520,6 +542,8 @@
     var header=document.querySelector('header');
     var nav=document.querySelector('header .main-nav');
     if(!header||!nav){return;}
+    if(nav.dataset.mobileInit==='1'){return;}
+    nav.dataset.mobileInit='1';
 
     var btn=header.querySelector('.mobile-menu-btn');
     if(!btn){
@@ -573,12 +597,18 @@
     var dropdown=document.querySelector('header .main-nav .dropdown');
     var dropdownToggle=dropdown?dropdown.querySelector('.dropdown-toggle'):null;
     if(dropdown && dropdownToggle){
-      dropdownToggle.addEventListener('click',function(ev){
+      dropdownToggle.setAttribute('role','button');
+      dropdownToggle.setAttribute('aria-expanded','false');
+      var toggleDropdown=function(ev){
         if(window.innerWidth>980){return;}
         ev.preventDefault();
         ev.stopPropagation();
-        dropdown.classList.toggle('open');
-      });
+        var open=!dropdown.classList.contains('open');
+        dropdown.classList.toggle('open',open);
+        dropdownToggle.setAttribute('aria-expanded',open?'true':'false');
+      };
+      dropdownToggle.addEventListener('click',toggleDropdown);
+      dropdownToggle.addEventListener('touchstart',toggleDropdown,{passive:false});
     }
 
     document.addEventListener('keydown',function(ev){
@@ -586,12 +616,19 @@
     });
 
     window.addEventListener('resize',function(){
-      if(window.innerWidth>980){closeMenu();}
+      if(window.innerWidth>980){
+        closeMenu();
+        if(dropdown && dropdownToggle){
+          dropdown.classList.remove('open');
+          dropdownToggle.setAttribute('aria-expanded','false');
+        }
+      }
     });
   }
 
   function boot(){
     ensureSeoTags();
+    ensureHomeUrgencyStrip();
     ensureFooter();
     ensureProcess();
     ensureReviewsFaq();
