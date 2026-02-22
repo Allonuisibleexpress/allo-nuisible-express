@@ -665,6 +665,66 @@
     });
   }
 
+  function timedCallModalHTML(){
+    return ''+
+    '<div class="timed-call-overlay" data-timed-call-overlay aria-hidden="true">'+
+    '  <div class="timed-call-modal" role="dialog" aria-modal="true" aria-labelledby="timed-call-title">'+
+    '    <button class="timed-call-close" type="button" aria-label="Fermer">×</button>'+
+    '    <div class="timed-call-badge">ALLO NUISIBLE EXPRESS</div>'+
+    '    <h3 id="timed-call-title">Besoin d\'une intervention rapide ?</h3>'+
+    '    <p>Un expert anti-nuisibles peut vous répondre immédiatement et planifier une intervention en urgence 24h/24 et 7j/7.</p>'+
+    '    <a class="timed-call-action" href="tel:0744296897" aria-label="Appeler le 07 44 29 68 97">📞 07 44 29 68 97</a>'+
+    '  </div>'+
+    '</div>';
+  }
+
+  function initTimedCallModal(){
+    var STORAGE_KEY='allo_timed_call_modal_closed_at';
+    var CLOSE_TTL=24*60*60*1000;
+    var shownAt=Number(localStorage.getItem(STORAGE_KEY)||'0');
+    if(shownAt && (Date.now()-shownAt)<CLOSE_TTL){return;}
+    if(document.querySelector('[data-timed-call-overlay]')){return;}
+
+    var host=document.createElement('div');
+    host.innerHTML=timedCallModalHTML();
+    var overlay=host.firstElementChild;
+    if(!overlay){return;}
+    document.body.appendChild(overlay);
+
+    var modal=overlay.querySelector('.timed-call-modal');
+    var closeBtn=overlay.querySelector('.timed-call-close');
+    var phoneBtn=overlay.querySelector('.timed-call-action');
+    var timerId=null;
+
+    function closeModal(){
+      overlay.classList.remove('is-open');
+      overlay.setAttribute('aria-hidden','true');
+      document.body.classList.remove('timed-call-open');
+      localStorage.setItem(STORAGE_KEY,String(Date.now()));
+      if(timerId){window.clearTimeout(timerId);timerId=null;}
+    }
+
+    function openModal(){
+      if(document.body.classList.contains('mobile-nav-open')){return;}
+      overlay.classList.add('is-open');
+      overlay.setAttribute('aria-hidden','false');
+      document.body.classList.add('timed-call-open');
+    }
+
+    closeBtn.addEventListener('click',closeModal);
+    overlay.addEventListener('click',function(ev){
+      if(ev.target===overlay){closeModal();}
+    });
+    document.addEventListener('keydown',function(ev){
+      if(ev.key==='Escape' && overlay.classList.contains('is-open')){closeModal();}
+    });
+    phoneBtn.addEventListener('click',function(){
+      localStorage.setItem(STORAGE_KEY,String(Date.now()));
+    });
+
+    timerId=window.setTimeout(openModal,10000);
+  }
+
   function boot(){
     ensureSeoTags();
     ensureHomeUrgencyStrip();
@@ -677,6 +737,7 @@
     initFaq();
     initReviews();
     initMobileMenu();
+    initTimedCallModal();
     optimizeMedia();
     ensureStructuredData();
     setYear();
