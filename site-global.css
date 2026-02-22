@@ -227,8 +227,9 @@ main .card li{
 /* Final footer consistency lock across all pages */
 .site-footer .footer-logo img,
 .global-footer .footer-logo img{
-  height:72px !important;
-  width:auto !important;
+  width:260px !important;
+  max-width:100% !important;
+  height:auto !important;
 }
 .site-footer .site-footer-main>section:first-child .footer-text,
 .global-footer .site-footer-main>section:first-child .footer-text{
@@ -245,7 +246,8 @@ main .card li{
 @media (max-width: 760px){
   .site-footer .footer-logo img,
   .global-footer .footer-logo img{
-    height:72px !important;
+    width:210px !important;
+    height:auto !important;
   }
 }
 
