@@ -222,6 +222,7 @@ header .main-nav .quote-btn:hover .hover-text{
     display:inline-flex !important;
     align-items:center !important;
     justify-content:center !important;
+    flex-direction:column !important;
     margin-left:auto !important;
     width:52px !important;
     height:52px !important;
@@ -234,11 +235,11 @@ header .main-nav .quote-btn:hover .hover-text{
   }
   header .mobile-menu-btn span{
     display:block !important;
-    width:24px !important;
+    width:26px !important;
     height:3px !important;
     border-radius:10px !important;
     background:currentColor !important;
-    margin:2px 0 !important;
+    margin:3px 0 !important;
     transition:transform .25s ease,opacity .2s ease !important;
   }
   body.mobile-nav-open header .mobile-menu-btn span:nth-child(1){transform:none !important;opacity:1 !important}

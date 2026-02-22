@@ -99,6 +99,35 @@ main .card li{
 .global-footer .footer-list a,.global-footer .footer-services a{font-weight:700}
 .global-footer .footer-contact{text-align:center}
 
+.site-footer,
+.global-footer{
+  text-align:center !important;
+}
+.site-footer .site-footer-main,
+.global-footer .site-footer-main{
+  align-items:start !important;
+}
+.site-footer .site-footer-main section,
+.global-footer .site-footer-main section{
+  align-items:center !important;
+  text-align:center !important;
+}
+.site-footer .footer-text,
+.site-footer .footer-contact p,
+.global-footer .footer-text,
+.global-footer .footer-contact p{
+  text-align:center !important;
+  margin-left:auto !important;
+  margin-right:auto !important;
+}
+.site-footer .footer-list,
+.site-footer .footer-services,
+.global-footer .footer-list,
+.global-footer .footer-services{
+  width:100%;
+  justify-items:center;
+}
+
 /* Injected sticky call button */
 body{padding-bottom:calc(120px + env(safe-area-inset-bottom, 0px))}
 .global-sticky-cta{position:fixed;left:50%;bottom:10px;transform:translateX(-50%);z-index:4000;display:flex;align-items:center;justify-content:center;width:min(700px,calc(100% - 18px));pointer-events:none}
@@ -109,7 +138,8 @@ body{padding-bottom:calc(120px + env(safe-area-inset-bottom, 0px))}
 .global-sticky-cta .sticky-hover-number{display:none}
 .global-sticky-cta .sticky-link:hover .sticky-default{display:none}
 .global-sticky-cta .sticky-link:hover .sticky-hover-number{display:inline}
-body.mobile-nav-open .global-sticky-cta{
+body.mobile-nav-open .global-sticky-cta,
+body.mobile-nav-open .site-sticky-cta{
   opacity:0 !important;
   visibility:hidden !important;
   pointer-events:none !important;
