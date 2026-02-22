@@ -992,6 +992,82 @@ body.mobile-nav-open .site-sticky-cta{
   bottom:54px !important;
 }
 
+/* Desktop only: premium visual treatment for the 12 homepage service cards */
+@media(min-width:981px){
+  .cards#services{
+    max-width:1420px !important;
+    margin:0 auto !important;
+    padding:58px 44px !important;
+    gap:22px !important;
+  }
+  .cards#services .card{
+    border:1px solid rgba(255,174,0,.34) !important;
+    background:#0f1219 !important;
+    box-shadow:
+      0 16px 36px rgba(10,13,20,.25),
+      0 2px 0 rgba(255,255,255,.06) inset,
+      0 0 0 1px rgba(255,174,0,.1) inset !important;
+    transition:
+      transform .34s cubic-bezier(.22,.61,.36,1),
+      box-shadow .34s cubic-bezier(.22,.61,.36,1),
+      border-color .26s ease !important;
+  }
+  .cards#services .card::before{
+    background:
+      radial-gradient(130% 85% at 50% 115%, rgba(255,174,0,.22) 0%, rgba(255,174,0,0) 62%),
+      linear-gradient(180deg, rgba(9,12,18,.08) 8%, rgba(9,12,18,.72) 88%) !important;
+  }
+  .cards#services .card img{
+    filter:brightness(59%) saturate(1.04) contrast(1.03) !important;
+    transform:scale(1.01) !important;
+  }
+  .cards#services .card span{
+    bottom:20px !important;
+    width:calc(100% - 34px) !important;
+    font-size:18px !important;
+    font-weight:800 !important;
+    letter-spacing:.01em !important;
+    line-height:1.14 !important;
+    text-shadow:0 4px 14px rgba(0,0,0,.62) !important;
+  }
+  .cards#services .card::after{
+    left:14px !important;
+    right:14px !important;
+    bottom:14px !important;
+    padding:10px 14px !important;
+    border-radius:999px !important;
+    border:1px solid rgba(17,17,17,.2) !important;
+    box-shadow:0 10px 22px rgba(255,174,0,.29) !important;
+    font-size:11px !important;
+    letter-spacing:.05em !important;
+  }
+  .cards#services .card:hover{
+    transform:translateY(-9px) scale(1.012) !important;
+    border-color:rgba(255,200,94,.9) !important;
+    box-shadow:
+      0 24px 46px rgba(10,13,20,.34),
+      0 0 0 1px rgba(255,174,0,.22) inset,
+      0 0 24px rgba(255,174,0,.2) !important;
+  }
+  .cards#services .card:hover::before{
+    background:
+      radial-gradient(130% 85% at 50% 115%, rgba(255,174,0,.3) 0%, rgba(255,174,0,0) 64%),
+      linear-gradient(180deg, rgba(9,12,18,.04) 8%, rgba(9,12,18,.58) 88%) !important;
+  }
+  .cards#services .card:hover img{
+    filter:brightness(100%) saturate(1.1) contrast(1.04) !important;
+    transform:scale(1.07) !important;
+  }
+  .cards#services .card:hover span{
+    bottom:60px !important;
+  }
+  .cards#services .card:focus-visible{
+    outline:2px solid rgba(255,174,0,.65) !important;
+    outline-offset:3px !important;
+    transform:translateY(-6px) !important;
+  }
+}
+
 .main .grid .card-link{
   border-radius:16px !important;
   border:1px solid #e7e7e7 !important;
