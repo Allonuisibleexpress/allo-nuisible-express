@@ -95,6 +95,64 @@ color:#fff7da;
 text-shadow:0 3px 14px rgba(0,0,0,0.65);
 animation:heroTextIn 1.2s ease-out
 }
+.trust-badges{
+max-width:1200px;
+margin:22px auto 10px;
+padding:0 24px;
+display:grid;
+grid-template-columns:2fr 1fr 1fr;
+gap:12px
+}
+.trust-badge{
+background:#fff;
+border:1px solid #ececec;
+border-radius:14px;
+padding:14px 16px;
+display:flex;
+align-items:center;
+gap:12px;
+min-height:74px;
+box-shadow:0 8px 20px rgba(0,0,0,.06)
+}
+.trust-badge-stars{
+font-size:18px;
+letter-spacing:.06em;
+color:#ffb300;
+font-weight:900;
+line-height:1
+}
+.trust-badge-label{
+font-size:13px;
+font-weight:800;
+letter-spacing:.04em;
+color:#6a6f76;
+text-transform:uppercase
+}
+.trust-badge-value{
+font-size:18px;
+font-weight:900;
+color:#111;
+line-height:1.2
+}
+.trust-badge small{
+display:block;
+font-size:13px;
+color:#5d6470;
+margin-top:3px
+}
+.trust-badge-link{
+display:inline-flex;
+align-items:center;
+justify-content:center;
+height:100%;
+width:100%;
+text-decoration:none;
+font-weight:900;
+font-size:14px;
+letter-spacing:.03em;
+color:#111
+}
+.trust-badge-link:hover{color:#c27f00}
 @keyframes heroTextIn{
 from{opacity:0;transform:translateY(18px)}
 to{opacity:1;transform:translateY(0)}
@@ -106,10 +164,15 @@ to{opacity:1;transform:translateY(0)}
 @media(max-width:980px){
 .hero h1{font-size:44px;line-height:1.02}
 .hero-subtitle{font-size:18px;margin-top:64px;line-height:1.42}
+.trust-badges{grid-template-columns:1fr;padding:0 20px;margin:16px auto 8px}
+.trust-badge{min-height:64px}
 }
 @media(max-width:680px){
 .hero h1{font-size:34px;line-height:1.02}
 .hero-subtitle{font-size:16px;margin-top:58px;line-height:1.4}
+.trust-badges{padding:0 14px}
+.trust-badge-value{font-size:16px}
+.trust-badge-stars{font-size:16px}
 }
 
 .cards{
@@ -963,6 +1026,25 @@ z-index:5
 </div>
 </section>
 
+<section class="trust-badges" aria-label="Avis clients Google">
+  <article class="trust-badge">
+    <div>
+      <div class="trust-badge-label">Avis Google vérifiés</div>
+      <div class="trust-badge-value">Note <strong data-google-note>...</strong> <span class="trust-badge-stars" data-google-stars>★★★★★</span></div>
+      <small>Des retours clients visibles immédiatement</small>
+    </div>
+  </article>
+  <article class="trust-badge">
+    <div>
+      <div class="trust-badge-label">Satisfaction client</div>
+      <div class="trust-badge-value">Interventions rapides et professionnelles</div>
+    </div>
+  </article>
+  <article class="trust-badge">
+    <a class="trust-badge-link" href="https://maps.app.goo.gl/EWnwrfLmvWMRjEds6" target="_blank" rel="noopener noreferrer">Voir tous les avis Google</a>
+  </article>
+</section>
+
 <section class="services-head">
 <div class="hero-emblem" aria-hidden="true">
 <svg viewBox="0 0 200 200" role="img" aria-label="Viseur et rat">
@@ -1157,8 +1239,8 @@ if(!isActive){item.classList.add("active")}
   var prev=slider.querySelector("[data-reviews-prev]");
   var next=slider.querySelector("[data-reviews-next]");
   var dotsWrap=slider.querySelector("[data-reviews-dots]");
-  var noteNode=document.querySelector("[data-google-note]");
-  var starsNode=document.querySelector("[data-google-stars]");
+  var noteNodes=[].slice.call(document.querySelectorAll("[data-google-note]"));
+  var starsNodes=[].slice.call(document.querySelectorAll("[data-google-stars]"));
   var page=0;
   var pages=1;
   var perView=3;
@@ -1329,9 +1411,9 @@ if(!isActive){item.classList.add("active")}
       var placeId = await getPlaceId(service);
       var place = await getPlaceDetails(service,placeId);
       var reviews = pickCityPestReviews(place.reviews||[]);
-      if(noteNode && typeof place.rating==="number"){noteNode.textContent=place.rating.toFixed(1);}
-      if(starsNode && typeof place.rating==="number"){
-        starsNode.textContent = place.rating>=4.8 ? "★★★★★" : "★★★★☆";
+      if(typeof place.rating==="number"){
+        noteNodes.forEach(function(node){ node.textContent=place.rating.toFixed(1); });
+        starsNodes.forEach(function(node){ node.textContent = place.rating>=4.8 ? "★★★★★" : "★★★★☆"; });
       }
       renderReviews(reviews);
     }catch(e){
