@@ -202,6 +202,28 @@ main .card li{
   justify-items:start;
 }
 
+/* Footer left column: logo + text + socials aligned left on every page */
+.site-footer .site-footer-main>section:first-child,
+.global-footer .site-footer-main>section:first-child{
+  align-items:flex-start !important;
+  text-align:left !important;
+}
+.site-footer .footer-logo,
+.global-footer .footer-logo{
+  justify-content:flex-start !important;
+  align-self:flex-start !important;
+  margin-left:0 !important;
+}
+.site-footer .footer-text,
+.global-footer .footer-text{
+  text-align:left !important;
+}
+.site-footer .footer-socials,
+.global-footer .footer-socials{
+  justify-content:flex-start !important;
+  width:100%;
+}
+
 @media (min-width: 981px){
   p,
   .card p,
