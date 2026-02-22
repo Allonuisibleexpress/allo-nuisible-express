@@ -210,14 +210,14 @@ header .main-nav .quote-btn:hover .hover-text{
     gap:10px !important;
   }
   header .logo-link{
-    left:10px !important;
+    left:0 !important;
     height:92px !important;
-    width:440px !important;
+    width:330px !important;
     justify-content:flex-start !important;
     overflow:visible !important;
   }
   header .logo{
-    height:280px !important;
+    height:210px !important;
     width:auto !important;
     object-fit:contain !important;
     object-position:left center !important;
@@ -361,11 +361,11 @@ header .main-nav .quote-btn:hover .hover-text{
   }
   header .logo-link{
     height:84px !important;
-    width:380px !important;
+    width:285px !important;
     overflow:visible !important;
   }
   header .logo{
-    height:236px !important;
+    height:177px !important;
   }
   header .main-nav{padding:18px 14px 24px !important}
   header .main-nav:before{height:104px !important;margin:20px auto 10px !important;width:min(290px,82vw) !important}
