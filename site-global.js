@@ -582,6 +582,7 @@
       mobileList.innerHTML=[
         '<li><a href=\"index.html\">ACCUEIL</a></li>',
         '<li><a href=\"punaises.html\">PUNAISE DE LIT</a></li>',
+        '<li><a href=\"cafards.html\">CAFARDS</a></li>',
         '<li><a href=\"deratisation.html\">DÉRATISATION (RATS / SOURIS)</a></li>',
         '<li><a href=\"depigeonnage.html\">DÉPIGEONNAGE</a></li>',
         '<li><a href=\"frelons.html\">FRELON</a></li>',
