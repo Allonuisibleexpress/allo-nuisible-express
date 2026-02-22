@@ -109,7 +109,7 @@ main .card,
 .global-footer .site-footer-main section,
 .global-footer .footer-text,
 .global-footer .footer-contact p{
-  text-align:center;
+  text-align:inherit;
 }
 main .card ul,
 main .card ol{
@@ -175,7 +175,7 @@ main .card li{
 
 .site-footer,
 .global-footer{
-  text-align:center !important;
+  text-align:inherit !important;
 }
 .site-footer .site-footer-main,
 .global-footer .site-footer-main{
@@ -183,23 +183,69 @@ main .card li{
 }
 .site-footer .site-footer-main section,
 .global-footer .site-footer-main section{
-  align-items:center !important;
-  text-align:center !important;
+  align-items:flex-start !important;
+  text-align:inherit !important;
 }
 .site-footer .footer-text,
 .site-footer .footer-contact p,
 .global-footer .footer-text,
 .global-footer .footer-contact p{
-  text-align:center !important;
-  margin-left:auto !important;
-  margin-right:auto !important;
+  text-align:inherit !important;
+  margin-left:0 !important;
+  margin-right:0 !important;
 }
 .site-footer .footer-list,
 .site-footer .footer-services,
 .global-footer .footer-list,
 .global-footer .footer-services{
   width:100%;
-  justify-items:center;
+  justify-items:start;
+}
+
+@media (min-width: 981px){
+  p,
+  .card p,
+  .global-faq .faq-answer,
+  .global-faq .faq-intro,
+  .global-reviews .review-text,
+  .global-reviews .reviews-intro,
+  .global-process .process-head p,
+  .global-process .step-card p,
+  .global-footer .footer-text,
+  .global-footer .footer-contact p,
+  .global-footer .footer-list a,
+  .global-footer .footer-services a,
+  .local-seo-block p{
+    text-align:left !important;
+  }
+
+  /* Keep short/high-impact elements centered */
+  .hero h1,
+  .hero-local h1,
+  .hero .hero-subtitle,
+  .global-process .process-head h2,
+  .global-reviews h2,
+  .global-faq h2,
+  .global-sticky-cta .sticky-link,
+  .home-urgent-strip{
+    text-align:center !important;
+  }
+
+  /* Lists and FAQ readability */
+  .card ul,
+  .card ol,
+  .global-faq .faq-question{
+    text-align:left !important;
+  }
+
+  /* No justified text on desktop */
+  p,
+  .card p,
+  .global-faq .faq-answer,
+  .global-reviews .review-text,
+  .global-footer .footer-text{
+    text-justify:auto !important;
+  }
 }
 
 /* Injected sticky call button */
