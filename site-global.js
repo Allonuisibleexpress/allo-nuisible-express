@@ -679,6 +679,7 @@
   }
 
   function initTimedCallModal(){
+    if(!isHomePage()){return;}
     if(document.querySelector('[data-timed-call-overlay]')){return;}
 
     var host=document.createElement('div');
