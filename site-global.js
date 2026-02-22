@@ -679,10 +679,6 @@
   }
 
   function initTimedCallModal(){
-    var STORAGE_KEY='allo_timed_call_modal_closed_at';
-    var CLOSE_TTL=24*60*60*1000;
-    var shownAt=Number(localStorage.getItem(STORAGE_KEY)||'0');
-    if(shownAt && (Date.now()-shownAt)<CLOSE_TTL){return;}
     if(document.querySelector('[data-timed-call-overlay]')){return;}
 
     var host=document.createElement('div');
@@ -700,7 +696,6 @@
       overlay.classList.remove('is-open');
       overlay.setAttribute('aria-hidden','true');
       document.body.classList.remove('timed-call-open');
-      localStorage.setItem(STORAGE_KEY,String(Date.now()));
       if(timerId){window.clearTimeout(timerId);timerId=null;}
     }
 
@@ -719,7 +714,7 @@
       if(ev.key==='Escape' && overlay.classList.contains('is-open')){closeModal();}
     });
     phoneBtn.addEventListener('click',function(){
-      localStorage.setItem(STORAGE_KEY,String(Date.now()));
+      closeModal();
     });
 
     timerId=window.setTimeout(openModal,10000);
