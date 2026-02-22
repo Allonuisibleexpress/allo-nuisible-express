@@ -334,6 +334,8 @@ body.mobile-nav-open .site-sticky-cta{
     line-height:1.45 !important;
   }
   .hero .hero-subtitle{
+    margin-top:72px !important;
+    margin-bottom:10px !important;
     display:block !important;
     -webkit-line-clamp:unset !important;
     -webkit-box-orient:initial !important;
@@ -358,6 +360,8 @@ body.mobile-nav-open .site-sticky-cta{
     overflow:hidden;
   }
   .hero .hero-subtitle{
+    margin-top:64px !important;
+    margin-bottom:10px !important;
     display:block !important;
     -webkit-line-clamp:unset !important;
     -webkit-box-orient:initial !important;
@@ -392,6 +396,10 @@ body.mobile-nav-open .site-sticky-cta{
   }
   .hero-wrap{
     padding:82px 12px 44px !important;
+  }
+  .hero .hero-subtitle{
+    margin-top:56px !important;
+    margin-bottom:8px !important;
   }
   .cards{
     padding:22px 10px !important;

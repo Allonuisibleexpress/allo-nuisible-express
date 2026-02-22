@@ -562,7 +562,11 @@
 
     nav.querySelectorAll('a').forEach(function(link){
       link.addEventListener('click',function(){
-        if(window.innerWidth<=980){closeMenu();}
+        if(window.innerWidth>980){return;}
+        if(link.classList.contains('dropdown-toggle')){return;}
+        var href=(link.getAttribute('href')||'').trim();
+        if(href==='#' || href==='#services'){return;}
+        closeMenu();
       });
     });
 
@@ -572,6 +576,7 @@
       dropdownToggle.addEventListener('click',function(ev){
         if(window.innerWidth>980){return;}
         ev.preventDefault();
+        ev.stopPropagation();
         dropdown.classList.toggle('open');
       });
     }
