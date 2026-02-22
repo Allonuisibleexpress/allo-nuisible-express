@@ -105,24 +105,27 @@ animation:heroTextIn 1.2s ease-out
 }
 .hero-cert-wrap{
 position:absolute;
-top:10px;
-left:10px;
+top:16px;
+left:16px;
 display:flex;
 align-items:center;
 justify-content:center;
-padding:6px 10px;
+width:170px;
+min-height:74px;
+padding:8px 10px;
 border-radius:14px;
 background:rgba(255,255,255,.12);
 border:1px solid rgba(255,255,255,.26);
 backdrop-filter:blur(4px);
 box-shadow:0 10px 24px rgba(0,0,0,.28);
-animation:heroTextIn 1.35s ease-out
+animation:heroTextIn 1.35s ease-out;
+z-index:5
 }
 .hero-cert{
 display:block;
-height:58px;
-width:auto;
-max-width:260px;
+width:100%;
+height:auto;
+max-width:150px;
 margin:0 auto;
 filter:drop-shadow(0 3px 12px rgba(0,0,0,.35));
 opacity:.96
@@ -204,16 +207,16 @@ to{opacity:1;transform:translateY(0)}
 @media(max-width:980px){
 .hero h1{font-size:44px;line-height:1.02}
 .hero-subtitle{font-size:18px;margin-top:64px;line-height:1.42}
-.hero-cert{height:52px}
+.hero-cert-wrap{width:146px;min-height:64px}
+.hero-cert{max-width:128px}
 .trust-badges{grid-template-columns:1fr;padding:0 20px;margin:16px auto 8px}
 .trust-badge{min-height:64px}
 }
 @media(max-width:680px){
 .hero h1{font-size:34px;line-height:1.02}
 .hero-subtitle{font-size:16px;margin-top:58px;line-height:1.4}
-.hero-content{padding-top:96px}
-.hero-cert-wrap{top:2px;left:6px;padding:5px 8px}
-.hero-cert{height:42px}
+.hero-cert-wrap{top:10px;left:10px;width:126px;min-height:56px;padding:5px 7px}
+.hero-cert{max-width:108px}
 .trust-badges{padding:0 14px}
 .trust-badge-value{font-size:16px}
 .trust-badge-stars{font-size:16px}
@@ -1057,7 +1060,7 @@ z-index:5
 <link rel="stylesheet" href="sticky-call.css?v=20260229">
 <link rel="stylesheet" href="scroll-reveal.css?v=20260302">
 <script src="scroll-reveal.js?v=20260302" defer></script>
-<link rel="stylesheet" href="site-global.css?v=20260321">
+<link rel="stylesheet" href="site-global.css?v=20260322">
 <script src="site-global.js?v=20260320" defer></script>
 </head>
 
@@ -1097,10 +1100,10 @@ z-index:5
 </header>
 
 <section class="hero">
-<div class="hero-content">
 <div class="hero-cert-wrap">
 <img class="hero-cert" src="https://raw.githubusercontent.com/Allonuisibleexpress/allo-nuisible-express/main/certibiocide_png.png" alt="Certification Biocide">
 </div>
+<div class="hero-content">
 <h1>DÉBARRASSEZ-VOUS DES <span class="highlight">NUISIBLES</span><br>DÈS MAINTENANT</h1>
 <p class="hero-subtitle">Allo Nuisible Express vous accompagne avec une expertise professionnelle en dératisation, désinsectisation, désinfection et dépigeonnage sur l'ensemble de l'Île-de-France (75, 95, 94, 93, 92, 91, 78, 77), avec un accompagnement complet avant, pendant et après intervention.</p>
 </div>
