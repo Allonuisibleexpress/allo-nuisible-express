@@ -598,6 +598,15 @@
       btn.innerHTML='<span></span><span></span><span></span>';
       header.appendChild(btn);
     }
+    if(!btn.querySelector('span')){
+      btn.innerHTML='<span></span><span></span><span></span>';
+    }
+    if(window.innerWidth<=980){
+      btn.style.display='inline-flex';
+      btn.style.opacity='1';
+      btn.style.visibility='visible';
+      btn.style.pointerEvents='auto';
+    }
 
     var overlay=header.querySelector('.mobile-nav-overlay');
     if(!overlay){

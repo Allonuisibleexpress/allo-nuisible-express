@@ -705,6 +705,34 @@ body.mobile-nav-open .site-sticky-cta{
 }
 
 @media(max-width:980px){
+  header .mobile-menu-btn{
+    display:inline-flex !important;
+    position:absolute !important;
+    right:8px !important;
+    top:50% !important;
+    transform:translateY(-50%) !important;
+    width:54px !important;
+    height:54px !important;
+    align-items:center !important;
+    justify-content:center !important;
+    flex-direction:column !important;
+    border:0 !important;
+    border-radius:10px !important;
+    background:transparent !important;
+    color:#d58f00 !important;
+    z-index:10060 !important;
+    opacity:1 !important;
+    visibility:visible !important;
+    pointer-events:auto !important;
+  }
+  header .mobile-menu-btn span{
+    display:block !important;
+    width:26px !important;
+    height:3px !important;
+    margin:3px 0 !important;
+    border-radius:10px !important;
+    background:currentColor !important;
+  }
   .home-urgent-strip{
     top:92px;
     min-height:50px;
