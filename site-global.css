@@ -38,14 +38,57 @@ section[id]{
   text-transform:uppercase;
   box-shadow:0 8px 20px rgba(0,0,0,.18);
   padding:8px 12px;
+  overflow:hidden;
+  isolation:isolate;
+  animation:urgentPulse 1.7s ease-in-out infinite;
 }
-.home-urgent-strip .urgent-hover{display:none}
-.home-urgent-strip:hover .urgent-default,
-.home-urgent-strip:focus-visible .urgent-default,
-.home-urgent-strip:active .urgent-default{display:none}
-.home-urgent-strip:hover .urgent-hover,
-.home-urgent-strip:focus-visible .urgent-hover,
-.home-urgent-strip:active .urgent-hover{display:inline}
+.home-urgent-strip:before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:-130%;
+  width:120%;
+  height:100%;
+  background:linear-gradient(120deg,transparent,rgba(255,255,255,.3),transparent);
+  z-index:0;
+  animation:urgentShine 2.1s ease-in-out infinite;
+}
+.home-urgent-strip .urgent-default,
+.home-urgent-strip .urgent-hover{
+  position:absolute;
+  left:0;
+  right:0;
+  top:50%;
+  transform:translateY(-50%);
+  text-align:center;
+  white-space:nowrap;
+  z-index:1;
+}
+.home-urgent-strip .urgent-default{
+  animation:urgentTextA 2.8s ease-in-out infinite;
+}
+.home-urgent-strip .urgent-hover{
+  animation:urgentTextB 2.8s ease-in-out infinite;
+}
+
+@keyframes urgentPulse{
+  0%,100%{box-shadow:0 8px 20px rgba(0,0,0,.18),0 0 0 0 rgba(177,20,20,.45)}
+  50%{box-shadow:0 10px 24px rgba(0,0,0,.26),0 0 0 8px rgba(177,20,20,0)}
+}
+@keyframes urgentShine{
+  0%{left:-130%}
+  55%{left:130%}
+  100%{left:130%}
+}
+@keyframes urgentTextA{
+  0%,45%{opacity:1;transform:translateY(-50%)}
+  50%,100%{opacity:0;transform:translateY(-42%)}
+}
+@keyframes urgentTextB{
+  0%,45%{opacity:0;transform:translateY(-58%)}
+  50%,95%{opacity:1;transform:translateY(-50%)}
+  100%{opacity:0;transform:translateY(-58%)}
+}
 body.has-home-urgent-strip header + .hero,
 body.has-home-urgent-strip .hero{
   margin-top:148px !important;
