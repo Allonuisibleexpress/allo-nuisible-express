@@ -1,6 +1,36 @@
 (function(){
+  var PREFERRED_ORIGIN='https://allonuisibleexpress.fr';
+  var PROJECT_PATH_PREFIX='/allo-nuisible-express';
+
+  function normalizedPathname(){
+    var path=window.location.pathname||'/';
+    if(path.indexOf(PROJECT_PATH_PREFIX+'/')===0){
+      path=path.slice(PROJECT_PATH_PREFIX.length);
+    }else if(path===PROJECT_PATH_PREFIX){
+      path='/';
+    }
+    return path||'/';
+  }
+
+  function canonicalUrl(){
+    return PREFERRED_ORIGIN+normalizedPathname();
+  }
+
+  function enforcePrimaryDomain(){
+    var host=(window.location.hostname||'').toLowerCase();
+    if(host==='localhost' || host==='127.0.0.1' || host==='' || window.location.protocol==='file:'){
+      return;
+    }
+    if(host.indexOf('github.io')!==-1){
+      var target=canonicalUrl()+window.location.search+window.location.hash;
+      if(window.location.href!==target){
+        window.location.replace(target);
+      }
+    }
+  }
+
   function currentPage(){
-    var p=(window.location.pathname||'').split('/').pop();
+    var p=normalizedPathname().split('/').pop();
     return p||'index.html';
   }
 
@@ -453,13 +483,21 @@
       head.appendChild(theme);
     }
 
-    if(!head.querySelector('link[rel="canonical"]')){
-      var canonical=document.createElement('link');
+    var canonical=head.querySelector('link[rel="canonical"]');
+    if(!canonical){
+      canonical=document.createElement('link');
       canonical.rel='canonical';
-      var origin=window.location.origin||'https://allonuisibleexpress.github.io';
-      canonical.href=origin+window.location.pathname;
       head.appendChild(canonical);
     }
+    canonical.href=canonicalUrl();
+
+    var ogUrl=head.querySelector('meta[property="og:url"]');
+    if(!ogUrl){
+      ogUrl=document.createElement('meta');
+      ogUrl.setAttribute('property','og:url');
+      head.appendChild(ogUrl);
+    }
+    ogUrl.setAttribute('content', canonicalUrl());
   }
 
   function ensureStructuredData(){
@@ -473,7 +511,7 @@
         '@context':'https://schema.org',
         '@type':'PestControlService',
         name:'Allo Nuisible Express',
-        url:(window.location.origin||'https://allonuisibleexpress.github.io')+window.location.pathname,
+        url:canonicalUrl(),
         telephone:'+33744296897',
         email:'allonuisibleexpress@gmail.com',
         priceRange:'€€',
@@ -640,6 +678,8 @@
     setYear();
     if(window.__alloScrollRevealRefresh){window.__alloScrollRevealRefresh(document);} 
   }
+
+  enforcePrimaryDomain();
 
   if(document.readyState==='loading'){
     document.addEventListener('DOMContentLoaded', boot);
