@@ -458,7 +458,6 @@ color:#d38f00
 .reviews-slider{
 position:relative;
 --per-view:3;
---page:0;
 --gap:18px;
 padding:0 44px;
 overflow:hidden
@@ -466,7 +465,6 @@ overflow:hidden
 .reviews-track{
 display:flex;
 gap:var(--gap);
-transform:translateX(calc(-1 * var(--page) * 100%));
 transition:transform .55s cubic-bezier(.22,.61,.36,1)
 }
 .review-card{
@@ -1083,7 +1081,10 @@ if(!isActive){item.classList.add("active")}
     slider.style.setProperty("--per-view",String(perView));
     pages=Math.max(1,Math.ceil(cards.length/perView));
     if(page>pages-1){page=pages-1;}
-    slider.style.setProperty("--page",String(page));
+    var viewport=slider.clientWidth-88;
+    if(window.innerWidth<=760){viewport=slider.clientWidth-64;}
+    if(viewport<0){viewport=slider.clientWidth;}
+    track.style.transform="translateX(-"+(page*viewport)+"px)";
     prev.disabled=page===0;
     next.disabled=page===pages-1;
     renderDots();
