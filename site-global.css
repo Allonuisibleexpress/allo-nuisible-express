@@ -239,7 +239,7 @@ main .card li{
 .site-footer .site-footer-main>section:first-child .footer-socials,
 .global-footer .site-footer-main>section:first-child .footer-socials{
   max-width:430px !important;
-  justify-content:center !important;
+  justify-content:flex-start !important;
   align-self:flex-start !important;
 }
 
