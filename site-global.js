@@ -72,8 +72,28 @@
     '<div class="site-sticky-cta global-sticky-cta" role="complementary" aria-label="Appel rapide">'+
     '  <a class="sticky-link sticky-call" href="tel:0744296897" aria-label="Appeler le 07 44 29 68 97">'+
     '    <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.6 15.6 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.24 11.3 11.3 0 0 0 3.56.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.3 21 3 13.7 3 4a1 1 0 0 1 1-1h3.7a1 1 0 0 1 1 1 11.3 11.3 0 0 0 .57 3.56 1 1 0 0 1-.24 1l-2.4 2.24Z"/></svg>'+ 
-    '    <span class="sticky-default">APPELER MAINTENANT</span><span class="sticky-hover-number">07 44 29 68 97</span>'+ 
+    '    <span class="sticky-default">URGENCE · APPELER MAINTENANT</span><span class="sticky-hover-number">07 44 29 68 97</span>'+ 
     '  </a>'+ 
+    '</div>';
+  }
+
+  function detectCity(){
+    var path=(window.location.pathname||'').toLowerCase();
+    var h1=document.querySelector('h1');
+    var text=((h1?h1.textContent:'')+' '+path).toLowerCase();
+    if(text.indexOf('thiais')!==-1){return 'Thiais';}
+    if(text.indexOf('rungis')!==-1){return 'Rungis';}
+    if(text.indexOf('paris')!==-1){return 'Paris';}
+    return 'Île-de-France';
+  }
+
+  function topCallHTML(city){
+    return ''+
+    '<div class="global-top-call" role="complementary" aria-label="Urgence appel immédiat">'+
+    '  <a href="tel:0744296897" aria-label="Urgence - Appeler maintenant">'+
+    '    <span class="top-call-default">URGENCE · Intervention 7j/7 à '+city+' · Appeler maintenant</span>'+
+    '    <span class="top-call-hover">07 44 29 68 97</span>'+
+    '  </a>'+
     '</div>';
   }
 
@@ -341,6 +361,47 @@
     }
   }
 
+  function optimizeForCalls(){
+    var city=detectCity();
+    document.body.classList.add('has-top-call');
+
+    if(!document.querySelector('.global-top-call')){
+      var wrap=document.createElement('div');
+      wrap.innerHTML=topCallHTML(city);
+      var header=document.querySelector('header');
+      if(header && header.parentNode){
+        if(header.nextSibling){
+          header.parentNode.insertBefore(wrap.firstElementChild, header.nextSibling);
+        }else{
+          header.parentNode.appendChild(wrap.firstElementChild);
+        }
+      }else{
+        document.body.insertBefore(wrap.firstElementChild, document.body.firstChild);
+      }
+    }
+
+    var firstBadge=document.querySelector('.hero .badge, .hero-local .badge, .hero-wrap .badge');
+    if(firstBadge){
+      firstBadge.innerHTML='Intervention 7j/7 à <b>'+city+'</b> · <b>Urgence</b>';
+      firstBadge.classList.add('mobile-urgent-badge');
+    }else{
+      var heroWrap=document.querySelector('.hero-wrap');
+      if(heroWrap){
+        var b=document.createElement('span');
+        b.className='badge mobile-urgent-badge';
+        b.innerHTML='Intervention 7j/7 à <b>'+city+'</b> · <b>Urgence</b>';
+        heroWrap.insertBefore(b, heroWrap.firstChild);
+      }
+    }
+
+    document.querySelectorAll('a[href^="tel:"]').forEach(function(a){
+      if(!a.getAttribute('aria-label')){
+        a.setAttribute('aria-label','Appeler Allo Nuisible Express');
+      }
+      a.setAttribute('rel','nofollow');
+    });
+  }
+
   function ensureSeoTags(){
     var head=document.head;
     if(!head){return;}
@@ -481,6 +542,7 @@
     ensureProcess();
     ensureReviewsFaq();
     ensureSticky();
+    optimizeForCalls();
     initFaq();
     initReviews();
     initMobileMenu();
