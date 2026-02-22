@@ -1101,6 +1101,25 @@ main .side .card:hover{
   border-color:#ffcf73 !important;
 }
 
+/* Restore yellow illuminated hover in "Autres services" lists */
+.service-links a{
+  position:relative !important;
+  border-radius:10px !important;
+  padding:10px 12px !important;
+  transition:color .2s ease,background .2s ease,box-shadow .22s ease,transform .2s ease !important;
+}
+.service-links a:hover{
+  color:#b87a00 !important;
+  background:rgba(255,174,0,.14) !important;
+  box-shadow:0 0 0 1px rgba(255,174,0,.36),0 10px 20px rgba(255,174,0,.2) !important;
+  transform:translateX(3px) !important;
+}
+.service-links a.active{
+  color:#b87a00 !important;
+  background:rgba(255,174,0,.18) !important;
+  box-shadow:0 0 0 1px rgba(255,174,0,.42) !important;
+}
+
 @media(max-width:980px){
   .cards#services .card span{font-size:20px !important;}
   .cards#services .card:hover{transform:translateY(-3px) scale(1.005) !important;}
