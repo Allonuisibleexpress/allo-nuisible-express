@@ -130,7 +130,7 @@
     return ''+
     '<section class="faq global-faq" id="contact" data-global-faq>'+ 
     '<h2>Questions Fréquentes</h2>'+ 
-    '<p class="faq-intro">Retrouvez ici les réponses aux questions les plus posées sur nos prestations. Cliquez sur une question pour afficher le détail.</p>'+ 
+    '<p class="faq-intro">Questions fréquemment posées sur les punaises de lit à Paris et en banlieue parisienne, avec des réponses claires pour vous aider à agir rapidement.</p>'+ 
     '<details class="faq-item"><summary class="faq-question">Quels services proposez-vous exactement ? <span class="faq-icon">+</span></summary><div class="faq-answer">(FAQ) Nous proposons une prise en charge complète de la lutte anti-nuisibles pour les particuliers comme pour les professionnels : dératisation, désinsectisation, désinfection, dépigeonnage, traitement des punaises, cafards, frelons, guêpes, chenilles processionnaires et interventions Diogène.</div></details>'+ 
     '<details class="faq-item"><summary class="faq-question">Quels sont vos prix de départ ? <span class="faq-icon">+</span></summary><div class="faq-answer">(FAQ) Nos prix de départ sont les suivants : guêpes/frelons 120 EUR, dératisation 200 EUR, dépigeonnage 150 EUR, punaises de lit 200 EUR, cafards 200 EUR, chenilles 120 EUR, syndrome de Diogène 500 EUR. Vous bénéficiez d\'une garantie de 1 mois avec suivi.</div></details>'+ 
     '<details class="faq-item"><summary class="faq-question">Dans quelles zones intervenez-vous ? <span class="faq-icon">+</span></summary><div class="faq-answer">(FAQ) Nous intervenons dans toute l\'Île-de-France : 75, 77, 78, 91, 92, 93, 94 et 95, avec des créneaux rapides pour les particuliers et professionnels.</div></details>'+ 

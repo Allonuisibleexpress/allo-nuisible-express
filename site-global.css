@@ -592,3 +592,23 @@ body.mobile-nav-open .site-sticky-cta{
   }
 
 }
+
+/* Keep these specific conversion/section texts centered as requested */
+.services-head h2,
+.services-head p,
+.process-top .process-mini h3,
+.process-top .process-mini p,
+.global-process .process-mini h3,
+.global-process .process-mini p,
+.process-section .process-head h2,
+.process-section .process-head p,
+.global-process .process-head h2,
+.global-process .process-head p,
+.reviews h2,
+.reviews .reviews-intro,
+.global-reviews h2,
+.global-reviews .reviews-intro,
+.faq .faq-intro,
+.global-faq .faq-intro{
+  text-align:center !important;
+}
