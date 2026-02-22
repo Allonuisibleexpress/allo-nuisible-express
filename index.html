@@ -373,8 +373,8 @@ padding:22px;
 display:flex;
 justify-content:space-between;
 gap:20px;
-align-items:center;
-text-align:center
+align-items:flex-start;
+text-align:left
 }
 .tarif-box b{color:#ffca66}
 
@@ -778,7 +778,7 @@ z-index:5
 }
 
 /* alignement texte global sections */
-.services-head,.tarifs,.faq{text-align:center}
+.services-head,.faq{text-align:center}
 .site-footer{text-align:left}
 .site-footer-main section{display:flex;flex-direction:column;align-items:flex-start}
 .site-footer-main > section:first-child{align-items:center;text-align:center}
@@ -790,7 +790,7 @@ z-index:5
 @media(max-width:680px){
   .cards{grid-template-columns:1fr;padding:24px 14px}
   .card{height:240px}
-  .tarif-box{flex-direction:column;text-align:center}
+  .tarif-box{flex-direction:column;text-align:left}
 }
 @media(max-width:1200px){
   .process-top-grid,.process-steps{grid-template-columns:repeat(2,minmax(0,1fr))}
@@ -963,7 +963,7 @@ z-index:5
 
 <section class="tarifs" id="tarifs">
 <div class="tarif-box">
-<div><strong>Tarifs</strong><br>Guêpes / frelons à partir de <b>120 EUR</b> • Dératisation à partir de <b>200 EUR</b> • Dépigeonnage à partir de <b>150 EUR</b> • Punaises de lit à partir de <b>200 EUR</b> • Cafards à partir de <b>200 EUR</b> • Chenilles à partir de <b>120 EUR</b> • Syndrome de Diogène à partir de <b>500 EUR</b>.</div>
+<div><strong>Tarifs</strong><br>Guêpes / frelons à partir de <b>120 EUR</b><br>Dératisation à partir de <b>200 EUR</b><br>Dépigeonnage à partir de <b>150 EUR</b><br>Punaises de lit à partir de <b>200 EUR</b><br>Cafards à partir de <b>200 EUR</b><br>Chenilles à partir de <b>120 EUR</b><br>Syndrome de Diogène à partir de <b>500 EUR</b>.</div>
 <div>Devis gratuit • Déplacement gratuit</div>
 </div>
 </section>
