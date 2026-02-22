@@ -199,6 +199,40 @@ body{
   flex-wrap:wrap !important;
   margin-top:14px !important;
 }
+.site-footer-main > section:first-child .footer-text{
+  text-align:center !important;
+  margin-left:auto !important;
+  margin-right:auto !important;
+}
+
+/* high-contrast footer CTA buttons */
+.site-footer .footer-btn{
+  font-weight:900 !important;
+}
+.site-footer .footer-btn-devis{
+  background:#ffffff !important;
+  color:#ffae00 !important;
+  border:1px solid #ffffff !important;
+  text-shadow:none !important;
+}
+.site-footer .footer-btn-devis:hover{
+  background:#ffffff !important;
+  color:#ffae00 !important;
+  border-color:#ffffff !important;
+  filter:none !important;
+}
+.site-footer .footer-btn-call{
+  background:#ffae00 !important;
+  color:#ffffff !important;
+  border:1px solid #ffae00 !important;
+  text-shadow:none !important;
+}
+.site-footer .footer-btn-call:hover{
+  background:#ffae00 !important;
+  color:#ffffff !important;
+  border-color:#ffae00 !important;
+  filter:none !important;
+}
 .site-footer .footer-social-link{
   display:inline-flex !important;
   align-items:center !important;
