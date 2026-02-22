@@ -874,22 +874,23 @@ z-index:5
 }
 @media(max-width:680px){
   .cards{grid-template-columns:1fr;padding:24px 14px}
-  .card{height:260px;border-radius:12px;box-shadow:0 6px 14px rgba(0,0,0,.14)}
+  .card{height:250px;border-radius:12px;box-shadow:0 6px 14px rgba(0,0,0,.14)}
   .card:after{
     display:flex;
     opacity:1;
     transform:none;
-    left:10px;
+    left:auto;
     right:10px;
-    bottom:9px;
-    font-size:11px;
-    padding:7px 8px;
+    top:10px;
+    bottom:auto;
+    font-size:10px;
+    padding:6px 8px;
     border-radius:9px;
     background:rgba(255,174,0,.96);
     box-shadow:0 8px 16px rgba(255,174,0,.30);
   }
   .card span{
-    bottom:70px;
+    bottom:14px;
     width:calc(100% - 20px);
     line-height:1.2;
   }
