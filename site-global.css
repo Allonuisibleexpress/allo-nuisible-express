@@ -334,7 +334,7 @@ main .card li{
 .global-process .step-list li:before{content:"\2713";position:absolute;left:0;top:0;color:#ffae00;font-weight:800}
 
 /* Injected footer (same visual family as homepage) */
-.global-footer{background:#070707;color:#fff;padding:52px 20px 0;margin-top:42px}
+.global-footer{background:#070707;color:#fff;padding:52px 20px 110px;margin-top:42px}
 .global-footer .site-footer-main{max-width:1240px;margin:0 auto;display:grid;grid-template-columns:1.2fr .9fr .9fr .9fr;gap:26px;align-items:start}
 .global-footer h3{margin:0 0 14px;font-size:14px;line-height:1.2;text-transform:uppercase;letter-spacing:.03em;font-weight:800}
 .global-footer .footer-logo{display:inline-flex;align-items:center;text-decoration:none;color:#fff;margin-bottom:16px}
@@ -349,7 +349,7 @@ main .card li{
 .global-footer .footer-btn:hover{transform:translateY(-2px);filter:brightness(1.08);z-index:5}
 .global-footer .footer-btn-devis{background:#fff!important;color:#ffb300!important;border:1px solid #dcdcdc}
 .global-footer .footer-btn-call{background:#ffb300!important;color:#fff!important;border:1px solid #ffb300}
-.global-footer .site-footer-bottom{margin-top:42px;background:#ffae00;color:#fff;padding:10px 14px;text-align:center;font-size:15px;font-weight:700;letter-spacing:.01em}
+.global-footer .site-footer-bottom{margin-top:34px;margin-bottom:18px;background:#ffae00;color:#fff;padding:10px 14px;text-align:center;font-size:15px;font-weight:700;letter-spacing:.01em}
 .global-footer .site-footer-bottom b{font-weight:900}
 .global-footer .footer-socials{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:14px}
 .global-footer .footer-social-link{display:inline-flex;align-items:center;justify-content:center;padding:6px 10px;border:1px solid #2d2d2d;border-radius:999px;background:#111;color:#fff!important;text-decoration:none;font-size:11px;font-weight:700;line-height:1;transition:all .2s ease}
@@ -546,10 +546,10 @@ body.mobile-nav-open .site-sticky-cta{
   }
   .global-process .process-head h2{font-size:28px}
   .global-process .process-head p{font-size:14px}
-  .global-footer{padding:36px 14px 0}
+  .global-footer{padding:36px 14px 132px}
   .global-footer .site-footer-main{grid-template-columns:1fr;gap:20px}
   .global-footer .footer-logo img{height:140px}
-  .global-footer .site-footer-bottom{font-size:13px;padding:10px 8px}
+  .global-footer .site-footer-bottom{font-size:13px;padding:10px 8px;margin-top:24px;margin-bottom:16px}
   body{padding-bottom:calc(138px + env(safe-area-inset-bottom, 0px))}
   .global-sticky-cta{width:calc(100% - 10px);bottom:calc(7px + env(safe-area-inset-bottom, 0px))}
 }
