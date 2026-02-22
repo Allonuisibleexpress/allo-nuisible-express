@@ -893,3 +893,153 @@ body.mobile-nav-open .site-sticky-cta{
   text-align:left !important;
   justify-content:space-between !important;
 }
+
+/* Premium service cards (home + tarifs) */
+.cards#services{
+  gap:18px !important;
+}
+.cards#services .card{
+  position:relative !important;
+  overflow:hidden !important;
+  border-radius:18px !important;
+  border:1px solid rgba(255,255,255,.14) !important;
+  background:#0d0d0d !important;
+  box-shadow:0 10px 26px rgba(0,0,0,.16) !important;
+  transform:translateZ(0) !important;
+  transition:transform .28s cubic-bezier(.22,.61,.36,1),box-shadow .28s cubic-bezier(.22,.61,.36,1),border-color .22s ease !important;
+}
+.cards#services .card img{
+  width:100% !important;
+  height:100% !important;
+  min-height:240px !important;
+  object-fit:cover !important;
+  transform:scale(1.01) !important;
+  transition:transform .45s cubic-bezier(.22,.61,.36,1),filter .35s ease !important;
+  filter:brightness(.78) saturate(1.04) !important;
+}
+.cards#services .card::before{
+  content:"" !important;
+  position:absolute !important;
+  inset:0 !important;
+  background:
+    linear-gradient(180deg,rgba(0,0,0,.06) 0%,rgba(0,0,0,.55) 72%,rgba(0,0,0,.78) 100%),
+    radial-gradient(120% 78% at 80% 10%,rgba(255,174,0,.2) 0%,transparent 58%) !important;
+  pointer-events:none !important;
+}
+.cards#services .card::after{
+  content:"Voir le service" !important;
+  position:absolute !important;
+  top:12px !important;
+  right:12px !important;
+  padding:7px 10px !important;
+  border-radius:999px !important;
+  background:rgba(255,255,255,.92) !important;
+  color:#111 !important;
+  font-size:11px !important;
+  font-weight:900 !important;
+  letter-spacing:.04em !important;
+  text-transform:uppercase !important;
+  opacity:.92 !important;
+  transition:transform .25s ease,opacity .25s ease,background .25s ease !important;
+  pointer-events:none !important;
+}
+.cards#services .card span{
+  position:absolute !important;
+  left:14px !important;
+  right:14px !important;
+  bottom:14px !important;
+  color:#fff !important;
+  font-weight:900 !important;
+  font-size:22px !important;
+  line-height:1.15 !important;
+  letter-spacing:.01em !important;
+  text-shadow:0 2px 14px rgba(0,0,0,.55) !important;
+  z-index:2 !important;
+}
+.cards#services .card:hover{
+  transform:translateY(-5px) !important;
+  box-shadow:0 18px 38px rgba(0,0,0,.24) !important;
+  border-color:rgba(255,174,0,.45) !important;
+}
+.cards#services .card:hover img{
+  transform:scale(1.06) !important;
+  filter:brightness(.84) saturate(1.08) !important;
+}
+.cards#services .card:hover::after{
+  transform:translateY(-1px) !important;
+  background:#ffae00 !important;
+  opacity:1 !important;
+}
+.cards#services .card:focus-visible{
+  outline:3px solid rgba(255,174,0,.7) !important;
+  outline-offset:2px !important;
+}
+
+.main .grid .card-link{
+  border-radius:16px !important;
+  border:1px solid #e7e7e7 !important;
+  background:
+    linear-gradient(180deg,#fff 0%,#fffcf5 100%) !important;
+  box-shadow:0 8px 22px rgba(0,0,0,.06) !important;
+  transition:transform .25s cubic-bezier(.22,.61,.36,1),box-shadow .25s cubic-bezier(.22,.61,.36,1),border-color .2s ease !important;
+  position:relative !important;
+  overflow:hidden !important;
+}
+.main .grid .card-link::before{
+  content:"" !important;
+  position:absolute !important;
+  top:0 !important;
+  left:-120% !important;
+  width:120% !important;
+  height:100% !important;
+  background:linear-gradient(115deg,transparent,rgba(255,174,0,.16),transparent) !important;
+  transition:left .55s ease !important;
+}
+.main .grid .card-link:hover{
+  transform:translateY(-4px) !important;
+  box-shadow:0 16px 34px rgba(0,0,0,.11) !important;
+  border-color:rgba(255,174,0,.45) !important;
+}
+.main .grid .card-link:hover::before{
+  left:120% !important;
+}
+.main .grid .card-link .tag{
+  background:#fff6df !important;
+  border:1px solid #ffe4a7 !important;
+  color:#b97900 !important;
+}
+.main .grid .card-link .card-cta{
+  background:linear-gradient(135deg,#ffbe2e 0%,#ffae00 100%) !important;
+  color:#111 !important;
+  font-weight:900 !important;
+  box-shadow:0 8px 16px rgba(255,174,0,.26) !important;
+}
+.main .grid .card-link:hover .card-cta{
+  transform:translateY(-1px) !important;
+  box-shadow:0 12px 20px rgba(255,174,0,.34) !important;
+}
+
+@media(max-width:980px){
+  .cards#services{gap:12px !important}
+  .cards#services .card img{min-height:190px !important}
+  .cards#services .card span{
+    font-size:18px !important;
+    left:12px !important;
+    right:12px !important;
+    bottom:12px !important;
+  }
+  .cards#services .card::after{
+    font-size:10px !important;
+    top:10px !important;
+    right:10px !important;
+    padding:6px 9px !important;
+  }
+}
+@media(max-width:560px){
+  .cards#services .card img{min-height:178px !important}
+  .cards#services .card span{font-size:17px !important}
+  .cards#services .card::after{
+    content:"Voir" !important;
+    letter-spacing:.02em !important;
+  }
+}
