@@ -811,6 +811,8 @@ z-index:5
 </style>
 <link rel="stylesheet" href="header.css?v=20260226">
 <link rel="stylesheet" href="sticky-call.css?v=20260229">
+<link rel="stylesheet" href="scroll-reveal.css?v=20260301">
+<script src="scroll-reveal.js?v=20260301" defer></script>
 </head>
 
 <body>
@@ -1028,71 +1030,6 @@ z-index:5
 </div>
 
 </section>
-
-<script>
-(function(){
-  var groups=[
-    {selector:".services-head",step:0},
-    {selector:".process-top .process-mini",step:90},
-    {selector:".process-section .process-head",step:0},
-    {selector:".process-section .step-card",step:90},
-    {selector:".tarifs .tarif-box",step:0},
-    {selector:".reviews h2, .reviews-intro, .reviews-top, .reviews-slider",step:80},
-    {selector:".reviews .review-card",step:90},
-    {selector:".faq h2, .faq-intro, .faq-item",step:70},
-    {selector:".site-footer-main > section",step:90},
-    {selector:".site-footer-bottom",step:0}
-  ];
-
-  function collectTargets(root){
-    var targets=[];
-    groups.forEach(function(group){
-      var nodes=[].slice.call((root||document).querySelectorAll(group.selector));
-      nodes.forEach(function(node,index){
-        if(!node.classList.contains("js-reveal")){
-          node.classList.add("js-reveal");
-          node.style.setProperty("--reveal-delay",(index*group.step)+"ms");
-        }
-        targets.push(node);
-      });
-    });
-    return targets;
-  }
-
-  function revealAll(nodes){
-    nodes.forEach(function(node){node.classList.add("is-visible");});
-  }
-
-  var observer=null;
-  function observe(nodes){
-    if(!("IntersectionObserver" in window)){
-      revealAll(nodes);
-      return;
-    }
-    if(!observer){
-      observer=new IntersectionObserver(function(entries){
-        entries.forEach(function(entry){
-          if(entry.isIntersecting){
-            entry.target.classList.add("is-visible");
-            observer.unobserve(entry.target);
-          }
-        });
-      },{rootMargin:"0px 0px -8% 0px",threshold:0.16});
-    }
-    nodes.forEach(function(node){
-      if(!node.classList.contains("is-visible")){
-        observer.observe(node);
-      }
-    });
-  }
-
-  window.__alloScrollRevealRefresh=function(root){
-    observe(collectTargets(root||document));
-  };
-
-  window.__alloScrollRevealRefresh(document);
-})();
-</script>
 
 <script>
 document.querySelectorAll(".faq-question").forEach(q=>{
