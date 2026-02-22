@@ -1,4 +1,7 @@
 /* single sticky call CTA override */
+body{
+  padding-bottom:126px !important;
+}
 .site-sticky-cta{
   position:fixed !important;
   left:50% !important;
@@ -98,7 +101,7 @@
   50%{letter-spacing:.03em;opacity:.96}
 }
 @media(max-width:860px){
-  body{padding-bottom:104px !important}
+  body{padding-bottom:142px !important}
   .site-sticky-cta{width:calc(100% - 16px) !important;bottom:8px !important}
   .site-sticky-cta .sticky-link{min-height:58px !important;font-size:17px !important;padding:13px 14px !important}
 }
