@@ -1,4 +1,6 @@
 /* Canonical shared header (wins over page-local CSS) */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap');
+
 header{
   position:fixed !important;
   top:0 !important;
@@ -77,6 +79,7 @@ header .main-nav .nav-link{
   line-height:1.2 !important;
   white-space:nowrap !important;
   transition:color .25s ease !important;
+  font-synthesis:none !important;
 }
 header .main-nav .nav-link:after{
   content:"" !important;
@@ -136,6 +139,7 @@ header .main-nav .cta-btn{
   overflow:hidden !important;
   line-height:1.2 !important;
   transition:transform .25s ease,box-shadow .25s ease !important;
+  font-synthesis:none !important;
 }
 header .main-nav .cta-btn:hover{transform:translateY(-2px) !important;box-shadow:0 8px 18px rgba(0,0,0,.18) !important}
 header .main-nav .call-btn{background:#ffae00 !important;color:#111 !important;min-width:146px !important;text-align:center !important}
@@ -150,6 +154,11 @@ header .main-nav .quote-btn:hover:before{left:120% !important}
 header .main-nav .quote-btn .default-text,
 header .main-nav .quote-btn .hover-text{
   display:block !important;
+  font-family:'Montserrat',Arial,sans-serif !important;
+  font-weight:900 !important;
+  font-size:12px !important;
+  letter-spacing:.02em !important;
+  line-height:1.2 !important;
   transition:transform .25s ease,opacity .25s ease !important;
 }
 header .main-nav .quote-btn .default-text{
