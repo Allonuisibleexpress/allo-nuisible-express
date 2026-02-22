@@ -694,3 +694,10 @@ body.mobile-nav-open .site-sticky-cta{
 .global-faq .faq-intro{
   text-align:center !important;
 }
+
+/* FAQ questions must stay left-aligned on desktop and mobile */
+.faq .faq-question,
+.global-faq .faq-question{
+  text-align:left !important;
+  justify-content:space-between !important;
+}
