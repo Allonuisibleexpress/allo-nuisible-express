@@ -48,6 +48,25 @@ section[id]{
   contain-intrinsic-size:1px 900px;
 }
 
+main,
+main section,
+main article,
+main .card,
+.global-footer .site-footer-main section,
+.global-footer .footer-text,
+.global-footer .footer-contact p{
+  text-align:center;
+}
+main .card ul,
+main .card ol{
+  list-style-position:inside;
+  margin-left:0;
+  padding-left:0;
+}
+main .card li{
+  margin-bottom:8px;
+}
+
 /* Injected process blocks on pages that do not already have them */
 .global-process.process-top,
 .global-process.process-section{position:relative;z-index:1;clear:both}
@@ -94,6 +113,7 @@ section[id]{
 .global-footer .footer-social-link:hover{background:#ffae00;color:#111!important;border-color:#ffae00}
 .global-footer .site-footer-main section{display:flex;flex-direction:column;align-items:flex-start}
 .global-footer .site-footer-main>section:first-child{align-items:center;text-align:center}
+.global-footer .site-footer-main section{align-items:center}
 
 /* Injected sticky call button */
 body{padding-bottom:calc(120px + env(safe-area-inset-bottom, 0px))}
@@ -339,6 +359,12 @@ body{padding-bottom:calc(120px + env(safe-area-inset-bottom, 0px))}
     font-size:clamp(16px,4.3vw,20px) !important;
     line-height:1.45 !important;
   }
+  .hero .hero-subtitle{
+    display:block !important;
+    -webkit-line-clamp:unset !important;
+    -webkit-box-orient:initial !important;
+    overflow:visible !important;
+  }
   .hero p,
   .card p,
   main p,
@@ -356,6 +382,12 @@ body{padding-bottom:calc(120px + env(safe-area-inset-bottom, 0px))}
     -webkit-line-clamp:3;
     -webkit-box-orient:vertical;
     overflow:hidden;
+  }
+  .hero .hero-subtitle{
+    display:block !important;
+    -webkit-line-clamp:unset !important;
+    -webkit-box-orient:initial !important;
+    overflow:visible !important;
   }
   .cards{
     padding:26px 14px !important;

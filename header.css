@@ -46,7 +46,7 @@ header .logo-link:hover,header .logo-link:focus,header .logo-link:active{
   box-shadow:none !important;
 }
 header .logo{
-  height:230px !important;
+  height:300px !important;
   width:auto !important;
   display:block !important;
   object-fit:contain !important;
@@ -65,7 +65,7 @@ header .main-nav{
   flex:1 !important;
   justify-content:flex-end !important;
   min-width:0 !important;
-  margin-left:300px !important;
+  margin-left:390px !important;
 }
 header .main-nav a{margin-left:0 !important;text-decoration:none !important}
 header .main-nav .nav-link{
@@ -193,8 +193,8 @@ header .main-nav .quote-btn:hover .hover-text{
 }
 
 @media(max-width:1180px){
-  header .logo{height:180px !important}
-  header .main-nav{gap:10px !important;margin-left:250px !important}
+  header .logo{height:250px !important}
+  header .main-nav{gap:10px !important;margin-left:310px !important}
   header .main-nav .nav-link{font-size:12px !important}
   header .main-nav .cta-btn{padding:8px 10px !important}
 }
@@ -209,11 +209,11 @@ header .main-nav .quote-btn:hover .hover-text{
   header .logo-link{
     left:10px !important;
     height:76px !important;
-    width:122px !important;
+    width:172px !important;
     justify-content:flex-start !important;
   }
   header .logo{
-    height:64px !important;
+    height:88px !important;
     width:auto !important;
     object-fit:contain !important;
     object-position:left center !important;
@@ -284,9 +284,9 @@ header .main-nav .quote-btn:hover .hover-text{
   header .main-nav:before{
     content:"" !important;
     display:block !important;
-    height:68px !important;
+    height:94px !important;
     margin-bottom:8px !important;
-    background:url('logo.png') left center/auto 62px no-repeat !important;
+    background:url('logo.png') left center/auto 86px no-repeat !important;
     border-bottom:1px solid #efefef !important;
   }
   header .main-nav .nav-link{
@@ -341,10 +341,10 @@ header .main-nav .quote-btn:hover .hover-text{
   }
   header .logo-link{
     height:68px !important;
-    width:112px !important;
+    width:152px !important;
   }
   header .logo{
-    height:56px !important;
+    height:74px !important;
   }
   header .main-nav{
     width:min(94vw,360px) !important;
