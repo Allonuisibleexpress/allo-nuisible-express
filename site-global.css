@@ -186,18 +186,39 @@ section[id]{
   min-height:58px;
   border-radius:12px;
   text-decoration:none;
-  background:#ffae00;
+  background:linear-gradient(135deg,#ffbe2e 0%,#ffae00 50%,#ff9800 100%);
+  background-size:200% 200%;
   color:#111;
   font-size:24px;
   font-weight:900;
   letter-spacing:.02em;
-  box-shadow:0 10px 24px rgba(255,174,0,.32);
-  transition:transform .2s ease,box-shadow .2s ease,filter .2s ease;
+  box-shadow:0 10px 24px rgba(255,174,0,.32),0 0 0 0 rgba(255,174,0,.35);
+  transition:transform .2s ease,box-shadow .2s ease,filter .2s ease,background-position .35s ease;
+  position:relative;
+  overflow:hidden;
+  isolation:isolate;
+  animation:callCtaPulse 1.8s ease-in-out infinite,callCtaGradient 3.2s linear infinite;
+}
+.timed-call-action:before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:-130%;
+  width:120%;
+  height:100%;
+  background:linear-gradient(120deg,transparent,rgba(255,255,255,.34),transparent);
+  animation:callCtaShine 2.2s ease-in-out infinite;
+  z-index:0;
+}
+.timed-call-action > *{
+  position:relative;
+  z-index:1;
 }
 .timed-call-action:hover{
   transform:translateY(-2px);
-  box-shadow:0 14px 28px rgba(255,174,0,.44);
-  filter:saturate(1.05);
+  box-shadow:0 14px 30px rgba(255,174,0,.46),0 0 0 10px rgba(255,174,0,0);
+  filter:saturate(1.09);
+  background-position:100% 50%;
 }
 @media (max-width:760px){
   .timed-call-modal{
@@ -213,6 +234,13 @@ section[id]{
   .timed-call-action{
     font-size:21px;
     min-height:54px;
+  }
+}
+@media (prefers-reduced-motion: reduce){
+  .timed-call-action,
+  .timed-call-action:before{
+    animation:none !important;
+    transition:none !important;
   }
 }
 
@@ -233,6 +261,20 @@ section[id]{
   0%,45%{opacity:0;transform:translateY(-58%)}
   50%,95%{opacity:1;transform:translateY(-50%)}
   100%{opacity:0;transform:translateY(-58%)}
+}
+@keyframes callCtaPulse{
+  0%,100%{box-shadow:0 10px 24px rgba(255,174,0,.32),0 0 0 0 rgba(255,174,0,.35)}
+  50%{box-shadow:0 14px 30px rgba(255,174,0,.42),0 0 0 8px rgba(255,174,0,0)}
+}
+@keyframes callCtaShine{
+  0%{left:-130%}
+  58%{left:130%}
+  100%{left:130%}
+}
+@keyframes callCtaGradient{
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
 }
 body.has-home-urgent-strip header + .hero,
 body.has-home-urgent-strip .hero{
