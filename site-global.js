@@ -88,7 +88,6 @@
   }
 
   function ensureHomeUrgencyStrip(){
-    if(currentPage()!=='index.html'){return;}
     if(document.querySelector('.home-urgent-strip')){return;}
     var header=document.querySelector('header');
     var strip=document.createElement('a');
