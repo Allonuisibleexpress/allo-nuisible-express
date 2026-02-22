@@ -134,6 +134,12 @@ font-weight:900;
 color:#111;
 line-height:1.2
 }
+.trust-badge-count{
+font-size:15px;
+font-weight:700;
+color:#616975;
+margin-left:6px
+}
 .trust-badge small{
 display:block;
 font-size:13px;
@@ -1059,7 +1065,7 @@ z-index:5
 <h2>Ils nous font confiance</h2>
 <p class="reviews-intro">Retrouvez des retours clients publiés sur Google. Affichage filtré sur des avis 5 étoiles.</p>
 <div class="reviews-top">
-  <span>Note Google : <strong data-google-note>...</strong> <span data-google-stars>★★★★★</span></span>
+  <span>Note Google : <strong data-google-note>...</strong> <span data-google-stars>★★★★★</span> (<strong data-google-count>...</strong> avis)</span>
   <a href="https://maps.app.goo.gl/EWnwrfLmvWMRjEds6" target="_blank" rel="noopener noreferrer">Voir tous les avis Google</a>
 </div>
 <div class="reviews-slider" data-reviews-slider>
@@ -1079,7 +1085,7 @@ z-index:5
   <article class="trust-badge">
     <div>
       <div class="trust-badge-label">Avis Google vérifiés</div>
-      <div class="trust-badge-value">Note <strong data-google-note>...</strong> <span class="trust-badge-stars" data-google-stars>★★★★★</span></div>
+      <div class="trust-badge-value">Note <strong data-google-note>...</strong> <span class="trust-badge-stars" data-google-stars>★★★★★</span> <span class="trust-badge-count">(<strong data-google-count>...</strong> avis)</span></div>
       <small>Des retours clients visibles immédiatement</small>
     </div>
   </article>
@@ -1279,6 +1285,7 @@ if(!isActive){item.classList.add("active")}
   var dotsWrap=slider.querySelector("[data-reviews-dots]");
   var noteNodes=[].slice.call(document.querySelectorAll("[data-google-note]"));
   var starsNodes=[].slice.call(document.querySelectorAll("[data-google-stars]"));
+  var countNodes=[].slice.call(document.querySelectorAll("[data-google-count]"));
   var page=0;
   var pages=1;
   var perView=3;
@@ -1453,10 +1460,14 @@ if(!isActive){item.classList.add("active")}
         noteNodes.forEach(function(node){ node.textContent=place.rating.toFixed(1); });
         starsNodes.forEach(function(node){ node.textContent = place.rating>=4.8 ? "★★★★★" : "★★★★☆"; });
       }
+      if(typeof place.user_ratings_total==="number"){
+        countNodes.forEach(function(node){ node.textContent=String(place.user_ratings_total); });
+      }
       renderReviews(reviews);
     }catch(e){
       noteNodes.forEach(function(node){ node.textContent="5.0"; });
       starsNodes.forEach(function(node){ node.textContent="★★★★★"; });
+      countNodes.forEach(function(node){ node.textContent=String(FALLBACK_REVIEWS.length); });
       renderReviews(FALLBACK_REVIEWS);
     }
   })();
