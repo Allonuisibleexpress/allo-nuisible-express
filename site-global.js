@@ -590,8 +590,7 @@
       btn.setAttribute('aria-label','Ouvrir le menu');
       btn.setAttribute('aria-expanded','false');
       btn.innerHTML='<span></span><span></span><span></span>';
-      var wrap=header.querySelector('.header-wrap')||header;
-      wrap.appendChild(btn);
+      header.appendChild(btn);
     }
 
     var overlay=header.querySelector('.mobile-nav-overlay');

@@ -202,6 +202,9 @@ header .main-nav .quote-btn:hover .hover-text{
   header .main-nav .cta-btn{padding:8px 10px !important}
 }
 @media(max-width:980px){
+  .header-wrap{
+    position:relative !important;
+  }
   header{
     height:92px !important;
     padding:0 10px !important;
@@ -224,10 +227,14 @@ header .main-nav .quote-btn:hover .hover-text{
   }
   header .mobile-menu-btn{
     display:inline-flex !important;
+    position:absolute !important;
+    right:8px !important;
+    top:50% !important;
+    transform:translateY(-50%) !important;
     align-items:center !important;
     justify-content:center !important;
     flex-direction:column !important;
-    margin-left:auto !important;
+    margin-left:0 !important;
     width:54px !important;
     height:54px !important;
     border:0 !important;
@@ -235,7 +242,7 @@ header .main-nav .quote-btn:hover .hover-text{
     background:transparent !important;
     color:#d58f00 !important;
     cursor:pointer !important;
-    z-index:1003 !important;
+    z-index:1010 !important;
   }
   header .mobile-menu-btn span{
     display:block !important;
