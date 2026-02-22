@@ -326,13 +326,166 @@
     document.querySelectorAll('.js-year').forEach(function(el){el.textContent=y;});
   }
 
+  function optimizeMedia(){
+    var allImages=[].slice.call(document.querySelectorAll('img'));
+    allImages.forEach(function(img,index){
+      if(!img.getAttribute('decoding')){img.setAttribute('decoding','async');}
+      if(!img.hasAttribute('loading')&&index>1){img.setAttribute('loading','lazy');}
+      if(!img.getAttribute('referrerpolicy')){img.setAttribute('referrerpolicy','no-referrer-when-downgrade');}
+    });
+    var heroImage=document.querySelector('.hero img, .hero-local img');
+    if(heroImage){
+      heroImage.setAttribute('loading','eager');
+      heroImage.setAttribute('fetchpriority','high');
+      heroImage.setAttribute('decoding','sync');
+    }
+  }
+
+  function ensureSeoTags(){
+    var head=document.head;
+    if(!head){return;}
+
+    if(!head.querySelector('meta[name="robots"]')){
+      var robots=document.createElement('meta');
+      robots.name='robots';
+      robots.content='index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1';
+      head.appendChild(robots);
+    }
+
+    if(!head.querySelector('meta[name="theme-color"]')){
+      var theme=document.createElement('meta');
+      theme.name='theme-color';
+      theme.content='#ffae00';
+      head.appendChild(theme);
+    }
+
+    if(!head.querySelector('link[rel="canonical"]')){
+      var canonical=document.createElement('link');
+      canonical.rel='canonical';
+      var origin=window.location.origin||'https://allonuisibleexpress.github.io';
+      canonical.href=origin+window.location.pathname;
+      head.appendChild(canonical);
+    }
+  }
+
+  function ensureStructuredData(){
+    var head=document.head;
+    if(!head){return;}
+
+    if(!head.querySelector('script[data-global-schema="local-business"]')){
+      var h1Node=document.querySelector('h1');
+      var serviceTitle=h1Node?h1Node.textContent.trim():'Dératisation et désinsectisation';
+      var localBusiness={
+        '@context':'https://schema.org',
+        '@type':['LocalBusiness','ProfessionalService'],
+        name:'Allo Nuisible Express',
+        url:(window.location.origin||'https://allonuisibleexpress.github.io')+window.location.pathname,
+        telephone:'+33744296897',
+        email:'allonuisibleexpress@gmail.com',
+        areaServed:[
+          'Val-de-Marne',
+          'Thiais',
+          'Rungis',
+          'Île-de-France',
+          'Paris'
+        ],
+        address:{
+          '@type':'PostalAddress',
+          streetAddress:'4 Rue de la Couture du Moulin',
+          postalCode:'94320',
+          addressLocality:'Thiais',
+          addressCountry:'FR'
+        },
+        openingHoursSpecification:[{
+          '@type':'OpeningHoursSpecification',
+          dayOfWeek:[
+            'Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'
+          ],
+          opens:'00:00',
+          closes:'23:59'
+        }],
+        sameAs:[
+          'https://x.com/FranceNuisible',
+          'https://www.youtube.com/@AlloNuisibleExpress',
+          'https://maps.app.goo.gl/EWnwrfLmvWMRjEds6'
+        ],
+        slogan:'Intervention anti-nuisibles rapide 24h/24 et 7j/7',
+        makesOffer:{
+          '@type':'Offer',
+          availability:'https://schema.org/InStock',
+          areaServed:'Île-de-France',
+          itemOffered:{
+            '@type':'Service',
+            name:serviceTitle
+          }
+        }
+      };
+
+      var localScript=document.createElement('script');
+      localScript.type='application/ld+json';
+      localScript.dataset.globalSchema='local-business';
+      localScript.text=JSON.stringify(localBusiness);
+      head.appendChild(localScript);
+    }
+
+    var faq=document.querySelector('.faq, .global-faq');
+    if(faq && !head.querySelector('script[data-global-schema="faq"]')){
+      var entities=[];
+      faq.querySelectorAll('.faq-item').forEach(function(item){
+        var q=item.querySelector('.faq-question');
+        var a=item.querySelector('.faq-answer');
+        if(!q||!a){return;}
+        var question=(q.textContent||'').replace(/\+/g,'').trim();
+        var answer=(a.textContent||'').trim();
+        if(!question||!answer){return;}
+        entities.push({
+          '@type':'Question',
+          name:question,
+          acceptedAnswer:{'@type':'Answer',text:answer}
+        });
+      });
+      if(entities.length){
+        var faqScript=document.createElement('script');
+        faqScript.type='application/ld+json';
+        faqScript.dataset.globalSchema='faq';
+        faqScript.text=JSON.stringify({'@context':'https://schema.org','@type':'FAQPage','mainEntity':entities});
+        head.appendChild(faqScript);
+      }
+    }
+  }
+
+  function initMobileMenu(){
+    var dropdown=document.querySelector('header .main-nav .dropdown');
+    var toggle=dropdown?dropdown.querySelector('.dropdown-toggle'):null;
+    if(!dropdown||!toggle){return;}
+
+    toggle.addEventListener('click',function(ev){
+      if(window.innerWidth>980){return;}
+      ev.preventDefault();
+      dropdown.classList.toggle('open');
+    });
+
+    document.addEventListener('click',function(ev){
+      if(window.innerWidth>980){return;}
+      if(!dropdown.contains(ev.target)){dropdown.classList.remove('open');}
+    });
+
+    window.addEventListener('resize',function(){
+      if(window.innerWidth>980){dropdown.classList.remove('open');}
+    });
+  }
+
   function boot(){
+    ensureSeoTags();
     ensureFooter();
     ensureProcess();
     ensureReviewsFaq();
     ensureSticky();
     initFaq();
     initReviews();
+    initMobileMenu();
+    optimizeMedia();
+    ensureStructuredData();
     setYear();
     if(window.__alloScrollRevealRefresh){window.__alloScrollRevealRefresh(document);} 
   }
