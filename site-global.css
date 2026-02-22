@@ -28,9 +28,9 @@ section[id]{
   left:0;
   right:0;
   top:96px;
-  z-index:950;
+  z-index:5000;
   min-height:52px;
-  display:flex;
+  display:flex !important;
   align-items:center;
   justify-content:center;
   text-decoration:none;
@@ -43,6 +43,8 @@ section[id]{
   padding:8px 12px;
   overflow:hidden;
   isolation:isolate;
+  opacity:1 !important;
+  visibility:visible !important;
   animation:urgentPulse 1.7s ease-in-out infinite;
 }
 .home-urgent-strip:before{

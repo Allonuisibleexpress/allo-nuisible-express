@@ -118,22 +118,28 @@
   }
 
   function ensureHomeUrgencyStrip(){
-    if(document.querySelector('.home-urgent-strip')){return;}
     var header=document.querySelector('header');
-    var strip=document.createElement('a');
-    strip.className='home-urgent-strip';
-    strip.href='tel:0744296897';
-    strip.setAttribute('aria-label','Urgence 24h/24 - Appeler le 07 44 29 68 97');
-    strip.innerHTML='<span class="urgent-default">URGENCE 24H/24 · 7J/7</span><span class="urgent-hover">07 44 29 68 97</span>';
+    var strip=document.querySelector('.home-urgent-strip');
+    if(!strip){
+      strip=document.createElement('a');
+      strip.className='home-urgent-strip';
+      strip.href='tel:0744296897';
+      strip.setAttribute('aria-label','Urgence 24h/24 - Appeler le 07 44 29 68 97');
+      strip.innerHTML='<span class="urgent-default">URGENCE 24H/24 · 7J/7</span><span class="urgent-hover">07 44 29 68 97</span>';
+    }
     if(header && header.parentNode){
-      if(header.nextSibling){
-        header.parentNode.insertBefore(strip, header.nextSibling);
-      }else{
-        header.parentNode.appendChild(strip);
+      if(strip.parentNode!==header.parentNode || strip.previousElementSibling!==header){
+        if(header.nextSibling){
+          header.parentNode.insertBefore(strip, header.nextSibling);
+        }else{
+          header.parentNode.appendChild(strip);
+        }
       }
       document.body.classList.add('has-home-urgent-strip');
     }else{
-      document.body.insertBefore(strip, document.body.firstChild);
+      if(strip.parentNode!==document.body){
+        document.body.insertBefore(strip, document.body.firstChild);
+      }
       document.body.classList.add('has-home-urgent-strip');
     }
   }
