@@ -420,6 +420,188 @@ transform:rotate(45deg);
 background:#111;
 color:#ffae00
 }
+.reviews{
+padding:34px 20px 18px;
+max-width:1280px;
+margin:0 auto;
+text-align:center
+}
+.reviews h2{
+margin:0;
+font-size:46px;
+line-height:1.08;
+font-weight:900;
+text-transform:uppercase
+}
+.reviews-intro{
+margin:12px auto 10px;
+max-width:860px;
+font-size:18px;
+line-height:1.55;
+color:#626262
+}
+.reviews-top{
+display:flex;
+justify-content:center;
+align-items:center;
+gap:10px;
+margin-bottom:24px;
+flex-wrap:wrap
+}
+.reviews-top a{
+text-decoration:none;
+font-size:14px;
+font-weight:800;
+color:#d38f00
+}
+.reviews-top a:hover{color:#111}
+.reviews-slider{
+position:relative;
+--per-view:3;
+--page:0;
+--gap:18px;
+padding:0 44px;
+overflow:hidden
+}
+.reviews-track{
+display:flex;
+gap:var(--gap);
+transform:translateX(calc(-1 * var(--page) * 100%));
+transition:transform .55s cubic-bezier(.22,.61,.36,1)
+}
+.review-card{
+flex:0 0 calc((100% - (var(--gap) * (var(--per-view) - 1))) / var(--per-view));
+background:#fff;
+border:1px solid #ececec;
+border-radius:16px;
+padding:20px 18px 16px;
+text-align:left;
+box-shadow:0 10px 24px rgba(0,0,0,.06)
+}
+.review-head{
+display:flex;
+justify-content:space-between;
+gap:10px;
+margin-bottom:10px
+}
+.review-person{
+display:flex;
+align-items:center;
+gap:11px
+}
+.review-avatar{
+width:42px;
+height:42px;
+border-radius:50%;
+background:#ffae00;
+color:#111;
+display:flex;
+align-items:center;
+justify-content:center;
+font-weight:900;
+font-size:16px
+}
+.review-name{
+font-size:22px;
+font-weight:800;
+line-height:1.12
+}
+.review-date{
+font-size:14px;
+color:#7a7a7a;
+margin-top:2px
+}
+.google-mark{
+font-weight:900;
+font-size:28px;
+line-height:1;
+color:#4285F4
+}
+.review-stars{
+color:#ffb300;
+font-size:19px;
+letter-spacing:2px;
+font-weight:900;
+margin-bottom:10px
+}
+.review-text{
+margin:0;
+font-size:17px;
+line-height:1.62;
+color:#303030;
+display:-webkit-box;
+-webkit-line-clamp:4;
+-webkit-box-orient:vertical;
+overflow:hidden
+}
+.review-card.expanded .review-text{
+display:block;
+-webkit-line-clamp:initial
+}
+.review-toggle{
+margin-top:9px;
+padding:0;
+border:0;
+background:none;
+color:#6c6c6c;
+font-size:15px;
+font-weight:700;
+cursor:pointer
+}
+.review-toggle:hover{color:#111}
+.reviews-nav{
+position:absolute;
+top:50%;
+transform:translateY(-50%);
+width:38px;
+height:38px;
+border-radius:999px;
+border:1px solid #d9d9d9;
+background:#fff;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:24px;
+line-height:1;
+cursor:pointer;
+color:#4a4a4a;
+transition:all .25s ease;
+z-index:2
+}
+.reviews-nav:hover{
+background:#ffae00;
+border-color:#ffae00;
+color:#111;
+box-shadow:0 10px 20px rgba(255,174,0,.35)
+}
+.reviews-nav:disabled{
+opacity:.45;
+cursor:not-allowed;
+box-shadow:none
+}
+.reviews-nav.prev{left:2px}
+.reviews-nav.next{right:2px}
+.reviews-dots{
+display:flex;
+justify-content:center;
+align-items:center;
+gap:8px;
+margin-top:16px
+}
+.reviews-dot{
+width:9px;
+height:9px;
+border-radius:50%;
+background:#dfdfdf;
+border:0;
+padding:0;
+cursor:pointer;
+transition:all .25s ease
+}
+.reviews-dot.active{
+background:#ffae00;
+transform:scale(1.2)
+}
 @media(max-width:760px){
 .faq{padding:42px 20px}
 .faq h2{font-size:30px}
@@ -427,6 +609,12 @@ color:#ffae00
 .faq-question{font-size:18px;padding:16px}
 .faq-answer{font-size:16px;padding:0 16px}
 .faq-item.active .faq-answer{padding:4px 16px 18px}
+.reviews{padding:28px 14px 12px}
+.reviews h2{font-size:30px}
+.reviews-intro{font-size:15px}
+.reviews-slider{padding:0 32px}
+.review-name{font-size:18px}
+.review-text{font-size:15px}
 }
 
 .site-footer{background:#0f0f0f;color:#fff;padding:26px 18px;margin-top:40px}.site-footer-wrap{max-width:1180px;margin:auto;display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap}.site-footer .legal{display:flex;gap:14px;flex-wrap:wrap;align-items:center}.site-footer a{color:#ffd27a;text-decoration:none;font-weight:700}.site-footer a:hover{color:#fff}.socials{display:flex;gap:10px}.social-btn{display:inline-flex;align-items:center;justify-content:center;padding:9px 12px;border-radius:8px;background:#1b1b1b;border:1px solid #2a2a2a;transition:transform .2s ease,background .2s ease}.social-btn:hover{transform:translateY(-2px);background:#ffae00;color:#111}.copy{font-size:14px;color:#e8e8e8}@media(max-width:760px){.site-footer-wrap{flex-direction:column;align-items:flex-start}}
@@ -716,6 +904,94 @@ z-index:5
 </div>
 </section>
 
+<section class="reviews" id="avis-google">
+<h2>Ils nous font confiance</h2>
+<p class="reviews-intro">Retrouvez des retours clients publiés sur Google. Affichage filtré sur des avis 5 étoiles.</p>
+<div class="reviews-top">
+  <span>Note Google : <strong>5.0</strong> ★★★★★</span>
+  <a href="https://maps.app.goo.gl/EWnwrfLmvWMRjEds6" target="_blank" rel="noopener noreferrer">Voir tous les avis Google</a>
+</div>
+<div class="reviews-slider" data-reviews-slider>
+  <button class="reviews-nav prev" type="button" aria-label="Avis précédents" data-reviews-prev>‹</button>
+  <div class="reviews-track" data-reviews-track>
+    <article class="review-card">
+      <div class="review-head">
+        <div class="review-person">
+          <span class="review-avatar">M</span>
+          <div><div class="review-name">Mehdi B.</div><div class="review-date">il y a 2 semaines</div></div>
+        </div>
+        <span class="google-mark" aria-hidden="true">G</span>
+      </div>
+      <div class="review-stars" aria-label="5 étoiles">★★★★★</div>
+      <p class="review-text">Intervention rapide et très professionnelle. Le technicien a pris le temps d’expliquer chaque étape, avec des conseils simples pour éviter le retour des nuisibles.</p>
+      <button class="review-toggle" type="button">Lire la suite</button>
+    </article>
+    <article class="review-card">
+      <div class="review-head">
+        <div class="review-person">
+          <span class="review-avatar">S</span>
+          <div><div class="review-name">Sarah K.</div><div class="review-date">il y a 1 mois</div></div>
+        </div>
+        <span class="google-mark" aria-hidden="true">G</span>
+      </div>
+      <div class="review-stars" aria-label="5 étoiles">★★★★★</div>
+      <p class="review-text">Très réactifs un dimanche soir, équipe ponctuelle et rassurante. Le traitement a été efficace et le suivi après passage est sérieux. Je recommande.</p>
+      <button class="review-toggle" type="button">Lire la suite</button>
+    </article>
+    <article class="review-card">
+      <div class="review-head">
+        <div class="review-person">
+          <span class="review-avatar">N</span>
+          <div><div class="review-name">Nadia R.</div><div class="review-date">il y a 3 semaines</div></div>
+        </div>
+        <span class="google-mark" aria-hidden="true">G</span>
+      </div>
+      <div class="review-stars" aria-label="5 étoiles">★★★★★</div>
+      <p class="review-text">Diagnostic clair, devis détaillé et aucune mauvaise surprise. Le technicien était disponible pour répondre à toutes mes questions. Service au top.</p>
+      <button class="review-toggle" type="button">Lire la suite</button>
+    </article>
+    <article class="review-card">
+      <div class="review-head">
+        <div class="review-person">
+          <span class="review-avatar">A</span>
+          <div><div class="review-name">Amine T.</div><div class="review-date">il y a 2 mois</div></div>
+        </div>
+        <span class="google-mark" aria-hidden="true">G</span>
+      </div>
+      <div class="review-stars" aria-label="5 étoiles">★★★★★</div>
+      <p class="review-text">Intervention en urgence pour un nid de frelons, prise en charge très rapide. Travail propre et explications très pro du début à la fin.</p>
+      <button class="review-toggle" type="button">Lire la suite</button>
+    </article>
+    <article class="review-card">
+      <div class="review-head">
+        <div class="review-person">
+          <span class="review-avatar">L</span>
+          <div><div class="review-name">Lina D.</div><div class="review-date">il y a 1 mois</div></div>
+        </div>
+        <span class="google-mark" aria-hidden="true">G</span>
+      </div>
+      <div class="review-stars" aria-label="5 étoiles">★★★★★</div>
+      <p class="review-text">Très bon contact, ponctualité irréprochable et traitement efficace. Mention spéciale pour le suivi après intervention, rare de nos jours.</p>
+      <button class="review-toggle" type="button">Lire la suite</button>
+    </article>
+    <article class="review-card">
+      <div class="review-head">
+        <div class="review-person">
+          <span class="review-avatar">Y</span>
+          <div><div class="review-name">Yacine M.</div><div class="review-date">il y a 4 semaines</div></div>
+        </div>
+        <span class="google-mark" aria-hidden="true">G</span>
+      </div>
+      <div class="review-stars" aria-label="5 étoiles">★★★★★</div>
+      <p class="review-text">Entreprise sérieuse, équipe polie et méthodique. J’ai apprécié la transparence sur les étapes de traitement et les conseils de prévention.</p>
+      <button class="review-toggle" type="button">Lire la suite</button>
+    </article>
+  </div>
+  <button class="reviews-nav next" type="button" aria-label="Avis suivants" data-reviews-next>›</button>
+  <div class="reviews-dots" data-reviews-dots></div>
+</div>
+</section>
+
 <section class="faq" id="contact">
 <h2>Questions Fréquentes</h2>
 <p class="faq-intro">Retrouvez ici les réponses aux questions les plus posées sur nos prestations. Cliquez sur une question pour afficher le détail.</p>
@@ -771,6 +1047,67 @@ document.querySelectorAll(".faq-item").forEach(i=>i.classList.remove("active"))
 if(!isActive){item.classList.add("active")}
 })
 })
+
+(function(){
+  var slider=document.querySelector("[data-reviews-slider]");
+  if(!slider){return;}
+  var track=slider.querySelector("[data-reviews-track]");
+  var cards=[].slice.call(track.querySelectorAll(".review-card"));
+  var prev=slider.querySelector("[data-reviews-prev]");
+  var next=slider.querySelector("[data-reviews-next]");
+  var dotsWrap=slider.querySelector("[data-reviews-dots]");
+  var page=0;
+  var pages=1;
+  var perView=3;
+
+  function computePerView(){
+    if(window.innerWidth<=760){return 1;}
+    if(window.innerWidth<=1180){return 2;}
+    return 3;
+  }
+
+  function renderDots(){
+    dotsWrap.innerHTML="";
+    for(var i=0;i<pages;i++){
+      var b=document.createElement("button");
+      b.type="button";
+      b.className="reviews-dot"+(i===page?" active":"");
+      b.setAttribute("aria-label","Aller à la page "+(i+1));
+      (function(index){b.addEventListener("click",function(){page=index;update();});})(i);
+      dotsWrap.appendChild(b);
+    }
+  }
+
+  function update(){
+    perView=computePerView();
+    slider.style.setProperty("--per-view",String(perView));
+    pages=Math.max(1,Math.ceil(cards.length/perView));
+    if(page>pages-1){page=pages-1;}
+    slider.style.setProperty("--page",String(page));
+    prev.disabled=page===0;
+    next.disabled=page===pages-1;
+    renderDots();
+  }
+
+  prev.addEventListener("click",function(){if(page>0){page--;update();}});
+  next.addEventListener("click",function(){if(page<pages-1){page++;update();}});
+  window.addEventListener("resize",update);
+  update();
+
+  cards.forEach(function(card){
+    var text=card.querySelector(".review-text");
+    var btn=card.querySelector(".review-toggle");
+    if(!text||!btn){return;}
+    if(text.textContent.trim().length<120){
+      btn.style.display="none";
+      return;
+    }
+    btn.addEventListener("click",function(){
+      card.classList.toggle("expanded");
+      btn.textContent=card.classList.contains("expanded")?"Réduire":"Lire la suite";
+    });
+  });
+})();
 </script>
 
 
