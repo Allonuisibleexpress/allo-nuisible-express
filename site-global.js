@@ -582,12 +582,12 @@
       mobileList.innerHTML=[
         '<li><a href=\"index.html\">ACCUEIL</a></li>',
         '<li><a href=\"punaises.html\">PUNAISE DE LIT</a></li>',
-        '<li><a href=\"deratisation.html\">DÉRATISATION</a></li>',
-        '<li><a href=\"desinfection.html\">DÉSINFECTION</a></li>',
-        '<li><a href=\"desinsectisation.html\">DÉSINSECTISATION</a></li>',
+        '<li><a href=\"deratisation.html\">DÉRATISATION (RATS / SOURIS)</a></li>',
         '<li><a href=\"depigeonnage.html\">DÉPIGEONNAGE</a></li>',
         '<li><a href=\"frelons.html\">FRELON</a></li>',
         '<li><a href=\"diogene.html\">SYNDROME DIOGÈNE</a></li>',
+        '<li><a href=\"chenilles.html\">CHENILLE PROCESSIONNAIRE</a></li>',
+        '<li><a href=\"guepes.html\">GUÊPE</a></li>',
         '<li><a href=\"contact.html\">CONTACTEZ-NOUS</a></li>',
         '<li><a href=\"tarifs.html\">TARIFS</a></li>',
         '<li><a href=\"blog.html\">BLOG</a></li>'
