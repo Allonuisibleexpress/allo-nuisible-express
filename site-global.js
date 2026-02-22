@@ -4,6 +4,10 @@
     return p||'index.html';
   }
 
+  function isHomePage(){
+    return currentPage()==='index.html';
+  }
+
   function noExtraBlocksHere(){
     var blocked={
       'blog.html':true,
@@ -84,10 +88,21 @@
   }
 
   function ensureFooter(){
-    if(document.querySelector('footer.site-footer')){return;}
+    var existing=document.querySelector('footer.site-footer');
+    if(isHomePage()){
+      return;
+    }
     var holder=document.createElement('div');
     holder.innerHTML=footerHTML();
-    document.body.appendChild(holder.firstElementChild);
+    var fresh=holder.firstElementChild;
+    if(!existing){
+      document.body.appendChild(fresh);
+      return;
+    }
+    if(existing.classList.contains('global-footer')){
+      return;
+    }
+    existing.parentNode.replaceChild(fresh, existing);
   }
 
   function ensureProcess(){
