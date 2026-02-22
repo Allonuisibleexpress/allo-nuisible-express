@@ -124,6 +124,9 @@ header .mobile-menu-btn{
 header .mobile-nav-overlay{
   display:none;
 }
+header .mobile-nav-list{
+  display:none !important;
+}
 header .main-nav .dropdown-item{
   display:block !important;
   padding:14px 18px !important;
