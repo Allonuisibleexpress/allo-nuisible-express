@@ -306,15 +306,32 @@ header .main-nav .quote-btn:hover .hover-text{
   }
   header .main-nav .dropdown-menu{
     position:static !important;
-    opacity:1 !important;
-    visibility:visible !important;
+    opacity:0 !important;
+    visibility:hidden !important;
     transform:none !important;
     min-width:0 !important;
     border:0 !important;
     box-shadow:none !important;
     border-radius:0 !important;
-    padding:0 0 8px !important;
+    padding:0 !important;
     background:#fff !important;
+    max-height:0 !important;
+    overflow:hidden !important;
+    pointer-events:none !important;
+    transition:max-height .28s ease,opacity .22s ease,visibility .22s ease !important;
+  }
+  header .main-nav .dropdown.open .dropdown-menu{
+    opacity:1 !important;
+    visibility:visible !important;
+    max-height:80vh !important;
+    padding:0 0 8px !important;
+    pointer-events:auto !important;
+  }
+  header .main-nav .dropdown .chevron{
+    transition:transform .25s ease !important;
+  }
+  header .main-nav .dropdown.open .chevron{
+    transform:rotate(180deg) !important;
   }
   header .main-nav .dropdown-item{
     font-size:15px !important;
