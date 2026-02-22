@@ -238,14 +238,6 @@ main .card li{
     text-align:left !important;
   }
 
-  /* No justified text on desktop */
-  p,
-  .card p,
-  .global-faq .faq-answer,
-  .global-reviews .review-text,
-  .global-footer .footer-text{
-    text-justify:auto !important;
-  }
 }
 
 /* Injected sticky call button */
@@ -553,4 +545,50 @@ body.mobile-nav-open .site-sticky-cta{
     min-height:50px;
     font-size:16px;
   }
+}
+
+@media (max-width: 768px) {
+  p,
+  .service-description,
+  .faq-text,
+  .zone-intervention,
+  .description,
+  .card p,
+  .global-faq .faq-answer,
+  .global-faq .faq-intro,
+  .global-reviews .review-text,
+  .global-reviews .reviews-intro,
+  .global-process .process-head p,
+  .global-process .step-card p,
+  .global-footer .footer-text,
+  .global-footer .footer-contact p,
+  .local-seo-block p {
+    text-align: left !important;
+    line-height: 1.6 !important;
+    font-size: 16px !important;
+  }
+
+  .container,
+  .section {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+
+  /* Keep short/high-impact elements centered on mobile */
+  h1,
+  .hero h1,
+  .hero-local h1,
+  .home-urgent-strip,
+  .global-sticky-cta .sticky-link,
+  .btn,
+  .cta-btn {
+    text-align: center !important;
+  }
+
+  .cta-row,
+  .global-sticky-cta {
+    justify-content: center !important;
+    align-items: center !important;
+  }
+
 }
