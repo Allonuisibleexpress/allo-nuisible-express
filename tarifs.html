@@ -13,7 +13,25 @@ header{position:sticky;top:0;background:#fff;border-bottom:1px solid #ececec;z-i
 .hero{min-height:34vh;background:linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),url('dimitrisvetsikas1969-covid-19-5010565_1920.jpg') center/cover;display:flex;align-items:center;justify-content:center;color:#fff;text-align:center}
 .hero h1{font-size:56px;margin:0;letter-spacing:.03em;text-transform:uppercase}
 .main{max-width:1240px;margin:34px auto 70px;padding:0 18px}
-.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}.card{background:#fff;border:1px solid #e8e8e8;border-radius:12px;padding:22px;box-shadow:0 8px 22px rgba(0,0,0,.05)}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.card{background:#fff;border:1px solid #e8e8e8;border-radius:12px;padding:22px;box-shadow:0 8px 22px rgba(0,0,0,.05)}
+.card-link{
+display:block;
+text-decoration:none;
+color:inherit;
+cursor:pointer;
+transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease,background-color .22s ease;
+}
+.card-link:hover{
+transform:translateY(-4px);
+box-shadow:0 14px 28px rgba(0,0,0,.10);
+border-color:#ffd47a;
+background:#fffdf7;
+}
+.card-link:focus-visible{
+outline:3px solid rgba(255,174,0,.45);
+outline-offset:2px;
+}
 .card h2{margin:0 0 8px;font-size:24px}.price{font-size:32px;font-weight:900;color:#111;margin:10px 0}.tag{display:inline-block;background:#fff5d6;border:1px solid #ffe3a0;color:#9d6a00;padding:5px 9px;border-radius:999px;font-size:12px;font-weight:800}
 .note{margin-top:24px;background:#fff;border:1px solid #e8e8e8;border-radius:12px;padding:20px;line-height:1.7}
 @media(max-width:980px){.grid{grid-template-columns:1fr}.hero h1{font-size:40px}.logo{height:76px}}
@@ -295,13 +313,13 @@ text-rendering:geometricPrecision;
 <section class="hero"><h1>Tarifs</h1></section>
 <main class="main">
   <div class="grid">
-    <article class="card"><span class="tag">Prix de départ</span><h2>Guêpes / Frelons</h2><p class="price">120 EUR</p><p>Traitement ciblé avec sécurisation de la zone et conseils de prévention.</p></article>
-    <article class="card"><span class="tag">Prix de départ</span><h2>Dératisation</h2><p class="price">200 EUR</p><p>Tarif de base pour rats et souris, ajusté selon la surface et l'accès.</p></article>
-    <article class="card"><span class="tag">Prix de départ</span><h2>Dépigeonnage</h2><p class="price">150 EUR</p><p>Protection anti-pigeons adaptée à la configuration du bâtiment.</p></article>
-    <article class="card"><span class="tag">Prix de départ</span><h2>Punaises de lit</h2><p class="price">200 EUR</p><p>Traitement ciblé selon le niveau d'infestation et le nombre de pièces.</p></article>
-    <article class="card"><span class="tag">Prix de départ</span><h2>Cafards</h2><p class="price">200 EUR</p><p>Désinsectisation professionnelle avec protocole adapté au site.</p></article>
-    <article class="card"><span class="tag">Prix de départ</span><h2>Chenilles processionnaires</h2><p class="price">120 EUR</p><p>Intervention de neutralisation des nids selon hauteur et accessibilité.</p></article>
-    <article class="card"><span class="tag">Prix de départ</span><h2>Syndrome de Diogène</h2><p class="price">500 EUR</p><p>Nettoyage, désinfection et remise en état selon volume à traiter.</p></article>
+    <a class="card card-link" href="guepes.html" aria-label="Voir le service guêpes"><span class="tag">Prix de départ</span><h2>Guêpes / Frelons</h2><p class="price">120 EUR</p><p>Traitement ciblé avec sécurisation de la zone et conseils de prévention.</p></a>
+    <a class="card card-link" href="deratisation.html" aria-label="Voir le service dératisation"><span class="tag">Prix de départ</span><h2>Dératisation</h2><p class="price">200 EUR</p><p>Tarif de base pour rats et souris, ajusté selon la surface et l'accès.</p></a>
+    <a class="card card-link" href="depigeonnage.html" aria-label="Voir le service dépigeonnage"><span class="tag">Prix de départ</span><h2>Dépigeonnage</h2><p class="price">150 EUR</p><p>Protection anti-pigeons adaptée à la configuration du bâtiment.</p></a>
+    <a class="card card-link" href="punaises.html" aria-label="Voir le service punaises de lit"><span class="tag">Prix de départ</span><h2>Punaises de lit</h2><p class="price">200 EUR</p><p>Traitement ciblé selon le niveau d'infestation et le nombre de pièces.</p></a>
+    <a class="card card-link" href="cafards.html" aria-label="Voir le service cafards"><span class="tag">Prix de départ</span><h2>Cafards</h2><p class="price">200 EUR</p><p>Désinsectisation professionnelle avec protocole adapté au site.</p></a>
+    <a class="card card-link" href="chenilles.html" aria-label="Voir le service chenilles processionnaires"><span class="tag">Prix de départ</span><h2>Chenilles processionnaires</h2><p class="price">120 EUR</p><p>Intervention de neutralisation des nids selon hauteur et accessibilité.</p></a>
+    <a class="card card-link" href="diogene.html" aria-label="Voir le service syndrome de Diogène"><span class="tag">Prix de départ</span><h2>Syndrome de Diogène</h2><p class="price">500 EUR</p><p>Nettoyage, désinfection et remise en état selon volume à traiter.</p></a>
   </div>
   <div class="note"><b>Informations tarifaires:</b> disponibilité 24h/24 et 7j/7, devis gratuit, déplacement gratuit, intervention rapide en Île-de-France. Les prix affichés sont des montants de départ et peuvent être ajustés selon la configuration réelle du site.</div>
 </main>
