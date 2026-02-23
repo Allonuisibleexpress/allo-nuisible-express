@@ -838,11 +838,7 @@
         if(!target){return;}
         var trigger=target.closest ? target.closest('.mobile-menu-btn') : null;
         if(trigger){
-          if(window.innerWidth>980){return;}
-          ev.preventDefault();
-          var open=document.body.classList.contains('mobile-nav-open');
-          document.body.classList.toggle('mobile-nav-open', !open);
-          trigger.setAttribute('aria-expanded', open ? 'false' : 'true');
+          // Button has its own click handler; do not toggle here to prevent double action.
           return;
         }
         if(window.innerWidth<=980 && document.body.classList.contains('mobile-nav-open')){
@@ -1007,7 +1003,7 @@
     safeRun(ensureSticky,'ensureSticky');
     safeRun(optimizeForCalls,'optimizeForCalls');
     safeRun(initFaq,'initFaq');
-    safeRun(initMobileMenu,'initMobileMenu');
+    // Keep a single mobile menu system (fallback) to avoid double-toggle conflicts.
     safeRun(ensureMobileMenuFallback,'ensureMobileMenuFallback');
     safeRun(initReviews,'initReviews');
     safeRun(cleanupTimedModalNonHome,'cleanupTimedModalNonHome');
