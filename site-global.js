@@ -957,6 +957,23 @@
     }
   }
 
+  function cleanupTimedModalNonHome(){
+    if(isHomePage()){return;}
+    document.querySelectorAll('[data-timed-call-overlay]').forEach(function(node){ node.remove(); });
+    document.body.classList.remove('timed-call-open');
+  }
+
+  function ensureCoreSections(){
+    if(isHomePage()){
+      return;
+    }
+    ensureFooter();
+    ensureProcess();
+    ensureReviewsFaq();
+    setYear();
+    if(window.__alloScrollRevealRefresh){window.__alloScrollRevealRefresh(document);}
+  }
+
   function safeRun(fn,label){
     try{
       fn();
@@ -971,6 +988,7 @@
     safeRun(ensureFooter,'ensureFooter');
     safeRun(ensureProcess,'ensureProcess');
     safeRun(ensureReviewsFaq,'ensureReviewsFaq');
+    safeRun(ensureCoreSections,'ensureCoreSections');
     safeRun(ensureLocalSeoSections,'ensureLocalSeoSections');
     safeRun(ensureSticky,'ensureSticky');
     safeRun(optimizeForCalls,'optimizeForCalls');
@@ -978,11 +996,20 @@
     safeRun(initMobileMenu,'initMobileMenu');
     safeRun(ensureMobileMenuFallback,'ensureMobileMenuFallback');
     safeRun(initReviews,'initReviews');
+    safeRun(cleanupTimedModalNonHome,'cleanupTimedModalNonHome');
     safeRun(initTimedCallModal,'initTimedCallModal');
     safeRun(optimizeMedia,'optimizeMedia');
     safeRun(ensureStructuredData,'ensureStructuredData');
     safeRun(setYear,'setYear');
     if(window.__alloScrollRevealRefresh){safeRun(function(){window.__alloScrollRevealRefresh(document);},'scrollRevealRefresh');}
+
+    // Hard retry to recover from page-specific scripts/styles that run after boot.
+    if(!window.__alloCoreRetryBound){
+      window.__alloCoreRetryBound=true;
+      window.setTimeout(function(){safeRun(ensureCoreSections,'ensureCoreSections@250');},250);
+      window.setTimeout(function(){safeRun(ensureCoreSections,'ensureCoreSections@1000');},1000);
+      window.setTimeout(function(){safeRun(ensureCoreSections,'ensureCoreSections@2200');},2200);
+    }
   }
 
   enforcePrimaryDomain();
