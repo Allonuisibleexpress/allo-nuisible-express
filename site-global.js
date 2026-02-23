@@ -268,6 +268,47 @@
     document.body.appendChild(holder.firstElementChild);
   }
 
+  function initStickyAutoSwitch(){
+    var ctas=[].slice.call(document.querySelectorAll('.global-sticky-cta .sticky-call'));
+    if(!ctas.length){return;}
+    ctas.forEach(function(callBtn){
+      var wrap=callBtn.closest('.global-sticky-cta');
+      if(!wrap){return;}
+
+      var base=callBtn.querySelector('.sticky-default');
+      if(!base){
+        base=document.createElement('span');
+        base.className='sticky-default';
+        callBtn.appendChild(base);
+      }
+      base.textContent='APPELER MAINTENANT';
+
+      var alt=callBtn.querySelector('.sticky-alt');
+      if(!alt){
+        alt=document.createElement('span');
+        alt.className='sticky-alt';
+        callBtn.appendChild(alt);
+      }
+      alt.textContent='DEVIS ET DÉPLACEMENT GRATUIT';
+
+      var hoverNumber=callBtn.querySelector('.sticky-hover-number');
+      if(hoverNumber){
+        hoverNumber.setAttribute('aria-hidden','true');
+      }
+
+      if(wrap.dataset.switchInit==='1'){return;}
+      wrap.dataset.switchInit='1';
+      wrap.classList.remove('is-alt');
+      var showAlt=false;
+      window.setInterval(function(){
+        showAlt=!showAlt;
+        wrap.classList.toggle('is-alt', showAlt);
+        callBtn.classList.add('switch-flash');
+        window.setTimeout(function(){ callBtn.classList.remove('switch-flash'); }, 380);
+      }, 2000);
+    });
+  }
+
   function initFaq(){
     var faqs=[].slice.call(document.querySelectorAll('.global-faq[data-global-faq]'));
     faqs.forEach(function(faq){
@@ -1050,6 +1091,7 @@
     safeRun(ensureCoreSections,'ensureCoreSections');
     safeRun(ensureLocalSeoSections,'ensureLocalSeoSections');
     safeRun(ensureSticky,'ensureSticky');
+    safeRun(initStickyAutoSwitch,'initStickyAutoSwitch');
     safeRun(optimizeForCalls,'optimizeForCalls');
     safeRun(initFaq,'initFaq');
     // Keep a single mobile menu system (fallback) to avoid double-toggle conflicts.
