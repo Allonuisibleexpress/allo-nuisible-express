@@ -869,6 +869,7 @@
 
   function initTimedCallModal(){
     if(!isHomePage()){return;}
+    if(window.__alloPopupDismissed){return;}
     var overlay=document.querySelector('[data-timed-call-overlay]');
     if(!overlay){
       var host=document.createElement('div');
@@ -883,15 +884,20 @@
     var phoneBtn=overlay.querySelector('.timed-call-action');
     var timerId=null;
     var openScheduled=false;
+    var dismissedByUser=false;
+    var hasOpened=false;
 
     function closeModal(){
       overlay.classList.remove('is-open');
       overlay.setAttribute('aria-hidden','true');
       document.body.classList.remove('timed-call-open');
       if(timerId){window.clearTimeout(timerId);timerId=null;}
+      dismissedByUser=true;
+      window.__alloPopupDismissed=true;
     }
 
     function openModal(){
+      if(dismissedByUser || window.__alloPopupDismissed){return;}
       if(document.body.classList.contains('mobile-nav-open')){
         document.body.classList.remove('mobile-nav-open');
         var mobileBtn=document.querySelector('header .mobile-menu-btn');
@@ -907,11 +913,14 @@
       overlay.style.setProperty('display','flex','important');
       overlay.style.setProperty('z-index','20000','important');
       openScheduled=false;
+      hasOpened=true;
     }
 
     if(closeBtn && !closeBtn.dataset.modalBound){
       closeBtn.dataset.modalBound='1';
-      closeBtn.addEventListener('click',closeModal);
+      closeBtn.addEventListener('click',function(ev){ if(ev){ev.preventDefault(); ev.stopPropagation();} closeModal(); });
+      closeBtn.addEventListener('touchend',function(ev){ if(ev){ev.preventDefault(); ev.stopPropagation();} closeModal(); },{passive:false});
+      closeBtn.addEventListener('pointerup',function(ev){ if(ev){ev.preventDefault(); ev.stopPropagation();} closeModal(); });
     }
     if(!overlay.dataset.modalBackdropBound){
       overlay.dataset.modalBackdropBound='1';
@@ -931,6 +940,7 @@
     }
 
     function scheduleOpen(){
+      if(dismissedByUser || window.__alloPopupDismissed){return;}
       if(openScheduled){return;}
       openScheduled=true;
       if(timerId){window.clearTimeout(timerId);}
@@ -941,38 +951,16 @@
 
     scheduleOpen();
 
-    // Retry open if still not visible due race conditions/cached CSS.
-    window.setTimeout(function(){
-      if(!overlay.classList.contains('is-open') || overlay.getAttribute('aria-hidden')!=='false'){
-        openModal();
-      }
-    },12000);
-
-    if(!window.__alloModalPageshowBound){
-      window.__alloModalPageshowBound=true;
-      window.addEventListener('pageshow',function(){
-        if(!isHomePage()){return;}
-        scheduleOpen();
-      });
-    }
-
-    if(!window.__alloModalVisibilityBound){
-      window.__alloModalVisibilityBound=true;
-      document.addEventListener('visibilitychange',function(){
-        if(!isHomePage()){return;}
-        if(document.visibilityState==='visible' && !overlay.classList.contains('is-open')){
-          scheduleOpen();
-        }
-      });
-    }
+    // No forced reopen after close: popup must stay closed until next page refresh.
   }
 
   function forceTimedPopupEmergency(){
     if(!isHomePage()){return;}
+    if(window.__alloPopupDismissed){return;}
     if(window.__alloEmergencyPopupBound){return;}
     window.__alloEmergencyPopupBound=true;
     window.setTimeout(function(){
-      if(!isHomePage()){return;}
+      if(!isHomePage() || window.__alloPopupDismissed){return;}
       var overlay=document.querySelector('[data-timed-call-overlay]');
       if(!overlay){
         var host=document.createElement('div');
@@ -996,6 +984,7 @@
           overlay.classList.remove('is-open');
           overlay.setAttribute('aria-hidden','true');
           document.body.classList.remove('timed-call-open');
+          window.__alloPopupDismissed=true;
         });
       }
     },10000);

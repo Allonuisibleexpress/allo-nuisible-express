@@ -1383,7 +1383,7 @@ z-index:5
 <link rel="stylesheet" href="scroll-reveal.css?v=20260302">
 <script src="scroll-reveal.js?v=20260302" defer></script>
 <link rel="stylesheet" href="site-global.css?v=20260326f">
-<script src="site-global.js?v=20260327l" defer></script>
+<script src="site-global.js?v=20260327n" defer></script>
 </head>
 
 <body>
@@ -2042,10 +2042,12 @@ if(!isActive){item.classList.add("active")}
 </div>
 <script>
 (function(){
+  window.__alloPopupDismissed=false;
   var path=(window.location.pathname||"").toLowerCase();
   var isHome=(path==="/"||path.endsWith("/index.html")||path.endsWith("/allo-nuisible-express/"));
   if(!isHome){return;}
   function openPopupFallback(){
+    if(window.__alloPopupDismissed){return;}
     var overlay=document.querySelector('[data-timed-call-overlay]');
     if(!overlay){
       var host=document.createElement('div');
@@ -2065,14 +2067,20 @@ if(!isActive){item.classList.add("active")}
     var closeBtn=overlay.querySelector('.timed-call-close');
     if(closeBtn && !closeBtn.dataset.iosBound){
       closeBtn.dataset.iosBound='1';
-      closeBtn.addEventListener('click',function(){
+      var closeFn=function(ev){
+        if(ev){ev.preventDefault(); ev.stopPropagation();}
         overlay.classList.remove('is-open');
         overlay.setAttribute('aria-hidden','true');
         document.body.classList.remove('timed-call-open');
-      });
+        window.__alloPopupDismissed=true;
+      };
+      closeBtn.addEventListener('click',closeFn);
+      closeBtn.addEventListener('touchend',closeFn,{passive:false});
+      closeBtn.addEventListener('pointerup',closeFn);
     }
   }
   setTimeout(function(){
+    if(window.__alloPopupDismissed){return;}
     var isOpen=document.querySelector('[data-timed-call-overlay].is-open');
     if(!isOpen){openPopupFallback();}
   },10000);
