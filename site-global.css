@@ -294,12 +294,12 @@ body.has-home-urgent-strip section[id]{
 header{
   z-index:10050 !important;
 }
+/* Keep sections always paintable on all browsers (Safari/mobile consistency). */
 .global-process,
 .global-reviews,
 .global-faq,
 .global-footer{
-  content-visibility:auto;
-  contain-intrinsic-size:1px 900px;
+  content-visibility:visible;
 }
 
 main,

@@ -144,8 +144,14 @@
     }
     // Position strip right under header on every page/layout.
     var headerHeight=96;
-    if(header && header.offsetHeight){headerHeight=header.offsetHeight;}
-    var topPx=Math.max(72,headerHeight);
+    if(header){
+      var rect=header.getBoundingClientRect();
+      var h=Math.round(rect && rect.height ? rect.height : 0);
+      if(h>0){headerHeight=h;}
+      else if(header.offsetHeight){headerHeight=header.offsetHeight;}
+    }
+    // Never allow the strip to overlap the header navigation.
+    var topPx=Math.max(96,headerHeight);
     var stripMinHeight=(window.innerWidth<=560?48:(window.innerWidth<=980?50:52));
     document.documentElement.style.setProperty('--allo-urgent-top',topPx+'px');
     document.documentElement.style.setProperty('--allo-urgent-height',stripMinHeight+'px');
@@ -169,6 +175,14 @@
       window.__alloUrgentResizeBound=true;
       window.addEventListener('resize',function(){
         ensureHomeUrgencyStrip();
+      });
+    }
+    if(!window.__alloUrgentLoadBound){
+      window.__alloUrgentLoadBound=true;
+      window.addEventListener('load',function(){
+        ensureHomeUrgencyStrip();
+        window.setTimeout(ensureHomeUrgencyStrip,250);
+        window.setTimeout(ensureHomeUrgencyStrip,800);
       });
     }
   }
