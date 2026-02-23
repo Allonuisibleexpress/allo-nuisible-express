@@ -891,6 +891,11 @@
       overlay.classList.remove('is-open');
       overlay.setAttribute('aria-hidden','true');
       document.body.classList.remove('timed-call-open');
+      overlay.style.removeProperty('opacity');
+      overlay.style.removeProperty('visibility');
+      overlay.style.removeProperty('pointer-events');
+      overlay.style.removeProperty('display');
+      overlay.style.removeProperty('z-index');
       if(timerId){window.clearTimeout(timerId);timerId=null;}
       dismissedByUser=true;
       window.__alloPopupDismissed=true;
@@ -984,6 +989,11 @@
           overlay.classList.remove('is-open');
           overlay.setAttribute('aria-hidden','true');
           document.body.classList.remove('timed-call-open');
+          overlay.style.removeProperty('opacity');
+          overlay.style.removeProperty('visibility');
+          overlay.style.removeProperty('pointer-events');
+          overlay.style.removeProperty('display');
+          overlay.style.removeProperty('z-index');
           window.__alloPopupDismissed=true;
         });
       }
