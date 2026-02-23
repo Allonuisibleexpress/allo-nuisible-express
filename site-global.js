@@ -142,6 +142,25 @@
       }
       document.body.classList.add('has-home-urgent-strip');
     }
+    // Hard fallback in case cached CSS is stale on mobile/desktop.
+    var topPx=96;
+    if(window.innerWidth<=560){topPx=84;}
+    else if(window.innerWidth<=980){topPx=92;}
+    strip.style.position='fixed';
+    strip.style.left='0';
+    strip.style.right='0';
+    strip.style.top=topPx+'px';
+    strip.style.display='flex';
+    strip.style.alignItems='center';
+    strip.style.justifyContent='center';
+    strip.style.minHeight=(window.innerWidth<=560?48:(window.innerWidth<=980?50:52))+'px';
+    strip.style.zIndex='5000';
+    strip.style.background='#b11414';
+    strip.style.color='#fff';
+    strip.style.textDecoration='none';
+    strip.style.visibility='visible';
+    strip.style.opacity='1';
+    strip.style.pointerEvents='auto';
   }
 
   function reviewsHTML(){
@@ -652,11 +671,15 @@
       nav.appendChild(mobileList);
     }
 
-    btn.addEventListener('click',function(ev){
+    function onBtnClick(ev){
       if(window.innerWidth>980){return;}
       ev.preventDefault();
       toggleMenu();
-    });
+    }
+    if(!btn.dataset.menuBound){
+      btn.dataset.menuBound='1';
+      btn.addEventListener('click',onBtnClick);
+    }
 
     overlay.addEventListener('click',closeMenu);
 
@@ -677,6 +700,79 @@
         closeMenu();
       }
     });
+  }
+
+  function ensureMobileMenuFallback(){
+    var header=document.querySelector('header');
+    var nav=document.querySelector('header .main-nav');
+    if(!header||!nav){return;}
+
+    var btn=header.querySelector('.mobile-menu-btn');
+    if(!btn){
+      btn=document.createElement('button');
+      btn.type='button';
+      btn.className='mobile-menu-btn';
+      btn.setAttribute('aria-label','Ouvrir le menu');
+      btn.setAttribute('aria-expanded','false');
+      btn.innerHTML='<span></span><span></span><span></span>';
+      header.appendChild(btn);
+    }
+
+    var overlay=header.querySelector('.mobile-nav-overlay');
+    if(!overlay){
+      overlay=document.createElement('div');
+      overlay.className='mobile-nav-overlay';
+      overlay.setAttribute('aria-hidden','true');
+      header.appendChild(overlay);
+    }
+
+    if(window.innerWidth<=980){
+      btn.style.display='inline-flex';
+      btn.style.position='absolute';
+      btn.style.right='8px';
+      btn.style.top='50%';
+      btn.style.transform='translateY(-50%)';
+      btn.style.zIndex='10060';
+      btn.style.pointerEvents='auto';
+      btn.style.visibility='visible';
+      btn.style.opacity='1';
+      btn.style.background='transparent';
+      btn.style.border='0';
+      btn.style.width='54px';
+      btn.style.height='54px';
+      btn.style.alignItems='center';
+      btn.style.justifyContent='center';
+      btn.style.flexDirection='column';
+      btn.style.color='#d58f00';
+      if(!btn.querySelector('span')){btn.innerHTML='<span></span><span></span><span></span>';}
+      [].slice.call(btn.querySelectorAll('span')).forEach(function(s){
+        s.style.display='block';
+        s.style.width='26px';
+        s.style.height='3px';
+        s.style.margin='3px 0';
+        s.style.background='currentColor';
+        s.style.borderRadius='10px';
+      });
+    }
+
+    if(!btn.dataset.menuFallbackBound){
+      btn.dataset.menuFallbackBound='1';
+      btn.addEventListener('click',function(ev){
+        if(window.innerWidth>980){return;}
+        ev.preventDefault();
+        var isOpen=document.body.classList.contains('mobile-nav-open');
+        document.body.classList.toggle('mobile-nav-open',!isOpen);
+        btn.setAttribute('aria-expanded', isOpen?'false':'true');
+      });
+    }
+
+    if(!overlay.dataset.menuFallbackBound){
+      overlay.dataset.menuFallbackBound='1';
+      overlay.addEventListener('click',function(){
+        document.body.classList.remove('mobile-nav-open');
+        btn.setAttribute('aria-expanded','false');
+      });
+    }
   }
 
   function timedCallModalHTML(){
@@ -746,6 +842,7 @@
     optimizeForCalls();
     initFaq();
     initMobileMenu();
+    ensureMobileMenuFallback();
     try{
       initReviews();
     }catch(err){
