@@ -1381,8 +1381,8 @@ z-index:5
 <link rel="stylesheet" href="sticky-call.css?v=20260229">
 <link rel="stylesheet" href="scroll-reveal.css?v=20260302">
 <script src="scroll-reveal.js?v=20260302" defer></script>
-<link rel="stylesheet" href="site-global.css?v=20260326">
-<script src="site-global.js?v=20260327" defer></script>
+<link rel="stylesheet" href="site-global.css?v=20260326b">
+<script src="site-global.js?v=20260327b" defer></script>
 </head>
 
 <body>
@@ -2030,71 +2030,6 @@ if(!isActive){item.classList.add("active")}
     });
   },{rootMargin:"0px 0px -8% 0px",threshold:0.18});
   cards.forEach(function(card){observer.observe(card);});
-})();
-</script>
-
-<script>
-(function(){
-  var path=(window.location.pathname||"").toLowerCase();
-  var isHome=(path==="/" || path.endsWith("/index.html") || path.endsWith("/allo-nuisible-express/"));
-  if(!isHome){return;}
-  function ensureTimedPopup(){
-    var overlay=document.querySelector('[data-timed-call-overlay]');
-    if(!overlay){
-      var host=document.createElement('div');
-      host.innerHTML='' +
-      '<div class="timed-call-overlay" data-timed-call-overlay aria-hidden="true">' +
-      '  <div class="timed-call-modal" role="dialog" aria-modal="true" aria-labelledby="timed-call-title-fallback">' +
-      '    <button class="timed-call-close" type="button" aria-label="Fermer">×</button>' +
-      '    <div class="timed-call-badge"><img class="timed-call-logo" src="logo.png" alt="Allo Nuisible Express"></div>' +
-      '    <h3 id="timed-call-title-fallback">Présence de nuisibles ? Appelez avant que la situation s\\'aggrave.</h3>' +
-      '    <p>Résultats rapides et traitement sécurisé pour vous et votre entourage, partout en Île-de-France. Devis gratuit 24h/24 et 7j/7.</p>' +
-      '    <a class="timed-call-action" href="tel:0744296897" aria-label="Appeler le 07 44 29 68 97">📞 07 44 29 68 97</a>' +
-      '  </div>' +
-      '</div>';
-      overlay=host.firstElementChild;
-      if(overlay){document.body.appendChild(overlay);}
-    }
-    if(!overlay){return;}
-
-    var closeBtn=overlay.querySelector('.timed-call-close');
-    var phoneBtn=overlay.querySelector('.timed-call-action');
-    var close=function(){
-      overlay.classList.remove('is-open');
-      overlay.setAttribute('aria-hidden','true');
-      document.body.classList.remove('timed-call-open');
-    };
-    if(closeBtn && !closeBtn.dataset.boundClose){
-      closeBtn.dataset.boundClose='1';
-      closeBtn.addEventListener('click',close);
-    }
-    if(phoneBtn && !phoneBtn.dataset.boundClose){
-      phoneBtn.dataset.boundClose='1';
-      phoneBtn.addEventListener('click',close);
-    }
-    if(!overlay.dataset.boundBackdrop){
-      overlay.dataset.boundBackdrop='1';
-      overlay.addEventListener('click',function(ev){
-        if(ev.target===overlay){close();}
-      });
-    }
-
-    document.body.classList.remove('mobile-nav-open');
-    overlay.classList.add('is-open');
-    overlay.setAttribute('aria-hidden','false');
-    document.body.classList.add('timed-call-open');
-    overlay.style.setProperty('opacity','1','important');
-    overlay.style.setProperty('visibility','visible','important');
-    overlay.style.setProperty('pointer-events','auto','important');
-    overlay.style.setProperty('display','flex','important');
-    overlay.style.setProperty('z-index','5500','important');
-  }
-
-  window.setTimeout(function(){
-    var opened=document.querySelector('[data-timed-call-overlay].is-open');
-    if(opened){return;}
-    ensureTimedPopup();
-  },10000);
 })();
 </script>
 

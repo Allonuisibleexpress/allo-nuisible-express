@@ -3,6 +3,10 @@ body{
   max-width:100%;
   overflow-x:hidden;
 }
+:root{
+  --allo-urgent-top:96px;
+  --allo-urgent-height:52px;
+}
 body.timed-call-open{
   overflow:hidden;
 }
@@ -27,8 +31,8 @@ section[id]{
   position:fixed;
   left:0;
   right:0;
-  top:96px;
-  z-index:5000;
+  top:var(--allo-urgent-top);
+  z-index:10040;
   min-height:52px;
   display:flex !important;
   align-items:center;
@@ -90,7 +94,7 @@ section[id]{
   visibility:hidden;
   pointer-events:none;
   transition:opacity .28s ease,visibility .28s ease;
-  z-index:5500;
+  z-index:20000;
 }
 .timed-call-overlay.is-open{
   opacity:1;
@@ -279,9 +283,16 @@ section[id]{
   100%{background-position:0% 50%}
 }
 body.has-home-urgent-strip header + .hero,
-body.has-home-urgent-strip .hero{
-  margin-top:148px !important;
-  min-height:calc(100dvh - 148px) !important;
+body.has-home-urgent-strip .hero,
+body.has-home-urgent-strip .hero-local{
+  margin-top:calc(var(--allo-urgent-top) + var(--allo-urgent-height)) !important;
+  min-height:calc(100dvh - (var(--allo-urgent-top) + var(--allo-urgent-height))) !important;
+}
+body.has-home-urgent-strip section[id]{
+  scroll-margin-top:calc(var(--allo-urgent-top) + var(--allo-urgent-height) + 16px);
+}
+header{
+  z-index:10050 !important;
 }
 .global-process,
 .global-reviews,
