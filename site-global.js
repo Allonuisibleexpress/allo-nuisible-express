@@ -811,6 +811,15 @@
       mobileList.innerHTML=mobileMenuListHTML();
       nav.appendChild(mobileList);
     }
+    var closeHome=nav.querySelector('.mobile-close-home');
+    if(!closeHome){
+      closeHome=document.createElement('a');
+      closeHome.className='mobile-close-home';
+      closeHome.href='index.html';
+      closeHome.setAttribute('aria-label','Fermer et revenir à l’accueil');
+      closeHome.textContent='×';
+      nav.insertBefore(closeHome, nav.firstChild);
+    }
 
     if(!btn.dataset.menuFallbackBound){
       btn.dataset.menuFallbackBound='1';

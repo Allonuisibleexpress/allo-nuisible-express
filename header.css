@@ -311,6 +311,7 @@ header .main-nav .quote-btn:hover .hover-text{
     max-height:100dvh !important;
     padding:24px 18px 32px !important;
     overflow:auto !important;
+    text-align:center !important;
   }
   body.mobile-nav-open header .main-nav{
     transform:translateY(0) !important;
@@ -321,11 +322,30 @@ header .main-nav .quote-btn:hover .hover-text{
   header .main-nav:before{
     content:"" !important;
     display:block !important;
-    height:220px !important;
-    margin:14px auto 18px !important;
-    width:min(560px,96vw) !important;
+    height:120px !important;
+    margin:12px auto 22px !important;
+    width:min(300px,76vw) !important;
     background:url('logo.png') center center/100% auto no-repeat !important;
     border-bottom:none !important;
+  }
+  header .main-nav .mobile-close-home{
+    position:absolute !important;
+    top:12px !important;
+    right:14px !important;
+    width:38px !important;
+    height:38px !important;
+    display:inline-flex !important;
+    align-items:center !important;
+    justify-content:center !important;
+    border-radius:10px !important;
+    text-decoration:none !important;
+    font-size:34px !important;
+    line-height:1 !important;
+    font-weight:700 !important;
+    color:#d89618 !important;
+    background:transparent !important;
+    z-index:3 !important;
+    padding:0 !important;
   }
   header .main-nav .nav-link{display:none !important}
   header .main-nav .nav-link:after{
@@ -339,11 +359,11 @@ header .main-nav .quote-btn:hover .hover-text{
 
   header .mobile-nav-list{
     list-style:none !important;
-    margin:8px auto 18px !important;
+    margin:4px auto 18px !important;
     padding:0 !important;
     display:grid !important;
-    gap:6px !important;
-    width:min(340px,86vw) !important;
+    gap:12px !important;
+    width:min(360px,90vw) !important;
     justify-items:stretch !important;
   }
   header .mobile-nav-list li{
@@ -370,13 +390,13 @@ header .main-nav .quote-btn:hover .hover-text{
     text-decoration:none !important;
     display:block !important;
     color:#111 !important;
-    font-size:16px !important;
+    font-size:21px !important;
     line-height:1.2 !important;
     font-weight:900 !important;
     letter-spacing:.005em !important;
     text-transform:uppercase !important;
     padding:4px 2px !important;
-    text-align:left !important;
+    text-align:center !important;
   }
   header .mobile-nav-list li:first-child a{color:#d89618 !important}
 }
@@ -393,9 +413,9 @@ header .main-nav .quote-btn:hover .hover-text{
     height:177px !important;
   }
   header .main-nav{padding:18px 14px 24px !important}
-  header .main-nav:before{height:190px !important;margin:12px auto 12px !important;width:min(520px,96vw) !important;background-size:100% auto !important}
-  header .mobile-nav-list{width:min(320px,90vw) !important;gap:5px !important}
-  header .mobile-nav-list a{font-size:15px !important;padding:3px 2px !important}
+  header .main-nav:before{height:108px !important;margin:10px auto 18px !important;width:min(270px,78vw) !important;background-size:100% auto !important}
+  header .mobile-nav-list{width:min(330px,92vw) !important;gap:10px !important}
+  header .mobile-nav-list a{font-size:19px !important;padding:3px 2px !important}
 }
 
 /* iOS Safari tap reliability */
