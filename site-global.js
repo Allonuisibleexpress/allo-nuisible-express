@@ -886,6 +886,7 @@
     var closeBtn=overlay.querySelector('.timed-call-close');
     var phoneBtn=overlay.querySelector('.timed-call-action');
     var timerId=null;
+    var openScheduled=false;
 
     function closeModal(){
       overlay.classList.remove('is-open');
@@ -909,6 +910,7 @@
       overlay.style.setProperty('pointer-events','auto','important');
       overlay.style.setProperty('display','flex','important');
       overlay.style.setProperty('z-index','20000','important');
+      openScheduled=false;
     }
 
     if(closeBtn && !closeBtn.dataset.modalBound){
@@ -932,7 +934,16 @@
       phoneBtn.addEventListener('click',function(){ closeModal(); });
     }
 
-    timerId=window.setTimeout(openModal,10000);
+    function scheduleOpen(){
+      if(openScheduled){return;}
+      openScheduled=true;
+      if(timerId){window.clearTimeout(timerId);}
+      timerId=window.setTimeout(function(){
+        openModal();
+      },10000);
+    }
+
+    scheduleOpen();
 
     // Retry open if still not visible due race conditions/cached CSS.
     window.setTimeout(function(){
@@ -940,19 +951,22 @@
         openModal();
       }
     },12000);
-    window.setTimeout(function(){
-      if(!overlay.classList.contains('is-open') || overlay.getAttribute('aria-hidden')!=='false'){
-        openModal();
-      }
-    },18000);
 
     if(!window.__alloModalPageshowBound){
       window.__alloModalPageshowBound=true;
       window.addEventListener('pageshow',function(){
         if(!isHomePage()){return;}
-        window.setTimeout(function(){
-          if(!overlay.classList.contains('is-open')){openModal();}
-        },10000);
+        scheduleOpen();
+      });
+    }
+
+    if(!window.__alloModalVisibilityBound){
+      window.__alloModalVisibilityBound=true;
+      document.addEventListener('visibilitychange',function(){
+        if(!isHomePage()){return;}
+        if(document.visibilityState==='visible' && !overlay.classList.contains('is-open')){
+          scheduleOpen();
+        }
       });
     }
   }
