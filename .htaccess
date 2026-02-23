@@ -3,3 +3,5 @@ RewriteEngine On
 # Always serve dynamic sitemap at /sitemap.xml
 RewriteRule ^sitemap\.xml$ sitemap.php [L]
 
+# Always serve dynamic SEO local structure at /seo-local-deratisation-94.json
+RewriteRule ^seo-local-deratisation-94\.json$ seo-local-deratisation-94.php [L]
