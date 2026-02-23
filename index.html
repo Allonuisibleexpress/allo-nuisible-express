@@ -208,6 +208,182 @@ letter-spacing:.03em;
 color:#111
 }
 .trust-badge-link:hover{color:#c27f00}
+
+.idf-map-section{
+max-width:1240px;
+margin:20px auto 4px;
+padding:0 24px;
+position:relative;
+z-index:6
+}
+.idf-map-card{
+background:linear-gradient(180deg,#ffffff 0%,#fffaf0 100%);
+border:1px solid #f0e0bf;
+border-radius:18px;
+box-shadow:0 10px 26px rgba(0,0,0,.08);
+padding:22px 22px 18px
+}
+.idf-map-head h2{
+margin:0;
+font-size:28px;
+line-height:1.15;
+font-weight:900;
+text-align:center
+}
+.idf-map-head p{
+margin:10px auto 0;
+max-width:860px;
+font-size:16px;
+line-height:1.5;
+color:#4f5560;
+text-align:center
+}
+.idf-map-wrap{
+display:grid;
+grid-template-columns:1.2fr .8fr;
+gap:16px;
+margin-top:16px
+}
+.idf-map-visual{
+position:relative;
+min-height:290px;
+border-radius:14px;
+background:
+radial-gradient(circle at 30% 18%,rgba(255,174,0,.2),transparent 45%),
+radial-gradient(circle at 76% 74%,rgba(255,174,0,.14),transparent 42%),
+linear-gradient(145deg,#f8f9fc 0%,#eef2f8 100%);
+border:1px solid #e5e9f0;
+overflow:hidden
+}
+.idf-map-visual:before{
+content:"Île-de-France";
+position:absolute;
+top:10px;
+left:14px;
+font-size:13px;
+font-weight:800;
+letter-spacing:.06em;
+text-transform:uppercase;
+color:#7a808a
+}
+.idf-node{
+position:absolute;
+transform:translate(-50%,-50%);
+display:inline-flex;
+align-items:center;
+justify-content:center;
+text-decoration:none;
+min-width:84px;
+min-height:44px;
+padding:8px 10px;
+border-radius:999px;
+border:1px solid #d8dde8;
+background:#fff;
+color:#111;
+font-size:13px;
+font-weight:900;
+line-height:1;
+box-shadow:0 8px 18px rgba(0,0,0,.12);
+transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease,background .2s ease
+}
+.idf-node::after{
+content:attr(data-code);
+position:absolute;
+top:-10px;
+right:-8px;
+min-width:28px;
+height:28px;
+padding:0 6px;
+display:flex;
+align-items:center;
+justify-content:center;
+border-radius:999px;
+background:#ffae00;
+color:#111;
+font-size:12px;
+font-weight:900;
+opacity:0;
+transform:translateY(4px) scale(.9);
+transition:opacity .18s ease,transform .18s ease
+}
+.idf-node:hover,.idf-node:focus-visible{
+transform:translate(-50%,-50%) translateY(-2px);
+border-color:#ffae00;
+background:#fff8e6;
+box-shadow:0 14px 24px rgba(255,174,0,.25)
+}
+.idf-node:hover::after,.idf-node:focus-visible::after{
+opacity:1;
+transform:translateY(0) scale(1)
+}
+.idf-node[data-dept="95"]{left:50%;top:18%}
+.idf-node[data-dept="78"]{left:24%;top:33%}
+.idf-node[data-dept="92"]{left:43%;top:39%}
+.idf-node[data-dept="75"]{left:50%;top:45%}
+.idf-node[data-dept="93"]{left:59%;top:40%}
+.idf-node[data-dept="94"]{left:56%;top:56%}
+.idf-node[data-dept="91"]{left:39%;top:63%}
+.idf-node[data-dept="77"]{left:72%;top:56%}
+
+.idf-paris{
+background:#fff;
+border:1px solid #ececec;
+border-radius:14px;
+padding:14px 12px
+}
+.idf-paris h3{
+margin:0 0 8px;
+font-size:17px;
+line-height:1.3;
+font-weight:900
+}
+.idf-paris p{
+margin:0 0 10px;
+font-size:14px;
+line-height:1.45;
+color:#5b6270
+}
+.idf-arr-list{
+display:grid;
+grid-template-columns:repeat(4,minmax(0,1fr));
+gap:8px;
+max-height:210px;
+overflow:auto;
+padding-right:2px
+}
+.idf-arr-list a{
+display:flex;
+align-items:center;
+justify-content:center;
+min-height:38px;
+text-decoration:none;
+border-radius:10px;
+border:1px solid #e5e5e5;
+background:#fff;
+color:#1b1d22;
+font-size:12px;
+font-weight:800;
+transition:all .2s ease
+}
+.idf-arr-list a:hover{
+border-color:#ffae00;
+background:#fff8e6;
+color:#111
+}
+.idf-paris.is-hidden{display:none}
+@media(max-width:980px){
+.idf-map-section{padding:0 16px}
+.idf-map-wrap{grid-template-columns:1fr}
+.idf-map-visual{min-height:260px}
+}
+@media(max-width:680px){
+.idf-map-card{padding:16px 12px}
+.idf-map-head h2{font-size:22px}
+.idf-map-head p{font-size:14px}
+.idf-node{min-width:74px;min-height:40px;padding:7px 9px;font-size:12px}
+.idf-arr-list{grid-template-columns:repeat(3,minmax(0,1fr))}
+}
+
 @keyframes heroTextIn{
 from{opacity:0;transform:translateY(18px)}
 to{opacity:1;transform:translateY(0)}
@@ -1160,6 +1336,53 @@ z-index:5
 </div>
 </section>
 
+<section class="idf-map-section" id="zone-selecteur">
+  <div class="idf-map-card">
+    <div class="idf-map-head">
+      <h2>Un technicien peut intervenir sous 2 heures, devis et déplacement gratuits</h2>
+      <p>Sélectionnez votre département en Île-de-France. Pour Paris (75), choisissez ensuite votre arrondissement (75001 à 75020).</p>
+    </div>
+    <div class="idf-map-wrap">
+      <div class="idf-map-visual" aria-label="Carte interactive Île-de-France">
+        <a class="idf-node" href="zones-nuisibles.html?dept=95" data-dept="95" data-code="95">Val-d'Oise</a>
+        <a class="idf-node" href="zones-nuisibles.html?dept=78" data-dept="78" data-code="78">Yvelines</a>
+        <a class="idf-node" href="zones-nuisibles.html?dept=92" data-dept="92" data-code="92">Hauts-de-Seine</a>
+        <a class="idf-node idf-paris-trigger" href="zones-nuisibles.html?dept=75" data-dept="75" data-code="75">Paris</a>
+        <a class="idf-node" href="zones-nuisibles.html?dept=93" data-dept="93" data-code="93">Seine-Saint-Denis</a>
+        <a class="idf-node" href="zones-nuisibles.html?dept=94" data-dept="94" data-code="94">Val-de-Marne</a>
+        <a class="idf-node" href="zones-nuisibles.html?dept=91" data-dept="91" data-code="91">Essonne</a>
+        <a class="idf-node" href="zones-nuisibles.html?dept=77" data-dept="77" data-code="77">Seine-et-Marne</a>
+      </div>
+      <aside class="idf-paris is-hidden" id="parisArrSelector" aria-live="polite">
+        <h3>Paris (75) : choisissez votre arrondissement</h3>
+        <p>Survolez et cliquez sur l’arrondissement souhaité pour afficher le catalogue de nuisibles.</p>
+        <div class="idf-arr-list">
+          <a href="zones-nuisibles.html?dept=75&arr=75001">75001</a>
+          <a href="zones-nuisibles.html?dept=75&arr=75002">75002</a>
+          <a href="zones-nuisibles.html?dept=75&arr=75003">75003</a>
+          <a href="zones-nuisibles.html?dept=75&arr=75004">75004</a>
+          <a href="zones-nuisibles.html?dept=75&arr=75005">75005</a>
+          <a href="zones-nuisibles.html?dept=75&arr=75006">75006</a>
+          <a href="zones-nuisibles.html?dept=75&arr=75007">75007</a>
+          <a href="zones-nuisibles.html?dept=75&arr=75008">75008</a>
+          <a href="zones-nuisibles.html?dept=75&arr=75009">75009</a>
+          <a href="zones-nuisibles.html?dept=75&arr=75010">75010</a>
+          <a href="zones-nuisibles.html?dept=75&arr=75011">75011</a>
+          <a href="zones-nuisibles.html?dept=75&arr=75012">75012</a>
+          <a href="zones-nuisibles.html?dept=75&arr=75013">75013</a>
+          <a href="zones-nuisibles.html?dept=75&arr=75014">75014</a>
+          <a href="zones-nuisibles.html?dept=75&arr=75015">75015</a>
+          <a href="zones-nuisibles.html?dept=75&arr=75016">75016</a>
+          <a href="zones-nuisibles.html?dept=75&arr=75017">75017</a>
+          <a href="zones-nuisibles.html?dept=75&arr=75018">75018</a>
+          <a href="zones-nuisibles.html?dept=75&arr=75019">75019</a>
+          <a href="zones-nuisibles.html?dept=75&arr=75020">75020</a>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
 <section class="reviews" id="avis-google">
 <div class="reviews-shell">
 <h2>Ils nous font confiance</h2>
@@ -1575,6 +1798,32 @@ if(!isActive){item.classList.add("active")}
       renderReviews(FALLBACK_REVIEWS);
     }
   })();
+})();
+</script>
+
+<script>
+(function(){
+  var trigger=document.querySelector('.idf-paris-trigger');
+  var panel=document.getElementById('parisArrSelector');
+  if(!trigger || !panel){return;}
+  function openPanel(){
+    panel.classList.remove('is-hidden');
+  }
+  function closePanel(){
+    panel.classList.add('is-hidden');
+  }
+  trigger.addEventListener('mouseenter',openPanel);
+  trigger.addEventListener('focus',openPanel);
+  trigger.addEventListener('click',function(ev){
+    ev.preventDefault();
+    if(panel.classList.contains('is-hidden')){openPanel();}else{closePanel();}
+  });
+  document.addEventListener('click',function(ev){
+    var target=ev.target;
+    if(!target){return;}
+    if(target.closest('.idf-paris') || target.closest('.idf-paris-trigger')){return;}
+    closePanel();
+  });
 })();
 </script>
 

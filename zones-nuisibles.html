@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Catalogue nuisibles par zone | Allo Nuisible Express</title>
+<meta name="description" content="Sélection département/arrondissement en Île-de-France, puis choisissez le nuisible rencontré pour une intervention rapide.">
+<link rel="stylesheet" href="header.css?v=20260326">
+<link rel="stylesheet" href="sticky-call.css?v=20260229">
+<link rel="stylesheet" href="scroll-reveal.css?v=20260302">
+<script src="scroll-reveal.js?v=20260302" defer></script>
+<link rel="stylesheet" href="site-global.css?v=20260326">
+<script src="site-global.js?v=20260327" defer></script>
+<style>
+main{max-width:1240px;margin:0 auto;padding:34px 18px 40px}
+.zone-hero{
+  margin-top:96px;
+  border-radius:18px;
+  padding:42px 20px 30px;
+  background:linear-gradient(135deg,#121317,#282d36);
+  color:#fff;
+  text-align:center;
+  box-shadow:0 16px 34px rgba(0,0,0,.24)
+}
+.zone-chip{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:36px;
+  padding:8px 14px;
+  border-radius:999px;
+  background:#ffae00;
+  color:#111;
+  font-weight:900;
+  font-size:13px;
+  letter-spacing:.03em;
+  text-transform:uppercase;
+  margin-bottom:12px
+}
+.zone-hero h1{
+  margin:0;
+  font-size:42px;
+  line-height:1.1;
+  font-weight:900
+}
+.zone-hero h2{
+  margin:14px auto 0;
+  max-width:980px;
+  font-size:28px;
+  line-height:1.2;
+  font-weight:900;
+  color:#ffd67b
+}
+.zone-hero p{
+  margin:12px auto 0;
+  max-width:860px;
+  font-size:18px;
+  line-height:1.55;
+  color:#f1f2f5;
+  text-align:center !important
+}
+.nuisibles-grid{
+  margin-top:18px;
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:14px
+}
+.nuisible-card{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  text-decoration:none;
+  min-height:86px;
+  border-radius:12px;
+  border:1px solid #ececec;
+  background:#fff;
+  color:#14161c;
+  font-size:18px;
+  font-weight:900;
+  box-shadow:0 8px 18px rgba(0,0,0,.08);
+  transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease
+}
+.nuisible-card:hover{
+  transform:translateY(-3px);
+  border-color:#ffae00;
+  box-shadow:0 16px 24px rgba(255,174,0,.24)
+}
+.zone-help{
+  margin-top:14px;
+  border:1px solid #f0e0bf;
+  background:#fff9ed;
+  border-radius:14px;
+  padding:14px 16px;
+  font-size:16px;
+  line-height:1.5;
+  color:#2d3340
+}
+@media(max-width:1080px){
+  .nuisibles-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+}
+@media(max-width:780px){
+  .zone-hero{padding:28px 14px 22px}
+  .zone-hero h1{font-size:34px}
+  .zone-hero h2{font-size:22px}
+  .zone-hero p{font-size:16px}
+  .nuisibles-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .nuisible-card{min-height:74px;font-size:16px}
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="header-wrap">
+    <a class="logo-link" href="index.html" aria-label="Retour à l'accueil">
+      <img src="logo.png" class="logo" alt="Allo Nuisible Express">
+    </a>
+    <nav class="main-nav">
+      <a class="nav-link" href="index.html">ACCUEIL</a>
+      <div class="dropdown">
+        <a class="nav-link dropdown-toggle" href="#services">NOS SERVICES <span class="chevron">▼</span></a>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="deratisation.html">Rats / Souris</a>
+          <a class="dropdown-item" href="frelons.html">Frelons</a>
+          <a class="dropdown-item" href="guepes.html">Guêpes</a>
+          <a class="dropdown-item" href="punaises.html">Punaises de lit</a>
+          <a class="dropdown-item" href="cafards.html">Cafards</a>
+          <a class="dropdown-item" href="acariens.html">Acariens</a>
+          <a class="dropdown-item" href="xylophage.html">Xylophage (Insectes du bois)</a>
+          <a class="dropdown-item" href="mouches.html">Mouches</a>
+          <a class="dropdown-item" href="fourmis.html">Fourmis</a>
+          <a class="dropdown-item" href="depigeonnage.html">Dépigeonnage</a>
+          <a class="dropdown-item" href="chenilles.html">Chenilles processionnaires</a>
+          <a class="dropdown-item" href="diogene.html">Syndrome de Diogène</a>
+        </div>
+      </div>
+      <a class="nav-link" href="contact.html">CONTACTEZ-NOUS</a>
+      <a class="nav-link" href="tarifs.html">TARIFS</a>
+      <a class="nav-link" href="blog.html">BLOG</a>
+      <a class="cta-btn call-btn" href="tel:0744296897"><span class="default-text">APPELEZ-NOUS</span><span class="hover-text">07 44 29 68 97</span></a>
+      <a class="cta-btn quote-btn" href="devis.html"><span class="default-text">DEMANDES DE DEVIS</span><span class="hover-text">DEVIS GRATUIT</span></a>
+    </nav>
+  </div>
+  <button type="button" class="mobile-menu-btn" aria-label="Ouvrir le menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  <div class="mobile-nav-overlay" aria-hidden="true"></div>
+</header>
+<a class="home-urgent-strip" href="tel:0744296897" aria-label="Urgence 24h/24 - Appeler le 07 44 29 68 97"><span class="urgent-default">URGENCE 24H/24 · 7J/7</span><span class="urgent-hover">07 44 29 68 97</span></a>
+
+<main>
+  <section class="zone-hero js-reveal">
+    <span class="zone-chip" id="zoneChip">Zone sélectionnée : Île-de-France</span>
+    <h1>Catalogue nuisibles par secteur</h1>
+    <h2>Un technicien peut intervenir sous 2 heures, devis et déplacement gratuits</h2>
+    <p><strong>Quel nuisible avez-vous rencontré ?</strong> Choisissez votre problématique pour accéder directement au bon service.</p>
+  </section>
+
+  <section class="nuisibles-grid js-reveal" id="services">
+    <a class="nuisible-card" href="deratisation.html">Rats / Souris</a>
+    <a class="nuisible-card" href="punaises.html">Punaises de lit</a>
+    <a class="nuisible-card" href="cafards.html">Cafards</a>
+    <a class="nuisible-card" href="guepes.html">Guêpes</a>
+    <a class="nuisible-card" href="frelons.html">Frelons</a>
+    <a class="nuisible-card" href="depigeonnage.html">Dépigeonnage</a>
+    <a class="nuisible-card" href="chenilles.html">Chenilles processionnaires</a>
+    <a class="nuisible-card" href="diogene.html">Syndrome de Diogène</a>
+    <a class="nuisible-card" href="acariens.html">Acariens</a>
+    <a class="nuisible-card" href="xylophage.html">Xylophages (bois)</a>
+    <a class="nuisible-card" href="mouches.html">Mouches</a>
+    <a class="nuisible-card" href="fourmis.html">Fourmis</a>
+  </section>
+
+  <div class="zone-help js-reveal">
+    Si vous ne savez pas quel traitement choisir, appelez-nous au <strong>07 44 29 68 97</strong>. Nous vous orientons immédiatement selon votre situation et votre zone.
+  </div>
+</main>
+
+<script>
+(function(){
+  var params=new URLSearchParams(window.location.search);
+  var dept=params.get('dept')||'';
+  var arr=params.get('arr')||'';
+  var labels={
+    '75':'Paris','77':'Seine-et-Marne','78':'Yvelines','91':'Essonne',
+    '92':'Hauts-de-Seine','93':'Seine-Saint-Denis','94':'Val-de-Marne','95':'Val-d\'Oise'
+  };
+  var chip=document.getElementById('zoneChip');
+  if(!chip){return;}
+  if(dept && labels[dept]){
+    chip.textContent='Zone sélectionnée : '+labels[dept]+' ('+dept+')'+(arr ? ' - '+arr : '');
+  }
+})();
+</script>
+</body>
+</html>
