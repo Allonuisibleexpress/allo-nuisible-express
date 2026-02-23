@@ -286,11 +286,7 @@ fill:#ffbf33;
 filter:drop-shadow(0 8px 16px rgba(255,174,0,.4))
 }
 .idf-label{
-font-size:18px;
-font-weight:800;
-fill:#171717;
-pointer-events:none;
-text-anchor:middle
+display:none
 }
 .idf-code{
 font-size:28px;
@@ -1330,45 +1326,38 @@ z-index:5
     <div class="idf-map-wrap">
       <div class="idf-map-visual" aria-label="Carte interactive Île-de-France">
         <svg class="idf-map-svg" viewBox="0 0 760 560" role="img" aria-label="Départements Île-de-France">
-          <path d="M120 170 L210 130 L250 90 L340 95 L430 100 L500 140 L560 240 L550 330 L500 430 L420 500 L300 500 L220 450 L170 360 L130 280 Z" fill="#ffffff" stroke="#111111" stroke-width="2.8" opacity="0.3"></path>
+          <path d="M112 280 L130 210 L178 126 L258 98 L336 88 L420 102 L488 134 L548 154 L612 212 L616 302 L596 384 L552 440 L500 492 L430 524 L348 520 L276 506 L220 468 L172 410 L134 340 Z" fill="#ffffff" stroke="#111111" stroke-width="2.8" opacity="0.22"></path>
           <a class="idf-dept-link" href="zones-nuisibles.html?dept=95" data-code="95" aria-label="Val-d'Oise 95">
-            <polygon class="idf-dept" points="210,130 250,90 340,95 430,100 500,140 510,160 420,130 320,140"/>
-            <text class="idf-label" x="345" y="122">Val-d'Oise</text>
-            <text class="idf-code" x="345" y="151">95</text>
+            <polygon class="idf-dept" points="178,126 258,98 336,88 420,102 488,134 462,166 412,182 370,206 330,212 286,202 250,184 212,164"/>
+            <text class="idf-code" x="332" y="160">(95)</text>
           </a>
           <a class="idf-dept-link" href="zones-nuisibles.html?dept=78" data-code="78" aria-label="Yvelines 78">
-            <polygon class="idf-dept" points="120,170 210,130 260,200 250,250 280,300 220,350 170,360 130,280"/>
-            <text class="idf-label" x="192" y="250">Yvelines</text>
-            <text class="idf-code" x="192" y="286">78</text>
+            <polygon class="idf-dept" points="112,280 130,210 178,126 212,164 250,184 286,202 296,228 282,262 286,294 262,332 228,370 188,394 150,360 134,324"/>
+            <text class="idf-code" x="206" y="300">(78)</text>
           </a>
           <a class="idf-dept-link" href="zones-nuisibles.html?dept=77" data-code="77" aria-label="Seine-et-Marne 77">
-            <polygon class="idf-dept" points="510,160 560,240 550,330 500,430 420,500 400,420 400,300 420,240"/>
-            <text class="idf-label" x="492" y="286">Seine-et-Marne</text>
-            <text class="idf-code" x="492" y="322">77</text>
+            <polygon class="idf-dept" points="462,166 488,134 548,154 612,212 616,302 596,384 552,440 500,492 430,524 410,474 414,404 420,344 432,290 424,236 412,182"/>
+            <text class="idf-code" x="514" y="340">(77)</text>
           </a>
           <a class="idf-dept-link" href="zones-nuisibles.html?dept=91" data-code="91" aria-label="Essonne 91">
-            <polygon class="idf-dept" points="220,350 280,300 340,320 320,400 300,500 220,450 170,360"/>
-            <text class="idf-label" x="270" y="405">Essonne</text>
-            <text class="idf-code" x="270" y="438">91</text>
+            <polygon class="idf-dept" points="228,370 262,332 286,294 332,306 370,332 366,390 352,450 348,520 276,506 220,468 172,410 188,394"/>
+            <text class="idf-code" x="286" y="448">(91)</text>
           </a>
           <a class="idf-dept-link" href="zones-nuisibles.html?dept=92" data-code="92" aria-label="Hauts-de-Seine 92">
-            <polygon class="idf-dept" points="260,200 320,190 300,240 250,250"/>
-            <text class="idf-label" x="283" y="218">Hauts-de-Seine</text>
-            <text class="idf-code" x="283" y="242">92</text>
+            <polygon class="idf-dept" points="286,202 330,212 336,238 322,262 294,268 282,262 296,228"/>
+            <text class="idf-code" x="312" y="246">(92)</text>
           </a>
           <a class="idf-dept-link" href="zones-nuisibles.html?dept=93" data-code="93" aria-label="Seine-Saint-Denis 93">
-            <polygon class="idf-dept" points="320,190 380,200 420,240 360,250 300,240"/>
-            <text class="idf-label" x="360" y="218">Seine-Saint-Denis</text>
-            <text class="idf-code" x="360" y="242">93</text>
+            <polygon class="idf-dept" points="330,212 370,206 412,182 424,236 408,270 366,272 336,238"/>
+            <text class="idf-code" x="382" y="234">(93)</text>
           </a>
           <a class="idf-dept-link" href="zones-nuisibles.html?dept=94" data-code="94" aria-label="Val-de-Marne 94">
-            <polygon class="idf-dept" points="360,250 420,240 400,300 340,320 280,300 300,240"/>
-            <text class="idf-label" x="352" y="293">Val-de-Marne</text>
-            <text class="idf-code" x="352" y="319">94</text>
+            <polygon class="idf-dept" points="294,268 322,262 366,272 408,270 432,290 420,344 370,332 332,306 286,294 282,262"/>
+            <text class="idf-code" x="376" y="314">(94)</text>
           </a>
           <a class="idf-dept-link idf-paris-trigger" href="#parisArrSelector" data-code="75" aria-label="Paris 75">
-            <circle class="idf-paris-dot" cx="330" cy="250" r="20"></circle>
-            <text class="idf-code" x="330" y="257" style="font-size:15px">75</text>
+            <circle class="idf-paris-dot" cx="338" cy="256" r="17"></circle>
+            <text class="idf-code" x="338" y="261" style="font-size:14px">(75)</text>
           </a>
         </svg>
       </div>
