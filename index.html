@@ -93,15 +93,16 @@ box-shadow:none
 }
 .hero-subtitle{
 position:relative;
-max-width:900px;
+max-width:1040px;
 font-size:24px;
-font-weight:500;
+font-weight:600;
 margin-top:56px;
-line-height:1.4;
+line-height:1.58;
 text-align:center !important;
 margin-left:auto;
 margin-right:auto;
-color:#fff7da;
+color:#ffffff;
+letter-spacing:.01em;
 text-shadow:0 3px 14px rgba(0,0,0,0.65);
 animation:heroTextIn 1.2s ease-out
 }
@@ -109,10 +110,99 @@ animation:heroTextIn 1.2s ease-out
 display:inline-block;
 background:#ffae00;
 color:#111;
-padding:2px 8px;
+padding:2px 10px;
 border-radius:8px;
 font-weight:800;
 box-shadow:0 6px 16px rgba(255,174,0,.35);
+}
+
+.timed-call-overlay{
+position:fixed;
+inset:0;
+display:none;
+align-items:center;
+justify-content:center;
+background:rgba(8,10,14,.62);
+backdrop-filter:blur(3px);
+z-index:5500;
+padding:20px;
+opacity:0;
+visibility:hidden;
+pointer-events:none;
+transition:opacity .28s ease,visibility .28s ease
+}
+.timed-call-overlay.is-open{
+display:flex;
+opacity:1;
+visibility:visible;
+pointer-events:auto
+}
+.timed-call-modal{
+width:min(560px,100%);
+background:#fff;
+border:1px solid #ece7da;
+border-radius:20px;
+padding:22px 20px 20px;
+box-shadow:0 24px 64px rgba(0,0,0,.35);
+text-align:center;
+position:relative
+}
+.timed-call-close{
+position:absolute;
+top:10px;
+right:12px;
+border:0;
+background:transparent;
+font-size:34px;
+line-height:1;
+cursor:pointer;
+color:#777
+}
+.timed-call-close:hover{color:#111}
+.timed-call-badge{
+display:flex;
+align-items:center;
+justify-content:center;
+margin:0 auto 10px
+}
+.timed-call-logo{
+width:min(320px,78%);
+height:auto
+}
+.timed-call-modal h3{
+margin:6px 0 10px;
+font-size:34px;
+line-height:1.1;
+font-weight:900;
+color:#15181d
+}
+.timed-call-modal p{
+margin:0 auto 16px;
+max-width:500px;
+font-size:18px;
+line-height:1.5;
+color:#3f4650;
+text-align:center !important
+}
+.timed-call-action{
+display:inline-flex;
+align-items:center;
+justify-content:center;
+min-height:60px;
+padding:0 24px;
+border-radius:14px;
+background:#ffae00;
+color:#111;
+font-weight:900;
+font-size:24px;
+text-decoration:none;
+box-shadow:0 10px 24px rgba(255,174,0,.32);
+transition:transform .2s ease,box-shadow .2s ease,filter .2s ease
+}
+.timed-call-action:hover{
+transform:translateY(-1px);
+box-shadow:0 14px 28px rgba(255,174,0,.42);
+filter:saturate(1.04)
 }
 .hero-cert-wrap{
 position:absolute;
@@ -383,7 +473,7 @@ to{opacity:1;transform:translateY(0)}
 }
 @media(max-width:980px){
 .hero h1{font-size:44px;line-height:1.02}
-.hero-subtitle{font-size:18px;margin-top:64px;line-height:1.42}
+.hero-subtitle{font-size:18px;margin-top:64px;line-height:1.5}
 .hero-cert-wrap{top:62px;right:12px;left:auto;width:146px;min-height:64px}
 .hero-cert{max-width:128px}
 .trust-badges{grid-template-columns:1fr;padding:0 20px;margin:16px auto 8px}
@@ -391,12 +481,17 @@ to{opacity:1;transform:translateY(0)}
 }
 @media(max-width:680px){
 .hero h1{font-size:34px;line-height:1.02}
-.hero-subtitle{font-size:16px;margin-top:58px;line-height:1.4}
+.hero-subtitle{font-size:16px;margin-top:58px;line-height:1.48}
 .hero-cert-wrap{top:54px;right:10px;left:auto;width:126px;min-height:56px;padding:5px 7px}
 .hero-cert{max-width:108px}
 .trust-badges{padding:0 14px}
 .trust-badge-value{font-size:16px}
 .trust-badge-stars{font-size:16px}
+.timed-call-modal{padding:16px 14px 16px;border-radius:16px}
+.timed-call-logo{width:min(260px,86%)}
+.timed-call-modal h3{font-size:26px}
+.timed-call-modal p{font-size:16px;margin-bottom:14px}
+.timed-call-action{min-height:54px;font-size:20px}
 }
 
 .cards{
@@ -1825,9 +1920,7 @@ if(!isActive){item.classList.add("active")}
   function openPanel(){
     panel.classList.remove('is-hidden');
   }
-  function closePanel(){
-    panel.classList.add('is-hidden');
-  }
+  openPanel();
   trigger.addEventListener('focus',openPanel);
   trigger.addEventListener('click',function(ev){
     ev.preventDefault();
@@ -1929,6 +2022,9 @@ if(!isActive){item.classList.add("active")}
 
 <script>
 (function(){
+  var path=(window.location.pathname||"").toLowerCase();
+  var isHome=(path==="/" || path.endsWith("/index.html") || path.endsWith("/allo-nuisible-express/"));
+  if(!isHome){return;}
   function ensureTimedPopup(){
     var overlay=document.querySelector('[data-timed-call-overlay]');
     if(!overlay){
@@ -1986,11 +2082,6 @@ if(!isActive){item.classList.add("active")}
     if(opened){return;}
     ensureTimedPopup();
   },10000);
-  window.setTimeout(function(){
-    var opened=document.querySelector('[data-timed-call-overlay].is-open');
-    if(opened){return;}
-    ensureTimedPopup();
-  },15000);
 })();
 </script>
 
