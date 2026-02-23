@@ -1386,7 +1386,68 @@ z-index:5
   .step-badge{font-size:16px;padding:7px 10px}
   .step-card h3{font-size:20px;margin-top:40px}
   .step-card p{font-size:14px}
-  .step-list li{font-size:12px}
+.step-list li{font-size:12px}
+}
+
+/* zone d'intervention val-de-marne */
+.zone94-section{
+  max-width:1180px;
+  margin:44px auto 8px;
+  padding:0 20px;
+}
+.zone94-card{
+  background:#ffffff;
+  border:1px solid #ececec;
+  border-radius:18px;
+  box-shadow:0 14px 36px rgba(0,0,0,.07);
+  padding:26px 24px;
+}
+.zone94-title{
+  margin:0 0 8px;
+  font-size:34px;
+  line-height:1.1;
+  font-weight:900;
+  color:#121212;
+}
+.zone94-text{
+  margin:0 0 18px;
+  font-size:17px;
+  line-height:1.6;
+  color:#353535;
+  max-width:900px;
+}
+.zone94-links{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:12px;
+}
+.zone94-link{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  padding:14px 16px;
+  border-radius:12px;
+  border:1px solid #e8e8e8;
+  background:#fff;
+  color:#151515;
+  text-decoration:none;
+  font-weight:800;
+  transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease,color .18s ease;
+}
+.zone94-link:hover{
+  transform:translateY(-2px);
+  box-shadow:0 10px 20px rgba(0,0,0,.11);
+  border-color:#ffae00;
+  color:#000;
+}
+.zone94-link span:last-child{
+  color:#c88800;
+  font-weight:900;
+}
+@media(max-width:900px){
+  .zone94-title{font-size:28px}
+  .zone94-links{grid-template-columns:1fr}
 }
 
 </style>
@@ -1955,6 +2016,19 @@ if(!isActive){item.classList.add("active")}
 })();
 </script>
 
+
+<section class="zone94-section" aria-labelledby="zone94-title">
+  <div class="zone94-card">
+    <h2 class="zone94-title" id="zone94-title">Zone d’intervention dans le Val-de-Marne</h2>
+    <p class="zone94-text">Nous intervenons rapidement dans le 94 pour la dératisation des logements, copropriétés, commerces et restaurants. Accédez directement à votre secteur pour une prise en charge locale et rapide.</p>
+    <div class="zone94-links">
+      <a class="zone94-link" href="/deratisation-thiais"><span>Dératisation à Thiais</span><span>→</span></a>
+      <a class="zone94-link" href="/deratisation-choisy-le-roi"><span>Dératisation à Choisy-le-Roi</span><span>→</span></a>
+      <a class="zone94-link" href="/deratisation-rungis"><span>Dératisation à Rungis</span><span>→</span></a>
+      <a class="zone94-link" href="/deratisation-chevilly-larue"><span>Dératisation à Chevilly-Larue</span><span>→</span></a>
+    </div>
+  </div>
+</section>
 
 <footer class="site-footer">
   <div class="site-footer-main">
