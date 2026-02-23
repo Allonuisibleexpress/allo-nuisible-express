@@ -282,7 +282,7 @@ header .main-nav .quote-btn:hover .hover-text{
     box-shadow:none !important;
     padding:24px 18px 32px !important;
     gap:0 !important;
-    overflow:auto !important;
+    overflow:hidden !important;
     justify-content:flex-start !important;
     align-items:stretch !important;
     flex-direction:column !important;
@@ -310,8 +310,14 @@ header .main-nav .quote-btn:hover .hover-text{
     min-height:100dvh !important;
     max-height:100dvh !important;
     padding:24px 18px 32px !important;
-    overflow:auto !important;
+    overflow:hidden !important;
     text-align:center !important;
+  }
+  html.mobile-nav-open,
+  body.mobile-nav-open{
+    overflow:hidden !important;
+    height:100dvh !important;
+    overscroll-behavior:none !important;
   }
   body.mobile-nav-open header .main-nav{
     transform:translateY(0) !important;
@@ -365,6 +371,7 @@ header .main-nav .quote-btn:hover .hover-text{
     gap:12px !important;
     width:min(360px,90vw) !important;
     justify-items:stretch !important;
+    overflow:hidden !important;
   }
   header .mobile-nav-list li{
     opacity:0;
