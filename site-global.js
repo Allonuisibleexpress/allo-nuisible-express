@@ -866,10 +866,20 @@
     }
 
     function openModal(){
-      if(document.body.classList.contains('mobile-nav-open')){return;}
+      if(document.body.classList.contains('mobile-nav-open')){
+        document.body.classList.remove('mobile-nav-open');
+        var mobileBtn=document.querySelector('header .mobile-menu-btn');
+        if(mobileBtn){mobileBtn.setAttribute('aria-expanded','false');}
+      }
       overlay.classList.add('is-open');
       overlay.setAttribute('aria-hidden','false');
       document.body.classList.add('timed-call-open');
+      // Hard force in case stale CSS from browser cache.
+      overlay.style.setProperty('opacity','1','important');
+      overlay.style.setProperty('visibility','visible','important');
+      overlay.style.setProperty('pointer-events','auto','important');
+      overlay.style.setProperty('display','flex','important');
+      overlay.style.setProperty('z-index','5500','important');
     }
 
     closeBtn.addEventListener('click',closeModal);
@@ -884,6 +894,18 @@
     });
 
     timerId=window.setTimeout(openModal,10000);
+
+    // Retry open if still not visible due race conditions/cached CSS.
+    window.setTimeout(function(){
+      if(!overlay.classList.contains('is-open') || overlay.getAttribute('aria-hidden')!=='false'){
+        openModal();
+      }
+    },12000);
+    window.setTimeout(function(){
+      if(!overlay.classList.contains('is-open') || overlay.getAttribute('aria-hidden')!=='false'){
+        openModal();
+      }
+    },18000);
   }
 
   function safeRun(fn,label){

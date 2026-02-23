@@ -1100,7 +1100,7 @@ z-index:5
 <link rel="stylesheet" href="scroll-reveal.css?v=20260302">
 <script src="scroll-reveal.js?v=20260302" defer></script>
 <link rel="stylesheet" href="site-global.css?v=20260326">
-<script src="site-global.js?v=20260326" defer></script>
+<script src="site-global.js?v=20260327" defer></script>
 </head>
 
 <body>
@@ -1703,9 +1703,15 @@ if(!isActive){item.classList.add("active")}
       });
     }
 
+    document.body.classList.remove('mobile-nav-open');
     overlay.classList.add('is-open');
     overlay.setAttribute('aria-hidden','false');
     document.body.classList.add('timed-call-open');
+    overlay.style.setProperty('opacity','1','important');
+    overlay.style.setProperty('visibility','visible','important');
+    overlay.style.setProperty('pointer-events','auto','important');
+    overlay.style.setProperty('display','flex','important');
+    overlay.style.setProperty('z-index','5500','important');
   }
 
   window.setTimeout(function(){
@@ -1713,6 +1719,11 @@ if(!isActive){item.classList.add("active")}
     if(opened){return;}
     ensureTimedPopup();
   },10000);
+  window.setTimeout(function(){
+    var opened=document.querySelector('[data-timed-call-overlay].is-open');
+    if(opened){return;}
+    ensureTimedPopup();
+  },15000);
 })();
 </script>
 
