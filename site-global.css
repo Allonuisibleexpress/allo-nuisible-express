@@ -535,38 +535,13 @@ body{padding-bottom:calc(120px + env(safe-area-inset-bottom, 0px))}
 .global-sticky-cta .sticky-hover-number{display:none}
 .global-sticky-cta .sticky-link:hover .sticky-default{display:none}
 .global-sticky-cta .sticky-link:hover .sticky-hover-number{display:inline}
-.global-sticky-cta .sticky-call{position:relative;overflow:hidden}
-.global-sticky-cta .sticky-call .sticky-default,
-.global-sticky-cta .sticky-call .sticky-alt{
-  display:block !important;
-  line-height:1.1;
-  transition:opacity .36s ease,transform .36s ease;
+.global-sticky-cta .sticky-call.cta-casino-flash{
+  animation:ctaCasinoFlash .45s ease;
 }
-.global-sticky-cta .sticky-call .sticky-default{
-  opacity:1;
-  transform:translateY(0);
-}
-.global-sticky-cta .sticky-call .sticky-alt{
-  position:absolute;
-  left:50%;
-  top:50%;
-  transform:translate(-50%,115%);
-  opacity:0;
-  white-space:nowrap;
-}
-.global-sticky-cta.is-alt .sticky-call .sticky-default{
-  opacity:0;
-  transform:translateY(-120%);
-}
-.global-sticky-cta.is-alt .sticky-call .sticky-alt{
-  opacity:1;
-  transform:translate(-50%,-50%);
-}
-.global-sticky-cta .sticky-link:hover .sticky-default{display:block !important}
-.global-sticky-cta .sticky-link:hover .sticky-hover-number{display:none !important}
-.global-sticky-cta .sticky-call.switch-flash{
-  filter:brightness(1.08);
-  box-shadow:0 0 0 3px rgba(255,255,255,.2),0 14px 30px rgba(255,174,0,.5);
+@keyframes ctaCasinoFlash{
+  0%{transform:translateY(0) scale(1)}
+  35%{transform:translateY(-1px) scale(1.015);box-shadow:0 14px 30px rgba(255,174,0,.45)}
+  100%{transform:translateY(0) scale(1)}
 }
 body.mobile-nav-open .global-sticky-cta,
 body.mobile-nav-open .site-sticky-cta{

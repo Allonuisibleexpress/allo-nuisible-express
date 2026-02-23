@@ -272,9 +272,6 @@
     var ctas=[].slice.call(document.querySelectorAll('.global-sticky-cta .sticky-call'));
     if(!ctas.length){return;}
     ctas.forEach(function(callBtn){
-      var wrap=callBtn.closest('.global-sticky-cta');
-      if(!wrap){return;}
-
       var base=callBtn.querySelector('.sticky-default');
       if(!base){
         base=document.createElement('span');
@@ -283,29 +280,16 @@
       }
       base.textContent='APPELER MAINTENANT';
 
-      var alt=callBtn.querySelector('.sticky-alt');
-      if(!alt){
-        alt=document.createElement('span');
-        alt.className='sticky-alt';
-        callBtn.appendChild(alt);
-      }
-      alt.textContent='DEVIS ET DÉPLACEMENT GRATUIT';
-
-      var hoverNumber=callBtn.querySelector('.sticky-hover-number');
-      if(hoverNumber){
-        hoverNumber.setAttribute('aria-hidden','true');
-      }
-
-      if(wrap.dataset.switchInit==='1'){return;}
-      wrap.dataset.switchInit='1';
-      wrap.classList.remove('is-alt');
+      if(callBtn.dataset.switchInit==='1'){return;}
+      callBtn.dataset.switchInit='1';
       var showAlt=false;
       window.setInterval(function(){
         showAlt=!showAlt;
-        wrap.classList.toggle('is-alt', showAlt);
-        callBtn.classList.add('switch-flash');
-        window.setTimeout(function(){ callBtn.classList.remove('switch-flash'); }, 380);
-      }, 2000);
+        base.textContent=showAlt ? 'DEVIS ET DÉPLACEMENT GRATUIT' : 'APPELER MAINTENANT';
+        callBtn.classList.remove('cta-casino-flash');
+        void callBtn.offsetWidth;
+        callBtn.classList.add('cta-casino-flash');
+      }, 3000);
     });
   }
 
