@@ -144,16 +144,8 @@
       }
       document.body.classList.add('has-home-urgent-strip');
     }
-    // Position strip right under header on every page/layout.
-    var headerHeight=96;
-    if(header){
-      var rect=header.getBoundingClientRect();
-      var h=Math.round(rect && rect.height ? rect.height : 0);
-      if(h>0){headerHeight=h;}
-      else if(header.offsetHeight){headerHeight=header.offsetHeight;}
-    }
-    // Never allow the strip to overlap the header navigation.
-    var topPx=Math.max(96,headerHeight);
+    // Keep one identical urgent strip position across all pages/layouts.
+    var topPx=(window.innerWidth<=560?84:(window.innerWidth<=980?92:96));
     var stripMinHeight=(window.innerWidth<=560?48:(window.innerWidth<=980?50:52));
     document.documentElement.style.setProperty('--allo-urgent-top',topPx+'px');
     document.documentElement.style.setProperty('--allo-urgent-height',stripMinHeight+'px');
