@@ -862,7 +862,7 @@
     '    <button class="timed-call-close" type="button" aria-label="Fermer">×</button>'+
     '    <div class="timed-call-badge"><img class="timed-call-logo" src="logo.png" alt="Allo Nuisible Express"></div>'+
     '    <h3 id="timed-call-title">Présence de nuisibles ? Allo Nuisible Express intervient en deux heures maximum dans toute l\'Île-de-France.</h3>'+
-    '    <p>Résultats rapides et traitement sécurisé pour vous et votre entourage, partout en Île-de-France. Devis gratuit 24h/24 et 7j/7.</p>'+
+    '    <p>Devis et déplacement gratuit, disponible 24h/24 et 7j/7 (de nuit, les week-end et les jours fériés)</p>'+
     '    <a class="timed-call-action" href="tel:0744296897" aria-label="Appeler le 07 44 29 68 97">📞 07 44 29 68 97</a>'+
     '  </div>'+
     '</div>';
