@@ -328,6 +328,13 @@ line-height:1.5;
 color:#4f5560;
 text-align:center
 }
+.idf-map-head{
+text-align:center;
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center
+}
 .idf-map-wrap{
 display:grid;
 grid-template-columns:1.35fr .65fr;
@@ -345,7 +352,8 @@ overflow:hidden
 content:"Île-de-France";
 position:absolute;
 top:10px;
-left:14px;
+left:50%;
+transform:translateX(-50%);
 font-size:13px;
 font-weight:800;
 letter-spacing:.06em;
