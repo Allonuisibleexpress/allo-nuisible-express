@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Catalogue nuisibles par zone | Allo Nuisible Express</title>
-<meta name="description" content="Sélection département/arrondissement en Île-de-France, puis choisissez le nuisible rencontré pour une intervention rapide.">
+<title>Nuisibles par zone | Allo Nuisible Express</title>
+<meta name="description" content="Sélectionnez votre zone en Île-de-France et accédez rapidement au bon service anti-nuisibles.">
 <link rel="stylesheet" href="header.css?v=20260326">
 <link rel="stylesheet" href="sticky-call.css?v=20260229">
 <link rel="stylesheet" href="scroll-reveal.css?v=20260302">
@@ -17,10 +17,11 @@ main{max-width:1240px;margin:0 auto;padding:34px 18px 40px}
   margin-top:96px;
   border-radius:18px;
   padding:42px 20px 30px;
-  background:linear-gradient(135deg,#121317,#282d36);
-  color:#fff;
+  background:linear-gradient(180deg,#ffffff 0%,#fffaf0 100%);
+  border:1px solid #f0e0bf;
+  color:#161a20;
   text-align:center;
-  box-shadow:0 16px 34px rgba(0,0,0,.24)
+  box-shadow:0 10px 26px rgba(0,0,0,.08)
 }
 .zone-chip{
   display:inline-flex;
@@ -49,15 +50,24 @@ main{max-width:1240px;margin:0 auto;padding:34px 18px 40px}
   font-size:28px;
   line-height:1.2;
   font-weight:900;
-  color:#ffd67b
+  color:#111
 }
 .zone-hero p{
   margin:12px auto 0;
   max-width:860px;
   font-size:18px;
   line-height:1.55;
-  color:#f1f2f5;
+  color:#4e5561;
   text-align:center !important
+}
+.zone-hero h3{
+  margin:12px auto 0;
+  max-width:860px;
+  font-size:22px;
+  line-height:1.25;
+  font-weight:800;
+  color:#1e242d;
+  text-align:center
 }
 .nuisibles-grid{
   margin-top:18px;
@@ -66,25 +76,71 @@ main{max-width:1240px;margin:0 auto;padding:34px 18px 40px}
   gap:14px
 }
 .nuisible-card{
+  position:relative;
   display:flex;
   align-items:center;
   justify-content:center;
   text-align:center;
   text-decoration:none;
-  min-height:86px;
+  min-height:118px;
   border-radius:12px;
-  border:1px solid #ececec;
-  background:#fff;
-  color:#14161c;
-  font-size:18px;
+  border:1px solid rgba(255,174,0,.45);
+  background:#fff center/cover no-repeat;
+  color:#fff;
+  font-size:20px;
   font-weight:900;
-  box-shadow:0 8px 18px rgba(0,0,0,.08);
-  transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease
+  text-shadow:0 2px 10px rgba(0,0,0,.8);
+  box-shadow:0 10px 22px rgba(0,0,0,.10);
+  overflow:hidden;
+  transition:transform .24s ease,box-shadow .24s ease,border-color .24s ease,filter .24s ease
+}
+.nuisible-card::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(180deg,rgba(0,0,0,.18) 0%,rgba(0,0,0,.55) 100%);
+  transition:opacity .24s ease;
+}
+.nuisible-card span{
+  position:relative;
+  z-index:1;
+  padding:0 10px;
 }
 .nuisible-card:hover{
-  transform:translateY(-3px);
+  transform:translateY(-4px);
   border-color:#ffae00;
-  box-shadow:0 16px 24px rgba(255,174,0,.24)
+  box-shadow:0 18px 30px rgba(255,174,0,.24);
+  filter:saturate(1.05)
+}
+.nuisible-card:hover::before{
+  opacity:.72;
+}
+.nuisible-card.rats{background-image:url('istockphoto-1707033668-612x612.jpg')}
+.nuisible-card.punaises{background-image:url('istockphoto-1212373742-612x612.jpg')}
+.nuisible-card.cafards{background-image:url('erik_karits-german-cockroach-6982350_1920.jpg')}
+.nuisible-card.guepes{background-image:url('ralphs_fotos-hornet-3336385_1920.jpg')}
+.nuisible-card.frelons{background-image:url('derweg-asian-giant-hornet-8335577_1920.jpg')}
+.nuisible-card.depigeonnage{background-image:url('balouriarajesh-birds-7921816_1920.jpg')}
+.nuisible-card.chenilles{background-image:url('422737-caterpillars-436267_1920.jpg')}
+.nuisible-card.diogene{background-image:url('652234-lost-places-4165688_1920.jpg')}
+.nuisible-card.acariens{background-image:url('geralt-ai-generated-8501200_1920.jpg')}
+.nuisible-card.xylophage{background-image:url('termites-dans-le-bois.jpg')}
+.nuisible-card.mouches{background-image:url('pkua-fly-8461020_1920.jpeg')}
+.nuisible-card.fourmis{background-image:url('tworkowsky-nature-2028276_1920.jpg')}
+.nuisible-card.diogene::before{background:linear-gradient(180deg,rgba(0,0,0,.35) 0%,rgba(0,0,0,.65) 100%)}
+.nuisible-card.xylophage::before{background:linear-gradient(180deg,rgba(0,0,0,.22) 0%,rgba(0,0,0,.58) 100%)}
+.nuisible-card.depigeonnage::before{background:linear-gradient(180deg,rgba(0,0,0,.12) 0%,rgba(0,0,0,.50) 100%)}
+.nuisible-card.acariens::before{background:linear-gradient(180deg,rgba(0,0,0,.20) 0%,rgba(0,0,0,.56) 100%)}
+.nuisible-card.mouches::before{background:linear-gradient(180deg,rgba(0,0,0,.16) 0%,rgba(0,0,0,.54) 100%)}
+.nuisible-card.fourmis::before{background:linear-gradient(180deg,rgba(0,0,0,.14) 0%,rgba(0,0,0,.52) 100%)}
+.nuisible-card.rats::before{background:linear-gradient(180deg,rgba(0,0,0,.18) 0%,rgba(0,0,0,.58) 100%)}
+.nuisible-card.punaises::before{background:linear-gradient(180deg,rgba(0,0,0,.22) 0%,rgba(0,0,0,.58) 100%)}
+.nuisible-card.cafards::before{background:linear-gradient(180deg,rgba(0,0,0,.20) 0%,rgba(0,0,0,.58) 100%)}
+.nuisible-card.guepes::before{background:linear-gradient(180deg,rgba(0,0,0,.14) 0%,rgba(0,0,0,.52) 100%)}
+.nuisible-card.frelons::before{background:linear-gradient(180deg,rgba(0,0,0,.16) 0%,rgba(0,0,0,.54) 100%)}
+.nuisible-card.chenilles::before{background:linear-gradient(180deg,rgba(0,0,0,.12) 0%,rgba(0,0,0,.48) 100%)}
+.nuisible-card:hover span{
+  transform:translateY(-1px);
 }
 .zone-help{
   margin-top:14px;
@@ -94,7 +150,8 @@ main{max-width:1240px;margin:0 auto;padding:34px 18px 40px}
   padding:14px 16px;
   font-size:16px;
   line-height:1.5;
-  color:#2d3340
+  color:#2d3340;
+  text-align:center
 }
 @media(max-width:1080px){
   .nuisibles-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
@@ -105,7 +162,7 @@ main{max-width:1240px;margin:0 auto;padding:34px 18px 40px}
   .zone-hero h2{font-size:22px}
   .zone-hero p{font-size:16px}
   .nuisibles-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .nuisible-card{min-height:74px;font-size:16px}
+  .nuisible-card{min-height:84px;font-size:16px}
 }
 </style>
 </head>
@@ -149,24 +206,23 @@ main{max-width:1240px;margin:0 auto;padding:34px 18px 40px}
 <main>
   <section class="zone-hero js-reveal">
     <span class="zone-chip" id="zoneChip">Zone sélectionnée : Île-de-France</span>
-    <h1>Catalogue nuisibles par secteur</h1>
     <h2>Un technicien peut intervenir sous 2 heures, devis et déplacement gratuits</h2>
-    <p><strong>Quel nuisible avez-vous rencontré ?</strong> Choisissez votre problématique pour accéder directement au bon service.</p>
+    <h3>Quel nuisible avez-vous rencontré ?</h3>
   </section>
 
   <section class="nuisibles-grid js-reveal" id="services">
-    <a class="nuisible-card" href="deratisation.html">Rats / Souris</a>
-    <a class="nuisible-card" href="punaises.html">Punaises de lit</a>
-    <a class="nuisible-card" href="cafards.html">Cafards</a>
-    <a class="nuisible-card" href="guepes.html">Guêpes</a>
-    <a class="nuisible-card" href="frelons.html">Frelons</a>
-    <a class="nuisible-card" href="depigeonnage.html">Dépigeonnage</a>
-    <a class="nuisible-card" href="chenilles.html">Chenilles processionnaires</a>
-    <a class="nuisible-card" href="diogene.html">Syndrome de Diogène</a>
-    <a class="nuisible-card" href="acariens.html">Acariens</a>
-    <a class="nuisible-card" href="xylophage.html">Xylophages (bois)</a>
-    <a class="nuisible-card" href="mouches.html">Mouches</a>
-    <a class="nuisible-card" href="fourmis.html">Fourmis</a>
+    <a class="nuisible-card rats" href="deratisation.html"><span>Rats / Souris</span></a>
+    <a class="nuisible-card punaises" href="punaises.html"><span>Punaises de lit</span></a>
+    <a class="nuisible-card cafards" href="cafards.html"><span>Cafards</span></a>
+    <a class="nuisible-card guepes" href="guepes.html"><span>Guêpes</span></a>
+    <a class="nuisible-card frelons" href="frelons.html"><span>Frelons</span></a>
+    <a class="nuisible-card depigeonnage" href="depigeonnage.html"><span>Dépigeonnage</span></a>
+    <a class="nuisible-card chenilles" href="chenilles.html"><span>Chenilles processionnaires</span></a>
+    <a class="nuisible-card diogene" href="diogene.html"><span>Syndrome de Diogène</span></a>
+    <a class="nuisible-card acariens" href="acariens.html"><span>Acariens</span></a>
+    <a class="nuisible-card xylophage" href="xylophage.html"><span>Xylophages (bois)</span></a>
+    <a class="nuisible-card mouches" href="mouches.html"><span>Mouches</span></a>
+    <a class="nuisible-card fourmis" href="fourmis.html"><span>Fourmis</span></a>
   </section>
 
   <div class="zone-help js-reveal">
