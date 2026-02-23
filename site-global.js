@@ -702,6 +702,27 @@
     });
   }
 
+  function mobileMenuListHTML(){
+    return [
+      '<li><a href="index.html">ACCUEIL</a></li>',
+      '<li><a href="punaises.html">PUNAISE DE LIT</a></li>',
+      '<li><a href="cafards.html">CAFARDS</a></li>',
+      '<li><a href="acariens.html">ACARIENS</a></li>',
+      '<li><a href="xylophage.html">XYLOPHAGE (INSECTES DU BOIS)</a></li>',
+      '<li><a href="mouches.html">MOUCHES</a></li>',
+      '<li><a href="fourmis.html">FOURMIS</a></li>',
+      '<li><a href="deratisation.html">DÉRATISATION (RATS / SOURIS)</a></li>',
+      '<li><a href="depigeonnage.html">DÉPIGEONNAGE</a></li>',
+      '<li><a href="frelons.html">FRELON</a></li>',
+      '<li><a href="diogene.html">SYNDROME DIOGÈNE</a></li>',
+      '<li><a href="chenilles.html">CHENILLE PROCESSIONNAIRE</a></li>',
+      '<li><a href="guepes.html">GUÊPE</a></li>',
+      '<li><a href="contact.html">CONTACTEZ-NOUS</a></li>',
+      '<li><a href="tarifs.html">TARIFS</a></li>',
+      '<li><a href="blog.html">BLOG</a></li>'
+    ].join('');
+  }
+
   function ensureMobileMenuFallback(){
     var header=document.querySelector('header');
     var nav=document.querySelector('header .main-nav');
@@ -755,6 +776,14 @@
       });
     }
 
+    var mobileList=nav.querySelector('.mobile-nav-list');
+    if(!mobileList){
+      mobileList=document.createElement('ul');
+      mobileList.className='mobile-nav-list';
+      mobileList.innerHTML=mobileMenuListHTML();
+      nav.appendChild(mobileList);
+    }
+
     if(!btn.dataset.menuFallbackBound){
       btn.dataset.menuFallbackBound='1';
       btn.addEventListener('click',function(ev){
@@ -772,6 +801,32 @@
         document.body.classList.remove('mobile-nav-open');
         btn.setAttribute('aria-expanded','false');
       });
+    }
+
+    if(!document.body.dataset.mobileMenuDocBound){
+      document.body.dataset.mobileMenuDocBound='1';
+      document.addEventListener('click',function(ev){
+        var target=ev.target;
+        if(!target){return;}
+        var trigger=target.closest ? target.closest('.mobile-menu-btn') : null;
+        if(trigger){
+          if(window.innerWidth>980){return;}
+          ev.preventDefault();
+          var open=document.body.classList.contains('mobile-nav-open');
+          document.body.classList.toggle('mobile-nav-open', !open);
+          trigger.setAttribute('aria-expanded', open ? 'false' : 'true');
+          return;
+        }
+        if(window.innerWidth<=980 && document.body.classList.contains('mobile-nav-open')){
+          var inMenu=target.closest ? target.closest('header .main-nav') : null;
+          var inOverlay=target.closest ? target.closest('.mobile-nav-overlay') : null;
+          if(inOverlay || (!inMenu && !target.closest('.mobile-menu-btn'))){
+            document.body.classList.remove('mobile-nav-open');
+            var openBtn=document.querySelector('header .mobile-menu-btn');
+            if(openBtn){openBtn.setAttribute('aria-expanded','false');}
+          }
+        }
+      }, true);
     }
   }
 
@@ -831,28 +886,32 @@
     timerId=window.setTimeout(openModal,10000);
   }
 
-  function boot(){
-    ensureSeoTags();
-    ensureHomeUrgencyStrip();
-    ensureFooter();
-    ensureProcess();
-    ensureReviewsFaq();
-    ensureLocalSeoSections();
-    ensureSticky();
-    optimizeForCalls();
-    initFaq();
-    initMobileMenu();
-    ensureMobileMenuFallback();
+  function safeRun(fn,label){
     try{
-      initReviews();
+      fn();
     }catch(err){
-      console.warn('initReviews failed:', err);
+      console.warn((label||'module')+' failed:', err);
     }
-    initTimedCallModal();
-    optimizeMedia();
-    ensureStructuredData();
-    setYear();
-    if(window.__alloScrollRevealRefresh){window.__alloScrollRevealRefresh(document);} 
+  }
+
+  function boot(){
+    safeRun(ensureSeoTags,'ensureSeoTags');
+    safeRun(ensureHomeUrgencyStrip,'ensureHomeUrgencyStrip');
+    safeRun(ensureFooter,'ensureFooter');
+    safeRun(ensureProcess,'ensureProcess');
+    safeRun(ensureReviewsFaq,'ensureReviewsFaq');
+    safeRun(ensureLocalSeoSections,'ensureLocalSeoSections');
+    safeRun(ensureSticky,'ensureSticky');
+    safeRun(optimizeForCalls,'optimizeForCalls');
+    safeRun(initFaq,'initFaq');
+    safeRun(initMobileMenu,'initMobileMenu');
+    safeRun(ensureMobileMenuFallback,'ensureMobileMenuFallback');
+    safeRun(initReviews,'initReviews');
+    safeRun(initTimedCallModal,'initTimedCallModal');
+    safeRun(optimizeMedia,'optimizeMedia');
+    safeRun(ensureStructuredData,'ensureStructuredData');
+    safeRun(setYear,'setYear');
+    if(window.__alloScrollRevealRefresh){safeRun(function(){window.__alloScrollRevealRefresh(document);},'scrollRevealRefresh');}
   }
 
   enforcePrimaryDomain();
