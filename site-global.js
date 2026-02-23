@@ -1008,17 +1008,12 @@
     if(!btn){return;}
     if(btn.dataset.emergencyMenuBound==='1'){return;}
     btn.dataset.emergencyMenuBound='1';
-    function toggleMenu(ev){
-      if(window.innerWidth>980){return;}
-      if(ev){ev.preventDefault();}
-      var open=document.body.classList.contains('mobile-nav-open');
-      document.body.classList.toggle('mobile-nav-open',!open);
-      btn.setAttribute('aria-expanded',open?'false':'true');
-    }
-    btn.addEventListener('click',toggleMenu,{passive:false});
-    btn.addEventListener('touchend',toggleMenu,{passive:false});
+    // Emergency mode now only hardens tap visibility/styling.
+    // Toggle listeners are managed by ensureMobileMenuFallback to avoid double-toggle on iOS.
     btn.style.pointerEvents='auto';
     btn.style.cursor='pointer';
+    btn.style.touchAction='manipulation';
+    btn.style.webkitTapHighlightColor='transparent';
   }
 
   function cleanupTimedModalNonHome(){
