@@ -157,7 +157,7 @@
     var stripMinHeight=(window.innerWidth<=560?48:(window.innerWidth<=980?50:52));
     document.documentElement.style.setProperty('--allo-urgent-top',topPx+'px');
     document.documentElement.style.setProperty('--allo-urgent-height',stripMinHeight+'px');
-    strip.style.position='fixed';
+    strip.style.position='sticky';
     strip.style.left='0';
     strip.style.right='0';
     strip.style.top=topPx+'px';
