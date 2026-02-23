@@ -1,5 +1,3 @@
 User-agent: *
 Allow: /
-
-Host: allonuisibleexpress.fr
 Sitemap: https://allonuisibleexpress.fr/sitemap.xml
