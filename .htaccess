@@ -1,0 +1,5 @@
+RewriteEngine On
+
+# Always serve dynamic sitemap at /sitemap.xml
+RewriteRule ^sitemap\.xml$ sitemap.php [L]
+
