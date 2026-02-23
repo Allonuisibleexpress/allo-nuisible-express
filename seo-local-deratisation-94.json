@@ -1,0 +1,110 @@
+{
+  "version": "1.0.0",
+  "scope": "seo-local-deratisation-94",
+  "pages_locales_deratisation": [
+    "/deratisation-chevilly-larue/",
+    "/deratisation-thiais/",
+    "/deratisation-rungis/",
+    "/deratisation-choisy-le-roi/",
+    "/deratisation-orly/",
+    "/deratisation-vitry-sur-seine/",
+    "/deratisation-villejuif/"
+  ],
+  "maillage_interne": {
+    "chevilly-larue": {
+      "links_to": [
+        "thiais",
+        "rungis",
+        "choisy-le-roi"
+      ]
+    },
+    "thiais": {
+      "links_to": [
+        "chevilly-larue",
+        "rungis",
+        "choisy-le-roi"
+      ]
+    },
+    "rungis": {
+      "links_to": [
+        "chevilly-larue",
+        "thiais",
+        "choisy-le-roi"
+      ]
+    },
+    "choisy-le-roi": {
+      "links_to": [
+        "chevilly-larue",
+        "thiais",
+        "rungis",
+        "orly",
+        "vitry-sur-seine",
+        "villejuif"
+      ]
+    },
+    "orly": {
+      "links_to": [
+        "thiais",
+        "choisy-le-roi",
+        "rungis",
+        "chevilly-larue",
+        "vitry-sur-seine",
+        "villejuif"
+      ]
+    },
+    "vitry-sur-seine": {
+      "links_to": [
+        "thiais",
+        "choisy-le-roi",
+        "rungis",
+        "chevilly-larue",
+        "orly",
+        "villejuif"
+      ]
+    },
+    "villejuif": {
+      "links_to": [
+        "thiais",
+        "choisy-le-roi",
+        "rungis",
+        "chevilly-larue",
+        "orly",
+        "vitry-sur-seine"
+      ]
+    }
+  },
+  "seo_hierarchy": {
+    "dératisation": {
+      "val-de-marne": [
+        "chevilly-larue",
+        "thiais",
+        "rungis",
+        "choisy-le-roi",
+        "orly",
+        "vitry-sur-seine",
+        "villejuif"
+      ]
+    }
+  },
+  "functions": {
+    "getLocalSEOStructure": {
+      "description": "Affiche toutes les pages locales dératisation, le maillage interne entre elles et la hiérarchie SEO locale.",
+      "returns": {
+        "pages_locales_deratisation": "pages_locales_deratisation",
+        "maillage_interne": "maillage_interne",
+        "hierarchie_seo": "seo_hierarchy"
+      },
+      "pseudo_output_tree": [
+        "dératisation",
+        "└── val-de-marne",
+        "    ├── chevilly-larue",
+        "    ├── thiais",
+        "    ├── rungis",
+        "    ├── choisy-le-roi",
+        "    ├── orly",
+        "    ├── vitry-sur-seine",
+        "    └── villejuif"
+      ]
+    }
+  }
+}
