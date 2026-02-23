@@ -127,6 +127,10 @@ header .mobile-nav-overlay{
 header .mobile-nav-list{
   display:none !important;
 }
+/* Never show mobile close control on desktop */
+header .main-nav .mobile-close-home{
+  display:none !important;
+}
 header .main-nav .dropdown-item{
   display:block !important;
   padding:14px 18px !important;
