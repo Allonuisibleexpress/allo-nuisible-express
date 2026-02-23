@@ -108,13 +108,21 @@ text-shadow:0 3px 14px rgba(0,0,0,0.65);
 animation:heroTextIn 1.2s ease-out
 }
 .hero-subtitle .hero-highlight{
-display:inline-block;
+display:inline-flex;
+align-items:center;
+justify-content:center;
 background:#ffae00;
 color:#111;
 padding:2px 10px;
 border-radius:8px;
 font-weight:800;
 box-shadow:0 6px 16px rgba(255,174,0,.35);
+line-height:1.15;
+white-space:nowrap;
+}
+.hero-subtitle .hero-highlight-tight{
+padding:2px 10px;
+border-radius:8px;
 }
 
 .timed-call-overlay{
@@ -1430,7 +1438,7 @@ z-index:5
 </div>
 <div class="hero-content">
 <h1>DÉBARRASSEZ-VOUS DES <span class="highlight">NUISIBLES</span><br>DÈS MAINTENANT</h1>
-<p class="hero-subtitle">Allo Nuisible Express intervient <span class="hero-highlight">en 2 heures maximum</span> dans toute l’Île-de-France (78, 77, 75, 95, 94, 93, 92, 91). <span class="hero-highlight">Devis gratuit et déplacement gratuit</span> en dératisation et en désinsectisation pour vos logements et locaux professionnels.</p>
+<p class="hero-subtitle">Allo Nuisible Express intervient <span class="hero-highlight">en 2 heures maximum</span> dans toute l’Île-de-France (78, 77, 75, 95, 94, 93, 92, 91). <span class="hero-highlight hero-highlight-tight">Devis gratuit et déplacement gratuit</span> en dératisation et en désinsectisation pour vos logements et locaux professionnels.</p>
 </div>
 </section>
 
