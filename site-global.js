@@ -145,7 +145,7 @@
       document.body.classList.add('has-home-urgent-strip');
     }
     // Keep one identical urgent strip position across all pages/layouts.
-    var topPx=(window.innerWidth<=560?84:(window.innerWidth<=980?92:96));
+    var topPx=(window.innerWidth<=560?83:(window.innerWidth<=980?91:96));
     var stripMinHeight=(window.innerWidth<=560?48:(window.innerWidth<=980?50:52));
     document.documentElement.style.setProperty('--allo-urgent-top',topPx+'px');
     document.documentElement.style.setProperty('--allo-urgent-height',stripMinHeight+'px');

@@ -745,7 +745,7 @@ body.mobile-nav-open .site-sticky-cta{
     background:currentColor !important;
   }
   .home-urgent-strip{
-    top:92px;
+    top:91px;
     min-height:50px;
     font-size:15px;
     letter-spacing:.02em;
@@ -827,7 +827,7 @@ body.mobile-nav-open .site-sticky-cta{
 
 @media(max-width:560px){
   .home-urgent-strip{
-    top:84px;
+    top:83px;
     min-height:48px;
     font-size:14px;
     padding:7px 8px;
