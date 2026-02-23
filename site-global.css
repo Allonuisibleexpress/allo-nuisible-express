@@ -288,6 +288,13 @@ body.has-home-urgent-strip .hero-local{
   margin-top:calc(var(--allo-urgent-top) + var(--allo-urgent-height)) !important;
   min-height:calc(100dvh - (var(--allo-urgent-top) + var(--allo-urgent-height))) !important;
 }
+body.has-home-urgent-strip{
+  padding-top:calc(var(--allo-urgent-top) + var(--allo-urgent-height)) !important;
+}
+body.has-home-urgent-strip .hero,
+body.has-home-urgent-strip .hero-local{
+  margin-top:0 !important;
+}
 body.has-home-urgent-strip section[id]{
   scroll-margin-top:calc(var(--allo-urgent-top) + var(--allo-urgent-height) + 16px);
 }

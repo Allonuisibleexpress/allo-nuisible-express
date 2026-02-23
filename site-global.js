@@ -40,6 +40,7 @@
 
   function processHTML(){
     return ''+
+    '<div data-global-process>'+
     '<section class="process-top global-process">'+
     '  <div class="process-top-grid">'+
     '    <article class="process-mini">'+
@@ -73,7 +74,8 @@
     '      <article class="step-card"><span class="step-badge">4</span><h3>Suivi</h3><p>Nous restons disponibles après passage pour consolider le résultat dans la durée.</p><ul class="step-list"><li>Recommandations de prévention</li><li>Suivi téléphonique</li><li>Traitements garantis</li></ul></article>'+ 
     '    </div>'+ 
     '  </div>'+ 
-    '</section>';
+    '</section>'+
+    '</div>';
   }
 
   function footerHTML(){
@@ -248,7 +250,8 @@
   }
 
   function ensureProcess(){
-    if(document.querySelector('.process-section')){return;}
+    if(isHomePage()){return;}
+    if(document.querySelector('[data-global-process]')){return;}
     var holder=document.createElement('div');
     holder.innerHTML=processHTML();
     var footer=document.querySelector('footer.site-footer');
@@ -256,8 +259,9 @@
   }
 
   function ensureReviewsFaq(){
-    var needReviews=!document.querySelector('.reviews');
-    var needFaq=!document.querySelector('.faq');
+    if(isHomePage()){return;}
+    var needReviews=!document.querySelector('[data-global-reviews]');
+    var needFaq=!document.querySelector('[data-global-faq]');
     if(!needReviews && !needFaq){return;}
     var html='';
     if(needReviews){html += reviewsHTML();}
