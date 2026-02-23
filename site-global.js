@@ -745,8 +745,12 @@
     ensureSticky();
     optimizeForCalls();
     initFaq();
-    initReviews();
     initMobileMenu();
+    try{
+      initReviews();
+    }catch(err){
+      console.warn('initReviews failed:', err);
+    }
     initTimedCallModal();
     optimizeMedia();
     ensureStructuredData();
