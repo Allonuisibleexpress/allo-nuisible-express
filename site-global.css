@@ -2,6 +2,7 @@ html,
 body{
   max-width:100%;
   overflow-x:hidden;
+  background:#070707 !important;
 }
 :root{
   --allo-urgent-top:96px;
@@ -13,6 +14,17 @@ body.timed-call-open{
 body{
   -webkit-text-size-adjust:100%;
   text-rendering:optimizeLegibility;
+}
+body::after{
+  content:"";
+  position:fixed;
+  left:0;
+  right:0;
+  bottom:0;
+  height:240px;
+  background:#070707;
+  pointer-events:none;
+  z-index:3989;
 }
 img,
 video,
@@ -227,19 +239,44 @@ section[id]{
   background-position:100% 50%;
 }
 @media (max-width:760px){
+  .timed-call-overlay{
+    padding:10px;
+  }
   .timed-call-modal{
-    padding:20px 14px 14px;
-    border-radius:14px;
+    width:min(310px,88vw);
+    max-width:88vw;
+    padding:12px 10px 10px;
+    border-radius:12px;
+  }
+  .timed-call-close{
+    width:26px;
+    height:26px;
+    top:8px;
+    right:8px;
+    font-size:20px;
+    border-radius:6px;
+  }
+  .timed-call-badge{
+    margin-bottom:6px;
+    padding:2px 4px;
+  }
+  .timed-call-logo{
+    width:min(170px,76%);
   }
   .timed-call-modal h3{
-    font-size:29px;
+    font-size:19px;
+    margin:0 0 6px;
   }
   .timed-call-modal p{
-    font-size:15px;
+    font-size:12px;
+    margin:0 auto 10px;
+    line-height:1.35;
   }
   .timed-call-action{
-    font-size:21px;
-    min-height:54px;
+    width:min(230px,100%);
+    min-height:40px;
+    font-size:13px;
+    border-radius:10px;
   }
 }
 @media (prefers-reduced-motion: reduce){
@@ -345,7 +382,7 @@ main .card li{
 .global-process .step-list li:before{content:"\2713";position:absolute;left:0;top:0;color:#ffae00;font-weight:800}
 
 /* Injected footer (same visual family as homepage) */
-.global-footer{background:#070707;color:#fff;padding:52px 20px 110px;margin-top:42px}
+.global-footer{background:#070707;color:#fff;padding:52px 20px 190px;margin-top:42px}
 .global-footer .site-footer-main{max-width:1240px;margin:0 auto;display:grid;grid-template-columns:1.2fr .9fr .9fr .9fr;gap:26px;align-items:start}
 .global-footer h3{margin:0 0 14px;font-size:14px;line-height:1.2;text-transform:uppercase;letter-spacing:.03em;font-weight:800}
 .global-footer .footer-logo{display:inline-flex;align-items:center;text-decoration:none;color:#fff;margin-bottom:16px}
@@ -365,6 +402,9 @@ main .card li{
 .global-footer .footer-socials{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:14px}
 .global-footer .footer-social-link{display:inline-flex;align-items:center;justify-content:center;padding:6px 10px;border:1px solid #2d2d2d;border-radius:999px;background:#111;color:#fff!important;text-decoration:none;font-size:11px;font-weight:700;line-height:1;transition:all .2s ease}
 .global-footer .footer-social-link:hover{background:#ffae00;color:#111!important;border-color:#ffae00}
+.seo-local-entry{background:#070707;text-align:center;padding:8px 12px 20px;margin:0}
+.seo-local-link{display:inline-flex;align-items:center;justify-content:center;min-height:34px;padding:8px 16px;border-radius:999px;border:1px solid #2c2c2c;background:#101010;color:#f2f2f2;font-size:13px;font-weight:700;letter-spacing:.02em;text-decoration:none;transition:all .2s ease}
+.seo-local-link:hover{color:#111;background:#ffae00;border-color:#ffae00;box-shadow:0 8px 18px rgba(255,174,0,.3)}
 .global-footer .site-footer-main section{display:flex;flex-direction:column;align-items:flex-start}
 .global-footer .site-footer-main>section:first-child{align-items:center;text-align:center}
 .global-footer .site-footer-main section{align-items:center}
@@ -375,7 +415,17 @@ main .card li{
 
 .site-footer,
 .global-footer{
+  background:#070707 !important;
   text-align:inherit !important;
+}
+
+/* Force a black strip below footer so no white zone appears behind sticky CTA */
+.site-footer::after,
+.global-footer::after{
+  content:"";
+  display:block;
+  height:180px;
+  background:#070707;
 }
 .site-footer .site-footer-main,
 .global-footer .site-footer-main{
@@ -526,8 +576,9 @@ main .card li{
 }
 
 /* Injected sticky call button */
-body{padding-bottom:calc(120px + env(safe-area-inset-bottom, 0px))}
+body{padding-bottom:calc(170px + env(safe-area-inset-bottom, 0px))}
 .global-sticky-cta{position:fixed;left:50%;bottom:10px;transform:translateX(-50%);z-index:4000;display:flex;align-items:center;justify-content:center;width:min(700px,calc(100% - 18px));pointer-events:none}
+.global-bottom-black-fill{position:fixed;left:0;right:0;bottom:0;height:140px;background:#070707;z-index:3990;pointer-events:none}
 .global-sticky-cta .sticky-link{pointer-events:auto;position:relative;display:inline-flex;align-items:center;justify-content:center;gap:10px;text-decoration:none;font-weight:900;letter-spacing:.02em;border-radius:11px;min-height:52px;padding:13px 18px;box-shadow:0 6px 16px rgba(0,0,0,.18);background:#ffae00;color:#fff;border:1px solid #ffae00;transition:transform .22s ease,box-shadow .22s ease,filter .22s ease;font-size:16px}
 .global-sticky-cta .sticky-link:hover{transform:translateY(-2px);filter:brightness(1.06);box-shadow:0 12px 24px rgba(255,174,0,.35)}
 .global-sticky-cta .sticky-link svg{width:15px;height:15px}
@@ -565,12 +616,13 @@ body.mobile-nav-open .site-sticky-cta{
   }
   .global-process .process-head h2{font-size:28px}
   .global-process .process-head p{font-size:14px}
-  .global-footer{padding:36px 14px 132px}
+  .global-footer{padding:36px 14px 170px}
   .global-footer .site-footer-main{grid-template-columns:1fr;gap:20px}
   .global-footer .footer-logo img{height:140px}
   .global-footer .site-footer-bottom{font-size:13px;padding:10px 8px;margin-top:24px;margin-bottom:16px}
-  body{padding-bottom:calc(138px + env(safe-area-inset-bottom, 0px))}
+  body{padding-bottom:calc(190px + env(safe-area-inset-bottom, 0px))}
   .global-sticky-cta{width:calc(100% - 10px);bottom:calc(7px + env(safe-area-inset-bottom, 0px))}
+  .global-bottom-black-fill{height:220px}
 }
 @media(max-width:560px){
   .global-sticky-cta .sticky-link{font-size:11px;letter-spacing:.01em}
@@ -760,8 +812,8 @@ body.mobile-nav-open .site-sticky-cta{
   }
   body.has-home-urgent-strip header + .hero,
   body.has-home-urgent-strip .hero{
-    margin-top:142px !important;
-    min-height:calc(100dvh - 142px) !important;
+    margin-top:141px !important;
+    min-height:calc(100dvh - 141px) !important;
   }
   header + .hero,
   .hero{
@@ -842,8 +894,8 @@ body.mobile-nav-open .site-sticky-cta{
   }
   body.has-home-urgent-strip header + .hero,
   body.has-home-urgent-strip .hero{
-    margin-top:132px !important;
-    min-height:calc(100dvh - 132px) !important;
+    margin-top:131px !important;
+    min-height:calc(100dvh - 131px) !important;
   }
   section[id]{
     scroll-margin-top:96px;
