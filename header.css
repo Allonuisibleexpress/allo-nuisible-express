@@ -341,7 +341,7 @@ header .main-nav .quote-btn:hover .hover-text{
     height:120px !important;
     margin:12px auto 22px !important;
     width:min(300px,76vw) !important;
-    background:url('logo.png') center center/100% auto no-repeat !important;
+    background:url('logo.png') center center/contain no-repeat !important;
     border-bottom:none !important;
   }
   header .main-nav .mobile-close-home{
@@ -431,7 +431,7 @@ header .main-nav .quote-btn:hover .hover-text{
     height:177px !important;
   }
   header .main-nav{padding:18px 14px 24px !important}
-  header .main-nav:before{height:108px !important;margin:10px auto 18px !important;width:min(270px,78vw) !important;background-size:100% auto !important}
+  header .main-nav:before{height:108px !important;margin:10px auto 18px !important;width:min(270px,78vw) !important;background-size:contain !important;background-position:center center !important;background-repeat:no-repeat !important}
   header .mobile-nav-list{width:min(330px,92vw) !important;gap:10px !important}
   header .mobile-nav-list a{font-size:19px !important;padding:3px 2px !important}
 }

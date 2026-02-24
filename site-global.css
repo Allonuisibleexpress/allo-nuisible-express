@@ -817,8 +817,9 @@ body.mobile-nav-open .site-sticky-cta{
   .hero{
     margin-top:92px !important;
     min-height:calc(100dvh - 92px) !important;
-    background-attachment:fixed !important;
-    background-position:center center !important;
+    background-attachment:scroll !important;
+    background-position:center top !important;
+    background-size:cover !important;
   }
   .hero-wrap{
     padding:92px 16px 56px !important;
@@ -908,8 +909,9 @@ body.mobile-nav-open .site-sticky-cta{
   .hero{
     margin-top:84px !important;
     min-height:calc(100dvh - 84px) !important;
-    background-attachment:fixed !important;
-    background-position:center center !important;
+    background-attachment:scroll !important;
+    background-position:center top !important;
+    background-size:cover !important;
   }
   .hero-wrap{
     padding:82px 12px 44px !important;
