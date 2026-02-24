@@ -284,9 +284,12 @@ header .main-nav .quote-btn:hover .hover-text{
     margin-left:0 !important;
     background:#fff !important;
     box-shadow:none !important;
-    padding:24px 18px 32px !important;
+    padding:24px 18px calc(32px + env(safe-area-inset-bottom, 0px)) !important;
     gap:0 !important;
-    overflow:hidden !important;
+    overflow-y:auto !important;
+    overflow-x:hidden !important;
+    -webkit-overflow-scrolling:touch !important;
+    touch-action:pan-y !important;
     justify-content:flex-start !important;
     align-items:stretch !important;
     flex-direction:column !important;
@@ -313,13 +316,16 @@ header .main-nav .quote-btn:hover .hover-text{
     height:100dvh !important;
     min-height:100dvh !important;
     max-height:100dvh !important;
-    padding:24px 18px 32px !important;
-    overflow:hidden !important;
+    padding:24px 18px calc(32px + env(safe-area-inset-bottom, 0px)) !important;
+    overflow-y:auto !important;
+    overflow-x:hidden !important;
+    -webkit-overflow-scrolling:touch !important;
     text-align:center !important;
   }
   html.mobile-nav-open,
   body.mobile-nav-open{
-    overflow:hidden !important;
+    overflow-y:auto !important;
+    overflow-x:hidden !important;
     height:100dvh !important;
     overscroll-behavior:none !important;
   }
@@ -375,7 +381,8 @@ header .main-nav .quote-btn:hover .hover-text{
     gap:12px !important;
     width:min(360px,90vw) !important;
     justify-items:stretch !important;
-    overflow:hidden !important;
+    overflow:visible !important;
+    padding-bottom:calc(12px + env(safe-area-inset-bottom, 0px)) !important;
   }
   header .mobile-nav-list li{
     opacity:0;
