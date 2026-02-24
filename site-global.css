@@ -412,6 +412,13 @@ main .card li{
 .global-footer .site-footer-bottom{
   margin-bottom:24px !important;
 }
+.site-footer::after,
+.global-footer::after{
+  content:"";
+  display:block;
+  height:40px;
+  background:#070707;
+}
 .site-footer .site-footer-main,
 .global-footer .site-footer-main{
   align-items:start !important;
