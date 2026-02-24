@@ -1,7 +1,17 @@
 /* single sticky call CTA override */
 body{
-  background:#070707 !important;
   padding-bottom:126px !important;
+}
+body::after{
+  content:"";
+  position:fixed;
+  left:0;
+  right:0;
+  bottom:0;
+  height:170px;
+  background:#070707;
+  pointer-events:none;
+  z-index:3990;
 }
 .site-sticky-cta{
   position:fixed !important;
