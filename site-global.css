@@ -808,7 +808,10 @@ body.mobile-nav-open .site-sticky-cta{
     min-height:calc(100dvh - 141px) !important;
   }
   body.has-home-urgent-strip .home-urgent-strip + .hero{
-    margin-top:-1px !important;
+    margin-top:0 !important;
+  }
+  .home-urgent-strip + .hero{
+    margin-top:0 !important;
   }
   header + .hero,
   .hero{
@@ -893,7 +896,10 @@ body.mobile-nav-open .site-sticky-cta{
     min-height:calc(100dvh - 131px) !important;
   }
   body.has-home-urgent-strip .home-urgent-strip + .hero{
-    margin-top:-1px !important;
+    margin-top:0 !important;
+  }
+  .home-urgent-strip + .hero{
+    margin-top:0 !important;
   }
   section[id]{
     scroll-margin-top:96px;
