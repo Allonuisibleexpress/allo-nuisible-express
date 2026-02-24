@@ -316,15 +316,19 @@ header .main-nav .quote-btn:hover .hover-text{
     height:100dvh !important;
     min-height:100dvh !important;
     max-height:100dvh !important;
-    padding:24px 18px calc(32px + env(safe-area-inset-bottom, 0px)) !important;
-    overflow-y:auto !important;
+    padding:6px 10px calc(8px + env(safe-area-inset-bottom, 0px)) !important;
+    overflow-y:hidden !important;
     overflow-x:hidden !important;
     -webkit-overflow-scrolling:touch !important;
+    display:flex !important;
+    flex-direction:column !important;
+    justify-content:center !important;
+    align-items:center !important;
     text-align:center !important;
   }
   html.mobile-nav-open,
   body.mobile-nav-open{
-    overflow-y:auto !important;
+    overflow-y:hidden !important;
     overflow-x:hidden !important;
     height:100dvh !important;
     overscroll-behavior:none !important;
@@ -338,11 +342,12 @@ header .main-nav .quote-btn:hover .hover-text{
   header .main-nav:before{
     content:"" !important;
     display:block !important;
-    height:120px !important;
-    margin:12px auto 22px !important;
-    width:min(300px,76vw) !important;
+    height:52px !important;
+    margin:0 auto 4px !important;
+    width:min(160px,48vw) !important;
     background:url('logo.png') center center/contain no-repeat !important;
     border-bottom:none !important;
+    flex:0 0 auto !important;
   }
   header .main-nav .mobile-close-home{
     position:absolute !important;
@@ -375,14 +380,14 @@ header .main-nav .quote-btn:hover .hover-text{
 
   header .mobile-nav-list{
     list-style:none !important;
-    margin:4px auto 18px !important;
+    margin:0 auto !important;
     padding:0 !important;
     display:grid !important;
-    gap:12px !important;
-    width:min(360px,90vw) !important;
+    gap:1px !important;
+    width:min(320px,90vw) !important;
     justify-items:stretch !important;
     overflow:visible !important;
-    padding-bottom:calc(12px + env(safe-area-inset-bottom, 0px)) !important;
+    padding-bottom:calc(2px + env(safe-area-inset-bottom, 0px)) !important;
   }
   header .mobile-nav-list li{
     opacity:0;
@@ -408,12 +413,12 @@ header .main-nav .quote-btn:hover .hover-text{
     text-decoration:none !important;
     display:block !important;
     color:#111 !important;
-    font-size:21px !important;
-    line-height:1.2 !important;
+    font-size:11.4px !important;
+    line-height:1 !important;
     font-weight:900 !important;
     letter-spacing:.005em !important;
     text-transform:uppercase !important;
-    padding:4px 2px !important;
+    padding:0 !important;
     text-align:center !important;
   }
   header .mobile-nav-list li:first-child a{color:#d89618 !important}
@@ -430,10 +435,22 @@ header .main-nav .quote-btn:hover .hover-text{
   header .logo{
     height:177px !important;
   }
-  header .main-nav{padding:18px 14px 24px !important}
-  header .main-nav:before{height:108px !important;margin:10px auto 18px !important;width:min(270px,78vw) !important;background-size:contain !important;background-position:center center !important;background-repeat:no-repeat !important}
-  header .mobile-nav-list{width:min(330px,92vw) !important;gap:10px !important}
-  header .mobile-nav-list a{font-size:19px !important;padding:3px 2px !important}
+  header .main-nav{padding:6px 10px 8px !important}
+  header .main-nav:before{height:48px !important;margin:0 auto 2px !important;width:min(150px,56vw) !important;background-size:contain !important;background-position:center center !important;background-repeat:no-repeat !important}
+  header .mobile-nav-list{width:min(290px,88vw) !important;gap:0 !important}
+  header .mobile-nav-list a{font-size:10.8px !important;padding:0 !important;line-height:1 !important}
+}
+
+@media(max-width:980px) and (max-height:760px){
+  header .main-nav:before{
+    height:42px !important;
+    margin:0 auto 1px !important;
+    width:min(132px,44vw) !important;
+  }
+  header .mobile-nav-list a{
+    font-size:10.2px !important;
+    line-height:0.98 !important;
+  }
 }
 
 /* iOS Safari tap reliability */
