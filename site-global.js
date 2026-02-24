@@ -86,8 +86,11 @@
     '      <a class="footer-logo" href="index.html" aria-label="Retour à l\'accueil"><img src="logo.png" alt="Allo Nuisible Express"></a>'+ 
     '      <p class="footer-text">Allo Nuisible Express intervient rapidement en Île-de-France pour la dératisation, la désinsectisation, la désinfection et le dépigeonnage.</p>'+ 
     '      <div class="footer-socials" aria-label="Réseaux sociaux">'+ 
-    '        <a class="footer-social-link" href="https://x.com/FranceNuisible" target="_blank" rel="noopener noreferrer">X</a>'+ 
+    '        <a class="footer-social-link" href="https://x.com/Allonuisexpress" target="_blank" rel="noopener noreferrer">X</a>'+ 
+    '        <a class="footer-social-link" href="https://www.linkedin.com/in/moncef-bedira-6217a521b/" target="_blank" rel="noopener noreferrer">LinkedIn</a>'+ 
     '        <a class="footer-social-link" href="https://www.youtube.com/@AlloNuisibleExpress" target="_blank" rel="noopener noreferrer">YouTube</a>'+ 
+    '        <a class="footer-social-link" href="http://www.tiktok.com/@allonuisibleexpress_" target="_blank" rel="noopener noreferrer">TikTok</a>'+ 
+    '        <a class="footer-social-link" href="https://www.pinterest.com/allonuisibleexpress/" target="_blank" rel="noopener noreferrer">Pinterest</a>'+ 
     '        <a class="footer-social-link" href="https://maps.app.goo.gl/EWnwrfLmvWMRjEds6" target="_blank" rel="noopener noreferrer">Google Maps</a>'+ 
     '      </div>'+ 
     '    </section>'+ 
@@ -121,14 +124,20 @@
 
   function ensureHomeUrgencyStrip(){
     var header=document.querySelector('header');
-    var strip=document.querySelector('.home-urgent-strip');
+    var strips=[].slice.call(document.querySelectorAll('.home-urgent-strip'));
+    var strip=strips.length?strips[0]:null;
+    if(strips.length>1){
+      strips.slice(1).forEach(function(node){ node.remove(); });
+    }
     if(!strip){
       strip=document.createElement('a');
       strip.className='home-urgent-strip';
       strip.href='tel:0744296897';
-      strip.setAttribute('aria-label','Urgence 24h/24 - Appeler le 07 44 29 68 97');
-      strip.innerHTML='<span class="urgent-default">URGENCE 24H/24 · 7J/7</span><span class="urgent-hover">07 44 29 68 97</span>';
     }
+    strip.className='home-urgent-strip';
+    strip.href='tel:0744296897';
+    strip.setAttribute('aria-label','Urgence 24h/24 - Appeler le 07 44 29 68 97');
+    strip.innerHTML='<span class="urgent-default">URGENCE 24H/24 · 7J/7</span><span class="urgent-hover">07 44 29 68 97</span>';
     if(header && header.parentNode){
       if(strip.parentNode!==header.parentNode || strip.previousElementSibling!==header){
         if(header.nextSibling){
@@ -241,6 +250,40 @@
     existing.parentNode.replaceChild(fresh, existing);
   }
 
+  function rootPrefix(){
+    var path=normalizedPathname();
+    if(path==='/' || path==='/index.html'){return '';}
+    var clean=path;
+    if(clean.charAt(0)==='/'){clean=clean.slice(1);}
+    if(clean.slice(-1)==='/'){clean=clean.slice(0,-1);}
+    if(!clean){return '';}
+    var depth=clean.split('/').filter(Boolean).length-1;
+    if(path.slice(-1)==='/'){depth+=1;}
+    if(depth<0){depth=0;}
+    var prefix='';
+    for(var i=0;i<depth;i++){prefix+='../';}
+    return prefix;
+  }
+
+  function ensureValDeMarneEntry(){
+    var footer=document.querySelector('footer.site-footer');
+    if(!footer){return;}
+    var existing=document.querySelector('.seo-local-entry');
+    if(existing && existing.previousElementSibling===footer){return;}
+    if(existing){existing.remove();}
+
+    var prefix=rootPrefix();
+    var wrap=document.createElement('div');
+    wrap.className='seo-local-entry';
+    wrap.innerHTML='<a class="seo-local-link" href="'+prefix+'val-de-marne.html">Val-de-Marne</a>';
+
+    if(footer.nextSibling){
+      footer.parentNode.insertBefore(wrap, footer.nextSibling);
+    }else{
+      footer.parentNode.appendChild(wrap);
+    }
+  }
+
   function ensureProcess(){
     if(isHomePage()){return;}
     if(document.querySelector('[data-global-process]')){return;}
@@ -262,7 +305,16 @@
   }
 
   function ensureSticky(){
-    if(document.querySelector('.site-sticky-cta')){return;}
+    [].slice.call(document.querySelectorAll('.global-bottom-black-fill')).forEach(function(node){
+      node.remove();
+    });
+    var fill=document.createElement('div');
+    fill.className='global-bottom-black-fill';
+    document.body.appendChild(fill);
+
+    [].slice.call(document.querySelectorAll('.site-sticky-cta')).forEach(function(node){
+      node.remove();
+    });
     var holder=document.createElement('div');
     holder.innerHTML=ctaHTML();
     document.body.appendChild(holder.firstElementChild);
@@ -596,8 +648,11 @@
         },
         openingHours:'Mo-Su 00:00-23:59',
         sameAs:[
-          'https://x.com/FranceNuisible',
+          'https://x.com/Allonuisexpress',
+          'https://www.linkedin.com/in/moncef-bedira-6217a521b/',
           'https://www.youtube.com/@AlloNuisibleExpress',
+          'http://www.tiktok.com/@allonuisibleexpress_',
+          'https://www.pinterest.com/allonuisibleexpress/',
           'https://maps.app.goo.gl/EWnwrfLmvWMRjEds6'
         ],
         slogan:'Intervention anti-nuisibles rapide 24h/24 et 7j/7',
@@ -837,6 +892,20 @@
       closeHome.textContent='×';
       nav.insertBefore(closeHome, nav.firstChild);
     }
+    if(!closeHome.dataset.menuCloseBound){
+      closeHome.dataset.menuCloseBound='1';
+      closeHome.addEventListener('click',function(ev){
+        ev.preventDefault();
+        ev.stopPropagation();
+        document.body.classList.remove('mobile-nav-open');
+        btn.setAttribute('aria-expanded','false');
+        var path=(window.location.pathname||'').toLowerCase();
+        var atHome=(path==='/' || path.endsWith('/index.html'));
+        if(!atHome){
+          window.location.href='index.html';
+        }
+      });
+    }
 
     if(!btn.dataset.menuFallbackBound){
       btn.dataset.menuFallbackBound='1';
@@ -1055,6 +1124,7 @@
     ensureProcess();
     ensureReviewsFaq();
     setYear();
+    ensureValDeMarneEntry();
     if(window.__alloScrollRevealRefresh){window.__alloScrollRevealRefresh(document);}
   }
 
@@ -1070,6 +1140,7 @@
     safeRun(ensureSeoTags,'ensureSeoTags');
     safeRun(ensureHomeUrgencyStrip,'ensureHomeUrgencyStrip');
     safeRun(ensureFooter,'ensureFooter');
+    safeRun(ensureValDeMarneEntry,'ensureValDeMarneEntry');
     safeRun(ensureProcess,'ensureProcess');
     safeRun(ensureReviewsFaq,'ensureReviewsFaq');
     safeRun(ensureCoreSections,'ensureCoreSections');
