@@ -424,8 +424,12 @@ main .card li{
 .global-footer::after{
   content:"";
   display:block;
-  height:180px;
+  height:220px;
   background:#070707;
+}
+.site-footer .site-footer-bottom,
+.global-footer .site-footer-bottom{
+  margin-bottom:130px !important;
 }
 .site-footer .site-footer-main,
 .global-footer .site-footer-main{
@@ -619,10 +623,10 @@ body.mobile-nav-open .site-sticky-cta{
   .global-footer{padding:36px 14px 170px}
   .global-footer .site-footer-main{grid-template-columns:1fr;gap:20px}
   .global-footer .footer-logo img{height:140px}
-  .global-footer .site-footer-bottom{font-size:13px;padding:10px 8px;margin-top:24px;margin-bottom:16px}
+  .global-footer .site-footer-bottom{font-size:13px;padding:10px 8px;margin-top:24px;margin-bottom:110px}
   body{padding-bottom:calc(190px + env(safe-area-inset-bottom, 0px))}
   .global-sticky-cta{width:calc(100% - 10px);bottom:calc(7px + env(safe-area-inset-bottom, 0px))}
-  .global-bottom-black-fill{height:220px}
+  .global-bottom-black-fill{height:240px}
 }
 @media(max-width:560px){
   .global-sticky-cta .sticky-link{font-size:11px;letter-spacing:.01em}
