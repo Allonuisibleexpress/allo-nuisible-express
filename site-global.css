@@ -819,6 +819,9 @@ body.mobile-nav-open .site-sticky-cta{
     margin-top:141px !important;
     min-height:calc(100dvh - 141px) !important;
   }
+  body.has-home-urgent-strip .home-urgent-strip + .hero{
+    margin-top:0 !important;
+  }
   header + .hero,
   .hero{
     margin-top:92px !important;
@@ -900,6 +903,9 @@ body.mobile-nav-open .site-sticky-cta{
   body.has-home-urgent-strip .hero{
     margin-top:131px !important;
     min-height:calc(100dvh - 131px) !important;
+  }
+  body.has-home-urgent-strip .home-urgent-strip + .hero{
+    margin-top:0 !important;
   }
   section[id]{
     scroll-margin-top:96px;
