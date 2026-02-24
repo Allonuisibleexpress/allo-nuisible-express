@@ -308,9 +308,6 @@
     [].slice.call(document.querySelectorAll('.global-bottom-black-fill')).forEach(function(node){
       node.remove();
     });
-    var fill=document.createElement('div');
-    fill.className='global-bottom-black-fill';
-    document.body.appendChild(fill);
 
     [].slice.call(document.querySelectorAll('.site-sticky-cta')).forEach(function(node){
       node.remove();

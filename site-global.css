@@ -370,7 +370,7 @@ main .card li{
 .global-process .step-list li:before{content:"\2713";position:absolute;left:0;top:0;color:#ffae00;font-weight:800}
 
 /* Injected footer (same visual family as homepage) */
-.global-footer{background:#070707;color:#fff;padding:52px 20px 190px;margin-top:42px}
+.global-footer{background:#070707;color:#fff;padding:52px 20px 72px;margin-top:42px}
 .global-footer .site-footer-main{max-width:1240px;margin:0 auto;display:grid;grid-template-columns:1.2fr .9fr .9fr .9fr;gap:26px;align-items:start}
 .global-footer h3{margin:0 0 14px;font-size:14px;line-height:1.2;text-transform:uppercase;letter-spacing:.03em;font-weight:800}
 .global-footer .footer-logo{display:inline-flex;align-items:center;text-decoration:none;color:#fff;margin-bottom:16px}
@@ -407,17 +407,10 @@ main .card li{
   text-align:inherit !important;
 }
 
-/* Force a black strip below footer so no white zone appears behind sticky CTA */
-.site-footer::after,
-.global-footer::after{
-  content:"";
-  display:block;
-  height:220px;
-  background:#070707;
-}
+/* Keep only the footer itself black; no extra artificial strip */
 .site-footer .site-footer-bottom,
 .global-footer .site-footer-bottom{
-  margin-bottom:130px !important;
+  margin-bottom:24px !important;
 }
 .site-footer .site-footer-main,
 .global-footer .site-footer-main{
@@ -570,7 +563,7 @@ main .card li{
 /* Injected sticky call button */
 body{padding-bottom:calc(170px + env(safe-area-inset-bottom, 0px))}
 .global-sticky-cta{position:fixed;left:50%;bottom:10px;transform:translateX(-50%);z-index:4000;display:flex;align-items:center;justify-content:center;width:min(700px,calc(100% - 18px));pointer-events:none}
-.global-bottom-black-fill{position:fixed;left:0;right:0;bottom:0;height:140px;background:#070707;z-index:3990;pointer-events:none}
+.global-bottom-black-fill{display:none !important}
 .global-sticky-cta .sticky-link{pointer-events:auto;position:relative;display:inline-flex;align-items:center;justify-content:center;gap:10px;text-decoration:none;font-weight:900;letter-spacing:.02em;border-radius:11px;min-height:52px;padding:13px 18px;box-shadow:0 6px 16px rgba(0,0,0,.18);background:#ffae00;color:#fff;border:1px solid #ffae00;transition:transform .22s ease,box-shadow .22s ease,filter .22s ease;font-size:16px}
 .global-sticky-cta .sticky-link:hover{transform:translateY(-2px);filter:brightness(1.06);box-shadow:0 12px 24px rgba(255,174,0,.35)}
 .global-sticky-cta .sticky-link svg{width:15px;height:15px}
@@ -611,10 +604,10 @@ body.mobile-nav-open .site-sticky-cta{
   .global-footer{padding:36px 14px 170px}
   .global-footer .site-footer-main{grid-template-columns:1fr;gap:20px}
   .global-footer .footer-logo img{height:140px}
-  .global-footer .site-footer-bottom{font-size:13px;padding:10px 8px;margin-top:24px;margin-bottom:110px}
+  .global-footer .site-footer-bottom{font-size:13px;padding:10px 8px;margin-top:24px;margin-bottom:14px}
   body{padding-bottom:calc(190px + env(safe-area-inset-bottom, 0px))}
   .global-sticky-cta{width:calc(100% - 10px);bottom:calc(7px + env(safe-area-inset-bottom, 0px))}
-  .global-bottom-black-fill{height:240px}
+  .global-bottom-black-fill{display:none !important}
 }
 @media(max-width:560px){
   .global-sticky-cta .sticky-link{font-size:11px;letter-spacing:.01em}
