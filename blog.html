@@ -1,290 +1,606 @@
 <!DOCTYPE html>
-<html lang="fr"><head>
-    <link rel="icon" type="image/jpeg" href="/IMG_1621.jpeg">
-    <link rel="apple-touch-icon" href="/IMG_1621.jpeg">
-<meta name="robots" content="index, follow"><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Blog | Allo Nuisible Express</title><meta name="description" content="Conseils prévention nuisibles et hygiène."><style>
-:root{--brand:#ffae00;--bg:#f6f7f9}*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;background:var(--bg);color:#1b1c1f}header{position:sticky;top:0;background:#fff;border-bottom:1px solid #ececec;z-index:1000}.wrap{max-width:1240px;margin:auto;padding:10px 18px;display:flex;justify-content:space-between;align-items:center}.logo{height:92px}.nav{display:flex;gap:12px;align-items:center;flex-wrap:wrap}.nav a{text-decoration:none;color:#111;font-weight:900;font-size:14px;padding:8px 6px}.hero{min-height:34vh;background:linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)),url('dimitrisvetsikas1969-covid-19-5010565_1920.jpg') center/cover;display:flex;align-items:center;justify-content:center;color:#fff;text-align:center}.hero h1{font-size:52px;margin:0;text-transform:uppercase}.main{max-width:1240px;margin:36px auto 80px;padding:0 18px}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.post{background:#fff;border:1px solid #e8e8e8;border-radius:12px;padding:20px;box-shadow:0 8px 20px rgba(0,0,0,.05)}.post h2{margin:0 0 10px;font-size:22px}.post p{margin:0;color:#2d333b;line-height:1.7}.post a{display:inline-block;margin-top:12px;color:#9b6900;text-decoration:none;font-weight:800}@media(max-width:980px){.grid{grid-template-columns:1fr}.hero h1{font-size:36px}.logo{height:76px}}
-/* unified top navigation */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap');
-html,body{
-margin:0;
-padding:0;
-max-width:100%;
-overflow-x:hidden
-}
-body{font-family:'Montserrat',Arial,sans-serif}
-*{box-sizing:border-box}
-header{
-position:fixed;
-top:0;
-left:0;
-right:0;
-background:#fff;
-display:flex;
-justify-content:flex-start;
-height:96px;
-padding:0 22px;
-z-index:999;
-box-shadow:0 1px 8px rgba(0,0,0,.09);
-overflow:visible
-}
-.header-wrap{
-width:100%;
-max-width:none;
-height:100%;
-display:flex;
-align-items:center;
-justify-content:space-between;
-gap:22px;
-min-width:0
-}
-.logo-link{
-display:inline-flex;
-align-items:center;
-position:absolute;
-left:22px;
-top:50%;
-transform:translateY(-50%);
-z-index:2;
-height:96px;
-overflow:hidden
-}
-.logo{
-height:230px;
-width:auto;
-display:block;
-object-fit:contain;
-object-position:center center;
-flex-shrink:0;
-transition:none !important;
-transform:none !important;
-filter:none !important;
-box-shadow:none !important
-}
-.logo-link,.logo-link:hover,.logo-link:focus,.logo-link:active{
-transition:none !important;
-filter:none !important;
-box-shadow:none !important
-}
-.logo-link:hover,.logo-link:focus,.logo-link:active{
-transform:translateY(-50%) !important
-}
-.logo:hover{
-transition:none !important;
-transform:none !important;
-filter:none !important;
-box-shadow:none !important
-}
-.main-nav{
-display:flex;
-align-items:center;
-gap:14px;
-flex:1;
-justify-content:flex-end;
-min-width:0;
-margin-left:300px;
-line-height:1
-}
-.main-nav a{margin-left:0 !important}
-.nav-link{
-position:relative;
-text-decoration:none;
-color:#111;
-font-weight:900 !important;
-letter-spacing:0.02em;
-font-size:13px !important;
-line-height:1.2;
-padding:6px 5px;
-white-space:nowrap;
-transition:color .25s ease
-}
-.nav-link:after{
-content:"";
-position:absolute;
-left:8px;
-right:8px;
-bottom:4px;
-height:2px;
-background:#ffae00;
-transform:scaleX(0);
-transform-origin:center;
-transition:transform .25s ease
-}
-.nav-link:hover{color:#d38f00}
-.nav-link:hover:after{transform:scaleX(1)}
-.dropdown{position:relative}
-.dropdown-toggle{
-display:flex;
-align-items:center;
-gap:8px
-}
-.chevron{
-font-size:12px;
-transition:transform .25s ease
-}
-.dropdown:hover .chevron{transform:rotate(180deg)}
-.dropdown-menu{
-position:absolute;
-top:100%;
-left:0;
-min-width:290px;
-background:#fff;
-border:1px solid #ececec;
-box-shadow:0 12px 26px rgba(0,0,0,.14);
-border-radius:10px;
-padding:8px 0;
-opacity:0;
-visibility:hidden;
-transform:translateY(10px);
-transition:opacity .2s ease,transform .2s ease,visibility .2s ease;
-z-index:1001
-}
-.dropdown:hover .dropdown-menu{
-opacity:1;
-visibility:visible;
-transform:translateY(0)
-}
-.dropdown-item{
-display:block;
-padding:14px 18px;
-color:#101010;
-font-weight:900 !important;
-font-size:13px !important;
-line-height:1.2;
-text-decoration:none;
-border-bottom:1px solid #f1f1f1
-}
-.dropdown-item:last-child{border-bottom:none}
-.dropdown-item:hover{background:#fff7e6;color:#d38f00}
-.cta-btn{
-text-decoration:none;
-font-weight:900 !important;
-font-size:12px !important;
-line-height:1.2;
-padding:8px 12px;
-border-radius:8px;
-white-space:nowrap;
-position:relative;
-overflow:hidden;
-transition:transform .25s ease,box-shadow .25s ease
-}
-.cta-btn:hover{
-transform:translateY(-2px);
-box-shadow:0 8px 18px rgba(0,0,0,.18)
-}
-.call-btn{
-background:#ffae00;
-color:#111;
-min-width:146px;
-text-align:center
-}
-.call-btn .default-text,.call-btn .hover-text{
-display:block;
-transition:transform .25s ease,opacity .25s ease
-}
-.call-btn .hover-text{
-position:absolute;
-left:0;right:0;top:50%;
-transform:translateY(140%);
-opacity:0
-}
-.call-btn:hover .default-text{
-transform:translateY(-140%);
-opacity:0
-}
-.call-btn:hover .hover-text{
-transform:translateY(-50%);
-opacity:1
-}
-.quote-btn{
-background:#0f0f0f;
-color:#fff;
-border:1px solid #0f0f0f
-}
-.quote-btn:before{
-content:"";
-position:absolute;
-top:0;
-left:-130%;
-width:120%;
-height:100%;
-background:linear-gradient(120deg,transparent,rgba(255,255,255,.25),transparent);
-transition:left .5s ease
-}
-.quote-btn:hover:before{left:120%}
-@media(max-width:1180px){
-.logo{height:195px}
-.nav-link{font-size:14px}
-.cta-btn{padding:10px 14px}
-}
-@media(max-width:980px){
-.main-nav{
-overflow-x:hidden;
-justify-content:flex-start;
-padding-bottom:6px;
-flex-wrap:wrap
-}
-.main-nav::-webkit-scrollbar{height:5px}
-.main-nav::-webkit-scrollbar-thumb{background:#ddd;border-radius:20px}
-.logo{height:170px}
-}
+<html lang="fr">
+<head>
+  <link rel="icon" type="image/jpeg" href="/IMG_1621.jpeg">
+  <link rel="apple-touch-icon" href="/IMG_1621.jpeg">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="index, follow">
+  <title>Blog Nuisibles | Conseils Experts Dératisation & Désinsectisation</title>
+  <meta name="description" content="Blog expert nuisibles: guides pratiques, prévention, diagnostic et interventions. Rats, souris, cafards, punaises de lit et hygiène habitat.">
+  <link rel="canonical" href="https://allonuisibleexpress.fr/blog.html">
 
-/* forced header bold */
-header .main-nav .nav-link,
-header .main-nav .dropdown-item,
-header .main-nav .cta-btn,
-header .main-nav .call-btn .default-text,
-header .main-nav .call-btn .hover-text{
-font-family:'Montserrat','Arial Black',Arial,sans-serif !important;
-font-weight:900 !important;
-font-variation-settings:'wght' 900;
-text-rendering:geometricPrecision;
-}
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Blog Nuisibles | Conseils Experts">
+  <meta property="og:description" content="Articles experts sur la dératisation, la désinsectisation et la prévention des infestations.">
+  <meta property="og:url" content="https://allonuisibleexpress.fr/blog.html">
 
-</style>
-<link rel="stylesheet" href="header.css?v=20260225fix3">
-<link rel="stylesheet" href="scroll-reveal.css?v=20260302">
-<script src="scroll-reveal.js?v=20260302" defer></script>
-<link rel="stylesheet" href="site-global.css?v=20260326i">
-<script src="site-global.js?v=20260225fix3" defer></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "name": "Blog Allo Nuisible Express",
+    "url": "https://allonuisibleexpress.fr/blog.html",
+    "description": "Guides et conseils professionnels sur les nuisibles en Île-de-France.",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Allo Nuisible Express",
+      "url": "https://allonuisibleexpress.fr"
+    }
+  }
+  </script>
+
+  <link rel="stylesheet" href="header.css?v=20260225fix3">
+  <link rel="stylesheet" href="scroll-reveal.css?v=20260302">
+  <link rel="stylesheet" href="site-global.css?v=20260326i">
+  <script src="scroll-reveal.js?v=20260302" defer></script>
+  <script src="site-global.js?v=20260402b" defer></script>
+
+  <style>
+    :root{
+      --blog-bg:#f5f6f8;
+      --blog-card:#ffffff;
+      --blog-text:#111318;
+      --blog-muted:#5a6270;
+      --blog-line:#e7eaf0;
+      --blog-brand:#ffae00;
+      --blog-brand-deep:#b87b00;
+      --blog-dark:#111;
+      --blog-radius:18px;
+      --blog-shadow:0 14px 40px rgba(18,22,33,.08);
+    }
+
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      color:var(--blog-text);
+      background:
+        radial-gradient(1200px 400px at -10% -10%, rgba(255,174,0,.16), transparent 55%),
+        radial-gradient(900px 320px at 110% 0%, rgba(17,17,17,.09), transparent 60%),
+        var(--blog-bg);
+      font-family:'Montserrat',Arial,sans-serif;
+    }
+
+    .blog-shell{max-width:1240px;margin:0 auto;padding:0 18px}
+
+    .blog-hero{
+      margin-top:154px;
+      border:1px solid rgba(255,255,255,.65);
+      border-radius:26px;
+      overflow:hidden;
+      position:relative;
+      background:
+        linear-gradient(120deg, rgba(14,18,27,.86), rgba(23,29,41,.66)),
+        url('dimitrisvetsikas1969-covid-19-5010565_1920.jpg') center/cover;
+      min-height:420px;
+      display:grid;
+      align-items:end;
+      box-shadow:0 24px 70px rgba(7,10,16,.2);
+      isolation:isolate;
+    }
+    .blog-hero::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:linear-gradient(0deg, rgba(5,8,14,.35), rgba(5,8,14,.05));
+      z-index:0;
+    }
+    .blog-hero-content{position:relative;z-index:1;padding:48px 42px 42px;max-width:920px}
+
+    .blog-pill{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      background:rgba(255,174,0,.15);
+      border:1px solid rgba(255,174,0,.5);
+      color:#ffd27a;
+      padding:8px 14px;
+      border-radius:999px;
+      font-size:13px;
+      font-weight:800;
+      letter-spacing:.04em;
+      text-transform:uppercase;
+      backdrop-filter:blur(3px);
+    }
+    .blog-hero h1{
+      margin:16px 0 14px;
+      color:#fff;
+      line-height:1.04;
+      font-size:clamp(30px,4.1vw,62px);
+      font-weight:900;
+      max-width:16ch;
+      text-wrap:balance;
+    }
+    .blog-hero p{
+      margin:0;
+      color:#e9edf6;
+      max-width:68ch;
+      line-height:1.62;
+      font-size:clamp(15px,1.35vw,20px);
+    }
+
+    .blog-kpis{
+      margin:24px 0 0;
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:10px;
+      max-width:640px;
+    }
+    .blog-kpi{
+      background:rgba(255,255,255,.08);
+      border:1px solid rgba(255,255,255,.16);
+      border-radius:12px;
+      padding:10px 12px;
+      color:#fff;
+      font-size:13px;
+      line-height:1.4;
+      backdrop-filter:blur(2px);
+    }
+    .blog-kpi strong{display:block;font-size:18px;line-height:1.1}
+
+    .blog-featured{
+      margin-top:22px;
+      background:var(--blog-card);
+      border:1px solid var(--blog-line);
+      border-radius:var(--blog-radius);
+      box-shadow:var(--blog-shadow);
+      padding:20px;
+      display:grid;
+      grid-template-columns:minmax(0,1.45fr) minmax(0,1fr);
+      gap:18px;
+      align-items:stretch;
+    }
+    .blog-featured-main{
+      border-radius:14px;
+      padding:24px;
+      background:linear-gradient(140deg,#111319,#1d2330);
+      color:#fff;
+      position:relative;
+      overflow:hidden;
+    }
+    .blog-featured-main::before{
+      content:"";
+      position:absolute;
+      right:-40px;
+      top:-36px;
+      width:170px;
+      height:170px;
+      background:radial-gradient(circle, rgba(255,174,0,.32), transparent 68%);
+    }
+    .blog-featured-main h2{margin:8px 0 10px;font-size:clamp(24px,2.2vw,36px);line-height:1.1}
+    .blog-featured-main p{margin:0;color:#dee5f1;line-height:1.65}
+
+    .blog-badge{
+      display:inline-flex;
+      background:#1f2737;
+      border:1px solid rgba(255,255,255,.2);
+      color:#ffcf73;
+      border-radius:999px;
+      padding:7px 11px;
+      font-size:12px;
+      font-weight:800;
+      letter-spacing:.03em;
+      text-transform:uppercase;
+    }
+
+    .blog-link{
+      margin-top:16px;
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      text-decoration:none;
+      font-weight:900;
+      color:#111;
+      background:#ffae00;
+      border:1px solid #ffae00;
+      border-radius:12px;
+      padding:12px 16px;
+      transition:transform .2s ease, box-shadow .2s ease;
+    }
+    .blog-link:hover{transform:translateY(-2px);box-shadow:0 12px 22px rgba(255,174,0,.28)}
+
+    .blog-featured-side{
+      border-radius:14px;
+      border:1px solid var(--blog-line);
+      padding:20px;
+      background:#fff;
+      display:grid;
+      gap:14px;
+      align-content:start;
+    }
+    .blog-featured-side h3{margin:0;font-size:22px;line-height:1.2}
+    .blog-toc{display:grid;gap:10px;margin:0;padding:0;list-style:none}
+    .blog-toc a{
+      text-decoration:none;
+      color:var(--blog-text);
+      font-weight:700;
+      border:1px solid var(--blog-line);
+      border-radius:10px;
+      padding:11px 12px;
+      display:flex;
+      justify-content:space-between;
+      gap:10px;
+      transition:all .2s ease;
+      background:#fff;
+    }
+    .blog-toc a span:last-child{color:var(--blog-brand-deep);font-weight:900}
+    .blog-toc a:hover{border-color:#f3cc74;background:#fff9eb;transform:translateX(2px)}
+
+    .blog-controls{
+      margin:26px 0 14px;
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      align-items:center;
+      justify-content:space-between;
+    }
+    .blog-tabs{display:flex;flex-wrap:wrap;gap:8px}
+    .blog-tab{
+      border:1px solid var(--blog-line);
+      background:#fff;
+      color:#2a3140;
+      border-radius:999px;
+      padding:10px 14px;
+      font-weight:800;
+      font-size:13px;
+      letter-spacing:.02em;
+      cursor:pointer;
+      transition:.2s ease;
+    }
+    .blog-tab:hover{border-color:#f2cb72;color:#111;background:#fff8e9}
+    .blog-tab.is-active{background:#111;color:#fff;border-color:#111}
+
+    .blog-search{
+      width:min(360px,100%);
+      display:flex;
+      align-items:center;
+      gap:8px;
+      border:1px solid var(--blog-line);
+      border-radius:12px;
+      background:#fff;
+      padding:9px 12px;
+      box-shadow:0 6px 18px rgba(18,22,33,.04);
+    }
+    .blog-search input{
+      width:100%;
+      border:none;
+      outline:none;
+      font:inherit;
+      color:var(--blog-text);
+      background:transparent;
+    }
+
+    .blog-grid{
+      margin:8px 0 40px;
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:14px;
+    }
+    .blog-card{
+      background:var(--blog-card);
+      border:1px solid var(--blog-line);
+      border-radius:16px;
+      padding:18px;
+      box-shadow:var(--blog-shadow);
+      transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+      min-height:256px;
+    }
+    .blog-card:hover{
+      transform:translateY(-5px);
+      border-color:#f3d496;
+      box-shadow:0 22px 40px rgba(18,22,33,.12);
+    }
+    .blog-card-meta{display:flex;gap:8px;flex-wrap:wrap}
+    .blog-chip{
+      display:inline-flex;
+      align-items:center;
+      border:1px solid #eceff5;
+      border-radius:999px;
+      padding:5px 9px;
+      font-size:11px;
+      font-weight:800;
+      color:#5e6675;
+      letter-spacing:.03em;
+      text-transform:uppercase;
+      background:#fff;
+    }
+    .blog-card h3{margin:0;font-size:22px;line-height:1.2;text-wrap:balance}
+    .blog-card p{margin:0;color:var(--blog-muted);line-height:1.6}
+    .blog-card a{
+      margin-top:auto;
+      text-decoration:none;
+      color:#111;
+      font-weight:900;
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+    }
+    .blog-card a span:last-child{color:#b47900}
+
+    .blog-empty{
+      display:none;
+      padding:24px;
+      border:1px dashed #d7dde8;
+      border-radius:14px;
+      background:#fff;
+      color:#4d5564;
+      font-weight:700;
+      text-align:center;
+    }
+
+    .blog-cta{
+      margin:0 0 80px;
+      border:1px solid #ead5a5;
+      background:linear-gradient(180deg,#fffdf7,#fff8e7);
+      border-radius:20px;
+      padding:26px;
+      box-shadow:0 14px 32px rgba(113,82,17,.08);
+      display:flex;
+      flex-wrap:wrap;
+      gap:16px;
+      justify-content:space-between;
+      align-items:center;
+    }
+    .blog-cta h2{margin:0 0 6px;font-size:30px;line-height:1.12}
+    .blog-cta p{margin:0;color:#6a5a35;line-height:1.6;max-width:72ch}
+    .blog-cta-actions{display:flex;gap:10px;flex-wrap:wrap}
+    .blog-cta-actions a{
+      text-decoration:none;
+      font-weight:900;
+      border-radius:12px;
+      padding:12px 15px;
+      border:1px solid #e5c885;
+      transition:.2s ease;
+    }
+    .blog-cta-actions .a-call{background:#ffae00;color:#111;border-color:#ffae00}
+    .blog-cta-actions .a-devis{background:#fff;color:#111}
+    .blog-cta-actions a:hover{transform:translateY(-2px)}
+
+    .blog-fade-in{opacity:0;transform:translateY(14px);transition:.42s ease}
+    .blog-fade-in.is-visible{opacity:1;transform:translateY(0)}
+
+    @media (max-width:1080px){
+      .blog-featured{grid-template-columns:1fr}
+      .blog-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+      .blog-hero{margin-top:148px}
+    }
+    @media (max-width:760px){
+      .blog-shell{padding:0 12px}
+      .blog-hero{min-height:360px;border-radius:18px;margin-top:142px}
+      .blog-hero-content{padding:26px 18px 22px}
+      .blog-kpis{grid-template-columns:1fr 1fr}
+      .blog-controls{align-items:stretch}
+      .blog-search{width:100%}
+      .blog-grid{grid-template-columns:1fr}
+      .blog-cta{padding:18px 16px}
+      .blog-cta h2{font-size:24px}
+    }
+  </style>
 </head>
 <body>
-<header>
-<div class="header-wrap">
-<a class="logo-link" href="index.html" aria-label="Retour à l'accueil">
-<img src="logo.png" class="logo" alt="Allo Nuisible Express">
-</a>
-<nav class="main-nav">
-<a class="nav-link" href="index.html">ACCUEIL</a>
-<div class="dropdown">
-<a class="nav-link dropdown-toggle" href="#services">NOS SERVICES <span class="chevron">▼</span></a>
-<div class="dropdown-menu">
-<a class="dropdown-item" href="deratisation.html">Rats / Souris</a>
-<a class="dropdown-item" href="frelons.html">Frelons</a>
-<a class="dropdown-item" href="guepes.html">Guêpes</a>
-<a class="dropdown-item" href="punaises.html">Punaises de lit</a>
-<a class="dropdown-item" href="cafards.html">Cafards</a>
-<a class="dropdown-item" href="acariens.html">Acariens</a>
-<a class="dropdown-item" href="xylophage.html">Xylophage (Insectes du bois)</a>
-<a class="dropdown-item" href="mouches.html">Mouches</a>
-<a class="dropdown-item" href="fourmis.html">Fourmis</a>
-<a class="dropdown-item" href="depigeonnage.html">Dépigeonnage</a>
-<a class="dropdown-item" href="chenilles.html">Chenilles processionnaires</a>
-<a class="dropdown-item" href="diogene.html">Syndrome de Diogène</a>
-</div>
-</div>
-<a class="nav-link" href="contact.html">CONTACTEZ-NOUS</a>
-<a class="nav-link" href="tarifs.html">TARIFS</a>
-<a class="nav-link" href="blog.html">BLOG</a>
-<a class="cta-btn call-btn" href="tel:0744296897"><span class="default-text">APPELEZ-NOUS</span><span class="hover-text">07 44 29 68 97</span></a>
-<a class="cta-btn quote-btn" href="devis.html"><span class="default-text">DEMANDES DE DEVIS</span><span class="hover-text">DEVIS GRATUIT</span></a>
-</nav>
-</div>
-<button type="button" class="mobile-menu-btn" aria-label="Ouvrir le menu" aria-expanded="false"><span></span><span></span><span></span></button>
-<div class="mobile-nav-overlay" aria-hidden="true"></div>
-</header>
-<a class="home-urgent-strip" href="tel:0744296897" aria-label="Urgence 24h/24 - Appeler le 07 44 29 68 97"><span class="urgent-default">URGENCE 24H/24 · 7J/7</span><span class="urgent-hover">07 44 29 68 97</span></a>
+  <header>
+    <div class="header-wrap">
+      <a class="logo-link" href="index.html" aria-label="Retour à l'accueil">
+        <img src="logo.png" class="logo" alt="Allo Nuisible Express">
+      </a>
+      <nav class="main-nav">
+        <a class="nav-link" href="index.html">ACCUEIL</a>
+        <div class="dropdown">
+          <a class="nav-link dropdown-toggle" href="#services">NOS SERVICES <span class="chevron">▼</span></a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="deratisation.html">Rats / Souris</a>
+            <a class="dropdown-item" href="frelons.html">Frelons</a>
+            <a class="dropdown-item" href="guepes.html">Guêpes</a>
+            <a class="dropdown-item" href="punaises.html">Punaises de lit</a>
+            <a class="dropdown-item" href="cafards.html">Cafards</a>
+            <a class="dropdown-item" href="acariens.html">Acariens</a>
+            <a class="dropdown-item" href="xylophage.html">Xylophage (Insectes du bois)</a>
+            <a class="dropdown-item" href="mouches.html">Mouches</a>
+            <a class="dropdown-item" href="fourmis.html">Fourmis</a>
+            <a class="dropdown-item" href="depigeonnage.html">Dépigeonnage</a>
+            <a class="dropdown-item" href="chenilles.html">Chenilles processionnaires</a>
+            <a class="dropdown-item" href="diogene.html">Syndrome de Diogène</a>
+          </div>
+        </div>
+        <a class="nav-link" href="contact.html">CONTACTEZ-NOUS</a>
+        <a class="nav-link" href="tarifs.html">TARIFS</a>
+        <a class="nav-link" href="blog.html">BLOG</a>
+        <a class="cta-btn call-btn" href="tel:0744296897"><span class="default-text">APPELEZ-NOUS</span><span class="hover-text">07 44 29 68 97</span></a>
+        <a class="cta-btn quote-btn" href="devis.html"><span class="default-text">DEMANDES DE DEVIS</span><span class="hover-text">DEVIS GRATUIT</span></a>
+      </nav>
+    </div>
+    <button type="button" class="mobile-menu-btn" aria-label="Ouvrir le menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    <div class="mobile-nav-overlay" aria-hidden="true"></div>
+  </header>
 
-<section class="hero"><h1>Blog</h1></section>
-<main class="main"><div class="grid"><article class="post"><h2>Prévenir les infestations de rats</h2><p>Les bons gestes à appliquer dans les caves, cours et locaux techniques pour limiter les accès.</p><a href="deratisation.html">Lire</a></article><article class="post"><h2>Reconnaître une infestation de punaises</h2><p>Signes visuels, piqûres et comportements à adopter avant une intervention professionnelle.</p><a href="punaises.html">Lire</a></article><article class="post"><h2>Guêpes et frelons: agir vite</h2><p>Pourquoi ne pas tenter une destruction seul et comment sécuriser la zone en attendant le passage.</p><a href="frelons.html">Lire</a></article></div></main>
-</body></html>
+  <a class="home-urgent-strip" href="tel:0744296897" aria-label="Urgence 24h/24 - Appeler le 07 44 29 68 97"><span class="urgent-default">URGENCE 24H/24 · 7J/7</span><span class="urgent-hover">07 44 29 68 97</span></a>
+
+  <div class="blog-shell">
+    <section class="blog-hero blog-fade-in">
+      <div class="blog-hero-content">
+        <span class="blog-pill">Blog Expert Nuisibles</span>
+        <h1>Conseils fiables pour diagnostiquer, prévenir et traiter les infestations</h1>
+        <p>Un contenu clair, actionnable et vérifié terrain pour les logements, commerces, copropriétés et établissements recevant du public. Dératisation, désinsectisation, hygiène et sécurité sanitaire.</p>
+        <div class="blog-kpis" aria-label="Indicateurs blog">
+          <div class="blog-kpi"><strong>Guides Pro</strong>Méthodes concrètes</div>
+          <div class="blog-kpi"><strong>SEO Local</strong>Contenus ciblés IDF</div>
+          <div class="blog-kpi"><strong>Mise à Jour</strong>Nouveaux sujets en continu</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="blog-featured blog-fade-in" aria-labelledby="blog-a-la-une">
+      <div class="blog-featured-main">
+        <span class="blog-badge">À la une</span>
+        <h2 id="blog-a-la-une">Odeur de rat mort : reconnaître la source et traiter durablement</h2>
+        <p>Guide pilier complet: signes, localisation dans mur/cloison/plafond, risques sanitaires, produits efficaces, protocole de retrait, désinfection et traitement de l’air.</p>
+        <a class="blog-link" href="odeur-rat-mort.html">Lire l’article complet <span>→</span></a>
+      </div>
+      <aside class="blog-featured-side">
+        <h3>Parcours lecture rapide</h3>
+        <ul class="blog-toc">
+          <li><a href="odeur-rat-mort.html"><span>Odeur de rat mort (guide pilier)</span><span>01</span></a></li>
+          <li><a href="deratisation.html"><span>Dératisation : méthode professionnelle</span><span>02</span></a></li>
+          <li><a href="punaises.html"><span>Punaises de lit : signaux d’alerte</span><span>03</span></a></li>
+          <li><a href="cafards.html"><span>Cafards : prévention habitat</span><span>04</span></a></li>
+        </ul>
+      </aside>
+    </section>
+
+    <section class="blog-controls blog-fade-in" aria-label="Filtres blog">
+      <div class="blog-tabs" role="tablist" aria-label="Catégories">
+        <button class="blog-tab is-active" type="button" data-filter="all">Tous</button>
+        <button class="blog-tab" type="button" data-filter="deratisation">Dératisation</button>
+        <button class="blog-tab" type="button" data-filter="desinsectisation">Désinsectisation</button>
+        <button class="blog-tab" type="button" data-filter="prevention">Prévention</button>
+        <button class="blog-tab" type="button" data-filter="local">Local 94</button>
+      </div>
+      <label class="blog-search" for="blog-search-input">
+        <svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M10 4a6 6 0 1 1 0 12 6 6 0 0 1 0-12m0-2a8 8 0 1 0 4.9 14.3l5.4 5.4 1.4-1.4-5.4-5.4A8 8 0 0 0 10 2"/></svg>
+        <input id="blog-search-input" type="search" placeholder="Rechercher un sujet (rats, cafards, punaises...)" autocomplete="off">
+      </label>
+    </section>
+
+    <section>
+      <div class="blog-grid" id="blog-grid" aria-live="polite">
+        <article class="blog-card blog-fade-in" data-cat="deratisation prevention" data-keywords="odeur rat mort mur cloison plafond désinfecter nettoyer">
+          <div class="blog-card-meta"><span class="blog-chip">Dératisation</span><span class="blog-chip">Guide Pilier</span></div>
+          <h3>Odeur de rat mort : protocole complet maison</h3>
+          <p>Reconnaître les signaux, localiser la source et appliquer un traitement durable sans erreur de diagnostic.</p>
+          <a href="odeur-rat-mort.html">Lire l’article <span>→</span></a>
+        </article>
+
+        <article class="blog-card blog-fade-in" data-cat="deratisation" data-keywords="rats souris infestation copropriété cave commerce">
+          <div class="blog-card-meta"><span class="blog-chip">Dératisation</span><span class="blog-chip">Expert</span></div>
+          <h3>Dératisation : méthode terrain et suivi</h3>
+          <p>Comment une intervention professionnelle traite la cause, sécurise le site et réduit durablement le risque de récidive.</p>
+          <a href="deratisation.html">Lire l’article <span>→</span></a>
+        </article>
+
+        <article class="blog-card blog-fade-in" data-cat="desinsectisation" data-keywords="punaises lit piqûres traitement thermique logement">
+          <div class="blog-card-meta"><span class="blog-chip">Désinsectisation</span><span class="blog-chip">Habitat</span></div>
+          <h3>Punaises de lit : les signes à ne pas ignorer</h3>
+          <p>Indices visuels, zones à inspecter et bons réflexes pour éviter l’aggravation avant intervention.</p>
+          <a href="punaises.html">Lire l’article <span>→</span></a>
+        </article>
+
+        <article class="blog-card blog-fade-in" data-cat="desinsectisation prevention" data-keywords="cafards cuisine humidité hygiène prévention">
+          <div class="blog-card-meta"><span class="blog-chip">Cafards</span><span class="blog-chip">Prévention</span></div>
+          <h3>Cafards : pourquoi ils reviennent et comment bloquer les foyers</h3>
+          <p>Comprendre les zones chaudes, les points d’eau, et le rôle des routines d’hygiène dans la stabilité du résultat.</p>
+          <a href="cafards.html">Lire l’article <span>→</span></a>
+        </article>
+
+        <article class="blog-card blog-fade-in" data-cat="desinsectisation" data-keywords="frelons guêpes nid danger urgence">
+          <div class="blog-card-meta"><span class="blog-chip">Guêpes / Frelons</span><span class="blog-chip">Urgence</span></div>
+          <h3>Guêpes et frelons : sécuriser la zone avant passage</h3>
+          <p>Les erreurs qui augmentent le risque et les consignes indispensables avant destruction de nid.</p>
+          <a href="frelons.html">Lire l’article <span>→</span></a>
+        </article>
+
+        <article class="blog-card blog-fade-in" data-cat="local deratisation" data-keywords="thiais val de marne 94320 rats souris">
+          <div class="blog-card-meta"><span class="blog-chip">Local 94</span><span class="blog-chip">Thiais</span></div>
+          <h3>Dératisation à Thiais : lecture quartier par quartier</h3>
+          <p>Approche locale sur les zones résidentielles et commerciales avec protocoles ajustés aux contraintes terrain.</p>
+          <a href="deratisation-thiais/">Lire l’article <span>→</span></a>
+        </article>
+
+        <article class="blog-card blog-fade-in" data-cat="local deratisation" data-keywords="rungis marché rongeurs activité professionnelle">
+          <div class="blog-card-meta"><span class="blog-chip">Local 94</span><span class="blog-chip">Rungis</span></div>
+          <h3>Dératisation à Rungis : enjeux logements et commerces</h3>
+          <p>Facteurs de prolifération, zones techniques sensibles et stratégie de suivi pour les sites à forte activité.</p>
+          <a href="deratisation-rungis/">Lire l’article <span>→</span></a>
+        </article>
+
+        <article class="blog-card blog-fade-in" data-cat="prevention" data-keywords="désinfection post nuisibles bactéries contamination">
+          <div class="blog-card-meta"><span class="blog-chip">Hygiène</span><span class="blog-chip">Prévention</span></div>
+          <h3>Désinfection après nuisibles : quoi traiter vraiment ?</h3>
+          <p>Surfaces prioritaires, niveaux de risque et logique d’assainissement pour restaurer un environnement sain.</p>
+          <a href="desinfection.html">Lire l’article <span>→</span></a>
+        </article>
+
+        <article class="blog-card blog-fade-in" data-cat="desinsectisation" data-keywords="acariens allergie air intérieur traitement">
+          <div class="blog-card-meta"><span class="blog-chip">Acariens</span><span class="blog-chip">Santé</span></div>
+          <h3>Acariens et air intérieur : limiter les irritations</h3>
+          <p>Mesures pratiques sur l’humidité, les textiles et les zones à risque pour réduire l’exposition quotidienne.</p>
+          <a href="acariens.html">Lire l’article <span>→</span></a>
+        </article>
+      </div>
+      <div class="blog-empty" id="blog-empty">Aucun article ne correspond à votre recherche. Essayez un mot-clé plus large.</div>
+    </section>
+
+    <section class="blog-cta blog-fade-in">
+      <div>
+        <h2>Besoin d’un avis expert rapidement ?</h2>
+        <p>Expliquez votre situation et obtenez une orientation claire : niveau d’urgence, protocole recommandé et prochaines étapes adaptées à votre logement ou local professionnel.</p>
+      </div>
+      <div class="blog-cta-actions">
+        <a class="a-call" href="tel:0744296897">Appeler maintenant</a>
+        <a class="a-devis" href="devis.html">Demande de devis</a>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    (function(){
+      var cards=[].slice.call(document.querySelectorAll('.blog-card'));
+      var tabs=[].slice.call(document.querySelectorAll('.blog-tab'));
+      var search=document.getElementById('blog-search-input');
+      var empty=document.getElementById('blog-empty');
+      var currentFilter='all';
+
+      function norm(str){ return (str||'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').trim(); }
+
+      function applyFilter(){
+        var q=norm(search ? search.value : '');
+        var shown=0;
+
+        cards.forEach(function(card){
+          var cat=(card.getAttribute('data-cat')||'').split(/\s+/);
+          var text=norm(card.textContent+' '+(card.getAttribute('data-keywords')||''));
+          var passCat=(currentFilter==='all' || cat.indexOf(currentFilter)!==-1);
+          var passSearch=(q==='' || text.indexOf(q)!==-1);
+          var visible=passCat && passSearch;
+          card.style.display=visible ? '' : 'none';
+          if(visible){ shown++; }
+        });
+
+        empty.style.display=shown===0 ? 'block' : 'none';
+      }
+
+      tabs.forEach(function(tab){
+        tab.addEventListener('click',function(){
+          tabs.forEach(function(t){t.classList.remove('is-active');});
+          tab.classList.add('is-active');
+          currentFilter=tab.getAttribute('data-filter') || 'all';
+          applyFilter();
+        });
+      });
+
+      if(search){
+        search.addEventListener('input',applyFilter);
+      }
+
+      var revealTargets=[].slice.call(document.querySelectorAll('.blog-fade-in'));
+      if('IntersectionObserver' in window){
+        var observer=new IntersectionObserver(function(entries){
+          entries.forEach(function(entry){
+            if(entry.isIntersecting){
+              entry.target.classList.add('is-visible');
+              observer.unobserve(entry.target);
+            }
+          });
+        },{threshold:0.12,rootMargin:'0px 0px -8% 0px'});
+        revealTargets.forEach(function(el){observer.observe(el);});
+      }else{
+        revealTargets.forEach(function(el){el.classList.add('is-visible');});
+      }
+
+      applyFilter();
+    })();
+  </script>
+</body>
+</html>
