@@ -697,6 +697,29 @@
     }
   }
 
+  function mobileMenuItems(prefix){
+    return [
+      {href:'index.html', label:'ACCUEIL'},
+      {href:'punaises.html', label:'PUNAISE DE LIT'},
+      {href:'cafards.html', label:'CAFARDS'},
+      {href:'acariens.html', label:'ACARIENS'},
+      {href:'xylophage.html', label:'XYLOPHAGE (INSECTES DU BOIS)'},
+      {href:'mouches.html', label:'MOUCHES'},
+      {href:'fourmis.html', label:'FOURMIS'},
+      {href:'deratisation.html', label:'DÉRATISATION (RATS / SOURIS)'},
+      {href:'depigeonnage.html', label:'DÉPIGEONNAGE'},
+      {href:'frelons.html', label:'FRELON'},
+      {href:'diogene.html', label:'SYNDROME DIOGÈNE'},
+      {href:'chenilles.html', label:'CHENILLE PROCESSIONNAIRE'},
+      {href:'guepes.html', label:'GUÊPE'},
+      {href:'contact.html', label:'CONTACTEZ-NOUS'},
+      {href:'tarifs.html', label:'TARIFS'},
+      {href:'blog.html', label:'BLOG'}
+    ].map(function(item){
+      return '<li><a href="'+prefix+item.href+'">'+item.label+'</a></li>';
+    }).join('');
+  }
+
   function initMobileMenu(){
     var header=document.querySelector('header');
     var nav=document.querySelector('header .main-nav');
@@ -764,24 +787,7 @@
     if(!mobileList){
       mobileList=document.createElement('ul');
       mobileList.className='mobile-nav-list';
-      mobileList.innerHTML=[
-        '<li><a href=\"index.html\">ACCUEIL</a></li>',
-        '<li><a href=\"punaises.html\">PUNAISE DE LIT</a></li>',
-        '<li><a href=\"cafards.html\">CAFARDS</a></li>',
-        '<li><a href=\"acariens.html\">ACARIENS</a></li>',
-        '<li><a href=\"xylophage.html\">XYLOPHAGE (INSECTES DU BOIS)</a></li>',
-        '<li><a href=\"mouches.html\">MOUCHES</a></li>',
-        '<li><a href=\"fourmis.html\">FOURMIS</a></li>',
-        '<li><a href=\"deratisation.html\">DÉRATISATION (RATS / SOURIS)</a></li>',
-        '<li><a href=\"depigeonnage.html\">DÉPIGEONNAGE</a></li>',
-        '<li><a href=\"frelons.html\">FRELON</a></li>',
-        '<li><a href=\"diogene.html\">SYNDROME DIOGÈNE</a></li>',
-        '<li><a href=\"chenilles.html\">CHENILLE PROCESSIONNAIRE</a></li>',
-        '<li><a href=\"guepes.html\">GUÊPE</a></li>',
-        '<li><a href=\"contact.html\">CONTACTEZ-NOUS</a></li>',
-        '<li><a href=\"tarifs.html\">TARIFS</a></li>',
-        '<li><a href=\"blog.html\">BLOG</a></li>'
-      ].join('');
+      mobileList.innerHTML=mobileMenuItems(rootPrefix());
       nav.appendChild(mobileList);
     }
 
@@ -817,24 +823,7 @@
   }
 
   function mobileMenuListHTML(){
-    return [
-      '<li><a href="index.html">ACCUEIL</a></li>',
-      '<li><a href="punaises.html">PUNAISE DE LIT</a></li>',
-      '<li><a href="cafards.html">CAFARDS</a></li>',
-      '<li><a href="acariens.html">ACARIENS</a></li>',
-      '<li><a href="xylophage.html">XYLOPHAGE (INSECTES DU BOIS)</a></li>',
-      '<li><a href="mouches.html">MOUCHES</a></li>',
-      '<li><a href="fourmis.html">FOURMIS</a></li>',
-      '<li><a href="deratisation.html">DÉRATISATION (RATS / SOURIS)</a></li>',
-      '<li><a href="depigeonnage.html">DÉPIGEONNAGE</a></li>',
-      '<li><a href="frelons.html">FRELON</a></li>',
-      '<li><a href="diogene.html">SYNDROME DIOGÈNE</a></li>',
-      '<li><a href="chenilles.html">CHENILLE PROCESSIONNAIRE</a></li>',
-      '<li><a href="guepes.html">GUÊPE</a></li>',
-      '<li><a href="contact.html">CONTACTEZ-NOUS</a></li>',
-      '<li><a href="tarifs.html">TARIFS</a></li>',
-      '<li><a href="blog.html">BLOG</a></li>'
-    ].join('');
+    return mobileMenuItems(rootPrefix());
   }
 
   function ensureMobileMenuFallback(){
@@ -911,6 +900,8 @@
       mobileList.className='mobile-nav-list';
       mobileList.innerHTML=mobileMenuListHTML();
       nav.appendChild(mobileList);
+    }else{
+      mobileList.innerHTML=mobileMenuListHTML();
     }
     var closeHome=nav.querySelector('.mobile-close-home');
     if(!closeHome){
