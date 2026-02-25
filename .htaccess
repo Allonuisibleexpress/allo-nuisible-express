@@ -1,5 +1,9 @@
 RewriteEngine On
 
+# Correct MIME types for favicon/webmanifest assets
+AddType application/manifest+json .webmanifest
+AddType image/svg+xml .svg
+
 # Remove legacy /gitlive/ prefix from public URLs (works even in subdir context)
 RewriteCond %{REQUEST_URI} ^/gitlive/?$ [NC]
 RewriteRule ^ / [R=301,L]
