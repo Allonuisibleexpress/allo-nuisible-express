@@ -340,6 +340,11 @@ header .main-nav .quote-btn:hover .hover-text{
     visibility:visible !important;
     pointer-events:auto !important;
   }
+  body.mobile-nav-open header .logo-link,
+  body.mobile-nav-open header .logo{
+    display:none !important;
+    visibility:hidden !important;
+  }
   header .main-nav:before{
     content:none !important;
     display:none !important;
