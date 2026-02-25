@@ -443,12 +443,18 @@ header .main-nav .quote-btn:hover .hover-text{
   header .mobile-nav-list{
     width:min(290px,88vw) !important;
     gap:clamp(1px, .35vh, 4px) !important;
-    min-height:calc(100dvh - 92px) !important;
+    min-height:auto !important;
+    padding-bottom:calc(22px + env(safe-area-inset-bottom, 0px)) !important;
+    transform:translateY(-10px) !important;
   }
   header .mobile-nav-list a{
     font-size:clamp(11px, 3.6vw, 15px) !important;
     padding:0 !important;
     line-height:1.08 !important;
+  }
+  body.mobile-nav-open header .main-nav{
+    overflow-y:auto !important;
+    justify-content:flex-start !important;
   }
 }
 
