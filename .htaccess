@@ -7,8 +7,5 @@ RewriteRule ^ / [R=301,L]
 RewriteCond %{REQUEST_URI} ^/gitlive/(.+)$ [NC]
 RewriteRule ^ /%1 [R=301,L]
 
-# Always serve dynamic sitemap at /sitemap.xml
-RewriteRule ^sitemap\.xml$ sitemap.php [L]
-
 # Always serve dynamic SEO local structure at /seo-local-deratisation-94.json
 RewriteRule ^seo-local-deratisation-94\.json$ seo-local-deratisation-94.php [L]
