@@ -316,8 +316,8 @@ header .main-nav .quote-btn:hover .hover-text{
     height:100dvh !important;
     min-height:100dvh !important;
     max-height:100dvh !important;
-    padding:6px 10px calc(8px + env(safe-area-inset-bottom, 0px)) !important;
-    overflow-y:hidden !important;
+    padding:6px 10px calc(18px + env(safe-area-inset-bottom, 0px)) !important;
+    overflow-y:auto !important;
     overflow-x:hidden !important;
     -webkit-overflow-scrolling:touch !important;
     display:flex !important;
@@ -384,13 +384,14 @@ header .main-nav .quote-btn:hover .hover-text{
     margin:0 auto !important;
     padding:0 !important;
     display:grid !important;
-    gap:clamp(2px, .45vh, 6px) !important;
+    gap:clamp(6px, 1vh, 14px) !important;
     width:min(340px,92vw) !important;
     justify-items:stretch !important;
     overflow:visible !important;
-    padding-bottom:calc(4px + env(safe-area-inset-bottom, 0px)) !important;
-    min-height:calc(100dvh - 96px) !important;
-    justify-content:space-evenly !important;
+    padding-top:2px !important;
+    padding-bottom:calc(72px + env(safe-area-inset-bottom, 0px)) !important;
+    min-height:auto !important;
+    justify-content:flex-start !important;
   }
   header .mobile-nav-list li{
     opacity:0;
@@ -442,10 +443,10 @@ header .main-nav .quote-btn:hover .hover-text{
   header .main-nav:before{height:144px !important;margin:0 auto 2px !important;width:min(300px,86vw) !important;background-size:contain !important;background-position:center center !important;background-repeat:no-repeat !important}
   header .mobile-nav-list{
     width:min(290px,88vw) !important;
-    gap:clamp(1px, .35vh, 4px) !important;
+    gap:clamp(5px, .9vh, 10px) !important;
     min-height:auto !important;
     padding-bottom:calc(22px + env(safe-area-inset-bottom, 0px)) !important;
-    transform:translateY(-10px) !important;
+    transform:translateY(-4px) !important;
   }
   header .mobile-nav-list a{
     font-size:clamp(11px, 3.6vw, 15px) !important;
