@@ -27,8 +27,90 @@
 <link rel="stylesheet" href="../sticky-call.css?v=20260229">
   <link rel="stylesheet" href="../site-global.css?v=20260326i">
   <script src="../site-global.js?v=20260402a" defer></script>
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Comment se débarrasser des rats à Fresnes ?","acceptedAnswer":{"@type":"Answer","text":"La solution passe par un diagnostic complet, appâts sécurisés, pièges et traitement des points d'entrée."}},{"@type":"Question","name":"Intervention urgente rats à Fresnes : quel délai ?","acceptedAnswer":{"@type":"Answer","text":"Un premier passage peut être organisé rapidement selon le niveau de risque et l'étendue de l'infestation."}},{"@type":"Question","name":"Pourquoi les rats circulent entre caves et commerces à Fresnes ?","acceptedAnswer":{"@type":"Answer","text":"Les sous-sols connectés, les déchets accessibles et les passages techniques non colmatés facilitent la circulation."}},{"@type":"Question","name":"Quel prix pour un traitement rats à Fresnes ?","acceptedAnswer":{"@type":"Answer","text":"Le prix dépend de la surface, des accès, du niveau d'activité et du nombre de contrôles nécessaires."}}]}</script>
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"ALLO NUISIBLE EXPRESS","url":"https://allonuisibleexpress.fr","telephone":"+33744296897","areaServed":"Fresnes","hasOfferCatalog":{"@type":"OfferCatalog","name":"Services anti nuisibles","itemListElement":[{"@type":"Service","name":"Traitement professionnel rats","areaServed":"Fresnes"}]}}</script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "LocalBusiness",
+        "@id": "https://allonuisibleexpress.fr/#business",
+        "name": "Allo Nuisible Express",
+        "url": "https://allonuisibleexpress.fr/",
+        "telephone": "+33744296897",
+        "email": "allonuisibleexpress@gmail.com",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "3 Rue de la résistance",
+          "postalCode": "94320",
+          "addressLocality": "Thiais",
+          "addressCountry": "FR"
+        },
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+            "opens": "00:00",
+            "closes": "23:59"
+          }
+        ],
+        "areaServed": {"@type": "City", "name": "Fresnes"},
+        "sameAs": ["https://wa.me/33744296897"],
+        "contactPoint": [
+          {
+            "@type": "ContactPoint",
+            "contactType": "customer service",
+            "telephone": "+33744296897",
+            "url": "https://wa.me/33744296897",
+            "availableLanguage": ["fr"]
+          }
+        ]
+      },
+      {
+        "@type": "OfferCatalog",
+        "@id": "https://allonuisibleexpress.fr/rats-fresnes/#catalog",
+        "name": "Catalogue services nuisibles",
+        "itemListElement": [
+          {"@id": "https://allonuisibleexpress.fr/rats-fresnes/#offer-rats-ville"}
+        ]
+      },
+      {
+        "@type": "Service",
+        "@id": "https://allonuisibleexpress.fr/rats-fresnes/#service-rats",
+        "name": "Traitement rats",
+        "serviceType": "Dératisation ciblée et sécurisation des points d'entrée",
+        "provider": {"@id": "https://allonuisibleexpress.fr/#business"},
+        "areaServed": {"@type": "City", "name": "Fresnes"}
+      },
+      {
+        "@type": "Offer",
+        "@id": "https://allonuisibleexpress.fr/rats-fresnes/#offer-rats-ville",
+        "name": "Traitement rats à Fresnes",
+        "url": "https://allonuisibleexpress.fr/rats-fresnes/",
+        "itemOffered": {"@id": "https://allonuisibleexpress.fr/rats-fresnes/#service-rats"},
+        "areaServed": {"@type": "City", "name": "Fresnes"}
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://allonuisibleexpress.fr/rats-fresnes/#faq",
+        "mainEntity": [
+  {"@type":"Question","name":"Comment se débarrasser des rats à Fresnes ?","acceptedAnswer":{"@type":"Answer","text":"Un diagnostic local, un traitement ciblé et un suivi permettent de stopper durablement l'activité des rats à Fresnes."}},
+  {"@type":"Question","name":"Intervention urgente rats à Fresnes : quel délai ?","acceptedAnswer":{"@type":"Answer","text":"Le premier passage est organisé rapidement selon l'urgence et le niveau d'infestation constaté."}},
+  {"@type":"Question","name":"Pourquoi les rats reviennent-ils à Fresnes ?","acceptedAnswer":{"@type":"Answer","text":"Les retours sont liés aux accès non traités, aux zones humides et aux ressources alimentaires disponibles."}},
+  {"@type":"Question","name":"Quel prix pour un traitement rats à Fresnes ?","acceptedAnswer":{"@type":"Answer","text":"Le prix dépend de la surface, du niveau d'activité et du nombre de passages nécessaires."}}
+]
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://allonuisibleexpress.fr/rats-fresnes/#webpage",
+        "url": "https://allonuisibleexpress.fr/rats-fresnes/",
+        "name": "Rats à Fresnes | Intervention 24h/24 – Devis Gratuit",
+        "description": "Rats à Fresnes : intervention urgente 24h/24, traitement professionnel en immeubles, pavillons, caves, restaurants et commerces.",
+        "about": {"@id": "https://allonuisibleexpress.fr/rats-fresnes/#service-rats"},
+        "mainEntity": {"@id": "https://allonuisibleexpress.fr/rats-fresnes/#faq"}
+      }
+    ]
+  }
+  </script>
 <style>
 .hero-local-seo{position:relative;min-height:clamp(240px,38vw,360px);display:flex;align-items:flex-end;padding:clamp(20px,4vw,38px);border-radius:14px;overflow:hidden;margin:0 0 18px;background:linear-gradient(135deg,rgba(10,10,10,.72),rgba(20,20,20,.62)),url('https://upload.wikimedia.org/wikipedia/commons/d/d3/H%C3%B4tel_ville_Fresnes_Val_Marne_7.jpg') center/cover no-repeat}
 .hero-local-seo h1,.hero-local-seo h2{margin:0;color:#fff !important;text-shadow:0 3px 14px rgba(0,0,0,.72);line-height:1.15}

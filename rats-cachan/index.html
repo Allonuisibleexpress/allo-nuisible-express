@@ -30,30 +30,85 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {"@type":"Question","name":"Comment se débarrasser des rats à Cachan ?","acceptedAnswer":{"@type":"Answer","text":"Une dératisation locale avec diagnostic, appâts sécurisés, pièges et colmatage des accès est la méthode la plus fiable pour stopper une infestation à Cachan."}},
-      {"@type":"Question","name":"Quel délai pour une intervention urgente rats à Cachan ?","acceptedAnswer":{"@type":"Answer","text":"Nous organisons une intervention urgente selon le niveau d'infestation, avec un premier passage rapide puis un suivi de contrôle."}},
-      {"@type":"Question","name":"Pourquoi les rats reviennent-ils dans les caves d'immeubles à Cachan ?","acceptedAnswer":{"@type":"Answer","text":"Les retours sont liés aux égouts, déchets, sous-sols humides et points d'entrée non traités. Le traitement doit inclure la prévention structurelle."}},
-      {"@type":"Question","name":"Quel prix pour un traitement rats à Cachan ?","acceptedAnswer":{"@type":"Answer","text":"Le prix dépend de la surface, des accès, du niveau d'infestation et du nombre de passages. Un devis gratuit précise la solution adaptée."}}
+    "@graph": [
+      {
+        "@type": "LocalBusiness",
+        "@id": "https://allonuisibleexpress.fr/#business",
+        "name": "Allo Nuisible Express",
+        "url": "https://allonuisibleexpress.fr/",
+        "telephone": "+33744296897",
+        "email": "allonuisibleexpress@gmail.com",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "3 Rue de la résistance",
+          "postalCode": "94320",
+          "addressLocality": "Thiais",
+          "addressCountry": "FR"
+        },
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+            "opens": "00:00",
+            "closes": "23:59"
+          }
+        ],
+        "areaServed": {"@type": "City", "name": "Cachan"},
+        "sameAs": ["https://wa.me/33744296897"],
+        "contactPoint": [
+          {
+            "@type": "ContactPoint",
+            "contactType": "customer service",
+            "telephone": "+33744296897",
+            "url": "https://wa.me/33744296897",
+            "availableLanguage": ["fr"]
+          }
+        ]
+      },
+      {
+        "@type": "OfferCatalog",
+        "@id": "https://allonuisibleexpress.fr/rats-cachan/#catalog",
+        "name": "Catalogue services nuisibles",
+        "itemListElement": [
+          {"@id": "https://allonuisibleexpress.fr/rats-cachan/#offer-rats-ville"}
+        ]
+      },
+      {
+        "@type": "Service",
+        "@id": "https://allonuisibleexpress.fr/rats-cachan/#service-rats",
+        "name": "Traitement rats",
+        "serviceType": "Dératisation ciblée et sécurisation des points d'entrée",
+        "provider": {"@id": "https://allonuisibleexpress.fr/#business"},
+        "areaServed": {"@type": "City", "name": "Cachan"}
+      },
+      {
+        "@type": "Offer",
+        "@id": "https://allonuisibleexpress.fr/rats-cachan/#offer-rats-ville",
+        "name": "Traitement rats à Cachan",
+        "url": "https://allonuisibleexpress.fr/rats-cachan/",
+        "itemOffered": {"@id": "https://allonuisibleexpress.fr/rats-cachan/#service-rats"},
+        "areaServed": {"@type": "City", "name": "Cachan"}
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://allonuisibleexpress.fr/rats-cachan/#faq",
+        "mainEntity": [
+  {"@type":"Question","name":"Comment se débarrasser des rats à Cachan ?","acceptedAnswer":{"@type":"Answer","text":"Un diagnostic local, un traitement ciblé et un suivi permettent de stopper durablement l'activité des rats à Cachan."}},
+  {"@type":"Question","name":"Intervention urgente rats à Cachan : quel délai ?","acceptedAnswer":{"@type":"Answer","text":"Le premier passage est organisé rapidement selon l'urgence et le niveau d'infestation constaté."}},
+  {"@type":"Question","name":"Pourquoi les rats reviennent-ils à Cachan ?","acceptedAnswer":{"@type":"Answer","text":"Les retours sont liés aux accès non traités, aux zones humides et aux ressources alimentaires disponibles."}},
+  {"@type":"Question","name":"Quel prix pour un traitement rats à Cachan ?","acceptedAnswer":{"@type":"Answer","text":"Le prix dépend de la surface, du niveau d'activité et du nombre de passages nécessaires."}}
+]
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://allonuisibleexpress.fr/rats-cachan/#webpage",
+        "url": "https://allonuisibleexpress.fr/rats-cachan/",
+        "name": "Rats à Cachan | Intervention 24h/24 – Devis Gratuit",
+        "description": "Infestation de rats à Cachan : intervention urgente, devis gratuit, traitement professionnel 24h/24 pour immeubles, pavillons, commerces et copropriétés.",
+        "about": {"@id": "https://allonuisibleexpress.fr/rats-cachan/#service-rats"},
+        "mainEntity": {"@id": "https://allonuisibleexpress.fr/rats-cachan/#faq"}
+      }
     ]
-  }
-  </script>
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"LocalBusiness",
-    "name":"ALLO NUISIBLE EXPRESS",
-    "url":"https://allonuisibleexpress.fr",
-    "telephone":"+33744296897",
-    "areaServed":"Cachan",
-    "hasOfferCatalog":{
-      "@type":"OfferCatalog",
-      "name":"Services anti nuisibles",
-      "itemListElement":[
-        {"@type":"Service","name":"Traitement professionnel rats","areaServed":"Cachan"}
-      ]
-    }
   }
   </script>
 <style>
