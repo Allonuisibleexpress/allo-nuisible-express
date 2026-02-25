@@ -44,7 +44,7 @@
   }
 
   function shouldShowTimedCallPopup(){
-    return isHomePage() || isSeoLocalPage();
+    return isHomePage();
   }
 
   function processHTML(){
@@ -1080,7 +1080,7 @@
       if(timerId){window.clearTimeout(timerId);}
       timerId=window.setTimeout(function(){
         openModal();
-      },10000);
+      },20000);
     }
 
     scheduleOpen();
@@ -1126,7 +1126,7 @@
           window.__alloPopupDismissed=true;
         });
       }
-    },10000);
+    },20000);
   }
 
   function forceMobileMenuEmergency(){
