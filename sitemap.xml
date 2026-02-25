@@ -1,255 +1,67 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://allonuisibleexpress.fr/</loc>
-    <lastmod>2026-02-25T03:32:22Z</lastmod>
-  </url>
-  <url>
-    <loc>https://allonuisibleexpress.fr/acariens.html</loc>
-    <lastmod>2026-02-25T03:02:07Z</lastmod>
-  </url>
-  <url>
-    <loc>https://allonuisibleexpress.fr/araignees.html</loc>
-    <lastmod>2026-02-25T03:02:07Z</lastmod>
-  </url>
-  <url>
-    <loc>https://allonuisibleexpress.fr/blog.html</loc>
-    <lastmod>2026-02-25T03:02:07Z</lastmod>
-  </url>
-  <url>
-    <loc>https://allonuisibleexpress.fr/cafards-rungis.html</loc>
-    <lastmod>2026-02-25T03:02:07Z</lastmod>
-  </url>
-  <url>
-    <loc>https://allonuisibleexpress.fr/cafards-thiais.html</loc>
-    <lastmod>2026-02-25T03:02:07Z</lastmod>
-  </url>
-  <url>
-    <loc>https://allonuisibleexpress.fr/cafards.html</loc>
-    <lastmod>2026-02-25T03:02:07Z</lastmod>
-  </url>
-  <url>
-    <loc>https://allonuisibleexpress.fr/cgv-cgu.html</loc>
-    <lastmod>2026-02-25T03:02:07Z</lastmod>
-  </url>
-  <url>
-    <loc>https://allonuisibleexpress.fr/chenilles.html</loc>
-    <lastmod>2026-02-25T03:02:07Z</lastmod>
-  </url>
-  <url>
-    <loc>https://allonuisibleexpress.fr/contact.html</loc>
-    <lastmod>2026-02-25T03:02:07Z</lastmod>
-  </url>
-  <url>
-    <loc>https://allonuisibleexpress.fr/depigeonnage-rungis.html</loc>
-    <lastmod>2026-02-25T03:02:07Z</lastmod>
-  </url>
-  <url>
-    <loc>https://allonuisibleexpress.fr/depigeonnage-thiais.html</loc>
-    <lastmod>2026-02-25T03:02:07Z</lastmod>
-  </url>
-  <url>
-    <loc>https://allonuisibleexpress.fr/depigeonnage.html</loc>
-    <lastmod>2026-02-25T03:02:07Z</lastmod>
-  </url>
-  <url>
-    <loc>https://allonuisibleexpress.fr/deratisation-rungis.html</loc>
-    <lastmod>2026-02-25T03:02:07Z</lastmod>
-  </url>
-  <url>
-    <loc>https://allonuisibleexpress.fr/deratisation-thiais.html</loc>
-    <lastmod>2026-02-25T03:02:07Z</lastmod>
-  </url>
-  <url>
-    <loc>https://allonuisibleexpress.fr/deratisation.html</loc>
-    <lastmod>2026-02-25T03:02:07Z</lastmod>
-  </url>
-  <url>
-    <loc>https://allonuisibleexpress.fr/desinfection.html</loc>
-    <lastmod>2026-02-25T03:02:07Z</lastmod>
-  </url>
-  <url>
-    <loc>https://allonuisibleexpress.fr/desinsectisation.html</loc>
-    <lastmod>2026-02-25T03:02:07Z</lastmod>
-  </url>
-  <url>
-    <loc>https://allonuisibleexpress.fr/devis.html</loc>
-    <lastmod>2026-02-25T03:02:07Z</lastmod>
-  </url>
-  <url>
-    <loc>https://allonuisibleexpress.fr/diogene.html</loc>
-    <lastmod>2026-02-25T03:02:07Z</lastmod>
-  </url>
-  <url>
-    <loc>https://allonuisibleexpress.fr/fourmis.html</loc>
-    <lastmod>2026-02-25T03:02:07Z</lastmod>
-  </url>
-  <url>
-    <loc>https://allonuisibleexpress.fr/frelons-rungis.html</loc>
-    <lastmod>2026-02-25T03:02:07Z</lastmod>
-  </url>
-  <url>
-    <loc>https://allonuisibleexpress.fr/frelons-thiais.html</loc>
-    <lastmod>2026-02-25T03:02:07Z</lastmod>
-  </url>
-  <url>
-    <loc>https://allonuisibleexpress.fr/frelons.html</loc>
-    <lastmod>2026-02-25T03:02:07Z</lastmod>
-  </url>
-  <url>
-    <loc>https://allonuisibleexpress.fr/guepes-rungis.html</loc>
-    <lastmod>2026-02-25T03:02:07Z</lastmod>
-  </url>
-  <url>
-    <loc>https://allonuisibleexpress.fr/guepes-thiais.html</loc>
-    <lastmod>2026-02-25T03:02:07Z</lastmod>
-  </url>
-  <url>
-    <loc>https://allonuisibleexpress.fr/guepes.html</loc>
-    <lastmod>2026-02-25T03:02:07Z</lastmod>
-  </url>
-  <url>
-    <loc>https://allonuisibleexpress.fr/mentions-legales.html</loc>
-    <lastmod>2026-02-25T03:02:07Z</lastmod>
-  </url>
-  <url>
-    <loc>https://allonuisibleexpress.fr/mouches.html</loc>
-    <lastmod>2026-02-25T03:02:07Z</lastmod>
-  </url>
-  <url>
-    <loc>https://allonuisibleexpress.fr/nuisibles-rungis.html</loc>
-    <lastmod>2026-02-25T03:02:07Z</lastmod>
-  </url>
-  <url>
-    <loc>https://allonuisibleexpress.fr/nuisibles-thiais.html</loc>
-    <lastmod>2026-02-25T03:02:07Z</lastmod>
-  </url>
-  <url>
-    <loc>https://allonuisibleexpress.fr/politique-confidentialite.html</loc>
-    <lastmod>2026-02-25T03:02:07Z</lastmod>
-  </url>
-  <url>
-    <loc>https://allonuisibleexpress.fr/punaises-lit-rungis.html</loc>
-    <lastmod>2026-02-25T03:02:07Z</lastmod>
-  </url>
-  <url>
-    <loc>https://allonuisibleexpress.fr/punaises-lit-thiais.html</loc>
-    <lastmod>2026-02-25T03:02:07Z</lastmod>
-  </url>
-  <url>
-    <loc>https://allonuisibleexpress.fr/punaises.html</loc>
-    <lastmod>2026-02-25T03:02:07Z</lastmod>
-  </url>
-  <url>
-    <loc>https://allonuisibleexpress.fr/rats-rungis.html</loc>
-    <lastmod>2026-02-25T03:02:07Z</lastmod>
-  </url>
-  <url>
-    <loc>https://allonuisibleexpress.fr/rats-thiais.html</loc>
-    <lastmod>2026-02-25T03:02:07Z</lastmod>
-  </url>
-  <url>
-    <loc>https://allonuisibleexpress.fr/souris-rungis.html</loc>
-    <lastmod>2026-02-25T03:02:07Z</lastmod>
-  </url>
-  <url>
-    <loc>https://allonuisibleexpress.fr/souris-thiais.html</loc>
-    <lastmod>2026-02-25T03:02:07Z</lastmod>
-  </url>
-  <url>
-    <loc>https://allonuisibleexpress.fr/syndrome-diogene-rungis.html</loc>
-    <lastmod>2026-02-25T03:02:07Z</lastmod>
-  </url>
-  <url>
-    <loc>https://allonuisibleexpress.fr/syndrome-diogene-thiais.html</loc>
-    <lastmod>2026-02-25T03:02:07Z</lastmod>
-  </url>
-  <url>
-    <loc>https://allonuisibleexpress.fr/tarifs.html</loc>
-    <lastmod>2026-02-25T03:02:07Z</lastmod>
-  </url>
-  <url>
-    <loc>https://allonuisibleexpress.fr/xylophage.html</loc>
-    <lastmod>2026-02-25T03:02:07Z</lastmod>
-  </url>
-  <url>
-    <loc>https://allonuisibleexpress.fr/zones-nuisibles.html</loc>
-    <lastmod>2026-02-25T03:02:07Z</lastmod>
-  </url>
-  <url>
     <loc>https://allonuisibleexpress.fr/cafards-cachan/</loc>
-    <lastmod>2026-02-25T03:50:21Z</lastmod>
+    <lastmod>2026-02-25</lastmod>
   </url>
   <url>
     <loc>https://allonuisibleexpress.fr/cafards-fresnes/</loc>
-    <lastmod>2026-02-25T03:50:21Z</lastmod>
+    <lastmod>2026-02-25</lastmod>
   </url>
   <url>
     <loc>https://allonuisibleexpress.fr/cafards-lhay-les-roses/</loc>
-    <lastmod>2026-02-25T03:50:21Z</lastmod>
+    <lastmod>2026-02-25</lastmod>
   </url>
   <url>
     <loc>https://allonuisibleexpress.fr/deratisation-chevilly-larue/</loc>
-    <lastmod>2026-02-25T03:51:19Z</lastmod>
+    <lastmod>2026-02-25</lastmod>
   </url>
   <url>
     <loc>https://allonuisibleexpress.fr/deratisation-choisy-le-roi/</loc>
-    <lastmod>2026-02-25T03:51:19Z</lastmod>
+    <lastmod>2026-02-25</lastmod>
   </url>
   <url>
     <loc>https://allonuisibleexpress.fr/deratisation-orly/</loc>
-    <lastmod>2026-02-25T03:51:19Z</lastmod>
+    <lastmod>2026-02-25</lastmod>
   </url>
   <url>
     <loc>https://allonuisibleexpress.fr/deratisation-rungis/</loc>
-    <lastmod>2026-02-25T03:51:19Z</lastmod>
+    <lastmod>2026-02-25</lastmod>
   </url>
   <url>
     <loc>https://allonuisibleexpress.fr/deratisation-thiais/</loc>
-    <lastmod>2026-02-25T03:51:19Z</lastmod>
+    <lastmod>2026-02-25</lastmod>
   </url>
   <url>
     <loc>https://allonuisibleexpress.fr/deratisation-villejuif/</loc>
-    <lastmod>2026-02-25T03:51:19Z</lastmod>
+    <lastmod>2026-02-25</lastmod>
   </url>
   <url>
     <loc>https://allonuisibleexpress.fr/deratisation-vitry-sur-seine/</loc>
-    <lastmod>2026-02-25T03:51:19Z</lastmod>
+    <lastmod>2026-02-25</lastmod>
   </url>
   <url>
     <loc>https://allonuisibleexpress.fr/punaises-de-lit-cachan/</loc>
-    <lastmod>2026-02-25T03:50:21Z</lastmod>
+    <lastmod>2026-02-25</lastmod>
   </url>
   <url>
     <loc>https://allonuisibleexpress.fr/punaises-de-lit-fresnes/</loc>
-    <lastmod>2026-02-25T03:50:21Z</lastmod>
+    <lastmod>2026-02-25</lastmod>
   </url>
   <url>
     <loc>https://allonuisibleexpress.fr/punaises-de-lit-lhay-les-roses/</loc>
-    <lastmod>2026-02-25T03:50:21Z</lastmod>
+    <lastmod>2026-02-25</lastmod>
   </url>
   <url>
     <loc>https://allonuisibleexpress.fr/rats-cachan/</loc>
-    <lastmod>2026-02-25T03:50:21Z</lastmod>
+    <lastmod>2026-02-25</lastmod>
   </url>
   <url>
     <loc>https://allonuisibleexpress.fr/rats-fresnes/</loc>
-    <lastmod>2026-02-25T03:50:21Z</lastmod>
+    <lastmod>2026-02-25</lastmod>
   </url>
   <url>
     <loc>https://allonuisibleexpress.fr/rats-lhay-les-roses/</loc>
-    <lastmod>2026-02-25T03:50:21Z</lastmod>
-  </url>
-  <url>
-    <loc>https://allonuisibleexpress.fr/souris-cachan/</loc>
-    <lastmod>2026-02-25T03:50:21Z</lastmod>
-  </url>
-  <url>
-    <loc>https://allonuisibleexpress.fr/souris-fresnes/</loc>
-    <lastmod>2026-02-25T03:50:21Z</lastmod>
-  </url>
-  <url>
-    <loc>https://allonuisibleexpress.fr/souris-lhay-les-roses/</loc>
-    <lastmod>2026-02-25T03:50:21Z</lastmod>
+    <lastmod>2026-02-25</lastmod>
   </url>
 </urlset>
