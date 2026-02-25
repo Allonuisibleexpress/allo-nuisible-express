@@ -1,5 +1,12 @@
 RewriteEngine On
 
+# Remove legacy /gitlive/ prefix from public URLs
+RewriteCond %{THE_REQUEST} \s/+gitlive/([^\s?]*) [NC]
+RewriteRule ^gitlive/(.*)$ /$1 [R=301,L]
+
+# Handle exact /gitlive path
+RewriteRule ^gitlive/?$ / [R=301,L]
+
 # Always serve dynamic sitemap at /sitemap.xml
 RewriteRule ^sitemap\.xml$ sitemap.php [L]
 
