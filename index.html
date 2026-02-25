@@ -2166,56 +2166,5 @@ if(!isActive){item.classList.add("active")}
     <span class="sticky-default">APPELER MAINTENANT</span><span class="sticky-hover-number">07 44 29 68 97</span>
   </a>
 </div>
-<script>
-(function(){
-  window.__alloPopupDismissed=false;
-  var path=(window.location.pathname||"").toLowerCase();
-  var isHome=(path==="/"||path.endsWith("/index.html")||path.endsWith("/allo-nuisible-express/"));
-  if(!isHome){return;}
-  function openPopupFallback(){
-    if(window.__alloPopupDismissed){return;}
-    var overlay=document.querySelector('[data-timed-call-overlay]');
-    if(!overlay){
-      var host=document.createElement('div');
-      host.innerHTML='<div class="timed-call-overlay" data-timed-call-overlay aria-hidden="true"><div class="timed-call-modal" role="dialog" aria-modal="true" aria-labelledby="timed-call-title-ios"><button class="timed-call-close" type="button" aria-label="Fermer">×</button><div class="timed-call-badge"><img class="timed-call-logo" src="logo.png" alt="Allo Nuisible Express"></div><h3 id="timed-call-title-ios">Présence de nuisibles ? Allo Nuisible Express intervient sous une heure maximum dans toute l\'Île-de-France.</h3><p>Devis et déplacement gratuit, disponible 24h/24 et 7j/7 (de nuit, les week-end et les jours fériés)</p><a class="timed-call-action" href="tel:0744296897" aria-label="Appeler le 07 44 29 68 97">📞 07 44 29 68 97</a></div></div>';
-      overlay=host.firstElementChild;
-      if(overlay){document.body.appendChild(overlay);}
-    }
-    if(!overlay){return;}
-    overlay.classList.add('is-open');
-    overlay.setAttribute('aria-hidden','false');
-    overlay.style.setProperty('display','flex','important');
-    overlay.style.setProperty('opacity','1','important');
-    overlay.style.setProperty('visibility','visible','important');
-    overlay.style.setProperty('pointer-events','auto','important');
-    overlay.style.setProperty('z-index','25000','important');
-    document.body.classList.add('timed-call-open');
-    var closeBtn=overlay.querySelector('.timed-call-close');
-    if(closeBtn && !closeBtn.dataset.iosBound){
-      closeBtn.dataset.iosBound='1';
-      var closeFn=function(ev){
-        if(ev){ev.preventDefault(); ev.stopPropagation();}
-        overlay.classList.remove('is-open');
-        overlay.setAttribute('aria-hidden','true');
-        document.body.classList.remove('timed-call-open');
-        overlay.style.removeProperty('opacity');
-        overlay.style.removeProperty('visibility');
-        overlay.style.removeProperty('pointer-events');
-        overlay.style.removeProperty('display');
-        overlay.style.removeProperty('z-index');
-        window.__alloPopupDismissed=true;
-      };
-      closeBtn.addEventListener('click',closeFn);
-      closeBtn.addEventListener('touchend',closeFn,{passive:false});
-      closeBtn.addEventListener('pointerup',closeFn);
-    }
-  }
-  setTimeout(function(){
-    if(window.__alloPopupDismissed){return;}
-    var isOpen=document.querySelector('[data-timed-call-overlay].is-open');
-    if(!isOpen){openPopupFallback();}
-  },20000);
-})();
-</script>
 </body>
 </html>
