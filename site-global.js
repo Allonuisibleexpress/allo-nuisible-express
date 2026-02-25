@@ -38,6 +38,15 @@
     return currentPage()==='index.html';
   }
 
+  function isSeoLocalPage(){
+    var path=normalizedPathname().toLowerCase();
+    return /\/(?:deratisation|rats|cafards|punaises-de-lit|souris)-[^/]+\/?$/.test(path);
+  }
+
+  function shouldShowTimedCallPopup(){
+    return isHomePage() || isSeoLocalPage();
+  }
+
   function processHTML(){
     return ''+
     '<div data-global-process>'+
@@ -974,11 +983,12 @@
   }
 
   function timedCallModalHTML(){
+    var prefix=rootPrefix();
     return ''+
     '<div class="timed-call-overlay" data-timed-call-overlay aria-hidden="true">'+
     '  <div class="timed-call-modal" role="dialog" aria-modal="true" aria-labelledby="timed-call-title">'+
     '    <button class="timed-call-close" type="button" aria-label="Fermer">×</button>'+
-    '    <div class="timed-call-badge"><img class="timed-call-logo" src="logo.png" alt="Allo Nuisible Express"></div>'+
+    '    <div class="timed-call-badge"><img class="timed-call-logo" src="'+prefix+'logo.png" alt="Allo Nuisible Express"></div>'+
     '    <h3 id="timed-call-title">Présence de nuisibles ? Allo Nuisible Express intervient sous une heure maximum dans toute l\'Île-de-France.</h3>'+
     '    <p>Devis et déplacement gratuit, disponible 24h/24 et 7j/7 (de nuit, les week-end et les jours fériés)</p>'+
     '    <a class="timed-call-action" href="tel:0744296897" aria-label="Appeler le 07 44 29 68 97">📞 07 44 29 68 97</a>'+
@@ -987,7 +997,7 @@
   }
 
   function initTimedCallModal(){
-    if(!isHomePage()){return;}
+    if(!shouldShowTimedCallPopup()){return;}
     if(window.__alloPopupDismissed){return;}
     var overlay=document.querySelector('[data-timed-call-overlay]');
     if(!overlay){
@@ -1079,12 +1089,12 @@
   }
 
   function forceTimedPopupEmergency(){
-    if(!isHomePage()){return;}
+    if(!shouldShowTimedCallPopup()){return;}
     if(window.__alloPopupDismissed){return;}
     if(window.__alloEmergencyPopupBound){return;}
     window.__alloEmergencyPopupBound=true;
     window.setTimeout(function(){
-      if(!isHomePage() || window.__alloPopupDismissed){return;}
+      if(!shouldShowTimedCallPopup() || window.__alloPopupDismissed){return;}
       var overlay=document.querySelector('[data-timed-call-overlay]');
       if(!overlay){
         var host=document.createElement('div');
@@ -1135,7 +1145,7 @@
   }
 
   function cleanupTimedModalNonHome(){
-    if(isHomePage()){return;}
+    if(shouldShowTimedCallPopup()){return;}
     document.querySelectorAll('[data-timed-call-overlay]').forEach(function(node){ node.remove(); });
     document.body.classList.remove('timed-call-open');
   }
