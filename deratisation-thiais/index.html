@@ -30,23 +30,75 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "Allo Nuisible Express",
-    "url": "https://allonuisibleexpress.fr",
-    "telephone": "+33744296897",
-    "areaServed": "Thiais",
-    "hasOfferCatalog": {
-      "@type": "OfferCatalog",
-      "name": "Services anti nuisibles",
-      "itemListElement": [
-        {
-          "@type": "Service",
-          "name": "Dératisation à Thiais",
-          "areaServed": "Thiais",
-          "url": "https://allonuisibleexpress.fr/deratisation-thiais/"
-        }
-      ]
-    }
+    "@graph": [
+      {
+        "@type": "LocalBusiness",
+        "@id": "https://allonuisibleexpress.fr/#business",
+        "name": "Allo Nuisible Express",
+        "url": "https://allonuisibleexpress.fr/",
+        "telephone": "+33744296897",
+        "email": "allonuisibleexpress@gmail.com",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "3 Rue de la résistance",
+          "postalCode": "94320",
+          "addressLocality": "Thiais",
+          "addressCountry": "FR"
+        },
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+            "opens": "00:00",
+            "closes": "23:59"
+          }
+        ],
+        "areaServed": {"@type": "City", "name": "Thiais"},
+        "sameAs": ["https://wa.me/33744296897"],
+        "contactPoint": [
+          {
+            "@type": "ContactPoint",
+            "contactType": "customer service",
+            "telephone": "+33744296897",
+            "url": "https://wa.me/33744296897",
+            "availableLanguage": ["fr"]
+          }
+        ]
+      },
+      {
+        "@type": "OfferCatalog",
+        "@id": "https://allonuisibleexpress.fr/deratisation-thiais/#catalog",
+        "name": "Catalogue services nuisibles",
+        "itemListElement": [
+          {"@id": "https://allonuisibleexpress.fr/deratisation-thiais/#offer-deratisation-ville"}
+        ]
+      },
+      {
+        "@type": "Service",
+        "@id": "https://allonuisibleexpress.fr/deratisation-thiais/#service-deratisation",
+        "name": "Dératisation préventive",
+        "serviceType": "Installation de postes d'appâtage / monitoring rongeurs",
+        "alternateName": "Balisage dératisation",
+        "provider": {"@id": "https://allonuisibleexpress.fr/#business"},
+        "areaServed": {"@type": "City", "name": "Thiais"}
+      },
+      {
+        "@type": "Offer",
+        "@id": "https://allonuisibleexpress.fr/deratisation-thiais/#offer-deratisation-ville",
+        "name": "Dératisation préventive à Thiais",
+        "url": "https://allonuisibleexpress.fr/deratisation-thiais/",
+        "itemOffered": {"@id": "https://allonuisibleexpress.fr/deratisation-thiais/#service-deratisation"},
+        "areaServed": {"@type": "City", "name": "Thiais"}
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://allonuisibleexpress.fr/deratisation-thiais/#webpage",
+        "url": "https://allonuisibleexpress.fr/deratisation-thiais/",
+        "name": "Dératisation Thiais (94320) | Entreprise de dératisation locale",
+        "description": "Dératisation à Thiais (94320) pour appartements, commerces, restaurants et copropriétés. Intervention sous 1 heure maximum, 24h/24 et 7j/7 (de nuit, week-end et jours fériés), traitement anti-rats et anti-souris, suivi préventif.",
+        "about": {"@id": "https://allonuisibleexpress.fr/deratisation-thiais/#service-deratisation"}
+      }
+    ]
   }
   </script>
 <style>

@@ -30,32 +30,101 @@
 <meta name="twitter:description" content="Intervention sous une heure maximum en Île-de-France. Devis gratuit en dératisation et désinsectisation.">
 <meta name="twitter:image" content="https://allonuisibleexpress.fr/logo.png">
 <script defer async src='https://cdn.trustindex.io/loader-cert.js?93bb7c2653e55760c2662e9304b'></script>
-
 <script type="application/ld+json">
 {
-"@context":"https://schema.org",
-"@type":"ProfessionalService",
-"name":"Allo Nuisible Express",
-"telephone":"0744296897",
-"email":"allonuisibleexpress@gmail.com",
-"address":{
-"@type":"PostalAddress",
-"streetAddress":"3 Rue de la résistance",
-"postalCode":"94320",
-"addressLocality":"Thiais",
-"addressCountry":"FR"
-},
-"openingHoursSpecification":{
-"@type":"OpeningHoursSpecification",
-"dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
-"opens":"00:00",
-"closes":"23:59"
-},
-"areaServed":[
-"94","93","92","91","75","77","78","95"
-]
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "LocalBusiness",
+      "@id": "https://allonuisibleexpress.fr/#business",
+      "name": "Allo Nuisible Express",
+      "url": "https://allonuisibleexpress.fr/",
+      "telephone": "+33744296897",
+      "email": "allonuisibleexpress@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "3 Rue de la résistance",
+        "postalCode": "94320",
+        "addressLocality": "Thiais",
+        "addressCountry": "FR"
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"
+          ],
+          "opens": "00:00",
+          "closes": "23:59"
+        }
+      ],
+      "areaServed": [
+        {"@type": "AdministrativeArea", "name": "Val-de-Marne"},
+        {"@type": "AdministrativeArea", "name": "Seine-Saint-Denis"},
+        {"@type": "AdministrativeArea", "name": "Hauts-de-Seine"},
+        {"@type": "AdministrativeArea", "name": "Essonne"},
+        {"@type": "AdministrativeArea", "name": "Paris"},
+        {"@type": "AdministrativeArea", "name": "Seine-et-Marne"},
+        {"@type": "AdministrativeArea", "name": "Yvelines"},
+        {"@type": "AdministrativeArea", "name": "Val-d'Oise"},
+        {"@type": "City", "name": "Thiais"},
+        {"@type": "City", "name": "Rungis"},
+        {"@type": "City", "name": "Orly"},
+        {"@type": "City", "name": "Chevilly-Larue"},
+        {"@type": "City", "name": "Choisy-le-Roi"},
+        {"@type": "City", "name": "Villejuif"},
+        {"@type": "City", "name": "Vitry-sur-Seine"},
+        {"@type": "City", "name": "Cachan"},
+        {"@type": "City", "name": "Fresnes"},
+        {"@type": "City", "name": "L'Haÿ-les-Roses"}
+      ],
+      "sameAs": [
+        "https://wa.me/33744296897"
+      ],
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "contactType": "customer service",
+          "telephone": "+33744296897",
+          "url": "https://wa.me/33744296897",
+          "availableLanguage": ["fr"]
+        }
+      ]
+    },
+    {
+      "@type": "OfferCatalog",
+      "@id": "https://allonuisibleexpress.fr/#catalog",
+      "name": "Catalogue services nuisibles",
+      "itemListElement": [
+        {"@id": "https://allonuisibleexpress.fr/#offer-deratisation-preventive"}
+      ]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://allonuisibleexpress.fr/#service-deratisation-preventive",
+      "name": "Dératisation préventive",
+      "serviceType": "Installation de postes d'appâtage / monitoring rongeurs",
+      "alternateName": "Balisage dératisation",
+      "provider": {"@id": "https://allonuisibleexpress.fr/#business"}
+    },
+    {
+      "@type": "Offer",
+      "@id": "https://allonuisibleexpress.fr/#offer-deratisation-preventive",
+      "name": "Dératisation préventive",
+      "url": "https://allonuisibleexpress.fr/deratisation.html",
+      "itemOffered": {"@id": "https://allonuisibleexpress.fr/#service-deratisation-preventive"}
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://allonuisibleexpress.fr/#webpage",
+      "url": "https://allonuisibleexpress.fr/",
+      "name": "Allo Nuisible Express",
+      "about": {"@id": "https://allonuisibleexpress.fr/#service-deratisation-preventive"}
+    }
+  ]
 }
 </script>
+
 
 <style>
 html,body{

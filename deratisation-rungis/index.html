@@ -30,23 +30,75 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "Allo Nuisible Express",
-    "url": "https://allonuisibleexpress.fr",
-    "telephone": "+33744296897",
-    "areaServed": "Rungis",
-    "hasOfferCatalog": {
-      "@type": "OfferCatalog",
-      "name": "Services anti nuisibles",
-      "itemListElement": [
-        {
-          "@type": "Service",
-          "name": "Dératisation à Rungis",
-          "areaServed": "Rungis",
-          "url": "https://allonuisibleexpress.fr/deratisation-rungis/"
-        }
-      ]
-    }
+    "@graph": [
+      {
+        "@type": "LocalBusiness",
+        "@id": "https://allonuisibleexpress.fr/#business",
+        "name": "Allo Nuisible Express",
+        "url": "https://allonuisibleexpress.fr/",
+        "telephone": "+33744296897",
+        "email": "allonuisibleexpress@gmail.com",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "3 Rue de la résistance",
+          "postalCode": "94320",
+          "addressLocality": "Thiais",
+          "addressCountry": "FR"
+        },
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+            "opens": "00:00",
+            "closes": "23:59"
+          }
+        ],
+        "areaServed": {"@type": "City", "name": "Rungis"},
+        "sameAs": ["https://wa.me/33744296897"],
+        "contactPoint": [
+          {
+            "@type": "ContactPoint",
+            "contactType": "customer service",
+            "telephone": "+33744296897",
+            "url": "https://wa.me/33744296897",
+            "availableLanguage": ["fr"]
+          }
+        ]
+      },
+      {
+        "@type": "OfferCatalog",
+        "@id": "https://allonuisibleexpress.fr/deratisation-rungis/#catalog",
+        "name": "Catalogue services nuisibles",
+        "itemListElement": [
+          {"@id": "https://allonuisibleexpress.fr/deratisation-rungis/#offer-deratisation-ville"}
+        ]
+      },
+      {
+        "@type": "Service",
+        "@id": "https://allonuisibleexpress.fr/deratisation-rungis/#service-deratisation",
+        "name": "Dératisation préventive",
+        "serviceType": "Installation de postes d'appâtage / monitoring rongeurs",
+        "alternateName": "Balisage dératisation",
+        "provider": {"@id": "https://allonuisibleexpress.fr/#business"},
+        "areaServed": {"@type": "City", "name": "Rungis"}
+      },
+      {
+        "@type": "Offer",
+        "@id": "https://allonuisibleexpress.fr/deratisation-rungis/#offer-deratisation-ville",
+        "name": "Dératisation préventive à Rungis",
+        "url": "https://allonuisibleexpress.fr/deratisation-rungis/",
+        "itemOffered": {"@id": "https://allonuisibleexpress.fr/deratisation-rungis/#service-deratisation"},
+        "areaServed": {"@type": "City", "name": "Rungis"}
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://allonuisibleexpress.fr/deratisation-rungis/#webpage",
+        "url": "https://allonuisibleexpress.fr/deratisation-rungis/",
+        "name": "Dératisation Rungis (94150) | Entreprise de dératisation urgente",
+        "description": "Dératisation à Rungis (94150) pour habitation, copropriété, restaurant et locaux pros. Intervention sous 1 heure maximum, 24h/24 et 7j/7 (nuit, week-end, jours fériés), traitement anti-rats et anti-souris, inspection, suivi et prévention.",
+        "about": {"@id": "https://allonuisibleexpress.fr/deratisation-rungis/#service-deratisation"}
+      }
+    ]
   }
   </script>
 <style>

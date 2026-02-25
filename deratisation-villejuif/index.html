@@ -30,23 +30,75 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "Allo Nuisible Express",
-    "url": "https://allonuisibleexpress.fr",
-    "telephone": "+33744296897",
-    "areaServed": "Villejuif",
-    "hasOfferCatalog": {
-      "@type": "OfferCatalog",
-      "name": "Services anti nuisibles",
-      "itemListElement": [
-        {
-          "@type": "Service",
-          "name": "Dératisation à Villejuif",
-          "areaServed": "Villejuif",
-          "url": "https://allonuisibleexpress.fr/deratisation-villejuif/"
-        }
-      ]
-    }
+    "@graph": [
+      {
+        "@type": "LocalBusiness",
+        "@id": "https://allonuisibleexpress.fr/#business",
+        "name": "Allo Nuisible Express",
+        "url": "https://allonuisibleexpress.fr/",
+        "telephone": "+33744296897",
+        "email": "allonuisibleexpress@gmail.com",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "3 Rue de la résistance",
+          "postalCode": "94320",
+          "addressLocality": "Thiais",
+          "addressCountry": "FR"
+        },
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+            "opens": "00:00",
+            "closes": "23:59"
+          }
+        ],
+        "areaServed": {"@type": "City", "name": "Villejuif"},
+        "sameAs": ["https://wa.me/33744296897"],
+        "contactPoint": [
+          {
+            "@type": "ContactPoint",
+            "contactType": "customer service",
+            "telephone": "+33744296897",
+            "url": "https://wa.me/33744296897",
+            "availableLanguage": ["fr"]
+          }
+        ]
+      },
+      {
+        "@type": "OfferCatalog",
+        "@id": "https://allonuisibleexpress.fr/deratisation-villejuif/#catalog",
+        "name": "Catalogue services nuisibles",
+        "itemListElement": [
+          {"@id": "https://allonuisibleexpress.fr/deratisation-villejuif/#offer-deratisation-ville"}
+        ]
+      },
+      {
+        "@type": "Service",
+        "@id": "https://allonuisibleexpress.fr/deratisation-villejuif/#service-deratisation",
+        "name": "Dératisation préventive",
+        "serviceType": "Installation de postes d'appâtage / monitoring rongeurs",
+        "alternateName": "Balisage dératisation",
+        "provider": {"@id": "https://allonuisibleexpress.fr/#business"},
+        "areaServed": {"@type": "City", "name": "Villejuif"}
+      },
+      {
+        "@type": "Offer",
+        "@id": "https://allonuisibleexpress.fr/deratisation-villejuif/#offer-deratisation-ville",
+        "name": "Dératisation préventive à Villejuif",
+        "url": "https://allonuisibleexpress.fr/deratisation-villejuif/",
+        "itemOffered": {"@id": "https://allonuisibleexpress.fr/deratisation-villejuif/#service-deratisation"},
+        "areaServed": {"@type": "City", "name": "Villejuif"}
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://allonuisibleexpress.fr/deratisation-villejuif/#webpage",
+        "url": "https://allonuisibleexpress.fr/deratisation-villejuif/",
+        "name": "Dératisation Villejuif | Devis Gratuit – Intervention 24/7",
+        "description": "Intervention sous 1 heure maximum, 24h/24 et 7j/7 (nuit, week-end, jours fériés), devis gratuit, nuisibles à Villejuif. Dératisation locale contre rats et souris pour logements, commerces et copropriétés.",
+        "about": {"@id": "https://allonuisibleexpress.fr/deratisation-villejuif/#service-deratisation"}
+      }
+    ]
   }
   </script>
   <style>
