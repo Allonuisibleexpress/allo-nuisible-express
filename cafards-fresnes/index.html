@@ -17,10 +17,97 @@
 .hero-local-seo h1,.hero-local-seo h2{margin:0;color:#fff !important;text-shadow:0 3px 14px rgba(0,0,0,.72);line-height:1.15}
 @media(max-width:560px){.hero-local-seo{min-height:220px;padding:18px}}
 </style>
+<style id="seo-hero-style">
+.seo-hero{
+  position:relative;
+  overflow:hidden;
+  isolation:isolate;
+  min-height:clamp(300px,42vw,520px);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  gap:16px;
+  padding:clamp(88px,12vw,130px) 20px clamp(36px,5vw,56px) !important;
+  border-radius:16px;
+}
+.seo-hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(180deg,rgba(20,24,30,.48),rgba(15,16,18,.62));
+  z-index:0;
+}
+.seo-hero > *{position:relative;z-index:1}
+.seo-hero-badge{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:10px 18px;
+  border:1px solid rgba(218,170,66,.72);
+  border-radius:999px;
+  color:#f1cc7b;
+  background:rgba(44,49,57,.55);
+  font-weight:800;
+  font-size:clamp(14px,2vw,18px);
+}
+.seo-hero h1,
+.seo-hero h2{
+  margin:0;
+  max-width:min(1100px,94vw);
+  color:#fff !important;
+  font-size:clamp(34px,5.1vw,76px) !important;
+  line-height:1.08;
+  font-weight:900;
+  text-shadow:0 4px 20px rgba(0,0,0,.78);
+}
+.seo-hero p{
+  margin:0;
+  max-width:min(980px,94vw);
+  color:#fff !important;
+  font-size:clamp(18px,2.2vw,36px) !important;
+  line-height:1.45;
+  text-shadow:0 3px 16px rgba(0,0,0,.72);
+}
+.seo-hero-actions{
+  display:flex;
+  gap:14px;
+  flex-wrap:wrap;
+  justify-content:center;
+  margin-top:6px;
+}
+.seo-hero-btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-width:240px;
+  padding:14px 24px;
+  border-radius:14px;
+  text-decoration:none;
+  font-weight:900;
+  font-size:clamp(19px,1.6vw,27px);
+  box-shadow:0 10px 26px rgba(0,0,0,.25);
+}
+.seo-hero-btn.call{background:#ffb400;color:#111}
+.seo-hero-btn.devis{background:#fff;color:#111}
+@media(max-width:560px){
+  .seo-hero{padding-top:132px !important;min-height:320px}
+  .seo-hero-btn{min-width:100%;font-size:20px;padding:13px 20px}
+}
+</style>
 </head>
 <body>
 <main style="max-width:1120px;margin:120px auto 40px;padding:0 20px;line-height:1.7;">
-  <section class="hero-local-seo"><h1>Cafards à Fresnes : Désinsectisation rapide</h1></section>
+  <section class="hero-local-seo seo-hero">
+  <span class="seo-hero-badge">Intervention 7j/7 · Nuit · Week-end · Fériés</span>
+  <h1>Cafards à Fresnes : Désinsectisation rapide</h1>
+  <p>Intervention locale rapide et professionnelle, avec protocole adapté, devis clair et suivi efficace selon votre situation.</p>
+  <div class="seo-hero-actions">
+    <a class="seo-hero-btn call" href="tel:0744296897">Appeler maintenant</a>
+    <a class="seo-hero-btn devis" href="../devis.html">Demande de devis</a>
+  </div>
+</section>
 <section data-ux-landing-local style="background:#fff;border:1px solid #ececec;border-radius:14px;padding:20px;margin:0 0 14px;box-shadow:0 8px 24px rgba(0,0,0,.05)">
   <p style="margin:0 0 10px;font-size:17px;line-height:1.6;">Intervention locale à Fresnes pour traitement contre les cafards, avec lecture terrain et plan d'action clair.</p>
   <p style="margin:0;font-size:17px;line-height:1.6;">Vous voyez immédiatement les étapes, les consignes et le niveau d'urgence avant prise de rendez-vous.</p>
