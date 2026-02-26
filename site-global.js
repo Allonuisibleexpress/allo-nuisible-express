@@ -238,7 +238,11 @@
       if(section.hasAttribute('data-ux-landing-local')){section.classList.add('local-polish-intro');}
       if(title.indexOf('informations immédiates')!==-1){section.classList.add('local-polish-keypoints');}
       if(title.indexOf('comment se déroule')!==-1){section.classList.add('local-polish-steps');}
-      if(title.indexOf('combien de temps faut-il attendre')!==-1){section.classList.add('local-polish-timing');}
+      if(title.indexOf('combien de temps faut-il attendre')!==-1){
+        section.classList.add('local-polish-timing');
+        section.style.setProperty('background','#fff4d4','important');
+        section.style.setProperty('border-color','#efcf87','important');
+      }
       if(title.indexOf('intervention en cave')!==-1){section.classList.add('local-polish-cave');}
       if(title.indexOf('interventions et villes proches')!==-1){section.classList.add('local-polish-links');}
       if(title.indexOf('sommaire de la page')!==-1){section.classList.add('local-polish-summary');}
