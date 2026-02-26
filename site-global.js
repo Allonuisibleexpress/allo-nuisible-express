@@ -237,8 +237,6 @@
     if(!isSeoLocalPage()){return;}
     var hero=document.querySelector('.hero-local-seo.seo-hero, .hero-local.seo-hero, .seo-hero');
     if(!hero){return;}
-    var bg=getComputedStyle(hero).backgroundImage||'';
-    if(bg!=='none' && bg.indexOf('url(')!==-1){return;}
     var city=detectLocalCityFromH1();
     var img=localHeroImageByCity(city);
     if(!img){return;}
