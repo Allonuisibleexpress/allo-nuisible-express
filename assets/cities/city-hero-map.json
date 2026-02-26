@@ -1,0 +1,18 @@
+{
+  "arcueil": {"city": "Arcueil", "landmark": "Vue de la ville", "wiki_title": "Arcueil"},
+  "cachan": {"city": "Cachan", "landmark": "Mairie de Cachan", "wiki_title": "Cachan"},
+  "fresnes": {"city": "Fresnes", "landmark": "Hôtel de Ville", "wiki_title": "Fresnes_(Val-de-Marne)"},
+  "gentilly": {"city": "Gentilly", "landmark": "Mairie de Gentilly", "wiki_title": "Gentilly_(Val-de-Marne)"},
+  "le-kremlin-bicetre": {"city": "Le Kremlin-Bicêtre", "landmark": "Centre-ville", "wiki_title": "Le_Kremlin-Bicêtre"},
+  "lhay-les-roses": {"city": "L'Haÿ-les-Roses", "landmark": "Mairie de L'Haÿ-les-Roses", "wiki_title": "L'Haÿ-les-Roses"},
+  "thiais": {"city": "Thiais", "landmark": "Centre commercial Belle Épine", "wiki_title": "Thiais"},
+  "rungis": {"city": "Rungis", "landmark": "Marché International de Rungis", "wiki_title": "Rungis"},
+  "orly": {"city": "Orly", "landmark": "Aéroport de Paris-Orly", "wiki_title": "Orly"},
+  "choisy-le-roi": {"city": "Choisy-le-Roi", "landmark": "Berges de Seine", "wiki_title": "Choisy-le-Roi"},
+  "chevilly-larue": {"city": "Chevilly-Larue", "landmark": "Centre-ville", "wiki_title": "Chevilly-Larue"},
+  "villejuif": {"city": "Villejuif", "landmark": "Mairie de Villejuif", "wiki_title": "Villejuif"},
+  "vitry-sur-seine": {"city": "Vitry-sur-Seine", "landmark": "Gare de Vitry-sur-Seine", "wiki_title": "Vitry-sur-Seine"},
+  "versailles": {"city": "Versailles", "landmark": "Château de Versailles", "wiki_title": "Versailles"},
+  "antony": {"city": "Antony", "landmark": "Hôtel de Ville d'Antony", "wiki_title": "Antony"},
+  "clamart": {"city": "Clamart", "landmark": "Hôtel de Ville de Clamart", "wiki_title": "Clamart"}
+}
