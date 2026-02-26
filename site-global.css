@@ -239,8 +239,12 @@ section[id]{
 .is-local-page .seo-hero{
   border:1px solid rgba(255,255,255,.26);
   box-shadow:0 30px 64px rgba(0,0,0,.28);
-  border-radius:20px !important;
+  border-radius:0 !important;
   margin:0 0 18px !important;
+  width:100vw !important;
+  max-width:none !important;
+  margin-left:calc(50% - 50vw) !important;
+  margin-right:calc(50% - 50vw) !important;
 }
 .is-local-page .seo-hero::after{
   content:"";
@@ -431,6 +435,10 @@ section[id]{
   }
   .is-local-page main{
     padding:0 14px 28px !important;
+  }
+  .is-local-page .seo-hero{
+    margin-left:calc(50% - 50vw) !important;
+    margin-right:calc(50% - 50vw) !important;
   }
   .is-local-page h2{
     padding-right:38px;

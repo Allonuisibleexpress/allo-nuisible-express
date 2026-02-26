@@ -209,6 +209,42 @@
     return m&&m[1] ? m[1].trim() : '';
   }
 
+  function localHeroImageByCity(city){
+    var key=String(city||'').toLowerCase();
+    var map={
+      'thiais':'https://upload.wikimedia.org/wikipedia/commons/1/1c/Centre_Commercial_Belle_%C3%89pine_-_Thiais_%28FR94%29_-_2021-12-31_-_2.jpg',
+      'rungis':'https://upload.wikimedia.org/wikipedia/commons/c/ca/Rungis_March%C3%A9_International.jpg',
+      'orly':'https://upload.wikimedia.org/wikipedia/commons/4/4f/Orly_Airport_2021.jpg',
+      'choisy-le-roi':'https://upload.wikimedia.org/wikipedia/commons/1/1f/Choisy-le-Roi_Hotel_de_Ville.jpg',
+      'chevilly-larue':'https://upload.wikimedia.org/wikipedia/commons/0/09/Hotel_de_ville_Chevilly-Larue.jpg',
+      'villejuif':'https://upload.wikimedia.org/wikipedia/commons/8/82/Mairie_Villejuif_9.jpg',
+      'vitry-sur-seine':'https://upload.wikimedia.org/wikipedia/commons/e/e6/Mairie_de_Vitry-sur-Seine.jpg',
+      'cachan':'https://upload.wikimedia.org/wikipedia/commons/1/14/France_Mairie_de_Cachan.1.JPG',
+      'fresnes':'https://upload.wikimedia.org/wikipedia/commons/d/d3/H%C3%B4tel_ville_Fresnes_Val_Marne_7.jpg',
+      \"l'haÿ-les-roses\":'https://upload.wikimedia.org/wikipedia/commons/b/be/H%C3%B4tel_Ville_-_L%27Ha%C3%BF-les-Roses_%28FR94%29_-_2022-05-20_-_1.jpg',
+      'lhay-les-roses':'https://upload.wikimedia.org/wikipedia/commons/b/be/H%C3%B4tel_Ville_-_L%27Ha%C3%BF-les-Roses_%28FR94%29_-_2022-05-20_-_1.jpg',
+      'arcueil':'https://upload.wikimedia.org/wikipedia/commons/4/4b/Arcueil_%2894%29_Rue_Emile-Raspail_406.jpg',
+      'gentilly':'https://upload.wikimedia.org/wikipedia/commons/0/0b/Gentilly_%2894%29_Mairie_293.jpg',
+      'le kremlin-bicêtre':'https://upload.wikimedia.org/wikipedia/commons/1/1b/Le_Kremlin-Bic%C3%AAtre_%2894%29_Rue_Rossel_314.jpg',
+      'le kremlin-bicetre':'https://upload.wikimedia.org/wikipedia/commons/1/1b/Le_Kremlin-Bic%C3%AAtre_%2894%29_Rue_Rossel_314.jpg',
+      'kremlin-bicêtre':'https://upload.wikimedia.org/wikipedia/commons/1/1b/Le_Kremlin-Bic%C3%AAtre_%2894%29_Rue_Rossel_314.jpg',
+      'kremlin-bicetre':'https://upload.wikimedia.org/wikipedia/commons/1/1b/Le_Kremlin-Bic%C3%AAtre_%2894%29_Rue_Rossel_314.jpg'
+    };
+    return map[key]||'';
+  }
+
+  function ensureLocalHeroBackground(){
+    if(!isSeoLocalPage()){return;}
+    var hero=document.querySelector('.hero-local-seo.seo-hero, .hero-local.seo-hero, .seo-hero');
+    if(!hero){return;}
+    var bg=getComputedStyle(hero).backgroundImage||'';
+    if(bg!=='none' && bg.indexOf('url(')!==-1){return;}
+    var city=detectLocalCityFromH1();
+    var img=localHeroImageByCity(city);
+    if(!img){return;}
+    hero.style.setProperty('background','linear-gradient(135deg,rgba(12,12,12,.72),rgba(22,22,22,.62)),url(\"'+img+'\") center/cover no-repeat','important');
+  }
+
   function polishLocalPageContent(){
     if(!isSeoLocalPage()){return;}
     document.body.classList.add('is-local-page');
@@ -1399,6 +1435,7 @@
     safeRun(ensureSeoSummary,'ensureSeoSummary');
     safeRun(enhanceMiniLocalFaq,'enhanceMiniLocalFaq');
     safeRun(polishLocalPageContent,'polishLocalPageContent');
+    safeRun(ensureLocalHeroBackground,'ensureLocalHeroBackground');
     safeRun(ensureLocalSeoSections,'ensureLocalSeoSections');
     safeRun(ensureSticky,'ensureSticky');
     safeRun(initStickyAutoSwitch,'initStickyAutoSwitch');
