@@ -82,13 +82,14 @@
       return '<li><a href="#'+h.id+'">'+h.textContent.trim()+'</a></li>';
     }).join('');
 
+    var city=detectLocalCityFromH1();
     var summary=document.createElement('section');
     summary.className='seo-summary-block';
     summary.setAttribute('data-seo-summary','');
     summary.innerHTML='' +
       '<div class="seo-summary-head">' +
-      '<h2>Sommaire de la page</h2>' +
-      '<p>Parcourez rapidement les étapes clés de l’intervention locale.</p>' +
+      '<h2>Parcours d’intervention' + (city ? (' à ' + city) : '') + '</h2>' +
+      '<p>Accédez en un clic aux blocs clés de la prise en charge.</p>' +
       '</div>' +
       '<ol class="seo-summary-list">'+items+'</ol>';
 
@@ -116,6 +117,7 @@
 
       var title=(h2.textContent||'').trim();
       var city=title.replace(/mini faq locale\s*/i,'').trim();
+      h2.textContent='Questions fréquentes'+(city?(' à '+city):'');
       var nodes=[].slice.call(section.children);
       var startIndex=nodes.indexOf(h2);
       if(startIndex===-1){return;}
@@ -223,10 +225,16 @@
     var main=document.querySelector('main');
     if(!main){return;}
     var sections=[].slice.call(main.querySelectorAll(':scope > section, article > section'));
+    var visualStep=1;
     sections.forEach(function(section){
       var h2=section.querySelector('h2');
       var title=(h2&&h2.textContent ? h2.textContent.trim().toLowerCase() : '');
       section.classList.add('local-polish-block');
+      if(h2){
+        section.dataset.localStep=String(visualStep);
+        h2.setAttribute('data-local-step',String(visualStep));
+        visualStep+=1;
+      }
       if(section.hasAttribute('data-ux-landing-local')){section.classList.add('local-polish-intro');}
       if(title.indexOf('informations immédiates')!==-1){section.classList.add('local-polish-keypoints');}
       if(title.indexOf('comment se déroule')!==-1){section.classList.add('local-polish-steps');}
