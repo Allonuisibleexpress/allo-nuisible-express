@@ -199,6 +199,56 @@
     });
   }
 
+  function detectLocalCityFromH1(){
+    var h1=document.querySelector('h1');
+    if(!h1){return '';}
+    var txt=(h1.textContent||'').trim();
+    var m=txt.match(/\b(?:à|au)\s+([^:(]+?)(?:\s*\(\d{5}\)|\s*:|$)/i);
+    return m&&m[1] ? m[1].trim() : '';
+  }
+
+  function polishLocalPageContent(){
+    if(!isSeoLocalPage()){return;}
+    document.body.classList.add('is-local-page');
+
+    var city=detectLocalCityFromH1();
+    var hero=document.querySelector('.seo-hero');
+    if(hero){
+      var p=hero.querySelector('p');
+      if(p && city){
+        p.innerHTML='Allo Nuisible Express intervient <span class="seo-hero-highlight">sous une heure maximum</span> à '+city+', selon le niveau d’urgence constaté sur place.';
+      }
+    }
+
+    var main=document.querySelector('main');
+    if(!main){return;}
+    var sections=[].slice.call(main.querySelectorAll(':scope > section, article > section'));
+    sections.forEach(function(section){
+      var h2=section.querySelector('h2');
+      var title=(h2&&h2.textContent ? h2.textContent.trim().toLowerCase() : '');
+      section.classList.add('local-polish-block');
+      if(section.hasAttribute('data-ux-landing-local')){section.classList.add('local-polish-intro');}
+      if(title.indexOf('informations immédiates')!==-1){section.classList.add('local-polish-keypoints');}
+      if(title.indexOf('comment se déroule')!==-1){section.classList.add('local-polish-steps');}
+      if(title.indexOf('combien de temps faut-il attendre')!==-1){section.classList.add('local-polish-timing');}
+      if(title.indexOf('intervention en cave')!==-1){section.classList.add('local-polish-cave');}
+      if(title.indexOf('interventions et villes proches')!==-1){section.classList.add('local-polish-links');}
+      if(title.indexOf('sommaire de la page')!==-1){section.classList.add('local-polish-summary');}
+    });
+
+    var textNodes=[].slice.call(main.querySelectorAll('p, li'));
+    textNodes.forEach(function(node){
+      var t=node.textContent||'';
+      if(!t){return;}
+      var n=t
+        .replace(/urgence intervention/gi,'intervention urgente')
+        .replace(/Ce positionnement de traitement nuisibles/gi,'Notre intervention locale')
+        .replace(/Ce positionnement/gi,'Cette approche')
+        .replace(/en fonction de votre secteur, du trafic et du niveau d’urgence constaté sur place\./gi, city ? ('à '+city+', selon le niveau d’urgence constaté sur place.') : 'selon le niveau d’urgence constaté sur place.');
+      if(n!==t){node.textContent=n;}
+    });
+  }
+
   function shouldShowTimedCallPopup(){
     return isHomePage();
   }
@@ -1336,6 +1386,7 @@
     safeRun(ensureCoreSections,'ensureCoreSections');
     safeRun(ensureSeoSummary,'ensureSeoSummary');
     safeRun(enhanceMiniLocalFaq,'enhanceMiniLocalFaq');
+    safeRun(polishLocalPageContent,'polishLocalPageContent');
     safeRun(ensureLocalSeoSections,'ensureLocalSeoSections');
     safeRun(ensureSticky,'ensureSticky');
     safeRun(initStickyAutoSwitch,'initStickyAutoSwitch');
