@@ -28,83 +28,147 @@
   <link rel="stylesheet" href="../site-global.css?v=20260410h">
   <script src="../site-global.js?v=20260410i" defer></script>
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "LocalBusiness",
-        "@id": "https://allonuisibleexpress.fr/#business",
-        "name": "Allo Nuisible Express",
-        "url": "https://allonuisibleexpress.fr/",
-        "telephone": "+33744296897",
-        "email": "allonuisibleexpress@gmail.com",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "3 Rue de la résistance",
-          "postalCode": "94320",
-          "addressLocality": "Thiais",
-          "addressCountry": "FR"
-        },
-        "openingHoursSpecification": [
-          {
-            "@type": "OpeningHoursSpecification",
-            "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
-            "opens": "00:00",
-            "closes": "23:59"
-          }
-        ],
-        "areaServed": {"@type": "City", "name": "de-lit-fresnes"},
-        "sameAs": ["https://wa.me/33744296897"],
-        "contactPoint": [
-          {
-            "@type": "ContactPoint",
-            "contactType": "customer service",
-            "telephone": "+33744296897",
-            "url": "https://wa.me/33744296897",
-            "availableLanguage": ["fr"]
-          }
-        ]
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "LocalBusiness",
+      "@id": "https://allonuisibleexpress.fr/#business",
+      "name": "Allo Nuisible Express",
+      "url": "https://allonuisibleexpress.fr/",
+      "telephone": "+33744296897",
+      "email": "allonuisibleexpress@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "3 Rue de la résistance",
+        "postalCode": "94320",
+        "addressLocality": "Thiais",
+        "addressCountry": "FR"
       },
-      {
-        "@type": "OfferCatalog",
-        "@id": "https://allonuisibleexpress.fr/punaises-de-lit-fresnes/#catalog",
-        "name": "Catalogue services nuisibles",
-        "itemListElement": [
-          {"@id": "https://allonuisibleexpress.fr/punaises-de-lit-fresnes/#offer-punaises-ville"}
-        ]
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday",
+            "Sunday"
+          ],
+          "opens": "00:00",
+          "closes": "23:59"
+        }
+      ],
+      "areaServed": {
+        "@type": "City",
+        "name": "Fresnes"
       },
-      {
-        "@type": "Service",
-        "@id": "https://allonuisibleexpress.fr/punaises-de-lit-fresnes/#service-punaises",
-        "name": "Désinsectisation cafards",
-        "serviceType": "Traitement anti-cafards par gel et protocoles ciblés",
-        "provider": {"@id": "https://allonuisibleexpress.fr/#business"},
-        "areaServed": {"@type": "City", "name": "de-lit-fresnes"}
+      "sameAs": [
+        "https://wa.me/33744296897"
+      ],
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "contactType": "customer service",
+          "telephone": "+33744296897",
+          "url": "https://wa.me/33744296897",
+          "availableLanguage": [
+            "fr"
+          ]
+        }
+      ]
+    },
+    {
+      "@type": "OfferCatalog",
+      "@id": "https://allonuisibleexpress.fr/punaises-de-lit-fresnes/#catalog",
+      "name": "Catalogue services nuisibles",
+      "itemListElement": [
+        {
+          "@id": "https://allonuisibleexpress.fr/punaises-de-lit-fresnes/#offer-punaises-de-lit-ville"
+        }
+      ]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://allonuisibleexpress.fr/punaises-de-lit-fresnes/#service-punaises-de-lit",
+      "name": "Traitement punaises de lit",
+      "serviceType": "Traitement thermique, cryogénie et contrôle post-intervention",
+      "provider": {
+        "@id": "https://allonuisibleexpress.fr/#business"
       },
-      {
-        "@type": "Offer",
-        "@id": "https://allonuisibleexpress.fr/punaises-de-lit-fresnes/#offer-punaises-ville",
-        "name": "Désinsectisation cafards à de-lit-fresnes",
-        "url": "https://allonuisibleexpress.fr/punaises-de-lit-fresnes/",
-        "itemOffered": {"@id": "https://allonuisibleexpress.fr/punaises-de-lit-fresnes/#service-punaises"},
-        "areaServed": {"@type": "City", "name": "de-lit-fresnes"}
-      },
-      {
-        "@type": "FAQPage",
-        "@id": "https://allonuisibleexpress.fr/punaises-de-lit-fresnes/#faq",
-        "mainEntity": 
-      },
-      {
-        "@type": "WebPage",
-        "@id": "https://allonuisibleexpress.fr/punaises-de-lit-fresnes/#webpage",
-        "url": "https://allonuisibleexpress.fr/punaises-de-lit-fresnes/",
-        "name": "Punaises de lit à Fresnes | Traitement Professionnel",
-        "description": "Punaises de lit à Fresnes : éradication complète, intervention urgente, traitement thermique et suivi professionnel en habitat et locaux meublés.",
-        "about": {"@id": "https://allonuisibleexpress.fr/punaises-de-lit-fresnes/#service-punaises"},
-        "mainEntity": {"@id": "https://allonuisibleexpress.fr/punaises-de-lit-fresnes/#faq"}
+      "areaServed": {
+        "@type": "City",
+        "name": "Fresnes"
       }
-    ]
-  }
+    },
+    {
+      "@type": "Offer",
+      "@id": "https://allonuisibleexpress.fr/punaises-de-lit-fresnes/#offer-punaises-de-lit-ville",
+      "name": "Traitement punaises de lit à Fresnes",
+      "url": "https://allonuisibleexpress.fr/punaises-de-lit-fresnes/",
+      "itemOffered": {
+        "@id": "https://allonuisibleexpress.fr/punaises-de-lit-fresnes/#service-punaises-de-lit"
+      },
+      "areaServed": {
+        "@type": "City",
+        "name": "Fresnes"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://allonuisibleexpress.fr/punaises-de-lit-fresnes/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Comment se débarrasser des punaises de lit à Fresnes ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Le protocole local combine diagnostic précis, traitement ciblé et passage de contrôle pour stopper l'infestation à Fresnes."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Intervention urgente punaises de lit à Fresnes : quel délai ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Une prise en charge rapide est planifiée selon le niveau d’activité, l’accès au logement et l’urgence constatée."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Faut-il quitter le logement pendant le traitement à Fresnes ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Dans la majorité des cas, il n’est pas nécessaire de quitter le logement. Les consignes sont précisées avant intervention."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Quel prix pour un traitement punaises de lit à Fresnes ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Le tarif dépend de la surface, du niveau d’infestation et du nombre de passages nécessaires après diagnostic."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://allonuisibleexpress.fr/punaises-de-lit-fresnes/#webpage",
+      "url": "https://allonuisibleexpress.fr/punaises-de-lit-fresnes/",
+      "name": "Punaises de lit à Fresnes | Traitement Professionnel",
+      "description": "Punaises de lit à Fresnes : éradication complète, intervention urgente, traitement thermique et suivi professionnel en habitat et locaux meublés.",
+      "about": {
+        "@id": "https://allonuisibleexpress.fr/punaises-de-lit-fresnes/#service-punaises-de-lit"
+      },
+      "mainEntity": {
+        "@id": "https://allonuisibleexpress.fr/punaises-de-lit-fresnes/#faq"
+      }
+    }
+  ]
+}
   </script>
 <style>
 .hero-local-seo{position:relative;min-height:clamp(240px,38vw,360px);display:flex;align-items:flex-end;padding:clamp(20px,4vw,38px);border-radius:14px;overflow:hidden;margin:0 0 18px;background:linear-gradient(135deg,rgba(10,10,10,.72),rgba(20,20,20,.62)),url('https://upload.wikimedia.org/wikipedia/commons/d/d3/H%C3%B4tel_ville_Fresnes_Val_Marne_7.jpg') center/cover no-repeat}
