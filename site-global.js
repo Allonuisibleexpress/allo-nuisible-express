@@ -221,7 +221,7 @@
       'vitry-sur-seine':'https://upload.wikimedia.org/wikipedia/commons/e/e6/Mairie_de_Vitry-sur-Seine.jpg',
       'cachan':'https://upload.wikimedia.org/wikipedia/commons/1/14/France_Mairie_de_Cachan.1.JPG',
       'fresnes':'https://upload.wikimedia.org/wikipedia/commons/d/d3/H%C3%B4tel_ville_Fresnes_Val_Marne_7.jpg',
-      \"l'haÿ-les-roses\":'https://upload.wikimedia.org/wikipedia/commons/b/be/H%C3%B4tel_Ville_-_L%27Ha%C3%BF-les-Roses_%28FR94%29_-_2022-05-20_-_1.jpg',
+      "l'haÿ-les-roses":'https://upload.wikimedia.org/wikipedia/commons/b/be/H%C3%B4tel_Ville_-_L%27Ha%C3%BF-les-Roses_%28FR94%29_-_2022-05-20_-_1.jpg',
       'lhay-les-roses':'https://upload.wikimedia.org/wikipedia/commons/b/be/H%C3%B4tel_Ville_-_L%27Ha%C3%BF-les-Roses_%28FR94%29_-_2022-05-20_-_1.jpg',
       'arcueil':'https://upload.wikimedia.org/wikipedia/commons/4/4b/Arcueil_%2894%29_Rue_Emile-Raspail_406.jpg',
       'gentilly':'https://upload.wikimedia.org/wikipedia/commons/0/0b/Gentilly_%2894%29_Mairie_293.jpg',
