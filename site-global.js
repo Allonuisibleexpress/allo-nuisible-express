@@ -276,12 +276,27 @@
     if(!isSeoLocalPage()){return;}
     document.body.classList.add('is-local-page');
 
+    function cityWithPreposition(city){
+      var c=String(city||'').trim();
+      var low=c.toLowerCase();
+      var special={
+        'kremlin-bicêtre':'au Kremlin-Bicêtre',
+        'kremlin-bicetre':'au Kremlin-Bicêtre',
+        'le kremlin-bicêtre':'au Kremlin-Bicêtre',
+        'le kremlin-bicetre':'au Kremlin-Bicêtre',
+        "l'haÿ-les-roses":"à L'Haÿ-les-Roses",
+        'lhay-les-roses':"à L'Haÿ-les-Roses"
+      };
+      if(special[low]){return special[low];}
+      return 'à '+c;
+    }
+
     var city=detectLocalCityFromH1();
     var hero=document.querySelector('.seo-hero');
     if(hero){
       var p=hero.querySelector('p');
       if(p && city){
-        p.innerHTML='Allo Nuisible Express intervient <span class="seo-hero-highlight">sous une heure maximum</span> à '+city+', selon le niveau d’urgence constaté sur place.';
+        p.innerHTML='Allo Nuisible Express intervient <span class="seo-hero-highlight">sous une heure maximum</span> '+cityWithPreposition(city)+', selon le niveau d’urgence constaté sur place.';
       }
     }
 
