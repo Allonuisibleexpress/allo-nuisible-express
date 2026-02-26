@@ -20,3 +20,4 @@ Sources : Wikimedia Commons (licences ouvertes selon chaque fichier).
 | Versailles | `/assets/cities/versailles-hero.webp` | [source](https://commons.wikimedia.org/wiki/File:Vue_a%C3%A9rienne_du_domaine_de_Versailles_par_ToucanWings_-_Creative_Commons_By_Sa_3.0_-_073.jpg) | ToucanWings | CC BY-SA 3.0 |
 | Antony | `/assets/cities/antony-hero.webp` | [source](https://commons.wikimedia.org/wiki/File:Commune_antony_fontaine.jpg) | User:Wikialine | CC BY-SA 3.0 |
 | Clamart | `/assets/cities/clamart-hero.webp` | [source](https://commons.wikimedia.org/wiki/File:Mairie_de_clamart.jpg) | N/A | CC BY-SA 3.0 |
+| Châtenay-Malabry | `/assets/cities/chatenay-malabry-hero.webp` | [source](https://commons.wikimedia.org/wiki/File:H%C3%B4tel_Ville_-_Ch%C3%A2tenay-Malabry_(FR92)_-_2023-03-19_-_1.jpg) | Chabe01 | CC BY-SA 4.0 |
