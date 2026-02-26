@@ -11,5 +11,21 @@ RewriteRule ^ / [R=301,L]
 RewriteCond %{REQUEST_URI} ^/gitlive/(.+)$ [NC]
 RewriteRule ^ /%1 [R=301,L]
 
+# Canonical redirects for legacy .html landing aliases
+RewriteRule ^(rats|cafards|frelons|guepes|souris|deratisation|depigeonnage|punaises-lit|syndrome-diogene)-rungis\.html$ /nuisibles-rungis.html [R=301,L,NC]
+RewriteRule ^(rats|cafards|frelons|guepes|souris|deratisation|depigeonnage|punaises-lit|syndrome-diogene)-thiais\.html$ /nuisibles-thiais.html [R=301,L,NC]
+RewriteRule ^odeur-rat-mort\.html$ /odeur-rat-mort/ [R=301,L,NC]
+
+# Fix internal links targeting non-existing local deratisation pages
+RewriteRule ^deratisation-cachan/?$ /rats-cachan/ [R=301,L,NC]
+RewriteRule ^deratisation-fresnes/?$ /rats-fresnes/ [R=301,L,NC]
+RewriteRule ^deratisation-lhay-les-roses/?$ /rats-lhay-les-roses/ [R=301,L,NC]
+RewriteRule ^deratisation-arcueil/?$ /rats-arcueil/ [R=301,L,NC]
+RewriteRule ^deratisation-gentilly/?$ /rats-gentilly/ [R=301,L,NC]
+RewriteRule ^deratisation-le-kremlin-bicetre/?$ /rats-le-kremlin-bicetre/ [R=301,L,NC]
+
+# Fix extensionless internal service path
+RewriteRule ^deratisation/?$ /deratisation.html [R=301,L,NC]
+
 # Always serve dynamic SEO local structure at /seo-local-deratisation-94.json
 RewriteRule ^seo-local-deratisation-94\.json$ seo-local-deratisation-94.php [L]
