@@ -203,10 +203,31 @@
 
   function detectLocalCityFromH1(){
     var h1=document.querySelector('h1');
-    if(!h1){return '';}
-    var txt=(h1.textContent||'').trim();
-    var m=txt.match(/\b(?:à|au)\s+([^:(]+?)(?:\s*\(\d{5}\)|\s*:|$)/i);
-    return m&&m[1] ? m[1].trim() : '';
+    if(h1){
+      var txt=(h1.textContent||'').trim();
+      var m=txt.match(/(?:à|au)\s+(.+?)(?:\s*\(\d{5}\)|\s*:|$)/i);
+      if(m&&m[1]){return m[1].trim();}
+    }
+    var path=(window.location.pathname||'').toLowerCase();
+    var mm=path.match(/\/(?:deratisation|rats|cafards|punaises-de-lit|souris|frelons|guepes)-([^/]+)\/?$/);
+    if(!mm||!mm[1]){return '';}
+    var slug=mm[1];
+    var map={
+      'thiais':'Thiais',
+      'rungis':'Rungis',
+      'orly':'Orly',
+      'choisy-le-roi':'Choisy-le-Roi',
+      'chevilly-larue':'Chevilly-Larue',
+      'villejuif':'Villejuif',
+      'vitry-sur-seine':'Vitry-sur-Seine',
+      'cachan':'Cachan',
+      'fresnes':'Fresnes',
+      'lhay-les-roses':"L'Haÿ-les-Roses",
+      'le-kremlin-bicetre':'Le Kremlin-Bicêtre',
+      'arcueil':'Arcueil',
+      'gentilly':'Gentilly'
+    };
+    return map[slug]||slug.replace(/-/g,' ');
   }
 
   function localHeroImageByCity(city){
