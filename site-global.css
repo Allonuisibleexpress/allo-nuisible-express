@@ -228,6 +228,7 @@ section[id]{
 }
 .is-local-page main{
   color:var(--local-text);
+  letter-spacing:.002em;
 }
 .is-local-page .seo-hero{
   border:1px solid rgba(255,255,255,.2);
@@ -240,6 +241,13 @@ section[id]{
   border-radius:16px !important;
   box-shadow:var(--local-shadow) !important;
   margin:0 0 14px !important;
+  transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease;
+}
+.is-local-page .local-polish-block:hover,
+.is-local-page .card:hover{
+  border-color:#e2d3af !important;
+  box-shadow:0 16px 30px rgba(0,0,0,.07) !important;
+  transform:translateY(-1px);
 }
 .is-local-page .local-polish-keypoints,
 .is-local-page .local-polish-timing{
@@ -253,14 +261,22 @@ section[id]{
   color:#111 !important;
   font-weight:900 !important;
   letter-spacing:.01em;
+  font-size:clamp(24px,2.2vw,32px) !important;
+  line-height:1.2 !important;
+  margin:0 0 12px !important;
 }
 .is-local-page h3{
   color:#151515 !important;
   font-weight:800 !important;
+  font-size:clamp(18px,1.45vw,22px) !important;
+  line-height:1.3 !important;
+  margin:12px 0 8px !important;
 }
 .is-local-page p,
 .is-local-page li{
   color:#2f2f2f !important;
+  font-size:clamp(15.5px,1.1vw,17px) !important;
+  line-height:1.7 !important;
 }
 .is-local-page .local-polish-links a{
   color:#111;
@@ -275,6 +291,15 @@ section[id]{
 .is-local-page .mini-faq-local{
   border-radius:16px !important;
 }
+.is-local-page .seo-summary-block{
+  background:#fffefb;
+}
+.is-local-page .seo-summary-head{
+  margin-bottom:10px;
+}
+.is-local-page .seo-summary-list{
+  gap:7px;
+}
 .is-local-page .mini-faq-item{
   border-color:#ececec;
 }
@@ -283,6 +308,17 @@ section[id]{
 }
 .is-local-page .mini-faq-item[open]{
   border-color:#ffb400;
+}
+.is-local-page .mini-faq-answer p{
+  max-width:96ch;
+}
+.is-local-page .local-polish-steps ol{
+  display:grid;
+  gap:6px;
+}
+.is-local-page .local-polish-keypoints li,
+.is-local-page .local-polish-steps li{
+  padding-left:1px;
 }
 @media (max-width:760px){
   .seo-summary-block{
@@ -320,6 +356,11 @@ section[id]{
   .is-local-page .local-polish-block,
   .is-local-page .card{
     border-radius:14px !important;
+    padding:16px !important;
+  }
+  .is-local-page .local-polish-block:hover,
+  .is-local-page .card:hover{
+    transform:none;
   }
 }
 .home-urgent-strip{
