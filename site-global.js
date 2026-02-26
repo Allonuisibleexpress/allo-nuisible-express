@@ -40,7 +40,64 @@
 
   function isSeoLocalPage(){
     var path=normalizedPathname().toLowerCase();
-    return /\/(?:deratisation|rats|cafards|punaises-de-lit|souris)-[^/]+\/?$/.test(path);
+    return /\/(?:deratisation|rats|cafards|punaises-de-lit|souris|frelons|guepes)-[^/]+\/?$/.test(path);
+  }
+
+  function slugify(text){
+    return String(text||'')
+      .toLowerCase()
+      .normalize('NFD')
+      .replace(/[\u0300-\u036f]/g,'')
+      .replace(/[^a-z0-9]+/g,'-')
+      .replace(/^-+|-+$/g,'')
+      .replace(/-{2,}/g,'-');
+  }
+
+  function ensureSeoSummary(){
+    if(!isSeoLocalPage()){return;}
+    if(document.querySelector('[data-seo-summary]')){return;}
+
+    var main=document.querySelector('main');
+    if(!main){return;}
+    var scope=main.querySelector('article')||main;
+    var headings=[].slice.call(scope.querySelectorAll('h2')).filter(function(h){
+      return h && h.textContent && h.textContent.trim() && !h.closest('[data-seo-summary]');
+    });
+    if(headings.length<3){return;}
+
+    var maxItems=12;
+    var used={};
+    var items=headings.slice(0,maxItems).map(function(h,idx){
+      if(!h.id){
+        var base=slugify(h.textContent)||('section-'+(idx+1));
+        var candidate=base;
+        var step=2;
+        while(document.getElementById(candidate) || used[candidate]){
+          candidate=base+'-'+step;
+          step+=1;
+        }
+        h.id=candidate;
+        used[candidate]=true;
+      }
+      return '<li><a href="#'+h.id+'">'+h.textContent.trim()+'</a></li>';
+    }).join('');
+
+    var summary=document.createElement('section');
+    summary.className='seo-summary-block';
+    summary.setAttribute('data-seo-summary','');
+    summary.innerHTML='' +
+      '<div class="seo-summary-head">' +
+      '<h2>Sommaire de la page</h2>' +
+      '<p>Parcourez rapidement les étapes clés de l’intervention locale.</p>' +
+      '</div>' +
+      '<ol class="seo-summary-list">'+items+'</ol>';
+
+    var firstChild=scope.firstElementChild;
+    if(firstChild){
+      scope.insertBefore(summary, firstChild);
+    }else{
+      scope.appendChild(summary);
+    }
   }
 
   function shouldShowTimedCallPopup(){
@@ -1178,6 +1235,7 @@
     safeRun(ensureProcess,'ensureProcess');
     safeRun(ensureReviewsFaq,'ensureReviewsFaq');
     safeRun(ensureCoreSections,'ensureCoreSections');
+    safeRun(ensureSeoSummary,'ensureSeoSummary');
     safeRun(ensureLocalSeoSections,'ensureLocalSeoSections');
     safeRun(ensureSticky,'ensureSticky');
     safeRun(initStickyAutoSwitch,'initStickyAutoSwitch');
