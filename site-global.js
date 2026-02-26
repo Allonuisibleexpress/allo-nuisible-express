@@ -82,22 +82,30 @@
       return '<li><a href="#'+h.id+'">'+h.textContent.trim()+'</a></li>';
     }).join('');
 
-    var city=detectLocalCityFromH1();
     var summary=document.createElement('section');
     summary.className='seo-summary-block';
     summary.setAttribute('data-seo-summary','');
     summary.innerHTML='' +
       '<div class="seo-summary-head">' +
-      '<h2>Parcours d’intervention' + (city ? (' à ' + city) : '') + '</h2>' +
+      '<h2>Sommaire</h2>' +
       '<p>Accédez en un clic aux blocs clés de la prise en charge.</p>' +
       '</div>' +
       '<ol class="seo-summary-list">'+items+'</ol>';
 
-    var firstChild=scope.firstElementChild;
-    if(firstChild){
-      scope.insertBefore(summary, firstChild);
+    var hero=scope.querySelector('.hero-local-seo.seo-hero, .hero-local.seo-hero, .seo-hero');
+    if(hero && hero.parentNode===scope){
+      if(hero.nextSibling){
+        scope.insertBefore(summary, hero.nextSibling);
+      }else{
+        scope.appendChild(summary);
+      }
     }else{
-      scope.appendChild(summary);
+      var firstChild=scope.firstElementChild;
+      if(firstChild){
+        scope.insertBefore(summary, firstChild);
+      }else{
+        scope.appendChild(summary);
+      }
     }
   }
 
