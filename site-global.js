@@ -16,6 +16,36 @@
     return PREFERRED_ORIGIN+normalizedPathname();
   }
 
+  function upsertMeta(name, content){
+    var node=document.querySelector('meta[name="'+name+'"]');
+    if(!node){
+      node=document.createElement('meta');
+      node.setAttribute('name', name);
+      document.head.appendChild(node);
+    }
+    node.setAttribute('content', content);
+  }
+
+  function upsertCanonical(href){
+    var node=document.querySelector('link[rel="canonical"]');
+    if(!node){
+      node=document.createElement('link');
+      node.setAttribute('rel', 'canonical');
+      document.head.appendChild(node);
+    }
+    node.setAttribute('href', href);
+  }
+
+  function hardenGithubMirror(){
+    var host=(window.location.hostname||'').toLowerCase();
+    if(host.indexOf('github.io')===-1){
+      return;
+    }
+    upsertMeta('robots','noindex, nofollow');
+    upsertMeta('googlebot','noindex, nofollow');
+    upsertCanonical(canonicalUrl());
+  }
+
   function enforcePrimaryDomain(){
     var host=(window.location.hostname||'').toLowerCase();
     if(host==='localhost' || host==='127.0.0.1' || host==='' || window.location.protocol==='file:'){
@@ -1507,6 +1537,7 @@
     }
   }
 
+  hardenGithubMirror();
   enforcePrimaryDomain();
 
   if(document.readyState==='loading'){
