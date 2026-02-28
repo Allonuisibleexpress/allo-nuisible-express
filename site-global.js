@@ -106,12 +106,32 @@
     return m&&m[1] ? m[1] : '';
   }
 
+  function detectLocalServiceSlug(){
+    var path=normalizedPathname().toLowerCase();
+    var re=new RegExp('/('+LOCAL_SERVICE_PATTERN+')-[^/.]+(?:/|\\.html)?$');
+    var m=path.match(re);
+    return m&&m[1] ? m[1] : '';
+  }
+
   function humanizeCitySlug(slug){
     var meta=CITY_HERO_META[slug];
     if(meta&&meta.city){return meta.city;}
     return String(slug||'').split('-').map(function(part){
       return part ? (part.charAt(0).toUpperCase()+part.slice(1)) : '';
     }).join(' ');
+  }
+
+  function cityPreposition(city){
+    var c=String(city||'');
+    if(/^Le\s/i.test(c)){return 'au '+c.replace(/^Le\s/i,'');}
+    if(/^Les\s/i.test(c)){return 'aux '+c.replace(/^Les\s/i,'');}
+    return 'à '+c;
+  }
+
+  function contextArticle(context){
+    var c=String(context||'').toLowerCase();
+    if(c==='jardin' || c==='vide-sanitaire'){return 'un';}
+    return 'une';
   }
 
   function ensureCityHeroStyles(){
@@ -151,24 +171,50 @@
     hero.style.backgroundImage='none';
     hero.style.setProperty('--hero','none');
 
+    var serviceSlug=detectLocalServiceSlug();
     var meta=CITY_HERO_META[slug]||{};
     var city=meta.city||humanizeCitySlug(slug);
     var landmark=meta.landmark||'Centre-ville';
-    var alt='Vue de '+city+' – '+landmark;
-    var base='/assets/cities/'+slug+'-hero';
+    var cityPostalMap={
+      'antony':'92160','arcueil':'94110','cachan':'94230','chatenay-malabry':'92290','chevilly-larue':'94550','choisy-le-roi':'94600',
+      'clamart':'92140','fresnes':'94260','gentilly':'94250','le-kremlin-bicetre':'94270','lhay-les-roses':'94240','orly':'94310',
+      'rungis':'94150','thiais':'94320','versailles':'78000','villejuif':'94800','vitry-sur-seine':'94400'
+    };
+    var serviceLabelMap={
+      'deratisation':'rongeurs','rats':'rats','cafards':'cafards','punaises-de-lit':'punaises de lit','souris':'souris',
+      'guepes':'guêpes','frelons':'frelons','frelon-asiatique':'frelon asiatique','depigeonnage':'pigeons',
+      'chenille-processionnaire':'chenilles processionnaires','acariens':'acariens','xylophages':'xylophages','mouches':'mouches','fourmis':'fourmis'
+    };
+    var contextMap={
+      'deratisation':'cave','rats':'cave','cafards':'cuisine','punaises-de-lit':'chambre','souris':'vide-sanitaire',
+      'guepes':'toiture','frelons':'jardin','frelon-asiatique':'jardin','depigeonnage':'toiture',
+      'chenille-processionnaire':'jardin','acariens':'chambre','xylophages':'charpente','mouches':'cuisine','fourmis':'terrasse'
+    };
+    var postal=cityPostalMap[slug]||'';
+    var label=serviceLabelMap[serviceSlug]||'nuisibles';
+    var context=contextMap[serviceSlug]||'zone traitée';
+    var alt='Infestation de '+label+' dans '+contextArticle(context)+' '+context+' '+cityPreposition(city)+(postal?(' ('+postal+')'):'');
+    var base='/assets/local-hero/'+(serviceSlug||'local')+'-'+slug+'-'+context;
 
     var picture=hero.querySelector('picture[data-city-hero]');
     if(!picture){
       picture=document.createElement('picture');
       picture.setAttribute('data-city-hero','');
       picture.innerHTML='' +
-        '<source type=\"image/webp\" srcset=\"'+base+'-640.webp 640w, '+base+'-1024.webp 1024w, '+base+'-1600.webp 1600w\" sizes=\"100vw\">' +
-        '<source type=\"image/jpeg\" srcset=\"'+base+'-640.jpg 640w, '+base+'-1024.jpg 1024w, '+base+'-1600.jpg 1600w\" sizes=\"100vw\">' +
+        '<source type=\"image/webp\" srcset=\"'+base+'.webp\">' +
+        '<source type=\"image/jpeg\" srcset=\"'+base+'.jpg\">' +
         '<img src=\"'+base+'.jpg\" width=\"1600\" height=\"900\" alt=\"'+alt+'\" loading=\"eager\" fetchpriority=\"high\" decoding=\"async\">';
       hero.insertBefore(picture, hero.firstChild);
     }else{
       var img=picture.querySelector('img');
-      if(img){img.setAttribute('alt',alt);}
+      if(img){
+        img.setAttribute('src',base+'.jpg');
+        img.setAttribute('alt',alt);
+      }
+      var webpSource=picture.querySelector('source[type=\"image/webp\"]');
+      if(webpSource){webpSource.setAttribute('srcset',base+'.webp');}
+      var jpgSource=picture.querySelector('source[type=\"image/jpeg\"]');
+      if(jpgSource){jpgSource.setAttribute('srcset',base+'.jpg');}
     }
     var overlay=hero.querySelector('.city-hero-overlay');
     if(!overlay){

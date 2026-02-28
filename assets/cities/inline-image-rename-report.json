@@ -1,0 +1,140 @@
+[
+  {
+    "page": "souris-le-kremlin-bicetre/index.html",
+    "old": "../assets/cities/le-kremlin-bicetre-hero.jpg",
+    "new": "../assets/interventions/local/souris-le-kremlin-bicetre-vide-sanitaire.webp",
+    "alt": "Infestation de souris dans une vide-sanitaire à Le Kremlin-Bicêtre (94270)"
+  },
+  {
+    "page": "rats-arcueil/index.html",
+    "old": "../assets/cities/arcueil-hero.jpg",
+    "new": "../assets/interventions/local/rats-arcueil-cave.webp",
+    "alt": "Infestation de rats dans une cave à Arcueil (94110)"
+  },
+  {
+    "page": "punaises-de-lit-clamart/index.html",
+    "old": "../assets/cities/clamart-hero.jpg",
+    "new": "../assets/interventions/local/punaises-de-lit-clamart-chambre.webp",
+    "alt": "Infestation de punaises de lit dans une chambre à Clamart (92140)"
+  },
+  {
+    "page": "frelons-versailles/index.html",
+    "old": "../assets/interventions/villes/thiais-94320-deratisation-rats-souris-01.jpg?v=20260227b",
+    "new": "../assets/interventions/local/frelons-versailles-jardin.webp",
+    "alt": "Infestation de frelons dans une jardin à Versailles (78000)"
+  },
+  {
+    "page": "deratisation-thiais/index.html",
+    "old": "../assets/interventions/villes/thiais-94320-deratisation-rats-souris-01.jpg?v=20260227b",
+    "new": "../assets/interventions/local/deratisation-thiais-cave.webp",
+    "alt": "Infestation de rongeurs dans une cave à Thiais (94320)"
+  },
+  {
+    "page": "cafards-arcueil/index.html",
+    "old": "../assets/cities/arcueil-hero.jpg",
+    "new": "../assets/interventions/local/cafards-arcueil-cuisine.webp",
+    "alt": "Infestation de cafards dans une cuisine à Arcueil (94110)"
+  },
+  {
+    "page": "punaises-de-lit-le-kremlin-bicetre/index.html",
+    "old": "../assets/cities/le-kremlin-bicetre-hero.jpg",
+    "new": "../assets/interventions/local/punaises-de-lit-le-kremlin-bicetre-chambre.webp",
+    "alt": "Infestation de punaises de lit dans une chambre à Le Kremlin-Bicêtre (94270)"
+  },
+  {
+    "page": "punaises-de-lit-chatenay-malabry/index.html",
+    "old": "../assets/cities/chatenay-malabry-hero.jpg",
+    "new": "../assets/interventions/local/punaises-de-lit-chatenay-malabry-chambre.webp",
+    "alt": "Infestation de punaises de lit dans une chambre à Châtenay-Malabry (92290)"
+  },
+  {
+    "page": "guepes-versailles/index.html",
+    "old": "../assets/interventions/villes/versailles-78000-guepe-01.jpg?v=20260227b",
+    "new": "../assets/interventions/local/guepes-versailles-toiture.webp",
+    "alt": "Infestation de guêpes dans une toiture à Versailles (78000)"
+  },
+  {
+    "page": "punaises-de-lit-gentilly/index.html",
+    "old": "../assets/cities/gentilly-hero.jpg",
+    "new": "../assets/interventions/local/punaises-de-lit-gentilly-chambre.webp",
+    "alt": "Infestation de punaises de lit dans une chambre à Gentilly (94250)"
+  },
+  {
+    "page": "frelons-le-kremlin-bicetre/index.html",
+    "old": "../assets/interventions/villes/le-kremlin-bicetre-94270-frelon-01.jpg?v=20260227b",
+    "new": "../assets/interventions/local/frelons-le-kremlin-bicetre-jardin.webp",
+    "alt": "Infestation de frelons dans une jardin à Le Kremlin-Bicêtre (94270)"
+  },
+  {
+    "page": "guepes-antony/index.html",
+    "old": "../assets/interventions/villes/antony-92160-guepe-01.jpg?v=20260227b",
+    "new": "../assets/interventions/local/guepes-antony-toiture.webp",
+    "alt": "Infestation de guêpes dans une toiture à Antony (92160)"
+  },
+  {
+    "page": "cafards-gentilly/index.html",
+    "old": "../assets/cities/gentilly-hero.jpg",
+    "new": "../assets/interventions/local/cafards-gentilly-cuisine.webp",
+    "alt": "Infestation de cafards dans une cuisine à Gentilly (94250)"
+  },
+  {
+    "page": "cafards-chatenay-malabry/index.html",
+    "old": "../assets/cities/chatenay-malabry-hero.jpg",
+    "new": "../assets/interventions/local/cafards-chatenay-malabry-cuisine.webp",
+    "alt": "Infestation de cafards dans une cuisine à Châtenay-Malabry (92290)"
+  },
+  {
+    "page": "cafards-le-kremlin-bicetre/index.html",
+    "old": "../assets/cities/le-kremlin-bicetre-hero.jpg",
+    "new": "../assets/interventions/local/cafards-le-kremlin-bicetre-cuisine.webp",
+    "alt": "Infestation de cafards dans une cuisine à Le Kremlin-Bicêtre (94270)"
+  },
+  {
+    "page": "souris-gentilly/index.html",
+    "old": "../assets/cities/gentilly-hero.jpg",
+    "new": "../assets/interventions/local/souris-gentilly-vide-sanitaire.webp",
+    "alt": "Infestation de souris dans une vide-sanitaire à Gentilly (94250)"
+  },
+  {
+    "page": "punaises-de-lit-arcueil/index.html",
+    "old": "../assets/cities/arcueil-hero.jpg",
+    "new": "../assets/interventions/local/punaises-de-lit-arcueil-chambre.webp",
+    "alt": "Infestation de punaises de lit dans une chambre à Arcueil (94110)"
+  },
+  {
+    "page": "rats-le-kremlin-bicetre/index.html",
+    "old": "../assets/cities/le-kremlin-bicetre-hero.jpg",
+    "new": "../assets/interventions/local/rats-le-kremlin-bicetre-cave.webp",
+    "alt": "Infestation de rats dans une cave à Le Kremlin-Bicêtre (94270)"
+  },
+  {
+    "page": "rats-gentilly/index.html",
+    "old": "../assets/cities/gentilly-hero.jpg",
+    "new": "../assets/interventions/local/rats-gentilly-cave.webp",
+    "alt": "Infestation de rats dans une cave à Gentilly (94250)"
+  },
+  {
+    "page": "frelons-clamart/index.html",
+    "old": "../assets/interventions/villes/clamart-92140-frelon-01.jpg?v=20260227b",
+    "new": "../assets/interventions/local/frelons-clamart-jardin.webp",
+    "alt": "Infestation de frelons dans une jardin à Clamart (92140)"
+  },
+  {
+    "page": "frelons-antony/index.html",
+    "old": "../assets/interventions/villes/antony-92160-frelon-01.jpg?v=20260227b",
+    "new": "../assets/interventions/local/frelons-antony-jardin.webp",
+    "alt": "Infestation de frelons dans une jardin à Antony (92160)"
+  },
+  {
+    "page": "souris-arcueil/index.html",
+    "old": "../assets/cities/arcueil-hero.jpg",
+    "new": "../assets/interventions/local/souris-arcueil-vide-sanitaire.webp",
+    "alt": "Infestation de souris dans une vide-sanitaire à Arcueil (94110)"
+  },
+  {
+    "page": "cafards-clamart/index.html",
+    "old": "../assets/cities/clamart-hero.jpg",
+    "new": "../assets/interventions/local/cafards-clamart-cuisine.webp",
+    "alt": "Infestation de cafards dans une cuisine à Clamart (92140)"
+  }
+]

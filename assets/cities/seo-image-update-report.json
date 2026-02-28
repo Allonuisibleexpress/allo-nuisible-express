@@ -1,0 +1,281 @@
+{
+  "heroes": [
+    {
+      "page": "souris-le-kremlin-bicetre/index.html",
+      "hero": "/assets/local-hero/souris-le-kremlin-bicetre-vide-sanitaire.webp"
+    },
+    {
+      "page": "punaises-de-lit-thiais/index.html",
+      "hero": "/assets/local-hero/punaises-de-lit-thiais-chambre.webp"
+    },
+    {
+      "page": "mouches-antony/index.html",
+      "hero": "/assets/local-hero/mouches-antony-cuisine.webp"
+    },
+    {
+      "page": "rats-arcueil/index.html",
+      "hero": "/assets/local-hero/rats-arcueil-cave.webp"
+    },
+    {
+      "page": "punaises-de-lit-clamart/index.html",
+      "hero": "/assets/local-hero/punaises-de-lit-clamart-chambre.webp"
+    },
+    {
+      "page": "frelons-versailles/index.html",
+      "hero": "/assets/local-hero/frelons-versailles-jardin.webp"
+    },
+    {
+      "page": "xylophages-antony/index.html",
+      "hero": "/assets/local-hero/xylophages-antony-charpente.webp"
+    },
+    {
+      "page": "cafards-antony/index.html",
+      "hero": "/assets/local-hero/cafards-antony-cuisine.webp"
+    },
+    {
+      "page": "frelons-thiais/index.html",
+      "hero": "/assets/local-hero/frelons-thiais-jardin.webp"
+    },
+    {
+      "page": "frelons-arcueil/index.html",
+      "hero": "/assets/local-hero/frelons-arcueil-jardin.webp"
+    },
+    {
+      "page": "cafards-cachan/index.html",
+      "hero": "/assets/local-hero/cafards-cachan-cuisine.webp"
+    },
+    {
+      "page": "deratisation-clamart/index.html",
+      "hero": "/assets/local-hero/deratisation-clamart-cave.webp"
+    },
+    {
+      "page": "deratisation-thiais/index.html",
+      "hero": "/assets/local-hero/deratisation-thiais-cave.webp"
+    },
+    {
+      "page": "deratisation-choisy-le-roi/index.html",
+      "hero": "/assets/local-hero/deratisation-choisy-le-roi-cave.webp"
+    },
+    {
+      "page": "cafards-arcueil/index.html",
+      "hero": "/assets/local-hero/cafards-arcueil-cuisine.webp"
+    },
+    {
+      "page": "acariens-antony/index.html",
+      "hero": "/assets/local-hero/acariens-antony-chambre.webp"
+    },
+    {
+      "page": "fourmis-thiais/index.html",
+      "hero": "/assets/local-hero/fourmis-thiais-terrasse.webp"
+    },
+    {
+      "page": "punaises-de-lit-le-kremlin-bicetre/index.html",
+      "hero": "/assets/local-hero/punaises-de-lit-le-kremlin-bicetre-chambre.webp"
+    },
+    {
+      "page": "rats-fresnes/index.html",
+      "hero": "/assets/local-hero/rats-fresnes-cave.webp"
+    },
+    {
+      "page": "punaises-de-lit-chatenay-malabry/index.html",
+      "hero": "/assets/local-hero/punaises-de-lit-chatenay-malabry-chambre.webp"
+    },
+    {
+      "page": "chenille-processionnaire-thiais/index.html",
+      "hero": "/assets/local-hero/chenille-processionnaire-thiais-jardin.webp"
+    },
+    {
+      "page": "deratisation-villejuif/index.html",
+      "hero": "/assets/local-hero/deratisation-villejuif-cave.webp"
+    },
+    {
+      "page": "guepes-clamart/index.html",
+      "hero": "/assets/local-hero/guepes-clamart-toiture.webp"
+    },
+    {
+      "page": "guepes-le-kremlin-bicetre/index.html",
+      "hero": "/assets/local-hero/guepes-le-kremlin-bicetre-toiture.webp"
+    },
+    {
+      "page": "deratisation-orly/index.html",
+      "hero": "/assets/local-hero/deratisation-orly-cave.webp"
+    },
+    {
+      "page": "depigeonnage-antony/index.html",
+      "hero": "/assets/local-hero/depigeonnage-antony-toiture.webp"
+    },
+    {
+      "page": "guepes-versailles/index.html",
+      "hero": "/assets/local-hero/guepes-versailles-toiture.webp"
+    },
+    {
+      "page": "cafards-fresnes/index.html",
+      "hero": "/assets/local-hero/cafards-fresnes-cuisine.webp"
+    },
+    {
+      "page": "punaises-de-lit-gentilly/index.html",
+      "hero": "/assets/local-hero/punaises-de-lit-gentilly-chambre.webp"
+    },
+    {
+      "page": "frelons-le-kremlin-bicetre/index.html",
+      "hero": "/assets/local-hero/frelons-le-kremlin-bicetre-jardin.webp"
+    },
+    {
+      "page": "guepes-antony/index.html",
+      "hero": "/assets/local-hero/guepes-antony-toiture.webp"
+    },
+    {
+      "page": "souris-lhay-les-roses/index.html",
+      "hero": "/assets/local-hero/souris-lhay-les-roses-vide-sanitaire.webp"
+    },
+    {
+      "page": "punaises-de-lit-fresnes/index.html",
+      "hero": "/assets/local-hero/punaises-de-lit-fresnes-chambre.webp"
+    },
+    {
+      "page": "deratisation-versailles/index.html",
+      "hero": "/assets/local-hero/deratisation-versailles-cave.webp"
+    },
+    {
+      "page": "souris-cachan/index.html",
+      "hero": "/assets/local-hero/souris-cachan-vide-sanitaire.webp"
+    },
+    {
+      "page": "guepes-gentilly/index.html",
+      "hero": "/assets/local-hero/guepes-gentilly-toiture.webp"
+    },
+    {
+      "page": "guepes-thiais/index.html",
+      "hero": "/assets/local-hero/guepes-thiais-toiture.webp"
+    },
+    {
+      "page": "cafards-gentilly/index.html",
+      "hero": "/assets/local-hero/cafards-gentilly-cuisine.webp"
+    },
+    {
+      "page": "depigeonnage-thiais/index.html",
+      "hero": "/assets/local-hero/depigeonnage-thiais-toiture.webp"
+    },
+    {
+      "page": "cafards-chatenay-malabry/index.html",
+      "hero": "/assets/local-hero/cafards-chatenay-malabry-cuisine.webp"
+    },
+    {
+      "page": "guepes-arcueil/index.html",
+      "hero": "/assets/local-hero/guepes-arcueil-toiture.webp"
+    },
+    {
+      "page": "rats-lhay-les-roses/index.html",
+      "hero": "/assets/local-hero/rats-lhay-les-roses-cave.webp"
+    },
+    {
+      "page": "souris-fresnes/index.html",
+      "hero": "/assets/local-hero/souris-fresnes-vide-sanitaire.webp"
+    },
+    {
+      "page": "cafards-le-kremlin-bicetre/index.html",
+      "hero": "/assets/local-hero/cafards-le-kremlin-bicetre-cuisine.webp"
+    },
+    {
+      "page": "chenille-processionnaire-antony/index.html",
+      "hero": "/assets/local-hero/chenille-processionnaire-antony-jardin.webp"
+    },
+    {
+      "page": "souris-gentilly/index.html",
+      "hero": "/assets/local-hero/souris-gentilly-vide-sanitaire.webp"
+    },
+    {
+      "page": "deratisation-antony/index.html",
+      "hero": "/assets/local-hero/deratisation-antony-cave.webp"
+    },
+    {
+      "page": "rats-cachan/index.html",
+      "hero": "/assets/local-hero/rats-cachan-cave.webp"
+    },
+    {
+      "page": "punaises-de-lit-arcueil/index.html",
+      "hero": "/assets/local-hero/punaises-de-lit-arcueil-chambre.webp"
+    },
+    {
+      "page": "fourmis-antony/index.html",
+      "hero": "/assets/local-hero/fourmis-antony-terrasse.webp"
+    },
+    {
+      "page": "acariens-thiais/index.html",
+      "hero": "/assets/local-hero/acariens-thiais-chambre.webp"
+    },
+    {
+      "page": "deratisation-rungis/index.html",
+      "hero": "/assets/local-hero/deratisation-rungis-cave.webp"
+    },
+    {
+      "page": "rats-le-kremlin-bicetre/index.html",
+      "hero": "/assets/local-hero/rats-le-kremlin-bicetre-cave.webp"
+    },
+    {
+      "page": "rats-gentilly/index.html",
+      "hero": "/assets/local-hero/rats-gentilly-cave.webp"
+    },
+    {
+      "page": "frelons-clamart/index.html",
+      "hero": "/assets/local-hero/frelons-clamart-jardin.webp"
+    },
+    {
+      "page": "frelon-asiatique-thiais/index.html",
+      "hero": "/assets/local-hero/frelon-asiatique-thiais-jardin.webp"
+    },
+    {
+      "page": "cafards-lhay-les-roses/index.html",
+      "hero": "/assets/local-hero/cafards-lhay-les-roses-cuisine.webp"
+    },
+    {
+      "page": "cafards-thiais/index.html",
+      "hero": "/assets/local-hero/cafards-thiais-cuisine.webp"
+    },
+    {
+      "page": "xylophages-thiais/index.html",
+      "hero": "/assets/local-hero/xylophages-thiais-charpente.webp"
+    },
+    {
+      "page": "frelons-gentilly/index.html",
+      "hero": "/assets/local-hero/frelons-gentilly-jardin.webp"
+    },
+    {
+      "page": "frelons-antony/index.html",
+      "hero": "/assets/local-hero/frelons-antony-jardin.webp"
+    },
+    {
+      "page": "deratisation-vitry-sur-seine/index.html",
+      "hero": "/assets/local-hero/deratisation-vitry-sur-seine-cave.webp"
+    },
+    {
+      "page": "souris-arcueil/index.html",
+      "hero": "/assets/local-hero/souris-arcueil-vide-sanitaire.webp"
+    },
+    {
+      "page": "deratisation-chevilly-larue/index.html",
+      "hero": "/assets/local-hero/deratisation-chevilly-larue-cave.webp"
+    },
+    {
+      "page": "punaises-de-lit-cachan/index.html",
+      "hero": "/assets/local-hero/punaises-de-lit-cachan-chambre.webp"
+    },
+    {
+      "page": "punaises-de-lit-lhay-les-roses/index.html",
+      "hero": "/assets/local-hero/punaises-de-lit-lhay-les-roses-chambre.webp"
+    },
+    {
+      "page": "mouches-thiais/index.html",
+      "hero": "/assets/local-hero/mouches-thiais-cuisine.webp"
+    },
+    {
+      "page": "punaises-de-lit-antony/index.html",
+      "hero": "/assets/local-hero/punaises-de-lit-antony-chambre.webp"
+    },
+    {
+      "page": "cafards-clamart/index.html",
+      "hero": "/assets/local-hero/cafards-clamart-cuisine.webp"
+    }
+  ],
+  "inline_images": []
+}

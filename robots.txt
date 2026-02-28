@@ -1,2 +1,6 @@
 User-agent: *
-Disallow: /
+Allow: /
+Allow: /assets/
+Allow: /images/
+Disallow: /allo-nuisible-express/
+Sitemap: https://allonuisibleexpress.fr/sitemap.xml
