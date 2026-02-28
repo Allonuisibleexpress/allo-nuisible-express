@@ -1,0 +1,104 @@
+{
+  "antony": {
+    "city": "Antony",
+    "landmark": "Hôtel de ville",
+    "alt": "Vue de Antony – Hôtel de ville",
+    "base": "/assets/cities/antony-hero"
+  },
+  "arcueil": {
+    "city": "Arcueil",
+    "landmark": "Panorama urbain",
+    "alt": "Vue de Arcueil – Panorama urbain",
+    "base": "/assets/cities/arcueil-hero"
+  },
+  "cachan": {
+    "city": "Cachan",
+    "landmark": "Mairie",
+    "alt": "Vue de Cachan – Mairie",
+    "base": "/assets/cities/cachan-hero"
+  },
+  "chatenay-malabry": {
+    "city": "Châtenay-Malabry",
+    "landmark": "Centre-ville",
+    "alt": "Vue de Châtenay-Malabry – Centre-ville",
+    "base": "/assets/cities/chatenay-malabry-hero"
+  },
+  "chevilly-larue": {
+    "city": "Chevilly-Larue",
+    "landmark": "Mairie",
+    "alt": "Vue de Chevilly-Larue – Mairie",
+    "base": "/assets/cities/chevilly-larue-hero"
+  },
+  "choisy-le-roi": {
+    "city": "Choisy-le-Roi",
+    "landmark": "Centre-ville",
+    "alt": "Vue de Choisy-le-Roi – Centre-ville",
+    "base": "/assets/cities/choisy-le-roi-hero"
+  },
+  "clamart": {
+    "city": "Clamart",
+    "landmark": "Mairie",
+    "alt": "Vue de Clamart – Mairie",
+    "base": "/assets/cities/clamart-hero"
+  },
+  "fresnes": {
+    "city": "Fresnes",
+    "landmark": "Panorama local",
+    "alt": "Vue de Fresnes – Panorama local",
+    "base": "/assets/cities/fresnes-hero"
+  },
+  "gentilly": {
+    "city": "Gentilly",
+    "landmark": "Centre-ville",
+    "alt": "Vue de Gentilly – Centre-ville",
+    "base": "/assets/cities/gentilly-hero"
+  },
+  "le-kremlin-bicetre": {
+    "city": "Le Kremlin-Bicêtre",
+    "landmark": "Mairie",
+    "alt": "Vue de Le Kremlin-Bicêtre – Mairie",
+    "base": "/assets/cities/le-kremlin-bicetre-hero"
+  },
+  "lhay-les-roses": {
+    "city": "L'Haÿ-les-Roses",
+    "landmark": "Parc de la Roseraie",
+    "alt": "Vue de L'Haÿ-les-Roses – Parc de la Roseraie",
+    "base": "/assets/cities/lhay-les-roses-hero"
+  },
+  "orly": {
+    "city": "Orly",
+    "landmark": "Centre-ville",
+    "alt": "Vue de Orly – Centre-ville",
+    "base": "/assets/cities/orly-hero"
+  },
+  "rungis": {
+    "city": "Rungis",
+    "landmark": "Marché international",
+    "alt": "Vue de Rungis – Marché international",
+    "base": "/assets/cities/rungis-hero"
+  },
+  "thiais": {
+    "city": "Thiais",
+    "landmark": "Centre-ville",
+    "alt": "Vue de Thiais – Centre-ville",
+    "base": "/assets/cities/thiais-hero"
+  },
+  "versailles": {
+    "city": "Versailles",
+    "landmark": "Château de Versailles",
+    "alt": "Vue de Versailles – Château de Versailles",
+    "base": "/assets/cities/versailles-hero"
+  },
+  "villejuif": {
+    "city": "Villejuif",
+    "landmark": "Centre-ville",
+    "alt": "Vue de Villejuif – Centre-ville",
+    "base": "/assets/cities/villejuif-hero"
+  },
+  "vitry-sur-seine": {
+    "city": "Vitry-sur-Seine",
+    "landmark": "Panorama urbain",
+    "alt": "Vue de Vitry-sur-Seine – Panorama urbain",
+    "base": "/assets/cities/vitry-sur-seine-hero"
+  }
+}

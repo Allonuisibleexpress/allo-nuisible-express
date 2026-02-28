@@ -1,6 +1,26 @@
 (function(){
   var PREFERRED_ORIGIN='https://allonuisibleexpress.fr';
   var PROJECT_PATH_PREFIX='/allo-nuisible-express';
+  var LOCAL_SERVICE_PATTERN='(?:deratisation|rats|cafards|punaises-de-lit|souris|guepes|frelons|frelon-asiatique|depigeonnage|chenille-processionnaire|acariens|xylophages|mouches|fourmis)';
+  var CITY_HERO_META={
+    'antony':{'city':'Antony','landmark':'Hôtel de ville'},
+    'arcueil':{'city':'Arcueil','landmark':'Panorama urbain'},
+    'cachan':{'city':'Cachan','landmark':'Mairie'},
+    'chatenay-malabry':{'city':'Châtenay-Malabry','landmark':'Centre-ville'},
+    'chevilly-larue':{'city':'Chevilly-Larue','landmark':'Mairie'},
+    'choisy-le-roi':{'city':'Choisy-le-Roi','landmark':'Centre-ville'},
+    'clamart':{'city':'Clamart','landmark':'Mairie'},
+    'fresnes':{'city':'Fresnes','landmark':'Panorama local'},
+    'gentilly':{'city':'Gentilly','landmark':'Centre-ville'},
+    'le-kremlin-bicetre':{'city':'Le Kremlin-Bicêtre','landmark':'Mairie'},
+    'lhay-les-roses':{'city':'L\\'Haÿ-les-Roses','landmark':'Parc de la Roseraie'},
+    'orly':{'city':'Orly','landmark':'Centre-ville'},
+    'rungis':{'city':'Rungis','landmark':'Marché international'},
+    'thiais':{'city':'Thiais','landmark':'Centre-ville'},
+    'versailles':{'city':'Versailles','landmark':'Château de Versailles'},
+    'villejuif':{'city':'Villejuif','landmark':'Centre-ville'},
+    'vitry-sur-seine':{'city':'Vitry-sur-Seine','landmark':'Panorama urbain'}
+  };
 
   function normalizedPathname(){
     var path=window.location.pathname||'/';
@@ -71,6 +91,100 @@
   function isSeoLocalPage(){
     var path=normalizedPathname().toLowerCase();
     return /\/(?:deratisation|rats|cafards|punaises-de-lit|souris|frelons|guepes)-[^/]+\/?$/.test(path);
+  }
+
+  function isLocalServicePage(){
+    var path=normalizedPathname().toLowerCase();
+    var re=new RegExp('/'+LOCAL_SERVICE_PATTERN+'-[^/]+(?:/|\\\\.html)?$');
+    return re.test(path);
+  }
+
+  function detectLocalCitySlug(){
+    var path=normalizedPathname().toLowerCase();
+    var re=new RegExp('/'+LOCAL_SERVICE_PATTERN+'-([^/.]+)(?:/|\\\\.html)?$');
+    var m=path.match(re);
+    return m&&m[1] ? m[1] : '';
+  }
+
+  function humanizeCitySlug(slug){
+    var meta=CITY_HERO_META[slug];
+    if(meta&&meta.city){return meta.city;}
+    return String(slug||'').split('-').map(function(part){
+      return part ? (part.charAt(0).toUpperCase()+part.slice(1)) : '';
+    }).join(' ');
+  }
+
+  function ensureCityHeroStyles(){
+    if(document.getElementById('city-hero-style')){return;}
+    var style=document.createElement('style');
+    style.id='city-hero-style';
+    style.textContent='' +
+      '.city-hero-ready{position:relative;overflow:hidden;isolation:isolate;background:none !important;background-image:none !important}' +
+      '.city-hero-ready picture[data-city-hero]{position:absolute;inset:0;z-index:0;display:block}' +
+      '.city-hero-ready picture[data-city-hero] img{width:100%;height:100%;object-fit:cover;display:block}' +
+      '.city-hero-ready .city-hero-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(12,12,12,.62),rgba(22,22,22,.52));z-index:1;pointer-events:none}' +
+      '.city-hero-ready > :not(picture):not(.city-hero-overlay){position:relative;z-index:2}' +
+      '.city-hero-credit{font-size:12px;line-height:1.4;color:#6a6a6a;margin:8px 0 0;text-align:right}' +
+      '.city-hero-credit a{color:#7a5400;text-decoration:none}';
+    document.head.appendChild(style);
+  }
+
+  function ensureCityHeroMedia(){
+    if(!isLocalServicePage()){return;}
+    var slug=detectLocalCitySlug();
+    if(!slug){return;}
+    var hero=document.querySelector('main .seo-hero, .hero-local-seo, .hero-local');
+    var main=document.querySelector('main');
+    if(!hero && main){
+      var h1=document.querySelector('h1');
+      var p=document.querySelector('meta[name=\"description\"]');
+      hero=document.createElement('section');
+      hero.className='hero-local city-hero-fallback';
+      hero.innerHTML='<h1>'+(h1?h1.textContent.trim():'Intervention locale')+'</h1><p>'+(p?p.getAttribute('content'):'Intervention locale rapide')+'</p>';
+      main.insertBefore(hero, main.firstChild);
+    }
+    if(!hero){return;}
+
+    ensureCityHeroStyles();
+    hero.classList.add('city-hero-ready');
+    hero.style.background='none';
+    hero.style.backgroundImage='none';
+    hero.style.setProperty('--hero','none');
+
+    var meta=CITY_HERO_META[slug]||{};
+    var city=meta.city||humanizeCitySlug(slug);
+    var landmark=meta.landmark||'Centre-ville';
+    var alt='Vue de '+city+' – '+landmark;
+    var base='/assets/cities/'+slug+'-hero';
+
+    var picture=hero.querySelector('picture[data-city-hero]');
+    if(!picture){
+      picture=document.createElement('picture');
+      picture.setAttribute('data-city-hero','');
+      picture.innerHTML='' +
+        '<source type=\"image/webp\" srcset=\"'+base+'-640.webp 640w, '+base+'-1024.webp 1024w, '+base+'-1600.webp 1600w\" sizes=\"100vw\">' +
+        '<source type=\"image/jpeg\" srcset=\"'+base+'-640.jpg 640w, '+base+'-1024.jpg 1024w, '+base+'-1600.jpg 1600w\" sizes=\"100vw\">' +
+        '<img src=\"'+base+'.jpg\" width=\"1600\" height=\"900\" alt=\"'+alt+'\" loading=\"eager\" fetchpriority=\"high\" decoding=\"async\">';
+      hero.insertBefore(picture, hero.firstChild);
+    }else{
+      var img=picture.querySelector('img');
+      if(img){img.setAttribute('alt',alt);}
+    }
+    var overlay=hero.querySelector('.city-hero-overlay');
+    if(!overlay){
+      overlay=document.createElement('span');
+      overlay.className='city-hero-overlay';
+      hero.insertBefore(overlay, picture.nextSibling);
+    }
+
+    var footer=document.querySelector('footer');
+    if(footer && !footer.querySelector('[data-city-hero-credit]')){
+      var credit=document.createElement('p');
+      credit.className='city-hero-credit';
+      credit.setAttribute('data-city-hero-credit','');
+      credit.innerHTML='Crédit photo '+city+' : <a href=\"/assets/cities/credits.json\" target=\"_blank\" rel=\"noopener\">Wikimedia Commons (licences ouvertes)</a>.';
+      footer.appendChild(credit);
+    }
   }
 
   function slugify(text){
@@ -1507,6 +1621,7 @@
     safeRun(ensureReviewsFaq,'ensureReviewsFaq');
     safeRun(ensureCoreSections,'ensureCoreSections');
     safeRun(ensureSeoSummary,'ensureSeoSummary');
+    safeRun(ensureCityHeroMedia,'ensureCityHeroMedia');
     safeRun(enhanceMiniLocalFaq,'enhanceMiniLocalFaq');
     safeRun(polishLocalPageContent,'polishLocalPageContent');
     safeRun(ensureLocalHeroBackground,'ensureLocalHeroBackground');

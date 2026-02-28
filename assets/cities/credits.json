@@ -1,0 +1,444 @@
+{
+  "antony": {
+    "city": "Antony",
+    "landmark": "Hôtel de ville",
+    "alt": "Vue de Antony – Hôtel de ville",
+    "source_url": "https://upload.wikimedia.org/wikipedia/commons/b/b8/H%C3%B4tel_Ville_-_Antony_%28FR92%29_-_2023-03-19_-_1.jpg",
+    "source_title": "File:Hôtel Ville - Antony (FR92) - 2023-03-19 - 1.jpg",
+    "author": "Chabe01",
+    "licence": "CC BY-SA 4.0",
+    "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "page_wikimedia": "https://commons.wikimedia.org/wiki/File:Hôtel_Ville_-_Antony_(FR92)_-_2023-03-19_-_1.jpg",
+    "date_download": "2026-02-28",
+    "files": {
+      "webp": [
+        "/assets/cities/antony-hero-640.webp",
+        "/assets/cities/antony-hero-1024.webp",
+        "/assets/cities/antony-hero-1600.webp"
+      ],
+      "jpg": [
+        "/assets/cities/antony-hero-640.jpg",
+        "/assets/cities/antony-hero-1024.jpg",
+        "/assets/cities/antony-hero-1600.jpg"
+      ],
+      "default_webp": "/assets/cities/antony-hero.webp",
+      "default_jpg": "/assets/cities/antony-hero.jpg"
+    }
+  },
+  "arcueil": {
+    "city": "Arcueil",
+    "landmark": "Panorama urbain",
+    "alt": "Vue de Arcueil – Panorama urbain",
+    "source_url": "https://upload.wikimedia.org/wikipedia/commons/4/48/Aqueduc_de_nuit.JPG",
+    "source_title": "File:Aqueduc de nuit.JPG",
+    "author": "Damien94 & Ben",
+    "licence": "Public domain",
+    "licence_url": "",
+    "page_wikimedia": "https://commons.wikimedia.org/wiki/File:Aqueduc_de_nuit.JPG",
+    "date_download": "2026-02-28",
+    "files": {
+      "webp": [
+        "/assets/cities/arcueil-hero-640.webp",
+        "/assets/cities/arcueil-hero-1024.webp",
+        "/assets/cities/arcueil-hero-1600.webp"
+      ],
+      "jpg": [
+        "/assets/cities/arcueil-hero-640.jpg",
+        "/assets/cities/arcueil-hero-1024.jpg",
+        "/assets/cities/arcueil-hero-1600.jpg"
+      ],
+      "default_webp": "/assets/cities/arcueil-hero.webp",
+      "default_jpg": "/assets/cities/arcueil-hero.jpg"
+    }
+  },
+  "cachan": {
+    "city": "Cachan",
+    "landmark": "Mairie",
+    "alt": "Vue de Cachan – Mairie",
+    "source_url": "https://upload.wikimedia.org/wikipedia/commons/1/14/France_Mairie_de_Cachan.1.JPG",
+    "source_title": "File:France Mairie de Cachan.1.JPG",
+    "author": "Jmpoirier1",
+    "licence": "CC BY-SA 3.0",
+    "licence_url": "https://creativecommons.org/licenses/by-sa/3.0",
+    "page_wikimedia": "https://commons.wikimedia.org/wiki/File:France_Mairie_de_Cachan.1.JPG",
+    "date_download": "2026-02-28",
+    "files": {
+      "webp": [
+        "/assets/cities/cachan-hero-640.webp",
+        "/assets/cities/cachan-hero-1024.webp",
+        "/assets/cities/cachan-hero-1600.webp"
+      ],
+      "jpg": [
+        "/assets/cities/cachan-hero-640.jpg",
+        "/assets/cities/cachan-hero-1024.jpg",
+        "/assets/cities/cachan-hero-1600.jpg"
+      ],
+      "default_webp": "/assets/cities/cachan-hero.webp",
+      "default_jpg": "/assets/cities/cachan-hero.jpg"
+    }
+  },
+  "chatenay-malabry": {
+    "city": "Châtenay-Malabry",
+    "landmark": "Centre-ville",
+    "alt": "Vue de Châtenay-Malabry – Centre-ville",
+    "source_url": "https://upload.wikimedia.org/wikipedia/commons/1/1f/H%C3%B4tel_Ville_-_Ch%C3%A2tenay-Malabry_%28FR92%29_-_2023-03-19_-_1.jpg",
+    "source_title": "File:Hôtel Ville - Châtenay-Malabry (FR92) - 2023-03-19 - 1.jpg",
+    "author": "Chabe01",
+    "licence": "CC BY-SA 4.0",
+    "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "page_wikimedia": "https://commons.wikimedia.org/wiki/File:Hôtel_Ville_-_Châtenay-Malabry_(FR92)_-_2023-03-19_-_1.jpg",
+    "date_download": "2026-02-28",
+    "files": {
+      "webp": [
+        "/assets/cities/chatenay-malabry-hero-640.webp",
+        "/assets/cities/chatenay-malabry-hero-1024.webp",
+        "/assets/cities/chatenay-malabry-hero-1600.webp"
+      ],
+      "jpg": [
+        "/assets/cities/chatenay-malabry-hero-640.jpg",
+        "/assets/cities/chatenay-malabry-hero-1024.jpg",
+        "/assets/cities/chatenay-malabry-hero-1600.jpg"
+      ],
+      "default_webp": "/assets/cities/chatenay-malabry-hero.webp",
+      "default_jpg": "/assets/cities/chatenay-malabry-hero.jpg"
+    }
+  },
+  "chevilly-larue": {
+    "city": "Chevilly-Larue",
+    "landmark": "Mairie",
+    "alt": "Vue de Chevilly-Larue – Mairie",
+    "source_url": "https://upload.wikimedia.org/wikipedia/commons/3/3e/Chevilly-Larue_Vue_nocturne.jpg",
+    "source_title": "File:Chevilly-Larue Vue nocturne.jpg",
+    "author": "Valentin Ottone",
+    "licence": "CC BY 2.0",
+    "licence_url": "https://creativecommons.org/licenses/by/2.0",
+    "page_wikimedia": "https://commons.wikimedia.org/wiki/File:Chevilly-Larue_Vue_nocturne.jpg",
+    "date_download": "2026-02-28",
+    "files": {
+      "webp": [
+        "/assets/cities/chevilly-larue-hero-640.webp",
+        "/assets/cities/chevilly-larue-hero-1024.webp",
+        "/assets/cities/chevilly-larue-hero-1600.webp"
+      ],
+      "jpg": [
+        "/assets/cities/chevilly-larue-hero-640.jpg",
+        "/assets/cities/chevilly-larue-hero-1024.jpg",
+        "/assets/cities/chevilly-larue-hero-1600.jpg"
+      ],
+      "default_webp": "/assets/cities/chevilly-larue-hero.webp",
+      "default_jpg": "/assets/cities/chevilly-larue-hero.jpg"
+    }
+  },
+  "choisy-le-roi": {
+    "city": "Choisy-le-Roi",
+    "landmark": "Centre-ville",
+    "alt": "Vue de Choisy-le-Roi – Centre-ville",
+    "source_url": "https://upload.wikimedia.org/wikipedia/commons/0/05/Mairie_Choisy-le-Roi.JPG",
+    "source_title": "File:Mairie Choisy-le-Roi.JPG",
+    "author": "1quidam",
+    "licence": "CC BY-SA 3.0",
+    "licence_url": "https://creativecommons.org/licenses/by-sa/3.0",
+    "page_wikimedia": "https://commons.wikimedia.org/wiki/File:Mairie_Choisy-le-Roi.JPG",
+    "date_download": "2026-02-28",
+    "files": {
+      "webp": [
+        "/assets/cities/choisy-le-roi-hero-640.webp",
+        "/assets/cities/choisy-le-roi-hero-1024.webp",
+        "/assets/cities/choisy-le-roi-hero-1600.webp"
+      ],
+      "jpg": [
+        "/assets/cities/choisy-le-roi-hero-640.jpg",
+        "/assets/cities/choisy-le-roi-hero-1024.jpg",
+        "/assets/cities/choisy-le-roi-hero-1600.jpg"
+      ],
+      "default_webp": "/assets/cities/choisy-le-roi-hero.webp",
+      "default_jpg": "/assets/cities/choisy-le-roi-hero.jpg"
+    }
+  },
+  "clamart": {
+    "city": "Clamart",
+    "landmark": "Mairie",
+    "alt": "Vue de Clamart – Mairie",
+    "source_url": "https://upload.wikimedia.org/wikipedia/commons/5/55/Mairie_de_clamart.jpg",
+    "source_title": "File:Mairie de clamart.jpg",
+    "author": "Parisette",
+    "licence": "CC BY-SA 3.0",
+    "licence_url": "http://creativecommons.org/licenses/by-sa/3.0/",
+    "page_wikimedia": "https://commons.wikimedia.org/wiki/File:Mairie_de_clamart.jpg",
+    "date_download": "2026-02-28",
+    "files": {
+      "webp": [
+        "/assets/cities/clamart-hero-640.webp",
+        "/assets/cities/clamart-hero-1024.webp",
+        "/assets/cities/clamart-hero-1600.webp"
+      ],
+      "jpg": [
+        "/assets/cities/clamart-hero-640.jpg",
+        "/assets/cities/clamart-hero-1024.jpg",
+        "/assets/cities/clamart-hero-1600.jpg"
+      ],
+      "default_webp": "/assets/cities/clamart-hero.webp",
+      "default_jpg": "/assets/cities/clamart-hero.jpg"
+    }
+  },
+  "fresnes": {
+    "city": "Fresnes",
+    "landmark": "Panorama local",
+    "alt": "Vue de Fresnes – Panorama local",
+    "source_url": "https://upload.wikimedia.org/wikipedia/commons/d/d3/H%C3%B4tel_ville_Fresnes_Val_Marne_7.jpg",
+    "source_title": "File:Hôtel ville Fresnes Val Marne 7.jpg",
+    "author": "Chabe01",
+    "licence": "CC BY-SA 4.0",
+    "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "page_wikimedia": "https://commons.wikimedia.org/wiki/File:Hôtel_ville_Fresnes_Val_Marne_7.jpg",
+    "date_download": "2026-02-28",
+    "files": {
+      "webp": [
+        "/assets/cities/fresnes-hero-640.webp",
+        "/assets/cities/fresnes-hero-1024.webp",
+        "/assets/cities/fresnes-hero-1600.webp"
+      ],
+      "jpg": [
+        "/assets/cities/fresnes-hero-640.jpg",
+        "/assets/cities/fresnes-hero-1024.jpg",
+        "/assets/cities/fresnes-hero-1600.jpg"
+      ],
+      "default_webp": "/assets/cities/fresnes-hero.webp",
+      "default_jpg": "/assets/cities/fresnes-hero.jpg"
+    }
+  },
+  "gentilly": {
+    "city": "Gentilly",
+    "landmark": "Centre-ville",
+    "alt": "Vue de Gentilly – Centre-ville",
+    "source_url": "https://upload.wikimedia.org/wikipedia/commons/1/11/Gentilly_mairie.jpg",
+    "source_title": "File:Gentilly mairie.jpg",
+    "author": "Ralf.treinen",
+    "licence": "CC BY-SA 3.0",
+    "licence_url": "https://creativecommons.org/licenses/by-sa/3.0",
+    "page_wikimedia": "https://commons.wikimedia.org/wiki/File:Gentilly_mairie.jpg",
+    "date_download": "2026-02-28",
+    "files": {
+      "webp": [
+        "/assets/cities/gentilly-hero-640.webp",
+        "/assets/cities/gentilly-hero-1024.webp",
+        "/assets/cities/gentilly-hero-1600.webp"
+      ],
+      "jpg": [
+        "/assets/cities/gentilly-hero-640.jpg",
+        "/assets/cities/gentilly-hero-1024.jpg",
+        "/assets/cities/gentilly-hero-1600.jpg"
+      ],
+      "default_webp": "/assets/cities/gentilly-hero.webp",
+      "default_jpg": "/assets/cities/gentilly-hero.jpg"
+    }
+  },
+  "le-kremlin-bicetre": {
+    "city": "Le Kremlin-Bicêtre",
+    "landmark": "Mairie",
+    "alt": "Vue de Le Kremlin-Bicêtre – Mairie",
+    "source_url": "https://upload.wikimedia.org/wikipedia/commons/2/2b/Mairie_Kremlin_Bic%C3%AAtre_20.jpg",
+    "source_title": "File:Mairie Kremlin Bicêtre 20.jpg",
+    "author": "Chabe01",
+    "licence": "CC BY-SA 4.0",
+    "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "page_wikimedia": "https://commons.wikimedia.org/wiki/File:Mairie_Kremlin_Bicêtre_20.jpg",
+    "date_download": "2026-02-28",
+    "files": {
+      "webp": [
+        "/assets/cities/le-kremlin-bicetre-hero-640.webp",
+        "/assets/cities/le-kremlin-bicetre-hero-1024.webp",
+        "/assets/cities/le-kremlin-bicetre-hero-1600.webp"
+      ],
+      "jpg": [
+        "/assets/cities/le-kremlin-bicetre-hero-640.jpg",
+        "/assets/cities/le-kremlin-bicetre-hero-1024.jpg",
+        "/assets/cities/le-kremlin-bicetre-hero-1600.jpg"
+      ],
+      "default_webp": "/assets/cities/le-kremlin-bicetre-hero.webp",
+      "default_jpg": "/assets/cities/le-kremlin-bicetre-hero.jpg"
+    }
+  },
+  "lhay-les-roses": {
+    "city": "L'Haÿ-les-Roses",
+    "landmark": "Parc de la Roseraie",
+    "alt": "Vue de L'Haÿ-les-Roses – Parc de la Roseraie",
+    "source_url": "https://upload.wikimedia.org/wikipedia/commons/b/be/H%C3%B4tel_Ville_-_L%27Ha%C3%BF-les-Roses_%28FR94%29_-_2022-05-20_-_1.jpg",
+    "source_title": "File:Hôtel Ville - L'Haÿ-les-Roses (FR94) - 2022-05-20 - 1.jpg",
+    "author": "Chabe01",
+    "licence": "CC BY-SA 4.0",
+    "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "page_wikimedia": "https://commons.wikimedia.org/wiki/File:Hôtel_Ville_-_L'Haÿ-les-Roses_(FR94)_-_2022-05-20_-_1.jpg",
+    "date_download": "2026-02-28",
+    "files": {
+      "webp": [
+        "/assets/cities/lhay-les-roses-hero-640.webp",
+        "/assets/cities/lhay-les-roses-hero-1024.webp",
+        "/assets/cities/lhay-les-roses-hero-1600.webp"
+      ],
+      "jpg": [
+        "/assets/cities/lhay-les-roses-hero-640.jpg",
+        "/assets/cities/lhay-les-roses-hero-1024.jpg",
+        "/assets/cities/lhay-les-roses-hero-1600.jpg"
+      ],
+      "default_webp": "/assets/cities/lhay-les-roses-hero.webp",
+      "default_jpg": "/assets/cities/lhay-les-roses-hero.jpg"
+    }
+  },
+  "orly": {
+    "city": "Orly",
+    "landmark": "Centre-ville",
+    "alt": "Vue de Orly – Centre-ville",
+    "source_url": "https://upload.wikimedia.org/wikipedia/commons/9/9b/H%C3%B4tel_ville_Orly_2.jpg",
+    "source_title": "File:Hôtel ville Orly 2.jpg",
+    "author": "Chabe01",
+    "licence": "CC BY-SA 4.0",
+    "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "page_wikimedia": "https://commons.wikimedia.org/wiki/File:Hôtel_ville_Orly_2.jpg",
+    "date_download": "2026-02-28",
+    "files": {
+      "webp": [
+        "/assets/cities/orly-hero-640.webp",
+        "/assets/cities/orly-hero-1024.webp",
+        "/assets/cities/orly-hero-1600.webp"
+      ],
+      "jpg": [
+        "/assets/cities/orly-hero-640.jpg",
+        "/assets/cities/orly-hero-1024.jpg",
+        "/assets/cities/orly-hero-1600.jpg"
+      ],
+      "default_webp": "/assets/cities/orly-hero.webp",
+      "default_jpg": "/assets/cities/orly-hero.jpg"
+    }
+  },
+  "rungis": {
+    "city": "Rungis",
+    "landmark": "Marché international",
+    "alt": "Vue de Rungis – Marché international",
+    "source_url": "https://upload.wikimedia.org/wikipedia/commons/8/82/Conservatoire_%283772354782%29.jpg",
+    "source_title": "File:Conservatoire (3772354782).jpg",
+    "author": "besopha",
+    "licence": "CC BY-SA 2.0",
+    "licence_url": "https://creativecommons.org/licenses/by-sa/2.0",
+    "page_wikimedia": "https://commons.wikimedia.org/wiki/File:Conservatoire_(3772354782).jpg",
+    "date_download": "2026-02-28",
+    "files": {
+      "webp": [
+        "/assets/cities/rungis-hero-640.webp",
+        "/assets/cities/rungis-hero-1024.webp",
+        "/assets/cities/rungis-hero-1600.webp"
+      ],
+      "jpg": [
+        "/assets/cities/rungis-hero-640.jpg",
+        "/assets/cities/rungis-hero-1024.jpg",
+        "/assets/cities/rungis-hero-1600.jpg"
+      ],
+      "default_webp": "/assets/cities/rungis-hero.webp",
+      "default_jpg": "/assets/cities/rungis-hero.jpg"
+    }
+  },
+  "thiais": {
+    "city": "Thiais",
+    "landmark": "Centre-ville",
+    "alt": "Vue de Thiais – Centre-ville",
+    "source_url": "https://upload.wikimedia.org/wikipedia/commons/5/51/94-Thiais-%C3%A9glise-St-Leu.jpg",
+    "source_title": "File:94-Thiais-église-St-Leu.jpg",
+    "author": "JC Allin",
+    "licence": "CC BY-SA 3.0",
+    "licence_url": "https://creativecommons.org/licenses/by-sa/3.0",
+    "page_wikimedia": "https://commons.wikimedia.org/wiki/File:94-Thiais-église-St-Leu.jpg",
+    "date_download": "2026-02-28",
+    "files": {
+      "webp": [
+        "/assets/cities/thiais-hero-640.webp",
+        "/assets/cities/thiais-hero-1024.webp",
+        "/assets/cities/thiais-hero-1600.webp"
+      ],
+      "jpg": [
+        "/assets/cities/thiais-hero-640.jpg",
+        "/assets/cities/thiais-hero-1024.jpg",
+        "/assets/cities/thiais-hero-1600.jpg"
+      ],
+      "default_webp": "/assets/cities/thiais-hero.webp",
+      "default_jpg": "/assets/cities/thiais-hero.jpg"
+    }
+  },
+  "versailles": {
+    "city": "Versailles",
+    "landmark": "Château de Versailles",
+    "alt": "Vue de Versailles – Château de Versailles",
+    "source_url": "https://upload.wikimedia.org/wikipedia/commons/5/54/Vue_a%C3%A9rienne_du_domaine_de_Versailles_par_ToucanWings_-_Creative_Commons_By_Sa_3.0_-_073.jpg",
+    "source_title": "File:Vue aérienne du domaine de Versailles par ToucanWings - Creative Commons By Sa 3.0 - 073.jpg",
+    "author": "ToucanWings",
+    "licence": "CC BY-SA 3.0",
+    "licence_url": "https://creativecommons.org/licenses/by-sa/3.0",
+    "page_wikimedia": "https://commons.wikimedia.org/wiki/File:Vue_aérienne_du_domaine_de_Versailles_par_ToucanWings_-_Creative_Commons_By_Sa_3.0_-_073.jpg",
+    "date_download": "2026-02-28",
+    "files": {
+      "webp": [
+        "/assets/cities/versailles-hero-640.webp",
+        "/assets/cities/versailles-hero-1024.webp",
+        "/assets/cities/versailles-hero-1600.webp"
+      ],
+      "jpg": [
+        "/assets/cities/versailles-hero-640.jpg",
+        "/assets/cities/versailles-hero-1024.jpg",
+        "/assets/cities/versailles-hero-1600.jpg"
+      ],
+      "default_webp": "/assets/cities/versailles-hero.webp",
+      "default_jpg": "/assets/cities/versailles-hero.jpg"
+    }
+  },
+  "villejuif": {
+    "city": "Villejuif",
+    "landmark": "Centre-ville",
+    "alt": "Vue de Villejuif – Centre-ville",
+    "source_url": "https://upload.wikimedia.org/wikipedia/commons/8/82/Mairie_Villejuif_9.jpg",
+    "source_title": "File:Mairie Villejuif 9.jpg",
+    "author": "Chabe01",
+    "licence": "CC BY-SA 4.0",
+    "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "page_wikimedia": "https://commons.wikimedia.org/wiki/File:Mairie_Villejuif_9.jpg",
+    "date_download": "2026-02-28",
+    "files": {
+      "webp": [
+        "/assets/cities/villejuif-hero-640.webp",
+        "/assets/cities/villejuif-hero-1024.webp",
+        "/assets/cities/villejuif-hero-1600.webp"
+      ],
+      "jpg": [
+        "/assets/cities/villejuif-hero-640.jpg",
+        "/assets/cities/villejuif-hero-1024.jpg",
+        "/assets/cities/villejuif-hero-1600.jpg"
+      ],
+      "default_webp": "/assets/cities/villejuif-hero.webp",
+      "default_jpg": "/assets/cities/villejuif-hero.jpg"
+    }
+  },
+  "vitry-sur-seine": {
+    "city": "Vitry-sur-Seine",
+    "landmark": "Panorama urbain",
+    "alt": "Vue de Vitry-sur-Seine – Panorama urbain",
+    "source_url": "https://upload.wikimedia.org/wikipedia/commons/8/89/H%C3%B4tel_Ville_Vitry_Seine_3.jpg",
+    "source_title": "File:Hôtel Ville Vitry Seine 3.jpg",
+    "author": "Chabe01",
+    "licence": "CC BY-SA 4.0",
+    "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "page_wikimedia": "https://commons.wikimedia.org/wiki/File:Hôtel_Ville_Vitry_Seine_3.jpg",
+    "date_download": "2026-02-28",
+    "files": {
+      "webp": [
+        "/assets/cities/vitry-sur-seine-hero-640.webp",
+        "/assets/cities/vitry-sur-seine-hero-1024.webp",
+        "/assets/cities/vitry-sur-seine-hero-1600.webp"
+      ],
+      "jpg": [
+        "/assets/cities/vitry-sur-seine-hero-640.jpg",
+        "/assets/cities/vitry-sur-seine-hero-1024.jpg",
+        "/assets/cities/vitry-sur-seine-hero-1600.jpg"
+      ],
+      "default_webp": "/assets/cities/vitry-sur-seine-hero.webp",
+      "default_jpg": "/assets/cities/vitry-sur-seine-hero.jpg"
+    }
+  }
+}
