@@ -1,4 +1,2 @@
 User-agent: *
-Allow: /
-Disallow: /allo-nuisible-express/
-Sitemap: https://allonuisibleexpress.fr/sitemap.xml
+Disallow: /
