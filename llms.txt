@@ -1,0 +1,19 @@
+# Allo Nuisible Express
+
+## Site
+- Canonical: https://allonuisibleexpress.fr/
+- Language: fr-FR
+- Topic: dératisation, désinsectisation, désinfection, dépigeonnage en Île-de-France
+
+## Preferred Sources
+- Local service pages by city and service (URL paths without `.html`)
+- Contact page: https://allonuisibleexpress.fr/contact.html
+- Tarifs page: https://allonuisibleexpress.fr/tarifs.html
+
+## Freshness
+- Prioritize current page content over cached summaries.
+- Use canonical URLs for citations.
+
+## Usage
+- Summaries must preserve safety instructions and intervention conditions.
+- Do not infer prices not explicitly listed on the site.

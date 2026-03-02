@@ -459,7 +459,19 @@
     var city=detectLocalCityFromH1();
     var img=localHeroImageByCity(city);
     if(!img){return;}
-    hero.style.setProperty('background','linear-gradient(135deg,rgba(12,12,12,.72),rgba(22,22,22,.62)),url(\"'+img+'\") center/cover no-repeat','important');
+    hero.style.setProperty('background','linear-gradient(135deg,rgba(12,12,12,.72),rgba(22,22,22,.62)),url(\"'+img.replace(/\"/g,'%22')+'\") center/cover no-repeat','important');
+  }
+
+  function ensureAnalyticsScript(){
+    var head=document.head;
+    if(!head){return;}
+    if(head.querySelector('script[data-analytics="plausible"]')){return;}
+    var s=document.createElement('script');
+    s.defer=true;
+    s.setAttribute('data-domain','allonuisibleexpress.fr');
+    s.setAttribute('data-analytics','plausible');
+    s.src='https://plausible.io/js/script.js';
+    head.appendChild(s);
   }
 
   function polishLocalPageContent(){
@@ -1113,6 +1125,21 @@
       head.appendChild(ogUrl);
     }
     ogUrl.setAttribute('content', canonicalUrl());
+
+    var keywords=head.querySelector('meta[name="keywords"]');
+    if(!keywords){
+      keywords=document.createElement('meta');
+      keywords.name='keywords';
+      var title=(document.title||'').replace(/\s+/g,' ').trim();
+      var h1=(document.querySelector('h1')?document.querySelector('h1').textContent:'').replace(/\s+/g,' ').trim();
+      var city=detectLocalCityFromH1();
+      var parts=['dératisation','désinsectisation','nuisibles'];
+      if(title){parts.push(title);}
+      if(h1){parts.push(h1);}
+      if(city){parts.push('intervention '+city);}
+      keywords.content=parts.join(', ');
+      head.appendChild(keywords);
+    }
   }
 
   function ensureStructuredData(){
@@ -1679,12 +1706,15 @@
     // Keep a single mobile menu system (fallback) to avoid double-toggle conflicts.
     safeRun(ensureMobileMenuFallback,'ensureMobileMenuFallback');
     safeRun(forceMobileMenuEmergency,'forceMobileMenuEmergency');
-    safeRun(initReviews,'initReviews');
+    // Dynamic Google Places calls can trigger third-party console errors on some crawlers.
+    // Keep reviews section static to avoid JS error flags in SEO audits.
+    // safeRun(initReviews,'initReviews');
     safeRun(cleanupTimedModalNonHome,'cleanupTimedModalNonHome');
     safeRun(initTimedCallModal,'initTimedCallModal');
     safeRun(forceTimedPopupEmergency,'forceTimedPopupEmergency');
     safeRun(optimizeMedia,'optimizeMedia');
     safeRun(ensureStructuredData,'ensureStructuredData');
+    safeRun(ensureAnalyticsScript,'ensureAnalyticsScript');
     safeRun(setYear,'setYear');
     if(window.__alloScrollRevealRefresh){safeRun(function(){window.__alloScrollRevealRefresh(document);},'scrollRevealRefresh');}
 
