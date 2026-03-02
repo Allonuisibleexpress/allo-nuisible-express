@@ -31,10 +31,17 @@ section[id]{
 .hero-local,
 .hero-local-seo,
 .seo-hero{
+  position:relative !important;
+  left:50% !important;
+  right:50% !important;
   width:100vw !important;
-  max-width:none !important;
-  margin-left:calc(50% - 50vw) !important;
-  margin-right:calc(50% - 50vw) !important;
+  max-width:100vw !important;
+  margin-left:-50vw !important;
+  margin-right:-50vw !important;
+  border-radius:0 !important;
+  background-position:center center !important;
+  background-size:cover !important;
+  background-repeat:no-repeat !important;
 }
 .seo-summary-block{
   background:#ffffff;
