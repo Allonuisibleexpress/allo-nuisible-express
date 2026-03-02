@@ -1278,20 +1278,7 @@
       header.appendChild(overlay);
     }
 
-    function setHeaderLogoHidden(hidden){
-      var logoLink=header.querySelector('.logo-link');
-      if(logoLink){
-        logoLink.style.setProperty('display', hidden ? 'none' : '', 'important');
-        logoLink.style.setProperty('visibility', hidden ? 'hidden' : '', 'important');
-        logoLink.style.setProperty('opacity', hidden ? '0' : '', 'important');
-      }
-      var logoImg=header.querySelector('.logo');
-      if(logoImg){
-        logoImg.style.setProperty('display', hidden ? 'none' : '', 'important');
-        logoImg.style.setProperty('visibility', hidden ? 'hidden' : '', 'important');
-        logoImg.style.setProperty('opacity', hidden ? '0' : '', 'important');
-      }
-    }
+    function setHeaderLogoHidden(_hidden){}
 
     function closeMenu(){
       document.body.classList.remove('mobile-nav-open');
@@ -1355,20 +1342,7 @@
     var nav=document.querySelector('header .main-nav');
     if(!header||!nav){return;}
 
-    function setHeaderLogoHidden(hidden){
-      var logoLink=header.querySelector('.logo-link');
-      if(logoLink){
-        logoLink.style.setProperty('display', hidden ? 'none' : '', 'important');
-        logoLink.style.setProperty('visibility', hidden ? 'hidden' : '', 'important');
-        logoLink.style.setProperty('opacity', hidden ? '0' : '', 'important');
-      }
-      var logoImg=header.querySelector('.logo');
-      if(logoImg){
-        logoImg.style.setProperty('display', hidden ? 'none' : '', 'important');
-        logoImg.style.setProperty('visibility', hidden ? 'hidden' : '', 'important');
-        logoImg.style.setProperty('opacity', hidden ? '0' : '', 'important');
-      }
-    }
+    function setHeaderLogoHidden(_hidden){}
 
     var btn=header.querySelector('.mobile-menu-btn');
     if(!btn){

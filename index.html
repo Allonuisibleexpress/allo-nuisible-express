@@ -1576,7 +1576,7 @@ z-index:5
 <link rel="stylesheet" href="scroll-reveal.css?v=20260302">
 <script src="scroll-reveal.js?v=20260302" defer></script>
 <link rel="stylesheet" href="site-global.css?v=20260410h">
-<script src="site-global.js?v=20260410k" defer></script>
+<script src="site-global.js?v=20260410l" defer></script>
 </head>
 
 <body class="is-homepage">
@@ -2250,25 +2250,6 @@ if(!isActive){item.classList.add("active")}
     else{fn();}
   }
 
-  function bindMobileMenuFallback(){
-    var btn=document.querySelector('header .mobile-menu-btn');
-    var overlay=document.querySelector('header .mobile-nav-overlay');
-    if(!btn || !overlay){return;}
-    if(btn.dataset.homeFallbackBound==='1'){return;}
-    btn.dataset.homeFallbackBound='1';
-    btn.addEventListener('click',function(ev){
-      if(window.innerWidth>980){return;}
-      ev.preventDefault();
-      var isOpen=document.body.classList.contains('mobile-nav-open');
-      document.body.classList.toggle('mobile-nav-open', !isOpen);
-      btn.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
-    });
-    overlay.addEventListener('click',function(){
-      document.body.classList.remove('mobile-nav-open');
-      btn.setAttribute('aria-expanded','false');
-    });
-  }
-
   function normalizeHomeHeroOffset(){
     var strip=document.querySelector('.home-urgent-strip');
     var hero=document.querySelector('.home-urgent-strip + .hero');
@@ -2334,7 +2315,6 @@ if(!isActive){item.classList.add("active")}
 
   onReady(function(){
     if(!(document.body && document.body.classList.contains('is-homepage'))){return;}
-    bindMobileMenuFallback();
     normalizeHomeHeroOffset();
     window.addEventListener('resize', normalizeHomeHeroOffset);
     window.setTimeout(function(){
