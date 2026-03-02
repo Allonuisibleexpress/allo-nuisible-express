@@ -1245,6 +1245,29 @@
     }).join('');
   }
 
+  function ensureDesktopServicesDropdown(){
+    var menu=document.querySelector('header .main-nav .dropdown .dropdown-menu');
+    if(!menu){return;}
+    var prefix=rootPrefix();
+    var items=[
+      {href:'deratisation.html', label:'Rats / Souris'},
+      {href:'frelons.html', label:'Frelons'},
+      {href:'guepes.html', label:'Guêpes'},
+      {href:'punaises.html', label:'Punaises de lit'},
+      {href:'cafards.html', label:'Cafards'},
+      {href:'acariens.html', label:'Acariens'},
+      {href:'xylophage.html', label:'Xylophage (Insectes du bois)'},
+      {href:'mouches.html', label:'Mouches'},
+      {href:'fourmis.html', label:'Fourmis'},
+      {href:'depigeonnage.html', label:'Dépigeonnage'},
+      {href:'chenilles.html', label:'Chenilles processionnaires'},
+      {href:'diogene.html', label:'Syndrome de Diogène'}
+    ];
+    menu.innerHTML=items.map(function(item){
+      return '<a class="dropdown-item" href="'+prefix+item.href+'">'+item.label+'</a>';
+    }).join('');
+  }
+
   function initMobileMenu(){
     var header=document.querySelector('header');
     var nav=document.querySelector('header .main-nav');
@@ -1767,6 +1790,7 @@
   function boot(){
     safeRun(ensureSeoTags,'ensureSeoTags');
     safeRun(ensureHomeUrgencyStrip,'ensureHomeUrgencyStrip');
+    safeRun(ensureDesktopServicesDropdown,'ensureDesktopServicesDropdown');
     safeRun(ensureFooter,'ensureFooter');
     safeRun(ensureValDeMarneEntry,'ensureValDeMarneEntry');
     safeRun(ensureProcess,'ensureProcess');
