@@ -1576,7 +1576,7 @@ z-index:5
 <link rel="stylesheet" href="scroll-reveal.css?v=20260302">
 <script src="scroll-reveal.js?v=20260302" defer></script>
 <link rel="stylesheet" href="site-global.css?v=20260410h">
-<script src="site-global.js?v=20260410l" defer></script>
+<script src="site-global.js?v=20260410m" defer></script>
 </head>
 
 <body class="is-homepage">
@@ -2250,6 +2250,57 @@ if(!isActive){item.classList.add("active")}
     else{fn();}
   }
 
+  function getPopupAudioContext(){
+    var Ctx=window.AudioContext || window.webkitAudioContext;
+    if(!Ctx){return null;}
+    if(!window.__alloPopupAudioCtx){
+      try{ window.__alloPopupAudioCtx=new Ctx(); }
+      catch(_err){ return null; }
+    }
+    return window.__alloPopupAudioCtx;
+  }
+
+  function bindPopupAudioUnlock(){
+    if(window.__alloPopupAudioUnlockBound){return;}
+    window.__alloPopupAudioUnlockBound=true;
+    function unlock(){
+      var ctx=getPopupAudioContext();
+      if(!ctx){return;}
+      if(ctx.state==='suspended'){ctx.resume().catch(function(){});}
+      document.removeEventListener('pointerdown', unlock, true);
+      document.removeEventListener('touchstart', unlock, true);
+      document.removeEventListener('keydown', unlock, true);
+    }
+    document.addEventListener('pointerdown', unlock, true);
+    document.addEventListener('touchstart', unlock, true);
+    document.addEventListener('keydown', unlock, true);
+  }
+
+  function playPopupChime(){
+    var ctx=getPopupAudioContext();
+    if(!ctx){return;}
+    if(ctx.state==='suspended'){ctx.resume().catch(function(){});}
+    if(ctx.state!=='running'){return;}
+    var now=ctx.currentTime+0.015;
+    var g=ctx.createGain();
+    g.gain.setValueAtTime(0.0001, now);
+    g.gain.exponentialRampToValueAtTime(0.05, now+0.03);
+    g.gain.exponentialRampToValueAtTime(0.0001, now+0.36);
+    g.connect(ctx.destination);
+    var o1=ctx.createOscillator();
+    o1.type='triangle';
+    o1.frequency.setValueAtTime(988, now);
+    o1.connect(g);
+    o1.start(now);
+    o1.stop(now+0.18);
+    var o2=ctx.createOscillator();
+    o2.type='sine';
+    o2.frequency.setValueAtTime(1318, now+0.14);
+    o2.connect(g);
+    o2.start(now+0.14);
+    o2.stop(now+0.36);
+  }
+
   function normalizeHomeHeroOffset(){
     var strip=document.querySelector('.home-urgent-strip');
     var hero=document.querySelector('.home-urgent-strip + .hero');
@@ -2300,6 +2351,7 @@ if(!isActive){item.classList.add("active")}
     overlay.style.setProperty('display','flex','important');
     overlay.style.setProperty('z-index','20000','important');
     document.body.classList.add('timed-call-open');
+    playPopupChime();
 
     var closeBtn=overlay.querySelector('.timed-call-close');
     if(closeBtn && !closeBtn.dataset.fallbackBound){
@@ -2315,6 +2367,7 @@ if(!isActive){item.classList.add("active")}
 
   onReady(function(){
     if(!(document.body && document.body.classList.contains('is-homepage'))){return;}
+    bindPopupAudioUnlock();
     normalizeHomeHeroOffset();
     window.addEventListener('resize', normalizeHomeHeroOffset);
     window.setTimeout(function(){
