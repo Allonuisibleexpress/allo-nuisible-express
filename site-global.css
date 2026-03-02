@@ -192,6 +192,9 @@ section[id]{
   font-weight:900;
   flex:0 0 28px;
 }
+body.is-local-page .mini-faq-index{
+  display:none !important;
+}
 .mini-faq-label{
   flex:1 1 auto;
 }
@@ -366,7 +369,7 @@ section[id]{
   line-height:1.2 !important;
   margin:0 0 12px !important;
   position:relative;
-  padding-right:42px;
+  padding-right:0;
 }
 .is-local-page h3{
   color:#151515 !important;
@@ -392,20 +395,8 @@ section[id]{
   border-bottom-color:#9b6a00;
 }
 .is-local-page h2[data-local-step]::after{
-  content:attr(data-local-step);
-  position:absolute;
-  right:0;
-  top:0;
-  width:32px;
-  height:32px;
-  border-radius:50%;
-  background:#111;
-  color:#ffb400;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:13px;
-  font-weight:900;
+  content:none !important;
+  display:none !important;
 }
 .is-local-page .seo-summary-block,
 .is-local-page .mini-faq-local{
@@ -513,7 +504,7 @@ section[id]{
     padding:142px 16px 66px !important;
   }
   .is-local-page h2{
-    padding-right:38px;
+    padding-right:0;
   }
   .is-local-page .seo-hero .seo-hero-badge{
     margin:0 0 16px !important;
