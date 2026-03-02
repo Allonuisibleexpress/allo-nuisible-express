@@ -460,13 +460,14 @@ text-rendering:geometricPrecision;
     <p class="meta">Téléphone: <b>07 44 29 68 97</b><br>WhatsApp, e-mail et formulaire en ligne disponibles.<br>Interventions possibles de nuit, week-end et jours fériés.</p>
   </section>
   <section class="card contact-form-card">
-    <form>
-      <label class="field field-full">Objet<select><option>Demande de devis</option><option>Urgence</option><option>Question</option></select></label>
-      <label class="field">Nom<input type="text" required></label>
-      <label class="field">Prénom<input type="text"></label>
-      <label class="field">Téléphone<input type="tel" required></label>
-      <label class="field">E-mail<input type="email" required></label>
-      <label class="field field-full">Message<textarea required></textarea></label>
+    <form action="https://formspree.io/f/mojnkkjd" method="POST" accept-charset="UTF-8">
+      <input type="hidden" name="_subject" value="Nouveau message contact - Allo Nuisible Express">
+      <label class="field field-full">Objet<select name="objet"><option>Demande de devis</option><option>Urgence</option><option>Question</option></select></label>
+      <label class="field">Nom<input type="text" name="nom" required></label>
+      <label class="field">Prénom<input type="text" name="prenom"></label>
+      <label class="field">Téléphone<input type="tel" name="telephone" required></label>
+      <label class="field">E-mail<input type="email" name="email" required></label>
+      <label class="field field-full">Message<textarea name="message" required></textarea></label>
       <button type="submit" class="submit">Envoyer ma demande</button>
     </form>
   </section>
