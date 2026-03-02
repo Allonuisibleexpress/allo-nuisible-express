@@ -2284,21 +2284,27 @@ if(!isActive){item.classList.add("active")}
     var now=ctx.currentTime+0.015;
     var g=ctx.createGain();
     g.gain.setValueAtTime(0.0001, now);
-    g.gain.exponentialRampToValueAtTime(0.05, now+0.03);
-    g.gain.exponentialRampToValueAtTime(0.0001, now+0.36);
+    g.gain.exponentialRampToValueAtTime(0.05, now+0.02);
+    g.gain.exponentialRampToValueAtTime(0.0001, now+0.42);
     g.connect(ctx.destination);
     var o1=ctx.createOscillator();
-    o1.type='triangle';
-    o1.frequency.setValueAtTime(988, now);
+    o1.type='sine';
+    o1.frequency.setValueAtTime(784, now);
     o1.connect(g);
     o1.start(now);
-    o1.stop(now+0.18);
+    o1.stop(now+0.2);
     var o2=ctx.createOscillator();
-    o2.type='sine';
-    o2.frequency.setValueAtTime(1318, now+0.14);
+    o2.type='triangle';
+    o2.frequency.setValueAtTime(1047, now+0.1);
     o2.connect(g);
-    o2.start(now+0.14);
-    o2.stop(now+0.36);
+    o2.start(now+0.1);
+    o2.stop(now+0.34);
+    var o3=ctx.createOscillator();
+    o3.type='sine';
+    o3.frequency.setValueAtTime(1318, now+0.2);
+    o3.connect(g);
+    o3.start(now+0.2);
+    o3.stop(now+0.38);
   }
 
   function normalizeHomeHeroOffset(){

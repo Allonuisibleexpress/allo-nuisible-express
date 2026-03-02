@@ -1549,23 +1549,30 @@
       var now=ctx.currentTime+0.015;
       var master=ctx.createGain();
       master.gain.setValueAtTime(0.0001, now);
-      master.gain.exponentialRampToValueAtTime(0.05, now+0.03);
-      master.gain.exponentialRampToValueAtTime(0.0001, now+0.36);
+      master.gain.exponentialRampToValueAtTime(0.05, now+0.02);
+      master.gain.exponentialRampToValueAtTime(0.0001, now+0.42);
       master.connect(ctx.destination);
 
       var noteA=ctx.createOscillator();
-      noteA.type='triangle';
-      noteA.frequency.setValueAtTime(988, now);
+      noteA.type='sine';
+      noteA.frequency.setValueAtTime(784, now);
       noteA.connect(master);
       noteA.start(now);
-      noteA.stop(now+0.18);
+      noteA.stop(now+0.2);
 
       var noteB=ctx.createOscillator();
-      noteB.type='sine';
-      noteB.frequency.setValueAtTime(1318, now+0.14);
+      noteB.type='triangle';
+      noteB.frequency.setValueAtTime(1047, now+0.1);
       noteB.connect(master);
-      noteB.start(now+0.14);
-      noteB.stop(now+0.36);
+      noteB.start(now+0.1);
+      noteB.stop(now+0.34);
+
+      var noteC=ctx.createOscillator();
+      noteC.type='sine';
+      noteC.frequency.setValueAtTime(1318, now+0.2);
+      noteC.connect(master);
+      noteC.start(now+0.2);
+      noteC.stop(now+0.38);
     }
 
     bindPopupAudioUnlock();
@@ -1673,21 +1680,27 @@
             var now=ctx.currentTime+0.015;
             var g=ctx.createGain();
             g.gain.setValueAtTime(0.0001, now);
-            g.gain.exponentialRampToValueAtTime(0.045, now+0.03);
-            g.gain.exponentialRampToValueAtTime(0.0001, now+0.34);
+            g.gain.exponentialRampToValueAtTime(0.05, now+0.02);
+            g.gain.exponentialRampToValueAtTime(0.0001, now+0.42);
             g.connect(ctx.destination);
             var o1=ctx.createOscillator();
-            o1.type='triangle';
-            o1.frequency.setValueAtTime(988, now);
+            o1.type='sine';
+            o1.frequency.setValueAtTime(784, now);
             o1.connect(g);
             o1.start(now);
-            o1.stop(now+0.17);
+            o1.stop(now+0.2);
             var o2=ctx.createOscillator();
-            o2.type='sine';
-            o2.frequency.setValueAtTime(1318, now+0.13);
+            o2.type='triangle';
+            o2.frequency.setValueAtTime(1047, now+0.1);
             o2.connect(g);
-            o2.start(now+0.13);
+            o2.start(now+0.1);
             o2.stop(now+0.34);
+            var o3=ctx.createOscillator();
+            o3.type='sine';
+            o3.frequency.setValueAtTime(1318, now+0.2);
+            o3.connect(g);
+            o3.start(now+0.2);
+            o3.stop(now+0.38);
           }
         }catch(_err){}
       }
