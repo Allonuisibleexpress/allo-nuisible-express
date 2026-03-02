@@ -279,7 +279,6 @@
     summary.innerHTML='' +
       '<div class="seo-summary-head">' +
       '<h2>Sommaire</h2>' +
-      '<p>Accédez en un clic aux blocs clés de la prise en charge.</p>' +
       '</div>' +
       '<ol class="seo-summary-list">'+items+'</ol>';
 
