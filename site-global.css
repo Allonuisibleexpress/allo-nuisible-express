@@ -245,10 +245,20 @@ section[id]{
     linear-gradient(180deg,#faf8f3 0%,#f7f5ef 34%,#fdfcf9 100%);
 }
 .is-local-page main{
+  --local-main-pad:22px;
   color:var(--local-text);
   letter-spacing:.002em;
   max-width:1240px !important;
   padding:0 22px 42px !important;
+}
+/* Hero is often inside padded <main>; compensate that padding to remove side white gutters */
+.is-local-page main > .hero-local,
+.is-local-page main > .hero-local-seo,
+.is-local-page main > .seo-hero{
+  width:calc(100vw + (var(--local-main-pad) * 2)) !important;
+  max-width:calc(100vw + (var(--local-main-pad) * 2)) !important;
+  margin-left:calc(50% - 50vw - var(--local-main-pad)) !important;
+  margin-right:calc(50% - 50vw - var(--local-main-pad)) !important;
 }
 .is-local-page .seo-hero{
   border:1px solid rgba(255,255,255,.26);
@@ -486,6 +496,7 @@ section[id]{
     transform:none;
   }
   .is-local-page main{
+    --local-main-pad:14px;
     padding:0 14px 28px !important;
   }
   .is-local-page .seo-hero{
