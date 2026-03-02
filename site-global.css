@@ -1967,3 +1967,13 @@ body.is-local-page main .hero-local-seo,
 body.is-local-page main .seo-hero{
   grid-column:1 / -1 !important;
 }
+
+/* Local hero content vertical offset requested: move texts/actions lower */
+body.is-local-page .seo-hero > *:not(picture):not(.city-hero-overlay){
+  transform:translateY(25%) !important;
+}
+@media (max-width:980px){
+  body.is-local-page .seo-hero > *:not(picture):not(.city-hero-overlay){
+    transform:translateY(18%) !important;
+  }
+}
