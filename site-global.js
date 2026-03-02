@@ -90,7 +90,8 @@
 
   function isSeoLocalPage(){
     var path=normalizedPathname().toLowerCase();
-    return /\/(?:deratisation|rats|cafards|punaises-de-lit|souris|frelons|guepes)-[^/]+\/?$/.test(path);
+    var re=new RegExp('/'+LOCAL_SERVICE_PATTERN+'-[^/]+(?:/|\\.html)?$');
+    return re.test(path);
   }
 
   function isLocalServicePage(){

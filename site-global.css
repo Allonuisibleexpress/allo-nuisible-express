@@ -27,6 +27,15 @@ button{
 section[id]{
   scroll-margin-top:108px;
 }
+/* Force full-bleed hero media on local pages to avoid side white gutters */
+.hero-local,
+.hero-local-seo,
+.seo-hero{
+  width:100vw !important;
+  max-width:none !important;
+  margin-left:calc(50% - 50vw) !important;
+  margin-right:calc(50% - 50vw) !important;
+}
 .seo-summary-block{
   background:#ffffff;
   border:1px solid #ececec;
