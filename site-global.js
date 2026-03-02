@@ -13,7 +13,7 @@
     'fresnes':{'city':'Fresnes','landmark':'Panorama local'},
     'gentilly':{'city':'Gentilly','landmark':'Centre-ville'},
     'le-kremlin-bicetre':{'city':'Le Kremlin-Bicêtre','landmark':'Mairie'},
-    'lhay-les-roses':{'city':'L\\'Haÿ-les-Roses','landmark':'Parc de la Roseraie'},
+    'lhay-les-roses':{'city':'L\'Haÿ-les-Roses','landmark':'Parc de la Roseraie'},
     'orly':{'city':'Orly','landmark':'Centre-ville'},
     'rungis':{'city':'Rungis','landmark':'Marché international'},
     'thiais':{'city':'Thiais','landmark':'Centre-ville'},
@@ -1530,6 +1530,71 @@
     var openScheduled=false;
     var dismissedByUser=false;
     var hasOpened=false;
+    var popupSoundPlayed=false;
+
+    function getPopupAudioContext(){
+      var Ctx=window.AudioContext || window.webkitAudioContext;
+      if(!Ctx){return null;}
+      if(!window.__alloPopupAudioCtx){
+        try{
+          window.__alloPopupAudioCtx=new Ctx();
+        }catch(_err){
+          return null;
+        }
+      }
+      return window.__alloPopupAudioCtx;
+    }
+
+    function bindPopupAudioUnlock(){
+      if(window.__alloPopupAudioUnlockBound){return;}
+      window.__alloPopupAudioUnlockBound=true;
+      function unlock(){
+        var ctx=getPopupAudioContext();
+        if(!ctx){return;}
+        if(ctx.state==='suspended'){
+          ctx.resume().catch(function(){});
+        }
+        document.removeEventListener('pointerdown', unlock, true);
+        document.removeEventListener('touchstart', unlock, true);
+        document.removeEventListener('keydown', unlock, true);
+      }
+      document.addEventListener('pointerdown', unlock, true);
+      document.addEventListener('touchstart', unlock, true);
+      document.addEventListener('keydown', unlock, true);
+    }
+
+    function playPopupChime(){
+      if(popupSoundPlayed){return;}
+      popupSoundPlayed=true;
+      var ctx=getPopupAudioContext();
+      if(!ctx){return;}
+      if(ctx.state==='suspended'){
+        ctx.resume().catch(function(){});
+      }
+      if(ctx.state!=='running'){return;}
+      var now=ctx.currentTime+0.015;
+      var master=ctx.createGain();
+      master.gain.setValueAtTime(0.0001, now);
+      master.gain.exponentialRampToValueAtTime(0.05, now+0.03);
+      master.gain.exponentialRampToValueAtTime(0.0001, now+0.36);
+      master.connect(ctx.destination);
+
+      var noteA=ctx.createOscillator();
+      noteA.type='triangle';
+      noteA.frequency.setValueAtTime(988, now);
+      noteA.connect(master);
+      noteA.start(now);
+      noteA.stop(now+0.18);
+
+      var noteB=ctx.createOscillator();
+      noteB.type='sine';
+      noteB.frequency.setValueAtTime(1318, now+0.14);
+      noteB.connect(master);
+      noteB.start(now+0.14);
+      noteB.stop(now+0.36);
+    }
+
+    bindPopupAudioUnlock();
 
     function closeModal(){
       overlay.classList.remove('is-open');
@@ -1561,6 +1626,7 @@
       overlay.style.setProperty('pointer-events','auto','important');
       overlay.style.setProperty('display','flex','important');
       overlay.style.setProperty('z-index','20000','important');
+      playPopupChime();
       openScheduled=false;
       hasOpened=true;
     }
@@ -1626,6 +1692,31 @@
       overlay.style.setProperty('display','flex','important');
       overlay.style.setProperty('z-index','20000','important');
       document.body.classList.add('timed-call-open');
+      if(typeof window.__alloPopupAudioCtx!=='undefined'){
+        try{
+          var ctx=window.__alloPopupAudioCtx;
+          if(ctx && ctx.state==='running'){
+            var now=ctx.currentTime+0.015;
+            var g=ctx.createGain();
+            g.gain.setValueAtTime(0.0001, now);
+            g.gain.exponentialRampToValueAtTime(0.045, now+0.03);
+            g.gain.exponentialRampToValueAtTime(0.0001, now+0.34);
+            g.connect(ctx.destination);
+            var o1=ctx.createOscillator();
+            o1.type='triangle';
+            o1.frequency.setValueAtTime(988, now);
+            o1.connect(g);
+            o1.start(now);
+            o1.stop(now+0.17);
+            var o2=ctx.createOscillator();
+            o2.type='sine';
+            o2.frequency.setValueAtTime(1318, now+0.13);
+            o2.connect(g);
+            o2.start(now+0.13);
+            o2.stop(now+0.34);
+          }
+        }catch(_err){}
+      }
       var closeBtn=overlay.querySelector('.timed-call-close');
       if(closeBtn && !closeBtn.dataset.emergencyBound){
         closeBtn.dataset.emergencyBound='1';
