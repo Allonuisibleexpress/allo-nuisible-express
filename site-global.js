@@ -536,7 +536,7 @@
         .replace(/urgence intervention/gi,'intervention urgente')
         .replace(/Ce positionnement de traitement nuisibles/gi,'Notre intervention locale')
         .replace(/Ce positionnement/gi,'Cette approche')
-        .replace(/en fonction de votre secteur, du trafic et du niveau d’urgence constaté sur place\./gi, city ? ('à '+city+', selon le niveau d’urgence constaté sur place.') : 'selon le niveau d’urgence constaté sur place.');
+        .replace(/en fonction de votre secteur, du trafic et du niveau d’urgence constaté sur place\./gi, city ? (cityWithPreposition(city)+', selon le niveau d’urgence constaté sur place.') : 'selon le niveau d’urgence constaté sur place.');
       if(n!==t){node.textContent=n;}
     });
   }
