@@ -1937,3 +1937,34 @@ main .side .card:hover{
     min-height:calc(100dvh - (var(--allo-urgent-top, 91px) + var(--allo-urgent-height, 50px))) !important;
   }
 }
+
+/* Final hard lock: local hero must stay full-bleed and centered (desktop + mobile) */
+body.is-local-page .hero-local,
+body.is-local-page .hero-local-seo,
+body.is-local-page .seo-hero{
+  display:block !important;
+  position:relative !important;
+  float:none !important;
+  left:50% !important;
+  right:auto !important;
+  width:100vw !important;
+  max-width:100vw !important;
+  min-width:100vw !important;
+  margin-left:0 !important;
+  margin-right:0 !important;
+  transform:translateX(-50%) !important;
+}
+@supports (width: 100dvw){
+  body.is-local-page .hero-local,
+  body.is-local-page .hero-local-seo,
+  body.is-local-page .seo-hero{
+    width:100dvw !important;
+    max-width:100dvw !important;
+    min-width:100dvw !important;
+  }
+}
+body.is-local-page main .hero-local,
+body.is-local-page main .hero-local-seo,
+body.is-local-page main .seo-hero{
+  grid-column:1 / -1 !important;
+}
