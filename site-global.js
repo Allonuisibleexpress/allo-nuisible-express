@@ -1235,7 +1235,7 @@
         name:'Allo Nuisible Express',
         url:canonicalUrl(),
         telephone:'+33744296897',
-        email:'allonuisibleexpress@gmail.com',
+        email:'contact@allonuisibleexpress.fr',
         priceRange:'€€',
         areaServed:[detectCity()],
         address:{
