@@ -166,11 +166,18 @@
     }
     if(!hero){return;}
 
+    // If the page already defines a hero image in HTML/CSS, keep it.
+    var inlineStyle=(hero.getAttribute('style')||'').toLowerCase();
+    var hasInlineHero=(inlineStyle.indexOf('--hero:url(')!==-1 || inlineStyle.indexOf('background:')!==-1 || inlineStyle.indexOf('background-image:')!==-1);
+    var hasCssHero=false;
+    try{
+      var computedBg=window.getComputedStyle(hero).backgroundImage||'';
+      hasCssHero=(computedBg && computedBg!=='none');
+    }catch(_e){}
+    if(hasInlineHero || hasCssHero){return;}
+
     ensureCityHeroStyles();
     hero.classList.add('city-hero-ready');
-    hero.style.background='none';
-    hero.style.backgroundImage='none';
-    hero.style.setProperty('--hero','none');
 
     var serviceSlug=detectLocalServiceSlug();
     var meta=CITY_HERO_META[slug]||{};
