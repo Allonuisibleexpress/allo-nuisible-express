@@ -2200,64 +2200,100 @@ body.is-local-page main.local-wrap aside .quick a + a{
 /* Hero heading alignment and spacing (all local pages) */
 body.is-local-page .hero-local,
 body.is-local-page .hero-local-seo,
-body.is-local-page .seo-hero{
+body.is-local-page .seo-hero,
+.hero-local,
+.hero-local-seo,
+.seo-hero{
   text-align:center !important;
 }
 body.is-local-page .hero-local .seo-hero-badge,
 body.is-local-page .hero-local-seo .seo-hero-badge,
-body.is-local-page .seo-hero .seo-hero-badge{
+body.is-local-page .seo-hero .seo-hero-badge,
+.hero-local .seo-hero-badge,
+.hero-local-seo .seo-hero-badge,
+.seo-hero .seo-hero-badge{
   display:inline-flex !important;
   margin:0 auto 22px auto !important;
 }
 body.is-local-page .hero-local h1,
 body.is-local-page .hero-local-seo h1,
-body.is-local-page .seo-hero h1{
+body.is-local-page .seo-hero h1,
+.hero-local h1,
+.hero-local-seo h1,
+.seo-hero h1{
   max-width:min(1180px,94vw) !important;
   margin:0 auto 0 auto !important;
   text-align:center !important;
 }
 body.is-local-page .hero-local h2,
 body.is-local-page .hero-local-seo h2,
-body.is-local-page .seo-hero h2{
+body.is-local-page .seo-hero h2,
+.hero-local h2,
+.hero-local-seo h2,
+.seo-hero h2{
   max-width:min(1060px,92vw) !important;
-  margin:min(15%,110px) auto 22px auto !important;
+  margin:15% auto 22px auto !important;
   text-align:center !important;
 }
 body.is-local-page .hero-local .seo-hero-actions,
 body.is-local-page .hero-local-seo .seo-hero-actions,
-body.is-local-page .seo-hero .seo-hero-actions{
+body.is-local-page .seo-hero .seo-hero-actions,
+.hero-local .seo-hero-actions,
+.hero-local-seo .seo-hero-actions,
+.seo-hero .seo-hero-actions{
   justify-content:center !important;
   margin-top:2px !important;
 }
 @media (max-width:560px){
   body.is-local-page .hero-local .seo-hero-badge,
   body.is-local-page .hero-local-seo .seo-hero-badge,
-  body.is-local-page .seo-hero .seo-hero-badge{
+  body.is-local-page .seo-hero .seo-hero-badge,
+  .hero-local .seo-hero-badge,
+  .hero-local-seo .seo-hero-badge,
+  .seo-hero .seo-hero-badge{
     margin:0 auto 16px auto !important;
   }
   body.is-local-page .hero-local h1,
   body.is-local-page .hero-local-seo h1,
-  body.is-local-page .seo-hero h1{
+  body.is-local-page .seo-hero h1,
+  .hero-local h1,
+  .hero-local-seo h1,
+  .seo-hero h1{
     margin:0 auto 0 auto !important;
   }
   body.is-local-page .hero-local h2,
   body.is-local-page .hero-local-seo h2,
-  body.is-local-page .seo-hero h2{
-    margin:min(15%,74px) auto 16px auto !important;
+  body.is-local-page .seo-hero h2,
+  .hero-local h2,
+  .hero-local-seo h2,
+  .seo-hero h2{
+    margin:15% auto 16px auto !important;
   }
 
   /* Keep hero CTA buttons side-by-side on mobile */
   body.is-local-page .hero-local .seo-hero-actions,
   body.is-local-page .hero-local-seo .seo-hero-actions,
-  body.is-local-page .seo-hero .seo-hero-actions{
+  body.is-local-page .seo-hero .seo-hero-actions,
+  .hero-local .seo-hero-actions,
+  .hero-local-seo .seo-hero-actions,
+  .seo-hero .seo-hero-actions{
+    display:flex !important;
     flex-wrap:nowrap !important;
+    justify-content:space-between !important;
+    align-items:stretch !important;
     gap:10px !important;
   }
   body.is-local-page .hero-local .seo-hero-btn,
   body.is-local-page .hero-local-seo .seo-hero-btn,
-  body.is-local-page .seo-hero .seo-hero-btn{
+  body.is-local-page .seo-hero .seo-hero-btn,
+  .hero-local .seo-hero-btn,
+  .hero-local-seo .seo-hero-btn,
+  .seo-hero .seo-hero-btn{
+    display:flex !important;
+    flex:1 1 0 !important;
     min-width:0 !important;
     width:calc(50% - 5px) !important;
+    max-width:calc(50% - 5px) !important;
     font-size:16px !important;
     padding:12px 10px !important;
   }
