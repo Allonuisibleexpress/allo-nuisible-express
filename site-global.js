@@ -196,6 +196,14 @@
     var context=contextMap[serviceSlug]||'zone traitée';
     var alt='Infestation de '+label+' dans '+contextArticle(context)+' '+context+' '+cityPreposition(city)+(postal?(' ('+postal+')'):'');
     var base='/assets/local-hero/'+(serviceSlug||'local')+'-'+slug+'-'+context;
+    var fallbackByCity={
+      'versailles':'/assets/local-hero/versailles-hero-a.jpg?v=20260303f1',
+      'thiais':'/assets/local-hero/deratisation-thiais-cave.jpg',
+      'orly':'/assets/local-hero/deratisation-orly-cave.jpg',
+      'choisy-le-roi':'/assets/local-hero/deratisation-choisy-le-roi-cave.jpg',
+      'antony':'/assets/local-hero/deratisation-thiais-cave.jpg'
+    };
+    var fallbackHero=fallbackByCity[slug]||'/assets/local-hero/deratisation-thiais-cave.jpg';
 
     var picture=hero.querySelector('picture[data-city-hero]');
     if(!picture){
@@ -217,6 +225,16 @@
       var jpgSource=picture.querySelector('source[type=\"image/jpeg\"]');
       if(jpgSource){jpgSource.setAttribute('srcset',base+'.jpg');}
     }
+    var heroImg=picture.querySelector('img');
+    if(heroImg){
+      heroImg.setAttribute('data-fallback-src', fallbackHero);
+      heroImg.onerror=function(){
+        if(heroImg.dataset.fallbackApplied==='1'){return;}
+        heroImg.dataset.fallbackApplied='1';
+        heroImg.removeAttribute('srcset');
+        heroImg.src=heroImg.getAttribute('data-fallback-src')||'/assets/local-hero/deratisation-thiais-cave.jpg';
+      };
+    }
     var overlay=hero.querySelector('.city-hero-overlay');
     if(!overlay){
       overlay=document.createElement('span');
@@ -232,6 +250,30 @@
       credit.innerHTML='Crédit photo '+city+' : <a href=\"/assets/cities/credits.json\" target=\"_blank\" rel=\"noopener\">Wikimedia Commons (licences ouvertes)</a>.';
       footer.appendChild(credit);
     }
+  }
+
+  function ensureHeroTierStyles(){
+    if(document.getElementById('hero-tier-style')){return;}
+    var style=document.createElement('style');
+    style.id='hero-tier-style';
+    style.textContent='' +
+      'body.is-local-page .hero-typography-tier h1,body.is-local-page .hero-typography-tier .seo-hero h1{font-size:clamp(24px,2.25vw,34px) !important;line-height:1.18 !important;font-weight:760 !important;letter-spacing:.01em}' +
+      'body.is-local-page .hero-typography-tier h2,body.is-local-page .hero-typography-tier .seo-hero h2{font-size:clamp(13px,1.08vw,17px) !important;line-height:1.34 !important;font-weight:560 !important;opacity:.98}' +
+      'body.is-local-page .hero-typography-tier h1 .premium-pill{font-size:1.26em !important;padding:.08em .44em !important;border-radius:999px !important;border-width:1px !important;box-shadow:0 3px 9px rgba(255,180,0,.2) !important;font-weight:860 !important;display:inline-block}' +
+      'body.is-local-page .hero-typography-tier h2 .premium-pill{font-size:1.46em !important;padding:.07em .4em !important;border-radius:999px !important;border-width:1px !important;box-shadow:0 3px 9px rgba(255,180,0,.2) !important;font-weight:860 !important;white-space:nowrap !important;display:inline-block}' +
+      'body.is-local-page .hero-typography-tier .seo-hero-actions{margin-top:10px !important}' +
+      'body.is-local-page .hero-typography-tier .seo-hero-btn{font-size:clamp(16px,1.2vw,21px) !important;padding:11px 18px !important;min-width:200px !important}' +
+      '@media(max-width:560px){body.is-local-page .hero-typography-tier h1{font-size:clamp(22px,6.1vw,29px) !important}body.is-local-page .hero-typography-tier h2{font-size:clamp(12px,3.8vw,15px) !important}body.is-local-page .hero-typography-tier h2 .premium-pill{font-size:1.34em !important}}';
+    document.head.appendChild(style);
+  }
+
+  function applyHeroTierFormatting(){
+    if(!isSeoLocalPage()){return;}
+    document.body.classList.add('is-local-page');
+    var hero=document.querySelector('main .seo-hero, .hero-local-seo, .hero-local');
+    if(!hero){return;}
+    hero.classList.add('hero-typography-tier');
+    ensureHeroTierStyles();
   }
 
   function slugify(text){
@@ -1797,6 +1839,7 @@
     safeRun(ensureCoreSections,'ensureCoreSections');
     safeRun(ensureSeoSummary,'ensureSeoSummary');
     safeRun(ensureCityHeroMedia,'ensureCityHeroMedia');
+    safeRun(applyHeroTierFormatting,'applyHeroTierFormatting');
     safeRun(enhanceMiniLocalFaq,'enhanceMiniLocalFaq');
     safeRun(polishLocalPageContent,'polishLocalPageContent');
     safeRun(ensureLocalHeroBackground,'ensureLocalHeroBackground');
