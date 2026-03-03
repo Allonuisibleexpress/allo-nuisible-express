@@ -2213,14 +2213,14 @@ body.is-local-page .hero-local h1,
 body.is-local-page .hero-local-seo h1,
 body.is-local-page .seo-hero h1{
   max-width:min(1180px,94vw) !important;
-  margin:0 auto 18px auto !important;
+  margin:0 auto 0 auto !important;
   text-align:center !important;
 }
 body.is-local-page .hero-local h2,
 body.is-local-page .hero-local-seo h2,
 body.is-local-page .seo-hero h2{
   max-width:min(1060px,92vw) !important;
-  margin:0 auto 22px auto !important;
+  margin:min(15%,110px) auto 22px auto !important;
   text-align:center !important;
 }
 body.is-local-page .hero-local .seo-hero-actions,
@@ -2238,11 +2238,27 @@ body.is-local-page .seo-hero .seo-hero-actions{
   body.is-local-page .hero-local h1,
   body.is-local-page .hero-local-seo h1,
   body.is-local-page .seo-hero h1{
-    margin:0 auto 14px auto !important;
+    margin:0 auto 0 auto !important;
   }
   body.is-local-page .hero-local h2,
   body.is-local-page .hero-local-seo h2,
   body.is-local-page .seo-hero h2{
-    margin:0 auto 16px auto !important;
+    margin:min(15%,74px) auto 16px auto !important;
+  }
+
+  /* Keep hero CTA buttons side-by-side on mobile */
+  body.is-local-page .hero-local .seo-hero-actions,
+  body.is-local-page .hero-local-seo .seo-hero-actions,
+  body.is-local-page .seo-hero .seo-hero-actions{
+    flex-wrap:nowrap !important;
+    gap:10px !important;
+  }
+  body.is-local-page .hero-local .seo-hero-btn,
+  body.is-local-page .hero-local-seo .seo-hero-btn,
+  body.is-local-page .seo-hero .seo-hero-btn{
+    min-width:0 !important;
+    width:calc(50% - 5px) !important;
+    font-size:16px !important;
+    padding:12px 10px !important;
   }
 }
