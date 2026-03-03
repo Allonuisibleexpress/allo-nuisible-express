@@ -201,7 +201,7 @@ create_page "Rungis" "rungis" "Dépigeonnage" "depigeonnage" "Dépigeonnage Rung
 # Build consolidated export file requested by user
 OUT="seo-local-pages-ready.txt"
 : > "$OUT"
-for f in deratisation-thiais.html punaises-lit-thiais.html cafards-thiais.html rats-thiais.html souris-thiais.html guepes-thiais.html frelons-thiais.html syndrome-diogene-thiais.html depigeonnage-thiais.html nuisibles-rungis.html deratisation-rungis.html punaises-lit-rungis.html cafards-rungis.html rats-rungis.html souris-rungis.html guepes-rungis.html frelons-rungis.html syndrome-diogene-rungis.html depigeonnage-rungis.html; do
+for f in deratisation-thiais.html punaises-lit-thiais.html cafards-thiais.html rats-thiais.html souris-thiais.html guepes-thiais.html syndrome-diogene-thiais.html depigeonnage-thiais.html nuisibles-rungis.html deratisation-rungis.html punaises-lit-rungis.html cafards-rungis.html rats-rungis.html souris-rungis.html guepes-rungis.html frelons-rungis.html syndrome-diogene-rungis.html depigeonnage-rungis.html; do
   echo "=== NOUVELLE PAGE ===" >> "$OUT"
   echo "FICHIER: $f" >> "$OUT"
   cat "$f" >> "$OUT"

@@ -852,7 +852,6 @@ main{max-width:1180px;margin:0 auto;padding:38px 20px 28px;display:grid;grid-tem
 
 === NOUVELLE PAGE ===
 URL :
-/frelons-thiais
 
 META TITLE :
 Frelons Thiais | Intervention nid frelon asiatique 7j/7

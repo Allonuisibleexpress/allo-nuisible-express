@@ -8,7 +8,6 @@ files=(
   rats-thiais.html
   souris-thiais.html
   guepes-thiais.html
-  frelons-thiais.html
   syndrome-diogene-thiais.html
   depigeonnage-thiais.html
   nuisibles-rungis.html
