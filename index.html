@@ -438,7 +438,7 @@ z-index:6
 background:linear-gradient(180deg,#ffffff 0%,#fffaf0 100%);
 border:1px solid #f0e0bf;
 border-radius:18px;
-box-shadow:0 10px 26px rgba(0,0,0,.08);
+box-shadow:0 14px 34px rgba(0,0,0,.10);
 padding:28px 26px 24px
 }
 .idf-map-head h2{
@@ -479,7 +479,7 @@ justify-content:center
 }
 .idf-map-wrap{
 display:grid;
-grid-template-columns:1.35fr .65fr;
+grid-template-columns:1.42fr .58fr;
 gap:20px;
 margin-top:18px
 }
@@ -493,17 +493,37 @@ margin:14px auto 0;
 .idf-reassure-item{
 display:flex;
 align-items:center;
-justify-content:center;
-padding:10px 12px;
-border-radius:999px;
-border:1px solid #ecd8a8;
-background:#fff7e4;
-font-size:13px;
+justify-content:flex-start;
+gap:8px;
+padding:12px 12px;
+border-radius:14px;
+border:1px solid #e8d3a0;
+background:linear-gradient(180deg,#fff9ec 0%,#fff3d6 100%);
+font-size:12px;
 line-height:1.2;
 font-weight:900;
 color:#1b1b1b;
-white-space:nowrap;
-text-align:center
+text-align:left;
+box-shadow:0 8px 16px rgba(0,0,0,.05);
+transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease
+}
+.idf-reassure-item:hover{
+transform:translateY(-1px);
+box-shadow:0 12px 20px rgba(0,0,0,.09);
+border-color:#e1ba63
+}
+.idf-reassure-icon{
+display:inline-flex;
+align-items:center;
+justify-content:center;
+width:22px;
+height:22px;
+border-radius:999px;
+background:#ffae00;
+color:#111;
+font-size:12px;
+font-weight:900;
+flex:0 0 22px
 }
 .idf-map-cta{
 display:flex;
@@ -517,11 +537,11 @@ margin:14px auto 4px
 display:inline-flex;
 align-items:center;
 justify-content:center;
-min-height:46px;
+min-height:48px;
 padding:11px 18px;
 border-radius:12px;
 text-decoration:none;
-font-size:15px;
+font-size:14px;
 font-weight:900;
 letter-spacing:.01em;
 transition:transform .2s ease,box-shadow .2s ease
@@ -537,14 +557,19 @@ box-shadow:0 8px 18px rgba(0,0,0,.08)
 background:#ffae00;
 color:#111;
 border:1px solid #ffae00;
-box-shadow:0 10px 20px rgba(255,174,0,.26)
+min-height:60px;
+padding:15px 28px;
+font-size:18px;
+box-shadow:0 14px 30px rgba(255,174,0,.36);
+animation:idfPulse 2.6s ease-in-out infinite
 }
 .idf-map-visual{
 position:relative;
 border-radius:14px;
 background:#fbfbfb;
 border:1px solid #cfd5df;
-overflow:hidden
+overflow:hidden;
+box-shadow:inset 0 0 0 1px rgba(255,255,255,.55),0 16px 28px rgba(0,0,0,.07)
 }
 .idf-map-visual:before{
 content:"Île-de-France";
@@ -568,6 +593,7 @@ margin-top:30px
 text-decoration:none;
 cursor:pointer
 }
+.idf-map-svg a{cursor:pointer}
 .idf-map-svg a,
 .idf-map-svg a:focus,
 .idf-map-svg a:focus-visible,
@@ -581,17 +607,19 @@ fill:#ffffff;
 stroke:#131313;
 stroke-width:2.4;
 stroke-linejoin:round;
-transition:fill .2s ease,filter .2s ease;
+transition:fill .2s ease,filter .2s ease,stroke-width .2s ease;
 vector-effect:non-scaling-stroke
 }
 .idf-dept-link:hover .idf-dept,
 .idf-dept-link:focus-visible .idf-dept{
 fill:#ffbf33;
-filter:drop-shadow(0 8px 16px rgba(255,174,0,.4))
+stroke-width:2.9;
+filter:drop-shadow(0 0 10px rgba(255,174,0,.55)) drop-shadow(0 10px 18px rgba(255,174,0,.32))
 }
 .idf-dept-link.is-selected .idf-dept{
 fill:#ffae00;
-filter:drop-shadow(0 10px 20px rgba(255,174,0,.45))
+stroke-width:3.1;
+filter:drop-shadow(0 0 12px rgba(255,174,0,.6)) drop-shadow(0 12px 22px rgba(255,174,0,.38))
 }
 .idf-label{
 display:none
@@ -670,7 +698,8 @@ border:1px solid #e8d7b2;
 border-radius:14px;
 background:linear-gradient(180deg,#fffef9 0%,#fff7e4 100%);
 padding:14px 14px 12px;
-box-shadow:0 10px 20px rgba(0,0,0,.06)
+box-shadow:0 12px 22px rgba(0,0,0,.08);
+animation:idfFadeUp .35s ease
 }
 .idf-selection-panel.is-hidden{display:none}
 .idf-selection-title{
@@ -705,6 +734,7 @@ font-weight:900
 }
 .idf-selection-main{background:#ffae00;color:#111}
 .idf-selection-alt{background:#fff;color:#111;border:1px solid #e2e2e2}
+.idf-selection-call{background:#111;color:#fff}
 .idf-paris.is-hidden{display:none}
 @media(max-width:980px){
 .idf-map-section{padding:0 16px}
@@ -720,6 +750,7 @@ font-weight:900
 .idf-reassure-item{font-size:12px;padding:9px 10px}
 .idf-map-cta{gap:8px}
 .idf-map-btn{font-size:13px;min-height:42px;padding:9px 12px}
+.idf-map-btn.call{min-height:52px;font-size:16px;padding:12px 18px}
 .idf-map-svg{margin-top:20px}
 .idf-label{font-size:15px}
 .idf-code{font-size:28px}
@@ -755,6 +786,14 @@ font-weight:900
   body.is-homepage{padding-bottom:156px}
   body.is-homepage .site-sticky-cta{display:none}
   .idf-mobile-bar{display:flex}
+}
+@keyframes idfFadeUp{
+  from{opacity:0;transform:translateY(8px)}
+  to{opacity:1;transform:translateY(0)}
+}
+@keyframes idfPulse{
+  0%,100%{transform:scale(1)}
+  50%{transform:scale(1.025)}
 }
 
 @keyframes heroTextIn{
@@ -1843,10 +1882,10 @@ z-index:5
       <p class="idf-map-instruction">Sélectionnez votre département ou votre arrondissement pour accéder au service et demander un devis immédiat.</p>
       <p class="idf-map-message">Sélectionnez votre département en Île-de-France. Pour Paris (75), choisissez ensuite votre arrondissement (75001 à 75020).</p>
       <div class="idf-reassure" aria-label="Réassurance intervention">
-        <div class="idf-reassure-item">Note Google 4,7/5 - 45 avis</div>
-        <div class="idf-reassure-item">Intervention 24/7</div>
-        <div class="idf-reassure-item">Devis et déplacement gratuits</div>
-        <div class="idf-reassure-item">Certibiocide</div>
+        <div class="idf-reassure-item"><span class="idf-reassure-icon">★</span><span>Note Google 4,7/5 - 45 avis</span></div>
+        <div class="idf-reassure-item"><span class="idf-reassure-icon">24</span><span>Intervention 24/7</span></div>
+        <div class="idf-reassure-item"><span class="idf-reassure-icon">€</span><span>Devis et déplacement gratuits</span></div>
+        <div class="idf-reassure-item"><span class="idf-reassure-icon">C</span><span>Certibiocide</span></div>
       </div>
       <div class="idf-map-cta">
         <a class="idf-map-btn quote" href="devis.html">Devis gratuit</a>
@@ -2399,6 +2438,9 @@ if(!isActive){item.classList.add("active")}
   function renderSelection(config){
     if(!selectionPanel || !selectionTitle || !selectionText || !selectionActions){return;}
     selectionPanel.classList.remove('is-hidden');
+    selectionPanel.style.animation='none';
+    void selectionPanel.offsetWidth;
+    selectionPanel.style.animation='idfFadeUp .35s ease';
     selectionTitle.textContent=config.title;
     selectionText.textContent=config.text;
     selectionActions.innerHTML='';
@@ -2406,6 +2448,7 @@ if(!isActive){item.classList.add("active")}
     if(config.altHref){
       addAction(config.altHref,config.altLabel,'idf-selection-alt');
     }
+    addAction('tel:0744296897','Appeler maintenant','idf-selection-call');
   }
   openPanel();
   trigger.addEventListener('focus',openPanel);
@@ -2430,7 +2473,7 @@ if(!isActive){item.classList.add("active")}
       setSelectedArr('');
       renderSelection({
         title:name+' ('+code+') sélectionné',
-        text:'Accédez au service nuisibles pour ce département, puis demandez un devis immédiat.',
+        text:'Intervention possible en moins d’1h sur ce département. Accédez au service nuisibles puis demandez un devis immédiat.',
         mainHref:link.getAttribute('href'),
         mainLabel:'Accéder au service',
         altHref:deptZonePages[code]||'',
