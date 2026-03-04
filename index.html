@@ -1109,11 +1109,37 @@ font-weight:900;
 text-transform:uppercase
 }
 .reviews-cred{
-margin:12px auto 4px;
+position:relative;
+display:inline-flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+margin:12px auto 6px;
+padding:11px 20px;
+border-radius:999px;
 font-size:21px;
-line-height:1.35;
-font-weight:800;
-color:#1f1f1f
+line-height:1.25;
+font-weight:900;
+letter-spacing:.01em;
+color:#161616;
+background:linear-gradient(135deg,#fff8e6 0%,#ffe5a8 45%,#ffd369 100%);
+border:1px solid rgba(199,144,20,.35);
+box-shadow:0 10px 30px rgba(219,156,22,.20), inset 0 1px 0 rgba(255,255,255,.75);
+overflow:hidden
+}
+.reviews-cred::before{
+content:"";
+position:absolute;
+inset:0;
+background:linear-gradient(115deg,transparent 15%,rgba(255,255,255,.46) 45%,transparent 70%);
+transform:translateX(-130%);
+animation:reviewsCredShine 3.8s ease-in-out infinite
+}
+.reviews-cred span{position:relative;z-index:1}
+@keyframes reviewsCredShine{
+0%{transform:translateX(-130%)}
+55%{transform:translateX(130%)}
+100%{transform:translateX(130%)}
 }
 .reviews-intro{
 margin:12px auto 10px;
@@ -1336,7 +1362,7 @@ width:100%
 .reviews{padding:28px 14px 12px}
 .reviews-shell{padding:18px 12px 16px;border-radius:18px}
 .reviews h2{font-size:30px}
-.reviews-cred{font-size:17px;margin-top:10px}
+.reviews-cred{font-size:16px;margin-top:10px;padding:9px 14px}
 .reviews-intro{font-size:15px}
 .reviews-rating-line{font-size:17px;padding:8px 12px;gap:8px}
 .reviews-rating-line .reviews-rating-stars{font-size:19px}
@@ -1734,7 +1760,7 @@ z-index:5
 <section class="reviews" id="avis-google">
 <div class="reviews-shell">
 <h2>Ils nous font confiance</h2>
-<p class="reviews-cred">Plus de 2000 interventions en Île-de-France</p>
+<p class="reviews-cred"><span>Plus de 2000 interventions en Île-de-France</span></p>
 <p class="reviews-intro">Retrouvez des retours clients publiés sur Google. Affichage filtré sur des avis 5 étoiles.</p>
 <div class="reviews-rating-line"><span class="reviews-rating-stars" data-google-stars>★★★★★</span><span>Note Google : <strong data-google-note>...</strong> / 5 (<strong data-google-count>...</strong> avis clients)</span></div>
 <div class="reviews-top">
