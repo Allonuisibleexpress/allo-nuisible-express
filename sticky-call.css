@@ -133,6 +133,34 @@ body{
   .site-sticky-cta .sticky-link{min-height:58px !important;font-size:17px !important;padding:13px 14px !important}
 }
 
+/* Homepage only: keep floating CTA compact (not full-width). */
+body.is-homepage .site-sticky-cta{
+  left:50% !important;
+  right:auto !important;
+  transform:translateX(-50%) !important;
+  width:min(700px,calc(100% - 18px)) !important;
+  max-width:700px !important;
+  padding:0 !important;
+}
+body.is-homepage .site-sticky-cta .sticky-link,
+body.is-homepage .site-sticky-cta .sticky-call{
+  flex:0 1 auto !important;
+  width:min(560px,calc(100% - 20px)) !important;
+}
+@media(max-width:860px){
+  body.is-homepage .site-sticky-cta{
+    width:calc(100% - 10px) !important;
+    bottom:7px !important;
+  }
+  body.is-homepage .site-sticky-cta .sticky-link,
+  body.is-homepage .site-sticky-cta .sticky-call{
+    width:100% !important;
+    min-height:42px !important;
+    padding:10px 9px !important;
+    font-size:12px !important;
+  }
+}
+
 
 /* service hero CTA dynamic buttons */
 .hero{
