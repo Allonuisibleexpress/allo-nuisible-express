@@ -111,15 +111,6 @@ body{
   .site-sticky-cta .sticky-link{min-height:58px !important;font-size:17px !important;padding:13px 14px !important}
 }
 
-/* keep a premium gap above the floating CTA near footer end */
-.site-footer{
-  margin-bottom:112px !important;
-}
-.site-footer .site-footer-bottom,
-.global-footer .site-footer-bottom{
-  position:relative !important;
-  z-index:2 !important;
-}
 
 /* service hero CTA dynamic buttons */
 .hero{
