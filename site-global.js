@@ -915,14 +915,14 @@
         base.className='sticky-default';
         callBtn.appendChild(base);
       }
-      base.textContent='APPELER MAINTENANT';
+      base.textContent='APPELER MAINTENANT 24H/24';
 
       if(callBtn.dataset.switchInit==='1'){return;}
       callBtn.dataset.switchInit='1';
       var showAlt=false;
       window.setInterval(function(){
         showAlt=!showAlt;
-        base.textContent=showAlt ? 'DEVIS ET DÉPLACEMENT GRATUIT' : 'APPELER MAINTENANT';
+        base.textContent=showAlt ? 'DEVIS ET DÉPLACEMENT GRATUIT' : 'APPELER MAINTENANT 24H/24';
         callBtn.classList.remove('cta-casino-flash');
         void callBtn.offsetWidth;
         callBtn.classList.add('cta-casino-flash');
