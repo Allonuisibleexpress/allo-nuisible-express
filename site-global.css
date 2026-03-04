@@ -870,7 +870,7 @@ main .card li{
 .global-process .step-list li:before{content:"\2713";position:absolute;left:0;top:0;color:#ffae00;font-weight:800}
 
 /* Injected footer (same visual family as homepage) */
-.global-footer{background:#070707;color:#fff;padding:52px 20px 170px;margin-top:42px}
+.global-footer{background:#070707;color:#fff;padding:52px 20px 96px;margin-top:42px}
 .global-footer .site-footer-main{max-width:1240px;margin:0 auto;display:grid;grid-template-columns:1.2fr .9fr .9fr .9fr;gap:26px;align-items:start}
 .global-footer h3{margin:0 0 14px;font-size:14px;line-height:1.2;text-transform:uppercase;letter-spacing:.03em;font-weight:800}
 .global-footer .footer-logo{display:inline-flex;align-items:center;text-decoration:none;color:#fff;margin-bottom:16px}
@@ -910,13 +910,13 @@ main .card li{
 /* Keep only the footer itself black; no extra artificial strip */
 .site-footer .site-footer-bottom,
 .global-footer .site-footer-bottom{
-  margin-bottom:24px !important;
+  margin-bottom:0 !important;
 }
 .site-footer::after,
 .global-footer::after{
   content:"";
   display:block;
-  height:40px;
+  height:0;
   background:#070707;
 }
 .site-footer .site-footer-main,
@@ -1108,7 +1108,7 @@ body.mobile-nav-open .site-sticky-cta{
   }
   .global-process .process-head h2{font-size:28px}
   .global-process .process-head p{font-size:14px}
-  .global-footer{padding:36px 14px 260px}
+  .global-footer{padding:36px 14px 100px}
   .global-footer .site-footer-main{grid-template-columns:1fr;gap:20px}
   .global-footer .footer-logo img{height:140px}
   .global-footer .site-footer-bottom{font-size:13px;padding:10px 8px;margin-top:24px;margin-bottom:14px}
