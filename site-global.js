@@ -695,7 +695,7 @@
     '<div class="site-sticky-cta global-sticky-cta" role="complementary" aria-label="Appel rapide">'+
     '  <a class="sticky-link sticky-call" href="tel:0744296897" aria-label="Appeler le 07 44 29 68 97">'+
     '    <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.6 15.6 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.24 11.3 11.3 0 0 0 3.56.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.3 21 3 13.7 3 4a1 1 0 0 1 1-1h3.7a1 1 0 0 1 1 1 11.3 11.3 0 0 0 .57 3.56 1 1 0 0 1-.24 1l-2.4 2.24Z"/></svg>'+ 
-    '    <span class="sticky-default">URGENCE · APPELER MAINTENANT</span><span class="sticky-hover-number">07 44 29 68 97</span>'+ 
+    '    <span class="sticky-default">APPELER MAINTENANT 24H/24</span><span class="sticky-hover-number">07 44 29 68 97</span>'+ 
     '  </a>'+ 
     '</div>';
   }
