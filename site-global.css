@@ -1891,6 +1891,11 @@ main .side .card:hover{
 @media (max-width:560px){
   body.has-home-urgent-strip{
     padding-top:calc(var(--allo-urgent-top, 83px) + var(--allo-urgent-height, 48px)) !important;
+  }
+  body.has-home-urgent-strip.is-local-page{
+    padding-bottom:0 !important;
+  }
+  body.has-home-urgent-strip:not(.is-local-page){
     padding-bottom:calc(104px + env(safe-area-inset-bottom, 0px)) !important;
   }
 }
