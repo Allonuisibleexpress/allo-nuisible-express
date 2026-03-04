@@ -80,12 +80,16 @@
   }
 
   function currentPage(){
-    var p=normalizedPathname().split('/').pop();
+    var path=normalizedPathname();
+    if(path==='/' || path===''){return 'index.html';}
+    var trimmed=(path.length>1 && path.charAt(path.length-1)==='/') ? path.slice(0,-1) : path;
+    var p=trimmed.split('/').pop();
     return p||'index.html';
   }
 
   function isHomePage(){
-    return currentPage()==='index.html';
+    var path=normalizedPathname();
+    return path==='/' || path==='/index.html';
   }
 
   function isSeoLocalPage(){
@@ -665,12 +669,13 @@
     '</div>';
   }
 
-  function footerHTML(){
+  function footerHTML(prefix){
+    prefix=prefix||'';
     return ''+
     '<footer class="site-footer global-footer">'+
     '  <div class="site-footer-main">'+
     '    <section>'+ 
-    '      <a class="footer-logo" href="index.html" aria-label="Retour à l\'accueil"><img src="logo.png" alt="Allo Nuisible Express"></a>'+ 
+    '      <a class="footer-logo" href="'+prefix+'index.html" aria-label="Retour à l\'accueil"><img src="'+prefix+'logo.png" alt="Allo Nuisible Express"></a>'+ 
     '      <p class="footer-text">Allo Nuisible Express intervient rapidement en Île-de-France pour la dératisation, la désinsectisation, la désinfection et le dépigeonnage.</p>'+ 
     '      <div class="footer-socials" aria-label="Réseaux sociaux">'+ 
     '        <a class="footer-social-link" href="https://wa.me/33744296897" target="_blank" rel="noopener noreferrer">WhatsApp</a>'+ 
@@ -682,9 +687,9 @@
     '        <a class="footer-social-link" href="https://maps.app.goo.gl/EWnwrfLmvWMRjEds6" target="_blank" rel="noopener noreferrer">Google Maps</a>'+ 
     '      </div>'+ 
     '    </section>'+ 
-    '    <section><h3>Informations utiles</h3><ul class="footer-list"><li><a href="contact.html">Contact</a></li><li><a href="mentions-legales.html">Mentions légales</a></li><li><a href="politique-confidentialite.html">Confidentialité</a></li><li><a href="cgv-cgu.html">CGV / CGU</a></li><li><a href="blog.html">Blog</a></li></ul></section>'+ 
-    '    <section><h3>Nos services</h3><ul class="footer-services"><li><a href="deratisation.html">Dératisation</a></li><li><a href="punaises.html">Punaises de lit</a></li><li><a href="desinsectisation.html">Désinsectisation</a></li><li><a href="desinfection.html">Désinfection</a></li><li><a href="cafards.html">Cafards</a></li><li><a href="acariens.html">Acariens</a></li><li><a href="xylophage.html">Xylophages</a></li><li><a href="mouches.html">Mouches</a></li><li><a href="fourmis.html">Fourmis</a></li><li><a href="depigeonnage.html">Dépigeonnage</a></li><li><a href="frelons.html">Frelons / Guêpes</a></li><li><a href="diogene.html">Syndrome de Diogène</a></li></ul></section>'+ 
-    '    <section class="footer-contact"><h3>Contactez-nous</h3><p>4 rue de la Couture du Moulin, 94320 Thiais<br>E-mail: <a href="mailto:contact@allonuisibleexpress.fr">contact@allonuisibleexpress.fr</a></p><div class="footer-cta"><a class="footer-btn footer-btn-devis" href="devis.html">✉ Demande de devis</a><a class="footer-btn footer-btn-call" href="tel:0744296897">📞 07 44 29 68 97</a></div></section>'+ 
+    '    <section><h3>Informations utiles</h3><ul class="footer-list"><li><a href="'+prefix+'contact.html">Contact</a></li><li><a href="'+prefix+'mentions-legales.html">Mentions légales</a></li><li><a href="'+prefix+'politique-confidentialite.html">Confidentialité</a></li><li><a href="'+prefix+'cgv-cgu.html">CGV / CGU</a></li><li><a href="'+prefix+'blog.html">Blog</a></li></ul></section>'+ 
+    '    <section><h3>Nos services</h3><ul class="footer-services"><li><a href="'+prefix+'deratisation.html">Dératisation</a></li><li><a href="'+prefix+'punaises.html">Punaises de lit</a></li><li><a href="'+prefix+'desinsectisation.html">Désinsectisation</a></li><li><a href="'+prefix+'desinfection.html">Désinfection</a></li><li><a href="'+prefix+'cafards.html">Cafards</a></li><li><a href="'+prefix+'acariens.html">Acariens</a></li><li><a href="'+prefix+'xylophage.html">Xylophages</a></li><li><a href="'+prefix+'mouches.html">Mouches</a></li><li><a href="'+prefix+'fourmis.html">Fourmis</a></li><li><a href="'+prefix+'depigeonnage.html">Dépigeonnage</a></li><li><a href="'+prefix+'frelons.html">Frelons / Guêpes</a></li><li><a href="'+prefix+'diogene.html">Syndrome de Diogène</a></li></ul></section>'+ 
+    '    <section class="footer-contact"><h3>Contactez-nous</h3><p>4 rue de la Couture du Moulin, 94320 Thiais<br>E-mail: <a href="mailto:contact@allonuisibleexpress.fr">contact@allonuisibleexpress.fr</a></p><div class="footer-cta"><a class="footer-btn footer-btn-devis" href="'+prefix+'devis.html">✉ Demande de devis</a><a class="footer-btn footer-btn-call" href="tel:0744296897">📞 07 44 29 68 97</a></div></section>'+ 
     '  </div>'+ 
     '  <div class="site-footer-bottom">Tous droits réservés <b>ALLO NUISIBLE EXPRESS</b> — <span class="js-year"></span></div>'+ 
     '</footer>';
@@ -831,7 +836,7 @@
     var existing=document.querySelector('footer.site-footer');
     if(isHomePage()){return;}
     var holder=document.createElement('div');
-    holder.innerHTML=footerHTML();
+    holder.innerHTML=footerHTML(rootPrefix());
     var fresh=holder.firstElementChild;
     if(!existing){document.body.appendChild(fresh);return;}
     if(existing.classList.contains('global-footer')){return;}
