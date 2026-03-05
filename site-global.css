@@ -1209,6 +1209,14 @@ body{padding-bottom:0}
   0%,100%{letter-spacing:.02em;opacity:1}
   50%{letter-spacing:.03em;opacity:.96}
 }
+@keyframes mobileStickyPulseLite{
+  0%,100%{transform:scale(1)}
+  50%{transform:scale(1.03)}
+}
+@keyframes mobileStickyGradientShift{
+  0%,100%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+}
 body.mobile-nav-open .global-sticky-cta,
 body.mobile-nav-open .site-sticky-cta{
   opacity:0 !important;
@@ -1290,8 +1298,10 @@ body.mobile-nav-open .site-sticky-cta{
   }
   .site-sticky-cta .sticky-call,
   .global-sticky-cta .sticky-call{
-    animation:none !important;
-    transform:none !important;
+    background:linear-gradient(120deg,#ffb300 0%,#ffae00 48%,#ffc433 100%) !important;
+    background-size:200% 100% !important;
+    animation:mobileStickyPulseLite 1.25s ease-in-out infinite, mobileStickyGradientShift 2.2s linear infinite !important;
+    transform-origin:center !important;
   }
   .site-sticky-cta .sticky-link::before,
   .site-sticky-cta .sticky-link::after,
