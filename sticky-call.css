@@ -156,6 +156,18 @@ body.is-homepage .global-footer .site-footer-bottom{
     content:none !important;
   }
   .site-sticky-cta .sticky-link{min-height:58px !important;font-size:17px !important;padding:13px 14px !important}
+  .site-sticky-cta .sticky-call{
+    border:0 !important;
+    outline:none !important;
+    -webkit-tap-highlight-color:transparent !important;
+  }
+  .site-sticky-cta .sticky-call:focus,
+  .site-sticky-cta .sticky-call:focus-visible,
+  .site-sticky-cta .sticky-call:active{
+    outline:none !important;
+    border:0 !important;
+    box-shadow:0 10px 24px rgba(255,174,0,.35) !important;
+  }
 }
 @media(max-width:560px){
   body.has-home-urgent-strip.home-sticky-match:not(.is-local-page),
