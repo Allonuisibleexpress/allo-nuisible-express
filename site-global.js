@@ -861,7 +861,7 @@
   }
 
   function ensureStickyStylesheet(){
-    var href=(rootPrefix()||'')+'sticky-call.css?v=20260305sc10';
+    var href=(rootPrefix()||'')+'sticky-call.css?v=20260305sc12';
     var exists=[].slice.call(document.querySelectorAll('link[rel="stylesheet"]')).some(function(link){
       var v=(link.getAttribute('href')||'').toLowerCase();
       return v.indexOf('sticky-call.css')!==-1;

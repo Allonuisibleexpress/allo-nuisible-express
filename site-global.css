@@ -1247,6 +1247,37 @@ body.mobile-nav-open .site-sticky-cta{
   .global-sticky-cta .sticky-link{font-size:11px !important;letter-spacing:.01em !important}
 }
 
+/* Mobile-only hard fix: remove dark outline/ring from floating call CTA */
+@media(max-width:860px){
+  .site-sticky-cta .sticky-link,
+  .site-sticky-cta .sticky-call,
+  .global-sticky-cta .sticky-link,
+  .global-sticky-cta .sticky-call{
+    border:0 !important;
+    outline:0 !important;
+    outline-offset:0 !important;
+    -webkit-tap-highlight-color:transparent !important;
+    box-shadow:0 10px 24px rgba(255,174,0,.32) !important;
+  }
+  .site-sticky-cta .sticky-link:focus,
+  .site-sticky-cta .sticky-link:focus-visible,
+  .site-sticky-cta .sticky-call:focus,
+  .site-sticky-cta .sticky-call:focus-visible,
+  .site-sticky-cta .sticky-link:active,
+  .site-sticky-cta .sticky-call:active,
+  .global-sticky-cta .sticky-link:focus,
+  .global-sticky-cta .sticky-link:focus-visible,
+  .global-sticky-cta .sticky-call:focus,
+  .global-sticky-cta .sticky-call:focus-visible,
+  .global-sticky-cta .sticky-link:active,
+  .global-sticky-cta .sticky-call:active{
+    border:0 !important;
+    outline:0 !important;
+    outline-offset:0 !important;
+    box-shadow:0 10px 24px rgba(255,174,0,.32) !important;
+  }
+}
+
 /* Injected reviews block */
 .global-reviews{
   padding:34px 20px 18px;
