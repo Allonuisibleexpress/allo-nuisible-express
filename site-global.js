@@ -806,14 +806,14 @@
     '<section class="faq global-faq" id="contact" data-global-faq>'+ 
     '<h2>Questions Fréquentes</h2>'+ 
     '<p class="faq-intro">Questions fréquemment posées sur les nuisibles à Paris et en banlieue parisienne, avec des réponses claires pour vous aider à agir rapidement.</p>'+ 
-    '<details class="faq-item"><summary class="faq-question">Quels services proposez-vous exactement ? <span class="faq-icon">+</span></summary><div class="faq-answer">(FAQ) Nous proposons une prise en charge complète de la lutte anti-nuisibles pour les particuliers comme pour les professionnels : dératisation, désinsectisation, désinfection, dépigeonnage, traitement des punaises, cafards, frelons, guêpes, chenilles processionnaires, acariens, xylophages, mouches, fourmis et interventions Diogène.</div></details>'+ 
-    '<details class="faq-item"><summary class="faq-question">Quels sont vos prix de départ ? <span class="faq-icon">+</span></summary><div class="faq-answer">(FAQ) Nos tarifs sont les suivants : guêpes/frelons à partir de 120 EUR, syndrome de Diogène à partir de 400 EUR, et tous les autres nuisibles sur devis. Vous bénéficiez d\'une garantie de 1 mois avec suivi.</div></details>'+ 
-    '<details class="faq-item"><summary class="faq-question">Dans quelles zones intervenez-vous ? <span class="faq-icon">+</span></summary><div class="faq-answer">(FAQ) Nous intervenons dans toute l\'Île-de-France : 75, 77, 78, 91, 92, 93, 94 et 95, avec des créneaux rapides pour les particuliers et professionnels.</div></details>'+ 
-    '<details class="faq-item"><summary class="faq-question">En combien de temps pouvez-vous intervenir ? <span class="faq-icon">+</span></summary><div class="faq-answer">(FAQ) Nous intervenons en urgence 24h/24 et 7j/7, y compris la nuit, les week-ends et les jours fériés. Nous intervenons sous une heure maximum.</div></details>'+ 
-    '<details class="faq-item"><summary class="faq-question">Quels nuisibles traitez-vous ? <span class="faq-icon">+</span></summary><div class="faq-answer">(FAQ) Nous traitons rats, souris, cafards, punaises de lit, guêpes, frelons, pigeons, chenilles processionnaires, acariens, xylophages, mouches, fourmis et autres nuisibles selon la situation terrain.</div></details>'+ 
-    '<details class="faq-item"><summary class="faq-question">Comment se déroule une intervention ? <span class="faq-icon">+</span></summary><div class="faq-answer">(FAQ) L\'intervention suit un parcours clair : diagnostic, inspection, traitement ciblé, puis suivi avec recommandations de prévention.</div></details>'+ 
-    '<details class="faq-item"><summary class="faq-question">Y a-t-il une garantie après traitement ? <span class="faq-icon">+</span></summary><div class="faq-answer">(FAQ) Oui, vous bénéficiez d\'une garantie de 1 mois avec suivi sur nos protocoles d\'intervention.</div></details>'+ 
-    '<details class="faq-item"><summary class="faq-question">Comment vous contacter pour un devis ? <span class="faq-icon">+</span></summary><div class="faq-answer">(FAQ) Par formulaire en ligne, téléphone au 07 44 29 68 97, WhatsApp, e-mail et réseaux sociaux.</div></details>'+ 
+    '<details class="faq-item"><summary class="faq-question">Quels services proposez-vous exactement ? <span class="faq-icon">⌄</span></summary><div class="faq-answer">(FAQ) Nous proposons une prise en charge complète de la lutte anti-nuisibles pour les particuliers comme pour les professionnels : dératisation, désinsectisation, désinfection, dépigeonnage, traitement des punaises, cafards, frelons, guêpes, chenilles processionnaires, acariens, xylophages, mouches, fourmis et interventions Diogène.</div></details>'+ 
+    '<details class="faq-item"><summary class="faq-question">Quels sont vos prix de départ ? <span class="faq-icon">⌄</span></summary><div class="faq-answer">(FAQ) Nos tarifs sont les suivants : guêpes/frelons à partir de 120 EUR, syndrome de Diogène à partir de 400 EUR, et tous les autres nuisibles sur devis. Vous bénéficiez d\'une garantie de 1 mois avec suivi.</div></details>'+ 
+    '<details class="faq-item"><summary class="faq-question">Dans quelles zones intervenez-vous ? <span class="faq-icon">⌄</span></summary><div class="faq-answer">(FAQ) Nous intervenons dans toute l\'Île-de-France : 75, 77, 78, 91, 92, 93, 94 et 95, avec des créneaux rapides pour les particuliers et professionnels.</div></details>'+ 
+    '<details class="faq-item"><summary class="faq-question">En combien de temps pouvez-vous intervenir ? <span class="faq-icon">⌄</span></summary><div class="faq-answer">(FAQ) Nous intervenons en urgence 24h/24 et 7j/7, y compris la nuit, les week-ends et les jours fériés. Nous intervenons sous une heure maximum.</div></details>'+ 
+    '<details class="faq-item"><summary class="faq-question">Quels nuisibles traitez-vous ? <span class="faq-icon">⌄</span></summary><div class="faq-answer">(FAQ) Nous traitons rats, souris, cafards, punaises de lit, guêpes, frelons, pigeons, chenilles processionnaires, acariens, xylophages, mouches, fourmis et autres nuisibles selon la situation terrain.</div></details>'+ 
+    '<details class="faq-item"><summary class="faq-question">Comment se déroule une intervention ? <span class="faq-icon">⌄</span></summary><div class="faq-answer">(FAQ) L\'intervention suit un parcours clair : diagnostic, inspection, traitement ciblé, puis suivi avec recommandations de prévention.</div></details>'+ 
+    '<details class="faq-item"><summary class="faq-question">Y a-t-il une garantie après traitement ? <span class="faq-icon">⌄</span></summary><div class="faq-answer">(FAQ) Oui, vous bénéficiez d\'une garantie de 1 mois avec suivi sur nos protocoles d\'intervention.</div></details>'+ 
+    '<details class="faq-item"><summary class="faq-question">Comment vous contacter pour un devis ? <span class="faq-icon">⌄</span></summary><div class="faq-answer">(FAQ) Par formulaire en ligne, téléphone au 07 44 29 68 97, WhatsApp, e-mail et réseaux sociaux.</div></details>'+ 
     '</section>';
   }
 
@@ -856,6 +856,24 @@
     var prefix='';
     for(var i=0;i<depth;i++){prefix+='../';}
     return prefix;
+  }
+
+  function ensureStickyStylesheet(){
+    var href=(rootPrefix()||'')+'sticky-call.css?v=20260305sc10';
+    var exists=[].slice.call(document.querySelectorAll('link[rel="stylesheet"]')).some(function(link){
+      var v=(link.getAttribute('href')||'').toLowerCase();
+      return v.indexOf('sticky-call.css')!==-1;
+    });
+    if(exists){return;}
+    var link=document.createElement('link');
+    link.rel='stylesheet';
+    link.href=href;
+    document.head.appendChild(link);
+  }
+
+  function ensureHomeStickyMatchClass(){
+    if(isHomePage()){return;}
+    document.body.classList.add('home-sticky-match');
   }
 
   function ensureValDeMarneEntry(){
@@ -1872,6 +1890,8 @@
   }
 
   function boot(){
+    safeRun(ensureStickyStylesheet,'ensureStickyStylesheet');
+    safeRun(ensureHomeStickyMatchClass,'ensureHomeStickyMatchClass');
     safeRun(ensureSeoTags,'ensureSeoTags');
     safeRun(ensureHomeUrgencyStrip,'ensureHomeUrgencyStrip');
     safeRun(ensureDesktopServicesDropdown,'ensureDesktopServicesDropdown');
