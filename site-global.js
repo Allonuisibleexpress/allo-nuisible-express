@@ -1882,6 +1882,33 @@
     btn.style.webkitTapHighlightColor='transparent';
   }
 
+  function enforceMobileStickyNoOutlineRuntime(){
+    var id='mobile-sticky-no-outline-runtime';
+    var css='@media(max-width:860px){'
+      +'.site-sticky-cta .sticky-link,.site-sticky-cta .sticky-call,.global-sticky-cta .sticky-link,.global-sticky-cta .sticky-call{'
+      +'border:0 !important;outline:0 !important;outline-offset:0 !important;'
+      +'-webkit-tap-highlight-color:transparent !important;'
+      +'box-shadow:none !important;-webkit-box-shadow:none !important;filter:none !important;text-shadow:none !important;'
+      +'}'
+      +'.site-sticky-cta .sticky-link::before,.site-sticky-cta .sticky-link::after,.global-sticky-cta .sticky-link::before,.global-sticky-cta .sticky-link::after{display:none !important;content:none !important;}'
+      +'.site-sticky-cta .sticky-link:focus,.site-sticky-cta .sticky-link:focus-visible,.site-sticky-cta .sticky-link:active,'
+      +'.site-sticky-cta .sticky-call:focus,.site-sticky-cta .sticky-call:focus-visible,.site-sticky-cta .sticky-call:active,'
+      +'.global-sticky-cta .sticky-link:focus,.global-sticky-cta .sticky-link:focus-visible,.global-sticky-cta .sticky-link:active,'
+      +'.global-sticky-cta .sticky-call:focus,.global-sticky-cta .sticky-call:focus-visible,.global-sticky-cta .sticky-call:active{'
+      +'border:0 !important;outline:0 !important;outline-offset:0 !important;box-shadow:none !important;-webkit-box-shadow:none !important;filter:none !important;text-shadow:none !important;'
+      +'}'
+      +'}';
+    var node=document.getElementById(id);
+    if(!node){
+      node=document.createElement('style');
+      node.id=id;
+      document.head.appendChild(node);
+    }
+    if(node.textContent!==css){
+      node.textContent=css;
+    }
+  }
+
   function cleanupTimedModalNonHome(){
     if(shouldShowTimedCallPopup()){return;}
     document.querySelectorAll('[data-timed-call-overlay]').forEach(function(node){ node.remove(); });
@@ -1933,6 +1960,7 @@
     // Keep a single mobile menu system (fallback) to avoid double-toggle conflicts.
     safeRun(ensureMobileMenuFallback,'ensureMobileMenuFallback');
     safeRun(forceMobileMenuEmergency,'forceMobileMenuEmergency');
+    safeRun(enforceMobileStickyNoOutlineRuntime,'enforceMobileStickyNoOutlineRuntime');
     safeRun(initReviews,'initReviews');
     safeRun(cleanupTimedModalNonHome,'cleanupTimedModalNonHome');
     safeRun(initTimedCallModal,'initTimedCallModal');
@@ -1950,6 +1978,7 @@
       window.setTimeout(function(){safeRun(ensureCoreSections,'ensureCoreSections@1000');},1000);
       window.setTimeout(function(){safeRun(ensureCoreSections,'ensureCoreSections@2200');},2200);
       window.setTimeout(function(){safeRun(forceMobileMenuEmergency,'forceMobileMenuEmergency@1200');},1200);
+      window.setTimeout(function(){safeRun(enforceMobileStickyNoOutlineRuntime,'enforceMobileStickyNoOutlineRuntime@1200');},1200);
     }
   }
 
