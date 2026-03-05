@@ -1,0 +1,9 @@
+{
+  "clusters": 6,
+  "pages": 33,
+  "pairs_intra_nuisible": 78,
+  "avg_similarity_pct": 2.01,
+  "avg_localized_pct": 97.99,
+  "pairs_over_60": 0,
+  "pairs_over_80": 0
+}

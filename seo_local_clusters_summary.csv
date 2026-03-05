@@ -1,0 +1,15 @@
+cluster,pages,avg_similarity,avg_localized,over60_pairs,over80_pairs
+acariens,7,0.03,99.97,0,0
+cafards,13,7.88,92.12,0,0
+chenille-processionnaire,7,0.44,99.56,0,0
+depigeonnage,7,26.09,73.91,0,0
+deratisation,11,5.83,94.17,0,0
+fourmis,7,0.03,99.97,0,0
+frelon-asiatique,3,0.56,99.44,0,0
+frelons,7,1.68,98.32,0,0
+guepes,10,5.41,94.59,0,0
+mouches,7,0.03,99.97,0,0
+punaises-de-lit,13,7.63,92.37,0,0
+rats,6,9.12,90.88,0,0
+souris,6,9.06,90.94,0,0
+xylophages,7,0.03,99.97,0,0

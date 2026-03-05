@@ -1,0 +1,10 @@
+[desktop] baseline=index.html captured
+[desktop] contact.html: IDENTIQUE
+[desktop] tarifs.html: IDENTIQUE
+[desktop] blog.html: IDENTIQUE
+[desktop] devis.html: IDENTIQUE
+[mobile] baseline=index.html captured
+[mobile] contact.html: IDENTIQUE
+[mobile] tarifs.html: IDENTIQUE
+[mobile] blog.html: IDENTIQUE
+[mobile] devis.html: IDENTIQUE
