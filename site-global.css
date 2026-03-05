@@ -15,6 +15,23 @@ body{
   --allo-urgent-top:96px;
   --allo-urgent-height:52px;
 }
+@media (min-width:981px){
+  header .mobile-menu-btn{
+    display:none !important;
+    opacity:0 !important;
+    visibility:hidden !important;
+    pointer-events:none !important;
+  }
+  header .mobile-menu-btn span{
+    display:none !important;
+  }
+  header .mobile-nav-overlay{
+    display:none !important;
+    opacity:0 !important;
+    visibility:hidden !important;
+    pointer-events:none !important;
+  }
+}
 body.timed-call-open{
   overflow:hidden;
 }
