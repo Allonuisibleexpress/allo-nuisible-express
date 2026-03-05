@@ -2210,6 +2210,14 @@ main .side .card:hover{
   }
 }
 
+/* Service pages mobile: remove residual gap between urgent strip and hero */
+@media (max-width:980px){
+  body.has-home-urgent-strip.home-sticky-match:not(.is-homepage):not(.is-local-page) .home-urgent-strip + .hero{
+    margin-top:0 !important;
+    min-height:calc(100dvh - (var(--allo-urgent-top, 91px) + var(--allo-urgent-height, 50px))) !important;
+  }
+}
+
 /* Final hard lock: local hero must stay full-bleed and centered (desktop + mobile) */
 body.is-local-page .hero-local,
 body.is-local-page .hero-local-seo,
