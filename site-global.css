@@ -1300,6 +1300,12 @@ body.mobile-nav-open .site-sticky-cta{
     content:none !important;
     display:none !important;
   }
+  body.is-homepage .idf-mobile-bar{
+    display:none !important;
+    visibility:hidden !important;
+    opacity:0 !important;
+    pointer-events:none !important;
+  }
 }
 
 /* Injected reviews block */
