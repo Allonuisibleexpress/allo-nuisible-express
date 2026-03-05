@@ -1249,6 +1249,12 @@ body.mobile-nav-open .site-sticky-cta{
 
 /* Mobile-only hard fix: remove dark outline/ring from floating call CTA */
 @media(max-width:860px){
+  .site-sticky-cta,
+  .global-sticky-cta{
+    background:transparent !important;
+    border:0 !important;
+    box-shadow:none !important;
+  }
   .site-sticky-cta .sticky-link,
   .site-sticky-cta .sticky-call,
   .global-sticky-cta .sticky-link,
@@ -1257,7 +1263,10 @@ body.mobile-nav-open .site-sticky-cta{
     outline:0 !important;
     outline-offset:0 !important;
     -webkit-tap-highlight-color:transparent !important;
-    box-shadow:0 10px 24px rgba(255,174,0,.32) !important;
+    box-shadow:none !important;
+    -webkit-box-shadow:none !important;
+    filter:none !important;
+    text-shadow:none !important;
   }
   .site-sticky-cta .sticky-link:focus,
   .site-sticky-cta .sticky-link:focus-visible,
@@ -1274,7 +1283,22 @@ body.mobile-nav-open .site-sticky-cta{
     border:0 !important;
     outline:0 !important;
     outline-offset:0 !important;
-    box-shadow:0 10px 24px rgba(255,174,0,.32) !important;
+    box-shadow:none !important;
+    -webkit-box-shadow:none !important;
+    filter:none !important;
+    text-shadow:none !important;
+  }
+  .site-sticky-cta .sticky-call,
+  .global-sticky-cta .sticky-call{
+    animation:none !important;
+    transform:none !important;
+  }
+  .site-sticky-cta .sticky-link::before,
+  .site-sticky-cta .sticky-link::after,
+  .global-sticky-cta .sticky-link::before,
+  .global-sticky-cta .sticky-link::after{
+    content:none !important;
+    display:none !important;
   }
 }
 
