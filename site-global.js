@@ -892,6 +892,22 @@
     return prefix;
   }
 
+  function ensureMontserratFont(){
+    var head=document.head || document.querySelector('head');
+    if(!head){return;}
+    var hasMontserrat=[].slice.call(head.querySelectorAll('link[rel=\"stylesheet\"]')).some(function(link){
+      var href=(link.getAttribute('href')||'').toLowerCase();
+      return href.indexOf('fonts.googleapis.com')!==-1 && href.indexOf('family=montserrat')!==-1;
+    });
+    if(!hasMontserrat){
+      var font=document.createElement('link');
+      font.rel='stylesheet';
+      font.href='https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap';
+      font.setAttribute('data-global-font','montserrat');
+      head.appendChild(font);
+    }
+  }
+
   function ensureStickyStylesheet(){
     var href=(rootPrefix()||'')+'sticky-call.css?v=20260305sc12';
     var exists=[].slice.call(document.querySelectorAll('link[rel="stylesheet"]')).some(function(link){
@@ -1996,6 +2012,7 @@
   }
 
   function boot(){
+    safeRun(ensureMontserratFont,'ensureMontserratFont');
     safeRun(ensureStickyStylesheet,'ensureStickyStylesheet');
     safeRun(ensureHomeStickyMatchClass,'ensureHomeStickyMatchClass');
     safeRun(ensureUnifiedHeaderTemplate,'ensureUnifiedHeaderTemplate');
