@@ -21,6 +21,38 @@
     'villejuif':{'city':'Villejuif','landmark':'Centre-ville'},
     'vitry-sur-seine':{'city':'Vitry-sur-Seine','landmark':'Panorama urbain'}
   };
+  var HEADER_SERVICE_ITEMS=[
+    {href:'deratisation.html', label:'Rats / Souris'},
+    {href:'frelons.html', label:'Frelons'},
+    {href:'guepes.html', label:'Guêpes'},
+    {href:'punaises.html', label:'Punaises de lit'},
+    {href:'cafards.html', label:'Cafards'},
+    {href:'acariens.html', label:'Acariens'},
+    {href:'xylophage.html', label:'Xylophage (Insectes du bois)'},
+    {href:'mouches.html', label:'Mouches'},
+    {href:'fourmis.html', label:'Fourmis'},
+    {href:'depigeonnage.html', label:'Dépigeonnage'},
+    {href:'chenilles.html', label:'Chenilles processionnaires'},
+    {href:'diogene.html', label:'Syndrome de Diogène'}
+  ];
+  var MOBILE_MENU_ITEMS=[
+    {href:'index.html', label:'ACCUEIL'},
+    {href:'punaises.html', label:'PUNAISES DE LIT'},
+    {href:'cafards.html', label:'CAFARDS'},
+    {href:'acariens.html', label:'ACARIENS'},
+    {href:'xylophage.html', label:'XYLOPHAGE (INSECTES DU BOIS)'},
+    {href:'mouches.html', label:'MOUCHES'},
+    {href:'fourmis.html', label:'FOURMIS'},
+    {href:'deratisation.html', label:'DÉRATISATION (RATS / SOURIS)'},
+    {href:'depigeonnage.html', label:'DÉPIGEONNAGE'},
+    {href:'frelons.html', label:'FRELONS'},
+    {href:'guepes.html', label:'GUÊPES'},
+    {href:'chenilles.html', label:'CHENILLE PROCESSIONNAIRE'},
+    {href:'diogene.html', label:'SYNDROME DIOGÈNE'},
+    {href:'contact.html', label:'CONTACTEZ-NOUS'},
+    {href:'tarifs.html', label:'TARIFS'},
+    {href:'blog.html', label:'BLOG'}
+  ];
 
   function normalizedPathname(){
     var path=window.location.pathname||'/';
@@ -1343,25 +1375,58 @@
     }
   }
 
+  function headerHTML(prefix){
+    var serviceLinks=HEADER_SERVICE_ITEMS.map(function(item){
+      return '<a class="dropdown-item" href="'+prefix+item.href+'">'+item.label+'</a>';
+    }).join('');
+    return ''+
+    '<header data-global-header="1">'+
+    '<div class="header-wrap">'+
+    '<a class="logo-link" href="'+prefix+'index.html" aria-label="Retour à l\'accueil">'+
+    '<img src="'+prefix+'logo.png" class="logo" alt="Allo Nuisible Express">'+
+    '</a>'+
+    '<nav class="main-nav">'+
+    '<a class="nav-link" href="'+prefix+'index.html">ACCUEIL</a>'+
+    '<div class="dropdown">'+
+    '<a class="nav-link dropdown-toggle" href="#services">NOS SERVICES <span class="chevron">▼</span></a>'+
+    '<div class="dropdown-menu">'+serviceLinks+'</div>'+
+    '</div>'+
+    '<a class="nav-link" href="'+prefix+'contact.html">CONTACTEZ-NOUS</a>'+
+    '<a class="nav-link" href="'+prefix+'tarifs.html">TARIFS</a>'+
+    '<a class="nav-link" href="'+prefix+'blog.html">BLOG</a>'+
+    '<a class="cta-btn call-btn" href="tel:0744296897"><span class="default-text">APPELEZ-NOUS</span><span class="hover-text">07 44 29 68 97</span></a>'+
+    '<a class="cta-btn quote-btn" href="'+prefix+'devis.html"><span class="default-text">DEMANDES DE DEVIS</span><span class="hover-text">DEVIS GRATUIT</span></a>'+
+    '</nav>'+
+    '</div>'+
+    '<button type="button" class="mobile-menu-btn" aria-label="Ouvrir le menu" aria-expanded="false"><span></span><span></span><span></span></button>'+
+    '<div class="mobile-nav-overlay" aria-hidden="true"></div>'+
+    '</header>';
+  }
+
+  function ensureUnifiedHeaderTemplate(){
+    var prefix=rootPrefix();
+    var holder=document.createElement('div');
+    holder.innerHTML=headerHTML(prefix);
+    var fresh=holder.firstElementChild;
+    if(!fresh){return;}
+    var headers=[].slice.call(document.querySelectorAll('header'));
+    var current=headers.length ? headers[0] : null;
+    if(headers.length>1){
+      headers.slice(1).forEach(function(node){ node.remove(); });
+    }
+    if(current && current.parentNode){
+      current.parentNode.replaceChild(fresh, current);
+      return;
+    }
+    if(document.body.firstElementChild){
+      document.body.insertBefore(fresh, document.body.firstElementChild);
+    }else{
+      document.body.appendChild(fresh);
+    }
+  }
+
   function mobileMenuItems(prefix){
-    return [
-      {href:'index.html', label:'ACCUEIL'},
-      {href:'punaises.html', label:'PUNAISE DE LIT'},
-      {href:'cafards.html', label:'CAFARDS'},
-      {href:'acariens.html', label:'ACARIENS'},
-      {href:'xylophage.html', label:'XYLOPHAGE (INSECTES DU BOIS)'},
-      {href:'mouches.html', label:'MOUCHES'},
-      {href:'fourmis.html', label:'FOURMIS'},
-      {href:'deratisation.html', label:'DÉRATISATION (RATS / SOURIS)'},
-      {href:'depigeonnage.html', label:'DÉPIGEONNAGE'},
-      {href:'frelons.html', label:'FRELON'},
-      {href:'diogene.html', label:'SYNDROME DIOGÈNE'},
-      {href:'chenilles.html', label:'CHENILLE PROCESSIONNAIRE'},
-      {href:'guepes.html', label:'GUÊPE'},
-      {href:'contact.html', label:'CONTACTEZ-NOUS'},
-      {href:'tarifs.html', label:'TARIFS'},
-      {href:'blog.html', label:'BLOG'}
-    ].map(function(item){
+    return MOBILE_MENU_ITEMS.map(function(item){
       return '<li><a href="'+prefix+item.href+'">'+item.label+'</a></li>';
     }).join('');
   }
@@ -1370,21 +1435,7 @@
     var menu=document.querySelector('header .main-nav .dropdown .dropdown-menu');
     if(!menu){return;}
     var prefix=rootPrefix();
-    var items=[
-      {href:'deratisation.html', label:'Rats / Souris'},
-      {href:'frelons.html', label:'Frelons'},
-      {href:'guepes.html', label:'Guêpes'},
-      {href:'punaises.html', label:'Punaises de lit'},
-      {href:'cafards.html', label:'Cafards'},
-      {href:'acariens.html', label:'Acariens'},
-      {href:'xylophage.html', label:'Xylophage (Insectes du bois)'},
-      {href:'mouches.html', label:'Mouches'},
-      {href:'fourmis.html', label:'Fourmis'},
-      {href:'depigeonnage.html', label:'Dépigeonnage'},
-      {href:'chenilles.html', label:'Chenilles processionnaires'},
-      {href:'diogene.html', label:'Syndrome de Diogène'}
-    ];
-    menu.innerHTML=items.map(function(item){
+    menu.innerHTML=HEADER_SERVICE_ITEMS.map(function(item){
       return '<a class="dropdown-item" href="'+prefix+item.href+'">'+item.label+'</a>';
     }).join('');
   }
@@ -1947,6 +1998,7 @@
   function boot(){
     safeRun(ensureStickyStylesheet,'ensureStickyStylesheet');
     safeRun(ensureHomeStickyMatchClass,'ensureHomeStickyMatchClass');
+    safeRun(ensureUnifiedHeaderTemplate,'ensureUnifiedHeaderTemplate');
     safeRun(ensureSeoTags,'ensureSeoTags');
     safeRun(ensureHomeUrgencyStrip,'ensureHomeUrgencyStrip');
     safeRun(ensureDesktopServicesDropdown,'ensureDesktopServicesDropdown');
@@ -1983,7 +2035,9 @@
     // Hard retry to recover from page-specific scripts/styles that run after boot.
     if(!window.__alloCoreRetryBound){
       window.__alloCoreRetryBound=true;
+      window.setTimeout(function(){safeRun(ensureUnifiedHeaderTemplate,'ensureUnifiedHeaderTemplate@120');},120);
       window.setTimeout(function(){safeRun(ensureCoreSections,'ensureCoreSections@250');},250);
+      window.setTimeout(function(){safeRun(ensureUnifiedHeaderTemplate,'ensureUnifiedHeaderTemplate@1000');},1000);
       window.setTimeout(function(){safeRun(ensureCoreSections,'ensureCoreSections@1000');},1000);
       window.setTimeout(function(){safeRun(ensureCoreSections,'ensureCoreSections@2200');},2200);
       window.setTimeout(function(){safeRun(forceMobileMenuEmergency,'forceMobileMenuEmergency@1200');},1200);
