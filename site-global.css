@@ -1286,21 +1286,22 @@ body.mobile-nav-open .site-sticky-cta{
 .global-reviews .review-empty{padding:14px;font-size:15px;color:#6b6b6b;text-align:center;width:100%}
 
 /* Injected FAQ block */
-.global-faq{padding:28px 26px;max-width:1500px;margin:0 auto 40px;background:#f3f3f5;border:1px solid #e7e7eb;border-radius:18px}
-.global-faq h2{font-size:34px;margin:0 0 12px;text-align:center}
-.global-faq .faq-intro{color:#444;font-size:16px;line-height:1.6;margin:0 0 18px;text-align:center}
-.global-faq .faq-item{border:0;border-bottom:1px solid #d1d2d7;border-radius:0;margin:0;background:transparent;box-shadow:none;overflow:hidden;transition:border-color .2s ease}
-.global-faq .faq-item:hover{border-color:#b6b8bf}
-.global-faq .faq-question{cursor:pointer;padding:22px 22px;font-weight:700;font-size:22px;display:flex;align-items:center;justify-content:space-between;gap:16px;background:transparent;list-style:none}
+.global-faq{padding:36px clamp(18px,3.2vw,54px);max-width:1560px;margin:0 auto 46px;background:#f2f2f4;border:0;border-radius:0}
+.global-faq h2{font-size:32px;margin:0 0 10px;text-align:center}
+.global-faq .faq-intro{color:#5a5d63;font-size:15px;line-height:1.6;margin:0 0 22px;text-align:center}
+.global-faq .faq-item{border:0;border-bottom:1px solid #ceced5;border-radius:0;margin:0;background:transparent;box-shadow:none;overflow:hidden;transition:border-color .2s ease}
+.global-faq .faq-item:first-of-type{border-top:1px solid #ceced5}
+.global-faq .faq-item:hover{border-color:#afafba}
+.global-faq .faq-question{cursor:pointer;padding:24px 14px;font-weight:680;font-size:clamp(19px,1.45vw,36px);display:flex;align-items:center;justify-content:space-between;gap:18px;background:transparent;list-style:none}
 .global-faq .faq-question::-webkit-details-marker{display:none}
-.global-faq .faq-icon{width:auto;height:auto;border-radius:0;background:none;display:flex;align-items:center;justify-content:center;color:#111;font-size:24px;font-weight:700;line-height:1;transition:transform .25s ease,color .25s ease;flex-shrink:0}
-.global-faq .faq-answer{max-height:0;overflow:hidden;opacity:0;transition:max-height .65s ease,opacity .45s ease,padding .65s ease;padding:0 22px;font-size:17px;line-height:1.75;color:#2f2f2f;background:transparent;text-align:left}
+.global-faq .faq-icon{width:auto;height:auto;border-radius:0;background:none;display:flex;align-items:center;justify-content:center;color:#111;font-size:20px;font-weight:800;line-height:1;transition:transform .25s ease,color .25s ease;flex-shrink:0}
+.global-faq .faq-answer{max-height:0;overflow:hidden;opacity:0;transition:max-height .55s ease,opacity .35s ease,padding .55s ease;padding:0 14px;font-size:16px;line-height:1.72;color:#353840;background:transparent;text-align:left}
 .global-faq .faq-item.active,
-.global-faq .faq-item[open]{border-color:#b9b9bf}
+.global-faq .faq-item[open]{border-color:#b0b2ba}
 .global-faq .faq-item.active .faq-answer,
-.global-faq .faq-item[open] .faq-answer{max-height:900px;opacity:1;padding:2px 22px 20px}
+.global-faq .faq-item[open] .faq-answer{max-height:900px;opacity:1;padding:2px 14px 22px}
 .global-faq .faq-item.active .faq-icon,
-.global-faq .faq-item[open] .faq-icon{transform:rotate(180deg);color:#111}
+.global-faq .faq-item[open] .faq-icon{transform:rotate(180deg);color:#0f1117}
 
 .local-seo-block{
   max-width:1140px;
@@ -1364,14 +1365,14 @@ body.mobile-nav-open .site-sticky-cta{
   .global-reviews .review-text{font-size:15px}
   .global-reviews .reviews-nav.prev{left:-2px}
   .global-reviews .reviews-nav.next{right:-2px}
-  .global-faq{padding:20px 12px}
-  .global-faq h2{font-size:30px}
-  .global-faq .faq-intro{font-size:16px}
-  .global-faq .faq-question{font-size:18px;padding:16px 10px}
-  .global-faq .faq-icon{font-size:20px}
-  .global-faq .faq-answer{font-size:16px;padding:0 10px}
+  .global-faq{padding:22px 12px}
+  .global-faq h2{font-size:28px}
+  .global-faq .faq-intro{font-size:15px}
+  .global-faq .faq-question{font-size:18px;padding:17px 8px}
+  .global-faq .faq-icon{font-size:18px}
+  .global-faq .faq-answer{font-size:15px;padding:0 8px}
   .global-faq .faq-item.active .faq-answer,
-  .global-faq .faq-item[open] .faq-answer{padding:4px 10px 16px}
+  .global-faq .faq-item[open] .faq-answer{padding:3px 8px 16px}
   .local-seo-block{
     padding:14px 12px 4px;
   }
