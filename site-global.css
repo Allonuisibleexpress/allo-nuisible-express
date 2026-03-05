@@ -2216,6 +2216,14 @@ main .side .card:hover{
     margin-top:0 !important;
     min-height:calc(100dvh - (var(--allo-urgent-top, 91px) + var(--allo-urgent-height, 50px))) !important;
   }
+  body.home-sticky-match:not(.is-homepage):not(.is-local-page) .hero .cta-row{
+    margin-bottom:calc(96px + env(safe-area-inset-bottom, 0px)) !important;
+  }
+}
+@media (max-width:560px){
+  body.home-sticky-match:not(.is-homepage):not(.is-local-page) .hero .cta-row{
+    margin-bottom:calc(106px + env(safe-area-inset-bottom, 0px)) !important;
+  }
 }
 
 /* Final hard lock: local hero must stay full-bleed and centered (desktop + mobile) */
