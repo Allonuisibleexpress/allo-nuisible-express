@@ -440,5 +440,31 @@
       "default_webp": "/assets/cities/vitry-sur-seine-hero.webp",
       "default_jpg": "/assets/cities/vitry-sur-seine-hero.jpg"
     }
+  },
+  "ablon-sur-seine": {
+    "city": "Ablon-sur-Seine",
+    "landmark": "Mairie",
+    "alt": "Vue de la mairie d'Ablon-sur-Seine",
+    "source_url": "https://upload.wikimedia.org/wikipedia/commons/1/19/Mairie_-_Ablon-sur-Seine_%28FR94%29_-_2022-06-05_-_1.jpg",
+    "source_title": "File:Mairie - Ablon-sur-Seine (FR94) - 2022-06-05 - 1.jpg",
+    "author": "Chabe01",
+    "licence": "CC BY-SA 4.0",
+    "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "page_wikimedia": "https://commons.wikimedia.org/wiki/File:Mairie_-_Ablon-sur-Seine_(FR94)_-_2022-06-05_-_1.jpg",
+    "date_download": "2026-03-07",
+    "files": {
+      "webp": [
+        "/assets/cities/ablon-sur-seine-hero-640.webp",
+        "/assets/cities/ablon-sur-seine-hero-1024.webp",
+        "/assets/cities/ablon-sur-seine-hero-1600.webp"
+      ],
+      "jpg": [
+        "/assets/cities/ablon-sur-seine-hero-640.jpg",
+        "/assets/cities/ablon-sur-seine-hero-1024.jpg",
+        "/assets/cities/ablon-sur-seine-hero-1600.jpg"
+      ],
+      "default_webp": "/assets/cities/ablon-sur-seine-hero.webp",
+      "default_jpg": "/assets/cities/ablon-sur-seine-hero.jpg"
+    }
   }
 }
