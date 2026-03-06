@@ -2728,7 +2728,14 @@ if(!isActive){item.classList.add("active")}
     if(!(document.body && document.body.classList.contains('is-homepage'))){return;}
     bindPopupAudioUnlock();
     normalizeHomeHeroOffset();
-    window.addEventListener('resize', normalizeHomeHeroOffset);
+    var lastHeroLayoutWidth=window.innerWidth;
+    window.addEventListener('resize', function(){
+      var w=window.innerWidth;
+      // Avoid iOS toolbar resize spam while scrolling (height-only changes).
+      if(Math.abs(w-lastHeroLayoutWidth)<2){return;}
+      lastHeroLayoutWidth=w;
+      normalizeHomeHeroOffset();
+    }, {passive:true});
     window.setTimeout(function(){
       var opened=document.querySelector('[data-timed-call-overlay].is-open');
       if(!opened && !window.__alloPopupDismissed){

@@ -801,9 +801,18 @@
 
     if(!window.__alloUrgentResizeBound){
       window.__alloUrgentResizeBound=true;
+      window.__alloUrgentResizeW=window.innerWidth;
+      var urgentResizeRaf=0;
       window.addEventListener('resize',function(){
-        ensureHomeUrgencyStrip();
-      });
+        var w=window.innerWidth;
+        // iOS triggers many height-only resize events while scrolling; ignore them.
+        if(Math.abs(w-(window.__alloUrgentResizeW||0))<2){return;}
+        window.__alloUrgentResizeW=w;
+        if(urgentResizeRaf){window.cancelAnimationFrame(urgentResizeRaf);}
+        urgentResizeRaf=window.requestAnimationFrame(function(){
+          ensureHomeUrgencyStrip();
+        });
+      }, {passive:true});
     }
     if(!window.__alloUrgentLoadBound){
       window.__alloUrgentLoadBound=true;
@@ -1665,11 +1674,18 @@
         var target=ev.target;
         if(!target){return;}
         var trigger=target.closest ? target.closest('.mobile-menu-btn') : null;
+        if(window.innerWidth>980){return;}
+        // Delegated toggle: keeps menu working even if header/button gets re-rendered.
         if(trigger){
-          // Button has its own click handler; do not toggle here to prevent double action.
+          ev.preventDefault();
+          ev.stopPropagation();
+          var isOpen=document.body.classList.contains('mobile-nav-open');
+          document.body.classList.toggle('mobile-nav-open', !isOpen);
+          trigger.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
+          setHeaderLogoHidden(!isOpen);
           return;
         }
-        if(window.innerWidth<=980 && document.body.classList.contains('mobile-nav-open')){
+        if(document.body.classList.contains('mobile-nav-open')){
           var inMenu=target.closest ? target.closest('header .main-nav') : null;
           var inOverlay=target.closest ? target.closest('.mobile-nav-overlay') : null;
           if(inOverlay || (!inMenu && !target.closest('.mobile-menu-btn'))){
