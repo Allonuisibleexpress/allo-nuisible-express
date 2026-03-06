@@ -826,9 +826,9 @@
 
   function reviewsHTML(){
     return ''+
-    '<section class="reviews global-reviews" id="avis-google" data-global-reviews>'+ 
+    '<section class="reviews" id="avis-google" data-global-reviews>'+ 
     '<div class="reviews-shell">'+
-    '<h2>ILS NOUS FONT CONFIANCE</h2>'+ 
+    '<h2>Ils nous font confiance</h2>'+ 
     '<p class="reviews-cred"><span>Plus de 2000 interventions en Île-de-France</span></p>'+
     '<div class="reviews-rating-line"><span class="reviews-rating-stars" data-google-stars>★★★★★</span><span>Note Google : <strong data-google-note>...</strong> / 5 (<strong data-google-count>...</strong> avis clients)</span></div>'+
     '<div class="reviews-top">'+ 
@@ -1052,7 +1052,7 @@
   }
 
   function initReviews(){
-    var sections=[].slice.call(document.querySelectorAll('.global-reviews[data-global-reviews]'));
+    var sections=[].slice.call(document.querySelectorAll('[data-global-reviews]'));
     if(!sections.length){return;}
     var API_KEY='AIzaSyAclF0AYVUmXZ2qmcj-MsZ4S9OwQU1_60A';
     var PLACE_QUERY='Allo Nuisible Express, 4 rue de la Couture du Moulin, 94320 Thiais';
