@@ -27,5 +27,8 @@ RewriteRule ^deratisation-le-kremlin-bicetre/?$ /rats-le-kremlin-bicetre/ [R=301
 # Fix extensionless internal service path
 RewriteRule ^deratisation/?$ /deratisation.html [R=301,L,NC]
 
+# Canonicalize extensionless Ablon local pages to explicit index.html
+RewriteRule ^(acariens|xylophages|mouches|fourmis|depigeonnage|chenille-processionnaire|deratisation|guepes|frelon-asiatique|punaises-de-lit|cafards)-ablon-sur-seine/?$ /$1-ablon-sur-seine/index.html [R=301,L,NC]
+
 # Always serve dynamic SEO local structure at /seo-local-deratisation-94.json
 RewriteRule ^seo-local-deratisation-94\.json$ seo-local-deratisation-94.php [L]
