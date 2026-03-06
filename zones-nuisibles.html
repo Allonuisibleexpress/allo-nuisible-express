@@ -248,8 +248,55 @@ main{max-width:1240px;margin:0 auto;padding:34px 18px 46px}
   font-weight:800;
   text-decoration:none;
 }
+.paris-arr{
+  margin-top:20px;
+  border:1px solid #efdcae;
+  background:#fff;
+  border-radius:16px;
+  padding:16px;
+  box-shadow:0 12px 24px rgba(0,0,0,.06);
+}
+.paris-arr h3{
+  margin:0 0 10px;
+  text-align:center;
+  font-size:20px;
+  line-height:1.25;
+  color:#1d2330;
+  font-weight:900;
+}
+.paris-arr-grid{
+  display:grid;
+  grid-template-columns:repeat(5,minmax(0,1fr));
+  gap:10px;
+}
+.paris-arr-link{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:42px;
+  border-radius:999px;
+  border:1px solid #e8cf96;
+  background:#fff8e8;
+  color:#191919;
+  text-decoration:none;
+  font-weight:900;
+  letter-spacing:.02em;
+  transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease,background .2s ease;
+}
+.paris-arr-link:hover{
+  transform:translateY(-1px);
+  border-color:#d89a00;
+  background:#ffe4a8;
+  box-shadow:0 8px 16px rgba(255,174,0,.24);
+}
+.paris-arr-link.is-active{
+  background:#ffb300;
+  border-color:#111;
+  color:#111;
+}
 @media(max-width:1080px){
   .nuisibles-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .paris-arr-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
 }
 @media(max-width:780px){
   .zone-hero{padding:30px 14px 22px}
@@ -261,6 +308,8 @@ main{max-width:1240px;margin:0 auto;padding:34px 18px 46px}
   .nuisible-card{min-height:126px;font-size:15px}
   .nuisible-card span{padding:0 12px 12px}
   .nuisible-card::after{top:8px;right:8px}
+  .paris-arr h3{font-size:17px}
+  .paris-arr-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
 }
 </style>
 <script type="application/ld+json">
@@ -371,6 +420,11 @@ main{max-width:1240px;margin:0 auto;padding:34px 18px 46px}
     <h2>Intervention en moins d’une heure pour toute dératisation ou désinsectisation – Devis et déplacement gratuits</h2>
   </section>
 
+  <section class="paris-arr js-reveal" id="parisArrondissements" aria-label="Choix arrondissement Paris" hidden>
+    <h3>Paris (75) : choisissez votre arrondissement</h3>
+    <div class="paris-arr-grid" id="parisArrGrid"></div>
+  </section>
+
   <section class="nuisibles-grid js-reveal" id="services">
     <a class="nuisible-card rats" href="deratisation.html"><span>Rats / Souris</span></a>
     <a class="nuisible-card punaises" href="punaises.html"><span>Punaises de lit</span></a>
@@ -419,6 +473,22 @@ main{max-width:1240px;margin:0 auto;padding:34px 18px 46px}
   if(!chip){return;}
   if(dept && labels[dept]){
     chip.textContent='Zone sélectionnée : '+labels[dept]+' ('+dept+')'+(arr ? ' - '+arr : '');
+  }
+  var arrSection=document.getElementById('parisArrondissements');
+  var arrGrid=document.getElementById('parisArrGrid');
+  if(arrSection && arrGrid){
+    if(dept==='75'){
+      arrSection.hidden=false;
+      var html='';
+      for(var i=1;i<=20;i++){
+        var code='75'+String(i).padStart(3,'0');
+        var active=arr===code?' is-active':'';
+        html+='<a class=\"paris-arr-link'+active+'\" href=\"zones-nuisibles.html?dept=75&arr='+code+'\">'+code+'</a>';
+      }
+      arrGrid.innerHTML=html;
+    }else{
+      arrSection.hidden=true;
+    }
   }
 })();
 </script>
