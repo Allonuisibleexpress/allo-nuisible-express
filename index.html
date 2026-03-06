@@ -524,6 +524,7 @@ grid-template-columns:repeat(4,minmax(0,1fr));
 gap:10px;
 width:min(1060px,100%);
 margin:14px auto 0;
+perspective:1200px;
 }
 .idf-reassure-item{
 display:flex;
@@ -539,13 +540,58 @@ font-weight:900;
 color:#fff4cf;
 text-align:center;
 box-shadow:4px 4px 0 rgba(255,184,0,.32),0 8px 16px rgba(0,0,0,.36);
-transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease,background .22s ease
+transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease,background .22s ease;
+position:relative;
+overflow:hidden;
+transform-origin:center bottom;
+will-change:transform,box-shadow,filter;
+--domino-delay:0s;
+animation:idfDominoWave 7.2s cubic-bezier(.2,.8,.2,1) infinite both;
+animation-delay:var(--domino-delay)
+}
+.idf-reassure-item::after{
+content:"";
+position:absolute;
+inset:-35%;
+background:linear-gradient(120deg,transparent 43%,rgba(255,227,161,.35) 50%,transparent 57%);
+transform:translateX(-165%) skewX(-22deg);
+opacity:0;
+pointer-events:none;
+animation:idfDominoShine 7.2s linear infinite;
+animation-delay:var(--domino-delay)
+}
+.idf-reassure-item:nth-child(1){--domino-delay:0s}
+.idf-reassure-item:nth-child(2){--domino-delay:.15s}
+.idf-reassure-item:nth-child(3){--domino-delay:.3s}
+.idf-reassure-item:nth-child(4){--domino-delay:.45s}
+@keyframes idfDominoWave{
+0%,64%,100%{transform:translateY(0) rotateZ(0) rotateX(0)}
+68%{transform:translateY(7px) rotateZ(-5.2deg) rotateX(16deg)}
+73%{transform:translateY(-1px) rotateZ(2.6deg) rotateX(-8deg)}
+79%{transform:translateY(0) rotateZ(0) rotateX(0)}
+}
+@keyframes idfDominoShine{
+0%,66%{transform:translateX(-165%) skewX(-22deg);opacity:0}
+70%{opacity:.95}
+78%{transform:translateX(165%) skewX(-22deg);opacity:.45}
+82%,100%{transform:translateX(165%) skewX(-22deg);opacity:0}
 }
 .idf-reassure-item:hover{
+animation:none;
 transform:translate(-2px,-2px);
 box-shadow:7px 7px 0 rgba(255,184,0,.42),0 12px 22px rgba(0,0,0,.42);
 border-color:#ffd24f;
 background:linear-gradient(180deg,#171717 0%,#0d0d0d 100%)
+}
+.idf-reassure-item:hover::after{
+animation:none;
+opacity:0
+}
+@media (prefers-reduced-motion: reduce){
+  .idf-reassure-item,
+  .idf-reassure-item::after{
+    animation:none !important;
+  }
 }
 .idf-map-cta{
 display:flex;
