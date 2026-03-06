@@ -1404,6 +1404,7 @@
     var serviceLinks=HEADER_SERVICE_ITEMS.map(function(item){
       return '<a class="dropdown-item" href="'+prefix+item.href+'">'+item.label+'</a>';
     }).join('');
+    var mobileLinks=mobileMenuItems(prefix);
     return ''+
     '<header data-global-header="1">'+
     '<div class="header-wrap">'+
@@ -1421,6 +1422,8 @@
     '<a class="nav-link" href="'+prefix+'blog.html">BLOG</a>'+
     '<a class="cta-btn call-btn" href="tel:0744296897"><span class="default-text">APPELEZ-NOUS</span><span class="hover-text">07 44 29 68 97</span></a>'+
     '<a class="cta-btn quote-btn" href="'+prefix+'devis.html"><span class="default-text">DEMANDES DE DEVIS</span><span class="hover-text">DEVIS GRATUIT</span></a>'+
+    '<a class="mobile-close-home" href="'+prefix+'index.html" aria-label="Fermer et revenir à l’accueil">×</a>'+
+    '<ul class="mobile-nav-list">'+mobileLinks+'</ul>'+
     '</nav>'+
     '</div>'+
     '<button type="button" class="mobile-menu-btn" aria-label="Ouvrir le menu" aria-expanded="false"><span></span><span></span><span></span></button>'+
@@ -2068,9 +2071,17 @@
     // Hard retry to recover from page-specific scripts/styles that run after boot.
     if(!window.__alloCoreRetryBound){
       window.__alloCoreRetryBound=true;
-      window.setTimeout(function(){safeRun(ensureUnifiedHeaderTemplate,'ensureUnifiedHeaderTemplate@120');},120);
+      window.setTimeout(function(){
+        safeRun(ensureUnifiedHeaderTemplate,'ensureUnifiedHeaderTemplate@120');
+        safeRun(ensureDesktopServicesDropdown,'ensureDesktopServicesDropdown@120');
+        safeRun(ensureMobileMenuFallback,'ensureMobileMenuFallback@120');
+      },120);
       window.setTimeout(function(){safeRun(ensureCoreSections,'ensureCoreSections@250');},250);
-      window.setTimeout(function(){safeRun(ensureUnifiedHeaderTemplate,'ensureUnifiedHeaderTemplate@1000');},1000);
+      window.setTimeout(function(){
+        safeRun(ensureUnifiedHeaderTemplate,'ensureUnifiedHeaderTemplate@1000');
+        safeRun(ensureDesktopServicesDropdown,'ensureDesktopServicesDropdown@1000');
+        safeRun(ensureMobileMenuFallback,'ensureMobileMenuFallback@1000');
+      },1000);
       window.setTimeout(function(){safeRun(ensureCoreSections,'ensureCoreSections@1000');},1000);
       window.setTimeout(function(){safeRun(ensureCoreSections,'ensureCoreSections@2200');},2200);
       window.setTimeout(function(){safeRun(forceMobileMenuEmergency,'forceMobileMenuEmergency@1200');},1200);
