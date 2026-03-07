@@ -829,7 +829,7 @@
     '<section class="reviews" id="avis-google" data-global-reviews>'+ 
     '<div class="reviews-shell">'+
     '<h2>Ils nous font confiance</h2>'+ 
-    '<p class="reviews-cred"><span>Plus de 2000 interventions en Île-de-France</span></p>'+
+    '<p class="reviews-cred"><span>+ 2000 interventions en Île-de-France</span></p>'+
     '<div class="reviews-rating-line"><span class="reviews-rating-stars" data-google-stars>★★★★★</span><span>Note Google : <strong data-google-note>...</strong> / 5 (<strong data-google-count>...</strong> avis clients)</span></div>'+
     '<div class="reviews-top">'+ 
     '  <a href="https://maps.app.goo.gl/EWnwrfLmvWMRjEds6" target="_blank" rel="noopener noreferrer">Voir tous les avis Google</a>'+ 
@@ -1205,7 +1205,7 @@
 
     function parseCount(text){
       var clean=String(text||'').replace(/\u00a0/g,' ');
-      var match=clean.match(/plus\s+de\s+([0-9\s.,]+)/i);
+      var match=clean.match(/(?:plus\s+de\s+)?\+?\s*([0-9][0-9\s.,]*)/i);
       if(!match||!match[1]){return 0;}
       var digits=match[1].replace(/[^\d]/g,'');
       var value=parseInt(digits,10);
@@ -1223,12 +1223,13 @@
       var target=parseCount(original);
       if(!target){return null;}
 
-      var split=original.match(/^(.*?plus\s+de\s+)([0-9\s.,]+)(.*)$/i);
-      var prefix='Plus de ';
+      var split=original.match(/^(.*?)([0-9][0-9\s.,]*)(.*)$/i);
+      var prefix='+ ';
       var suffix=' interventions en Île-de-France';
       if(split){
-        prefix=split[1]||prefix;
-        suffix=split[3]||suffix;
+        if(split[3] && /interventions/i.test(split[3])){
+          suffix=split[3].replace(/^\s+/,' ');
+        }
       }
 
       node.textContent='';
