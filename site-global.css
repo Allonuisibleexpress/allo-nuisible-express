@@ -2736,33 +2736,61 @@ section#avis-google.global-reviews h2{
 section#avis-google.reviews .reviews-cred,
 section#avis-google.global-reviews .reviews-cred{
   position:relative;
+  isolation:isolate;
   display:inline-flex;
   align-items:center;
   justify-content:center;
-  margin:10px auto 10px;
-  padding:12px 22px;
+  margin:12px auto 12px;
+  padding:14px 26px;
   border-radius:999px;
-  border:1px solid #e8bd52;
-  background:linear-gradient(180deg,#fff2cc 0%,#ffe4a0 100%);
+  border:3px solid #111;
+  background:linear-gradient(180deg,#fff6df 0%,#ffe9b8 56%,#ffd879 100%);
   color:#111;
-  font-size:19px;
+  font-size:20px;
   font-weight:900;
-  line-height:1.18;
-  box-shadow:0 12px 26px rgba(224,164,31,.24);
+  letter-spacing:.012em;
+  line-height:1.14;
+  transform:translateY(-1px);
+  transition:transform .2s ease,box-shadow .2s ease,filter .2s ease;
+  box-shadow:
+    0 10px 0 #d09100,
+    0 18px 30px rgba(0,0,0,.40),
+    inset 0 1px 0 rgba(255,255,255,.78);
 }
 section#avis-google.reviews .reviews-cred::before,
 section#avis-google.global-reviews .reviews-cred::before{
   content:"";
   position:absolute;
-  inset:0;
-  background:linear-gradient(115deg,transparent 15%,rgba(255,255,255,.52) 45%,transparent 70%);
+  inset:2px;
+  border-radius:999px;
+  background:linear-gradient(115deg,transparent 18%,rgba(255,255,255,.58) 45%,transparent 72%);
   transform:translateX(-130%);
   animation:reviewsCredShine 4.2s ease-in-out infinite;
+  z-index:0;
+}
+section#avis-google.reviews .reviews-cred::after,
+section#avis-google.global-reviews .reviews-cred::after{
+  content:"";
+  position:absolute;
+  inset:4px;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,.56);
+  pointer-events:none;
+  z-index:0;
 }
 section#avis-google.reviews .reviews-cred span,
 section#avis-google.global-reviews .reviews-cred span{
   position:relative;
   z-index:1;
+}
+section#avis-google.reviews .reviews-cred:hover,
+section#avis-google.global-reviews .reviews-cred:hover{
+  transform:translateY(-2px);
+  filter:saturate(1.04);
+  box-shadow:
+    0 12px 0 #d09100,
+    0 22px 34px rgba(0,0,0,.45),
+    inset 0 1px 0 rgba(255,255,255,.82);
 }
 section#avis-google.reviews .reviews-rating-line,
 section#avis-google.global-reviews .reviews-rating-line{
@@ -3170,8 +3198,13 @@ body.is-homepage .trust-badge-link{
   section#avis-google.global-reviews .reviews-cred{
     margin:8px 4px 8px;
     min-height:44px;
-    padding:8px 11px;
+    padding:9px 12px;
     font-size:15px;
+    border-width:2px;
+    box-shadow:
+      0 7px 0 #d09100,
+      0 12px 20px rgba(0,0,0,.36),
+      inset 0 1px 0 rgba(255,255,255,.72);
   }
   section#avis-google.reviews .reviews-rating-line,
   section#avis-google.global-reviews .reviews-rating-line{
