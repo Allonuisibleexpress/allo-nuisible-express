@@ -1473,7 +1473,11 @@
     }
 
     var faq=document.querySelector('.faq, .global-faq');
-    if(faq && !head.querySelector('script[data-global-schema="faq"]')){
+    var hasExistingFaqSchema=[].slice.call(head.querySelectorAll('script[type="application/ld+json"]')).some(function(node){
+      var txt=(node.textContent||'');
+      return /\"@type\"\s*:\s*\"FAQPage\"/.test(txt) || txt.indexOf('FAQPage')!==-1;
+    });
+    if(faq && !hasExistingFaqSchema && !head.querySelector('script[data-global-schema="faq"]')){
       var entities=[];
       faq.querySelectorAll('.faq-item').forEach(function(item){
         var q=item.querySelector('.faq-question');
