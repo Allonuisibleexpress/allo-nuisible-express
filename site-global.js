@@ -829,7 +829,7 @@
     '<section class="reviews" id="avis-google" data-global-reviews>'+ 
     '<div class="reviews-shell">'+
     '<h2>Ils nous font confiance</h2>'+ 
-    '<p class="reviews-cred"><span>+ 2000 interventions en Île-de-France</span></p>'+
+    '<p class="reviews-cred"><span>+ 2 000 interventions en Île-de-France</span></p>'+
     '<div class="reviews-rating-line"><span class="reviews-rating-stars" data-google-stars>★★★★★</span><span>Note Google : <strong data-google-note>...</strong> / 5 (<strong data-google-count>...</strong> avis clients)</span></div>'+
     '<div class="reviews-top">'+ 
     '  <a href="https://maps.app.goo.gl/EWnwrfLmvWMRjEds6" target="_blank" rel="noopener noreferrer">Voir tous les avis Google</a>'+ 
@@ -1204,7 +1204,7 @@
     if(!containers.length){return;}
 
     function parseCount(text){
-      var clean=String(text||'').replace(/\u00a0/g,' ');
+      var clean=String(text||'').replace(/\u00a0/g,' ').replace(/\u202f/g,' ');
       var match=clean.match(/(?:plus\s+de\s+)?\+?\s*([0-9][0-9\s.,]*)/i);
       if(!match||!match[1]){return 0;}
       var digits=match[1].replace(/[^\d]/g,'');
@@ -1237,7 +1237,7 @@
       var counter=document.createElement('strong');
       counter.className='reviews-cred-count';
       counter.setAttribute('data-counter-target',String(target));
-      counter.setAttribute('data-counter-duration','1800');
+      counter.setAttribute('data-counter-duration','2600');
       counter.textContent='0';
       node.appendChild(counter);
       node.appendChild(document.createTextNode(suffix));
@@ -1249,13 +1249,15 @@
       if(!counter || counter.dataset.counted==='1' || counter.dataset.counting==='1'){return;}
       var target=parseInt(counter.getAttribute('data-counter-target')||'0',10);
       if(!isFinite(target) || target<=0){return;}
-      var duration=parseInt(counter.getAttribute('data-counter-duration')||'1800',10);
+      var duration=parseInt(counter.getAttribute('data-counter-duration')||'2600',10);
       counter.dataset.counting='1';
       var startedAt=null;
       function step(timestamp){
         if(startedAt===null){startedAt=timestamp;}
-        var progress=Math.min(1,(timestamp-startedAt)/Math.max(500,duration));
-        var eased=1-Math.pow(1-progress,3);
+        var progress=Math.min(1,(timestamp-startedAt)/Math.max(1200,duration));
+        var eased=progress<0.5
+          ? 4*Math.pow(progress,3)
+          : 1-Math.pow(-2*progress+2,3)/2;
         var value=Math.round(target*eased);
         counter.textContent=value.toLocaleString('fr-FR');
         if(progress<1){
