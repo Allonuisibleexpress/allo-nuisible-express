@@ -829,7 +829,7 @@
     '<section class="reviews" id="avis-google" data-global-reviews>'+ 
     '<div class="reviews-shell">'+
     '<h2>Ils nous font confiance</h2>'+ 
-    '<p class="reviews-cred"><span>+ 2 000 interventions en Île-de-France</span></p>'+
+    '<p class="reviews-cred"><span>+ 2\u202f000 interventions en Île-de-France</span></p>'+
     '<div class="reviews-rating-line"><span class="reviews-rating-stars" data-google-stars>★★★★★</span><span>Note Google : <strong data-google-note>...</strong> / 5 (<strong data-google-count>...</strong> avis clients)</span></div>'+
     '<div class="reviews-top">'+ 
     '  <a href="https://maps.app.goo.gl/EWnwrfLmvWMRjEds6" target="_blank" rel="noopener noreferrer">Voir tous les avis Google</a>'+ 
@@ -1223,21 +1223,22 @@
       var target=parseCount(original);
       if(!target){return null;}
 
-      var split=original.match(/^(.*?)([0-9][0-9\s.,]*)(.*)$/i);
-      var prefix='+ ';
-      var suffix=' interventions en Île-de-France';
-      if(split){
-        if(split[3] && /interventions/i.test(split[3])){
-          suffix=split[3].replace(/^\s+/,' ');
-        }
-      }
+      var prefix='+';
+      var suffix='interventions en Île-de-France';
 
       node.textContent='';
+      node.style.whiteSpace='nowrap';
+      if(node.parentElement && node.parentElement.classList && node.parentElement.classList.contains('reviews-cred')){
+        node.parentElement.style.whiteSpace='nowrap';
+      }
       node.appendChild(document.createTextNode(prefix));
       var counter=document.createElement('strong');
       counter.className='reviews-cred-count';
       counter.setAttribute('data-counter-target',String(target));
       counter.setAttribute('data-counter-duration','2600');
+      counter.style.display='inline-block';
+      counter.style.margin='0 .24em';
+      counter.style.whiteSpace='nowrap';
       counter.textContent='0';
       node.appendChild(counter);
       node.appendChild(document.createTextNode(suffix));
