@@ -826,7 +826,7 @@
 
   function reviewsHTML(){
     return ''+
-    '<section class="reviews" id="avis-google" data-global-reviews>'+ 
+    '<section class="reviews global-reviews" id="avis-google" data-global-reviews>'+ 
     '<div class="reviews-shell">'+
     '<h2>Ils nous font confiance</h2>'+ 
     '<p class="reviews-cred"><span>+ 2\u202f000 interventions en Île-de-France</span></p>'+
