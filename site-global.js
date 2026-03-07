@@ -1174,6 +1174,7 @@
         reviews:FALLBACK_REVIEWS
       };
       sections.forEach(function(section){initSection(section,fallbackPlace);});
+      initInterventionsCountup();
     }
 
     // Never leave the section stuck on "Chargement..."
@@ -1189,11 +1190,105 @@
             return;
           }
           sections.forEach(function(section){initSection(section,place);});
+          initInterventionsCountup();
           if(window.__alloScrollRevealRefresh){window.__alloScrollRevealRefresh(document);} 
         });
       });
     }).catch(function(){
       renderFallback();
+    });
+  }
+
+  function initInterventionsCountup(){
+    var containers=[].slice.call(document.querySelectorAll('.reviews-cred span, .reviews-cred'));
+    if(!containers.length){return;}
+
+    function parseCount(text){
+      var clean=String(text||'').replace(/\u00a0/g,' ');
+      var match=clean.match(/plus\s+de\s+([0-9\s.,]+)/i);
+      if(!match||!match[1]){return 0;}
+      var digits=match[1].replace(/[^\d]/g,'');
+      var value=parseInt(digits,10);
+      return isFinite(value)&&value>0 ? value : 0;
+    }
+
+    function wrapCounter(node){
+      if(!node || node.dataset.countupReady==='1'){return null;}
+      var existing=node.querySelector('[data-counter-target]');
+      if(existing){
+        node.dataset.countupReady='1';
+        return existing;
+      }
+      var original=(node.textContent||'').replace(/\s+/g,' ').trim();
+      var target=parseCount(original);
+      if(!target){return null;}
+
+      var split=original.match(/^(.*?plus\s+de\s+)([0-9\s.,]+)(.*)$/i);
+      var prefix='Plus de ';
+      var suffix=' interventions en Île-de-France';
+      if(split){
+        prefix=split[1]||prefix;
+        suffix=split[3]||suffix;
+      }
+
+      node.textContent='';
+      node.appendChild(document.createTextNode(prefix));
+      var counter=document.createElement('strong');
+      counter.className='reviews-cred-count';
+      counter.setAttribute('data-counter-target',String(target));
+      counter.setAttribute('data-counter-duration','1800');
+      counter.textContent='0';
+      node.appendChild(counter);
+      node.appendChild(document.createTextNode(suffix));
+      node.dataset.countupReady='1';
+      return counter;
+    }
+
+    function animateCounter(counter){
+      if(!counter || counter.dataset.counted==='1' || counter.dataset.counting==='1'){return;}
+      var target=parseInt(counter.getAttribute('data-counter-target')||'0',10);
+      if(!isFinite(target) || target<=0){return;}
+      var duration=parseInt(counter.getAttribute('data-counter-duration')||'1800',10);
+      counter.dataset.counting='1';
+      var startedAt=null;
+      function step(timestamp){
+        if(startedAt===null){startedAt=timestamp;}
+        var progress=Math.min(1,(timestamp-startedAt)/Math.max(500,duration));
+        var eased=1-Math.pow(1-progress,3);
+        var value=Math.round(target*eased);
+        counter.textContent=value.toLocaleString('fr-FR');
+        if(progress<1){
+          window.requestAnimationFrame(step);
+          return;
+        }
+        counter.textContent=target.toLocaleString('fr-FR');
+        counter.dataset.counting='0';
+        counter.dataset.counted='1';
+      }
+      window.requestAnimationFrame(step);
+    }
+
+    var counters=containers.map(wrapCounter).filter(function(counter,index,list){
+      return !!counter && list.indexOf(counter)===index;
+    });
+    if(!counters.length){return;}
+
+    if(!('IntersectionObserver' in window)){
+      counters.forEach(animateCounter);
+      return;
+    }
+
+    var observer=new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(!entry.isIntersecting){return;}
+        animateCounter(entry.target);
+        observer.unobserve(entry.target);
+      });
+    },{threshold:0.45,rootMargin:'0px 0px -8% 0px'});
+
+    counters.forEach(function(counter){
+      if(counter.dataset.counted==='1'){return;}
+      observer.observe(counter);
     });
   }
 
@@ -2059,6 +2154,7 @@
     safeRun(forceMobileMenuEmergency,'forceMobileMenuEmergency');
     safeRun(enforceMobileStickyNoOutlineRuntime,'enforceMobileStickyNoOutlineRuntime');
     safeRun(initReviews,'initReviews');
+    safeRun(initInterventionsCountup,'initInterventionsCountup');
     safeRun(cleanupTimedModalNonHome,'cleanupTimedModalNonHome');
     safeRun(initTimedCallModal,'initTimedCallModal');
     safeRun(forceTimedPopupEmergency,'forceTimedPopupEmergency');
@@ -2086,6 +2182,7 @@
       window.setTimeout(function(){safeRun(ensureCoreSections,'ensureCoreSections@2200');},2200);
       window.setTimeout(function(){safeRun(forceMobileMenuEmergency,'forceMobileMenuEmergency@1200');},1200);
       window.setTimeout(function(){safeRun(enforceMobileStickyNoOutlineRuntime,'enforceMobileStickyNoOutlineRuntime@1200');},1200);
+      window.setTimeout(function(){safeRun(initInterventionsCountup,'initInterventionsCountup@1200');},1200);
     }
   }
 
