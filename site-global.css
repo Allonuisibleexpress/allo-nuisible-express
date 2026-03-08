@@ -4713,6 +4713,15 @@ body.preview-neo-ticket-v6.is-local-page .cta-local a{
 /* ==========================================================================
    PREVIEW V7.1 - Stronger conversion finish (overrides)
    ========================================================================== */
+html.preview-neo-ticket-v6,
+body.preview-neo-ticket-v6.is-local-page{
+  background:
+    radial-gradient(circle at 12% 9%,rgba(255,180,0,.09),transparent 20%),
+    radial-gradient(circle at 86% 82%,rgba(17,17,17,.07),transparent 24%),
+    linear-gradient(rgba(17,17,17,.04) 1px, transparent 1px) 0 0 / 28px 28px,
+    linear-gradient(90deg, rgba(17,17,17,.04) 1px, transparent 1px) 0 0 / 28px 28px,
+    linear-gradient(180deg,#f7f4ec 0%,#f3f0e8 100%) !important;
+}
 body.preview-neo-ticket-v6.is-local-page main.local-wrap{
   position:relative;
   isolation:isolate;
@@ -4724,11 +4733,7 @@ body.preview-neo-ticket-v6.is-local-page main.local-wrap::before{
   border-radius:22px;
   z-index:-1;
   pointer-events:none;
-  background:
-    radial-gradient(circle at 12% 9%,rgba(255,180,0,.09),transparent 36%),
-    radial-gradient(circle at 86% 82%,rgba(17,17,17,.07),transparent 40%),
-    linear-gradient(rgba(17,17,17,.04) 1px, transparent 1px) 0 0 / 100% 28px,
-    linear-gradient(90deg, rgba(17,17,17,.04) 1px, transparent 1px) 0 0 / 28px 100%;
+  background:none !important;
 }
 body.preview-neo-ticket-v6.is-local-page main.local-wrap > article > section:not(.hero-local):not(.seo-hero):not(.global-process):not(.global-reviews):not(.global-faq):not([data-global-process]):not([data-global-reviews]):not([data-global-faq]):not(#avis-google),
 body.preview-neo-ticket-v6.is-local-page main.local-wrap > article > div > section:not(.hero-local):not(.seo-hero):not(.global-process):not(.global-reviews):not(.global-faq):not([data-global-process]):not([data-global-reviews]):not([data-global-faq]):not(#avis-google),
@@ -4818,10 +4823,7 @@ body.preview-neo-ticket-v6.is-local-page main.local-wrap .side .quick a[href*="d
 @media (max-width:980px){
   body.preview-neo-ticket-v6.is-local-page main.local-wrap::before{
     border-radius:16px;
-    background:
-      radial-gradient(circle at 12% 9%,rgba(255,180,0,.09),transparent 38%),
-      linear-gradient(rgba(17,17,17,.04) 1px, transparent 1px) 0 0 / 100% 24px,
-      linear-gradient(90deg, rgba(17,17,17,.04) 1px, transparent 1px) 0 0 / 24px 100%;
+    background:none !important;
   }
   body.preview-neo-ticket-v6.is-local-page .side .card{
     position:static;
