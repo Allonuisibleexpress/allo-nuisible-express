@@ -3252,3 +3252,1591 @@ body.is-homepage .trust-badge-link{
     font-size:16px;
   }
 }
+
+/* ===== Preview Mode: Neo Ticket Conversion (UI/UX only, no content changes) ===== */
+html.preview-neo-ticket,
+body.preview-neo-ticket{
+  background:#050505 !important;
+}
+body.preview-neo-ticket.is-local-page{
+  background:
+    radial-gradient(1100px 460px at 50% -100px, rgba(255,180,0,.2), rgba(255,180,0,0) 62%),
+    linear-gradient(180deg,#060606 0%,#050505 42%,#070707 100%) !important;
+  color:#f6f0df !important;
+}
+body.preview-neo-ticket.is-local-page main.local-wrap{
+  max-width:min(1380px,96vw) !important;
+  gap:28px !important;
+  padding:42px 20px 30px !important;
+}
+body.preview-neo-ticket.is-local-page .hero-local.seo-hero,
+body.preview-neo-ticket.is-local-page .seo-hero{
+  margin:
+    calc(var(--allo-urgent-top,96px) + var(--allo-urgent-height,52px) + 14px)
+    clamp(8px,1.5vw,18px)
+    0 !important;
+  border:2px solid #ffb400 !important;
+  border-radius:30px !important;
+  background-color:#0a0a0a !important;
+  box-shadow:
+    0 18px 0 rgba(186,129,0,.95),
+    0 34px 68px rgba(0,0,0,.52),
+    inset 0 0 0 1px rgba(255,255,255,.06) !important;
+  overflow:hidden !important;
+}
+body.preview-neo-ticket.is-local-page .hero-local.seo-hero::before,
+body.preview-neo-ticket.is-local-page .seo-hero::before{
+  background:
+    linear-gradient(180deg,rgba(5,5,5,.56),rgba(6,6,6,.8)),
+    radial-gradient(980px 300px at 50% -20%,rgba(255,176,0,.24),transparent 72%) !important;
+}
+body.preview-neo-ticket.is-local-page .hero-local.seo-hero::after,
+body.preview-neo-ticket.is-local-page .seo-hero::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(rgba(255,180,0,.08) 1px, transparent 1px) 0 0 / 100% 30px,
+    linear-gradient(90deg, rgba(255,180,0,.08) 1px, transparent 1px) 0 0 / 30px 100%;
+  opacity:.28;
+  pointer-events:none;
+  z-index:0;
+}
+body.preview-neo-ticket.is-local-page .seo-hero > *{
+  position:relative;
+  z-index:1;
+}
+body.preview-neo-ticket.is-local-page .seo-hero-badge{
+  border:2px solid #ffbf29 !important;
+  background:linear-gradient(180deg,#121212 0%,#0a0a0a 100%) !important;
+  color:#ffe6a3 !important;
+  font-weight:900 !important;
+  letter-spacing:.03em !important;
+  box-shadow:
+    0 8px 0 #9e6e00,
+    0 14px 32px rgba(0,0,0,.44) !important;
+}
+body.preview-neo-ticket.is-local-page .seo-hero h1{
+  font-size:clamp(28px,3.7vw,52px) !important;
+  line-height:1.08 !important;
+  font-weight:900 !important;
+  letter-spacing:.015em !important;
+  text-transform:none !important;
+  max-width:min(1200px,95vw) !important;
+  margin-top:6px !important;
+}
+body.preview-neo-ticket.is-local-page .seo-hero h2{
+  font-size:clamp(15px,1.5vw,22px) !important;
+  line-height:1.28 !important;
+  font-weight:700 !important;
+  color:#f4e8cf !important;
+  max-width:min(1060px,95vw) !important;
+  margin-top:16px !important;
+}
+body.preview-neo-ticket.is-local-page .seo-hero .premium-pill{
+  border:2px solid #141414 !important;
+  background:linear-gradient(180deg,#ffd34f 0%,#ffb400 100%) !important;
+  color:#101010 !important;
+  font-weight:900 !important;
+  padding:.18em .64em !important;
+  font-size:clamp(1.02em,1.8vw,1.34em) !important;
+  box-shadow:
+    0 7px 0 #9f6f00,
+    0 13px 24px rgba(0,0,0,.36),
+    inset 0 1px 0 rgba(255,255,255,.52) !important;
+}
+body.preview-neo-ticket.is-local-page .seo-hero .seo-hero-actions{
+  margin-top:22px !important;
+  gap:16px !important;
+}
+body.preview-neo-ticket.is-local-page .seo-hero .seo-hero-btn{
+  min-width:280px !important;
+  border:2px solid #151515 !important;
+  border-radius:14px !important;
+  font-size:clamp(18px,1.5vw,26px) !important;
+  text-transform:uppercase !important;
+  letter-spacing:.02em !important;
+  box-shadow:0 9px 0 #141414,0 18px 30px rgba(0,0,0,.42) !important;
+  transition:transform .2s ease, box-shadow .2s ease !important;
+}
+body.preview-neo-ticket.is-local-page .seo-hero .seo-hero-btn:hover{
+  transform:translateY(-2px) !important;
+  box-shadow:0 11px 0 #141414,0 22px 34px rgba(0,0,0,.48) !important;
+}
+body.preview-neo-ticket.is-local-page .seo-hero .seo-hero-btn.call{
+  background:linear-gradient(180deg,#ffc52f 0%,#ffb100 100%) !important;
+  color:#111 !important;
+}
+body.preview-neo-ticket.is-local-page .seo-hero .seo-hero-btn.devis{
+  background:linear-gradient(180deg,#f7f1df 0%,#efe4c4 100%) !important;
+  color:#111 !important;
+}
+body.preview-neo-ticket.is-local-page main.local-wrap > article > section:not(.hero-local):not(.seo-hero),
+body.preview-neo-ticket.is-local-page main.local-wrap > article > div > section:not(.hero-local):not(.seo-hero),
+body.preview-neo-ticket.is-local-page .card{
+  background:linear-gradient(180deg,#111111 0%,#0a0a0a 100%) !important;
+  border:2px solid #1f1f1f !important;
+  border-radius:24px !important;
+  box-shadow:
+    0 10px 0 rgba(255,176,0,.32),
+    0 20px 42px rgba(0,0,0,.42),
+    inset 0 1px 0 rgba(255,255,255,.04) !important;
+  color:#f7f2e6 !important;
+  position:relative;
+  overflow:hidden;
+}
+body.preview-neo-ticket.is-local-page main.local-wrap > article > section:not(.hero-local):not(.seo-hero)::before,
+body.preview-neo-ticket.is-local-page main.local-wrap > article > div > section:not(.hero-local):not(.seo-hero)::before,
+body.preview-neo-ticket.is-local-page .card::before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:0;
+  right:0;
+  height:4px;
+  background:linear-gradient(90deg,#ffb400,#ffe4a1,#ffb400);
+}
+body.preview-neo-ticket.is-local-page h2{
+  color:#ffffff !important;
+  font-size:clamp(24px,2.25vw,40px) !important;
+  line-height:1.14 !important;
+  font-weight:900 !important;
+  letter-spacing:.008em !important;
+}
+body.preview-neo-ticket.is-local-page h3{
+  color:#ffe8b5 !important;
+  font-size:clamp(18px,1.35vw,27px) !important;
+  line-height:1.2 !important;
+  font-weight:800 !important;
+}
+body.preview-neo-ticket.is-local-page p,
+body.preview-neo-ticket.is-local-page li{
+  color:#f0e6cd !important;
+}
+body.preview-neo-ticket.is-local-page a{
+  color:#ffd36f !important;
+  text-decoration-color:rgba(255,211,111,.42) !important;
+}
+body.preview-neo-ticket.is-local-page a:hover{
+  color:#ffe6ab !important;
+}
+body.preview-neo-ticket.is-local-page .seo-summary-block{
+  background:linear-gradient(180deg,#0f0f0f 0%,#090909 100%) !important;
+  border:2px solid #ffb400 !important;
+  border-radius:20px !important;
+  box-shadow:0 10px 0 #9b6c00,0 22px 36px rgba(0,0,0,.38) !important;
+}
+body.preview-neo-ticket.is-local-page .seo-summary-head h2{
+  text-transform:uppercase !important;
+  font-size:clamp(26px,2.5vw,44px) !important;
+}
+body.preview-neo-ticket.is-local-page .seo-summary-list a{
+  color:#fff2ce !important;
+  font-weight:700 !important;
+}
+body.preview-neo-ticket.is-local-page .seo-summary-list a:hover{
+  color:#ffca49 !important;
+}
+body.preview-neo-ticket.is-local-page .mini-faq-local{
+  border:2px solid #ffb400 !important;
+  border-radius:20px !important;
+  box-shadow:0 10px 0 #936700,0 22px 38px rgba(0,0,0,.34) !important;
+  background:linear-gradient(180deg,#0f0f0f 0%,#090909 100%) !important;
+}
+body.preview-neo-ticket.is-local-page .mini-faq-item{
+  border:1px solid #2c2c2c !important;
+  border-radius:12px !important;
+  background:#111 !important;
+}
+body.preview-neo-ticket.is-local-page .mini-faq-item[open]{
+  border-color:#ffb400 !important;
+  box-shadow:0 0 0 1px rgba(255,180,0,.4),0 12px 24px rgba(0,0,0,.3) !important;
+}
+body.preview-neo-ticket.is-local-page .mini-faq-question{
+  color:#fff7e3 !important;
+  font-size:clamp(16px,1.2vw,21px) !important;
+}
+body.preview-neo-ticket.is-local-page .mini-faq-toggle{
+  background:#ffb400 !important;
+  color:#111 !important;
+}
+body.preview-neo-ticket.force-home-sections-redesign section#avis-google.reviews .reviews-shell,
+body.preview-neo-ticket.force-home-sections-redesign section#avis-google.global-reviews .reviews-shell{
+  background:linear-gradient(180deg,#0b0b0b 0%,#080808 100%) !important;
+  border:2px solid #ffb400 !important;
+  box-shadow:0 14px 0 #926600,0 28px 52px rgba(0,0,0,.45) !important;
+}
+body.preview-neo-ticket.force-home-sections-redesign section#avis-google.reviews .review-card,
+body.preview-neo-ticket.force-home-sections-redesign section#avis-google.global-reviews .review-card{
+  border:2px solid #272727 !important;
+  background:linear-gradient(180deg,#141414,#0f0f0f) !important;
+}
+body.preview-neo-ticket.force-home-sections-redesign section#avis-google.reviews .review-text,
+body.preview-neo-ticket.force-home-sections-redesign section#avis-google.global-reviews .review-text{
+  color:#f5edda !important;
+}
+body.preview-neo-ticket.force-home-sections-redesign section#avis-google.reviews .reviews-rating-line,
+body.preview-neo-ticket.force-home-sections-redesign section#avis-google.global-reviews .reviews-rating-line{
+  border:2px solid #ffb400 !important;
+  box-shadow:0 8px 0 #946800,0 18px 30px rgba(0,0,0,.36) !important;
+}
+@keyframes neoDominoDrop{
+  0%{
+    opacity:0;
+    transform:translateY(24px) rotateX(7deg);
+  }
+  100%{
+    opacity:1;
+    transform:translateY(0) rotateX(0);
+  }
+}
+body.preview-neo-ticket .seo-hero-badge,
+body.preview-neo-ticket .seo-hero h1,
+body.preview-neo-ticket .seo-hero h2,
+body.preview-neo-ticket .seo-hero .seo-hero-actions,
+body.preview-neo-ticket .seo-summary-block,
+body.preview-neo-ticket .mini-faq-local{
+  animation:neoDominoDrop .72s cubic-bezier(.2,.7,.2,1) both;
+}
+body.preview-neo-ticket .seo-hero h1{animation-delay:.08s}
+body.preview-neo-ticket .seo-hero h2{animation-delay:.14s}
+body.preview-neo-ticket .seo-hero .seo-hero-actions{animation-delay:.2s}
+body.preview-neo-ticket .seo-summary-block{animation-delay:.26s}
+body.preview-neo-ticket .mini-faq-local{animation-delay:.32s}
+@media (max-width:980px){
+  body.preview-neo-ticket.is-local-page .hero-local.seo-hero,
+  body.preview-neo-ticket.is-local-page .seo-hero{
+    margin-left:8px !important;
+    margin-right:8px !important;
+    border-radius:22px !important;
+    box-shadow:0 12px 0 rgba(186,129,0,.95),0 28px 44px rgba(0,0,0,.44) !important;
+  }
+  body.preview-neo-ticket.is-local-page .seo-hero h1{
+    font-size:clamp(24px,6.2vw,36px) !important;
+  }
+  body.preview-neo-ticket.is-local-page .seo-hero h2{
+    font-size:clamp(13px,3.5vw,18px) !important;
+  }
+  body.preview-neo-ticket.is-local-page .seo-hero .premium-pill{
+    font-size:clamp(.98em,3vw,1.12em) !important;
+  }
+  body.preview-neo-ticket.is-local-page .seo-hero .seo-hero-btn{
+    min-width:0 !important;
+    width:100% !important;
+  }
+}
+
+/* Preview safeguard: keep local hero H1/H2 exactly like baseline (no layout/type shift) */
+body.preview-neo-ticket.is-local-page .hero-local.seo-hero,
+body.preview-neo-ticket.is-local-page .seo-hero{
+  margin:0 0 18px !important;
+  width:100% !important;
+  max-width:none !important;
+  margin-left:0 !important;
+  margin-right:0 !important;
+  border:1px solid rgba(255,255,255,.26) !important;
+  border-radius:0 !important;
+  box-shadow:0 30px 64px rgba(0,0,0,.28) !important;
+  background-color:transparent !important;
+}
+body.preview-neo-ticket.is-local-page .hero-local.seo-hero::after,
+body.preview-neo-ticket.is-local-page .seo-hero::after{
+  content:"" !important;
+  display:block !important;
+  position:absolute !important;
+  inset:0 !important;
+  background:linear-gradient(120deg,rgba(255,180,0,.08),transparent 45%) !important;
+  opacity:1 !important;
+  pointer-events:none !important;
+}
+body.preview-neo-ticket.is-local-page .hero-local.seo-hero::before,
+body.preview-neo-ticket.is-local-page .seo-hero::before{
+  background:rgba(0,0,0,.45) !important;
+}
+body.preview-neo-ticket.is-local-page .seo-hero-badge{
+  margin:0 auto 22px auto !important;
+  padding:10px 18px !important;
+  border:1px solid rgba(218,170,66,.72) !important;
+  border-radius:999px !important;
+  background:rgba(44,49,57,.55) !important;
+  color:#f1cc7b !important;
+  font-size:clamp(14px,2vw,18px) !important;
+  font-weight:800 !important;
+  letter-spacing:normal !important;
+  text-transform:none !important;
+  box-shadow:0 8px 22px rgba(0,0,0,.28) !important;
+}
+body.preview-neo-ticket.is-local-page .seo-hero h1{
+  max-width:min(1180px,94vw) !important;
+  margin:0 auto 0 auto !important;
+  font-size:36px !important;
+  line-height:1.1 !important;
+  font-weight:900 !important;
+  text-transform:none !important;
+  letter-spacing:normal !important;
+}
+body.preview-neo-ticket.is-local-page .seo-hero h2{
+  max-width:min(1060px,92vw) !important;
+  margin:15% auto 22px auto !important;
+  font-size:22px !important;
+  line-height:1.22 !important;
+  font-weight:700 !important;
+  letter-spacing:normal !important;
+  text-transform:none !important;
+}
+body.preview-neo-ticket.is-local-page .seo-hero .premium-pill{
+  display:inline-block !important;
+  padding:.18em .62em !important;
+  border:1.5px solid #ffb400 !important;
+  border-radius:999px !important;
+  background:linear-gradient(180deg,#ffc425 0%,#ffb400 100%) !important;
+  box-shadow:0 6px 18px rgba(255,180,0,.3) !important;
+  color:#111 !important;
+  font-size:1em !important;
+  font-weight:800 !important;
+  line-height:1.1 !important;
+}
+body.preview-neo-ticket.is-local-page .seo-hero .seo-hero-actions{
+  display:flex !important;
+  flex-wrap:wrap !important;
+  justify-content:center !important;
+  align-items:center !important;
+  gap:14px !important;
+  margin-top:2px !important;
+}
+body.preview-neo-ticket.is-local-page .seo-hero .seo-hero-btn{
+  min-width:240px !important;
+  min-height:auto !important;
+  padding:14px 24px !important;
+  border:0 !important;
+  border-radius:14px !important;
+  box-shadow:0 10px 26px rgba(0,0,0,.25) !important;
+  text-transform:none !important;
+  letter-spacing:normal !important;
+  font-size:clamp(19px,1.6vw,27px) !important;
+  font-weight:900 !important;
+}
+body.preview-neo-ticket.is-local-page .seo-hero .seo-hero-btn.call{
+  background:#ffb400 !important;
+  color:#111 !important;
+}
+body.preview-neo-ticket.is-local-page .seo-hero .seo-hero-btn.devis{
+  background:#fff !important;
+  color:#111 !important;
+}
+body.preview-neo-ticket .seo-hero-badge,
+body.preview-neo-ticket .seo-hero h1,
+body.preview-neo-ticket .seo-hero h2,
+body.preview-neo-ticket .seo-hero .seo-hero-actions{
+  animation:none !important;
+}
+@media (max-width:980px){
+  body.preview-neo-ticket.is-local-page .seo-hero h1{
+    font-size:29px !important;
+  }
+  body.preview-neo-ticket.is-local-page .seo-hero h2{
+    font-size:18px !important;
+  }
+}
+@media (max-width:560px){
+  body.preview-neo-ticket.is-local-page .seo-hero-badge{
+    margin:0 auto 16px auto !important;
+  }
+  body.preview-neo-ticket.is-local-page .seo-hero h1{
+    font-size:26px !important;
+    margin:0 auto 0 auto !important;
+  }
+  body.preview-neo-ticket.is-local-page .seo-hero h2{
+    font-size:15px !important;
+    margin:15% auto 16px auto !important;
+  }
+  body.preview-neo-ticket.is-local-page .seo-hero .seo-hero-actions{
+    display:flex !important;
+    flex-wrap:nowrap !important;
+    justify-content:space-between !important;
+    align-items:stretch !important;
+    gap:10px !important;
+  }
+  body.preview-neo-ticket.is-local-page .seo-hero .seo-hero-btn{
+    min-width:0 !important;
+    width:50% !important;
+    font-size:20px !important;
+    padding:13px 20px !important;
+  }
+}
+
+/* Preview V2: strong neo-ticket conversion (content unchanged, hero copy untouched) */
+body.preview-neo-ticket.is-local-page main.local-wrap{
+  position:relative;
+  max-width:min(1440px,97vw) !important;
+  padding:38px 18px 54px !important;
+  gap:26px !important;
+}
+body.preview-neo-ticket.is-local-page main.local-wrap::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(rgba(255,180,0,.08) 1px, transparent 1px) 0 0 / 100% 36px,
+    linear-gradient(90deg, rgba(255,180,0,.08) 1px, transparent 1px) 0 0 / 36px 100%;
+  border-radius:20px;
+  opacity:.34;
+  pointer-events:none;
+}
+body.preview-neo-ticket.is-local-page main.local-wrap > article,
+body.preview-neo-ticket.is-local-page main.local-wrap > aside{
+  position:relative;
+  z-index:1;
+}
+body.preview-neo-ticket.is-local-page main.local-wrap > article{
+  display:grid;
+  gap:18px;
+}
+body.preview-neo-ticket.is-local-page main.local-wrap > article > section:not(.hero-local):not(.seo-hero),
+body.preview-neo-ticket.is-local-page main.local-wrap > article > div > section:not(.hero-local):not(.seo-hero),
+body.preview-neo-ticket.is-local-page .card{
+  border:2px solid #ffb400 !important;
+  border-radius:22px !important;
+  background:
+    radial-gradient(500px 150px at 20% -20%, rgba(255,180,0,.16), transparent 70%),
+    linear-gradient(180deg,#111 0%,#090909 100%) !important;
+  box-shadow:
+    0 11px 0 #8f6400,
+    0 26px 44px rgba(0,0,0,.45),
+    inset 0 1px 0 rgba(255,255,255,.06) !important;
+  padding:24px 24px 22px !important;
+  transition:transform .24s ease, box-shadow .24s ease, filter .24s ease !important;
+}
+body.preview-neo-ticket.is-local-page main.local-wrap > article > section:not(.hero-local):not(.seo-hero):hover,
+body.preview-neo-ticket.is-local-page main.local-wrap > article > div > section:not(.hero-local):not(.seo-hero):hover,
+body.preview-neo-ticket.is-local-page .card:hover{
+  transform:translateY(-3px);
+  box-shadow:
+    0 13px 0 #a37200,
+    0 30px 48px rgba(0,0,0,.54),
+    inset 0 1px 0 rgba(255,255,255,.08) !important;
+  filter:saturate(1.04);
+}
+body.preview-neo-ticket.is-local-page h2{
+  position:relative;
+  display:inline-block;
+  margin-bottom:12px !important;
+  color:#fff6de !important;
+  text-transform:none !important;
+  letter-spacing:.01em !important;
+}
+body.preview-neo-ticket.is-local-page h2::after{
+  content:"";
+  display:block;
+  width:100%;
+  height:4px;
+  margin-top:8px;
+  border-radius:999px;
+  background:linear-gradient(90deg,#ffb400,#ffe4a7 65%,#ffb400);
+}
+body.preview-neo-ticket.is-local-page h3{
+  color:#ffd98a !important;
+}
+body.preview-neo-ticket.is-local-page p,
+body.preview-neo-ticket.is-local-page li{
+  color:#f6ebd2 !important;
+  font-size:clamp(16px,1.03vw,19px) !important;
+  line-height:1.72 !important;
+}
+body.preview-neo-ticket.is-local-page ul li,
+body.preview-neo-ticket.is-local-page ol li{
+  padding-left:2px;
+}
+body.preview-neo-ticket.is-local-page ul li::marker,
+body.preview-neo-ticket.is-local-page ol li::marker{
+  color:#ffb400;
+  font-weight:900;
+}
+body.preview-neo-ticket.is-local-page .seo-summary-block{
+  border-width:2px !important;
+  box-shadow:0 11px 0 #906500,0 24px 42px rgba(0,0,0,.45) !important;
+  padding:24px 22px 18px !important;
+}
+body.preview-neo-ticket.is-local-page .seo-summary-head h2{
+  font-size:clamp(30px,2.7vw,52px) !important;
+  letter-spacing:.02em !important;
+  text-transform:uppercase !important;
+}
+body.preview-neo-ticket.is-local-page .seo-summary-list{
+  gap:10px !important;
+}
+body.preview-neo-ticket.is-local-page .seo-summary-list a{
+  font-size:clamp(18px,1.22vw,24px) !important;
+  font-weight:800 !important;
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+}
+body.preview-neo-ticket.is-local-page .seo-summary-list a::before{
+  content:"■";
+  color:#ffb400;
+  font-size:11px;
+  transform:translateY(-1px);
+}
+body.preview-neo-ticket.is-local-page .mini-faq-local{
+  border-width:2px !important;
+  padding:22px 18px 18px !important;
+}
+body.preview-neo-ticket.is-local-page .mini-faq-local-head{
+  margin-bottom:16px !important;
+}
+body.preview-neo-ticket.is-local-page .mini-faq-local-head h2{
+  margin:0 !important;
+  font-size:clamp(34px,2.5vw,52px) !important;
+  line-height:1.02 !important;
+  text-transform:none !important;
+}
+body.preview-neo-ticket.is-local-page .mini-faq-local-chip{
+  border:2px solid #2b2b2b !important;
+  background:#f4e6bf !important;
+  color:#171717 !important;
+  font-weight:900 !important;
+  box-shadow:0 6px 0 #8c6100 !important;
+}
+body.preview-neo-ticket.is-local-page .mini-faq-item{
+  border:1px solid #2f2f2f !important;
+  border-radius:14px !important;
+  background:linear-gradient(180deg,#111,#0b0b0b) !important;
+}
+body.preview-neo-ticket.is-local-page .mini-faq-question{
+  padding:15px 14px !important;
+  font-size:clamp(18px,1.2vw,25px) !important;
+  font-weight:800 !important;
+}
+body.preview-neo-ticket.is-local-page .mini-faq-answer{
+  background:rgba(255,255,255,.01);
+}
+body.preview-neo-ticket.is-local-page .mini-faq-answer p{
+  font-size:clamp(16px,1.02vw,18px) !important;
+}
+body.preview-neo-ticket.is-local-page aside .card{
+  position:sticky;
+  top:126px;
+  border-color:#ffc227 !important;
+  box-shadow:0 12px 0 #8d6300,0 26px 46px rgba(0,0,0,.5) !important;
+}
+body.preview-neo-ticket.is-local-page aside .card h3{
+  font-size:clamp(25px,1.75vw,33px) !important;
+  text-transform:uppercase;
+  letter-spacing:.02em;
+}
+body.preview-neo-ticket.is-local-page aside .quick{
+  display:grid !important;
+  gap:12px !important;
+}
+body.preview-neo-ticket.is-local-page aside .quick a{
+  min-height:58px;
+  border-radius:14px !important;
+  font-size:20px !important;
+  border:2px solid #171717 !important;
+  box-shadow:0 8px 0 #171717,0 16px 24px rgba(0,0,0,.3) !important;
+  text-transform:uppercase;
+  letter-spacing:.02em;
+}
+body.preview-neo-ticket.is-local-page aside .quick a:hover{
+  transform:translateY(-2px);
+}
+body.preview-neo-ticket.force-home-sections-redesign .global-reviews .reviews-shell{
+  border-width:2px !important;
+}
+body.preview-neo-ticket.force-home-sections-redesign .global-reviews .review-card{
+  border-width:2px !important;
+}
+@media (max-width:980px){
+  body.preview-neo-ticket.is-local-page main.local-wrap{
+    gap:18px !important;
+    padding:26px 10px 40px !important;
+  }
+  body.preview-neo-ticket.is-local-page main.local-wrap::before{
+    border-radius:14px;
+    background:
+      linear-gradient(rgba(255,180,0,.06) 1px, transparent 1px) 0 0 / 100% 28px,
+      linear-gradient(90deg, rgba(255,180,0,.06) 1px, transparent 1px) 0 0 / 28px 100%;
+  }
+  body.preview-neo-ticket.is-local-page main.local-wrap > article > section:not(.hero-local):not(.seo-hero),
+  body.preview-neo-ticket.is-local-page main.local-wrap > article > div > section:not(.hero-local):not(.seo-hero),
+  body.preview-neo-ticket.is-local-page .card{
+    border-radius:16px !important;
+    padding:16px 14px 14px !important;
+    box-shadow:0 8px 0 #8f6400,0 18px 30px rgba(0,0,0,.42) !important;
+  }
+  body.preview-neo-ticket.is-local-page .seo-summary-head h2{
+    font-size:clamp(24px,7vw,34px) !important;
+  }
+  body.preview-neo-ticket.is-local-page .mini-faq-local-head h2{
+    font-size:clamp(22px,7.6vw,34px) !important;
+  }
+  body.preview-neo-ticket.is-local-page .mini-faq-question{
+    font-size:clamp(16px,4.4vw,22px) !important;
+  }
+  body.preview-neo-ticket.is-local-page aside .card{
+    position:static !important;
+  }
+  body.preview-neo-ticket.is-local-page aside .quick a{
+    min-height:52px;
+    font-size:16px !important;
+  }
+}
+
+/* Preview V3 override: white canvas + 3D only on sections */
+body.preview-neo-ticket.is-local-page{
+  background:#f8f8f8 !important;
+  color:#111 !important;
+}
+body.preview-neo-ticket.is-local-page main.local-wrap{
+  max-width:min(1420px,97vw) !important;
+  background:transparent !important;
+  padding:36px 16px 56px !important;
+  gap:24px !important;
+}
+body.preview-neo-ticket.is-local-page main.local-wrap::before{
+  content:none !important;
+  display:none !important;
+}
+body.preview-neo-ticket.is-local-page main.local-wrap > article,
+body.preview-neo-ticket.is-local-page main.local-wrap > aside{
+  position:relative;
+  z-index:1;
+}
+body.preview-neo-ticket.is-local-page main.local-wrap > article{
+  display:grid;
+  gap:18px;
+}
+
+/* 3D premium cards on sections only */
+body.preview-neo-ticket.is-local-page main.local-wrap > article > section:not(.hero-local):not(.seo-hero),
+body.preview-neo-ticket.is-local-page main.local-wrap > article > div > section:not(.hero-local):not(.seo-hero),
+body.preview-neo-ticket.is-local-page .card{
+  position:relative;
+  overflow:hidden;
+  border:2px solid #111 !important;
+  border-radius:20px !important;
+  background:#fff !important;
+  box-shadow:
+    0 10px 0 #ffb400,
+    0 18px 34px rgba(0,0,0,.16),
+    inset 0 1px 0 rgba(255,255,255,.78) !important;
+  transform:translateZ(0);
+  transition:transform .22s ease, box-shadow .22s ease !important;
+}
+body.preview-neo-ticket.is-local-page main.local-wrap > article > section:not(.hero-local):not(.seo-hero)::before,
+body.preview-neo-ticket.is-local-page main.local-wrap > article > div > section:not(.hero-local):not(.seo-hero)::before,
+body.preview-neo-ticket.is-local-page .card::before{
+  content:"";
+  position:absolute;
+  left:16px;
+  right:16px;
+  top:10px;
+  height:4px;
+  border-radius:999px;
+  background:linear-gradient(90deg,#111 0%,#ffb400 45%,#111 100%);
+  opacity:.8;
+}
+body.preview-neo-ticket.is-local-page main.local-wrap > article > section:not(.hero-local):not(.seo-hero)::after,
+body.preview-neo-ticket.is-local-page main.local-wrap > article > div > section:not(.hero-local):not(.seo-hero)::after,
+body.preview-neo-ticket.is-local-page .card::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    radial-gradient(620px 150px at 18% -30px, rgba(255,180,0,.17), transparent 68%),
+    linear-gradient(125deg,rgba(255,255,255,.15),transparent 38%);
+  pointer-events:none;
+}
+body.preview-neo-ticket.is-local-page main.local-wrap > article > section:not(.hero-local):not(.seo-hero):hover,
+body.preview-neo-ticket.is-local-page main.local-wrap > article > div > section:not(.hero-local):not(.seo-hero):hover,
+body.preview-neo-ticket.is-local-page .card:hover{
+  transform:translateY(-4px) perspective(900px) rotateX(1.2deg) rotateY(-.9deg);
+  box-shadow:
+    0 13px 0 #ffb400,
+    0 24px 40px rgba(0,0,0,.22),
+    inset 0 1px 0 rgba(255,255,255,.85) !important;
+}
+
+/* keep text highly legible on white cards */
+body.preview-neo-ticket.is-local-page h2{
+  color:#141414 !important;
+  font-size:clamp(26px,2.05vw,38px) !important;
+  line-height:1.15 !important;
+  font-weight:900 !important;
+  margin-bottom:12px !important;
+}
+body.preview-neo-ticket.is-local-page h2::after{
+  content:"";
+  display:block;
+  width:72px;
+  height:4px;
+  margin-top:8px;
+  border-radius:999px;
+  background:#ffb400;
+}
+body.preview-neo-ticket.is-local-page h3{
+  color:#202020 !important;
+  font-weight:800 !important;
+}
+body.preview-neo-ticket.is-local-page p,
+body.preview-neo-ticket.is-local-page li{
+  color:#222 !important;
+  font-size:clamp(16px,1vw,18px) !important;
+  line-height:1.72 !important;
+}
+body.preview-neo-ticket.is-local-page a{
+  color:#111 !important;
+  text-decoration-color:#ffb400 !important;
+}
+body.preview-neo-ticket.is-local-page a:hover{
+  color:#000 !important;
+}
+
+/* stronger conversion hierarchy for summary/faq/sidebar */
+body.preview-neo-ticket.is-local-page .seo-summary-block{
+  border:2px solid #111 !important;
+  border-radius:20px !important;
+  background:#fff !important;
+  box-shadow:0 10px 0 #ffb400,0 20px 36px rgba(0,0,0,.15) !important;
+}
+body.preview-neo-ticket.is-local-page .seo-summary-head h2{
+  font-size:clamp(32px,2.4vw,46px) !important;
+  text-transform:uppercase !important;
+}
+body.preview-neo-ticket.is-local-page .seo-summary-list a{
+  font-size:clamp(18px,1.12vw,22px) !important;
+  font-weight:800 !important;
+  color:#151515 !important;
+  text-decoration:none !important;
+}
+body.preview-neo-ticket.is-local-page .seo-summary-list a:hover{
+  color:#000 !important;
+}
+body.preview-neo-ticket.is-local-page .seo-summary-list li{
+  color:#1c1c1c !important;
+}
+body.preview-neo-ticket.is-local-page .seo-summary-list a::before{
+  color:#ffb400 !important;
+}
+body.preview-neo-ticket.is-local-page .mini-faq-local{
+  border:2px solid #111 !important;
+  border-radius:20px !important;
+  background:#fff !important;
+  box-shadow:0 10px 0 #ffb400,0 22px 38px rgba(0,0,0,.17) !important;
+}
+body.preview-neo-ticket.is-local-page .mini-faq-item{
+  border:1px solid #dedede !important;
+  border-radius:14px !important;
+  background:#fff !important;
+}
+body.preview-neo-ticket.is-local-page .mini-faq-item[open]{
+  border-color:#111 !important;
+  box-shadow:0 6px 0 #ffb400,0 14px 24px rgba(0,0,0,.11) !important;
+}
+body.preview-neo-ticket.is-local-page .mini-faq-question{
+  color:#161616 !important;
+  font-weight:800 !important;
+}
+body.preview-neo-ticket.is-local-page .mini-faq-answer p{
+  color:#242424 !important;
+}
+
+body.preview-neo-ticket.is-local-page aside .card{
+  position:sticky;
+  top:124px;
+  border:2px solid #111 !important;
+  background:#fff8e7 !important;
+  box-shadow:0 12px 0 #ffb400,0 20px 36px rgba(0,0,0,.16) !important;
+}
+body.preview-neo-ticket.is-local-page aside .quick a{
+  border:2px solid #111 !important;
+  border-radius:14px !important;
+  min-height:56px;
+  box-shadow:0 7px 0 #111,0 14px 22px rgba(0,0,0,.17) !important;
+  text-transform:uppercase;
+  letter-spacing:.015em;
+}
+
+@media (max-width:980px){
+  body.preview-neo-ticket.is-local-page main.local-wrap{
+    padding:24px 10px 44px !important;
+    gap:16px !important;
+  }
+  body.preview-neo-ticket.is-local-page main.local-wrap > article > section:not(.hero-local):not(.seo-hero),
+  body.preview-neo-ticket.is-local-page main.local-wrap > article > div > section:not(.hero-local):not(.seo-hero),
+  body.preview-neo-ticket.is-local-page .card{
+    border-radius:14px !important;
+    box-shadow:0 8px 0 #ffb400,0 14px 24px rgba(0,0,0,.14) !important;
+  }
+  body.preview-neo-ticket.is-local-page aside .card{
+    position:static !important;
+  }
+}
+
+/* Preview V3.2: apply 3D neo-ticket to every non-hero section on local pages */
+body.preview-neo-ticket.is-local-page .side .card h3{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:7px 12px;
+  border-radius:999px;
+  background:#111;
+  color:#fff7df !important;
+  box-shadow:0 5px 0 #ffb400;
+}
+body.preview-neo-ticket.is-local-page .side .card h3::before{
+  content:"●";
+  color:#ffb400;
+  font-size:12px;
+  line-height:1;
+}
+body.preview-neo-ticket.is-local-page .side .card p{
+  color:#1f1f1f !important;
+}
+body.preview-neo-ticket.is-local-page .side .card p strong{
+  color:#000 !important;
+}
+body.preview-neo-ticket.is-local-page .side .quick a{
+  font-weight:900 !important;
+  font-size:19px !important;
+}
+body.preview-neo-ticket.is-local-page .side .quick a:first-child{
+  background:linear-gradient(180deg,#ffc52d,#ffb400) !important;
+  color:#101010 !important;
+}
+body.preview-neo-ticket.is-local-page .side .quick a:last-child{
+  background:linear-gradient(180deg,#1c1c1c,#0f0f0f) !important;
+  color:#fff !important;
+}
+
+/* process/reviews/faq injected sections */
+body.preview-neo-ticket.force-home-sections-redesign.is-local-page [data-global-process],
+body.preview-neo-ticket.force-home-sections-redesign.is-local-page [data-global-reviews],
+body.preview-neo-ticket.force-home-sections-redesign.is-local-page [data-global-faq],
+body.preview-neo-ticket.force-home-sections-redesign.is-local-page .global-process,
+body.preview-neo-ticket.force-home-sections-redesign.is-local-page .global-reviews,
+body.preview-neo-ticket.force-home-sections-redesign.is-local-page .global-faq,
+body.preview-neo-ticket.is-local-page .local-seo-block,
+body.preview-neo-ticket.is-local-page .local-seo-links{
+  background:#f8f8f8 !important;
+}
+body.preview-neo-ticket.force-home-sections-redesign.is-local-page .global-process .process-wrap,
+body.preview-neo-ticket.force-home-sections-redesign.is-local-page .global-process .process-top-grid article,
+body.preview-neo-ticket.force-home-sections-redesign.is-local-page .global-faq,
+body.preview-neo-ticket.force-home-sections-redesign.is-local-page .global-reviews .reviews-shell,
+body.preview-neo-ticket.is-local-page .local-seo-block article,
+body.preview-neo-ticket.is-local-page .local-seo-links{
+  border:2px solid #111 !important;
+  border-radius:20px !important;
+  background:#fff !important;
+  box-shadow:0 10px 0 #ffb400,0 20px 34px rgba(0,0,0,.14) !important;
+}
+body.preview-neo-ticket.force-home-sections-redesign.is-local-page .global-process .process-top-grid article{
+  padding:16px 14px !important;
+}
+body.preview-neo-ticket.force-home-sections-redesign.is-local-page .global-process .process-mini h3,
+body.preview-neo-ticket.force-home-sections-redesign.is-local-page .global-process .step-card h3{
+  color:#111 !important;
+}
+body.preview-neo-ticket.force-home-sections-redesign.is-local-page .global-process .process-mini p,
+body.preview-neo-ticket.force-home-sections-redesign.is-local-page .global-process .step-card p,
+body.preview-neo-ticket.force-home-sections-redesign.is-local-page .global-process .step-card li{
+  color:#232323 !important;
+}
+body.preview-neo-ticket.force-home-sections-redesign.is-local-page .global-process .step-card{
+  border:2px solid #111 !important;
+  border-radius:16px !important;
+  background:#fff !important;
+  box-shadow:0 8px 0 #ffb400,0 14px 26px rgba(0,0,0,.12) !important;
+}
+body.preview-neo-ticket.force-home-sections-redesign.is-local-page .global-process .step-badge{
+  background:#111 !important;
+  color:#ffb400 !important;
+  border:2px solid #ffb400 !important;
+}
+
+body.preview-neo-ticket.force-home-sections-redesign.is-local-page .global-reviews h2,
+body.preview-neo-ticket.force-home-sections-redesign.is-local-page .global-faq h2{
+  color:#111 !important;
+}
+body.preview-neo-ticket.force-home-sections-redesign.is-local-page .global-reviews .reviews-cred,
+body.preview-neo-ticket.force-home-sections-redesign.is-local-page .global-reviews .reviews-rating-line{
+  border:2px solid #111 !important;
+  box-shadow:0 7px 0 #ffb400,0 16px 24px rgba(0,0,0,.13) !important;
+}
+body.preview-neo-ticket.force-home-sections-redesign.is-local-page .global-reviews .review-card{
+  border:2px solid #111 !important;
+  border-radius:16px !important;
+  background:#fff !important;
+  box-shadow:0 8px 0 #ffb400,0 16px 28px rgba(0,0,0,.12) !important;
+}
+body.preview-neo-ticket.force-home-sections-redesign.is-local-page .global-reviews .review-name,
+body.preview-neo-ticket.force-home-sections-redesign.is-local-page .global-reviews .review-text{
+  color:#161616 !important;
+}
+body.preview-neo-ticket.force-home-sections-redesign.is-local-page .global-faq details{
+  border:1px solid #d5d5d5 !important;
+  border-radius:12px !important;
+  background:#fff !important;
+}
+body.preview-neo-ticket.force-home-sections-redesign.is-local-page .global-faq details[open]{
+  border-color:#111 !important;
+  box-shadow:0 6px 0 #ffb400,0 12px 20px rgba(0,0,0,.1) !important;
+}
+body.preview-neo-ticket.force-home-sections-redesign.is-local-page .global-faq .faq-question,
+body.preview-neo-ticket.force-home-sections-redesign.is-local-page .global-faq .faq-answer{
+  color:#1e1e1e !important;
+}
+
+/* small 3D entry motion for section cards only */
+@keyframes ticketRise3d{
+  0%{opacity:0;transform:translateY(12px) scale(.995)}
+  100%{opacity:1;transform:translateY(0) scale(1)}
+}
+body.preview-neo-ticket.is-local-page main.local-wrap > article > section:not(.hero-local):not(.seo-hero),
+body.preview-neo-ticket.is-local-page main.local-wrap > article > div > section:not(.hero-local):not(.seo-hero),
+body.preview-neo-ticket.is-local-page .side .card,
+body.preview-neo-ticket.force-home-sections-redesign.is-local-page .global-process .process-wrap,
+body.preview-neo-ticket.force-home-sections-redesign.is-local-page .global-reviews .reviews-shell,
+body.preview-neo-ticket.force-home-sections-redesign.is-local-page .global-faq{
+  animation:ticketRise3d .46s ease both;
+}
+@media (max-width:980px){
+  body.preview-neo-ticket.is-local-page .side .quick a{
+    font-size:16px !important;
+  }
+  body.preview-neo-ticket.force-home-sections-redesign.is-local-page .global-process .process-wrap,
+  body.preview-neo-ticket.force-home-sections-redesign.is-local-page .global-process .process-top-grid article,
+  body.preview-neo-ticket.force-home-sections-redesign.is-local-page .global-faq,
+  body.preview-neo-ticket.force-home-sections-redesign.is-local-page .global-reviews .reviews-shell{
+    border-radius:14px !important;
+    box-shadow:0 7px 0 #ffb400,0 14px 20px rgba(0,0,0,.12) !important;
+  }
+}
+
+/* force reviews section to white 3D in preview (same as other sections) */
+body.preview-neo-ticket.force-home-sections-redesign.is-local-page section#avis-google.reviews,
+body.preview-neo-ticket.force-home-sections-redesign.is-local-page section#avis-google.global-reviews{
+  background:transparent !important;
+}
+body.preview-neo-ticket.force-home-sections-redesign.is-local-page section#avis-google.reviews .reviews-shell,
+body.preview-neo-ticket.force-home-sections-redesign.is-local-page section#avis-google.global-reviews .reviews-shell{
+  background:#fff !important;
+  border:2px solid #111 !important;
+  border-radius:20px !important;
+  box-shadow:0 10px 0 #ffb400,0 22px 34px rgba(0,0,0,.14) !important;
+}
+body.preview-neo-ticket.force-home-sections-redesign.is-local-page section#avis-google.reviews .reviews-shell::before,
+body.preview-neo-ticket.force-home-sections-redesign.is-local-page section#avis-google.global-reviews .reviews-shell::before{
+  opacity:.08 !important;
+}
+body.preview-neo-ticket.force-home-sections-redesign.is-local-page section#avis-google.reviews h2,
+body.preview-neo-ticket.force-home-sections-redesign.is-local-page section#avis-google.global-reviews h2{
+  color:#111 !important;
+}
+body.preview-neo-ticket.force-home-sections-redesign.is-local-page section#avis-google.reviews h2::after,
+body.preview-neo-ticket.force-home-sections-redesign.is-local-page section#avis-google.global-reviews h2::after{
+  content:"";
+  display:block;
+  width:70px;
+  height:4px;
+  margin:10px auto 0;
+  border-radius:999px;
+  background:#ffb400;
+}
+body.preview-neo-ticket.force-home-sections-redesign.is-local-page section#avis-google.reviews .reviews-cred,
+body.preview-neo-ticket.force-home-sections-redesign.is-local-page section#avis-google.global-reviews .reviews-cred,
+body.preview-neo-ticket.force-home-sections-redesign.is-local-page section#avis-google.reviews .reviews-rating-line,
+body.preview-neo-ticket.force-home-sections-redesign.is-local-page section#avis-google.global-reviews .reviews-rating-line{
+  background:#fff8e5 !important;
+  color:#111 !important;
+  border:2px solid #111 !important;
+  box-shadow:0 7px 0 #ffb400,0 14px 22px rgba(0,0,0,.12) !important;
+}
+body.preview-neo-ticket.force-home-sections-redesign.is-local-page section#avis-google.reviews .reviews-top a,
+body.preview-neo-ticket.force-home-sections-redesign.is-local-page section#avis-google.global-reviews .reviews-top a{
+  background:#fff !important;
+  color:#111 !important;
+  border:2px solid #111 !important;
+  box-shadow:0 6px 0 #ffb400,0 12px 20px rgba(0,0,0,.1) !important;
+}
+body.preview-neo-ticket.force-home-sections-redesign.is-local-page section#avis-google.reviews .reviews-slider,
+body.preview-neo-ticket.force-home-sections-redesign.is-local-page section#avis-google.global-reviews .reviews-slider{
+  border:2px solid #111 !important;
+  border-radius:18px !important;
+  background:#fff !important;
+}
+body.preview-neo-ticket.force-home-sections-redesign.is-local-page section#avis-google.reviews .review-card,
+body.preview-neo-ticket.force-home-sections-redesign.is-local-page section#avis-google.global-reviews .review-card{
+  background:#fff !important;
+  border:2px solid #111 !important;
+  border-radius:16px !important;
+  box-shadow:0 8px 0 #ffb400,0 15px 24px rgba(0,0,0,.11) !important;
+}
+body.preview-neo-ticket.force-home-sections-redesign.is-local-page section#avis-google.reviews .review-name,
+body.preview-neo-ticket.force-home-sections-redesign.is-local-page section#avis-google.global-reviews .review-name,
+body.preview-neo-ticket.force-home-sections-redesign.is-local-page section#avis-google.reviews .review-date,
+body.preview-neo-ticket.force-home-sections-redesign.is-local-page section#avis-google.global-reviews .review-date,
+body.preview-neo-ticket.force-home-sections-redesign.is-local-page section#avis-google.reviews .review-text,
+body.preview-neo-ticket.force-home-sections-redesign.is-local-page section#avis-google.global-reviews .review-text{
+  color:#171717 !important;
+}
+body.preview-neo-ticket.force-home-sections-redesign.is-local-page section#avis-google.reviews .reviews-nav,
+body.preview-neo-ticket.force-home-sections-redesign.is-local-page section#avis-google.global-reviews .reviews-nav{
+  background:#fff !important;
+  border:2px solid #111 !important;
+  color:#111 !important;
+}
+
+/* ==========================================================================
+   PREVIEW V5 - Local pages only (Ticket conversion x Neo-brutal)
+   IMPORTANT: excludes global/home-like sections:
+   - section#avis-google / .global-reviews
+   - .global-process
+   - .global-faq
+   ========================================================================== */
+body.preview-neo-ticket-v6.is-local-page main.local-wrap{
+  max-width:1320px !important;
+  gap:22px !important;
+  padding:34px 18px 42px !important;
+}
+body.preview-neo-ticket-v6.is-local-page main.local-wrap > article > section:not(.hero-local):not(.seo-hero):not(.global-process):not(.global-reviews):not(.global-faq):not([data-global-process]):not([data-global-reviews]):not([data-global-faq]):not(#avis-google),
+body.preview-neo-ticket-v6.is-local-page main.local-wrap > article > div > section:not(.hero-local):not(.seo-hero):not(.global-process):not(.global-reviews):not(.global-faq):not([data-global-process]):not([data-global-reviews]):not([data-global-faq]):not(#avis-google),
+body.preview-neo-ticket-v6.is-local-page main.local-wrap > aside .card{
+  position:relative;
+  overflow:hidden;
+  border:2px solid #111 !important;
+  border-radius:18px !important;
+  background:#fff !important;
+  box-shadow:0 12px 0 #ffb400,0 24px 34px rgba(0,0,0,.14) !important;
+  padding:22px 20px 18px !important;
+  transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease !important;
+}
+body.preview-neo-ticket-v6.is-local-page main.local-wrap > article > section:not(.hero-local):not(.seo-hero):not(.global-process):not(.global-reviews):not(.global-faq):not([data-global-process]):not([data-global-reviews]):not([data-global-faq]):not(#avis-google):hover,
+body.preview-neo-ticket-v6.is-local-page main.local-wrap > article > div > section:not(.hero-local):not(.seo-hero):not(.global-process):not(.global-reviews):not(.global-faq):not([data-global-process]):not([data-global-reviews]):not([data-global-faq]):not(#avis-google):hover,
+body.preview-neo-ticket-v6.is-local-page main.local-wrap > aside .card:hover{
+  transform:translateY(-4px);
+  box-shadow:0 14px 0 #ffb400,0 28px 38px rgba(0,0,0,.18) !important;
+}
+body.preview-neo-ticket-v6.is-local-page main.local-wrap > article > section:not(.hero-local):not(.seo-hero):not(.global-process):not(.global-reviews):not(.global-faq):not([data-global-process]):not([data-global-reviews]):not([data-global-faq]):not(#avis-google)::before,
+body.preview-neo-ticket-v6.is-local-page main.local-wrap > article > div > section:not(.hero-local):not(.seo-hero):not(.global-process):not(.global-reviews):not(.global-faq):not([data-global-process]):not([data-global-reviews]):not([data-global-faq]):not(#avis-google)::before,
+body.preview-neo-ticket-v6.is-local-page main.local-wrap > aside .card::before{
+  content:"";
+  position:absolute;
+  inset:0 0 auto 0;
+  height:7px;
+  background:linear-gradient(90deg,#111 0 58%,#ffb400 58% 100%);
+  opacity:.98;
+  pointer-events:none;
+}
+body.preview-neo-ticket-v6.is-local-page main.local-wrap h2{
+  margin:0 0 10px !important;
+  color:#101010 !important;
+  font-size:clamp(25px,1.95vw,36px) !important;
+  line-height:1.12 !important;
+  font-weight:900 !important;
+  letter-spacing:.002em;
+}
+body.preview-neo-ticket-v6.is-local-page main.local-wrap h3{
+  color:#171717 !important;
+  font-size:clamp(18px,1.28vw,24px) !important;
+  line-height:1.26 !important;
+  font-weight:850 !important;
+}
+body.preview-neo-ticket-v6.is-local-page main.local-wrap p,
+body.preview-neo-ticket-v6.is-local-page main.local-wrap li{
+  color:#242424 !important;
+  font-size:clamp(15px,.95vw,18px) !important;
+  line-height:1.68 !important;
+}
+body.preview-neo-ticket-v6.is-local-page main.local-wrap a{
+  color:#111 !important;
+  font-weight:800 !important;
+  text-decoration-thickness:.12em !important;
+  text-underline-offset:.17em !important;
+}
+body.preview-neo-ticket-v6.is-local-page main.local-wrap a:hover{
+  color:#8f6000 !important;
+}
+
+/* "Urgence dératisation" style emphasis */
+body.preview-neo-ticket-v6.is-local-page main.local-wrap section[data-ux-landing-local]{
+  border:2px solid #111 !important;
+  border-radius:18px !important;
+  background:
+    radial-gradient(circle at 8% 12%,rgba(255,180,0,.2),transparent 36%),
+    linear-gradient(180deg,#fffef7 0%,#fff 100%) !important;
+  box-shadow:0 12px 0 #ffb400,0 26px 38px rgba(0,0,0,.16) !important;
+}
+body.preview-neo-ticket-v6.is-local-page main.local-wrap section[data-ux-landing-local] h2{
+  font-size:clamp(28px,2.2vw,40px) !important;
+  letter-spacing:.01em !important;
+  text-transform:uppercase !important;
+}
+body.preview-neo-ticket-v6.is-local-page main.local-wrap section[data-ux-landing-local] p{
+  font-size:clamp(16px,1.02vw,19px) !important;
+}
+
+/* FAQ locale (inside article cards) */
+body.preview-neo-ticket-v6.is-local-page .card.faq details,
+body.preview-neo-ticket-v6.is-local-page #faq-local-versailles details{
+  border:2px solid #dcdcdc !important;
+  border-radius:12px !important;
+  background:#fcfcfc !important;
+  transition:border-color .2s ease,box-shadow .2s ease,transform .2s ease !important;
+}
+body.preview-neo-ticket-v6.is-local-page .card.faq details[open],
+body.preview-neo-ticket-v6.is-local-page #faq-local-versailles details[open]{
+  border-color:#111 !important;
+  box-shadow:0 7px 0 #ffb400,0 12px 20px rgba(0,0,0,.09) !important;
+  transform:translateY(-1px);
+}
+body.preview-neo-ticket-v6.is-local-page .card.faq summary,
+body.preview-neo-ticket-v6.is-local-page #faq-local-versailles summary{
+  font-size:clamp(15px,1.05vw,19px) !important;
+  font-weight:850 !important;
+  color:#161616 !important;
+}
+
+/* Sidebar quick actions: conversion-first */
+body.preview-neo-ticket-v6.is-local-page .side .quick a{
+  border:2px solid #111 !important;
+  border-radius:12px !important;
+  box-shadow:0 7px 0 rgba(17,17,17,.25),0 12px 18px rgba(0,0,0,.15) !important;
+  font-weight:900 !important;
+  letter-spacing:.01em !important;
+}
+body.preview-neo-ticket-v6.is-local-page .side .quick a:first-child{
+  background:#ffb400 !important;
+  color:#111 !important;
+}
+body.preview-neo-ticket-v6.is-local-page .side .quick a:last-child{
+  background:#121212 !important;
+  color:#fff !important;
+}
+
+@media (max-width:980px){
+  body.preview-neo-ticket-v6.is-local-page main.local-wrap{
+    gap:16px !important;
+    padding:24px 12px 36px !important;
+  }
+  body.preview-neo-ticket-v6.is-local-page main.local-wrap > article > section:not(.hero-local):not(.seo-hero):not(.global-process):not(.global-reviews):not(.global-faq):not([data-global-process]):not([data-global-reviews]):not([data-global-faq]):not(#avis-google),
+  body.preview-neo-ticket-v6.is-local-page main.local-wrap > article > div > section:not(.hero-local):not(.seo-hero):not(.global-process):not(.global-reviews):not(.global-faq):not([data-global-process]):not([data-global-reviews]):not([data-global-faq]):not(#avis-google),
+  body.preview-neo-ticket-v6.is-local-page main.local-wrap > aside .card{
+    border-radius:14px !important;
+    box-shadow:0 9px 0 #ffb400,0 16px 22px rgba(0,0,0,.14) !important;
+    padding:16px 14px 14px !important;
+  }
+  body.preview-neo-ticket-v6.is-local-page main.local-wrap h2{
+    font-size:clamp(22px,6.6vw,30px) !important;
+  }
+  body.preview-neo-ticket-v6.is-local-page main.local-wrap h3{
+    font-size:clamp(17px,5vw,22px) !important;
+  }
+}
+
+/* Keep homepage-like global sections untouched in preview on local pages */
+body.preview-neo-ticket-v6.is-local-page .global-process .process-head h2,
+body.preview-neo-ticket-v6.is-local-page [data-global-process] .process-head h2{
+  margin:0 0 10px !important;
+  font-size:40px !important;
+  line-height:1.15 !important;
+  font-weight:900 !important;
+  text-transform:uppercase !important;
+  letter-spacing:0 !important;
+}
+body.preview-neo-ticket-v6.is-local-page .global-process .process-head h2::after,
+body.preview-neo-ticket-v6.is-local-page [data-global-process] .process-head h2::after,
+body.preview-neo-ticket-v6.is-local-page .global-reviews h2::after,
+body.preview-neo-ticket-v6.is-local-page section#avis-google h2::after,
+body.preview-neo-ticket-v6.is-local-page .global-faq h2::after,
+body.preview-neo-ticket-v6.is-local-page [data-global-faq] h2::after{
+  display:none !important;
+  content:none !important;
+}
+body.preview-neo-ticket-v6.is-local-page .global-process .process-head p,
+body.preview-neo-ticket-v6.is-local-page [data-global-process] .process-head p{
+  margin:0 !important;
+  font-size:15px !important;
+  line-height:1.55 !important;
+  color:#707070 !important;
+}
+body.preview-neo-ticket-v6.is-local-page .global-process .step-card h3,
+body.preview-neo-ticket-v6.is-local-page [data-global-process] .step-card h3{
+  margin:44px 0 10px !important;
+  font-size:24px !important;
+  font-weight:900 !important;
+  line-height:1.15 !important;
+  text-transform:uppercase !important;
+  text-align:center !important;
+}
+body.preview-neo-ticket-v6.is-local-page .global-process .step-card p,
+body.preview-neo-ticket-v6.is-local-page [data-global-process] .step-card p{
+  margin:0 0 10px !important;
+  font-size:14px !important;
+  line-height:1.5 !important;
+  color:#686868 !important;
+  text-align:center !important;
+}
+body.preview-neo-ticket-v6.is-local-page .global-process .step-list,
+body.preview-neo-ticket-v6.is-local-page [data-global-process] .step-list{
+  list-style:none !important;
+  margin:0 !important;
+  padding:0 !important;
+}
+body.preview-neo-ticket-v6.is-local-page .global-process .step-list li,
+body.preview-neo-ticket-v6.is-local-page [data-global-process] .step-list li{
+  position:relative !important;
+  padding-left:16px !important;
+  font-size:12px !important;
+  line-height:1.4 !important;
+  font-weight:500 !important;
+  color:#4b4b4b !important;
+}
+body.preview-neo-ticket-v6.is-local-page .global-process .step-list li::marker,
+body.preview-neo-ticket-v6.is-local-page [data-global-process] .step-list li::marker{
+  content:"" !important;
+}
+
+body.preview-neo-ticket-v6.is-local-page .global-reviews h2,
+body.preview-neo-ticket-v6.is-local-page section#avis-google h2{
+  margin:0 !important;
+  font-size:46px !important;
+  line-height:1.08 !important;
+  font-weight:900 !important;
+  text-transform:uppercase !important;
+  letter-spacing:0 !important;
+}
+body.preview-neo-ticket-v6.is-local-page .global-faq h2,
+body.preview-neo-ticket-v6.is-local-page [data-global-faq] h2{
+  font-size:clamp(24px,2vw,34px) !important;
+  font-weight:750 !important;
+  letter-spacing:.01em !important;
+  margin:0 0 6px !important;
+  text-transform:none !important;
+}
+body.preview-neo-ticket-v6.is-local-page .global-faq .faq-question,
+body.preview-neo-ticket-v6.is-local-page [data-global-faq] .faq-question{
+  font-size:clamp(16px,1.05vw,24px) !important;
+  font-weight:640 !important;
+  line-height:1.35 !important;
+}
+body.preview-neo-ticket-v6.is-local-page .global-faq .faq-answer,
+body.preview-neo-ticket-v6.is-local-page [data-global-faq] .faq-answer{
+  font-size:clamp(14px,.9vw,16px) !important;
+  line-height:1.65 !important;
+  color:#353840 !important;
+}
+
+/* ==========================================================================
+   PREVIEW V7 - Conversion polish (local sections only, global blocks untouched)
+   ========================================================================== */
+@keyframes localCardLiftIn{
+  0%{opacity:0;transform:translateY(10px) scale(.995)}
+  100%{opacity:1;transform:translateY(0) scale(1)}
+}
+@keyframes ctaPulseSoft{
+  0%,100%{box-shadow:0 10px 0 rgba(17,17,17,.24),0 22px 30px rgba(0,0,0,.16)}
+  50%{box-shadow:0 12px 0 rgba(17,17,17,.28),0 28px 38px rgba(0,0,0,.22)}
+}
+
+body.preview-neo-ticket-v6.is-local-page main.local-wrap{
+  grid-template-columns:minmax(0,1.72fr) minmax(300px,.9fr) !important;
+  gap:24px !important;
+}
+body.preview-neo-ticket-v6.is-local-page main.local-wrap > article{
+  counter-reset:none;
+}
+body.preview-neo-ticket-v6.is-local-page main.local-wrap > article > section:not(.hero-local):not(.seo-hero):not(.global-process):not(.global-reviews):not(.global-faq):not([data-global-process]):not([data-global-reviews]):not([data-global-faq]):not(#avis-google),
+body.preview-neo-ticket-v6.is-local-page main.local-wrap > article > div > section:not(.hero-local):not(.seo-hero):not(.global-process):not(.global-reviews):not(.global-faq):not([data-global-process]):not([data-global-reviews]):not([data-global-faq]):not(#avis-google){
+  padding:24px 22px 20px !important;
+  border-radius:20px !important;
+  box-shadow:0 12px 0 #ffb400,0 26px 36px rgba(0,0,0,.15) !important;
+  animation:localCardLiftIn .42s ease both;
+}
+body.preview-neo-ticket-v6.is-local-page main.local-wrap > article > section:not(.hero-local):not(.seo-hero):not(.global-process):not(.global-reviews):not(.global-faq):not([data-global-process]):not([data-global-reviews]):not([data-global-faq]):not(#avis-google):nth-of-type(2),
+body.preview-neo-ticket-v6.is-local-page main.local-wrap > article > div > section:not(.hero-local):not(.seo-hero):not(.global-process):not(.global-reviews):not(.global-faq):not([data-global-process]):not([data-global-reviews]):not([data-global-faq]):not(#avis-google):nth-of-type(2){
+  animation-delay:.05s;
+}
+body.preview-neo-ticket-v6.is-local-page main.local-wrap > article > section:not(.hero-local):not(.seo-hero):not(.global-process):not(.global-reviews):not(.global-faq):not([data-global-process]):not([data-global-reviews]):not([data-global-faq]):not(#avis-google):nth-of-type(3),
+body.preview-neo-ticket-v6.is-local-page main.local-wrap > article > div > section:not(.hero-local):not(.seo-hero):not(.global-process):not(.global-reviews):not(.global-faq):not([data-global-process]):not([data-global-reviews]):not([data-global-faq]):not(#avis-google):nth-of-type(3){
+  animation-delay:.1s;
+}
+body.preview-neo-ticket-v6.is-local-page main.local-wrap > article > section:not(.hero-local):not(.seo-hero):not(.global-process):not(.global-reviews):not(.global-faq):not([data-global-process]):not([data-global-reviews]):not([data-global-faq]):not(#avis-google)::after,
+body.preview-neo-ticket-v6.is-local-page main.local-wrap > article > div > section:not(.hero-local):not(.seo-hero):not(.global-process):not(.global-reviews):not(.global-faq):not([data-global-process]):not([data-global-reviews]):not([data-global-faq]):not(#avis-google)::after{
+  content:none !important;
+  display:none !important;
+}
+body.preview-neo-ticket-v6.is-local-page main.local-wrap h2{
+  margin:0 0 12px !important;
+  padding-left:14px !important;
+  border-left:5px solid #ffb400 !important;
+  text-wrap:balance;
+}
+body.preview-neo-ticket-v6.is-local-page main.local-wrap p{
+  max-width:74ch;
+}
+
+/* Conversion emphasis on local urgency block */
+body.preview-neo-ticket-v6.is-local-page main.local-wrap section[data-ux-landing-local]{
+  background:
+    radial-gradient(circle at 85% 18%,rgba(255,180,0,.2),transparent 38%),
+    linear-gradient(180deg,#fffef8 0%,#fff 100%) !important;
+}
+body.preview-neo-ticket-v6.is-local-page main.local-wrap section[data-ux-landing-local]::after{
+  content:none !important;
+  display:none !important;
+}
+
+/* Lists: cleaner conversion readability */
+body.preview-neo-ticket-v6.is-local-page main.local-wrap > article > section:not(.hero-local):not(.seo-hero):not(.global-process):not(.global-reviews):not(.global-faq):not([data-global-process]):not([data-global-reviews]):not([data-global-faq]):not(#avis-google) ul,
+body.preview-neo-ticket-v6.is-local-page main.local-wrap > article > div > section:not(.hero-local):not(.seo-hero):not(.global-process):not(.global-reviews):not(.global-faq):not([data-global-process]):not([data-global-reviews]):not([data-global-faq]):not(#avis-google) ul{
+  list-style:none !important;
+  margin:0 !important;
+  padding-left:0 !important;
+}
+body.preview-neo-ticket-v6.is-local-page main.local-wrap > article > section:not(.hero-local):not(.seo-hero):not(.global-process):not(.global-reviews):not(.global-faq):not([data-global-process]):not([data-global-reviews]):not([data-global-faq]):not(#avis-google) ul li,
+body.preview-neo-ticket-v6.is-local-page main.local-wrap > article > div > section:not(.hero-local):not(.seo-hero):not(.global-process):not(.global-reviews):not(.global-faq):not([data-global-process]):not([data-global-reviews]):not([data-global-faq]):not(#avis-google) ul li{
+  position:relative;
+  padding-left:20px !important;
+}
+body.preview-neo-ticket-v6.is-local-page main.local-wrap > article > section:not(.hero-local):not(.seo-hero):not(.global-process):not(.global-reviews):not(.global-faq):not([data-global-process]):not([data-global-reviews]):not([data-global-faq]):not(#avis-google) ul li::before,
+body.preview-neo-ticket-v6.is-local-page main.local-wrap > article > div > section:not(.hero-local):not(.seo-hero):not(.global-process):not(.global-reviews):not(.global-faq):not([data-global-process]):not([data-global-reviews]):not([data-global-faq]):not(#avis-google) ul li::before{
+  content:"✓";
+  position:absolute;
+  left:0;
+  top:.08em;
+  color:#c18300;
+  font-weight:900;
+}
+
+/* Local FAQ: premium minimal accordion */
+body.preview-neo-ticket-v6.is-local-page .card.faq details,
+body.preview-neo-ticket-v6.is-local-page #faq-local-versailles details{
+  border:2px solid #d6d6d6 !important;
+  border-radius:14px !important;
+  background:#fff !important;
+  overflow:hidden;
+}
+body.preview-neo-ticket-v6.is-local-page .card.faq summary,
+body.preview-neo-ticket-v6.is-local-page #faq-local-versailles summary{
+  position:relative;
+  padding:14px 48px 14px 14px !important;
+}
+body.preview-neo-ticket-v6.is-local-page .card.faq summary::after,
+body.preview-neo-ticket-v6.is-local-page #faq-local-versailles summary::after{
+  content:"+";
+  position:absolute;
+  right:14px;
+  top:50%;
+  transform:translateY(-50%);
+  width:24px;
+  height:24px;
+  border-radius:999px;
+  border:2px solid #111;
+  background:#fff4d2;
+  color:#111;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:14px;
+  font-weight:900;
+}
+body.preview-neo-ticket-v6.is-local-page .card.faq details[open] summary::after,
+body.preview-neo-ticket-v6.is-local-page #faq-local-versailles details[open] summary::after{
+  content:"−";
+  background:#ffb400;
+}
+
+/* Sidebar conversion rail */
+body.preview-neo-ticket-v6.is-local-page .side .card{
+  border-radius:18px !important;
+  padding:18px 16px 16px !important;
+}
+body.preview-neo-ticket-v6.is-local-page .side .quick{
+  gap:10px !important;
+}
+body.preview-neo-ticket-v6.is-local-page .side .quick a{
+  min-height:48px;
+  padding:12px 14px !important;
+  border-radius:12px !important;
+}
+body.preview-neo-ticket-v6.is-local-page .side .quick a:first-child{
+  animation:ctaPulseSoft 2.8s ease-in-out infinite;
+}
+
+/* Inline dark CTA block in long article */
+body.preview-neo-ticket-v6.is-local-page .cta-local{
+  border:2px solid #111 !important;
+  border-radius:14px !important;
+  background:linear-gradient(180deg,#171717 0%,#0e0e0e 100%) !important;
+  color:#fff !important;
+  box-shadow:0 8px 0 #ffb400,0 16px 24px rgba(0,0,0,.22) !important;
+}
+body.preview-neo-ticket-v6.is-local-page .cta-local a{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  margin-left:8px;
+  padding:7px 12px;
+  border-radius:999px;
+  border:2px solid #ffb400;
+  background:#ffb400;
+  color:#111 !important;
+  text-decoration:none !important;
+  font-weight:900 !important;
+}
+
+@media (max-width:980px){
+  body.preview-neo-ticket-v6.is-local-page main.local-wrap{
+    grid-template-columns:1fr !important;
+    gap:16px !important;
+  }
+  body.preview-neo-ticket-v6.is-local-page main.local-wrap > article > section:not(.hero-local):not(.seo-hero):not(.global-process):not(.global-reviews):not(.global-faq):not([data-global-process]):not([data-global-reviews]):not([data-global-faq]):not(#avis-google),
+  body.preview-neo-ticket-v6.is-local-page main.local-wrap > article > div > section:not(.hero-local):not(.seo-hero):not(.global-process):not(.global-reviews):not(.global-faq):not([data-global-process]):not([data-global-reviews]):not([data-global-faq]):not(#avis-google){
+    padding:16px 14px 14px !important;
+    border-radius:15px !important;
+    box-shadow:0 9px 0 #ffb400,0 18px 24px rgba(0,0,0,.15) !important;
+  }
+  body.preview-neo-ticket-v6.is-local-page main.local-wrap > article > section:not(.hero-local):not(.seo-hero):not(.global-process):not(.global-reviews):not(.global-faq):not([data-global-process]):not([data-global-reviews]):not([data-global-faq]):not(#avis-google)::after,
+  body.preview-neo-ticket-v6.is-local-page main.local-wrap > article > div > section:not(.hero-local):not(.seo-hero):not(.global-process):not(.global-reviews):not(.global-faq):not([data-global-process]):not([data-global-reviews]):not([data-global-faq]):not(#avis-google)::after{
+    content:none !important;
+    display:none !important;
+  }
+  body.preview-neo-ticket-v6.is-local-page main.local-wrap section[data-ux-landing-local]::after{
+    content:none !important;
+    display:none !important;
+  }
+}
+
+/* ==========================================================================
+   PREVIEW V7.1 - Stronger conversion finish (overrides)
+   ========================================================================== */
+body.preview-neo-ticket-v6.is-local-page main.local-wrap{
+  position:relative;
+  isolation:isolate;
+}
+body.preview-neo-ticket-v6.is-local-page main.local-wrap::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  border-radius:22px;
+  z-index:-1;
+  pointer-events:none;
+  background:
+    radial-gradient(circle at 12% 9%,rgba(255,180,0,.09),transparent 36%),
+    radial-gradient(circle at 86% 82%,rgba(17,17,17,.07),transparent 40%),
+    linear-gradient(rgba(17,17,17,.04) 1px, transparent 1px) 0 0 / 100% 28px,
+    linear-gradient(90deg, rgba(17,17,17,.04) 1px, transparent 1px) 0 0 / 28px 100%;
+}
+body.preview-neo-ticket-v6.is-local-page main.local-wrap > article > section:not(.hero-local):not(.seo-hero):not(.global-process):not(.global-reviews):not(.global-faq):not([data-global-process]):not([data-global-reviews]):not([data-global-faq]):not(#avis-google),
+body.preview-neo-ticket-v6.is-local-page main.local-wrap > article > div > section:not(.hero-local):not(.seo-hero):not(.global-process):not(.global-reviews):not(.global-faq):not([data-global-process]):not([data-global-reviews]):not([data-global-faq]):not(#avis-google),
+body.preview-neo-ticket-v6.is-local-page main.local-wrap > aside .card{
+  box-shadow:0 14px 0 #ffb400,0 30px 44px rgba(0,0,0,.17) !important;
+}
+body.preview-neo-ticket-v6.is-local-page main.local-wrap > article > section:not(.hero-local):not(.seo-hero):not(.global-process):not(.global-reviews):not(.global-faq):not([data-global-process]):not([data-global-reviews]):not([data-global-faq]):not(#avis-google):hover,
+body.preview-neo-ticket-v6.is-local-page main.local-wrap > article > div > section:not(.hero-local):not(.seo-hero):not(.global-process):not(.global-reviews):not(.global-faq):not([data-global-process]):not([data-global-reviews]):not([data-global-faq]):not(#avis-google):hover,
+body.preview-neo-ticket-v6.is-local-page main.local-wrap > aside .card:hover{
+  transform:translateY(-5px) perspective(900px) rotateX(1deg);
+  box-shadow:0 16px 0 #ffb400,0 36px 48px rgba(0,0,0,.22) !important;
+}
+body.preview-neo-ticket-v6.is-local-page main.local-wrap section[data-ux-landing-local]{
+  border-color:#111 !important;
+  background:
+    radial-gradient(circle at 84% 16%,rgba(255,180,0,.24),transparent 38%),
+    linear-gradient(180deg,#fffef8 0%,#fff 100%) !important;
+}
+body.preview-neo-ticket-v6.is-local-page main.local-wrap section[data-ux-landing-local] p:first-of-type{
+  font-size:clamp(17px,1.08vw,20px) !important;
+  font-weight:700 !important;
+  color:#151515 !important;
+}
+body.preview-neo-ticket-v6.is-local-page .side .card{
+  position:sticky;
+  top:120px;
+}
+body.preview-neo-ticket-v6.is-local-page .side .card::after{
+  content:none !important;
+  display:none !important;
+}
+body.preview-neo-ticket-v6.is-local-page .side .quick a{
+  font-size:clamp(17px,1.08vw,20px) !important;
+}
+body.preview-neo-ticket-v6.is-local-page main.local-wrap a[href^="tel:"]:not(.seo-hero-btn):not(.sticky-link):not(.cta-btn),
+body.preview-neo-ticket-v6.is-local-page main.local-wrap a[href*="devis"]:not(.seo-hero-btn):not(.sticky-link):not(.cta-btn){
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:34px;
+  padding:6px 12px;
+  border:2px solid #111;
+  border-radius:999px;
+  background:#fff5d9;
+  color:#111 !important;
+  text-decoration:none !important;
+  box-shadow:0 4px 0 rgba(17,17,17,.18);
+}
+body.preview-neo-ticket-v6.is-local-page main.local-wrap a[href^="tel:"]:not(.seo-hero-btn):not(.sticky-link):not(.cta-btn):hover,
+body.preview-neo-ticket-v6.is-local-page main.local-wrap a[href*="devis"]:not(.seo-hero-btn):not(.sticky-link):not(.cta-btn):hover{
+  background:#ffb400;
+  transform:translateY(-1px);
+}
+body.preview-neo-ticket-v6.is-local-page .side .quick a:first-child{
+  color:#111 !important;
+}
+body.preview-neo-ticket-v6.is-local-page .side .quick a:last-child{
+  color:#fff !important;
+}
+body.preview-neo-ticket-v6.is-local-page main.local-wrap .side .quick a:first-child{
+  background:#ffb400 !important;
+  color:#111 !important;
+  border-color:#111 !important;
+}
+body.preview-neo-ticket-v6.is-local-page main.local-wrap .side .quick a:last-child{
+  background:#111 !important;
+  color:#fff !important;
+  border-color:#111 !important;
+}
+body.preview-neo-ticket-v6.is-local-page main.local-wrap .side .quick a[href*="devis"]:not(.seo-hero-btn):not(.sticky-link):not(.cta-btn):last-child{
+  background:#111 !important;
+  color:#fff !important;
+  border-color:#111 !important;
+  text-shadow:0 1px 0 rgba(0,0,0,.28);
+  font-size:0 !important;
+  position:relative;
+}
+body.preview-neo-ticket-v6.is-local-page main.local-wrap .side .quick a[href*="devis"]:not(.seo-hero-btn):not(.sticky-link):not(.cta-btn):last-child::before{
+  content:"Demande de devis";
+  font-size:clamp(17px,1.08vw,20px) !important;
+  font-weight:900;
+  line-height:1;
+  color:#fff;
+  display:block;
+}
+
+@media (max-width:980px){
+  body.preview-neo-ticket-v6.is-local-page main.local-wrap::before{
+    border-radius:16px;
+    background:
+      radial-gradient(circle at 12% 9%,rgba(255,180,0,.09),transparent 38%),
+      linear-gradient(rgba(17,17,17,.04) 1px, transparent 1px) 0 0 / 100% 24px,
+      linear-gradient(90deg, rgba(17,17,17,.04) 1px, transparent 1px) 0 0 / 24px 100%;
+  }
+  body.preview-neo-ticket-v6.is-local-page .side .card{
+    position:static;
+    top:auto;
+  }
+  body.preview-neo-ticket-v6.is-local-page .side .card::after{
+    content:none !important;
+    display:none !important;
+  }
+}
+
+/* Final cleanup: no numbered badges on local preview cards */
+body.preview-neo-ticket-v6.is-local-page main.local-wrap > article > section::after,
+body.preview-neo-ticket-v6.is-local-page main.local-wrap > article > div > section::after,
+body.preview-neo-ticket-v6.is-local-page main.local-wrap > aside .card::after{
+  content:none !important;
+  display:none !important;
+}

@@ -2133,7 +2133,29 @@
     }
   }
 
+  function applyUiPreviewMode(){
+    // Local rollout: the validated neo-ticket style is now the default visual
+    // layer for local pages, while homepage visuals remain untouched.
+    if(isHomePage()){return;}
+    if(!isSeoLocalPage()){return;}
+    document.documentElement.classList.remove('preview-neo-ticket');
+    document.body.classList.remove('preview-neo-ticket');
+    document.documentElement.classList.add('preview-neo-ticket-v6');
+    document.body.classList.add('preview-neo-ticket-v6');
+  }
+
+  function applyPreviewLocalLabels(){
+    if(!document.body.classList.contains('preview-neo-ticket-v6')){return;}
+    if(!document.body.classList.contains('is-local-page')){return;}
+    var quickLinks=[].slice.call(document.querySelectorAll('.side .quick a'));
+    if(quickLinks.length > 1){
+      quickLinks[1].textContent='Demande de devis';
+    }
+  }
+
   function boot(){
+    safeRun(applyUiPreviewMode,'applyUiPreviewMode');
+    safeRun(applyPreviewLocalLabels,'applyPreviewLocalLabels');
     safeRun(ensureMontserratFont,'ensureMontserratFont');
     safeRun(ensureStickyStylesheet,'ensureStickyStylesheet');
     safeRun(ensureHomeStickyMatchClass,'ensureHomeStickyMatchClass');
