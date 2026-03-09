@@ -710,7 +710,7 @@
     '      <a class="footer-logo" href="'+prefix+'index.html" aria-label="Retour à l\'accueil"><img src="'+prefix+'logo.png" alt="Allo Nuisible Express"></a>'+ 
     '      <p class="footer-text">Allo Nuisible Express intervient rapidement en Île-de-France pour la dératisation, la désinsectisation, la désinfection et le dépigeonnage.</p>'+ 
     '      <div class="footer-socials" aria-label="Réseaux sociaux">'+ 
-    '        <a class="footer-social-link" href="https://wa.me/33744296897" target="_blank" rel="noopener noreferrer">WhatsApp</a>'+ 
+    '        <a class="footer-social-link" href="https://api.whatsapp.com/send?phone=33744296897" target="_blank" rel="noopener noreferrer">WhatsApp</a>'+ 
     '        <a class="footer-social-link" href="https://x.com/Allonuisexpress" target="_blank" rel="noopener noreferrer">X</a>'+ 
     '        <a class="footer-social-link" href="https://www.linkedin.com/in/moncef-bedira-6217a521b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank" rel="noopener noreferrer">LinkedIn</a>'+ 
     '        <a class="footer-social-link" href="https://www.youtube.com/@AlloNuisibleExpress" target="_blank" rel="noopener noreferrer">YouTube</a>'+ 
@@ -918,7 +918,7 @@
   }
 
   function ensureStickyStylesheet(){
-    var href=(rootPrefix()||'')+'sticky-call.css?v=20260305sc12';
+    var href=(rootPrefix()||'')+'sticky-call.min.css?v=20260309m2';
     var exists=[].slice.call(document.querySelectorAll('link[rel="stylesheet"]')).some(function(link){
       var v=(link.getAttribute('href')||'').toLowerCase();
       return v.indexOf('sticky-call.css')!==-1;
@@ -1446,7 +1446,7 @@
         },
         openingHours:'Mo-Su 00:00-23:59',
         sameAs:[
-          'https://wa.me/33744296897',
+          'https://api.whatsapp.com/send?phone=33744296897',
           'https://x.com/Allonuisexpress',
           'https://www.linkedin.com/in/moncef-bedira-6217a521b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app',
           'https://www.youtube.com/@AlloNuisibleExpress',
