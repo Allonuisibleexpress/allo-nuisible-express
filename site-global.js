@@ -2153,9 +2153,45 @@
     }
   }
 
+  function applyHeroSecretPreview(){
+    if(isHomePage()){return;}
+    if(!isSeoLocalPage()){return;}
+    document.documentElement.classList.add('preview-hero-secret-v1');
+    document.body.classList.add('preview-hero-secret-v1');
+    var hero=document.querySelector('main .seo-hero, .hero-local-seo, .hero-local');
+    if(!hero){return;}
+    hero.classList.add('hero-secret-shell');
+    if(!hero.querySelector('.hero-secret-stack')){
+      var stack=document.createElement('div');
+      stack.className='hero-secret-stack';
+      var kids=[].slice.call(hero.children).filter(function(node){
+        return !node.matches('picture,[data-city-hero],.city-hero-overlay,.hero-secret-stack,.hero-secret-aura,.hero-secret-beam');
+      });
+      if(kids.length){
+        hero.insertBefore(stack, kids[0]);
+        kids.forEach(function(node){
+          stack.appendChild(node);
+        });
+      }
+    }
+    if(!hero.querySelector('.hero-secret-aura')){
+      var aura=document.createElement('span');
+      aura.className='hero-secret-aura';
+      aura.setAttribute('aria-hidden','true');
+      hero.appendChild(aura);
+    }
+    if(!hero.querySelector('.hero-secret-beam')){
+      var beam=document.createElement('span');
+      beam.className='hero-secret-beam';
+      beam.setAttribute('aria-hidden','true');
+      hero.appendChild(beam);
+    }
+  }
+
   function boot(){
     safeRun(applyUiPreviewMode,'applyUiPreviewMode');
     safeRun(applyPreviewLocalLabels,'applyPreviewLocalLabels');
+    safeRun(applyHeroSecretPreview,'applyHeroSecretPreview');
     safeRun(ensureMontserratFont,'ensureMontserratFont');
     safeRun(ensureStickyStylesheet,'ensureStickyStylesheet');
     safeRun(ensureHomeStickyMatchClass,'ensureHomeStickyMatchClass');
