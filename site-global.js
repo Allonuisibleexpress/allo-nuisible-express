@@ -21,6 +21,42 @@
     'villejuif':{'city':'Villejuif','landmark':'Centre-ville'},
     'vitry-sur-seine':{'city':'Vitry-sur-Seine','landmark':'Panorama urbain'}
   };
+  var CITY_POSTAL_MAP={
+    'antony':'92160',
+    'arcueil':'94110',
+    'cachan':'94230',
+    'chatenay-malabry':'92290',
+    'chevilly-larue':'94550',
+    'choisy-le-roi':'94600',
+    'clamart':'92140',
+    'fresnes':'94260',
+    'gentilly':'94250',
+    'le-kremlin-bicetre':'94270',
+    'lhay-les-roses':'94240',
+    'orly':'94310',
+    'rungis':'94150',
+    'thiais':'94320',
+    'versailles':'78000',
+    'villejuif':'94800',
+    'vitry-sur-seine':'94400',
+    'ablon-sur-seine':'94480'
+  };
+  var LOCAL_SERVICE_DISPLAY_MAP={
+    'deratisation':'dératisation',
+    'rats':'dératisation',
+    'souris':'dératisation',
+    'cafards':'cafards',
+    'punaises-de-lit':'punaises de lit',
+    'guepes':'guêpes',
+    'frelons':'frelons',
+    'frelon-asiatique':'frelons asiatiques',
+    'depigeonnage':'dépigeonnage',
+    'chenille-processionnaire':'chenilles processionnaires',
+    'acariens':'acariens',
+    'xylophages':'xylophages',
+    'mouches':'mouches',
+    'fourmis':'fourmis'
+  };
   var HEADER_SERVICE_ITEMS=[
     {href:'deratisation.html', label:'Rats / Souris'},
     {href:'frelons.html', label:'Frelons'},
@@ -158,6 +194,18 @@
     }).join(' ');
   }
 
+  function cityPostalCodeBySlug(slug){
+    return CITY_POSTAL_MAP[String(slug||'').toLowerCase()]||'';
+  }
+
+  function localServiceDisplayLabel(slug){
+    var key=String(slug||'').toLowerCase();
+    if(LOCAL_SERVICE_DISPLAY_MAP[key]){return LOCAL_SERVICE_DISPLAY_MAP[key];}
+    return key.split('-').map(function(part){
+      return part ? (part.charAt(0).toUpperCase()+part.slice(1)) : '';
+    }).join(' ');
+  }
+
   function cityPreposition(city){
     var c=String(city||'');
     if(/^Le\s/i.test(c)){return 'au '+c.replace(/^Le\s/i,'');}
@@ -219,11 +267,6 @@
     var meta=CITY_HERO_META[slug]||{};
     var city=meta.city||humanizeCitySlug(slug);
     var landmark=meta.landmark||'Centre-ville';
-    var cityPostalMap={
-      'antony':'92160','arcueil':'94110','cachan':'94230','chatenay-malabry':'92290','chevilly-larue':'94550','choisy-le-roi':'94600',
-      'clamart':'92140','fresnes':'94260','gentilly':'94250','le-kremlin-bicetre':'94270','lhay-les-roses':'94240','orly':'94310',
-      'rungis':'94150','thiais':'94320','versailles':'78000','villejuif':'94800','vitry-sur-seine':'94400'
-    };
     var serviceLabelMap={
       'deratisation':'rongeurs','rats':'rats','cafards':'cafards','punaises-de-lit':'punaises de lit','souris':'souris',
       'guepes':'guêpes','frelons':'frelons','frelon-asiatique':'frelon asiatique','depigeonnage':'pigeons',
@@ -234,7 +277,7 @@
       'guepes':'toiture','frelons':'jardin','frelon-asiatique':'jardin','depigeonnage':'toiture',
       'chenille-processionnaire':'jardin','acariens':'chambre','xylophages':'charpente','mouches':'cuisine','fourmis':'terrasse'
     };
-    var postal=cityPostalMap[slug]||'';
+    var postal=cityPostalCodeBySlug(slug);
     var label=serviceLabelMap[serviceSlug]||'nuisibles';
     var context=contextMap[serviceSlug]||'zone traitée';
     var alt='Infestation de '+label+' dans '+contextArticle(context)+' '+context+' '+cityPreposition(city)+(postal?(' ('+postal+')'):'');
@@ -657,6 +700,158 @@
     });
   }
 
+  function normalizeLegacyLocalLayout(){
+    if(!isSeoLocalPage()){return;}
+    var main=document.querySelector('main');
+    if(!main){return;}
+    document.body.classList.add('is-local-page');
+
+    function directChildBySelector(parent, selector){
+      return [].slice.call(parent.children).find(function(node){
+        return node.matches(selector);
+      })||null;
+    }
+
+    function hasMeaningfulChildren(node){
+      return [].slice.call(node.childNodes).some(function(child){
+        if(child.nodeType===1){return true;}
+        if(child.nodeType===3){return !!child.textContent.trim();}
+        return false;
+      });
+    }
+
+    function makeLegacyGroup(){
+      var section=document.createElement('section');
+      section.className='card legacy-flow-block';
+      section.setAttribute('data-legacy-group','1');
+      return section;
+    }
+
+    function ensureAsideCard(citySlug, serviceSlug, existingAside){
+      var aside=existingAside||document.createElement('aside');
+      aside.classList.add('side');
+      if(aside.querySelector('.quick')){return aside;}
+      var city=(CITY_HERO_META[citySlug]&&CITY_HERO_META[citySlug].city) ? CITY_HERO_META[citySlug].city : humanizeCitySlug(citySlug);
+      var postal=cityPostalCodeBySlug(citySlug);
+      var serviceLabel=localServiceDisplayLabel(serviceSlug);
+      var prefix=rootPrefix()||'';
+      var title='Urgence '+serviceLabel+(city ? (' '+city) : '');
+      aside.innerHTML='' +
+        '<section class="card">' +
+          '<h3>'+title+'</h3>' +
+          '<p><strong>Ville:</strong> '+city+(postal ? (' ('+postal+')') : '')+'<br><strong>Disponibilité:</strong> 24h/24 · 7j/7 (nuit, week-end, jours fériés)<br><strong>Téléphone:</strong> 07 44 29 68 97</p>' +
+          '<div class="quick"><a href="tel:0744296897">Appeler maintenant</a><a href="'+prefix+'devis.html">Demande de devis</a></div>' +
+        '</section>';
+      return aside;
+    }
+
+    var hasArticle=!!directChildBySelector(main,'article');
+    var hasAside=!!directChildBySelector(main,'aside.side');
+    var hasWrap=main.classList.contains('local-wrap');
+    if(hasWrap && hasArticle && hasAside){return;}
+
+    var hero=directChildBySelector(main,'.hero-local, .hero-local-seo, .seo-hero');
+    var article=directChildBySelector(main,'article')||document.createElement('article');
+    var aside=directChildBySelector(main,'aside.side');
+    var nodes=[].slice.call(main.childNodes);
+    var collector=null;
+
+    function flushCollector(){
+      if(!collector){return;}
+      if(hasMeaningfulChildren(collector)){
+        article.appendChild(collector);
+      }
+      collector=null;
+    }
+
+    function pushIntoCollector(node){
+      if(!collector){
+        collector=makeLegacyGroup();
+      }
+      collector.appendChild(node);
+    }
+
+    nodes.forEach(function(node){
+      if(node===article || node===aside){return;}
+      if(node.nodeType===3){
+        if(!node.textContent.trim()){
+          if(node.parentNode===main){node.parentNode.removeChild(node);}
+          return;
+        }
+        pushIntoCollector(node);
+        return;
+      }
+      if(node.nodeType!==1){
+        if(node.parentNode===main){node.parentNode.removeChild(node);}
+        return;
+      }
+      if(node.matches('script,style')){return;}
+      if(node.matches('aside.side')){
+        flushCollector();
+        aside=node;
+        return;
+      }
+      if(node.matches('.hero-local,.hero-local-seo,.seo-hero')){
+        flushCollector();
+        hero=node;
+        return;
+      }
+      if(node.matches('article')){
+        flushCollector();
+        [].slice.call(node.childNodes).forEach(function(child){
+          if(child.nodeType===3 && !child.textContent.trim()){return;}
+          if(child.nodeType===1 && child.matches('.hero-local,.hero-local-seo,.seo-hero')){
+            flushCollector();
+            hero=child;
+            return;
+          }
+          if(child.nodeType===1 && child.matches('section')){
+            flushCollector();
+            article.appendChild(child);
+            return;
+          }
+          pushIntoCollector(child);
+        });
+        flushCollector();
+        if(node.parentNode){node.parentNode.removeChild(node);}
+        return;
+      }
+      if(node.matches('section')){
+        flushCollector();
+        article.appendChild(node);
+        return;
+      }
+      if(node.matches('figure, p, h2, h3, h4, h5, ul, ol, div, details, blockquote')){
+        pushIntoCollector(node);
+        return;
+      }
+      article.appendChild(node);
+    });
+    flushCollector();
+
+    if(!article.querySelector('[data-ux-landing-local]')){
+      var firstSection=directChildBySelector(article,'section:not(.hero-local):not(.hero-local-seo):not(.seo-hero)');
+      if(firstSection){
+        firstSection.setAttribute('data-ux-landing-local','');
+      }
+    }
+
+    [].slice.call(article.querySelectorAll('section')).forEach(function(section){
+      if(/Besoin d[’']une intervention|demander un devis/i.test(section.textContent||'')){
+        section.classList.add('cta-local');
+      }
+    });
+
+    main.classList.add('local-wrap','legacy-local-wrap');
+    main.removeAttribute('style');
+    while(main.firstChild){
+      main.removeChild(main.firstChild);
+    }
+    if(hero){main.appendChild(hero);}
+    if(hasMeaningfulChildren(article)){main.appendChild(article);}
+    main.appendChild(ensureAsideCard(detectLocalCitySlug(), detectLocalServiceSlug(), aside));
+  }
+
   function shouldShowTimedCallPopup(){
     return isHomePage();
   }
@@ -918,7 +1113,7 @@
   }
 
   function ensureStickyStylesheet(){
-    var href=(rootPrefix()||'')+'sticky-call.min.css?v=20260309m2';
+    var href=(rootPrefix()||'')+'sticky-call.min.css?v=20260309m3';
     var exists=[].slice.call(document.querySelectorAll('link[rel="stylesheet"]')).some(function(link){
       var v=(link.getAttribute('href')||'').toLowerCase();
       return v.indexOf('sticky-call.css')!==-1;
@@ -2190,6 +2385,7 @@
 
   function boot(){
     safeRun(applyUiPreviewMode,'applyUiPreviewMode');
+    safeRun(normalizeLegacyLocalLayout,'normalizeLegacyLocalLayout');
     safeRun(applyPreviewLocalLabels,'applyPreviewLocalLabels');
     safeRun(applyHeroSecretPreview,'applyHeroSecretPreview');
     safeRun(ensureMontserratFont,'ensureMontserratFont');

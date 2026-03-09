@@ -2369,6 +2369,13 @@ body.is-local-page .seo-hero > *:not(picture):not(.city-hero-overlay){
 body.is-local-page main.local-wrap{
   position:relative;
   isolation:isolate;
+  display:grid !important;
+  grid-template-columns:minmax(0,1.72fr) minmax(300px,.9fr) !important;
+  align-items:start !important;
+  gap:24px !important;
+  max-width:1320px !important;
+  margin:0 auto 42px !important;
+  padding:34px 18px 42px !important;
 }
 body.is-local-page main.local-wrap::before{
   content:"";
@@ -2384,6 +2391,11 @@ body.is-local-page main.local-wrap > article,
 body.is-local-page main.local-wrap > aside{
   position:relative;
   z-index:1;
+  min-width:0;
+}
+body.is-local-page main.local-wrap > article{
+  display:flex;
+  flex-direction:column;
 }
 body.is-local-page main.local-wrap > article > section:not(.hero-local):not(.seo-hero),
 body.is-local-page main.local-wrap > article > div > section:not(.hero-local):not(.seo-hero){
@@ -2473,7 +2485,18 @@ body.is-local-page main.local-wrap aside .quick a:hover{
   filter:saturate(1.08) !important;
   box-shadow:0 14px 24px rgba(0,0,0,.16) !important;
 }
+body.is-local-page main.local-wrap.legacy-local-wrap > article > section.legacy-flow-block{
+  background:linear-gradient(180deg,rgba(255,255,255,.985),rgba(255,252,245,.985)) !important;
+}
+body.is-local-page main.local-wrap.legacy-local-wrap > article > section.legacy-flow-block > :first-child{
+  margin-top:0 !important;
+}
 @media (max-width:980px){
+  body.is-local-page main.local-wrap{
+    grid-template-columns:1fr !important;
+    gap:16px !important;
+    padding:24px 12px 36px !important;
+  }
   body.is-local-page main.local-wrap > article > section:not(.hero-local):not(.seo-hero),
   body.is-local-page main.local-wrap > article > div > section:not(.hero-local):not(.seo-hero){
     border-radius:16px !important;
@@ -4343,6 +4366,18 @@ body.preview-neo-ticket-v6.is-local-page main.local-wrap h3{
   font-size:clamp(18px,1.28vw,24px) !important;
   line-height:1.26 !important;
   font-weight:850 !important;
+}
+body.preview-neo-ticket-v6.is-local-page main.local-wrap > .hero-local h2,
+body.preview-neo-ticket-v6.is-local-page main.local-wrap > .hero-local-seo h2,
+body.preview-neo-ticket-v6.is-local-page main.local-wrap > .seo-hero h2{
+  padding-left:0 !important;
+  border-left:0 !important;
+}
+body.preview-neo-ticket-v6.is-local-page main.local-wrap > .hero-local h2::before,
+body.preview-neo-ticket-v6.is-local-page main.local-wrap > .hero-local-seo h2::before,
+body.preview-neo-ticket-v6.is-local-page main.local-wrap > .seo-hero h2::before{
+  content:none !important;
+  display:none !important;
 }
 body.preview-neo-ticket-v6.is-local-page main.local-wrap p,
 body.preview-neo-ticket-v6.is-local-page main.local-wrap li{
