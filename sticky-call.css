@@ -155,7 +155,7 @@ body.is-homepage .global-footer .site-footer-bottom{
   .site-sticky-cta::before{
     content:none !important;
   }
-  .site-sticky-cta .sticky-link{min-height:58px !important;font-size:17px !important;padding:13px 14px !important}
+  .site-sticky-cta .sticky-link{min-height:50px !important;font-size:15px !important;padding:11px 14px !important}
   .site-sticky-cta .sticky-call{
     border:0 !important;
     outline:none !important;
