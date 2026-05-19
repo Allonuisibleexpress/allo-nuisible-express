@@ -633,41 +633,6 @@
     head.appendChild(s);
   }
 
-  function ensureGtagScript(){
-    var head=document.head;
-    if(!head){return;}
-    if(head.querySelector('script[data-gtm="GTM-MTLHGSTZ"]')){return;}
-    window.dataLayer=window.dataLayer||[];
-    if(typeof window.gtag!=='function'){
-      window.gtag=function(){window.dataLayer.push(arguments);};
-    }
-    window.gtag('js',new Date());
-    window.gtag('config','AW-17010552299');
-    var s=document.createElement('script');
-    s.async=true;
-    s.setAttribute('data-gtm','GTM-MTLHGSTZ');
-    s.src='https://www.googletagmanager.com/gtm.js?id=GTM-MTLHGSTZ';
-    head.appendChild(s);
-    window.gtag_report_conversion=function(url){
-      var callback=function(){if(typeof url!=='undefined'){window.location=url;}};
-      window.gtag('event','conversion',{
-        'send_to':'AW-17010552299/cKDsCLOxrascEOvboa8_',
-        'event_callback':callback
-      });
-      return false;
-    };
-  }
-
-  function initCallConversionTracking(){
-    if(window.__alloConversionTrackingBound){return;}
-    window.__alloConversionTrackingBound=true;
-    document.addEventListener('click',function(e){
-      var link=e.target.closest('a[href^="tel:"]');
-      if(link && typeof window.gtag_report_conversion==='function'){
-        window.gtag_report_conversion();
-      }
-    },true);
-  }
 
   function polishLocalPageContent(){
     if(!isSeoLocalPage()){return;}
@@ -2458,8 +2423,6 @@
     safeRun(forceTimedPopupEmergency,'forceTimedPopupEmergency');
     safeRun(optimizeMedia,'optimizeMedia');
     safeRun(ensureStructuredData,'ensureStructuredData');
-    safeRun(ensureGtagScript,'ensureGtagScript');
-    safeRun(initCallConversionTracking,'initCallConversionTracking');
     safeRun(ensureAnalyticsScript,'ensureAnalyticsScript');
     safeRun(setYear,'setYear');
     if(window.__alloScrollRevealRefresh){safeRun(function(){window.__alloScrollRevealRefresh(document);},'scrollRevealRefresh');}
